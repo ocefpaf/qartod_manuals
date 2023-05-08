@@ -1,0 +1,48 @@
+name: Build Docx/PDF
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+  release:
+    types:
+      - published
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Setup Micromamba
+        uses: mamba-org/provision-with-micromamba@v15
+        with:
+          environment-file: false
+
+      - name: Build
+        shell: bash -l {0}
+        run: >
+          micromamba create --name TEST pandoc tectonic --channel conda-forge
+          && micromamba activate TEST
+          && pushd docs/
+          && mkdir -p compiled_manuals
+          && pandoc Real-Time_Quality_Control_of_Water_Level_Data.md --from=markdown --output=Real-Time_Quality_Control_of_Water_Level_Data.pdf --to=pdf --pdf-engine=tectonic
+          && pandoc Real-Time_Quality_Control_of_Water_Level_Data.md --from=markdown --output=Real-Time_Quality_Control_of_Water_Level_Data.docx --to=docx
+          && mv Real-Time_Quality_Control_of_Water_Level_Data.* compiled_manuals/
+          && popd
+
+      - name: Upload artifacts to Github
+        uses: actions/upload-artifact@v3
+        with:
+          path: docs/compiled_manuals/
+
+      - name: Upload artifacts to Github release
+        if: success() && github.event_name == 'release'
+        uses: svenstaro/upload-release-action@v2
+        with:
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          file: docs/compiled_manuals/Real-Time_Quality_Control_of_Water_Level_Data.*
+          tag: ${{ github.ref }}
+          overwrite: true
+          file_glob: true

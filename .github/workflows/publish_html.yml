@@ -1,0 +1,37 @@
+name: Build page
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+  release:
+    types:
+      - published
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Setup Micromamba
+        uses: mamba-org/provision-with-micromamba@v15
+        with:
+          environment-file: false
+
+      - name: Build
+        shell: bash -l {0}
+        run: >
+          micromamba create --name TEST mkdocs mkdocs-material --channel conda-forge
+          && micromamba activate TEST
+          && set -e
+          && mkdocs build --clean --verbose
+
+      - name: Publish HTML
+        if: success() && github.event_name == 'release'
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: site/
+          keep_files: false

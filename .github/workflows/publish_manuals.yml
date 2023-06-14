@@ -16,16 +16,16 @@ jobs:
       - uses: actions/checkout@v3
 
       - name: Setup Micromamba
-        uses: mamba-org/provision-with-micromamba@v16
+        uses: mamba-org/setup-micromamba@v1
         with:
-          environment-file: false
+          environment-name: QARTOD
+          environment-file: environment.yml
+          init-shell: bash
 
       - name: Build
         shell: bash -l {0}
         run: >
-          micromamba create --name TEST pandoc tectonic --channel conda-forge
-          && micromamba activate TEST
-          && pushd docs/
+          pushd docs/
           && mkdir -p compiled_manuals
           && pandoc Real-Time_Quality_Control_of_Water_Level_Data.md --from=markdown --output=Real-Time_Quality_Control_of_Water_Level_Data.pdf --to=pdf --pdf-engine=tectonic
           && pandoc Real-Time_Quality_Control_of_Water_Level_Data.md --from=markdown --output=Real-Time_Quality_Control_of_Water_Level_Data.docx --to=docx

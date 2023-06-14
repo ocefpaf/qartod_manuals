@@ -23,7 +23,7 @@ July 2019
 |         | Move Sensor Deployment Considerations from section 3.2 to section 2.4.                                                        |                                                         |
 |         | Add content addressing data uncertainty (page 8)                                                                              |                                                         |
 |         | Update content in sections 3.1 and 3.2 (pages 10 - 13)                                                                        |                                                         |
-|         | Correct the spelling of “codable” in test tables (various)                                                                    |                                                         |
+|         | Correct the spelling of "codable" in test tables (various)                                                                    |                                                         |
 |         | Add Rate of Change Test (page 22) and Spike Test (page 23)                                                                    |                                                         |
 |         | Update language in section 4.0, summary, to reflect feedback from reviewers. (page 27)                                        |                                                         |
 |         | Update References and Supporting Documents (pages 28- 31)                                                                     |                                                         |
@@ -485,444 +485,243 @@ Variation in the estimated values can be useful in uncertainty calculations.
 
 ## 3.0 Quality Control
 
-To conduct real-time QC on current observations, the first pre-requisite is to understand the science and
-
-context within which the measurements are being conducted. Currents are dependent upon many things such
-
-as tidal forces, density gradients, winds, and riverine flow. The real-time QC of these observations can be
-
-extremely challenging. Human involvement is therefore important to ensure that solid scientific principles are
-
-applied to the process to ensure that good data are not discarded, and bad data are not distributed. Examples
-
-include selection of appropriate thresholds and examination of data flagged as questionable.
-
-This manual focuses specifically on real-time data, so the operator is likely to encounter aspects of data QC
-
-where the flags and tests described in the following sections do not apply because the data are not considered
-
-to be real time. For example, for real-time QC, drift (slow changes in sensor calibration) cannot be detected
-
-or corrected. Fortunately, sensor drift and drift correction are not typically issues for ADCPs (except for
-
-clock drift). Another example might be the ability of some data providers to backfill data gaps. In both of
-
-these examples, the observations are not considered to be real time for purposes of QC checks. (However, in
-
-some sophisticated 24/7 QC operations, real-time dissemination may be switched from one sensor to another
-
-based on real-time QC flags.)
-
-#### 3.1 QC Flags
-
-Data are evaluated using QC tests, and the results of those tests are recorded by inserting flags in the data
-
-files. Table 3-1 provides a simple set of flags and associated descriptions. Operators may incorporate
-
-additional flags for inclusion in metadata records. For example, an observation may fail the current speed test
-
-(test 10) and be flagged as having failed the test. Additional flags may be incorporated to provide more
-
-detailed information to assist with troubleshooting. If the data failed the current speed test by exceeding the
-
-upper limit, a “failed high” flag may indicate that the values were higher than the expected range, but such
-
-detailed flags primarily support maintenance efforts and are presently beyond U.S. IOOS requirements for
-
-QC of real-time data. For additional information regarding flags, see the _Manual for the Use of Real-Time_
-
-_Oceanographic Data Quality Control Flags_ (U.S. IOOS 201 7 ) posted on the U.S. IOOS QARTOD website.
-
-Further post-processing of the data may yield different conclusions from those reached during initial
-
-assessments. Flags set in real-time should not be changed to ensure that historical documentation is
-
-preserved. Results from post-processing should generate another set of flags.
-
-Observations are time ordered, and the most recent observation is _n 0_ , preceded by a value at _n− 1_ , and so on
-
-backwards in time. The focus of this manual is primarily on the real-time QC of observations _n_ , _n− 1_ , and _n− 2_.
-
-
-```
-In-situ Currents
-```
-**Table 3- 1** Flags for real-time data from ADCPs. (UNESCO 2013)
-
-#### Flag Description
-
-```
-Pass=1 Data have passed critical real-time QC tests and are deemed adequate for use as
-preliminary data.
-```
-```
-Not evaluated=2 Data have not been QC-tested, or the information on quality is not available.
-```
-```
-Suspect or
-Of High Interest=3
-```
-```
-Data are considered to be either suspect or of high interest to operators and users. They
-are flagged suspect to draw further attention to them by operators.
-```
-```
-Fail=4 Data are considered to have failed one (or more) critical real-time QC check. If they are
-disseminated at all, it should be readily apparent that they are not of acceptable quality.
-```
-```
-Missing data=9 Data are missing; used as a placeholder.
-```
-#### 3.2 QC Test Types and Hierarchy
-
-This section outlines the 20 real-time QC tests that are required and recommended for in-situ currents. Tests are
-
-listed in table 3-2 and are divided into four groups according to test type. The tests in group 1 (table 3-3) are
-
-required (where possible) for all current measurements collected for U.S. IOOS. However, the output of some
-
-instruments is not sufficient for some tests. Operators must consider each test in group 2 to determine if it can
-
-be applied in their particular instance—not all tests can be implemented in all situations. Operators should also
-
-consider that some of these tests can be carried out within the instrument, where thresholds can be defined in
-
-configuration files. Although more tests imply a more robust QC effort, there are many reasons operators could
-
-use to justify not conducting some tests. In those cases, operators need only to document reasons these tests do
-
-not apply to their observations. Such flexibility is needed to support the U.S. IOOS Regional Information
-
-Coordination Entities certification effort (IOOC 2012), since the number of tests conducted and the justification
-
-for not applying some tests are useful for evaluating an operator's skill level. Even though currently there are no
-
-suggested tests, group 3 is retained as a placeholder for possible future additions.
-
-
-**Table 3- 2.** QC tests for real-time current data from fixed or buoy-mounted current sensors
-
-##### Test Type Test Name Status
-
-###### Sensor Health
-
-```
-Battery Voltage (Test 1) Strongly Recommended
-```
-```
-Check Sum (Test 2) Required
-```
-```
-Sensor Tilt (Test 3) Required
-```
-```
-Speed of Sound (Test 4) Required
-```
-###### Signal Quality
-
-```
-Noise Floor (Test 5) Strongly Recommended
-```
-```
-Signal Strength (Test 6) Required
-```
-```
-Signal-to-Noise (Test 7) Strongly Recommended
-```
-```
-Correlation Magnitude (Test 8) Strongly Recommended
-```
-```
-Percent Good (Test 9) Strongly Recommended
-```
-###### Current
-
-###### Velocity
-
-```
-Current Speed (Test 10) Required
-```
-```
-Current Direction (Test 11) Required
-```
-```
-Horizontal Velocity (Test 12) Required
-```
-```
-Vertical Velocity (Test 13) Strongly Recommended
-```
-```
-Error Velocity (Test 14) Strongly Recommended
-```
-```
-u, v Rate of Change (Test 15) Strongly Recommended
-```
-```
-u, v Spike (Test 16) Strongly Recommended
-```
-```
-Flat Line (Test 17) Required
-```
-###### Overall
-
-###### Profile
-
-```
-Echo Intensity (Test 18) Required
-```
-```
-Echo Intensity Drop-off (Test 19) Strongly Recommended
-```
-```
-Current Gradient (Test 20) Strongly Recommended
-```
-
-```
-In-situ Currents
-```
-```
-Table 3- 3. QC tests in order of requirement hierarchy
-```
-```
-Group 1
-Required
-```
-```
-Check Sum (Test 2)
-Sensor Tilt (Test 3)
-Speed of Sound (Test 4)
-Signal Strength (Test 6)
-Current Speed (Test 10)
-Current Direction (Test 11)
-Horizontal Velocity (Test 12)
-Flat Line (Test 17)
-Echo Intensity (Test 18 )
-```
-```
-Group 2
-Strongly
-Recommended
-```
-```
-Battery Voltage (Test 1)
-Noise Floor (Test 5)
-Signal-to-Noise (Test 7)
-Correlation Magnitude (Test 8)
-Percent Good (Test 9)
-Vertical Velocity Test (13)
-Error Velocity Test (14)
-u, v Rate of Change Test (15)
-u, v Spike Test (16)
-Echo Intensity Drop-off Test (19)
-Current Gradient Test (20)
-Group 3
-Suggested
-```
-```
-None.
-```
-Some effort will be needed to select the best thresholds, which are determined at the operator level and may
-
-require trial and error/iteration before final selections are made. A successful QC effort is highly dependent
-
-upon selection of the proper thresholds, which should not be determined arbitrarily but can be based on a
-
-number of criteria, such as historical knowledge, statistics derived from more recently acquired data, and
-
-manufacturer recommendations. Although this manual provides some guidance for selecting thresholds based
-
-on input from various operators, it is assumed that operators have the subject matter expertise as well as a
-
-sincere interest in selecting the proper thresholds to maximize the value of their QC effort. Operators are
-
-required to openly provide thresholds as metadata for user support. This shared information will help U.S.
-
-IOOS to document standardized thresholds to be included in future releases of this manual.
-
-#### 3.3 QC Test Descriptions
-
-A variety of tests can be performed on the sensor measurements to evaluate data quality. Testing the integrity
-
-of the data transmission is a first step. If the data are corrupted during transmission, further testing may be
-
-irrelevant. The checks defined in these 20 tests evaluate data through various comparisons to other data and
-
-to the expected conditions in the given environment. The tests listed in this section presume a time-ordered
-
-series of observations (..., _n− 2_ , _n− 1_ , _n_ ) and denote the most recent observation as previously described.
-
-
-For each test described, _i_ represents the bin number (range cell within a beam), with bin one being closest to
-
-the instrument, and _j_ represents the beam number.
-
-The test descriptions provided are examples of tests that may be employed. They are not intended to be the
-
-only acceptable tests, rather they serve to clearly identify the intent of the test. The examples are the best
-
-available at present and will be improved in updated manuals as tests are implemented. Specifically, the rate-
-
-of-change and spike tests are surprisingly challenging and have deficiencies as presently described. Both tests
-
-may suffer from false failure of subsequent valid observations when recovering from the initial detection of a
-
-flawed observation. Operators are strongly encouraged to share improved versions of all tests as they are
-
-developed.
-
-
-```
-In-situ Currents
-```
-###### 3.3.1 Sensor Health Tests
+To conduct real-time QC on current observations,
+the first pre-requisite is to understand the science and context within which the measurements are being conducted.
+Currents are dependent upon many things such as tidal forces,
+density gradients,
+winds,
+and riverine flow.
+The real-time QC of these observations can be extremely challenging.
+Human involvement is therefore important to ensure that solid scientific principles are applied to the process to ensure that good data are not discarded,
+and bad data are not distributed.
+Examples include selection of appropriate thresholds and examination of data flagged as questionable.
+
+This manual focuses specifically on real-time data,
+so the operator is likely to encounter aspects of data QC where the flags and tests described in the following sections do not apply because the data are not considered to be real time.
+For example,
+for real-time QC,
+drift (slow changes in sensor calibration) cannot be detected or corrected.
+Fortunately,
+sensor drift and drift correction are not typically issues for ADCPs (except for clock drift).
+Another example might be the ability of some data providers to backfill data gaps.
+In both of these examples,
+the observations are not considered to be real time for purposes of QC checks.
+(However, in some sophisticated 24/7 QC operations, real-time dissemination may be switched from one sensor to another based on real-time QC flags.)
+
+### 3.1 QC Flags
+
+Data are evaluated using QC tests,
+and the results of those tests are recorded by inserting flags in the data files.
+Table 3-1 provides a simple set of flags and associated descriptions.
+Operators may incorporate additional flags for inclusion in metadata records.
+For example,
+an observation may fail the current speed test (test 10) and be flagged as having failed the test.
+Additional flags may be incorporated to provide more detailed information to assist with troubleshooting.
+If the data failed the current speed test by exceeding the upper limit,
+a "failed high" flag may indicate that the values were higher than the expected range,
+but such detailed flags primarily support maintenance efforts and are presently beyond U.S. IOOS requirements for QC of real-time data.
+For additional information regarding flags,
+see the _Manual for the Use of Real-Time Oceanographic Data Quality Control Flags_ (U.S. IOOS 2017) posted on the U.S. IOOS QARTOD website.
+
+Further post-processing of the data may yield different conclusions from those reached during initial assessments.
+Flags set in real-time should not be changed to ensure that historical documentation is preserved.
+Results from post-processing should generate another set of flags.
+
+Observations are time ordered,
+and the most recent observation is _n<sub>0</sub>_,
+preceded by a value at _n-1_,
+and so on backwards in time.
+The focus of this manual is primarily on the real-time QC of observations _n_,
+_n-1_,
+and _n-2_.
+
+| **Flag**                      | **Description**                                                                                                                                                                       |
+| ----------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Pass=1                        | Data have passed critical real-time QC tests and are deemed adequate for use as preliminary data.                                                                                     |
+| Not Evaluated=2               | Data have not been QC-tested, or the information on quality is not available.                                                                                                         |
+| Suspect or of High Interest=3 | Data are considered to be either suspect or of high interest to operators and users. They are flagged suspect to draw further attention to them by operators.                         |
+| Fail=4                        | Data are considered to have failed one (or more) critical real-time QC check. If they are disseminated at all, it should be readily apparent that they are not of acceptable quality. |
+| Missing Data=9                | Data are missing; used as a placeholder.                                                                                                                                              |
+
+: Table 3-1. Flags for real-time data from ADCPs. (UNESCO 2013)
+
+
+### 3.2 QC Test Types and Hierarchy
+
+This section outlines the 20 real-time QC tests that are required and recommended for in-situ currents.
+Tests are listed in table 3-2 and are divided into four groups according to test type.
+The tests in group 1 (table 3-3) are required (where possible) for all current measurements collected for U.S. IOOS.
+However,
+the output of some instruments is not sufficient for some tests.
+Operators must consider each test in group 2 to determine if it can be applied in their particular instance—not all tests can be implemented in all situations.
+Operators should also consider that some of these tests can be carried out within the instrument,
+where thresholds can be defined in configuration files.
+Although more tests imply a more robust QC effort,
+there are many reasons operators could use to justify not conducting some tests.
+In those cases,
+operators need only to document reasons these tests do not apply to their observations.
+Such flexibility is needed to support the U.S. IOOS Regional Information Coordination Entities certification effort (IOOC 2012),
+since the number of tests conducted and the justification for not applying some tests are useful for evaluating an operator's skill level.
+Even though currently there are no suggested tests,
+group 3 is retained as a placeholder for possible future additions.
+
+
+| Test Type        | Test Name                         | Status               |
+|------------------|-----------------------------------|----------------------|
+| Sensor Health    | Battery Voltage (Test 1)          | Strongly Recommended |
+|                  | Check Sum (Test 2)                | Required             |
+|                  | Sensor Tilt (Test 3)              | Required             |
+|                  | Speed of Sound (Test 4)           | Required             |
+| Signal Quality   | Noise Floor (Test 5)              | Strongly Recommended |
+|                  | Signal Strength (Test 6)          | Required             |
+|                  | Signal-to-Noise (Test 7)          | Strongly Recommended |
+|                  | Correlation Magnitude (Test 8)    | Strongly Recommended |
+|                  | Percent Good (Test 9)             | Strongly Recommended |
+| Current Velocity | Current Speed (Test 10)           | Required             |
+|                  | Current Direction (Test 11)       | Required             |
+|                  | Horizontal Velocity (Test 12)     | Required             |
+|                  | Vertical Velocity (Test 13)       | Strongly Recommended |
+|                  | Error Velocity (Test 14)          | Strongly Recommended |
+|                  | u, v Rate of Change (Test 15)     | Strongly Recommended |
+|                  | u, v Spike (Test 16)              | Strongly Recommended |
+|                  | Flat Line (Test 17)               | Required             |
+| Overall Profile  | Echo Intensity (Test 18)          | Required             |
+|                  | Echo Intensity Drop-off (Test 19) | Strongly Recommended |
+|                  | Current Gradient (Test 20)        | Strongly Recommended |
+
+: Table 3-2. QC tests for real-time current data from fixed or buoy-mounted current sensors
+
+|                              |                                   |
+|------------------------------|-----------------------------------|
+| Group 1 Required             | Check Sum (Test 2)                |
+|                              | Sensor Tilt (Test 3)              |
+|                              | Speed of Sound (Test 4)           |
+|                              | Signal Strength (Test 6)          |
+|                              | Current Speed (Test 10)           |
+|                              | Current Direction (Test 11)       |
+|                              | Horizontal Velocity (Test 12)     |
+|                              | Flat Line (Test 17)               |
+|                              | Echo Intensity (Test 18)          |
+| Group 2 Strongly Recommended | Battery Voltage (Test 1)          |
+|                              | Noise Floor (Test 5)              |
+|                              | Signal-to-Noise (Test 7)          |
+|                              | Correlation Magnitude (Test 8)    |
+|                              | Percent Good (Test 9)             |
+|                              | Vertical Velocity Test (13)       |
+|                              | Error Velocity Test (14)          |
+|                              | u, v Rate of Change Test (15)     |
+|                              | u, v Spike Test (16)              |
+|                              | Echo Intensity Drop-off Test (19) |
+|                              | Current Gradient Test (20)        |
+| Group 3 Suggested            | None.                             |
+
+: Table 3-3. QC tests in order of requirement hierarchy
+
+Some effort will be needed to select the best thresholds,
+which are determined at the operator level and may require trial and error/iteration before final selections are made.
+A successful QC effort is highly dependent upon selection of the proper thresholds,
+which should not be determined arbitrarily but can be based on a number of criteria,
+such as historical knowledge,
+statistics derived from more recently acquired data,
+and manufacturer recommendations.
+Although this manual provides some guidance for selecting thresholds based on input from various operators,
+it is assumed that operators have the subject matter expertise as well as a sincere interest in selecting the proper thresholds to maximize the value of their QC effort.
+Operators are required to openly provide thresholds as metadata for user support.
+This shared information will help U.S. IOOS to document standardized thresholds to be included in future releases of this manual.
+
+### 3.3 QC Test Descriptions
+
+A variety of tests can be performed on the sensor measurements to evaluate data quality.
+Testing the integrity of the data transmission is a first step.
+If the data are corrupted during transmission,
+further testing may be irrelevant.
+The checks defined in these 20 tests evaluate data through various comparisons to other data and to the expected conditions in the given environment.
+The tests listed in this section presume a time-ordered series of observations (..., _n-2_, _n-1_, _n_) and denote the most recent observation as previously described.
+
+For each test described,
+_i_ represents the bin number (range cell within a beam),
+with bin one being closest to the instrument,
+and _j_ represents the beam number.
+
+The test descriptions provided are examples of tests that may be employed.
+They are not intended to be the only acceptable tests,
+rather they serve to clearly identify the intent of the test.
+The examples are the best available at present and will be improved in updated manuals as tests are implemented.
+Specifically,
+the rate-of-change and spike tests are surprisingly challenging and have deficiencies as presently described.
+Both tests may suffer from false failure of subsequent valid observations when recovering from the initial detection of a flawed observation.
+Operators are strongly encouraged to share improved versions of all tests as they are developed.
+
+
+#### 3.3.1 Sensor Health Tests
 
 Each test checks to ensure that the sensor is working properly.
 
-###### Battery Voltage (Test 1) – Strongly Recommended
+**Battery Voltage (Test 1) – Strongly Recommended**
 
-##### Check for sufficient battery voltage.
+Check for sufficient battery voltage
+Test determines that there is sufficient battery voltage (`BATTVOLT`) to provide a "good" measurement.
 
-```
-Test determines that there is sufficient battery voltage (BATTVOLT) to provide a “good” measurement.
-```
-###### Flags Condition Codable Instructions
+| Flags       | Condition                                                     | Codable Instructions          |
+|-------------|---------------------------------------------------------------|-------------------------------|
+| Fail = 4    | Battery voltage is less than an accepted minimum value (MIN). | `If BATTVOLT < MIN, flag = 4` |
+| Suspect = 3 | N/A                                                           |                               |
+| Pass = 1    | Battery voltage is sufficient.                                | `If BATTVOLT ≥ MIN, flag = 1` |
 
-```
-Fail = 4 Battery voltage is less than an
-accepted minimum value (MIN).
-```
-```
-If BATTVOLT < MIN, flag = 4
-```
-```
-Suspect = 3 N/A
-```
-```
-Pass = 1 Battery voltage is sufficient. If BATTVOLT ≥ MIN, flag = 1
-```
-```
-Test Exception : Test cannot be applied when no battery measurement is provided.
-```
-```
+Test Exception: Test cannot be applied when no battery measurement is provided.
 Test specifications to be established by operator.
 Example 1 : MIN = 11.6 Vdc Example 2: Teledyne RDI, MIN = 150 battery counts
-```
-###### Check Sum (Test 2) - Required
 
-##### Check for data message integrity.
+**Check Sum (Test 2) - Required**
 
-```
-Test to ensure that the message transmitted from the sensor is valid. A checksum value (CKSUMXMT) is
-prepared from the message before it is transmitted and appended to the data stream. Once the message is
-received, a checksum is calculated from the message and that value is compared to the transmitted value.
-```
-###### Flags Condition Codable Instructions
+Check for data message integrity.
 
-```
-Fail = 4 The data message fails if the
-calculated checksum (CKSUMCAL)
-from the data stream does not
-match the transmitted checksum
-(CKSUMXMT) in the message.
-```
-```
-IF CKSUMCAL ≠ CKSUMXMT, flag = 4
-```
-```
-Suspect = 3 N/A None^
-Pass = 1 The data message is valid if the
-calculated checksum (CKSUMCAL)
-is identical to the transmitted
-checksum (CKSUMXMT).
-```
-```
-IF CKSUMCAL = CKSUMXMT, flag = 1
-```
-```
-Test Exception : Test cannot be applied when no checksum or other message integrity verification is
-provided.
-```
-```
-Example: CKSUMXMT = FF4A, CKSUMCAL = FF4A, flag = 1
-```
+Test to ensure that the message transmitted from the sensor is valid.
+A checksum value (`CKSUMXMT`) is prepared from the message before it is transmitted and appended to the data stream. Once the message is received,
+a checksum is calculated from the message and that value is compared to the transmitted value.
 
-###### Sensor Tilt (Test 3) - Required
+| Flags       | Condition                                                                                                                                                | Codable Instructions               |
+|-------------|----------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------|
+| Fail = 4    | The data message fails if the calculated checksum (`CKSUMCAL`) from the data stream does not match the transmitted checksum (`CKSUMXMT`) in the message. | `IF CKSUMCAL ≠ CKSUMXMT, flag = 4` |
+| Suspect = 3 | N/A                                                                                                                                                      | None                               |
+| Pass = 1    | The data message is valid if the calculated checksum (`CKSUMCAL`) is identical to the transmitted checksum (`CKSUMXMT`).                                 | `IF CKSUMCAL = CKSUMXMT, flag = 1` |
 
-##### Check for unexpected tilt or change in tilt.
+Test Exception : Test cannot be applied when no checksum or other message integrity verification is provided.
+Example: `CKSUMXMT = FF4A`, `CKSUMCAL = FF4A`, flag = 1
 
-```
-Current sensors must be aligned within an expected range of tilt angles to properly measure horizontal and
-vertical currents. Sensors with the capability to measure tilt along two axes should undergo this sensor tilt
-test to ensure that the measurements are collected within the correct range of values for the type of
-current meter used. Manufacturers' specifications indicate the maximum allowable tilt.
-```
-###### Flags Condition Codable Instructions
+**Sensor Tilt (Test 3) - Required**
 
-```
-Fail = 4 Tilt (TILTX, TILTY) angle is greater
-than the allowed value (TILTMAX).
-```
-```
-If TILTX > TILTMAX OR TILTY > TILTMAX,
-flag = 4
-```
-```
-Suspect = 3 N/A
-Pass = 1 Tilt angle is less than or equal to the
-allowed value.
-```
-```
-If TILTX ≤ TILTMAX OR TILTY ≤ TILTMAX,
-flag = 1
+Check for unexpected tilt or change in tilt.
+Current sensors must be aligned within an expected range of tilt angles to properly measure horizontal and vertical currents.
+Sensors with the capability to measure tilt along two axes should undergo this sensor tilt test to ensure that the measurements are collected within the correct range of values for the type of current meter used.
+Manufacturers' specifications indicate the maximum allowable tilt.
+
+| Flags       | Condition                                                                    | Codable Instructions                              |
+|-------------|------------------------------------------------------------------------------|---------------------------------------------------|
+| Fail = 4    | Tilt (`TILTX`, `TILTY`) angle is greater than the allowed value (`TILTMAX`). | `If TILTX > TILTMAX OR TILTY > TILTMAX, flag = 4` |
+| Suspect = 3 | N/A                                                                          |                                                   |
+| Pass = 1    | Tilt angle is less than or equal to the allowed value.                       | `If TILTX ≤ TILTMAX OR TILTY ≤ TILTMAX, flag = 1` |
+
 Test Exception: Test cannot be applied when no tilt value is provided in real-time data stream.
-```
-```
-TILTMAX values provided by manufacturer.
-Example : TILTMAX = 15°, TILTX = 3, TILY = 1, flag = 1
-```
-###### Speed of Sound (Test 4) - Required
+`TILTMAX` values provided by manufacturer.
+Example: `TILTMAX = 15°`, `TILTX = 3`, `TILY = 1`, flag = 1
 
-##### Check for a valid speed of sound value.
+**Speed of Sound (Test 4) - Required**
 
-```
-The speed of sound value is used in the calculation of acoustic pulse travel times and must be within a
-reasonable range given a known salinity and temperature of the water column and allowing for variations in
-density throughout.
-```
-###### Flags Condition Codable Instructions
+Check for a valid speed of sound value.
+The speed of sound value is used in the calculation of acoustic pulse travel times and must be within a reasonable range given a known salinity and temperature of the water column and allowing for variations in density throughout.
 
-```
-Fail = 4 If the speed of sound value (SSVAL) is
-outside of acceptable sound speed
-range (SSMIN to SSMAX) it is not
-valid.
-```
-```
-IF SSVAL < SSMIN OR SSVAL > SSMAX, flag = 4
-```
-```
-Suspect = 3 N/A None^
-```
-```
-Pass = 1 If the speed of sound value (SSVAL) is
-within the acceptable sound speed
-range (SSMIN to SSMAX) it is valid.
-```
-```
-IF SSVAL ≥ SSMIN AND SSVAL ≤ SSMAX, flag = 1
-```
-```
+| Flags       | Condition                                                                                                              | Codable Instructions                           |
+|-------------|------------------------------------------------------------------------------------------------------------------------|------------------------------------------------|
+| Fail = 4    | If the speed of sound value (`SSVAL`) is outside of acceptable sound speed range (`SSMIN` to `SSMAX`) it is not valid. | `IF SSVAL < SSMIN OR SSVAL > SSMAX, flag = 4`  |
+| Suspect = 3 | N/A                                                                                                                    | None                                           |
+| Pass = 1    | If the speed of sound value (`SSVAL`) is within the acceptable sound speed range (`SSMIN` to `SSMAX`) it is valid.     | `IF SSVAL ≥ SSMIN AND SSVAL ≤ SSMAX, flag = 1` |
+
 Test Exception: Test cannot be applied if no sound speed is being reported.
-```
-```
-Test specifications to be established locally by operator: SSMIN and SSMAX
-Example: SSMIN = 1,475 m/s, SSMAX = 1,560 m/s, SSVAL = 1,528 m/s, flag = 1
-```
+Test specifications to be established locally by operator: `SSMIN` and `SSMAX`
+Example: `SSMIN = 1,475 m/s`, `SSMAX = 1,560 m/s`, `SSVAL = 1,528 m/s`, flag = 1
 
-```
-In-situ Currents
-```
-###### 3.3.2 Signal Quality Tests
+#### 3.3.2 Signal Quality Tests
 
 Signal quality tests are applied to each beam of the sensor and to each depth level that is transmitted by the
 
@@ -1763,7 +1562,7 @@ notes that operators need the subject matter expertise as well as a sincere inte
 
 thresholds to maximize the value of their QC effort.
 
-Sensors continue to become “smarter” and interoperable. For example, some QC procedures may be
+Sensors continue to become "smarter" and interoperable. For example, some QC procedures may be
 
 embedded within the sensor instrumentation package. Significant components of metadata will reside in the
 
@@ -1912,10 +1711,10 @@ Ocean.US, Arlington, VA, 304 pp. http://sccoos.ucsd.edu/docs/dmac_plan2005.pdf
 ```
 Integrated Marine Observing System [http://imos.org.au](http://imos.org.au) (see also https://github.com/aodn/imos-toolbox)
 
-Moore, A.N, D.L. Stewart, March 2003. “The effects of mobile scatterers on the quality of ADCP data in
+Moore, A.N, D.L. Stewart, March 2003. "The effects of mobile scatterers on the quality of ADCP data in
 
 ```
-differing marine environments.” Proceedings of the IEEE/OES Seventh Working Conference on Current
+differing marine environments." Proceedings of the IEEE/OES Seventh Working Conference on Current
 Measurement Technology. p. 202-206.
 ```
 Recommendations for in-situ data Real Time Quality Control, Authors: Sylvie Pouliquen and the DATA-
@@ -1936,10 +1735,10 @@ Symonds, D. 2013. QA/QC Parameters for Acoustic Doppler Current Profilers. Teled
 ```
 17 pp.
 ```
-Taylor, J.A.; Jonas, A.M. “Maximising data return: Towards a quality control strategy for managing and
+Taylor, J.A.; Jonas, A.M. "Maximising data return: Towards a quality control strategy for managing and
 
 ```
-processing TRDI ADCP data sets from moored instrumentation”, Current Measurement Technology,
+processing TRDI ADCP data sets from moored instrumentation", Current Measurement Technology,
 ```
 2008. CMTC 2008. IEEE/OES 9th Working Conference, p. 80 – 88.
 [http://ieeexplore.ieee.org/xpls/abs_all.jsp?arnumber=4480848](http://ieeexplore.ieee.org/xpls/abs_all.jsp?arnumber=4480848)

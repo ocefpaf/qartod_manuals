@@ -1,4 +1,4 @@
-![Logos for the Integrated Ocean Observing System and the Quality Assurance/Quality Control of Real-Time Oceanographic Data.](images/image1.png)
+![Logos for the Integrated Ocean Observing System and the Quality Assurance/Quality Control of Real-Time Oceanographic Data.](images_Water_Level/image01.png)
 
 # Manual for Real-Time Quality Control of Water Level Data
 
@@ -9,9 +9,9 @@ A Guide to Quality Control and Quality Assurance for Water Level Observations
 
 ## Document Validation
 
-![U.S. Integrated Ocean Observing System (IOOS) Logo](images/image2.jpeg)
+![U.S. Integrated Ocean Observing System (IOOS) Logo](images_Water_Level/image02.jpg)
 
-![U.S. IOOS Program Office Validation Signature Page Dated 04/05/2021 Carl C. Gouldman, U.S. IOOS Program Director Kathleen Bailey, U.S. IOOS Project Manager Julianna O. Thomas, QARTOD Board of Advisors Chair](images/image3.png)
+![U.S. IOOS Program Office Validation Signature Page Dated 04/05/2021 Carl C. Gouldman, U.S. IOOS Program Director Kathleen Bailey, U.S. IOOS Project Manager Julianna O. Thomas, QARTOD Board of Advisors Chair](images_Water_Level/image03.png)
 
 ## Revision History
 
@@ -216,7 +216,7 @@ The following sections describe the sensor technologies that are most often used
 
 Microwave radar altimeters have become popular within the past decade as this technology has evolved (Park et al. 2014). While free of many of the drawbacks of other WL sensors, microwave radar technology brings new modes of failure, such as the inability to measure water levels in the presence of ice and surprise occasional problems such as a bee's nest in the sensor horn. Figure 2-1 shows an example of a Xylem/Design Analysis H3611 microwave water level sensor installation by the NOS Center for Operational Oceanographic Products and Services (CO-OPS).
 
-![Microwave water level sensor mounted on a metal platform over the water. Arrow pointing to sensor horn is shown undeter the platform.](images/image4.jpg)
+![Microwave water level sensor mounted on a metal platform over the water. Arrow pointing to sensor horn is shown undeter the platform.](images_Water_Level/image04.jpg)
 
 <figcaption>Figure 2-1. Xylem/Design Analysis H3611 microwave water level sensor as installed by NOS/CO-OPS. Photo courtesy of NOS/CO-OPS.</figcaption>
 
@@ -224,7 +224,7 @@ Microwave radar altimeters have become popular within the past decade as this te
 
 Acoustic altimeters typically use a sounding tube but can also operate in open air. They are sensitive to variations in the speed of sound caused by temperature changes and temperature gradients along the acoustic transmission path. Sounding tubes may become obstructed with biota or ice, causing errors in the measurements. Effects of waves and currents have been partially mitigated using protective wells and orifice configurations (which may be expensive to install and maintain, depending on the project). Figure 2-2 shows a single-pile NOS/CO-OPS installation using an acoustic sensor. The inset depicts an Aquatrak sensor mounted atop a sounding tube in a protective well.
 
-![Photo of an elevated NWLON station with an inset photo showing a water level sensor similar to one housed inside the elevated station.](images/image5.jpg)
+![Photo of an elevated NWLON station with an inset photo showing a water level sensor similar to one housed inside the elevated station.](images_Water_Level/image05.jpg)
 
 <figcaption>Figure 2-2. An elevated NOS/CO-OPS NWLON station using an Aquatrak acoustic WL sensor (inset) with a sounding tube housed inside a protective 6-inch PVC well. Photo courtesy of NOS/CO-OPS.</figcaption>
 
@@ -232,7 +232,7 @@ Acoustic altimeters typically use a sounding tube but can also operate in open a
 
 Floats deployed in stilling wells are an old and proven technology. These systems can be fortified to operate in the presence of ice, but they are expensive to install. Intakes can become clogged with sediment, and the mechanisms used to transfer the float elevation to sensors (e.g., shaft-angle encoders) can have unique failure modes. Stilling wells in tidal areas are known to cause significant error in WL observations in the presence of high waves and currents. Figure 2-3 shows a typical NOS/CO-OPS Great Lakes installation of dual shaft-angle encoders and their respective floats deployed in the stilling well, also referred to as the sump. Sumps are large stilling wells that have an intake valve used to dampen wave action that might be transferred through the intake pipe to the sump.
 
-![Photo of shaft angle encoders sitting on a shelf.](images/image6.jpg)![Photo of several floats down in a stilling well.](images/image7.jpg)
+![Photo of shaft angle encoders sitting on a shelf.](images_Water_Level/image06.jpg)![Photo of several floats down in a stilling well.](images_Water_Level/image07.jpg)
 
 <figcaption>Figure 2-3. Redundant shaft-angle encoders (left) digitize the elevation of floats in a stilling well (right).</figcaption>
 
@@ -240,11 +240,11 @@ Floats deployed in stilling wells are an old and proven technology. These system
 
 Pressure sensors can be immune to ice, but pressure readings must be adjusted for variations in barometric pressure _and_ water density in real time as part of the conversion to derived real-time water level measurements. Pressure sensors can be vented to the atmosphere to automatically account for variations in atmospheric pressure; however, water density variations still must be accounted for. Sensor drift can be an issue for low-quality sensors, and moisture damage in the air tube is a common failure mode. Allowance for gravity variations must also be made at each installation site. Figure 2-4 provides a generalized schematic of a typical pressure sensor installation as used by the U.S. Geological Survey (USGS) and many others. The back pressure observed by a sensor that is not submerged yields a much more robust system. Figure 2-5 shows a typical NOS/CO-OPS backup pressure sensor orifice installation, which includes the use of parallel plates to reduce draw-down in the presence of currents.
 
-![Schematic shows the pressure sensor installed close to the water line with an orifice line from the sensor box (above ground) going below the ground and to the orifice located below the water surface.](images/image8.png)
+![Schematic shows the pressure sensor installed close to the water line with an orifice line from the sensor box (above ground) going below the ground and to the orifice located below the water surface.](images_Water_Level/image08.png)
 
 <figcaption>Figure 2-3. Schematic of a typical pressure sensor installation (courtesy of Michael Lee/USGS).</figcaption>
 
-![Photo of a pressure sensor installed under water.](images/image9.jpg)
+![Photo of a pressure sensor installed under water.](images_Water_Level/image09.jpg)
 
 <figcaption>Figure 2-4. A pressure sensor orifice with parallel plates to reduce draw-down in the presence of currents (courtesy of Rich Bourgerie/NOS/CO-OPS).</figcaption>
 
@@ -252,7 +252,7 @@ Pressure sensors can be immune to ice, but pressure readings must be adjusted fo
 
 Infrared laser altimeters reflect well from the sea surface, and sensor performance has improved while costs have decreased. However, performance in fog and heavy rain may not be optimum. The sensors are also affected by high waves and ice or other obstructions in the laser path. Figure 2-6 shows an infrared laser used by NOS/CO-OPS as a redundant bridge air gap sensor.
 
-![Photo of two side-by-side infrared laser sensors.](images/image10.jpg)
+![Photo of two side-by-side infrared laser sensors.](images_Water_Level/image10.jpg)
 
 <figcaption>Figure 2-6. Laser Technology infrared Universal Laser Sensors have been used as redundant air gap sensors by NOS/CO-OPS (courtesy of Mark Bushnell, CoastalObsTechServices).</figcaption>
 
@@ -260,7 +260,7 @@ Infrared laser altimeters reflect well from the sea surface, and sensor performa
 
 The accuracy of elevations derived by GPS continues to improve as enhancements are made to national and international global navigation satellite systems (GNSS). The location of the GPS sensor reference point must be calibrated to reflect the water level on the buoy. The onboard processing system must use a tilt-motion sensor to account for wave action. Mooring configurations must be designed to mitigate effects of high currents. Water density variations and bio-fouling can also create biases by varying the float plane of the buoy. GPS data processing is complicated for real-time application and may require shore-based systems for real-time kinematic deployments. Technology-specific QC checks based upon GNSS parameters, such as Positional Dilution of Precision, number of satellites in view, and ephemeris update rates, will be added as this capability evolves. Figure 2-7 shows a GPS buoy on the deck of a small vessel getting ready for deployment. This particular buoy does not provide real-time water level data and requires post-processing of the GPS data. However, real-time information is obtained on buoy performance and operational status. Although a GPS buoy system has been recently approved by NOAA/NOS for some operational applications, real-time processing of water level data using GNSS parameters is still under development; associated QC guidelines will be addressed in the future.
 
-![Photo of a yellow water level buoy with a NOAA label attached sitting in a boat ready to be launched.](images/image11.jpeg)
+![Photo of a yellow water level buoy with a NOAA label attached sitting in a boat ready to be launched.](images_Water_Level/image11.jpg)
 
 <figcaption>Figure 2-7. This AXYS GPS water level buoy is ready to be deployed by NOAA/NOS for evaluation in the southern Chesapeake Bay (courtesy of Mark Bushnell, CoastalObsTechServices).</figcaption>
 
@@ -268,7 +268,7 @@ The accuracy of elevations derived by GPS continues to improve as enhancements a
 
 Ground-based Global Navigation Satellite System Reflectometry (GNSS-R) has the potential to become a viable source of operational coastal WL observations. Comparisons between the direct GPS signal and the signal reflected from the sea surface are used to derive a WL measurement (Figure 2-8). Studies comparing GNSS-R WL measurements with co-located traditional WL gauges yield correlation coefficients greater than 0.9 and root mean square errors smaller than 5 cm (Geremia-Nievinski et al. 2020).
 
-![Diagram shows GNSS signals traveling to the surface and being reflected from the sea surface.](images/image12.png)
+![Diagram shows GNSS signals traveling to the surface and being reflected from the sea surface.](images_Water_Level/image12.png)
 
 <figcaption>Figure 2-8. Direct and reflected GNSS signals can be used to extract a WL measurement (image from Chen 2019).</figcaption>
 

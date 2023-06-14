@@ -29,7 +29,8 @@ theme:
 
 nav:
   - Home: index.md
-  - Water Level: Real-Time_Quality_Control_of_Water_Level_Data.md
+  - Water Level: Water_Level.md
+  - ADCP: ADCP.md
 
 extra:
   social:

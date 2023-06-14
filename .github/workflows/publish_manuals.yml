@@ -27,9 +27,11 @@ jobs:
         run: >
           pushd docs/
           && mkdir -p compiled_manuals
-          && pandoc Real-Time_Quality_Control_of_Water_Level_Data.md --from=markdown --output=Real-Time_Quality_Control_of_Water_Level_Data.pdf --to=pdf --pdf-engine=tectonic
-          && pandoc Real-Time_Quality_Control_of_Water_Level_Data.md --from=markdown --output=Real-Time_Quality_Control_of_Water_Level_Data.docx --to=docx
-          && mv Real-Time_Quality_Control_of_Water_Level_Data.* compiled_manuals/
+          && pandoc Water_Level.md --from=markdown --output=Water_Level.pdf --to=pdf --pdf-engine=tectonic
+          && pandoc Water_Level.md --from=markdown --output=Water_Level.docx --to=docx
+          && pandoc ADCP.md --from=markdown --output=ADCP.pdf --to=pdf --pdf-engine=tectonic
+          && pandoc ADCP.md --from=markdown --output=ADCP.docx --to=docx
+          && mv *.{docx,pdf} compiled_manuals/
           && popd
 
       - name: Upload artifacts to Github
@@ -42,7 +44,7 @@ jobs:
         uses: svenstaro/upload-release-action@v2
         with:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
-          file: docs/compiled_manuals/Real-Time_Quality_Control_of_Water_Level_Data.*
+          file: docs/compiled_manuals/Water_Level.*
           tag: ${{ github.ref }}
           overwrite: true
           file_glob: true

@@ -723,1784 +723,435 @@ Example: `SSMIN = 1,475 m/s`, `SSMAX = 1,560 m/s`, `SSVAL = 1,528 m/s`, flag = 1
 
 #### 3.3.2 Signal Quality Tests
 
-Signal quality tests are applied to each beam of the sensor and to each depth level that is transmitted by the
+Signal quality tests are applied to each beam of the sensor and to each depth level that is transmitted by the sensor.
 
-sensor.
+**Noise Floor (Test 5) – Strongly Recommended**
 
-###### Noise Floor (Test 5) – Strongly Recommended
+Ensure that measured values of signal are above the noise value.
+System noise within each of the beams should be within a specified range of values.
+If any of the beams fail the test,
+the sensor fails the test and should not be used.
 
-##### Ensure that measured values of signal are above the noise value.
+| Flags       | Condition                                                                                                              | Codable Instructions                                                            |
+|-------------|------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------|
+| Fail = 4    | System noise values `[SCMNOIS(j)]` are outside a count range. | `If SCMNOIS(j) < COUNTMIN OR SCMNOIS(j) > COUNTMAX, flag (j) = 4`                                                                        |
+| Suspect = 3 | N/A                                                           | None                                                                                                                                     |
+| Pass = 1    | System noise values `[SCMNOIS(j)]` are within a count range.  | `If SCMNOIS(j) ≥ COUNTMIN AND SCMNOIS(j) ≤ COUNTMAX, flag (j) = 1` All flags must equal 1, `FLAG(1) = FLAG(2) = FLAG(3) = 1` to continue |
 
-```
-System noise within each of the beams should be within a specified range of values. If any of the beams fail
-the test, the sensor fails the test and should not be used.
-```
-###### Flags Condition Codable Instructions
+Test Exception: For instruments with extra beams,
+a solution can be achieved with a bad beam.
+A four-beam system can provide 3-D currents if just one beam is bad.
+At least three beams must pass this test for vertical profiling,
+and at least two beams are required for horizontal profiling.
 
-```
-Fail = 4 System noise values [SCMNOIS( j )]
-are outside a count range.
-```
-```
-If SCMNOIS( j ) < COUNTMIN OR
-SCMNOIS( j ) > COUNTMAX, flag ( j ) = 4
-```
-```
-Suspect = 3 N/A None^
-```
-```
-Pass = 1 System noise values [SCMNOIS( j )]
-are within a count range.
-```
-```
-If SCMNOIS( j ) ≥ COUNTMIN AND
-SCMNOIS( j ) ≤ COUNTMAX, flag ( j ) = 1
-All flags must equal 1, FLAG(1) = FLAG(2) =
-FLAG(3) = 1 to continue
-Test Exception: For instruments with extra beams, a solution can be achieved with a bad beam. A four-
-beam system can provide 3-D currents if just one beam is bad. At least three beams must pass this test for
-vertical profiling, and at least two beams are required for horizontal profiling.
-```
-```
 Test does not apply unless the particular property is actually included in the data stream.
-```
-```
 Test specifications to be established locally by operator.
-```
-###### Example: COUNTMIN = 25 counts; COUNTMAX = 30 counts (Nortek Aquadopp)
 
-###### Signal Strength (Test 6) - Required
+Example: `COUNTMIN = 25` counts; `COUNTMAX = 30` counts (Nortek Aquadopp)
 
-##### Ensure that the signal strength is sufficient to produce good data.
+**Signal Strength (Test 6) - Required**
 
-```
-Signal strength within each of the beams should be above a specified threshold (SCMDBMIN). At least three
-beams must pass this test for vertical profiling, and at least two beams are required for horizontal profiling.
-```
-###### Flags Condition Codable Instructions
+Ensure that the signal strength is sufficient to produce good data.
+Signal strength within each of the beams should be above a specified threshold (`SCMDBMIN`).
+At least three beams must pass this test for vertical profiling,
+and at least two beams are required for horizontal profiling.
 
-```
-Fail = 4 Signal strength values [SCMDB( j )] for
-each beam, j , are greater than a
-minimum value.
-```
-```
-IF SCMDB( j ) < SCMDBMIN, flag = 4
-```
-```
-Suspect = 3 N/A None^
-```
-```
-Pass = 1 Signal strength values exceed the
-minimum value for good data.
-```
-```
-IF SCMDB( j ) ≥ SCMDBMIN, flag = 1
-```
-```
+| Flags       | Condition                                                                                  | Codable Instructions                 |
+|-------------|--------------------------------------------------------------------------------------------|--------------------------------------|
+| Fail = 4    | Signal strength values `[SCMDB(j)]` for each beam, `j` , are greater than a minimum value. | `IF SCMDB(j) < SCMDBMIN, flag = 4`   |
+| Suspect = 3 | N/A                                                                                        | None                                 |
+| Pass = 1    | Signal strength values exceed the minimum value for good data.                             | `IF SCMDB( j ) ≥ SCMDBMIN, flag = 1` |
+
 Test Exception: Test does not apply unless the particular property is actually included in the data stream.
-```
-```
 Test specifications to be established by the manufacturer.
-Example: SCMDBMIN = 25 counts (Nortek Aquadopp)
-```
+Example: `SCMDBMIN = 25` counts (Nortek Aquadopp)
 
-###### Signal-to-Noise (Test 7) – Strongly Recommended
+**Signal-to-Noise (Test 7) – Strongly Recommended**
 
-##### Test that the signal-to-noise ratio is sufficient.
+Test that the signal-to-noise ratio is sufficient.
+The signal-to-noise ratio value should exceed an operator-prescribed value for each bin for the measurements to be valid.
 
-```
-The signal-to-noise ratio value should exceed an operator-prescribed value for each bin for the
-measurements to be valid.
-```
-###### Flags Condition Codable Instructions
+| Flags       | Condition                                                                                                                             | Codable Instructions           |
+|-------------|---------------------------------------------------------------------------------------------------------------------------------------|--------------------------------|
+| Fail = 4    | If the signal-to-noise ratio value `[SNRVAL(i)]` is less than the operator-prescribed value (`SNRMIN`), the measurement is not valid. | `If SNRVAL < SNRMIN, flag = 4` |
+| Suspect = 3 | N/A                                                                                                                                   | None                           |
+| Pass = 1    | Applies for test pass condition.                                                                                                      | `If SNRVAL ≥ SNRMIN`, flag = 1 |
 
-```
-Fail = 4 If the signal-to-noise ratio value
-[SNRVAL( i )] is less than the operator-
-prescribed value (SNRMIN), the
-measurement is not valid.
-```
-```
-If SNRVAL < SNRMIN, flag = 4
-```
-```
-Suspect = 3 N/A None^
-Pass = 1 Applies for test pass condition. If SNRVAL ≥ SNRMIN, flag = 1
-```
-```
 Test Exception: Test does not apply unless the particular property is actually included in the data stream.
-```
-```
 Test specifications to be established locally by operator.
 Example: Operators to provide examples as procedures are implemented.
-```
-###### Correlation Magnitude (Test 8) – Strongly Recommended
 
-##### Test that correlation magnitude is above an acceptable threshold.
 
-```
-A key quality control parameter for broadband ADCPs is the correlation magnitude. This is essentially a
-measurement of how much the particle distribution has changed between phase measurements. The less
-the distribution has changed, the higher the correlation, and the more precise the velocity measurement.
-```
-###### Correlation magnitude is provided for each bin ( i ) and each beam ( j ).
+**Correlation Magnitude (Test 8) – Strongly Recommended**
 
-###### Flags Condition Codable Instructions
+Test that correlation magnitude is above an acceptable threshold.
 
-```
-Fail = 4 If the correlation magnitude
-[CMAG( i , j )] falls below a certain count
-level (CMAGMIN), the measurement
-for that bin and beam fails.
-```
-```
-If CMAG( i , j ) < CMAGMIN, flag = 4
-```
-```
-Suspect = 3 If the correlation magnitude
-[CMAG( i , j )] is between the minimum
-(CMAGMIN) and maximum
-(CMAGMAX) count levels, the
-measurement for that bin and beam
-passes, but is considered suspect.
-```
-```
-IF CMAG( i , j ) ≥ CMAGMIN
-AND
-CMAG( i , j ) ≤ CMAGMAX, flag = 3
-```
-```
-Pass = 1 If the correlation magnitude
-[CMAG( i , j )] is above a maximum count
-level (CMAGMAX), the measurement
-for that bin and beam passes.
-```
-```
-IF CMAG( i , j ) > CMAGMAX, flag = 1
-```
-```
+A key quality control parameter for broadband ADCPs is the correlation magnitude.
+This is essentially a measurement of how much the particle distribution has changed between phase measurements.
+The less the distribution has changed,
+the higher the correlation,
+and the more precise the velocity measurement.
+Correlation magnitude is provided for each bin (`i`) and each beam (`j`).
+
+| Flags       | Condition                                                                                                                                                                                     | Codable Instructions                                         |
+|-------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------|
+| Fail = 4    | If the correlation magnitude `[CMAG(i, j)]` falls below a certain count level (`CMAGMIN`), the measurement for that bin and beam fails.                                                       | `If CMAG(i, j) < CMAGMIN`, flag = 4                          |
+| Suspect = 3 | If the correlation magnitude `[CMAG(i, j)]` is between the minimum (`CMAGMIN`) and maximum (`CMAGMAX`) count levels, the measurement for that bin and beam passes, but is considered suspect. | `IF CMAG(i, j) ≥ CMAGMIN AND CMAG(i, j) ≤ CMAGMAX`, flag = 3 |
+| Pass = 1    | If the correlation magnitude `[CMAG(i, j)]` is above a maximum count level (`CMAGMAX`), the measurement for that bin and beam passes.                                                         | `IF CMAG( i , j ) > CMAGMAX`, flag = 1                       |
+
+
 Test Exception: This test is primarily for the Teledyne RDI ADCP sensors.
-```
-```
 Test specifications to be established by the manufacturer.
-Example: Correlation Magnitude (in counts) ≥3 beams need to pass test—CMAGMIN = 65 ,CMAGMAX = 140.
-```
+Example: Correlation Magnitude (in counts) ≥3 beams need to pass test `CMAGMIN = 65`, `CMAGMAX = 140`.
 
-```
-In-situ Currents
-```
-###### Percent Good (Test 9) – Strongly Recommended
+**Percent Good (Test 9) – Strongly Recommended**
 
-##### Percentage of high data quality measurements to produce good velocities.
+Percentage of high data quality measurements to produce good velocities.
+A key quality control parameter,
+percent good,
+indicates what fraction of the pings passed the various error thresholds.
+The percent good test determines whether the data that are being returned are sufficient to provide the required data quality.
+Different methods are used by different manufacturers.
+For Teledyne RDI,
+there are percent good three-beam `[PG1(j)]` solutions (one beam rejected) and percent good four-beam `[PG4(j)]` solutions.
+This test is applied to each depth bin, `i`.
 
-```
-A key quality control parameter, percent good, indicates what fraction of the pings passed the various error
-thresholds. The percent good test determines whether the data that are being returned are sufficient to
-provide the required data quality. Different methods are used by different manufacturers. For Teledyne
-RDI, there are percent good three-beam [PG1( j )] solutions (one beam rejected) and percent good four-
-beam [PG4( j )] solutions. This test is applied to each depth bin, i.
-```
-###### Flags Condition Codable Instructions
+| Flags       | Condition                                                                                                                                             | Codable Instructions                                                   |
+|-------------|-------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------|
+| Fail = 4    | If `PG1(i)` and `PG4(i)` combined do not exceed a minimum value (`PGMINLO`), the measurement at that depth bin (`i`) fails.                           | `IF PG1(i) + PG4(i) < PGMINLO`, flag = 4                               |
+| Suspect = 3 | If `PG1(i)` and `PG4(i)` combined fall in the range between `PGMINLO` and `PGMINHI`, the measurement at that depth passes, but is flagged as suspect. | `IF PG1(i) + PG4(i) ≥ PGMINLO AND PG3(i) + PG4(i) ≤ PGMINHI`, flag = 3 |
+| Pass = 1    | If `PG1(i)` and `PG4(i)` combined exceed a minimum value (`PGMINHI`), the measurement at that depth bin (`i`) passes.                                 | `IF PG1(i) + PG4(i  > PGMINHI`, flag = 1                               |
 
-```
-Fail = 4 If PG1( i ) and PG4( i ) combined do not
-exceed a minimum value (PGMINLO), the
-measurement at that depth bin ( i ) fails.
-```
-```
-IF PG1( i ) + PG4( i ) < PGMINLO, flag = 4
-```
-```
-Suspect = 3 If PG1( i ) and PG4( i ) combined fall in the
-range between PGMINLO and PGMINHI,
-the measurement at that depth passes,
-but is flagged as suspect.
-```
-```
-IF PG1( i ) + PG4( i ) ≥ PGMINLO AND
-PG3( i ) + PG4( i ) ≤ PGMINHI, flag = 3
-```
-```
-Pass = 1 If PG1( i ) and PG4( i ) combined exceed a
-minimum value (PGMINHI), the
-measurement at that depth bin ( i )
-passes.
-```
-```
-IF PG1( i ) + PG4( i ) > PGMINHI, flag = 1
-```
-```
 Test Exception: This applies only to Teledyne RDI sensors, excluding beam coordinate configuration.
-```
-```
-Test specifications to be established by the manufacturer. In this case, the PGMINLO and PGMINHI values
-differ depending on the frequency of Teledyne RDI system used and the sampling strategy (pings per second
-and sampling interval).
-Example: Percent good for Teledyne RDI ADCPs, fail = PG1 + PG4 < 25 and suspect = PG1 + PG4 < 75
-```
+Test specifications to be established by the manufacturer.
+In this case,
+the `PGMINLO` and `PGMINHI` values differ depending on the frequency of Teledyne RDI system used and the sampling strategy (pings per second and sampling interval).
+Example: Percent good for Teledyne RDI ADCPs, `fail = PG1 + PG4 < 25` and `suspect = PG1 + PG4 < 75`
 
-###### 3.3.3 Current Velocity Tests
+#### 3.3.3 Current Velocity Tests
 
 These tests check the validity of the current velocity (speed and direction) measurements.
 
-###### Current Speed (Test 10) - Required
+**Current Speed (Test 10) - Required**
 
-##### Ensure that the current speed is reasonable.
+Ensure that the current speed is reasonable.
 
-```
-Current speed is typically provided as a positive value. This test checks for unrealistically high current speed
-values and is applied to each depth bin ( i ). The maximum current speed should be set based on the
-environment in which the instrument will be deployed, as well as for all reasonable high-speed anomalies.
-```
-###### Flags Condition Codable Instructions
+Current speed is typically provided as a positive value.
+This test checks for unrealistically high current speed values and is applied to each depth bin (`i`).
+The maximum current speed should be set based on the environment in which the instrument will be deployed,
+as well as for all reasonable high-speed anomalies.
 
-```
-Fail = 4 N/A. N/A^
-Suspect = 3 If the current speed [CSPD( i )]
-exceeds a reasonable maximum
-value (SPDMAX), the measurement
-is suspect.
-```
-```
-IF CSPD( i ) > SPDMAX, flag = 3
-```
-```
-Pass = 1 If the current speed [CSPD( i )] is less
-than or equal to a reasonable
-maximum value (SPDMAX), the
-measurement passes.
-```
-```
-IF CSPD( i ) ≤ SPDMAX, flag = 1
-```
-```
+
+| Flags       | Condition                                                                                                                | Codable Instructions                                                   |
+|-------------|--------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------|
+| Fail = 4    | N/A                                                                                                                      | N/A                                                                    |
+| Suspect = 3 | If the current speed `[CSPD(i)]` exceeds a reasonable maximum value (`SPDMAX`), the measurement is suspect.              | `IF CSPD(i) > SPDMAX`, flag = 3                                        |
+| Pass = 1    | If the current speed `[CSPD(i)]` is less than or equal to a reasonable maximum value (`SPDMAX`), the measurement passes. | `IF CSPD(i) ≤ SPDMAX`, flag = 1                                        |
+
 Test Exception: None.
 Applies to: All current measurements.
-```
-```
 Test specifications to be established locally by operator.
-Example: SPDMAX = 250 cm/s
-```
-###### Current Direction (Test 11) - Required
+Example: `SPDMAX = 250 cm/s`
 
-##### Ensure that the current direction is reasonable.
+**Current Direction (Test 11) - Required**
 
-```
-This test ensures that the current direction values fall between 0 and 360 degrees, inclusive. In most
-systems, 0 is reported as the absence of any current and 360 degrees indicates a current to the north. This
-test is applied to each depth bin ( i ).
-```
-###### Flags Condition Codable Instructions
+Ensure that the current direction is reasonable.
 
-```
-Fail = 4 If current direction [CDIR( i) ] is less
-than 0.00 degrees or greater than 360
-degrees, the measurement is invalid.
-```
-```
-IF CDIR( i ) < 0.00 OR CDIR( i ) > 360.00, flag = 4
-```
-```
-Suspect = 3 N/A
-Pass = 1 If current direction [CDIR( i) ] is greater
-than 0.00 degrees and less than or
-equal to 360 degrees, the
-measurement is valid.
-```
-```
-IF CDIR( i ) ≥ 0.00 AND CDIR( i ) ≤ 360.00, flag = 1
-```
-```
+This test ensures that the current direction values fall between 0 and 360 degrees,
+inclusive.
+In most systems,
+0 is reported as the absence of any current and 360 degrees indicates a current to the north.
+This test is applied to each depth bin (`i`).
+
+| Flags       | Condition                                                                                                                      | Codable Instructions                               |
+|-------------|--------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------|
+| Fail = 4    | If current direction `[CDIR(i)]` is less than 0.00 degrees or greater than 360 degrees, the measurement is invalid.            | `IF CDIR(i) < 0.00 OR CDIR(i) > 360.00`, flag = 4  |
+| Suspect = 3 | N/A                                                                                                                            |                                                    |
+| Pass = 1    | If current direction `[CDIR(i)]` is greater than 0.00 degrees and less than or equal to 360 degrees, the measurement is valid. | `IF CDIR(i) ≥ 0.00 AND CDIR(i) ≤ 360.00`, flag = 1 |
+
 Test Exception: None. Applies to all current measurements.
-```
-```
 Test specifications may be adjusted locally depending on their application of 0.00 and 360.00 values.
 Examples: None needed.
-```
 
-```
-In-situ Currents
-```
-###### Horizontal Velocity (Test 12) - Required
+**Horizontal Velocity (Test 12) - Required**
 
-##### Ensure that horizontal velocities are valid measurements.
+Ensure that horizontal velocities are valid measurements.
 
-```
-Horizontal velocities u( i ) and v( i ) may be represented as components (East-West and North-South,
-Alongshore and Cross-Shore, Along-shelf and Cross-Shelf, Along-Isobath and Cross-Isobath, etc.) of the
-current speed and direction. This test ensures that speeds in the respective horizontal directions
-(HVELMAXX and HVELMAXY) are valid. Maximum allowed values may differ in the orthogonal directions.
-This test is applied to each depth bin ( i ).
-```
-###### Flags Condition Codable Instructions
+Horizontal velocities u(`i`) and v(`i`) may be represented as components
+(East-West and North-South, Alongshore and Cross-Shore, Along-shelf and Cross-Shelf, Along-Isobath and Cross-Isobath, etc.)
+of the current speed and direction.
+This test ensures that speeds in the respective horizontal directions (`HVELMAXX` and `HVELMAXY`) are valid.
+Maximum allowed values may differ in the orthogonal directions.
+This test is applied to each depth bin (`i`).
 
-```
-Fail = 4 Horizontal velocities exceed expected
-maximum values in the two horizontal
-directions.
-```
-```
-IF ABS[u( i )] > HVELMAXX OR
-IF ABS[v( i )] > HVELMAXY, flag = 4
-```
-```
-Suspect = 3 N/A
-```
-```
-Pass = 1 Horizontal velocities fall within the
-expected range of values.
-```
-```
-IF ABS[u( j )] ≤ HVELMAXX AND
-ABS[v( j )] ≤ HVELMAXY, flag = 1
-```
-```
+| Flags       | Condition                                                                              | Codable Instructions                                           |
+|-------------|----------------------------------------------------------------------------------------|----------------------------------------------------------------|
+| Fail = 4    | Horizontal velocities exceed expected maximum values in the two horizontal directions. | `IF ABS[u(i)] > HVELMAXX OR IF ABS[v(i)] > HVELMAXY`, flag = 4 |
+| Suspect = 3 | N/A                                                                                    |                                                                |
+| Pass = 1    | Horizontal velocities fall within the expected range of values.                        | `IF ABS[u(j)] ≤ HVELMAXX AND ABS[v(j)] ≤ HVELMAXY`, flag = 1   |
+
 Test Exception: None.
-```
-```
 Test specifications to be established locally by operator.
 Example: Operators to provide examples as procedures are implemented.
-```
-###### Vertical Velocity (Test 13) – Strongly Recommended
 
-##### Ensure that vertical velocities are valid measurements.
 
-```
-Vertical velocities are reported by many ADCPs. They are calculated just like the horizontal velocities but
-along the vertical axis. This test is applied to each depth bin ( i ).
-```
-###### Flags Condition Codable Instructions
+**Vertical Velocity (Test 13) – Strongly Recommended**
 
-```
-Fail = 4 N/A None^
-Suspect = 3 If vertical velocity [w( i )] in a depth bin
-is greater than 1% of the current
-speed [CSPD( i )] in the depth bin, the
-measurement fails.
-```
-```
-IF ABS[w( i )] > (0.01*CSPD( i )), flag = 3
-```
-```
-Pass = 1 If vertical velocity [w( i )] in a depth bin
-is less than or equal to 1% of the
-current speed [CSPD( i )] in the depth
-bin, the measurement passes.
-```
-```
-IF ABS[w( i )] ≤ (0.01*CSPD( i )), flag = 1
-```
-```
-Test Exception: Alternately, a maximum vertical velocity, VELMAX, may be set and inserted for the
-(0.01*CSPD( j )) value.
-```
-```
+Ensure that vertical velocities are valid measurements.
+Vertical velocities are reported by many ADCPs.
+They are calculated just like the horizontal velocities but along the vertical axis.
+This test is applied to each depth bin (`i`).
+
+| Flags       | Condition                                                                                                                                          | Codable Instructions                      |
+|-------------|----------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------|
+| Fail = 4    | N/A                                                                                                                                                | None                                      |
+| Suspect = 3 | If vertical velocity `[w(i)]` in a depth bin is greater than 1% of the current speed [CSPD(`i`)] in the depth bin, the measurement fails.          | `IF ABS[w(i)] > (0.01*CSPD(i))`, flag = 3 |
+| Pass = 1    | If vertical velocity `[w(i)]` in a depth bin is less than or equal to 1% of the current speed `[CSPD(i)]` in the depth bin, the measurement passes.| `IF ABS[w(i)] ≤ (0.01*CSPD(i))`, flag = 1 |
+
+Test Exception: Alternately,
+a maximum vertical velocity,
+`VELMAX`,
+may be set and inserted for the `(0.01*CSPD(j))` value.
+
 Test specifications may be established locally by operator.
-Example: VELMAX = 0.15 m/s
-```
+Example: `VELMAX = 0.15 m/s`
 
-###### Error Velocity (Test 14) – Strongly Recommended
+**Error Velocity (Test 14) – Strongly Recommended**
 
-##### Test that the error velocity is below an acceptable threshold.
+Test that the error velocity is below an acceptable threshold.
 
-```
-Error velocity is a key QC parameter that derives from the four-beam geometry of an ADCP. Each pair of
-opposing beams provides one measurement of the vertical velocity and one component of the horizontal
-velocity, so there are two independent measurements of velocity that can be compared. If the flow field is
-homogeneous (http://www.teledynemarine.com/rdi), the difference between these velocities will average
-to zero. The error velocity can be treated as an indication of errors in the horizontal velocity measurements.
-```
-###### This test is applied to each depth bin ( i ).
+Error velocity is a key QC parameter that derives from the four-beam geometry of an ADCP.
+Each pair of opposing beams provides one measurement of the vertical velocity and one component of the horizontal velocity,
+so there are two independent measurements of velocity that can be compared.
+If the flow field is homogeneous
+([http://www.teledynemarine.com/rdi](http://www.teledynemarine.com/rdi)),
+the difference between these velocities will average to zero.
+The error velocity can be treated as an indication of errors in the horizontal velocity measurements.
 
-###### Flags Condition Codable Instructions
+This test is applied to each depth bin (`i`).
 
-```
-Fail = 4 If the error velocity [EV( i )] within a
-depth bin exceeds a manufacturer-
-provided maximum value (EVMAX),
-the velocity measurements at that
-depth fail.
-```
-```
-IF EV( i ) > EVMAX, flag = 4
-```
-```
-Suspect = 3 If the error velocity [EV( i )] within a
-depth bin exceeds a manufacturer-
-provided minimum value (EVMIN) but
-is less than a manufacturer-provided
-maximum value (EVMAX), the
-velocity measurements at that depth
-pass but are flagged as suspect.
-```
-```
-IF EV( i ) ≤ EVMAX AND EV( i ) ≥ EVMIN, flag = 3
-```
-```
-Pass = 1 If the error velocity [EV( i )] within a
-depth bin is less than a manufacturer-
-provided minimum value (EVMIN),
-the velocity measurements at that
-depth pass.
-```
-```
-IF EV( i ) < EVMIN, flag = 1
-```
-```
+| Flags       | Condition                                                                                                                                                                                                                                             | Codable Instructions                           |
+|-------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------|
+| Fail = 4    | If the error velocity `[EV(i)]` within a depth bin exceeds a manufacturer-provided maximum value (`EVMAX`), the velocity measurements at that depth fail.                                                                                             | `IF EV( i ) > EVMAX`, flag = 4                 |
+| Suspect = 3 | If the error velocity `[EV(i)]` within a depth bin exceeds a manufacturer-provided minimum value (`EVMIN`) but is less than a manufacturer-provided maximum value (`EVMAX`), the velocity measurements at that depth pass but are flagged as suspect. | `IF EV(i) ≤ EVMAX AND EV(i) ≥ EVMIN`, flag = 3 |
+| Pass = 1    | If the error velocity `[EV(i)]` within a depth bin is less than a manufacturer-provided minimum value `(EVMIN)`, the velocity measurements at that depth pass.                                                                                        | `IF EV(i) < EVMIN`, flag = 1                   |
+
 Test Exception: Can be used only for ADCPs with four or more beams.
-```
-```
 Test specifications to be established by the manufacturer.
-Example: EVMAX = 20, EVMIN = 15
-```
+Example: `EVMAX = 20`, `EVMIN = 15`
 
-```
-In-situ Currents
-```
-###### u, v Rate of Change (Test 15) – Strongly Recommended
+**u, v Rate of Change (Test 15) – Strongly Recommended**
 
-##### Test that velocity/direction change is below an acceptable threshold.
+Test that velocity/direction change is below an acceptable threshold.
 
-```
-The difference between the most recent u, v velocity components ( n ) are compared to the previous u, v
-observations ( n- 1 ). If the change exceeds the specified thresholds, data are flagged fail or suspect. This test
-is applied to each depth bin ( i ).
-Some operators may wish to implement the rate of change test on pitch/roll/heading outputs of fixed
-```
-##### mounted ADCPs to test for unexpected platform motion caused, for example, by a ship anchor strike.
+The difference between the most recent u, v velocity components (`n`) are compared to the previous u, v observations (`n-1`).
+If the change exceeds the specified thresholds,
+data are flagged fail or suspect.
+This test is applied to each depth bin (`i`).
+Some operators may wish to implement the rate of change test on pitch/roll/heading outputs of fixed mounted ADCPs to test for unexpected platform motion caused,
+for example,
+by a ship anchor strike.
 
-###### Flags Condition Codable Instructions
+| Flags       | Condition                                                                                                                                                                                                          | Codable Instructions                                                                                    |
+|-------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| Fail = 4    | If the absolute value of the difference `u(i, n) - u(i, n-1)` or `v(i, n) - v(i, n-1)` exceeds the fail threshold `RC_VEL_FAIL`, the velocity/direction measurements at that depth fails.                          | `IF ABS[u(i, n) - u(i, n-1)] OR ABS[v(i, n) - v(i, n-1)] ≥ RC_VEL_FAIL`, flag = 4                       |
+| Suspect = 3 | If the absolute value of the difference `u(i, n) - u(i, n-1)` or `v(i, n) - v(i, n-1)` exceeds the suspect threshold (`RC_VEL_SUSPECT`), the velocity/direction measurements at that depth are flagged as suspect. | `IF ABS[u(i, n) - u(i, n-1)] OR ABS[v(i, n) - v(i, n-1 )] ≥ RC_VEL_SUSPECT AND < RC_VEL_FAIL`, flag = 3 |
+| Pass = 1    | If the absolute value of the difference `u(i, n) - u(i, n-1)` and `v(i, n) - v(i, n-1)` are less than the suspect threshold `RC_VEL_SUSPECT`, the velocity/direction measurements at that depth pass.              | `IF ABS[u(i, n) - u(i, n-1)] AND ABS[v(i, n) - v(i, n-1)] < RC_VEL_SUSPECT`, flag = 1                   |
 
-```
-Fail = 4 If the absolute value of the
-difference u( i,n ) – u( i,n- 1 ) or
-v( i,n ) – v( i,n- 1 ) exceeds the fail
-threshold RC_VEL_FAIL, the
-velocity/direction measurements
-at that depth fails.
-```
-```
-IF ABS[u( i,n ) – u( i,n- 1 )] OR ABS[v( i,n ) – v( i,n- 1 )] ≥
-RC_VEL_FAIL , flag = 4
-```
-```
-Suspect = 3 If the absolute value of the
-difference u( i,n ) – u( i,n- 1 ) or
-v( i,n ) – v( i,n- 1 ) exceeds the
-suspect threshold
-(RC_VEL_SUSPECT), the
-velocity/direction measurements
-at that depth are flagged as
-suspect.
-```
-```
-IF ABS[u( i,n ) – u( i,n- 1 )] OR ABS[v( i,n ) – v( i,n- 1 )] ≥
-RC_VEL_SUSPECT AND < RC_VEL_FAIL , flag = 3
-```
-```
-Pass = 1 If the absolute value of the
-difference u( i,n ) – u( i,n- 1 ) and
-v( i,n ) – v( i,n- 1 ) are less than the
-suspect threshold
-RC_VEL_SUSPECT, the
-velocity/direction measurements
-at that depth pass.
-```
-```
-IF ABS[u( i,n ) – u( i,n- 1 )] AND ABS[v( i,n ) – v( i,n- 1 )]
-< RC_VEL_SUSPECT , flag = 1
-```
-```
+
 Test Exception: None.
-```
-```
-Example: RC_VEL_FAIL = 100 cm/s, RC_VEL_SUSPECT = 50 cm/s
-```
+Example: `RC_VEL_FAIL = 100 cm/s`, `RC_VEL_SUSPECT = 50 cm/s`
 
-###### u, v Spike (Test 16) – Strongly Recommended
+**u, v Spike (Test 16) – Strongly Recommended**
 
-##### Test if u, v ( n- 1 ) values exceed selected thresholds relative to adjacent time series
+Test if u, v (n-1) values exceed selected thresholds relative to adjacent time series data points.
 
-##### data points.
+This check is for single-value spikes,
+specifically the u, v values at point n-1.
+Spikes consisting of more than one data point are difficult to capture,
+but their onset may be flagged by the rate of change test.
+This test is applied to each depth bin (`i`).
+The spike test consists of two operator-selected thresholds,
+`uv_SPIKE_FAIL` and `uv_SPIKE_SUSPECT`.
+Adjacent data points u(_n<sub>-2</sub> and n<sub>0</sub>) are averaged to form a spike reference (`u_SPK_REF`),
+and adjacent data points v(n-2 and n) are averaged to form a spike reference (`v_SPK_REF`).
+Only adjacent data points that have been flagged pass should be used to form the spike reference.
+When absent,
+earlier observations may need to be employed.
+The absolute value of the spike is tested to capture positive and negative spikes.
+Large spikes are easier to identify as outliers and flag as failures.
+Smaller spikes may be real and are only flagged suspect.
+The thresholds may be fixed values or dynamically established
+(for example, a multiple of the standard deviation over an operator-selected period).
+They may also be expressed as a function of time (e.g., d(u)/dt) to accommodate varying time increments.
+An alternative spike test may use a third difference test,
+for example defined as Diff<sub>n</sub> = u(n-3) - 3 * u(n-2) + 3 * u(n-1) - u(n).
 
-```
-This check is for single-value spikes, specifically the u, v values at point n- 1. Spikes consisting of more than
-one data point are difficult to capture, but their onset may be flagged by the rate of change test. This test is
-applied to each depth bin ( i ).
-The spike test consists of two operator-selected thresholds, uv_SPIKE_FAIL and uv_SPIKE_SUSPECT.
-Adjacent data points u( n- 2 and n 0 ) are averaged to form a spike reference (u_SPK_REF), and adjacent data
-points v( n- 2 and n ) are averaged to form a spike reference (v_SPK_REF). Only adjacent data points that have
-been flagged pass should be used to form the spike reference. When absent, earlier observations may need
-to be employed. The absolute value of the spike is tested to capture positive and negative spikes. Large
-spikes are easier to identify as outliers and flag as failures. Smaller spikes may be real and are only flagged
-suspect. The thresholds may be fixed values or dynamically established (for example, a multiple of the
-standard deviation over an operator-selected period). They may also be expressed as a function of time
-(e.g., d(u)/dt) to accommodate varying time increments.
-An alternative spike test may use a third difference test, for example defined as Diff n = u( n- 3 ) - 3* u( n- 2 ) +
-```
-###### 3* u( n- 1 ) – u( n ).
+| Flags       | Condition | Codable Instructions                                                                                                                                                                                                                                                                                                        |
+|-------------|-----------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Fail = 4    | If the absolute value of the difference `u(i, n-1) - u_SPK_REF` or `v(i, n-1) - v_SPK_REF` exceeds the fail threshold `uv_SPIKE_FAIL`, the velocity/direction measurements at that depth fails.                        | `IF ABS[u(i, n-1) - u_SPK_REF] OR ABS[v(i, n-1) - v_SPK_REF] ≥ uv_SPIKE_FAIL`, flag = 4                        |
+| Suspect = 3 | If the absolute value of the difference `u(i, n-1) - u_SPK_REF` or `v(i, n-1) - v_SPK_REF` exceeds the Suspect threshold `uv_SPIKE_SUSPECT`, the velocity/direction measurements at that depth are flagged as suspect. | `IF ABS[u(i, n-1) - u_SPK_REF] OR ABS[v(i, n-1) - v_SPK_REF] ≥ uv_SPIKE_SUSPECT AND < uv_SPIKE_FAIL`, flag = 3 |
+| Pass = 1    | If the absolute value of the difference `u(i, n-1) - u_SPK_REF` and `v(i, n-1) - v_SPK_REF` are less than the Suspect threshold `uv_SPIKE_SUSPECT`, the velocity/direction measurements at that depth pass.            | `IF ABS[u(i, n-1) - u_SPK_REF] AND ABS[v(i, n-1) - v_SPK_REF] < uv_SPIKE_SUSPECT`, flag = 1                    |
 
-###### Flags Condition Codable Instructions
-
-```
-Fail = 4 If the absolute value of the
-difference u( i,n- 1 ) – u_SPK_REF or
-v( i,n- 1 ) – v_SPK_REF exceeds the fail
-threshold uv_SPIKE_FAIL, the
-velocity/direction measurements at
-that depth fails.
-```
-```
-IF ABS[u( i,n- 1 ) – u_SPK_REF] OR ABS[v( i,n- 1 ) –
-v_SPK_REF] ≥ uv_SPIKE_FAIL , flag = 4
-```
-```
-Suspect = 3 If the absolute value of the
-difference u( i,n- 1 ) – u_SPK_REF or
-v( i,n- 1 ) – v_SPK_REF exceeds the
-Suspect threshold
-uv_SPIKE_SUSPECT, the
-velocity/direction measurements at
-that depth are flagged as suspect.
-```
-```
-IF ABS[u( i,n- 1 ) – u_SPK_REF] OR ABS[v( i,n- 1 ) –
-v_SPK_REF] ≥ uv_SPIKE_SUSPECT AND <
-uv_SPIKE_FAIL, flag = 3
-```
-```
-Pass = 1 If the absolute value of the
-difference u( i,n- 1 ) – u_SPK_REF and
-v( i,n- 1 ) – v_SPK_REF are less than
-the Suspect threshold
-uv_SPIKE_SUSPECT, the
-velocity/direction measurements at
-that depth pass.
-```
-```
-IF ABS[u( i,n- 1 ) – u_SPK_REF] AND ABS[v( i,n- 1 )
-```
-- v_SPK_REF] < uv_SPIKE_SUSPECT , flag = 1
-
-```
 Test Exception: None.
-```
-```
-Example: uv_SPIKE_FAIL = 100 cm/s, uv_SPIKE_SUSPECT = 50 cm/s
-```
+Example: `uv_SPIKE_FAIL = 100 cm/s`, `uv_SPIKE_SUSPECT = 50 cm/s`
 
-```
-In-situ Currents
-```
-###### Flat Line (Test 17) - Required
+**Flat Line (Test 17) - Required**
 
-##### This test checks for observations that do not change with time, and the test can be
+This test checks for observations that do not change with time,
+and the test can be applied to many variables,
+such as velocities,
+directions,
+or pressure.
 
-##### applied to many variables, such as velocities, directions, or pressure.
+When some sensors and/or data collection platforms (DCPs) fail,
+the result can be a continuously repeated observation of the same value.
+This test compares the present observation (PO<sub>n</sub>) to a number (`REP_CNT_FAIL` or `REP_CNT_SUSPECT`) of previous observations.
+PO<sub>n</sub> is flagged if it has the same value as previous observations within a tolerance value `EPS` to allow for numerical round-off error.
+This test may apply to sensor outputs as well as derived values.
+Note that historical flags are not changed.
 
-```
-When some sensors and/or data collection platforms (DCPs) fail, the result can be a continuously repeated
-observation of the same value. This test compares the present observation (POn) to a number
-(REP_CNT_FAIL or REP_CNT_SUSPECT) of previous observations. POn is flagged if it has the same value as
-previous observations within a tolerance value EPS to allow for numerical round-off error. This test may
-apply to sensor outputs as well as derived values. Note that historical flags are not changed.
-Flags Condition Codable Instructions
-Fail = 4 An identical value has been reported
-at least REP_CNT_FAIL times
-successively.
-```
-```
-If all(abs(PO-[PO:PO-REP_CNT_FAIL]) < EPS),
-flag = 4
-```
-```
-Suspect = 3 An identical value has been reported
-less than REP_CEN_FAIL, but at least
-REP_CNT_SUSPECT times
-successively.
-```
-```
-If all(abs(PO-[PO:PO-REP_CNT_SUSPECT])<EPS)
-& not(all(abs(PO-[PO:PO-
-REP_CNT_FAIL])<EPS)), flag = 3
-```
-```
-Pass = 1 Applies for test pass condition. N/A
-```
-```
-Test Exception : None.
-```
-```
+| Flags       | Condition                                                                                                         | Codable Instructions                                                                                 |
+|-------------|-------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------|
+| Fail = 4    | An identical value has been reported at least `REP_CNT_FAIL` times successively.                                  | `If all(abs(PO-[PO:PO-REP_CNT_FAIL]) < EPS)`, flag = 4                                               |
+| Suspect = 3 | An identical value has been reported less than `REP_CEN_FAIL`, but at least `REP_CNT_SUSPECT` times successively. | If `all(abs(PO-[PO:PO-REP_CNT_SUSPECT])<EPS) & not(all(abs(PO-[PO:PO-REP_CNT_FAIL])<EPS))`, flag = 3 |
+| Pass = 1    | 1 Applies for test pass condition.                                                                                | N/A                                                                                                  |
+
+Test Exception: None.
 Test specifications to be established locally by operator.
-Examples: REP_CNT_FAIL = 5, REP_CNT_SUSPECT = 3
-```
+Examples: `REP_CNT_FAIL = 5`, `REP_CNT_SUSPECT = 3`
 
-###### 3.3.4 Overall Profile Tests
+#### 3.3.4 Overall Profile Tests
 
-These tests use the entire beam length or current profile to check a variety of conditions. They do not apply
+These tests use the entire beam length or current profile to check a variety of conditions.
+They do not apply to a single-point acoustic Doppler current meter.
 
-to a single-point acoustic Doppler current meter.
+**Echo Intensity (Test 18) – Required**
 
-###### Echo Intensity (Test 18) – Required
+Check for echo intensities that may indicate interactions with the surface,
+bottom,
+or in-water structures.
 
-##### Check for echo intensities that may indicate interactions with the surface, bottom, or
+If a beam reflects off a boundary,
+then the echo intensity increases from the previous bin.
+This test is a comparison of the echo intensity `[EINT(i, j)]` in bin `i`,
+beam `j` to the echo intensity in the previous bin,
+`EINT(i-1, j)`.
+If other beams differ from the tested beam (when comparing adjacent bins) by a pre-described amount,
+the bin may be flagged.
+Instruments have a variety of number of beams (`NUMBEAM`),
+and a limit of the number of allowable beam failures (`BADBEAM`).
+If the number of valid beams (`NUMBEAM-BADBEAM`) is less than the number of dimensions (2D or 3D) in the flow being measured,
+D,
+then the measurement fails this check.
 
-##### in-water structures.
+| Flags       | Condition                                                                                                                                                                                                                                          | Codable Instructions                                                                                                               |
+|-------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------|
+| Fail = 4    | If a beam has adjacent bins that differ by more than an operator prescribed-number of counts, `MAXEICNT`, the data at this bin and farther from the transducer are invalid. If an insufficient number of valid beams exist, the measurement fails. | `For i ≥ 2 and j = 1 to NUMBEAMS If EINT(i, j) - EINT(i-1, j) > MAXEICNT BADBEAM++ If NUMBEAM - BADBEAM < D`, flag(i:end,:) = 4    |
+| Suspect = 3 | If one or more beams have an adjacent bin that differs by more than an operator-prescribed number of counts, `MAXEICNT`, but a sufficient number of valid beams exist, the measurement is suspect.                                                 | `For i ≥ 2 and j=1 to NUMBEAMS If EINT(i, j) - EINT(i-1,j) > MAXEICNT BADBEAM++ If NUMBEAM - BADBEAM ≥ D and BADBEAM ≥1`, flag = 3 |
+| Pass = 1    | No other beams have an adjacent bin that differs by more than an operator-provided amount, `MAXEICNT`.                                                                                                                                             | `For i ≥ 2 and j=1 to NUMBEAMS If EINT(i, j) - EINT(i-1, j) > MAXEICNT BADBEAM++ If BADBEAM=0`, flag = 1                           |
 
-```
-If a beam reflects off a boundary, then the echo intensity increases from the previous bin. This test is a
-comparison of the echo intensity [EINT(i,j)] in bin i, beam j to the echo intensity in the previous bin,
-EINT( i- 1 ,j ). If other beams differ from the tested beam (when comparing adjacent bins) by a pre-described
-amount, the bin may be flagged. Instruments have a variety of number of beams (NUMBEAM), and a limit of
-the number of allowable beam failures (BADBEAM). If the number of valid beams (NUMBEAM-BADBEAM) is
-less than the number of dimensions (2D or 3D) in the flow being measured, D, then the measurement fails
-this check.
-```
-###### Flags Condition Codable Instructions
 
-```
-Fail = 4 If^ a beam^ has^ adjacent bins that
-differ by more than an operator-
-prescribed number of counts,
-MAXEICNT, the data at this bin and
-farther from the transducer are
-invalid. If an insufficient number of
-valid beams exist, the measurement
-fails.
-```
-```
-For i ≥ 2 and j = 1 to NUMBEAMS
-If EINT( i , j ) - EINT( i- 1 , j ) > MAXEICNT
-BADBEAM++
-If NUMBEAM - BADBEAM < D , flag(i:end,:) = 4
-```
-```
-Suspect = 3 If one or more^ beams^ have^ an
-adjacent bin that differs by more
-than an operator-prescribed
-number of counts, MAXEICNT, but a
-sufficient number of valid beams
-exist, the measurement is suspect.
-```
-```
-For i ≥ 2 and j=1 to NUMBEAMS
-If EINT(i,j) - EINT(i-1,j) > MAXEICNT
-BADBEAM++
-If NUMBEAM - BADBEAM ≥ D and BADBEAM ≥1,
-flag = 3
-```
-```
-Pass = 1 No other beams have an adjacent
-bin that differs by more than an
-operator-provided amount,
-MAXEICNT.
-```
-```
-For i ≥ 2 and j=1 to NUMBEAMS
-If EINT(i,j) - EINT(i-1,j) > MAXEICNT
-BADBEAM++
-If BADBEAM = 0 , flag = 1
 Test Exception: None.
-```
-```
 Test specifications to be established locally by the operator.
-Example: MAXEICNT = 30 counts, NUMBEAM = 4, BADBEAM = 1, D = 3
-```
+Example: `MAXEICNT = 30 counts`, `NUMBEAM = 4`, `BADBEAM = 1`, `D = 3`
 
-```
-In-situ Currents
-```
-###### Echo Intensity Drop-off (Test 19) – Strongly Recommended
+**Echo Intensity Drop-off (Test 19) – Strongly Recommended**
 
-##### Test of echo intensity with distance from the transmitter.
+Test of echo intensity with distance from the transmitter.
 
-```
-The echo intensity decreases with distance from the transmitter. Eventually, at some distant bin (and
-beyond), there may not be enough acoustic energy to provide a valid measure of current speed and
-direction. Instruments have a variety of number of beams (NUMBEAM), and a limit of the number of
-allowable beam failures (BADBEAM). If the number of valid beams (NUMBEAM-BADBEAM) is less than the
-number of dimensions (2D or 3D) in the flow being measured, D, then the measurement fails this check.
-```
-###### Flags Condition Codable Instructions
+The echo intensity decreases with distance from the transmitter.
+Eventually,
+at some distant bin (and beyond),
+there may not be enough acoustic energy to provide a valid measure of current speed and direction.
+Instruments have a variety of number of beams (`NUMBEAM`),
+and a limit of the number of allowable beam failures (`BADBEAM`).
+If the number of valid beams (`NUMBEAM-BADBEAM`) is less than the number of dimensions (2D or 3D) in the flow being measured,
+D,
+then the measurement fails this check.
 
-```
-Fail = 4 If echo intensity at bin i [EINT( i , j )]
-falls below an accepted minimum
-value (MINEICNT), the data at this
-bin and farther from the transducer
-are invalid.
-```
-```
-For j = 1 to NUMBEAM
-If EINT( i , j ) < MINEICNT
-BADBEAM++
-If NUMBEAM - BADBEAM < D, flag(i:end,:) = 4
-```
-```
-Suspect = 3 If one or more beams have bins with
-echo intensity less than MINEICNT,
-but a sufficient number of valid
-beams exist, the measurement is
-suspect.
-```
-```
-For j = 1 to NUMBEAM
-If EINT( i , j ) < MINEICNT
-BADBEAM++
-If NUMBEAM - BADBEAM ≥ D and BADBEAM ≥ 1,
-flag = 3
-```
-```
-Pass = 1 If echo intensity [EI( i , j )] exceeds an
-accepted minimum value
-(MINEICNT) for all beams in three or
-more bins, the data at this bin are
-valid.
-```
-```
-For j = 1 to NUMBEAM
-If EINT( i , j ) < MINEICNT
-BADBEAM++
-If BADBEAM = 0, flag = 1
-```
-```
+| Flags       | Condition                                                                                                                                                         | Codable Instructions                                                                                          |
+|-------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------|
+| Fail = 4    | If echo intensity at bin `i` `[EINT(i, j)]` falls below an accepted minimum value (`MINEICNT`), the data at this bin and farther from the transducer are invalid. | `For j = 1 to NUMBEAM If EINT( i , j ) < MINEICNT BADBEAM++ If NUMBEAM - BADBEAM < D`, flag(i:end,:) = 4      |
+| Suspect = 3 | If one or more beams have bins with echo intensity less than `MINEICNT`, but a sufficient number of valid beams exist, the measurement is suspect.                | `For j = 1 to NUMBEAM If EINT(i, j ) < MINEICNT BADBEAM++ If NUMBEAM - BADBEAM ≥ D and BADBEAM ≥ 1`, flag = 3 |
+| Pass = 1    | If echo intensity `[EI(i, j)]` exceeds an accepted minimum value (`MINEICNT`) for all beams in three or more bins, the data at this bin are valid.                | `For j = 1 to NUMBEAM If EINT(i, j) < MINEICNT BADBEAM++ If BADBEAM = 0`, flag = 1                            |
+
 Test Exception: None.
-```
-```
 Test specifications to be established locally by the operator.
-Examples: MINEICNT = 2 0 counts, NUMBEAM = 4, BADBEAM = 1, D = 3
-```
+Examples: `MINEICNT = 20` counts, `NUMBEAM = 4`, `BADBEAM = 1`, `D = 3`
 
-###### Current Gradient (Test 20) – Strongly Recommended
+**Current Gradient (Test 20) – Strongly Recommended**
 
-##### Test for excessive current speed/direction changes in the vertical profile.
+Test for excessive current speed/direction changes in the vertical profile.
 
-```
-Current speed is expected to change at a gradual rate with depth. A current difference with depth
-(CSPDDIF), to be determined locally, should be established and the rate of current speed difference with
-depth between two bins determined. It is presumed the value in bin-1 is valid. The same test can be run
-with current direction.
-```
-###### Flags Condition Codable Instructions
+Current speed is expected to change at a gradual rate with depth.
+A current difference with depth (`CSPDDIF`),
+to be determined locally,
+should be established and the rate of current speed difference with depth between two bins determined.
+It is presumed the value in bin-1 is valid.
+The same test can be run with current direction.
 
-```
-Fail = 4 If current speed at bin i , CSPD( i )
-exceeds current speed at bin i - 1,
-CSPD( i - 1) by a prescribed amount,
-CSPDDIF, the data are not valid.
-```
-```
-IF ABS[CSPD( i )-CSPD( i - 1)] > CSPDDIF, flag = 4
-```
-```
-Suspect = 3 N/A None^
-```
-```
-Pass = 1 If current speed at bin i , CSPD( i )
-change from the current speed at
-bin( i - 1), CSPD( i - 1), is less than or
-equal to a prescribed amount,
-CURDIF, the data are valid.
-```
-```
-IF ABS[CSPD( i )-CSPD( i - 1)] ≤ CSPDDIF, flag = 1
-```
-```
+| Flags       | Condition                                                                                                                                                                    | Codable Instructions                            |
+|-------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------|
+| Fail = 4    | If current speed at bin `i`, `CSPD(i)` exceeds current speed at bin `i-1`, `CSPD(i-1)` by a prescribed amount, `CSPDDIF`, the data are not valid.                            | `IF ABS[CSPD(i)-CSPD(i-1)] > CSPDDIF`, flag = 4 |
+| Suspect = 3 | N/A                                                                                                                                                                          | None                                            |
+| Pass = 1    | If current speed at bin `i`, `CSPD(i)` change from the current speed at `bin(i-1)`, `CSPD(i-1)`, is less than or equal to a prescribed amount, `CURDIF`, the data are valid. | `IF ABS[CSPD(i)-CSPD(i-1)] ≤ CSPDDIF`, flag = 1 |
+
+
 Test Exception: Applicable only to current profiles, and not to single-point measurement systems.
 Test cannot be conducted on the first bin.
-```
-```
 Test specifications to be established locally by the operator.
 Examples: Operators to provide examples as procedures are implemented.
-```
 
-```
-In-situ Currents
-```
-### 4.0 Summary
+## 4.0 Summary
 
-###### The QC tests in this currents document have been compiled from QARTOD workshops (QARTOD
+The QC tests in this currents document have been compiled from QARTOD workshops (QARTOD 2003-2009).
+Test suggestions came from several existing operators with extensive experience,
+and wherever possible,
+redundant tests have been merged.
+The considerations of operators who ensure the quality of real-time data may be different from those whose data are not published in real time,
+and these and other differences must be balanced according to the specific circumstances of each operator.
+Although these real-time tests are required,
+recommended,
+or suggested,
+it is the operator who is responsible for deciding which tests are appropriate.
+Each operator selects thresholds based on the specific program requirements that must be met.
+The scope of requirements can vary widely,
+from complex data streams that support myriad QC checks to ensure precise and accurate measurements - to basic data streams that do not need such details.
+Operators must publish their QC processes via metadata so that data users can readily see and understand the source and quality of those data.
 
-###### 2003 – 2009). Test suggestions came from several existing operators with extensive experience, and wherever
+The 20 QC tests identified apply to current observations from ADCPs and may apply to other types of current sensors.
+All tests are either required or strongly recommended,
+and they fall into four groups: sensor health,
+signal quality,
+current velocity,
+and overall profile.
+Further,
+some tests operate on the raw data used to generate current observations,
+while others apply to the derived current products.
+The individual tests are described and include codable instructions,
+output conditions,
+example thresholds,
+and exceptions (if any).
 
-possible, redundant tests have been merged. The considerations of operators who ensure the quality of real-
+Selection of the proper thresholds is critical to a successful QC effort.
+Thresholds can be based on historical knowledge or statistics derived from more recently acquired data,
+but they should not be determined arbitrarily. This manual provides some guidance for selecting thresholds based on input from various operators,
+but also notes that operators need the subject matter expertise as well as a sincere interest in selecting the proper thresholds to maximize the value of their QC effort.
 
-time data may be different from those whose data are not published in real time, and these and other
-
-differences must be balanced according to the specific circumstances of each operator. Although these real-
-
-time tests are required, recommended, or suggested, it is the operator who is responsible for deciding which
-
-tests are appropriate. Each operator selects thresholds based on the specific program requirements that must
-
-be met. The scope of requirements can vary widely, from complex data streams that support myriad QC
-
-checks to ensure precise and accurate measurements - to basic data streams that do not need such details.
-
-Operators must publish their QC processes via metadata so that data users can readily see and understand the
-
-source and quality of those data.
-
-The 20 QC tests identified apply to current observations from ADCPs and may apply to other types of
-
-current sensors. All tests are either required or strongly recommended, and they fall into four groups: sensor
-
-health, signal quality, current velocity, and overall profile. Further, some tests operate on the raw data used to
-
-generate current observations, while others apply to the derived current products. The individual tests are
-
-described and include codable instructions, output conditions, example thresholds, and exceptions (if any).
-
-Selection of the proper thresholds is critical to a successful QC effort. Thresholds can be based on historical
-
-knowledge or statistics derived from more recently acquired data, but they should not be determined arbitrarily.
-
-This manual provides some guidance for selecting thresholds based on input from various operators, but also
-
-notes that operators need the subject matter expertise as well as a sincere interest in selecting the proper
-
-thresholds to maximize the value of their QC effort.
-
-Sensors continue to become "smarter" and interoperable. For example, some QC procedures may be
-
-embedded within the sensor instrumentation package. Significant components of metadata will reside in the
-
-instrument and be transmitted either on demand or automatically along with the data stream. Users may also
-
-reference metadata through Uniform Resource Locators (URLs) to simplify the identification of which QC
-
-steps have been applied to data. However, QARTOD QC test procedures in this manual address only real-time,
-
-in-situ observations made by sensors on fixed or mobile platforms. The tests do not include post-processing,
-
-which is not conducted in real time but may be useful for ecosystem-based management, or delayed-mode,
-
+Sensors continue to become "smarter" and interoperable.
+For example,
+some QC procedures may be embedded within the sensor instrumentation package.
+Significant components of metadata will reside in the instrument and be transmitted either on demand or automatically along with the data stream.
+Users may also reference metadata through Uniform Resource Locators (URLs) to simplify the identification of which QC steps have been applied to data.
+However,
+QARTOD QC test procedures in this manual address only real-time,
+in-situ observations made by sensors on fixed or mobile platforms.
+The tests do not include post-processing,
+which is not conducted in real time but may be useful for ecosystem-based management,
+or delayed-mode,
 which is required for climate studies.
 
-Future QARTOD reports will address standard QC procedures and best practices for all types of common as
-
-well as uncommon platforms and sensors for all the U.S. IOOS core variables. Each QC manual is envisioned as
-
-a dynamic document and will be posted on the QARTOD website at https://ioos.noaa.gov/project/qartod/.
-
-This process allows for QC manual updates as technology development occurs for both upgrades of existing
-
-sensors and new sensors.
-
-
-### 5.0 References
-
-Bouchard, R.H. (ed.) (2007) Real-Time Quality Control Tests for In Situ Ocean Surface Waves:
-
-```
-Recommended by the Quality Assurance of Real-Time Oceanographic Data (QARTOD) Workshops and
-The Waves Technical Workshop. Version 1.0. Stennis Space Center, MS NOAA/National Data Buoy
-Center, 25pp. DOI: http://dx.doi.org/10.25607/OBP- 328
-```
-Bushnell, M., Presentation at QARTOD III: November 2005. Scripps Institution of Oceanography, La Jolla,
-
-```
-California. http://dx.doi.org/10.25607/OBP- 390
-```
-Interagency Ocean Observation Committee (IOOC), 2012. Integrated Ocean Observing System (IOOS)
-
-```
-Certification Criteria. 11 pp. https://cdn.ioos.noaa.gov/media/2017/12/IOOS-Certification-Criteria_4-
-25 - 12.pdf
-```
-Joint Committee for Guides in Metrology (JCGM), 2012. International Vocabulary of Metrology: Basic and
-
-```
-General Concepts and Associated Terms. 3rd Edition.
-```
-National Data Buoy Center (NDBC) Technical Document 09-02, Handbook of Automated Data Quality
-
-```
-Control Checks and Procedures, National Data Buoy Center, Stennis Space Center, Mississippi 39529-
-```
-6000. August 2009.
-
-Paris. Intergovernmental Oceanographic Commission of UNESCO. 2013. Ocean Data Standards, Vol.3:
-
-```
-Recommendation for a Quality Flag Scheme for the Exchange of Oceanographic and Marine
-Meteorological Data. (IOC Manuals and Guides, 54, Vol. 3.) 12 pp. (English.)(IOC/2013/MG/54-3).
-http://www.iode.org/index.php?option=com_oe&task=viewDocumentRecord&docID=10762
-```
-QARTOD I-V Reports 2003-2009. https://ioos.noaa.gov/ioos-in-action/qartod-meetings.
-
-UNESCO, 1993. Manual and Guides 26, Manual of Quality Control Procedures for Validation of
-
-```
-Oceanographic Data, Section 2.2, Appendix A1: Wave Data. Prepared by CEC: DG-XII, MAST and
-IOC: IODE. 436 pp. http://unesdoc.unesco.org/images/0013/001388/138825eo.pdf
-```
-U.S. IOOS, Updated May 2015. A Plan to Meet the Nation's Need for Surface Current Mapping.
-
-```
-https://cdn.ioos.noaa.gov/media/2017/12/national_surface_current_planMay2015.pdf
-```
-U.S. IOOS Office, November 2010. A Blueprint for Full Capability, Version 1.0, 254 pp.
-
-```
-https://cdn.ioos.noaa.gov/media/2017/12/us_ioos_blueprint_ver1.pdf
-```
-U.S. Integrated Ocean Observing System, Version 1.1, May 2017. Manual for the Use of Real-
-
-```
-Time Oceanographic Data Quality Control Flags. 19 pp.
-https://repository.library.noaa.gov/view/noaa/15488/Share
-```
-
-```
-In-situ Currents
-```
-### Additional References to Related Documents:
-
-Alliance for Coastal Technologies (ACT) 2012. Accessed May 13, 2019 at [http://www.act-](http://www.act-)
-
-```
-us.info/evaluations.php
-```
-Argo Quality Control Manual:
-
-```
-http://www.argodatamgt.org/content/download/341/2650/file/argo-quality-control-manual-V2.7.pdf
-```
-National Oceanographic Partnership Program (NOPP) January 2006. The First U.S. Integrated Ocean
-
-```
-Observing System (IOOS) Development Plan – A report of the National Ocean Research Leadership
-Council and the Interagency Committee on Ocean Science and Resource Management Integration. The
-National Office for Integrated and Sustained Ocean Observations. Ocean US Publication No. 9.
-http://www.usnfra.org/documents/IOOSDevPlan_low-res.pdf
-```
-Crout, R., D. Conlee, D. Gilhousen, R. Bouchard, M. Garcia, F. Demarco, M. Livingston, C. Cooper, and R.
-
-```
-Raye, 2006: Real-time oil platform ocean current data in the Gulf of Mexico: an IOOS industry
-partnership success story. Proc. AMS, 22nd International Conference on Interactive Information
-Processing Systems for Meteorology, Oceanography, and Hydrology.
-```
-Bender, L.C. and S.F. DiMarco. 200 9. Quality control and analysis of acoustic Doppler current profiler data
-
-```
-collected on offshore platforms of the Gulf of Mexico. U.S. Dept. of the Interior, Minerals Mgmt. Service,
-Gulf of Mexico OCS Region, New Orleans, LA. OCS Study MMS 2009-010. 63 pp.
-http://www.data.boem.gov/PI/PDFImages/ESPIS/4/4888.pdf
-```
-GTSPP Real-Time Quality Control Manual, First Revised Edition. UNESCO-IOC 2010. (IOC Manuals and
-
-```
-Guides No. 22, Revised Edition.) (IOC/2010/MG/22Rev.) English only
-http://www.nodc.noaa.gov/GTSPP/document/qcmans/MG22rev1.pdf
-```
-Haines, S., R. Crout, J. Bosch, W. Burnett, J. Fredericks, D. Symonds and J. Thomas, 2011. A summary of
-
-```
-quality control tests for waves and in situ currents and their effectiveness, in IEEE/OES 10th Current,
-Waves and Turbulence Measurements (CWTM), 100 - 106 DOI: 10.1109/CWTM.2011.5759534.
-http://ieeexplore.ieee.org/xpls/abs_all.jsp?arnumber=5759534
-```
-Hankin, S. and DMAC Steering Committee, 2005. Data management and communications plans for research
-
-```
-and operational integrated ocean observing systems: I interoperable data discovery, access, and archive,
-Ocean.US, Arlington, VA, 304 pp. http://sccoos.ucsd.edu/docs/dmac_plan2005.pdf
-```
-Integrated Marine Observing System [http://imos.org.au](http://imos.org.au) (see also https://github.com/aodn/imos-toolbox)
-
-Moore, A.N, D.L. Stewart, March 2003. "The effects of mobile scatterers on the quality of ADCP data in
-
-```
-differing marine environments." Proceedings of the IEEE/OES Seventh Working Conference on Current
-Measurement Technology. p. 202-206.
-```
-Recommendations for in-situ data Real Time Quality Control, Authors: Sylvie Pouliquen and the DATA-
-
-```
-MEQ working group, 2015. http://eurogoos.eu/download/Pouliquen_DATAMEQ%20WG.pdf
-```
-Reverdin, G., V. Thierry, J. Utiz, F. d'Ortenzio, E. Bradshaw, B. Pfeil (2017). Recommendations for an
-
-```
-automatic RT or NRT QC for selected EOVs (T&S, Current, Oxygen, CHla, Nitrate, Carbon, Sea level).
-AtlantOS 633211, Work Package 7, Deliverable D7.2 https://www.atlantos-h2020.eu/download/7.2-QC-
-Report.pdf
-```
-
-Symonds, D. 2013. QA/QC Parameters for Acoustic Doppler Current Profilers. Teledyne RD Instruments.
-
-```
-17 pp.
-```
-Taylor, J.A.; Jonas, A.M. "Maximising data return: Towards a quality control strategy for managing and
-
-```
-processing TRDI ADCP data sets from moored instrumentation", Current Measurement Technology,
-```
-2008. CMTC 2008. IEEE/OES 9th Working Conference, p. 80 – 88.
-[http://ieeexplore.ieee.org/xpls/abs_all.jsp?arnumber=4480848](http://ieeexplore.ieee.org/xpls/abs_all.jsp?arnumber=4480848)
-
-Thomson, R. 2001. Data Analysis Methods in Physical Oceanography. Gulf Professional Publishing, Second
-
-```
-Edition, 638 pp. http://books.google.com/books?id=A6ew-
-bJDIDIC&pg=PA83&lpg=PA83&dq=Acoustic+Doppler+Current+Profiler+book&source=bl&ots=Pw
-Sf29Bbuo&sig=LxTDjtmzKFVCgF8ZT0kwme964TU&hl=en&ei=WLtOTcSPFcP98Aaez9GCDw&sa=
-X&oi=book_result&ct=result&resnum=5&sqi=2&ved=0CDYQ6AEwBA - v=onepage&q=Acoustic
-Doppler Current Profiler book&f=false
-```
-
-```
-In-situ Currents
-```
-### Supporting Documents Found on the QARTOD Website:
-
-```
-(https://ioos.noaa.gov/ioos-in-action/currents/)
-```
-Quality Control and Analysis of Acoustic Doppler Current Profiler Data Collected on Offshore Platforms of
-
-```
-the Gulf of Mexico.
-```
-Recommendations for In-Situ Data Real Time Quality Control
-
-
-### Appendix A. In-Situ Currents Manual Team and Reviewers
-
-### In-Situ Currents Manual Team and Reviewers, Version 2. 1
-
-###### Name Organization
-
-```
-Mark Bushnell
-Mathias Lankhorst
-Chris Paternostro
-Jan van Smirren
-```
-```
-U.S. IOOS
-Scripps Institution of Oceanography
-NOAA/Center for Operational Oceanographic Products and Services
-Ocean Sierra
-```
-### QARTOD Board of Advisors, Version 2.1
-
-###### Name Organization
-
-```
-Kathleen Bailey, Project Manager
-Julie Bosch
-Eugene Burger
-Jennifer Dorton
-Robert Heitsenrether
-Jeff King
-Shannon McArthur
-Mario Tamburri
-```
-```
-Julie Thomas, BOA Chair
-```
-```
-Christoph Waldmann
-```
-```
-U.S. IOOS
-NOAA/National Centers for Environmental Information
-NOAA/Pacific Marine Environmental Laboratory
-SECOORA
-NOS/Center for Operational Oceanographic Products and Services
-U.S. Army Corps of Engineers
-NOAA/National Data Buoy Center
-University of Maryland Center for Environmental Science / Chesapeake
-Biological Laboratory
-SCCOOS/Scripps Institution of Oceanography/Coastal Data Information
-Program (retired)
-University of Bremen/MARUM
-```
-### U.S. IOOS Regional Associations, Version 2.1
-
-#### Name Organization
-
-```
-Josie Quintrell
-Clarissa Anderson
-Debra Hernandez
-Melissa Iwamoto
-Barbara Kirkpatrick
-Gerhard Kuska
-Molly McCammon
-Julio Morell
-Ru Morrison
-Jan Newton
-Kelli Paige
-Henry Ruhl
-```
-```
-IOOS Association
-SCCOOS
-SECOORA
-PacIOOS
-GCOOS
-MARACOOS
-AOOS
-CariCOOS
-NERACOOS
-NANOOS
-GLOS
-CeNCOOS
-```
-
-```
-In-situ Currents
-```
-#### Version 2.1 DMAC Community
-
-###### Regional Associations
-
-**AOOS**
-Carol Janzen
-
-```
-GCOOS
-Bob Currier
-```
-**CARICOOS**
-
-Miguel Canals
-Roy Watlington
-
-```
-SECOORA
-Jennifer Dorton
-Abbey Wakely
-Filipe Pires Alvarenga Fernandes
-```
-###### Research Organizations
-
-**Gulf of Maine Research Institute**
-Eric Bridger
-
-**Scripps Institution of Oceanography**
-Vicky Rowley
-**Monterey Bay Aquarium Research Institute**
-Fred Bahr
-
-```
-Smithsonian Environmental Research Center
-Matthew Ogburn
-```
-###### Federal and State Agencies
-
-**Bureau of Ocean Energy Management**
-Brian Zelenke
-Jonathan Blythe
-
-```
-Environmental Protection Agency
-Dwane Young
-```
-**Great Lakes Commission**
-Guan Wang
-**National Oceanic and Atmospheric Administration**
-Bill Woodward
-Kenneth Casey
-Mark VanWaes
-Alexander Birger
-Bob Simons
-Byron Kilbourne
-Dave Easter
-Derrick Snowden
-Frank Lodato
-Gabrielle Canonico
-
-```
-Jason Gedamke
-Jessica Morgan
-Kevin O'Brien
-Lynn Dewitt
-Mark Bushnell
-Micah Wengren
-Rita Adak
-Thomas Ryan
-Tiffany Vance
-Tim Boyer
-Tony Lavoi
-U.S. Army Corps of Engineers
-Jeff Lillycrop
-```
-```
-U.S. Geological Survey
-Abigail Benson
-James Kreft
-Rich Signell
-Sky Bristol
-```
-
-###### Academic Institutions
-
-```
-University of Maine Bob Fleming
-University of Maryland Mario Tamburri
-Dalhousie University Brad Covey
-Lenore Bajona
-Richard Davis
-University of Puerto Rico Jorge Capella
-Juan Orlando Gonzalez Lopez
-University of Hawaii James T. Potemra
-University of Washington Emilio Mayorga
-Texas A & M University Felimon Gayanilo
-Rutgers University John Kerfoot
-Michael Vardaro
-University of Tasmania Peter Walsh
-```
-###### Private Industry
-
-```
-LimnoTech Kathy Koch
-Tad Slawecki
-RPS Group Kelly Knee
-Melanie Gearon
-Axiom Kyle Wilcox
-Rob Bochenek
-Shane StClair
-Ocean Tracking Network Jonathan Pye
-```
-
-```
-In-situ Currents
-```
-#### In-Situ Currents Manual Update (Version 2.0)
-
-#### Committee and Reviewers
-
-###### Name Organization
-
-Mark Bushnell – Chair
-Chris Paternostro, co-editor
-Jennifer Patterson – co-editor
-Helen Worthington – co-editor
-Julie Bosch
-Bob Heitsenrether
-Christina Iarossi
-Chris Kontoes
-Dawn Petraitis
-Darryl Symonds
-Doug Wilson
-
-```
-CoastalObsTechServices LLC/CO-OPS
-NOAA/CO-OPS
-CeNCOOS
-REMSA/CO-OPS
-NOAA/National Centers for Environmental Information
-NOAA/CO-OPS
-SonTek
-Nortek, Inc.
-NOAA/NDBC
-Teledyne RDI
-Caribbean Wind LLC/MARACOOS
-```
-#### Currents Manual Version 1.0 Reviewers
-
-###### Name Organization
-
-Mark Bushnell – Chair
-Ray Toll – editor
-Helen Worthington – editor
-Dick Crout – significant contributor
-Charly Alexander
-Rob Bassett
-Rich Bouchard
-Rebecca Cowley
-Jeff Donnovan
-Shavawn Donoghue
-Chris Flanary
-Guilliaume Galibert
-Janet Fredericks
-Bob Heitsenrether
-Kris Holdereid
-Eoin Howlett
-Leonid Ivanov
-Bruce Magnell
-Alessandra Mantovanelli
-Kelli Paige
-Chris Paternostro
-Jennifer Patterson
-Torstein Pederson
-Xiaoyan Qi
-Samantha Simmons
-Rosemary Smith
-Derrick Snowden
-Craig Steinberg
-Vembu Subramanian
-Charles Sun
-Darryl Symonds
-Ed Verhamme
-Doug Wilson
-
-```
-CoastalObsTechServices LLC/CO-OPS
-Old Dominion University/NDBC
-REMSA/CO-OPS
-Naval Research Laboratory/ Stennis
-U.S. IOOS
-NOAA/CO-OPS
-NOAA/NDBC
-Integrated Marine Observing System
-SECOORA
-Integrated Marine Observing System
-SECOORA
-Integrated Marine Observing System
-Woods Hole Oceanographic Institution
-NOAA/CO-OPS
-NOAA
-MARACOOS/Applied Science Associates
-Woods Hole Working Group
-Woods Hole Working Group
-Integrated Marine Observing System
-GLOS
-NOAA/CO-OPS
-CeNCOOS
-Nortek
-SECOORA
-Interagency Ocean Observing Committee
-Fugro GEOS
-U.S. IOOS
-Integrated Marine Observing System
-SECOORA
-National Centers for Environmental Information
-Teledyne RDI
-GLOS
-MARACOOS
-```
-
-#### QARTOD Board of Advisors
-
-###### Name Organization
-
-Joe Swaykos – Chair
-Kathy Bailey
-Julie Bosch
-Eugene Burger
-Janet Fredericks
-Matt Howard
-Bob Jensen
-Chris Paternostro
-Julie Thomas
-
-```
-NOAA/National Data Buoy Center
-U.S. IOOS
-NOAA/National Centers for Environmental Information
-NOAA/Pacific Marine Environmental Laboratory
-Woods Hole Oceanographic Institution
-GCOOS
-USACE
-NOAA/CO-OPS
-Scripps Institution of Oceanography/Coastal Data Information
-Program
-```
-#### DMAC Committee
-
-###### Name Organization
-
-Rob Bochenek
-Eric Bridger
-Jorge Capella
-Jeremy Cothran
-Lisa Hazard
-Matt Howard
-Emilio Mayorga
-Jennifer Patterson
-Jim Potemra
-Rob Ragsdale
-Tad Slawecki
-Derrick Snowden
-Shane StClair
-Vembu Subramanian
-Kyle Wilcox
-
-```
-AOOS/CeNCOOS/Axiom Consulting & Design
-NERACOOS/Gulf of Maine Research Institute
-CariCOOS/University of Puerto Rico
-SECOORA/University of South Carolina
-SCCOOS/Scripps Institution of Oceanography
-GCOOS/Texas A&M University
-NANOOS/University of Washington
-CeNCOOS/Monterey Bay Aquarium Research Institute
-PacIOOS/University of Hawaii
-U.S. IOOS Program Office
-GLOS/LimnoTech
-U.S. IOOS Program Office
-AOOS/CeNCOOS/Axiom Consulting & Design
-SECOORA/University of South Florida
-MARACOOS/Applied Science Associates, Inc.
-```
-#### U.S. IOOS REGIONAL ASSOCIATIONS
-
-###### Name Organization^
-
-Josie Quintrell
-David Anderson
-Debra Hernandez
-Barbara Kirkpatrick
-Gerhard Kuska
-Molly McCammon
-Julio Morell
-Ru Morrison
-Jan Newton
-Chris Ostrander
-Kelli Paige
-Julie Thomas
-
-```
-U.S. IOOS Association
-CeNCOOS
-SECOORA
-GCOOS
-MARACOOS
-AOOS
-CariCOOS
-NERACOOS
-NANOOS
-PacIOOS
-GLOS
-SCCOOS
-```
-
-```
-In-situ Currents
-```
-### Appendix B. Quality Assurance
-
-A major pre-requisite for establishing quality control standards for current measurements is a strong quality
-
-assurance program. Remember the mantra that good QC requires good QA, and good QA requires good
-
-scientists, engineers, and technicians.
-
-The following sections suggest ways to ensure QA by using specific procedures and techniques.
-
-#### B.1 Sensor Calibration Considerations
-
-Observations must be traceable to one or more accepted standards through a calibration performed by the
-
-manufacturer or the operator. If the calibration is conducted by the manufacturer, the operator must also
-
-conduct some form of an acceptable calibration check. For instance, the instrument could be damaged in
-
-shipment from the manufacturer or have been exposed to a temperature outside its prescribed operating range.
-
-An often-overlooked calibration or calibration check can be performed by consensus standard. For example,
-
-deriving the same answer (within an acceptable level of accuracy) from four different sensors of four different
-
-manufacturers, preferably utilizing several different technologies, constitutes a perfectly acceptable reference.
-
-Because of the trend toward corporate conglomeration, those wishing to employ a consensus standard should
-
-ensure that the different manufacturers are truly independent.
-
-#### B.2 Sensor Comparison
-
-An effective QA effort continually strives to ensure that end data products are of high value and to prove
-
-they are free of error. Operators should seek out partnering opportunities to inter-compare systems by co-
-
-locating differing sensors. Agreement of multiple systems would provide a robust observation, while
-
-disagreement may offer a measure of data uncertainty. If possible, operators should retain an alternate sensor
-
-or technology from a second manufacturer for similar in-house checks. For resource-constrained operators,
-
-however, it may not be possible to spend the time and funds needed to procure and maintain two systems.
-
-For those who do so and get two different results, the use of alternate sensors or technologies provide several
-
-important messages: a) a measure of the accuracy and precision achieved by an operator; b) a reason to
-
-investigate, understand the different results, and take corrective action; and c) increased understanding that
-
-when variables are measured with different technologies, different answers can be correct, and they must be
-
-understood in order to properly report results. For those who succeed, the additional sensors provide a highly
-
-robust demonstration of operator capability. Such efforts form the basis of a strong QA/QC effort. Further,
-
-it provides the operator with an expanded supply source, permitting less reliance upon a single manufacturer
-
-and providing competition that is often required by procurement offices.
-
-#### B.3 Magnetic Compass Considerations
-
-Magnetic declination, also called magnetic variation, refers to the angle between magnetic north and true
-
-north at a given location on the earth. Since current meters usually derive current direction from a magnetic
-
-compass, the resulting data must be corrected in order to obtain the direction or velocities in true earth
-
-coordinates. There is a high risk that this correction could be applied incorrectly (e.g., with the wrong sign,
-
-
-forgotten entirely, or applied twice in separate data processing steps), resulting in wrong data. A proper QA
-
-procedure will unambiguously determine at what step the declination correction is made and annotate what
-
-the correction has been with unambiguous metadata in the final data. One method used to ensure the
-
-correction is properly applied is to record the variation, the magnetic heading, and the true heading.
-
-Magnetic deviation refers to errors in compass readings that are incurred by magnetic materials (metal such as
-
-steel, mooring wire, batteries) near the sensors. Vendors of current meters usually provide 'calibration'
-
-procedures that the operator should follow (e.g., by spinning the instrument a certain way in a setup mode).
-
-In addition, it is paramount that magnetic materials be kept away from the sensors while deployed. If this is
-
-not possible, the calibration procedure could be done with the surrounding metal structures attached, so that
-
-corrections may be made for some of the deviations caused by the structure and not just the instrument itself.
-
-At high latitudes, the earths magnetic field exhibits increasing dip which reduces the signal strength available
-
-to a compass. Operators must be aware of the potentially reduced compass accuracy. Vendors are solving the
-
-problem by using more sensitive compasses, but these will be more sensitive to magnetic deviation as well.
-
-#### B. 4 Bio-fouling and Corrosion Prevention Strategies
-
-Bio-fouling is the most frequent cause of sensor failure, so the following strategies may be useful for
-
-ameliorating the problem:
-
-- Use anti-fouling paint with the highest copper content available (up to 75%) when possible (not on
-    aluminum).
-- Wrap body of sensor with clear packing tape for a small probe or plastic wrap for a large instrument.
-    This keeps the PVC tape from leaving residue on the sensor. Heavy PVC underground cable tape is
-    the best for bad bio-fouling.
-- Wrap with copper tape (again, beware of aluminum).
-- Coat with zinc oxide (Desitin ointment – manufactured by Johnson and Johnson Inc.; 1 Johnson and
-    Johnson Plaza, New Brunswick, NJ 08933 (732) 524- 0400 ).
-- Remember that growth is sensor-, depth-, location-, and season-dependent; plan instrument recovery
-    frequency accordingly.
-- Plan for routine changing or cleaning of sensor as necessary.
-- Check with calibration facility on which anti-foulants will be handled (allowed) by the calibrators.
-- Avoid or isolate dissimilar metals.
-- Maintain sacrificial anodes and ensure they are properly installed (good electrical contact).
-- Maximize use of non-metallic components.
-- Use UV-stabilized components that are not subject to sunlight degradation.
-
-
-```
-In-situ Currents
-```
-#### B. 5 Common QA Considerations
-
-The following lists suggest ways to ensure QA by using specific procedures and techniques:
-
-- Perform pre-deployment calibrations on every sensor
-- Perform post-deployment calibrations on every sensor, plus in-situ comparison before recovery
-- Perform periodic calibration of ready-to-use spares
-- Monitor with redundant sensors whenever possible
-- Take photos of sensor fouling for records
-- Record all actions related to sensors – calibration, cleaning, deployment, etc.
-- Monitor battery voltage and watch for unexpected fluctuations
-
-**When evaluating which instrument to use, consider these factors:**
-
-- Selection of a reliable and supportive manufacturer and appropriate model
-- Operating range (i.e., some instruments won't operate at certain temperatures, pressures, or depths)
-- Resolution/precision required
-- Sampling frequency – how fast sensor can take measurements
-- Reporting frequency – how often the sensor reports the data
-- Response time of the sensor – sensor lag – time response
-- Instrument check – visual inspection for defects, bio-fouling, etc.
-- Power check – master clock, battery, etc. – variability among these sensors
-- Standardize sensor clock to a reference such as GPS timing
-- Capability to reveal a problem with data
-
-**When evaluating which specifications must be met:**
-
-- State the expected accuracy
-- Determine how the sensor compares to the design specifications
-- Determine if the sensor meets those specifications
-- Determine whether result is good enough (fit for purpose: data are adequate for nominal use as
-    preliminary data)
-
-**General comments regarding QA procedures:**
-
-- A diagram (http://www.ldeo.columbia.edu/~dale/dataflow/), contributed by Dale Chayes (LDEO)
-    provides a visual representation of proper QA procedures.
-- Require serial numbers and model ID from the supplier.
-- Do not make the checklist so detailed that it will not be used.
-- Do not assume the calibration is perfect (could be a calibration problem rather than a sensor
-
-###### problem).
-
-- Keep good records of all related sensor calibrations and checks (e.g., temperature).
-- Use NIST-traceable instrumentation when conducting calibrations or calibration checks.
-- A sensor that maintains an internal file of past calibration constants is very useful since it can be
-
-###### downloaded instead of transcribed manually, introducing human error.
-
-- The calibration constants or deviations from a standard should be plotted over time to determine if
-    the sensor has a drift in one direction or another. A sudden change can indicate a problem with the
-
-###### sensor or the last calibration.
-
-
-#### B. 6 QA Levels for Best Practices
-
-A wide variety of techniques are used by operators to assure that sensors are properly calibrated and
-
-operating within specifications. While all operators must conduct some form of validation, there is no need to
-
-force operators to adhere to one single method. Nevertheless, operators should always strive to achieve the
-
-best possible level of QA. If they are unable to do so, then they should provide valid justification. Operators
-
-must show due-diligence in maintenance of their systems. A balance exists between available resources, level
-
-of proficiency of the operator, and target data-reproducibility requirements. The various techniques span a
-
-range of validation levels and form a natural hierarchy that can be used to establish levels of certification for
-
-operators (table A-1). The lists in the following sections suggest ways to ensure QA by using specific
-
-procedures and techniques.
-
-Table A-1. Best practices indicator for QA
-
-##### QA Best
-
-##### Practices
-
-##### Indicator
-
-##### Description
-
-```
-Good Process Sensors are swapped and/or serviced at sufficiently regular intervals so as to avoid data
-steps (unexpected offsets) upon swap/service. Pre- and post-deployment calibration
-checks are conducted on each sensor.
-```
-```
-Better Process The good processes are employed, plus pre- and post-deployment calibration checks are
-conducted using alternative sensors to confirm performance.
-```
-```
-Best Process The better processes are employed, following a well-documented protocol, or alternative
-sensors are used to validate in-situ deployments. Or, pre- and post-calibrations are
-conducted by the manufacturer.
-```
-#### B. 7 Additional Sources of QA Information
-
-Current sensor operators also have access to other sources of QA practices and information about a variety of
-
-instruments. For example, the Alliance for Coastal Technologies (ACT) serves as an unbiased, third-party
-
-testbed for evaluating sensors and platforms for use in coastal and ocean environments. ACT conducts
-
-instrument performance demonstrations and verifications so that effective existing technologies can be
-
-recognized, and promising new technologies can become available to support coastal science, resource
-
-management, and ocean observing systems (ACT 2012). The NOAA Ocean Systems Test and Evaluation
-
-Program (OSTEP) also conducts independent tests and evaluations on emerging technology as well as new
-
-sensor models. Both ACT and OSTEP publish findings that can provide information about QA, calibration, and
-
-other aspects of sensor functionality. The following list provides links to additional resources on QA practices.
-
-- Manufacturer specifications and supporting Web pages/documents
-- QARTOD https://ioos.noaa.gov/project/qartod/
-- ACT [http://www.act-us.info/](http://www.act-us.info/)
-- CO-OPS [http://tidesandcurrents.noaa.gov/pub.html](http://tidesandcurrents.noaa.gov/pub.html) under the heading Manuals and Standards
-- WOCE https://www.nodc.noaa.gov/woce/
-- NDBC [http://www.ndbc.noaa.gov/](http://www.ndbc.noaa.gov/)
-
-
-```
-In-situ Currents
-```
-The following samples provide hints for development of deployment checklists taken from QARTOD IV:
-
-###### Pre-deployment QA Checklist
-
-```
- Read the manual.
- Establish, use, and submit (with a reference and version #) a documented sensor preparation
-```
-##### procedure (protocol). Should include cleaning sensor according to the manufacturer's procedures.
-
-#####  Calibrate sensor against an accepted standard and document (with a reference and version #).
-
-```
- Compare the sensor with an identical, calibrated sensor measuring the same thing in the same area (in
-a calibration lab).
- View calibration specifications with a critical eye (don't presume the calibration is infallible). Execute
-detailed review of calibrated data.
- Check the sensor history for past calibrations, including a plot over time of deviations from the
-standard for each (this will help identify trends such a progressively poorer performance). Maintain
-```
-##### control of the plotted calibrations.
-
-```
- Check the sensor history for past repairs, maintenance, and calibration.
- Consider storing and shipping information before deploying.
-o Heat, cold, vibration, etc.
- Provide detailed documentation when necessary.
- Record operator/user experiences with this sensor after reading the manual.
- Search the literature for information on your particular sensor(s) to see what experiences other
-researchers may have had with the sensor(s).
- Establish and use a formal pre-deployment checklist.
- Ensure that technicians are well-trained. Use a visual tracking system for training to identify those
-technicians who are highly trained and then pair them with inexperienced technicians. Have data
-quality review chain.
-```
-###### Deployment Checklist
-
-```
- Scrape bio-fouling off platform.
- Verify sensor serial numbers.
- Deploy and co-locate multiple sensors (attention to interference if too close).
- Perform visual inspection; take photos if possible (verify position of sensors, connectors, fouling,
-cable problems, etc.).
- Conduct magnetic calibration within 5 km of the development location to reduce the influence of
-batteries and local magnetism.
- Verify instrument function at deployment site prior to site departure. Allot sufficient time for
-temperature equilibration.
- Monitor sensors for issues (freezing, fouling).
- Automate processing so you can monitor the initial deployment and confirm the sensor is working
-while still onsite.
- Specify date/time for all recorded events and check to ensure proper time is set. Use GMT or UTC.
- Check software to ensure that the sensor configuration and calibration coefficients are correct. Also,
-check sampling rates and other timed events, like wiping and time averaging.
- Visually inspect data stream to ensure reasonable values.
- Compare up and down casts and/or dual sensors (if available).
- Note weather conditions and members of field crew.
-```
-
-###### Post-deployment Checklist
-
-```
- Take pictures of recovered sensor as is for metadata
- Check to make sure all clocks agree or, if they do not agree, record all times and compare with NIST.
- Post-calibrate sensor and document before and after cleaning readings.
- Perform in-situ, side-by-side check using another sensor.
- Provide a mechanism for feedback on possible data problems and/or sensor diagnostics.
- Clean and store the sensor properly or redeploy.
- Visually inspect physical state of instrument.
- Verify sensor performance by:
-o Checking nearby stations;
-o Making historical data comparisons (e.g., long-term time-series plots, which are particularly
-useful for identifying long-term bio-fouling or calibration drift.)
-```
-
+Future QARTOD reports will address standard QC procedures and best practices for all types of common as well as uncommon platforms and sensors for all the U.S. IOOS core variables.
+Each QC manual is envisioned as a dynamic document and will be posted on the QARTOD website at [https://ioos.noaa.gov/project/qartod](https://ioos.noaa.gov/project/qartod/).
+This process allows for QC manual updates as technology development occurs for both upgrades of existing sensors and new sensors.

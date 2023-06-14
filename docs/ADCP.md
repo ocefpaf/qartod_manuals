@@ -6,11 +6,10 @@ Version 2.
 July 2019
 [https://doi.org/10.25923/sqe9-e310](https://doi.org/10.25923/sqe9-e310)
 
-
 ## Revision History
 
 | Date    | Revision Description                                                                                                          | Notes                                                   |
-|---------|-------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------|
+| ------- | ----------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------- |
 | 06/2013 | Original Document Published                                                                                                   | Manual updated with revisions listed sequentially       |
 | 10/2015 | Revise dates on Document Validation page (page ii)                                                                            |                                                         |
 |         | Add statement requesting feedback from Manual Users (page vii)                                                                |                                                         |
@@ -57,7 +56,6 @@ Please notify us of your efforts or intentions to implement QARTOD processes by 
 qartod.board@noaa.gov or posting a notice at
 [http://www.linkedin.com/groups?gid=2521409](http://www.linkedin.com/groups?gid=2521409).
 
-
 ## Acknowledgements
 
 We wish to acknowledge those who have contributed to this Version 2.1 update.
@@ -100,7 +98,6 @@ and Teledyne RDI.
 Additionally,
 the individual tests have been mapped to existing tests of UNESCO (1993).
 
-
 **QARTOD Meetings** (QARTOD 2003-2009)
 
 - **QARTOD I**: National Data Buoy Center, Stennis Space Center, Mississippi. 3-5 December 2003
@@ -109,16 +106,15 @@ the individual tests have been mapped to existing tests of UNESCO (1993).
 - **QARTOD IV**: Woods Hole Oceanographic Institution, Woods Hole, Massachusetts. 21-23 June 2006
 - **QARTOD V**: Omni Hotel, Atlanta, Georgia, 17-19 November 2009.
 
-
 Agendas,
 attendees,
 and reports from QARTOD meetings are located at
 [https://ioos.noaa.gov/ioos-in-action/qartod-meetings](https://ioos.noaa.gov/ioos-in-action/qartod-meetings).
 
-
 ## Acronyms and Abbreviations
+
 |          |                                                                       |
-|----------|-----------------------------------------------------------------------|
+| -------- | --------------------------------------------------------------------- |
 | ACT      | Alliance for Coastal Technologies                                     |
 | ADCP     | Acoustic Doppler Current Profiler                                     |
 | ADP      | Acoustic Doppler Profiler                                             |
@@ -150,27 +146,24 @@ and reports from QARTOD meetings are located at
 | UNESCO   | United Nations Educational, Scientific, and Cultural Organization     |
 | USACE    | FRF U.S. Army Corps of Engineers, Field Research Facility, [Duck, NC] |
 
-
 ## Definitions of Selected Terms
 
 This manual contains several terms whose meanings are critical to those using the manual.
 These terms are included in the following table to ensure that the meanings are clearly defined.
 
-|                         |                                                                                                                                                                                                                                                                                               |
-|-------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Codable Instructions    | Specific guidance that can be used by a software programmer to design, construct, and implement a test. These instructions also include examples with sample thresholds.                                                                                                                      |
-| Data Record             | One or more messages that form a coherent, logical, and complete observation.                                                                                                                                                                                                                 |
-| Interoperable           | Interoperable means the ability of two or more systems to exchange and mutually use data, metadata, information, or system parameters using established protocols or standards.                                                                                                               |
-| Message                 | A standalone data transmission. A data record can be composed of multiple messages.                                                                                                                                                                                                           |
-| Operator                | Individuals or entities responsible for collecting and providing data.                                                                                                                                                                                                                        |
-| Quality Assurance  (QA) | Processes that are employed with hardware to support the generation of high-quality data. (section 2.0 and appendix B)                                                                                                                                                                        |
-| Quality Control (QC)    | Follow-on steps that support the delivery of high-quality data and requires both automation and human intervention. (section 3.0)                                                                                                                                                             |
-| Real-Time               | Data are delivered as soon as possible after acquisition for immediate use; time series extends only backwards in time, where the next data point is not available; and sample intervals may range from a few seconds to a few hours or even days, depending upon the variable. (section 1.0) |
-| Sensor                  | A sensor is a device that detects or measures a physical property and provides the result without delay. A sensor is an element of a measuring system that is directly affected by a phenomenon, body, or substance carrying a quantity to be measured. (JCGM 2012)                           |
-| Thresholds              | Limits that are defined by the operator.                                                                                                                                                                                                                                                      |
-| Variable                | A variable is an observation (or measurement) of biogeochemical properties within oceanographic and/or meteorological environments.                                                                                                                                                           |
-
-
+|                        |                                                                                                                                                                                                                                                                                               |
+| ---------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Codable Instructions   | Specific guidance that can be used by a software programmer to design, construct, and implement a test. These instructions also include examples with sample thresholds.                                                                                                                      |
+| Data Record            | One or more messages that form a coherent, logical, and complete observation.                                                                                                                                                                                                                 |
+| Interoperable          | Interoperable means the ability of two or more systems to exchange and mutually use data, metadata, information, or system parameters using established protocols or standards.                                                                                                               |
+| Message                | A standalone data transmission. A data record can be composed of multiple messages.                                                                                                                                                                                                           |
+| Operator               | Individuals or entities responsible for collecting and providing data.                                                                                                                                                                                                                        |
+| Quality Assurance (QA) | Processes that are employed with hardware to support the generation of high-quality data. (section 2.0 and appendix B)                                                                                                                                                                        |
+| Quality Control (QC)   | Follow-on steps that support the delivery of high-quality data and requires both automation and human intervention. (section 3.0)                                                                                                                                                             |
+| Real-Time              | Data are delivered as soon as possible after acquisition for immediate use; time series extends only backwards in time, where the next data point is not available; and sample intervals may range from a few seconds to a few hours or even days, depending upon the variable. (section 1.0) |
+| Sensor                 | A sensor is a device that detects or measures a physical property and provides the result without delay. A sensor is an element of a measuring system that is directly affected by a phenomenon, body, or substance carrying a quantity to be measured. (JCGM 2012)                           |
+| Thresholds             | Limits that are defined by the operator.                                                                                                                                                                                                                                                      |
+| Variable               | A variable is an observation (or measurement) of biogeochemical properties within oceanographic and/or meteorological environments.                                                                                                                                                           |
 
 ## 1.0 Background and Introduction
 
@@ -199,14 +192,12 @@ Please refer to [https://ioos.noaa.gov/project/qartod](https://ioos.noaa.gov/pro
 1. U.S. Integrated Ocean Observing System, 2017. Manual for Real-Time Quality Control of Passive Acoustics Data Version 1.0: A Guide to Quality Control and Quality Assurance of Passive Acoustics Observations. 45 pp. [https://doi.org/10.7289/V5PC30M](https://doi.org/10.7289/V5PC30M)
 1. U.S. Integrated Ocean Observing System, 2018. Manual for Real-Time Quality Control of Stream Flow Data Version 1.0: A Guide to Quality Control and Quality Assurance of Stream Flow Observations in Rivers and Streams. 45 pp. [https://doi.org/10.25923/gszc-ha](https://doi.org/10.25923/gszc-ha)
 
-
 Please refer to this document as:
 
     U.S. Integrated Ocean Observing System, 2019. Manual for Real-Time Quality
     Control of In-Situ Current Observations Version 2.1 A Guide to Quality Control
     and Quality Assurance of Acoustic Doppler Current Profiler Observations. 52 pp.
     https://doi.org/10.25923/sqe9-e
-
 
 This document follows and expands on the National Surface Currents Plan (U.S. IOOS 2015 ).
 The U.S. Army Corps of Engineers (USACE) and the National Oceanic and Atmospheric Administration's (NOAA) National Data Buoy Center (NDBC) and Center for Operational Oceanographic Products and Services (CO-OPS),
@@ -233,7 +224,6 @@ are a key part of this endeavor.
 
 This manual is a living document that reflects the state-of-the-art QC testing procedures for in-situ current observations using acoustic Doppler current profilers (ADCPs) and single-point current meters.
 It is written for the experienced operator but also provides examples for those who are just entering the field.
-
 
 ## 2.0 Purpose/Constraints/Applications
 
@@ -343,7 +333,6 @@ Most operators rely upon manufacturer-recommended calibrations and conduct calib
 which are also usually described in their user manuals.
 These activities are considered QA and are further addressed in appendix B.
 
-
 Calibrations and calibration checks must be traceable to accepted standards.
 The National Institute of Standards and Technology (NIST) ([http://www.nist.gov/index.html](http://www.nist.gov/index.html)),
 a provider of internationally accepted standards,
@@ -387,7 +376,6 @@ This manual does not cover the QC of all possible configurations,
 but it does include the most widely used tests provided by participating operators.
 Notes within each specific test provide application guidance.
 
-
 ![Teledyne RDI ADCP; Nortek Aquadopp transducer head](images_ADCP/image01.png)
 
 <figcaption>Figure 2-1. Teledyne RDI ADCP (left); Nortek Aquadopp transducer head (right). (Photos courtesy of Teledyne RDI and Nortek)</figcaption>
@@ -407,7 +395,6 @@ Notes within each specific test provide application guidance.
 ![SonTek side-looking ADP](images_ADCP/image05.png)
 
 <figcaption>Figure 2-5. A SonTek side-looking ADP is raised for cleaning. (Photo courtesy of Warren Krug/NOAA)</figcaption>
-
 
 ### 2.5 Hardware Limitations
 
@@ -432,11 +419,12 @@ effective anti-fouling materials and coatings may permit system deployments in e
 As with all instruments,
 ADCPs are depth/range limited by the pressure housing.
 ADCP measurements are further depth/range limited in two fundamental ways:
+
 1. the acoustic signal strength loss over distance (higher frequency systems have shorter ranges) and
 1. the acoustic beams spread with increasing range,
-both within an individual beam and among the multiple beams,
-which leads to reduced resolution and less certainty that the sampled field has uniform flow.
-Many of the QC tests address these limitations through the use of carefully selected thresholds and other test criteria.
+   both within an individual beam and among the multiple beams,
+   which leads to reduced resolution and less certainty that the sampled field has uniform flow.
+   Many of the QC tests address these limitations through the use of carefully selected thresholds and other test criteria.
 
 ADCP transducer side-lobe reflections must also be considered.
 These reflections can come from the bottom,
@@ -454,8 +442,6 @@ Although these corrections are beyond the scope of this manual, manufacturers pr
 corrections, which are specific to the sensor make/model, within their user manuals. Appendix B-3 provides
 
 further information.
-
-
 
 While outside the scope of the real-time tests described in this manual,
 QA is critical to data quality.
@@ -481,7 +467,6 @@ Hence,
 comparing two adjacent instruments can assist in evaluation of data quality,
 as well as provide two (or more) independent estimates of a parameter of interest.
 Variation in the estimated values can be useful in uncertainty calculations.
-
 
 ## 3.0 Quality Control
 
@@ -536,7 +521,7 @@ _n-1_,
 and _n-2_.
 
 | **Flag**                      | **Description**                                                                                                                                                                       |
-| ----------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| ----------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Pass=1                        | Data have passed critical real-time QC tests and are deemed adequate for use as preliminary data.                                                                                     |
 | Not Evaluated=2               | Data have not been QC-tested, or the information on quality is not available.                                                                                                         |
 | Suspect or of High Interest=3 | Data are considered to be either suspect or of high interest to operators and users. They are flagged suspect to draw further attention to them by operators.                         |
@@ -544,7 +529,6 @@ and _n-2_.
 | Missing Data=9                | Data are missing; used as a placeholder.                                                                                                                                              |
 
 : Table 3-1. Flags for real-time data from ADCPs. (UNESCO 2013)
-
 
 ### 3.2 QC Test Types and Hierarchy
 
@@ -565,9 +549,8 @@ since the number of tests conducted and the justification for not applying some 
 Even though currently there are no suggested tests,
 group 3 is retained as a placeholder for possible future additions.
 
-
 | Test Type        | Test Name                         | Status               |
-|------------------|-----------------------------------|----------------------|
+| ---------------- | --------------------------------- | -------------------- |
 | Sensor Health    | Battery Voltage (Test 1)          | Strongly Recommended |
 |                  | Check Sum (Test 2)                | Required             |
 |                  | Sensor Tilt (Test 3)              | Required             |
@@ -592,7 +575,7 @@ group 3 is retained as a placeholder for possible future additions.
 : Table 3-2. QC tests for real-time current data from fixed or buoy-mounted current sensors
 
 |                              |                                   |
-|------------------------------|-----------------------------------|
+| ---------------------------- | --------------------------------- |
 | Group 1 Required             | Check Sum (Test 2)                |
 |                              | Sensor Tilt (Test 3)              |
 |                              | Speed of Sound (Test 4)           |
@@ -652,7 +635,6 @@ the rate-of-change and spike tests are surprisingly challenging and have deficie
 Both tests may suffer from false failure of subsequent valid observations when recovering from the initial detection of a flawed observation.
 Operators are strongly encouraged to share improved versions of all tests as they are developed.
 
-
 #### 3.3.1 Sensor Health Tests
 
 Each test checks to ensure that the sensor is working properly.
@@ -663,7 +645,7 @@ Check for sufficient battery voltage
 Test determines that there is sufficient battery voltage (`BATTVOLT`) to provide a "good" measurement.
 
 | Flags       | Condition                                                     | Codable Instructions          |
-|-------------|---------------------------------------------------------------|-------------------------------|
+| ----------- | ------------------------------------------------------------- | ----------------------------- |
 | Fail = 4    | Battery voltage is less than an accepted minimum value (MIN). | `If BATTVOLT < MIN, flag = 4` |
 | Suspect = 3 | N/A                                                           |                               |
 | Pass = 1    | Battery voltage is sufficient.                                | `If BATTVOLT ≥ MIN, flag = 1` |
@@ -681,7 +663,7 @@ A checksum value (`CKSUMXMT`) is prepared from the message before it is transmit
 a checksum is calculated from the message and that value is compared to the transmitted value.
 
 | Flags       | Condition                                                                                                                                                | Codable Instructions               |
-|-------------|----------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------|
+| ----------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------- |
 | Fail = 4    | The data message fails if the calculated checksum (`CKSUMCAL`) from the data stream does not match the transmitted checksum (`CKSUMXMT`) in the message. | `IF CKSUMCAL ≠ CKSUMXMT, flag = 4` |
 | Suspect = 3 | N/A                                                                                                                                                      | None                               |
 | Pass = 1    | The data message is valid if the calculated checksum (`CKSUMCAL`) is identical to the transmitted checksum (`CKSUMXMT`).                                 | `IF CKSUMCAL = CKSUMXMT, flag = 1` |
@@ -697,7 +679,7 @@ Sensors with the capability to measure tilt along two axes should undergo this s
 Manufacturers' specifications indicate the maximum allowable tilt.
 
 | Flags       | Condition                                                                    | Codable Instructions                              |
-|-------------|------------------------------------------------------------------------------|---------------------------------------------------|
+| ----------- | ---------------------------------------------------------------------------- | ------------------------------------------------- |
 | Fail = 4    | Tilt (`TILTX`, `TILTY`) angle is greater than the allowed value (`TILTMAX`). | `If TILTX > TILTMAX OR TILTY > TILTMAX, flag = 4` |
 | Suspect = 3 | N/A                                                                          |                                                   |
 | Pass = 1    | Tilt angle is less than or equal to the allowed value.                       | `If TILTX ≤ TILTMAX OR TILTY ≤ TILTMAX, flag = 1` |
@@ -712,7 +694,7 @@ Check for a valid speed of sound value.
 The speed of sound value is used in the calculation of acoustic pulse travel times and must be within a reasonable range given a known salinity and temperature of the water column and allowing for variations in density throughout.
 
 | Flags       | Condition                                                                                                              | Codable Instructions                           |
-|-------------|------------------------------------------------------------------------------------------------------------------------|------------------------------------------------|
+| ----------- | ---------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------- |
 | Fail = 4    | If the speed of sound value (`SSVAL`) is outside of acceptable sound speed range (`SSMIN` to `SSMAX`) it is not valid. | `IF SSVAL < SSMIN OR SSVAL > SSMAX, flag = 4`  |
 | Suspect = 3 | N/A                                                                                                                    | None                                           |
 | Pass = 1    | If the speed of sound value (`SSVAL`) is within the acceptable sound speed range (`SSMIN` to `SSMAX`) it is valid.     | `IF SSVAL ≥ SSMIN AND SSVAL ≤ SSMAX, flag = 1` |
@@ -732,8 +714,8 @@ System noise within each of the beams should be within a specified range of valu
 If any of the beams fail the test,
 the sensor fails the test and should not be used.
 
-| Flags       | Condition                                                                                                              | Codable Instructions                                                            |
-|-------------|------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------|
+| Flags       | Condition                                                     | Codable Instructions                                                                                                                     |
+| ----------- | ------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
 | Fail = 4    | System noise values `[SCMNOIS(j)]` are outside a count range. | `If SCMNOIS(j) < COUNTMIN OR SCMNOIS(j) > COUNTMAX, flag (j) = 4`                                                                        |
 | Suspect = 3 | N/A                                                           | None                                                                                                                                     |
 | Pass = 1    | System noise values `[SCMNOIS(j)]` are within a count range.  | `If SCMNOIS(j) ≥ COUNTMIN AND SCMNOIS(j) ≤ COUNTMAX, flag (j) = 1` All flags must equal 1, `FLAG(1) = FLAG(2) = FLAG(3) = 1` to continue |
@@ -757,7 +739,7 @@ At least three beams must pass this test for vertical profiling,
 and at least two beams are required for horizontal profiling.
 
 | Flags       | Condition                                                                                  | Codable Instructions                 |
-|-------------|--------------------------------------------------------------------------------------------|--------------------------------------|
+| ----------- | ------------------------------------------------------------------------------------------ | ------------------------------------ |
 | Fail = 4    | Signal strength values `[SCMDB(j)]` for each beam, `j` , are greater than a minimum value. | `IF SCMDB(j) < SCMDBMIN, flag = 4`   |
 | Suspect = 3 | N/A                                                                                        | None                                 |
 | Pass = 1    | Signal strength values exceed the minimum value for good data.                             | `IF SCMDB( j ) ≥ SCMDBMIN, flag = 1` |
@@ -772,7 +754,7 @@ Test that the signal-to-noise ratio is sufficient.
 The signal-to-noise ratio value should exceed an operator-prescribed value for each bin for the measurements to be valid.
 
 | Flags       | Condition                                                                                                                             | Codable Instructions           |
-|-------------|---------------------------------------------------------------------------------------------------------------------------------------|--------------------------------|
+| ----------- | ------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------ |
 | Fail = 4    | If the signal-to-noise ratio value `[SNRVAL(i)]` is less than the operator-prescribed value (`SNRMIN`), the measurement is not valid. | `If SNRVAL < SNRMIN, flag = 4` |
 | Suspect = 3 | N/A                                                                                                                                   | None                           |
 | Pass = 1    | Applies for test pass condition.                                                                                                      | `If SNRVAL ≥ SNRMIN`, flag = 1 |
@@ -780,7 +762,6 @@ The signal-to-noise ratio value should exceed an operator-prescribed value for e
 Test Exception: Test does not apply unless the particular property is actually included in the data stream.
 Test specifications to be established locally by operator.
 Example: Operators to provide examples as procedures are implemented.
-
 
 **Correlation Magnitude (Test 8) – Strongly Recommended**
 
@@ -794,11 +775,10 @@ and the more precise the velocity measurement.
 Correlation magnitude is provided for each bin (`i`) and each beam (`j`).
 
 | Flags       | Condition                                                                                                                                                                                     | Codable Instructions                                         |
-|-------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------|
+| ----------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------ |
 | Fail = 4    | If the correlation magnitude `[CMAG(i, j)]` falls below a certain count level (`CMAGMIN`), the measurement for that bin and beam fails.                                                       | `If CMAG(i, j) < CMAGMIN`, flag = 4                          |
 | Suspect = 3 | If the correlation magnitude `[CMAG(i, j)]` is between the minimum (`CMAGMIN`) and maximum (`CMAGMAX`) count levels, the measurement for that bin and beam passes, but is considered suspect. | `IF CMAG(i, j) ≥ CMAGMIN AND CMAG(i, j) ≤ CMAGMAX`, flag = 3 |
 | Pass = 1    | If the correlation magnitude `[CMAG(i, j)]` is above a maximum count level (`CMAGMAX`), the measurement for that bin and beam passes.                                                         | `IF CMAG( i , j ) > CMAGMAX`, flag = 1                       |
-
 
 Test Exception: This test is primarily for the Teledyne RDI ADCP sensors.
 Test specifications to be established by the manufacturer.
@@ -817,7 +797,7 @@ there are percent good three-beam `[PG1(j)]` solutions (one beam rejected) and p
 This test is applied to each depth bin, `i`.
 
 | Flags       | Condition                                                                                                                                             | Codable Instructions                                                   |
-|-------------|-------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------|
+| ----------- | ----------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------- |
 | Fail = 4    | If `PG1(i)` and `PG4(i)` combined do not exceed a minimum value (`PGMINLO`), the measurement at that depth bin (`i`) fails.                           | `IF PG1(i) + PG4(i) < PGMINLO`, flag = 4                               |
 | Suspect = 3 | If `PG1(i)` and `PG4(i)` combined fall in the range between `PGMINLO` and `PGMINHI`, the measurement at that depth passes, but is flagged as suspect. | `IF PG1(i) + PG4(i) ≥ PGMINLO AND PG3(i) + PG4(i) ≤ PGMINHI`, flag = 3 |
 | Pass = 1    | If `PG1(i)` and `PG4(i)` combined exceed a minimum value (`PGMINHI`), the measurement at that depth bin (`i`) passes.                                 | `IF PG1(i) + PG4(i  > PGMINHI`, flag = 1                               |
@@ -841,12 +821,11 @@ This test checks for unrealistically high current speed values and is applied to
 The maximum current speed should be set based on the environment in which the instrument will be deployed,
 as well as for all reasonable high-speed anomalies.
 
-
-| Flags       | Condition                                                                                                                | Codable Instructions                                                   |
-|-------------|--------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------|
-| Fail = 4    | N/A                                                                                                                      | N/A                                                                    |
-| Suspect = 3 | If the current speed `[CSPD(i)]` exceeds a reasonable maximum value (`SPDMAX`), the measurement is suspect.              | `IF CSPD(i) > SPDMAX`, flag = 3                                        |
-| Pass = 1    | If the current speed `[CSPD(i)]` is less than or equal to a reasonable maximum value (`SPDMAX`), the measurement passes. | `IF CSPD(i) ≤ SPDMAX`, flag = 1                                        |
+| Flags       | Condition                                                                                                                | Codable Instructions            |
+| ----------- | ------------------------------------------------------------------------------------------------------------------------ | ------------------------------- |
+| Fail = 4    | N/A                                                                                                                      | N/A                             |
+| Suspect = 3 | If the current speed `[CSPD(i)]` exceeds a reasonable maximum value (`SPDMAX`), the measurement is suspect.              | `IF CSPD(i) > SPDMAX`, flag = 3 |
+| Pass = 1    | If the current speed `[CSPD(i)]` is less than or equal to a reasonable maximum value (`SPDMAX`), the measurement passes. | `IF CSPD(i) ≤ SPDMAX`, flag = 1 |
 
 Test Exception: None.
 Applies to: All current measurements.
@@ -864,7 +843,7 @@ In most systems,
 This test is applied to each depth bin (`i`).
 
 | Flags       | Condition                                                                                                                      | Codable Instructions                               |
-|-------------|--------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------|
+| ----------- | ------------------------------------------------------------------------------------------------------------------------------ | -------------------------------------------------- |
 | Fail = 4    | If current direction `[CDIR(i)]` is less than 0.00 degrees or greater than 360 degrees, the measurement is invalid.            | `IF CDIR(i) < 0.00 OR CDIR(i) > 360.00`, flag = 4  |
 | Suspect = 3 | N/A                                                                                                                            |                                                    |
 | Pass = 1    | If current direction `[CDIR(i)]` is greater than 0.00 degrees and less than or equal to 360 degrees, the measurement is valid. | `IF CDIR(i) ≥ 0.00 AND CDIR(i) ≤ 360.00`, flag = 1 |
@@ -885,7 +864,7 @@ Maximum allowed values may differ in the orthogonal directions.
 This test is applied to each depth bin (`i`).
 
 | Flags       | Condition                                                                              | Codable Instructions                                           |
-|-------------|----------------------------------------------------------------------------------------|----------------------------------------------------------------|
+| ----------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------- |
 | Fail = 4    | Horizontal velocities exceed expected maximum values in the two horizontal directions. | `IF ABS[u(i)] > HVELMAXX OR IF ABS[v(i)] > HVELMAXY`, flag = 4 |
 | Suspect = 3 | N/A                                                                                    |                                                                |
 | Pass = 1    | Horizontal velocities fall within the expected range of values.                        | `IF ABS[u(j)] ≤ HVELMAXX AND ABS[v(j)] ≤ HVELMAXY`, flag = 1   |
@@ -894,7 +873,6 @@ Test Exception: None.
 Test specifications to be established locally by operator.
 Example: Operators to provide examples as procedures are implemented.
 
-
 **Vertical Velocity (Test 13) – Strongly Recommended**
 
 Ensure that vertical velocities are valid measurements.
@@ -902,11 +880,11 @@ Vertical velocities are reported by many ADCPs.
 They are calculated just like the horizontal velocities but along the vertical axis.
 This test is applied to each depth bin (`i`).
 
-| Flags       | Condition                                                                                                                                          | Codable Instructions                      |
-|-------------|----------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------|
-| Fail = 4    | N/A                                                                                                                                                | None                                      |
-| Suspect = 3 | If vertical velocity `[w(i)]` in a depth bin is greater than 1% of the current speed [CSPD(`i`)] in the depth bin, the measurement fails.          | `IF ABS[w(i)] > (0.01*CSPD(i))`, flag = 3 |
-| Pass = 1    | If vertical velocity `[w(i)]` in a depth bin is less than or equal to 1% of the current speed `[CSPD(i)]` in the depth bin, the measurement passes.| `IF ABS[w(i)] ≤ (0.01*CSPD(i))`, flag = 1 |
+| Flags       | Condition                                                                                                                                           | Codable Instructions                      |
+| ----------- | --------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------- |
+| Fail = 4    | N/A                                                                                                                                                 | None                                      |
+| Suspect = 3 | If vertical velocity `[w(i)]` in a depth bin is greater than 1% of the current speed [CSPD(`i`)] in the depth bin, the measurement fails.           | `IF ABS[w(i)] > (0.01*CSPD(i))`, flag = 3 |
+| Pass = 1    | If vertical velocity `[w(i)]` in a depth bin is less than or equal to 1% of the current speed `[CSPD(i)]` in the depth bin, the measurement passes. | `IF ABS[w(i)] ≤ (0.01*CSPD(i))`, flag = 1 |
 
 Test Exception: Alternately,
 a maximum vertical velocity,
@@ -931,7 +909,7 @@ The error velocity can be treated as an indication of errors in the horizontal v
 This test is applied to each depth bin (`i`).
 
 | Flags       | Condition                                                                                                                                                                                                                                             | Codable Instructions                           |
-|-------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------|
+| ----------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------- |
 | Fail = 4    | If the error velocity `[EV(i)]` within a depth bin exceeds a manufacturer-provided maximum value (`EVMAX`), the velocity measurements at that depth fail.                                                                                             | `IF EV( i ) > EVMAX`, flag = 4                 |
 | Suspect = 3 | If the error velocity `[EV(i)]` within a depth bin exceeds a manufacturer-provided minimum value (`EVMIN`) but is less than a manufacturer-provided maximum value (`EVMAX`), the velocity measurements at that depth pass but are flagged as suspect. | `IF EV(i) ≤ EVMAX AND EV(i) ≥ EVMIN`, flag = 3 |
 | Pass = 1    | If the error velocity `[EV(i)]` within a depth bin is less than a manufacturer-provided minimum value `(EVMIN)`, the velocity measurements at that depth pass.                                                                                        | `IF EV(i) < EVMIN`, flag = 1                   |
@@ -953,11 +931,10 @@ for example,
 by a ship anchor strike.
 
 | Flags       | Condition                                                                                                                                                                                                          | Codable Instructions                                                                                    |
-|-------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| ----------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------- |
 | Fail = 4    | If the absolute value of the difference `u(i, n) - u(i, n-1)` or `v(i, n) - v(i, n-1)` exceeds the fail threshold `RC_VEL_FAIL`, the velocity/direction measurements at that depth fails.                          | `IF ABS[u(i, n) - u(i, n-1)] OR ABS[v(i, n) - v(i, n-1)] ≥ RC_VEL_FAIL`, flag = 4                       |
 | Suspect = 3 | If the absolute value of the difference `u(i, n) - u(i, n-1)` or `v(i, n) - v(i, n-1)` exceeds the suspect threshold (`RC_VEL_SUSPECT`), the velocity/direction measurements at that depth are flagged as suspect. | `IF ABS[u(i, n) - u(i, n-1)] OR ABS[v(i, n) - v(i, n-1 )] ≥ RC_VEL_SUSPECT AND < RC_VEL_FAIL`, flag = 3 |
 | Pass = 1    | If the absolute value of the difference `u(i, n) - u(i, n-1)` and `v(i, n) - v(i, n-1)` are less than the suspect threshold `RC_VEL_SUSPECT`, the velocity/direction measurements at that depth pass.              | `IF ABS[u(i, n) - u(i, n-1)] AND ABS[v(i, n) - v(i, n-1)] < RC_VEL_SUSPECT`, flag = 1                   |
-
 
 Test Exception: None.
 Example: `RC_VEL_FAIL = 100 cm/s`, `RC_VEL_SUSPECT = 50 cm/s`
@@ -973,7 +950,7 @@ but their onset may be flagged by the rate of change test.
 This test is applied to each depth bin (`i`).
 The spike test consists of two operator-selected thresholds,
 `uv_SPIKE_FAIL` and `uv_SPIKE_SUSPECT`.
-Adjacent data points u(_n<sub>-2</sub> and n<sub>0</sub>) are averaged to form a spike reference (`u_SPK_REF`),
+Adjacent data points u(\_n<sub>-2</sub> and n<sub>0</sub>) are averaged to form a spike reference (`u_SPK_REF`),
 and adjacent data points v(n-2 and n) are averaged to form a spike reference (`v_SPK_REF`).
 Only adjacent data points that have been flagged pass should be used to form the spike reference.
 When absent,
@@ -985,10 +962,10 @@ The thresholds may be fixed values or dynamically established
 (for example, a multiple of the standard deviation over an operator-selected period).
 They may also be expressed as a function of time (e.g., d(u)/dt) to accommodate varying time increments.
 An alternative spike test may use a third difference test,
-for example defined as Diff<sub>n</sub> = u(n-3) - 3 * u(n-2) + 3 * u(n-1) - u(n).
+for example defined as Diff<sub>n</sub> = u(n-3) - 3 _ u(n-2) + 3 _ u(n-1) - u(n).
 
-| Flags       | Condition | Codable Instructions                                                                                                                                                                                                                                                                                                        |
-|-------------|-----------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Flags       | Condition                                                                                                                                                                                                              | Codable Instructions                                                                                           |
+| ----------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- |
 | Fail = 4    | If the absolute value of the difference `u(i, n-1) - u_SPK_REF` or `v(i, n-1) - v_SPK_REF` exceeds the fail threshold `uv_SPIKE_FAIL`, the velocity/direction measurements at that depth fails.                        | `IF ABS[u(i, n-1) - u_SPK_REF] OR ABS[v(i, n-1) - v_SPK_REF] ≥ uv_SPIKE_FAIL`, flag = 4                        |
 | Suspect = 3 | If the absolute value of the difference `u(i, n-1) - u_SPK_REF` or `v(i, n-1) - v_SPK_REF` exceeds the Suspect threshold `uv_SPIKE_SUSPECT`, the velocity/direction measurements at that depth are flagged as suspect. | `IF ABS[u(i, n-1) - u_SPK_REF] OR ABS[v(i, n-1) - v_SPK_REF] ≥ uv_SPIKE_SUSPECT AND < uv_SPIKE_FAIL`, flag = 3 |
 | Pass = 1    | If the absolute value of the difference `u(i, n-1) - u_SPK_REF` and `v(i, n-1) - v_SPK_REF` are less than the Suspect threshold `uv_SPIKE_SUSPECT`, the velocity/direction measurements at that depth pass.            | `IF ABS[u(i, n-1) - u_SPK_REF] AND ABS[v(i, n-1) - v_SPK_REF] < uv_SPIKE_SUSPECT`, flag = 1                    |
@@ -1012,7 +989,7 @@ This test may apply to sensor outputs as well as derived values.
 Note that historical flags are not changed.
 
 | Flags       | Condition                                                                                                         | Codable Instructions                                                                                 |
-|-------------|-------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------|
+| ----------- | ----------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
 | Fail = 4    | An identical value has been reported at least `REP_CNT_FAIL` times successively.                                  | `If all(abs(PO-[PO:PO-REP_CNT_FAIL]) < EPS)`, flag = 4                                               |
 | Suspect = 3 | An identical value has been reported less than `REP_CEN_FAIL`, but at least `REP_CNT_SUSPECT` times successively. | If `all(abs(PO-[PO:PO-REP_CNT_SUSPECT])<EPS) & not(all(abs(PO-[PO:PO-REP_CNT_FAIL])<EPS))`, flag = 3 |
 | Pass = 1    | 1 Applies for test pass condition.                                                                                | N/A                                                                                                  |
@@ -1046,11 +1023,10 @@ D,
 then the measurement fails this check.
 
 | Flags       | Condition                                                                                                                                                                                                                                          | Codable Instructions                                                                                                               |
-|-------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------|
+| ----------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
 | Fail = 4    | If a beam has adjacent bins that differ by more than an operator prescribed-number of counts, `MAXEICNT`, the data at this bin and farther from the transducer are invalid. If an insufficient number of valid beams exist, the measurement fails. | `For i ≥ 2 and j = 1 to NUMBEAMS If EINT(i, j) - EINT(i-1, j) > MAXEICNT BADBEAM++ If NUMBEAM - BADBEAM < D`, flag(i:end,:) = 4    |
 | Suspect = 3 | If one or more beams have an adjacent bin that differs by more than an operator-prescribed number of counts, `MAXEICNT`, but a sufficient number of valid beams exist, the measurement is suspect.                                                 | `For i ≥ 2 and j=1 to NUMBEAMS If EINT(i, j) - EINT(i-1,j) > MAXEICNT BADBEAM++ If NUMBEAM - BADBEAM ≥ D and BADBEAM ≥1`, flag = 3 |
 | Pass = 1    | No other beams have an adjacent bin that differs by more than an operator-provided amount, `MAXEICNT`.                                                                                                                                             | `For i ≥ 2 and j=1 to NUMBEAMS If EINT(i, j) - EINT(i-1, j) > MAXEICNT BADBEAM++ If BADBEAM=0`, flag = 1                           |
-
 
 Test Exception: None.
 Test specifications to be established locally by the operator.
@@ -1071,7 +1047,7 @@ D,
 then the measurement fails this check.
 
 | Flags       | Condition                                                                                                                                                         | Codable Instructions                                                                                          |
-|-------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------|
+| ----------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------- |
 | Fail = 4    | If echo intensity at bin `i` `[EINT(i, j)]` falls below an accepted minimum value (`MINEICNT`), the data at this bin and farther from the transducer are invalid. | `For j = 1 to NUMBEAM If EINT( i , j ) < MINEICNT BADBEAM++ If NUMBEAM - BADBEAM < D`, flag(i:end,:) = 4      |
 | Suspect = 3 | If one or more beams have bins with echo intensity less than `MINEICNT`, but a sufficient number of valid beams exist, the measurement is suspect.                | `For j = 1 to NUMBEAM If EINT(i, j ) < MINEICNT BADBEAM++ If NUMBEAM - BADBEAM ≥ D and BADBEAM ≥ 1`, flag = 3 |
 | Pass = 1    | If echo intensity `[EI(i, j)]` exceeds an accepted minimum value (`MINEICNT`) for all beams in three or more bins, the data at this bin are valid.                | `For j = 1 to NUMBEAM If EINT(i, j) < MINEICNT BADBEAM++ If BADBEAM = 0`, flag = 1                            |
@@ -1092,11 +1068,10 @@ It is presumed the value in bin-1 is valid.
 The same test can be run with current direction.
 
 | Flags       | Condition                                                                                                                                                                    | Codable Instructions                            |
-|-------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------|
+| ----------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------- |
 | Fail = 4    | If current speed at bin `i`, `CSPD(i)` exceeds current speed at bin `i-1`, `CSPD(i-1)` by a prescribed amount, `CSPDDIF`, the data are not valid.                            | `IF ABS[CSPD(i)-CSPD(i-1)] > CSPDDIF`, flag = 4 |
 | Suspect = 3 | N/A                                                                                                                                                                          | None                                            |
 | Pass = 1    | If current speed at bin `i`, `CSPD(i)` change from the current speed at `bin(i-1)`, `CSPD(i-1)`, is less than or equal to a prescribed amount, `CURDIF`, the data are valid. | `IF ABS[CSPD(i)-CSPD(i-1)] ≤ CSPDDIF`, flag = 1 |
-
 
 Test Exception: Applicable only to current profiles, and not to single-point measurement systems.
 Test cannot be conducted on the first bin.

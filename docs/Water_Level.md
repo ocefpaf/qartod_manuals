@@ -1,6 +1,6 @@
 ![Logos for the Integrated Ocean Observing System and the Quality Assurance/Quality Control of Real-Time Oceanographic Data.](images/image1.png)
 
-# Manual for Real-Time Qualiti Control of Water Level Data
+# Manual for Real-Time Quality Control of Water Level Data
 
 A Guide to Quality Control and Quality Assurance for Water Level Observations
 

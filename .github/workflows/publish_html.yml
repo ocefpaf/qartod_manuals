@@ -14,6 +14,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0 # fetch all commits/branches
 
       - name: Setup Micromamba
         uses: mamba-org/setup-micromamba@v1
@@ -28,10 +30,21 @@ jobs:
           set -e
           && mkdocs build --clean --verbose
 
-      - name: Publish HTML
+      - name: Setup Git
+        shell: bash -l {0}
+        run: |
+          git config --global user.name "${GITHUB_ACTOR}"
+          git config --global user.email "${GITHUB_ACTOR}@users.noreply.github.com"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Deploy released docs
         if: success() && github.event_name == 'release'
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: site/
-          keep_files: false
+        shell: bash -l {0}
+        run: >
+          mike deploy --push --update-aliases ${{  github.ref_name }} latest
+          && mike set-default --push latest
+
+      - name: List
+        shell: bash -l {0}
+        run: mike list

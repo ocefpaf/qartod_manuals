@@ -8,3 +8,4 @@ dependencies:
   - mkdocs-material
   - pandoc
   - tectonic
+  - mkdocs-git-revision-date-localized-plugin

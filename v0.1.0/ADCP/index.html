@@ -1,0 +1,2447 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../Water_Level/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.16">
+    
+    
+      
+        <title>ADCP - QARTOD</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.26e3688c.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ecc896b0.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="purple">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#manual-for-real-time-quality-control-of-in-situ-current-observations" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <div data-md-color-scheme="default" data-md-component="outdated" hidden>
+        
+      </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="QARTOD" class="md-header__button md-logo" aria-label="QARTOD" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            QARTOD
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              ADCP
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+          
+            
+            
+            
+            <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="purple"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+            
+              <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6zm0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4zM7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+              </label>
+            
+          
+            
+            
+            
+            <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="lime"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+            
+              <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3Z"/></svg>
+              </label>
+            
+          
+        </form>
+      
+    
+    
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/ocefpaf/qartod_manuals" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    ocefpaf/qartod_manuals
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href=".." class="md-tabs__link">
+      Home
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../Water_Level/" class="md-tabs__link">
+      Water Level
+    </a>
+  </li>
+
+      
+        
+  
+  
+    
+  
+
+
+  <li class="md-tabs__item">
+    <a href="./" class="md-tabs__link md-tabs__link--active">
+      ADCP
+    </a>
+  </li>
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="QARTOD" class="md-nav__button md-logo" aria-label="QARTOD" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    QARTOD
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/ocefpaf/qartod_manuals" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    ocefpaf/qartod_manuals
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Water_Level/" class="md-nav__link">
+        Water Level
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          ADCP
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        ADCP
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#revision-history" class="md-nav__link">
+    Revision History
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#endorsement-disclaimer" class="md-nav__link">
+    Endorsement Disclaimer
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#request-to-manual-users" class="md-nav__link">
+    Request to Manual Users
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#acknowledgements" class="md-nav__link">
+    Acknowledgements
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#acronyms-and-abbreviations" class="md-nav__link">
+    Acronyms and Abbreviations
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#definitions-of-selected-terms" class="md-nav__link">
+    Definitions of Selected Terms
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-background-and-introduction" class="md-nav__link">
+    1.0 Background and Introduction
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#20-purposeconstraintsapplications" class="md-nav__link">
+    2.0 Purpose/Constraints/Applications
+  </a>
+  
+    <nav class="md-nav" aria-label="2.0 Purpose/Constraints/Applications">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-purpose" class="md-nav__link">
+    2.1 Purpose
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-data-processing-methodology" class="md-nav__link">
+    2.2 Data Processing Methodology
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-traceability-to-an-accepted-standard" class="md-nav__link">
+    2.3 Traceability to an Accepted Standard
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#24-sensor-deployment-considerations" class="md-nav__link">
+    2.4 Sensor Deployment Considerations
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#25-hardware-limitations" class="md-nav__link">
+    2.5 Hardware Limitations
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#26-other-important-considerations" class="md-nav__link">
+    2.6 Other Important Considerations
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#30-quality-control" class="md-nav__link">
+    3.0 Quality Control
+  </a>
+  
+    <nav class="md-nav" aria-label="3.0 Quality Control">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-qc-flags" class="md-nav__link">
+    3.1 QC Flags
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-qc-test-types-and-hierarchy" class="md-nav__link">
+    3.2 QC Test Types and Hierarchy
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-qc-test-descriptions" class="md-nav__link">
+    3.3 QC Test Descriptions
+  </a>
+  
+    <nav class="md-nav" aria-label="3.3 QC Test Descriptions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#331-sensor-health-tests" class="md-nav__link">
+    3.3.1 Sensor Health Tests
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#332-signal-quality-tests" class="md-nav__link">
+    3.3.2 Signal Quality Tests
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#333-current-velocity-tests" class="md-nav__link">
+    3.3.3 Current Velocity Tests
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#334-overall-profile-tests" class="md-nav__link">
+    3.3.4 Overall Profile Tests
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#40-summary" class="md-nav__link">
+    4.0 Summary
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+    <a href="https://github.com/ocefpaf/qartod_manuals/edit/main/docs/ADCP.md" title="Edit this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-2m10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1 2.1 2.1Z"/></svg>
+    </a>
+  
+  
+    
+      
+    
+    <a href="https://github.com/ocefpaf/qartod_manuals/raw/main/docs/ADCP.md" title="View source of this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.15 8.15 0 0 1-1.23-2Z"/></svg>
+    </a>
+  
+
+
+<h1 id="manual-for-real-time-quality-control-of-in-situ-current-observations">Manual for Real-Time Quality Control of In-Situ Current Observations</h1>
+<p>A Guide to Quality Control and Quality Assurance of Acoustic Doppler Current Profiler Observations</p>
+<p>Version 2.
+July 2019
+<a href="https://doi.org/10.25923/sqe9-e310">https://doi.org/10.25923/sqe9-e310</a></p>
+<h2 id="revision-history">Revision History</h2>
+<table>
+<thead>
+<tr>
+<th>Date</th>
+<th>Revision Description</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>06/2013</td>
+<td>Original Document Published</td>
+<td>Manual updated with revisions listed sequentially</td>
+</tr>
+<tr>
+<td>10/2015</td>
+<td>Revise dates on Document Validation page (page ii)</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>Add statement requesting feedback from Manual Users (page vii)</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>Update Acknowledgements to include manual update team members (page viii)</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>Update Acronyms and Abbreviations (pages ix-x)</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>Add Definitions of Selected Terms (after Acronyms and Abbreviations)</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>Revise Background and Introduction to reflect updated currents manual, as</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>well as additional manuals that have been developed (page 1)</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>Revise section 2.0 content in various places to reflect feedback from reviewers.</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>Move Sensor Deployment Considerations from section 3.2 to section 2.4.</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>Add content addressing data uncertainty (page 8)</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>Update content in sections 3.1 and 3.2 (pages 10 - 13)</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>Correct the spelling of "codable" in test tables (various)</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>Add Rate of Change Test (page 22) and Spike Test (page 23)</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>Update language in section 4.0, summary, to reflect feedback from reviewers. (page 27)</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>Update References and Supporting Documents (pages 28- 31)</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>Add bullet to deployment checklist (page A-5)</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>Update In-Situ Surface Currents Manual Team members (page B-1)</td>
+<td></td>
+</tr>
+<tr>
+<td>07/2019</td>
+<td>Revise cover page to reflect updated logos.</td>
+<td>Second manual update with revisions listed sequentially</td>
+</tr>
+<tr>
+<td></td>
+<td>Revise Document Validation page to reflect new logo, signatures, and dates.</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>Update email address to Request to Manual Users</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>Update acknowledgements to include version 2.1 reviewers and link to</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>QARTOD workshop reports.</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>Add three terms with definitions (interoperable, sensor, and variable) to Definitions of Selected Terms.</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>Update section 1 (manuals published to date, addition of DOIs, etc.).</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>Update section 2 (minor editorial revisions, figure numbers, etc.).</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>Update section 3 (minor revisions to tests 4, 5, 6, 7, 14, 17, and 20 and substantial revisions to tests 18 and 19).</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>Update appendix A - add names of manual team for version 2.1 and update names of QARTOD Board of Advisors, U.S. IOOS Regional</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>Associations/Executive Directors, and DMAC Community.</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>Update appendix B – added B-3 and other minor edits.</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>Update links throughout the manual.</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>Update formatting to comply with 508 accessibility requirements.</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="endorsement-disclaimer">Endorsement Disclaimer</h2>
+<p>Mention of a commercial company or product does not constitute an endorsement by NOAA.
+Use of information from this publication for publicity or advertising purposes concerning proprietary products or the tests of such products is not authorized.</p>
+<h2 id="request-to-manual-users">Request to Manual Users</h2>
+<p>To gauge the success of the QARTOD project,
+it helps to be aware of groups working to utilize these QC tests.
+Please notify us of your efforts or intentions to implement QARTOD processes by sending a brief email to
+qartod.board@noaa.gov or posting a notice at
+<a href="http://www.linkedin.com/groups?gid=2521409">http://www.linkedin.com/groups?gid=2521409</a>.</p>
+<h2 id="acknowledgements">Acknowledgements</h2>
+<p>We wish to acknowledge those who have contributed to this Version 2.1 update.
+We greatly appreciate the thorough review,
+thoughtful comments,
+and contributions of Matthias Lankhorst / University of California San Diego.
+Once again,
+Darryl Symonds / Teledyne RDI has provided valuable input,
+this time addressing compass sensitivity issues at high latitudes;
+while not a real-time issue,
+these contributions have been added to appendix B. We thank Chris Paternostro,
+Lorraine Heilman,
+and Paul Fanelli,
+all at NOAA / Center for Operational Oceanographic Products and Services (CO-OPS),
+for their contribution, which improves tests 18 and 19.</p>
+<p>Our thanks go to co-editors Jennifer Patterson,
+Central and Northern California Ocean Observing System (CeNCOOS) Information Manager at the Monterey Bay Aquarium Research Institute,
+and to Chris Paternostro,
+Lead Oceanographer at NOAA CO-OPS for their contributions to Version 2.0 (2015) update of this manual.
+We are also grateful to all reviewers of the original manual as well as the updated versions (listed in appendix A).</p>
+<p>For the initial Version 1.0 of this manual,
+special thanks go to Zdenka Willis,
+Director of the U.S. Integrated Ocean Observing System (IOOS),
+for her continuing support of U.S. IOOS QARTOD.
+Also,
+we are grateful to the manufacturers,
+who participated at their own expense.
+Special thanks also to Dr. Richard Crout,
+former QARTOD Project Manager and now with the Navy Research Laboratory / Stennis Space Center,
+who led the development of the tests in section 3 of this document.</p>
+<p>Through the process of five workshops of the Quality Assurance/Quality Control of Real-Time Oceanographic Data (QARTOD),
+these quality control steps were adapted from existing guidelines of NOAA's National Data Buoy Center (NDBC) and CO-OPS,
+the U.S. Army Corps of Engineers Field Research Facility (USACE FRF),
+and participating manufacturers of current measuring systems—Nortek,
+SonTek,
+and Teledyne RDI.
+Additionally,
+the individual tests have been mapped to existing tests of UNESCO (1993).</p>
+<p><strong>QARTOD Meetings</strong> (QARTOD 2003-2009)</p>
+<ul>
+<li><strong>QARTOD I</strong>: National Data Buoy Center, Stennis Space Center, Mississippi. 3-5 December 2003</li>
+<li><strong>QARTOD II</strong>: Norfolk, Virginia. 28 Feb-2 Mar 2005</li>
+<li><strong>QARTOD III</strong>: Scripps Institution of Oceanography, La Jolla, California, 2-4 November 2005</li>
+<li><strong>QARTOD IV</strong>: Woods Hole Oceanographic Institution, Woods Hole, Massachusetts. 21-23 June 2006</li>
+<li><strong>QARTOD V</strong>: Omni Hotel, Atlanta, Georgia, 17-19 November 2009.</li>
+</ul>
+<p>Agendas,
+attendees,
+and reports from QARTOD meetings are located at
+<a href="https://ioos.noaa.gov/ioos-in-action/qartod-meetings">https://ioos.noaa.gov/ioos-in-action/qartod-meetings</a>.</p>
+<h2 id="acronyms-and-abbreviations">Acronyms and Abbreviations</h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ACT</td>
+<td>Alliance for Coastal Technologies</td>
+</tr>
+<tr>
+<td>ADCP</td>
+<td>Acoustic Doppler Current Profiler</td>
+</tr>
+<tr>
+<td>ADP</td>
+<td>Acoustic Doppler Profiler</td>
+</tr>
+<tr>
+<td>AOOS</td>
+<td>Alaska Ocean Observing System</td>
+</tr>
+<tr>
+<td>AST</td>
+<td>Acoustic Surface Tracking</td>
+</tr>
+<tr>
+<td>AWAC</td>
+<td>Acoustic Waves and Currents</td>
+</tr>
+<tr>
+<td>CariCOOS</td>
+<td>Caribbean Coastal Observing System</td>
+</tr>
+<tr>
+<td>CeNCOOS</td>
+<td>Central and Northern California Ocean Observing System</td>
+</tr>
+<tr>
+<td>CO-OPS</td>
+<td>Center for Operational Oceanographic Products and Services</td>
+</tr>
+<tr>
+<td>DMAC</td>
+<td>Data Management and Communications</td>
+</tr>
+<tr>
+<td>GCOOS</td>
+<td>Gulf of Mexico Coastal Ocean Observing System</td>
+</tr>
+<tr>
+<td>GLOS</td>
+<td>Great Lakes Observing System</td>
+</tr>
+<tr>
+<td>GOOS</td>
+<td>Global Ocean Observing System</td>
+</tr>
+<tr>
+<td>IOC</td>
+<td>Intergovernmental Oceanographic Commission</td>
+</tr>
+<tr>
+<td>IODE</td>
+<td>International Oceanographic Date Exchange</td>
+</tr>
+<tr>
+<td>IOOS</td>
+<td>Integrated Ocean Observing System</td>
+</tr>
+<tr>
+<td>MARACOOS</td>
+<td>Mid-Atlantic Regional Association Coastal Ocean Observing System</td>
+</tr>
+<tr>
+<td>NANOOS</td>
+<td>Northwest Association of Networked Ocean Observing Systems</td>
+</tr>
+<tr>
+<td>NDBC</td>
+<td>National Data Buoy Center</td>
+</tr>
+<tr>
+<td>NERACOOS</td>
+<td>Northeastern Regional Association of Coastal Ocean Observing Systems</td>
+</tr>
+<tr>
+<td>NIST</td>
+<td>National Institute of Standards and Technology</td>
+</tr>
+<tr>
+<td>NOAA</td>
+<td>National Oceanic and Atmospheric Administration</td>
+</tr>
+<tr>
+<td>PacIOOS</td>
+<td>Pacific Islands Ocean Observing System</td>
+</tr>
+<tr>
+<td>QARTOD</td>
+<td>Quality Assurance/Quality Control of Real-Time Oceanographic Data</td>
+</tr>
+<tr>
+<td>QA</td>
+<td>Quality Assurance</td>
+</tr>
+<tr>
+<td>QC</td>
+<td>Quality Control</td>
+</tr>
+<tr>
+<td>SCCOOS</td>
+<td>Southern California Coastal Ocean Observing System</td>
+</tr>
+<tr>
+<td>SECOORA</td>
+<td>Southeast Coastal Ocean Observing Regional Association</td>
+</tr>
+<tr>
+<td>UNESCO</td>
+<td>United Nations Educational, Scientific, and Cultural Organization</td>
+</tr>
+<tr>
+<td>USACE</td>
+<td>FRF U.S. Army Corps of Engineers, Field Research Facility, [Duck, NC]</td>
+</tr>
+</tbody>
+</table>
+<h2 id="definitions-of-selected-terms">Definitions of Selected Terms</h2>
+<p>This manual contains several terms whose meanings are critical to those using the manual.
+These terms are included in the following table to ensure that the meanings are clearly defined.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Codable Instructions</td>
+<td>Specific guidance that can be used by a software programmer to design, construct, and implement a test. These instructions also include examples with sample thresholds.</td>
+</tr>
+<tr>
+<td>Data Record</td>
+<td>One or more messages that form a coherent, logical, and complete observation.</td>
+</tr>
+<tr>
+<td>Interoperable</td>
+<td>Interoperable means the ability of two or more systems to exchange and mutually use data, metadata, information, or system parameters using established protocols or standards.</td>
+</tr>
+<tr>
+<td>Message</td>
+<td>A standalone data transmission. A data record can be composed of multiple messages.</td>
+</tr>
+<tr>
+<td>Operator</td>
+<td>Individuals or entities responsible for collecting and providing data.</td>
+</tr>
+<tr>
+<td>Quality Assurance (QA)</td>
+<td>Processes that are employed with hardware to support the generation of high-quality data. (section 2.0 and appendix B)</td>
+</tr>
+<tr>
+<td>Quality Control (QC)</td>
+<td>Follow-on steps that support the delivery of high-quality data and requires both automation and human intervention. (section 3.0)</td>
+</tr>
+<tr>
+<td>Real-Time</td>
+<td>Data are delivered as soon as possible after acquisition for immediate use; time series extends only backwards in time, where the next data point is not available; and sample intervals may range from a few seconds to a few hours or even days, depending upon the variable. (section 1.0)</td>
+</tr>
+<tr>
+<td>Sensor</td>
+<td>A sensor is a device that detects or measures a physical property and provides the result without delay. A sensor is an element of a measuring system that is directly affected by a phenomenon, body, or substance carrying a quantity to be measured. (JCGM 2012)</td>
+</tr>
+<tr>
+<td>Thresholds</td>
+<td>Limits that are defined by the operator.</td>
+</tr>
+<tr>
+<td>Variable</td>
+<td>A variable is an observation (or measurement) of biogeochemical properties within oceanographic and/or meteorological environments.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="10-background-and-introduction">1.0 Background and Introduction</h2>
+<p>The U.S. Integrated Ocean Observing System (IOOS) has a vested interest in collecting high quality data for the 34 core variables
+([https://ioos.noaa.gov/about/ioos-by-the-numbers(https://ioos.noaa.gov/about/ioos-by-the-numbers)]) measured on a national scale.
+In response to this interest,
+U.S. IOOS continues to establish written,
+authoritative procedures for the quality control (QC) of real-time data through the Quality Assurance/Quality Control of Real-Time Oceanographic Data (QARTOD) Project,
+addressing each variable as funding permits.
+This manual on the real-time QC of in-situ current observations was first published in June 2013 as the third core variable to be addressed,
+was updated in October 2015,
+and is now the third core variable to receive a second update.</p>
+<p>Please refer to <a href="https://ioos.noaa.gov/project/qartod/">https://ioos.noaa.gov/project/qartod</a> for the following documents:</p>
+<ol>
+<li>U.S. Integrated Ocean Observing System, 2017. U.S IOOS QARTOD Project Plan - Accomplishments for 2012–2016 and Update for 2017–2021. 47 pp. <a href="https://doi.org/10.7289/V5JQ0Z">https://doi.org/10.7289/V5JQ0Z</a></li>
+<li>U.S. Integrated Ocean Observing System, 2018. Manual for Real-Time Quality Control of Dissolved Oxygen Observations Version 2.1: A Guide to Quality Control and Quality Assurance for Dissolved Oxygen Observations in Coastal Oceans. 48 pp. <a href="https://doi.org/10.25923/q0m1-d">https://doi.org/10.25923/q0m1-d</a></li>
+<li>U.S. Integrated Ocean Observing System, 2019. Manual for Real-Time Quality Control of In-Situ Surface Wave Data Version 2.1: A Guide to Quality Control and Quality Assurance of In- Situ Surface Wave Observations. 70 pp. <a href="https://doi.org/10.25923/7yc5-vs">https://doi.org/10.25923/7yc5-vs</a></li>
+<li>U.S. Integrated Ocean Observing System, 2016. Manual for Real-Time Quality Control of In-Situ Temperature and Salinity Data Version 2.0: A Guide to Quality Control and Quality Assurance of In- Situ Temperature and Salinity Observations. 56 pp. <a href="https://doi.org/10.7289/V5V40SD">https://doi.org/10.7289/V5V40SD</a></li>
+<li>U.S. Integrated Ocean Observing System, 2016. Manual for Real-Time Quality Control of Water Level Data Version 2.0: A Guide to Quality Control and Quality Assurance of Water Level Observations. 4 6 pp. <a href="https://doi.org/10.7289/V5QC01Q">https://doi.org/10.7289/V5QC01Q</a></li>
+<li>U.S. Integrated Ocean Observing System, 2017. Manual for Real-Time Quality Control of Wind Data Version 1.1: A Guide to Quality Control and Quality Assurance of Coastal and Oceanic Wind Observations. 47 pp. <a href="https://doi.org/10.7289/V5FX77NH">https://doi.org/10.7289/V5FX77NH</a></li>
+<li>U.S. Integrated Ocean Observing System, 2017. Manual for Real-Time Quality Control of Ocean Optics Data Version 1.1: A Guide to Quality Control and Quality Assurance of Coastal and Oceanic Optics Observations. 49 pp. <a href="https://doi.org/10.25923/v9p8-ft">https://doi.org/10.25923/v9p8-ft</a></li>
+<li>U.S. Integrated Ocean Observing System, 2018. Manual for Real-Time Quality Control of Dissolved Nutrients Data Version 1.1: A Guide to Quality Control and Quality Assurance of Coastal and Dissolved Nutrients Observations. 56 pp. <a href="https://doi.org/10.7289/V5TT4P7R">https://doi.org/10.7289/V5TT4P7R</a></li>
+<li>U.S. Integrated Ocean Observing System, 2016. Manual for Real-Time Quality Control of High Frequency Radar Surface Currents Data Version 1.0: A Guide to Quality Control and Quality Assurance of High Frequency Radar Surface Currents Data Observations. 58 pp. <a href="https://doi.org/10.7289/V5T43R">https://doi.org/10.7289/V5T43R</a></li>
+<li>U.S. Integrated Ocean Observing System, 2017. Manual for Real-Time Quality Control of Phytoplankton Data Version 1.0: A Guide to Quality Control and Quality Assurance of Phytoplankton Data Observations. 67 pp. <a href="https://doi.org/10.7289/V56D5R6S">https://doi.org/10.7289/V56D5R6S</a></li>
+<li>U.S. Integrated Ocean Observing System, 2017. Manual for Real-Time Quality Control of Passive Acoustics Data Version 1.0: A Guide to Quality Control and Quality Assurance of Passive Acoustics Observations. 45 pp. <a href="https://doi.org/10.7289/V5PC30M">https://doi.org/10.7289/V5PC30M</a></li>
+<li>U.S. Integrated Ocean Observing System, 2018. Manual for Real-Time Quality Control of Stream Flow Data Version 1.0: A Guide to Quality Control and Quality Assurance of Stream Flow Observations in Rivers and Streams. 45 pp. <a href="https://doi.org/10.25923/gszc-ha">https://doi.org/10.25923/gszc-ha</a></li>
+</ol>
+<p>Please refer to this document as:</p>
+<div class="highlight"><pre><span></span><code>U.S. Integrated Ocean Observing System, 2019. Manual for Real-Time Quality
+Control of In-Situ Current Observations Version 2.1 A Guide to Quality Control
+and Quality Assurance of Acoustic Doppler Current Profiler Observations. 52 pp.
+https://doi.org/10.25923/sqe9-e
+</code></pre></div>
+<p>This document follows and expands on the National Surface Currents Plan (U.S. IOOS 2015 ).
+The U.S. Army Corps of Engineers (USACE) and the National Oceanic and Atmospheric Administration's (NOAA) National Data Buoy Center (NDBC) and Center for Operational Oceanographic Products and Services (CO-OPS),
+well-recognized as established providers of current data,
+have long led the Nation with current observation programs.
+NDBC and CO-OPS have decades of experience applying QC checks for hundreds of deployments (NDBC 2009).
+However,
+the observation locations were based on local project or user requirements,
+resulting in a useful but ad hoc network with limited integration.
+The National Surface Currents Plan addresses this situation by defining a comprehensive current-observing network for the United States.</p>
+<p>The National Surface Currents Plan documents the extensive effort that QARTOD workshops devoted to QC of currents data.
+The process for the development,
+distribution,
+review,
+refinement,
+and revision of this manual continues the QARTOD effort through collaboration by the QARTOD Board of Advisors,
+all the U.S. IOOS Regional Associations,
+manufacturers,
+and operators.
+Operators,
+individuals or entities who are responsible for collecting and providing currents data,
+are a key part of this endeavor.</p>
+<p>This manual is a living document that reflects the state-of-the-art QC testing procedures for in-situ current observations using acoustic Doppler current profilers (ADCPs) and single-point current meters.
+It is written for the experienced operator but also provides examples for those who are just entering the field.</p>
+<h2 id="20-purposeconstraintsapplications">2.0 Purpose/Constraints/Applications</h2>
+<p>The following sections describe the purpose of this manual,
+as well as the constraints that operators may encounter when performing QC of in-situ current data and specific applications of those data.</p>
+<h3 id="21-purpose">2.1 Purpose</h3>
+<p>The purpose of this manual is to provide guidance to the U.S. IOOS and the in-situ currents community at large for the real-time QC of in-situ current measurements using an agreed-upon,
+documented,
+and implemented standard process.
+This manual is also a deliverable to the U.S. IOOS Regional Associations and the ocean-observing community and represents a contribution to a collection of core variable QC documents.</p>
+<p>This manual documents a series of test procedures for ocean currents data QC.
+Current observations covered by these procedures are collected in oceans,
+coastal waters,
+and lakes in real time or near-real time.
+The scope of real time has expanded to accommodate the span of the 34 variables covered by U.S. IOOS. The characteristics of real time (in no particular order) are:</p>
+<ul>
+<li>data delivered as soon as possible after acquisition for immediate use</li>
+<li>a time series extending only backwards in time, where the next data point is not available</li>
+<li>sample intervals from a few seconds to a few hours or even days, depending upon the variable</li>
+</ul>
+<p>High quality marine observations require sustained quality assurance (QA) and QC practices to ensure credibility and value to operators and data users.
+QA practices involve processes that are employed with hardware to support the generation of high-quality data,
+such as the use and application of a sufficiently accurate, precise,
+and reliable sensor with adequate resolution.
+Other QA practices include sensor calibration;
+calibration checks,
+and/or in-situ verification,
+including post-deployment calibration;
+proper deployment considerations,
+such as measures for corrosion control and anti-fouling;
+solid data communications;
+adequate maintenance intervals;
+and creation of a robust quality-control process.
+Post-deployment calibration (instrument verification after recovery) issues are not part of the scope of this manual.
+Although QC and QA are interrelated and important to the process,
+QA considerations are addressed separately in appendix B.</p>
+<p>QC involves follow-on steps that support the delivery of high-quality data and requires both automation and human intervention.
+QC practices include such things as data integrity checks (format, checksum, timely arrival of data),
+data value checks (threshold checks, minimum/maximum rate of change),
+neighbor checks,
+climatology checks,
+model comparisons,
+signal/noise ratios,
+the mark-up of the data,
+the verification of user satisfaction,
+and generation of data flags (Bushnell 2005).</p>
+<p>These procedures are written as a high-level narrative from which computer code can be developed to generate specific data flags (data quality indicators) within an automated software program.
+A code repository exists at <a href="https://github.com/ioos/qartod">https://github.com/ioos/qartod</a>,
+where operators may find or post examples of code in use.
+Although certain tests are recommended,
+thresholds can vary among operators.
+The tests described here are designed to support a range of current sensors and operator capabilities.
+Some well-established programs with the highest standards have implemented very rigorous QC processes.
+Others,
+with different requirements,
+may utilize sensors with data streams that cannot support as many QC checks—all have value when used prudently.
+Users must understand and appropriately utilize data of varying quality,
+and operators must provide support by documenting and publishing their QC processes.
+A balance must be struck between the time-sensitive needs of real-time observing systems and the degree of rigor that has been applied to non-real-time systems by operators with decades of QC experience.</p>
+<p>These tests apply only to the in-situ,
+real-time measurement of current points and current profiles as observed by sensors deployed on fixed or moored platforms and not to sensors deployed on moving platforms (e.g., drifting buoys, autonomous marine vehicles, ships) or remotely sensed current measurements (e.g., high frequency radar).</p>
+<p>Through the process of the first four QARTOD workshops,
+a set of guidelines were collected and submitted to the Ocean.US Data Management and Communications (DMAC) Steering Committee (Bouchard et al. 2007).
+Those guidelines were adapted from existing guidelines developed and implemented by established providers of currents data,
+as well as participating manufacturers of current-measuring systems—Nortek,
+SonTek,
+and Teledyne RDI.
+Additionally,
+the individual tests have been mapped to existing tests of UNESCO (1993).</p>
+<p>The following list includes currents data providers (operators) and manufacturers who contributed to developing this manual.
+Also included is the specific sensor manufacturer and where possible the individual sensors associated with the data provider.
+This list is not intended to be comprehensive but as a means to acknowledge the efforts of these operators and manufacturers.</p>
+<ul>
+<li>Woods Hole Oceanographic Institution, NDBC, University of South Florida (Teledyne RDI 1200, 600, 300, 75, and 38 kHz Acoustic Doppler Current Profilers)</li>
+<li>CO-OPS (Teledyne RDI 1200, 600, 300 , and 75 kHz ADCPs; Nortek Aquadopp; SonTek 1000, 500, and 250 kHz ADP Acoustic Doppler Profilers)</li>
+<li>USACE FRF (Teledyne RDI, Nortek Aquadopp)</li>
+<li>Shell Oil Company (Teledyne RDI)</li>
+</ul>
+<p>The process of ensuring data quality is not always straightforward.
+QA and QC procedures may be specific to a sensor technology or even to a particular manufacturer's model,
+so the establishment of a methodology that is applicable to every sensor is challenging.</p>
+<h3 id="22-data-processing-methodology">2.2 Data Processing Methodology</h3>
+<p>The type of sensor system used to collect the data and the system used to process and transmit the information impact the QC algorithms that can be used on the data.
+In-situ systems with sufficient onboard processing power within the sensor and limited data transmission capability may process the original (raw) measurement and produce product summaries,
+such as mean currents.
+If ample transmission capability is available,
+the entire raw data stream may be transmitted ashore and subsequently quality controlled in real-time from there.
+Therefore,
+because operators have different data processing methodologies,
+several levels of QC are proposed.</p>
+<h3 id="23-traceability-to-an-accepted-standard">2.3 Traceability to an Accepted Standard</h3>
+<p>To ensure that ADCPs are producing accurate data,
+rigorous calibrations and calibration checks must be performed.
+Most operators rely upon manufacturer-recommended calibrations and conduct calibration checks,
+which are also usually described in their user manuals.
+These activities are considered QA and are further addressed in appendix B.</p>
+<p>Calibrations and calibration checks must be traceable to accepted standards.
+The National Institute of Standards and Technology (NIST) (<a href="http://www.nist.gov/index.html">http://www.nist.gov/index.html</a>),
+a provider of internationally accepted standards,
+is often the source for accepted standards,
+but there is no standard for measurement of currents.
+These activities must rely upon the fundamental standards for length,
+time,
+and the earth's magnetic field.
+Fortunately,
+traceability to NIST is relatively easy because the standards for length,
+time,
+and compass-bearing are readily available at the resolutions required.</p>
+<h3 id="24-sensor-deployment-considerations">2.4 Sensor Deployment Considerations</h3>
+<p>Acoustic Doppler current meters and profilers can be mounted in a variety of configurations, such as:</p>
+<ul>
+<li>in a platform sitting on the bottom, looking upward</li>
+<li>on a buoy, looking downward</li>
+<li>attached to a structure, looking horizontally (side-looking)</li>
+<li>on an oil rig, looking in any direction</li>
+<li>aboard a surface vessel underway</li>
+<li>upward or downward on an autonomous underwater vehicle or glider</li>
+<li>upward or downward on an in-line mooring</li>
+</ul>
+<p>Acoustic Doppler current meters and profilers may have two (the minimum required for horizontal profiling),
+three,
+four,
+or more transducers.
+In some cases,
+redundant transducers over-resolve the current measurements,
+and the results are used to provide an estimate of the quality of the observations.
+In other cases,
+multiple transducer pairings utilize different transmit frequencies and provide the benefits of longer range from a lower frequency and higher spatial resolution from the higher frequency (e.g., SonTek RiverSurveyor M9).
+Some can also be configured to measure other variables as well,
+such as waves,
+turbulence,
+ice tracking (e.g., Nortek Signature500) and biomass (e.g., Nortek Signature100).
+Some examples of the variety of transducer configurations are shown in figs. 2-1 through 2-5.
+This manual does not cover the QC of all possible configurations,
+but it does include the most widely used tests provided by participating operators.
+Notes within each specific test provide application guidance.</p>
+<p><img alt="Teledyne RDI ADCP; Nortek Aquadopp transducer head" src="../images_ADCP/image01.png" /></p>
+<figcaption>Figure 2-1. Teledyne RDI ADCP (left); Nortek Aquadopp transducer head (right). (Photos courtesy of Teledyne RDI and Nortek)</figcaption>
+
+<p><img alt="SonTek ADP; Aanderaa Doppler" src="../images_ADCP/image02.png" /></p>
+<figcaption>Figure 2-2. SonTek ADP (left); Aanderaa Doppler current sensors (right). (Photos courtesy of Mark Bushnell/NOAA and Aanderaa website)</figcaption>
+
+<p><img alt="Nortek Aquadopp" src="../images_ADCP/image03.png" /></p>
+<figcaption>Figure 2-3. A Nortek Aquadopp is fastened to a standard U.S. Coast Guard aid to navigation positioned for downward-looking observations. (Photo courtesy of Mark Bushnell/NOAA)</figcaption>
+
+<p><img alt="bottom-mounted upward-looking Nortek AWAC" src="../images_ADCP/image04.png" /></p>
+<figcaption>Figure 2-4. A bottom-mounted upward-looking Nortek AWAC is prepared for deployment. (Photo courtesy of Doug Wilson/NOAA)</figcaption>
+
+<p><img alt="SonTek side-looking ADP" src="../images_ADCP/image05.png" /></p>
+<figcaption>Figure 2-5. A SonTek side-looking ADP is raised for cleaning. (Photo courtesy of Warren Krug/NOAA)</figcaption>
+
+<h3 id="25-hardware-limitations">2.5 Hardware Limitations</h3>
+<p>Advances in ADCP sensor technology have eliminated many of the problems encountered in older devices.
+Sensors are now smaller,
+more reliable,
+and draw less power.
+Ancillary sensors can be employed to make corrections,
+and most notably,
+signal processing hardware and software capabilities have grown enormously.</p>
+<p>ADCP current sensors can withstand moderate bio-fouling,
+but observational accuracy gradually degrades as marine growth becomes excessive.
+As the bio-mass increases on the ADCP transducers,
+effective acoustic power output and transducer reception sensitivity also degrade,
+leading to reduced signal-to-noise ratios and less accurate observations.
+ADCPs using pressure sensors may find dampened output as the orifice becomes obstructed.
+The degree of bio-fouling will vary depending on a number of factors,
+but in some instances,
+effective anti-fouling materials and coatings may permit system deployments in excess of two years.</p>
+<p>As with all instruments,
+ADCPs are depth/range limited by the pressure housing.
+ADCP measurements are further depth/range limited in two fundamental ways:</p>
+<ol>
+<li>the acoustic signal strength loss over distance (higher frequency systems have shorter ranges) and</li>
+<li>the acoustic beams spread with increasing range,
+   both within an individual beam and among the multiple beams,
+   which leads to reduced resolution and less certainty that the sampled field has uniform flow.
+   Many of the QC tests address these limitations through the use of carefully selected thresholds and other test criteria.</li>
+</ol>
+<p>ADCP transducer side-lobe reflections must also be considered.
+These reflections can come from the bottom,
+the surface,
+or adjacent structures and degrade ADCP performance.
+These errors are mitigated by proper deployment procedures.
+Manufacturer user manuals should be consulted to ensure that proper procedures are followed.</p>
+<h3 id="26-other-important-considerations">2.6 Other Important Considerations</h3>
+<p>Corrections for magnetic declination and deviation are important and must be given careful consideration.</p>
+<p>Although these corrections are beyond the scope of this manual, manufacturers provide processes for making</p>
+<p>corrections, which are specific to the sensor make/model, within their user manuals. Appendix B-3 provides</p>
+<p>further information.</p>
+<p>While outside the scope of the real-time tests described in this manual,
+QA is critical to data quality.
+Sensors require attention to proper QA measures both before and after the deployment (appendix B).
+Operators must follow the manufacturer's recommendations for factory calibration schedules and proper sensor maintenance.</p>
+<p>Also important,
+but beyond the scope of this document at present,
+is the determination and reporting of data uncertainty.
+Knowledge of the accuracy of each observation is required to ensure that data are used appropriately and aids in the computation of error bounds for subsequent products derived by users.
+All sensors and measurements contain errors that are determined by hardware quality,
+methods of operation,
+and data processing techniques.
+Operators should routinely provide a quantitative measure of data uncertainty in the associated metadata.
+Such calculations can be challenging,
+so operators should also document the methods used to compute the uncertainty.
+The limits and thresholds implemented by operators for the data QC tests described here are a key component in establishing the observational error bounds.
+Operators are strongly encouraged to consider the impact of the QC tests on data uncertainty,
+as these two efforts greatly enhance the utility of their data.</p>
+<p>Sensor redundancy is key to obtaining measurements and ensuring that uncertainties can be assigned to those measurements.
+Hence,
+comparing two adjacent instruments can assist in evaluation of data quality,
+as well as provide two (or more) independent estimates of a parameter of interest.
+Variation in the estimated values can be useful in uncertainty calculations.</p>
+<h2 id="30-quality-control">3.0 Quality Control</h2>
+<p>To conduct real-time QC on current observations,
+the first pre-requisite is to understand the science and context within which the measurements are being conducted.
+Currents are dependent upon many things such as tidal forces,
+density gradients,
+winds,
+and riverine flow.
+The real-time QC of these observations can be extremely challenging.
+Human involvement is therefore important to ensure that solid scientific principles are applied to the process to ensure that good data are not discarded,
+and bad data are not distributed.
+Examples include selection of appropriate thresholds and examination of data flagged as questionable.</p>
+<p>This manual focuses specifically on real-time data,
+so the operator is likely to encounter aspects of data QC where the flags and tests described in the following sections do not apply because the data are not considered to be real time.
+For example,
+for real-time QC,
+drift (slow changes in sensor calibration) cannot be detected or corrected.
+Fortunately,
+sensor drift and drift correction are not typically issues for ADCPs (except for clock drift).
+Another example might be the ability of some data providers to backfill data gaps.
+In both of these examples,
+the observations are not considered to be real time for purposes of QC checks.
+(However, in some sophisticated 24/7 QC operations, real-time dissemination may be switched from one sensor to another based on real-time QC flags.)</p>
+<h3 id="31-qc-flags">3.1 QC Flags</h3>
+<p>Data are evaluated using QC tests,
+and the results of those tests are recorded by inserting flags in the data files.
+Table 3-1 provides a simple set of flags and associated descriptions.
+Operators may incorporate additional flags for inclusion in metadata records.
+For example,
+an observation may fail the current speed test (test 10) and be flagged as having failed the test.
+Additional flags may be incorporated to provide more detailed information to assist with troubleshooting.
+If the data failed the current speed test by exceeding the upper limit,
+a "failed high" flag may indicate that the values were higher than the expected range,
+but such detailed flags primarily support maintenance efforts and are presently beyond U.S. IOOS requirements for QC of real-time data.
+For additional information regarding flags,
+see the <em>Manual for the Use of Real-Time Oceanographic Data Quality Control Flags</em> (U.S. IOOS 2017) posted on the U.S. IOOS QARTOD website.</p>
+<p>Further post-processing of the data may yield different conclusions from those reached during initial assessments.
+Flags set in real-time should not be changed to ensure that historical documentation is preserved.
+Results from post-processing should generate another set of flags.</p>
+<p>Observations are time ordered,
+and the most recent observation is <em>n<sub>0</sub></em>,
+preceded by a value at <em>n-1</em>,
+and so on backwards in time.
+The focus of this manual is primarily on the real-time QC of observations <em>n</em>,
+<em>n-1</em>,
+and <em>n-2</em>.</p>
+<table>
+<thead>
+<tr>
+<th><strong>Flag</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Pass=1</td>
+<td>Data have passed critical real-time QC tests and are deemed adequate for use as preliminary data.</td>
+</tr>
+<tr>
+<td>Not Evaluated=2</td>
+<td>Data have not been QC-tested, or the information on quality is not available.</td>
+</tr>
+<tr>
+<td>Suspect or of High Interest=3</td>
+<td>Data are considered to be either suspect or of high interest to operators and users. They are flagged suspect to draw further attention to them by operators.</td>
+</tr>
+<tr>
+<td>Fail=4</td>
+<td>Data are considered to have failed one (or more) critical real-time QC check. If they are disseminated at all, it should be readily apparent that they are not of acceptable quality.</td>
+</tr>
+<tr>
+<td>Missing Data=9</td>
+<td>Data are missing; used as a placeholder.</td>
+</tr>
+</tbody>
+</table>
+<p>: Table 3-1. Flags for real-time data from ADCPs. (UNESCO 2013)</p>
+<h3 id="32-qc-test-types-and-hierarchy">3.2 QC Test Types and Hierarchy</h3>
+<p>This section outlines the 20 real-time QC tests that are required and recommended for in-situ currents.
+Tests are listed in table 3-2 and are divided into four groups according to test type.
+The tests in group 1 (table 3-3) are required (where possible) for all current measurements collected for U.S. IOOS.
+However,
+the output of some instruments is not sufficient for some tests.
+Operators must consider each test in group 2 to determine if it can be applied in their particular instance—not all tests can be implemented in all situations.
+Operators should also consider that some of these tests can be carried out within the instrument,
+where thresholds can be defined in configuration files.
+Although more tests imply a more robust QC effort,
+there are many reasons operators could use to justify not conducting some tests.
+In those cases,
+operators need only to document reasons these tests do not apply to their observations.
+Such flexibility is needed to support the U.S. IOOS Regional Information Coordination Entities certification effort (IOOC 2012),
+since the number of tests conducted and the justification for not applying some tests are useful for evaluating an operator's skill level.
+Even though currently there are no suggested tests,
+group 3 is retained as a placeholder for possible future additions.</p>
+<table>
+<thead>
+<tr>
+<th>Test Type</th>
+<th>Test Name</th>
+<th>Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Sensor Health</td>
+<td>Battery Voltage (Test 1)</td>
+<td>Strongly Recommended</td>
+</tr>
+<tr>
+<td></td>
+<td>Check Sum (Test 2)</td>
+<td>Required</td>
+</tr>
+<tr>
+<td></td>
+<td>Sensor Tilt (Test 3)</td>
+<td>Required</td>
+</tr>
+<tr>
+<td></td>
+<td>Speed of Sound (Test 4)</td>
+<td>Required</td>
+</tr>
+<tr>
+<td>Signal Quality</td>
+<td>Noise Floor (Test 5)</td>
+<td>Strongly Recommended</td>
+</tr>
+<tr>
+<td></td>
+<td>Signal Strength (Test 6)</td>
+<td>Required</td>
+</tr>
+<tr>
+<td></td>
+<td>Signal-to-Noise (Test 7)</td>
+<td>Strongly Recommended</td>
+</tr>
+<tr>
+<td></td>
+<td>Correlation Magnitude (Test 8)</td>
+<td>Strongly Recommended</td>
+</tr>
+<tr>
+<td></td>
+<td>Percent Good (Test 9)</td>
+<td>Strongly Recommended</td>
+</tr>
+<tr>
+<td>Current Velocity</td>
+<td>Current Speed (Test 10)</td>
+<td>Required</td>
+</tr>
+<tr>
+<td></td>
+<td>Current Direction (Test 11)</td>
+<td>Required</td>
+</tr>
+<tr>
+<td></td>
+<td>Horizontal Velocity (Test 12)</td>
+<td>Required</td>
+</tr>
+<tr>
+<td></td>
+<td>Vertical Velocity (Test 13)</td>
+<td>Strongly Recommended</td>
+</tr>
+<tr>
+<td></td>
+<td>Error Velocity (Test 14)</td>
+<td>Strongly Recommended</td>
+</tr>
+<tr>
+<td></td>
+<td>u, v Rate of Change (Test 15)</td>
+<td>Strongly Recommended</td>
+</tr>
+<tr>
+<td></td>
+<td>u, v Spike (Test 16)</td>
+<td>Strongly Recommended</td>
+</tr>
+<tr>
+<td></td>
+<td>Flat Line (Test 17)</td>
+<td>Required</td>
+</tr>
+<tr>
+<td>Overall Profile</td>
+<td>Echo Intensity (Test 18)</td>
+<td>Required</td>
+</tr>
+<tr>
+<td></td>
+<td>Echo Intensity Drop-off (Test 19)</td>
+<td>Strongly Recommended</td>
+</tr>
+<tr>
+<td></td>
+<td>Current Gradient (Test 20)</td>
+<td>Strongly Recommended</td>
+</tr>
+</tbody>
+</table>
+<p>: Table 3-2. QC tests for real-time current data from fixed or buoy-mounted current sensors</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Group 1 Required</td>
+<td>Check Sum (Test 2)</td>
+</tr>
+<tr>
+<td></td>
+<td>Sensor Tilt (Test 3)</td>
+</tr>
+<tr>
+<td></td>
+<td>Speed of Sound (Test 4)</td>
+</tr>
+<tr>
+<td></td>
+<td>Signal Strength (Test 6)</td>
+</tr>
+<tr>
+<td></td>
+<td>Current Speed (Test 10)</td>
+</tr>
+<tr>
+<td></td>
+<td>Current Direction (Test 11)</td>
+</tr>
+<tr>
+<td></td>
+<td>Horizontal Velocity (Test 12)</td>
+</tr>
+<tr>
+<td></td>
+<td>Flat Line (Test 17)</td>
+</tr>
+<tr>
+<td></td>
+<td>Echo Intensity (Test 18)</td>
+</tr>
+<tr>
+<td>Group 2 Strongly Recommended</td>
+<td>Battery Voltage (Test 1)</td>
+</tr>
+<tr>
+<td></td>
+<td>Noise Floor (Test 5)</td>
+</tr>
+<tr>
+<td></td>
+<td>Signal-to-Noise (Test 7)</td>
+</tr>
+<tr>
+<td></td>
+<td>Correlation Magnitude (Test 8)</td>
+</tr>
+<tr>
+<td></td>
+<td>Percent Good (Test 9)</td>
+</tr>
+<tr>
+<td></td>
+<td>Vertical Velocity Test (13)</td>
+</tr>
+<tr>
+<td></td>
+<td>Error Velocity Test (14)</td>
+</tr>
+<tr>
+<td></td>
+<td>u, v Rate of Change Test (15)</td>
+</tr>
+<tr>
+<td></td>
+<td>u, v Spike Test (16)</td>
+</tr>
+<tr>
+<td></td>
+<td>Echo Intensity Drop-off Test (19)</td>
+</tr>
+<tr>
+<td></td>
+<td>Current Gradient Test (20)</td>
+</tr>
+<tr>
+<td>Group 3 Suggested</td>
+<td>None.</td>
+</tr>
+</tbody>
+</table>
+<p>: Table 3-3. QC tests in order of requirement hierarchy</p>
+<p>Some effort will be needed to select the best thresholds,
+which are determined at the operator level and may require trial and error/iteration before final selections are made.
+A successful QC effort is highly dependent upon selection of the proper thresholds,
+which should not be determined arbitrarily but can be based on a number of criteria,
+such as historical knowledge,
+statistics derived from more recently acquired data,
+and manufacturer recommendations.
+Although this manual provides some guidance for selecting thresholds based on input from various operators,
+it is assumed that operators have the subject matter expertise as well as a sincere interest in selecting the proper thresholds to maximize the value of their QC effort.
+Operators are required to openly provide thresholds as metadata for user support.
+This shared information will help U.S. IOOS to document standardized thresholds to be included in future releases of this manual.</p>
+<h3 id="33-qc-test-descriptions">3.3 QC Test Descriptions</h3>
+<p>A variety of tests can be performed on the sensor measurements to evaluate data quality.
+Testing the integrity of the data transmission is a first step.
+If the data are corrupted during transmission,
+further testing may be irrelevant.
+The checks defined in these 20 tests evaluate data through various comparisons to other data and to the expected conditions in the given environment.
+The tests listed in this section presume a time-ordered series of observations (..., <em>n-2</em>, <em>n-1</em>, <em>n</em>) and denote the most recent observation as previously described.</p>
+<p>For each test described,
+<em>i</em> represents the bin number (range cell within a beam),
+with bin one being closest to the instrument,
+and <em>j</em> represents the beam number.</p>
+<p>The test descriptions provided are examples of tests that may be employed.
+They are not intended to be the only acceptable tests,
+rather they serve to clearly identify the intent of the test.
+The examples are the best available at present and will be improved in updated manuals as tests are implemented.
+Specifically,
+the rate-of-change and spike tests are surprisingly challenging and have deficiencies as presently described.
+Both tests may suffer from false failure of subsequent valid observations when recovering from the initial detection of a flawed observation.
+Operators are strongly encouraged to share improved versions of all tests as they are developed.</p>
+<h4 id="331-sensor-health-tests">3.3.1 Sensor Health Tests</h4>
+<p>Each test checks to ensure that the sensor is working properly.</p>
+<p><strong>Battery Voltage (Test 1) – Strongly Recommended</strong></p>
+<p>Check for sufficient battery voltage
+Test determines that there is sufficient battery voltage (<code>BATTVOLT</code>) to provide a "good" measurement.</p>
+<table>
+<thead>
+<tr>
+<th>Flags</th>
+<th>Condition</th>
+<th>Codable Instructions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Fail = 4</td>
+<td>Battery voltage is less than an accepted minimum value (MIN).</td>
+<td><code>If BATTVOLT &lt; MIN, flag = 4</code></td>
+</tr>
+<tr>
+<td>Suspect = 3</td>
+<td>N/A</td>
+<td></td>
+</tr>
+<tr>
+<td>Pass = 1</td>
+<td>Battery voltage is sufficient.</td>
+<td><code>If BATTVOLT ≥ MIN, flag = 1</code></td>
+</tr>
+</tbody>
+</table>
+<p>Test Exception: Test cannot be applied when no battery measurement is provided.
+Test specifications to be established by operator.
+Example 1 : MIN = 11.6 Vdc Example 2: Teledyne RDI, MIN = 150 battery counts</p>
+<p><strong>Check Sum (Test 2) - Required</strong></p>
+<p>Check for data message integrity.</p>
+<p>Test to ensure that the message transmitted from the sensor is valid.
+A checksum value (<code>CKSUMXMT</code>) is prepared from the message before it is transmitted and appended to the data stream. Once the message is received,
+a checksum is calculated from the message and that value is compared to the transmitted value.</p>
+<table>
+<thead>
+<tr>
+<th>Flags</th>
+<th>Condition</th>
+<th>Codable Instructions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Fail = 4</td>
+<td>The data message fails if the calculated checksum (<code>CKSUMCAL</code>) from the data stream does not match the transmitted checksum (<code>CKSUMXMT</code>) in the message.</td>
+<td><code>IF CKSUMCAL ≠ CKSUMXMT, flag = 4</code></td>
+</tr>
+<tr>
+<td>Suspect = 3</td>
+<td>N/A</td>
+<td>None</td>
+</tr>
+<tr>
+<td>Pass = 1</td>
+<td>The data message is valid if the calculated checksum (<code>CKSUMCAL</code>) is identical to the transmitted checksum (<code>CKSUMXMT</code>).</td>
+<td><code>IF CKSUMCAL = CKSUMXMT, flag = 1</code></td>
+</tr>
+</tbody>
+</table>
+<p>Test Exception : Test cannot be applied when no checksum or other message integrity verification is provided.
+Example: <code>CKSUMXMT = FF4A</code>, <code>CKSUMCAL = FF4A</code>, flag = 1</p>
+<p><strong>Sensor Tilt (Test 3) - Required</strong></p>
+<p>Check for unexpected tilt or change in tilt.
+Current sensors must be aligned within an expected range of tilt angles to properly measure horizontal and vertical currents.
+Sensors with the capability to measure tilt along two axes should undergo this sensor tilt test to ensure that the measurements are collected within the correct range of values for the type of current meter used.
+Manufacturers' specifications indicate the maximum allowable tilt.</p>
+<table>
+<thead>
+<tr>
+<th>Flags</th>
+<th>Condition</th>
+<th>Codable Instructions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Fail = 4</td>
+<td>Tilt (<code>TILTX</code>, <code>TILTY</code>) angle is greater than the allowed value (<code>TILTMAX</code>).</td>
+<td><code>If TILTX &gt; TILTMAX OR TILTY &gt; TILTMAX, flag = 4</code></td>
+</tr>
+<tr>
+<td>Suspect = 3</td>
+<td>N/A</td>
+<td></td>
+</tr>
+<tr>
+<td>Pass = 1</td>
+<td>Tilt angle is less than or equal to the allowed value.</td>
+<td><code>If TILTX ≤ TILTMAX OR TILTY ≤ TILTMAX, flag = 1</code></td>
+</tr>
+</tbody>
+</table>
+<p>Test Exception: Test cannot be applied when no tilt value is provided in real-time data stream.
+<code>TILTMAX</code> values provided by manufacturer.
+Example: <code>TILTMAX = 15°</code>, <code>TILTX = 3</code>, <code>TILY = 1</code>, flag = 1</p>
+<p><strong>Speed of Sound (Test 4) - Required</strong></p>
+<p>Check for a valid speed of sound value.
+The speed of sound value is used in the calculation of acoustic pulse travel times and must be within a reasonable range given a known salinity and temperature of the water column and allowing for variations in density throughout.</p>
+<table>
+<thead>
+<tr>
+<th>Flags</th>
+<th>Condition</th>
+<th>Codable Instructions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Fail = 4</td>
+<td>If the speed of sound value (<code>SSVAL</code>) is outside of acceptable sound speed range (<code>SSMIN</code> to <code>SSMAX</code>) it is not valid.</td>
+<td><code>IF SSVAL &lt; SSMIN OR SSVAL &gt; SSMAX, flag = 4</code></td>
+</tr>
+<tr>
+<td>Suspect = 3</td>
+<td>N/A</td>
+<td>None</td>
+</tr>
+<tr>
+<td>Pass = 1</td>
+<td>If the speed of sound value (<code>SSVAL</code>) is within the acceptable sound speed range (<code>SSMIN</code> to <code>SSMAX</code>) it is valid.</td>
+<td><code>IF SSVAL ≥ SSMIN AND SSVAL ≤ SSMAX, flag = 1</code></td>
+</tr>
+</tbody>
+</table>
+<p>Test Exception: Test cannot be applied if no sound speed is being reported.
+Test specifications to be established locally by operator: <code>SSMIN</code> and <code>SSMAX</code>
+Example: <code>SSMIN = 1,475 m/s</code>, <code>SSMAX = 1,560 m/s</code>, <code>SSVAL = 1,528 m/s</code>, flag = 1</p>
+<h4 id="332-signal-quality-tests">3.3.2 Signal Quality Tests</h4>
+<p>Signal quality tests are applied to each beam of the sensor and to each depth level that is transmitted by the sensor.</p>
+<p><strong>Noise Floor (Test 5) – Strongly Recommended</strong></p>
+<p>Ensure that measured values of signal are above the noise value.
+System noise within each of the beams should be within a specified range of values.
+If any of the beams fail the test,
+the sensor fails the test and should not be used.</p>
+<table>
+<thead>
+<tr>
+<th>Flags</th>
+<th>Condition</th>
+<th>Codable Instructions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Fail = 4</td>
+<td>System noise values <code>[SCMNOIS(j)]</code> are outside a count range.</td>
+<td><code>If SCMNOIS(j) &lt; COUNTMIN OR SCMNOIS(j) &gt; COUNTMAX, flag (j) = 4</code></td>
+</tr>
+<tr>
+<td>Suspect = 3</td>
+<td>N/A</td>
+<td>None</td>
+</tr>
+<tr>
+<td>Pass = 1</td>
+<td>System noise values <code>[SCMNOIS(j)]</code> are within a count range.</td>
+<td><code>If SCMNOIS(j) ≥ COUNTMIN AND SCMNOIS(j) ≤ COUNTMAX, flag (j) = 1</code> All flags must equal 1, <code>FLAG(1) = FLAG(2) = FLAG(3) = 1</code> to continue</td>
+</tr>
+</tbody>
+</table>
+<p>Test Exception: For instruments with extra beams,
+a solution can be achieved with a bad beam.
+A four-beam system can provide 3-D currents if just one beam is bad.
+At least three beams must pass this test for vertical profiling,
+and at least two beams are required for horizontal profiling.</p>
+<p>Test does not apply unless the particular property is actually included in the data stream.
+Test specifications to be established locally by operator.</p>
+<p>Example: <code>COUNTMIN = 25</code> counts; <code>COUNTMAX = 30</code> counts (Nortek Aquadopp)</p>
+<p><strong>Signal Strength (Test 6) - Required</strong></p>
+<p>Ensure that the signal strength is sufficient to produce good data.
+Signal strength within each of the beams should be above a specified threshold (<code>SCMDBMIN</code>).
+At least three beams must pass this test for vertical profiling,
+and at least two beams are required for horizontal profiling.</p>
+<table>
+<thead>
+<tr>
+<th>Flags</th>
+<th>Condition</th>
+<th>Codable Instructions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Fail = 4</td>
+<td>Signal strength values <code>[SCMDB(j)]</code> for each beam, <code>j</code> , are greater than a minimum value.</td>
+<td><code>IF SCMDB(j) &lt; SCMDBMIN, flag = 4</code></td>
+</tr>
+<tr>
+<td>Suspect = 3</td>
+<td>N/A</td>
+<td>None</td>
+</tr>
+<tr>
+<td>Pass = 1</td>
+<td>Signal strength values exceed the minimum value for good data.</td>
+<td><code>IF SCMDB( j ) ≥ SCMDBMIN, flag = 1</code></td>
+</tr>
+</tbody>
+</table>
+<p>Test Exception: Test does not apply unless the particular property is actually included in the data stream.
+Test specifications to be established by the manufacturer.
+Example: <code>SCMDBMIN = 25</code> counts (Nortek Aquadopp)</p>
+<p><strong>Signal-to-Noise (Test 7) – Strongly Recommended</strong></p>
+<p>Test that the signal-to-noise ratio is sufficient.
+The signal-to-noise ratio value should exceed an operator-prescribed value for each bin for the measurements to be valid.</p>
+<table>
+<thead>
+<tr>
+<th>Flags</th>
+<th>Condition</th>
+<th>Codable Instructions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Fail = 4</td>
+<td>If the signal-to-noise ratio value <code>[SNRVAL(i)]</code> is less than the operator-prescribed value (<code>SNRMIN</code>), the measurement is not valid.</td>
+<td><code>If SNRVAL &lt; SNRMIN, flag = 4</code></td>
+</tr>
+<tr>
+<td>Suspect = 3</td>
+<td>N/A</td>
+<td>None</td>
+</tr>
+<tr>
+<td>Pass = 1</td>
+<td>Applies for test pass condition.</td>
+<td><code>If SNRVAL ≥ SNRMIN</code>, flag = 1</td>
+</tr>
+</tbody>
+</table>
+<p>Test Exception: Test does not apply unless the particular property is actually included in the data stream.
+Test specifications to be established locally by operator.
+Example: Operators to provide examples as procedures are implemented.</p>
+<p><strong>Correlation Magnitude (Test 8) – Strongly Recommended</strong></p>
+<p>Test that correlation magnitude is above an acceptable threshold.</p>
+<p>A key quality control parameter for broadband ADCPs is the correlation magnitude.
+This is essentially a measurement of how much the particle distribution has changed between phase measurements.
+The less the distribution has changed,
+the higher the correlation,
+and the more precise the velocity measurement.
+Correlation magnitude is provided for each bin (<code>i</code>) and each beam (<code>j</code>).</p>
+<table>
+<thead>
+<tr>
+<th>Flags</th>
+<th>Condition</th>
+<th>Codable Instructions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Fail = 4</td>
+<td>If the correlation magnitude <code>[CMAG(i, j)]</code> falls below a certain count level (<code>CMAGMIN</code>), the measurement for that bin and beam fails.</td>
+<td><code>If CMAG(i, j) &lt; CMAGMIN</code>, flag = 4</td>
+</tr>
+<tr>
+<td>Suspect = 3</td>
+<td>If the correlation magnitude <code>[CMAG(i, j)]</code> is between the minimum (<code>CMAGMIN</code>) and maximum (<code>CMAGMAX</code>) count levels, the measurement for that bin and beam passes, but is considered suspect.</td>
+<td><code>IF CMAG(i, j) ≥ CMAGMIN AND CMAG(i, j) ≤ CMAGMAX</code>, flag = 3</td>
+</tr>
+<tr>
+<td>Pass = 1</td>
+<td>If the correlation magnitude <code>[CMAG(i, j)]</code> is above a maximum count level (<code>CMAGMAX</code>), the measurement for that bin and beam passes.</td>
+<td><code>IF CMAG( i , j ) &gt; CMAGMAX</code>, flag = 1</td>
+</tr>
+</tbody>
+</table>
+<p>Test Exception: This test is primarily for the Teledyne RDI ADCP sensors.
+Test specifications to be established by the manufacturer.
+Example: Correlation Magnitude (in counts) ≥3 beams need to pass test <code>CMAGMIN = 65</code>, <code>CMAGMAX = 140</code>.</p>
+<p><strong>Percent Good (Test 9) – Strongly Recommended</strong></p>
+<p>Percentage of high data quality measurements to produce good velocities.
+A key quality control parameter,
+percent good,
+indicates what fraction of the pings passed the various error thresholds.
+The percent good test determines whether the data that are being returned are sufficient to provide the required data quality.
+Different methods are used by different manufacturers.
+For Teledyne RDI,
+there are percent good three-beam <code>[PG1(j)]</code> solutions (one beam rejected) and percent good four-beam <code>[PG4(j)]</code> solutions.
+This test is applied to each depth bin, <code>i</code>.</p>
+<table>
+<thead>
+<tr>
+<th>Flags</th>
+<th>Condition</th>
+<th>Codable Instructions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Fail = 4</td>
+<td>If <code>PG1(i)</code> and <code>PG4(i)</code> combined do not exceed a minimum value (<code>PGMINLO</code>), the measurement at that depth bin (<code>i</code>) fails.</td>
+<td><code>IF PG1(i) + PG4(i) &lt; PGMINLO</code>, flag = 4</td>
+</tr>
+<tr>
+<td>Suspect = 3</td>
+<td>If <code>PG1(i)</code> and <code>PG4(i)</code> combined fall in the range between <code>PGMINLO</code> and <code>PGMINHI</code>, the measurement at that depth passes, but is flagged as suspect.</td>
+<td><code>IF PG1(i) + PG4(i) ≥ PGMINLO AND PG3(i) + PG4(i) ≤ PGMINHI</code>, flag = 3</td>
+</tr>
+<tr>
+<td>Pass = 1</td>
+<td>If <code>PG1(i)</code> and <code>PG4(i)</code> combined exceed a minimum value (<code>PGMINHI</code>), the measurement at that depth bin (<code>i</code>) passes.</td>
+<td><code>IF PG1(i) + PG4(i  &gt; PGMINHI</code>, flag = 1</td>
+</tr>
+</tbody>
+</table>
+<p>Test Exception: This applies only to Teledyne RDI sensors, excluding beam coordinate configuration.
+Test specifications to be established by the manufacturer.
+In this case,
+the <code>PGMINLO</code> and <code>PGMINHI</code> values differ depending on the frequency of Teledyne RDI system used and the sampling strategy (pings per second and sampling interval).
+Example: Percent good for Teledyne RDI ADCPs, <code>fail = PG1 + PG4 &lt; 25</code> and <code>suspect = PG1 + PG4 &lt; 75</code></p>
+<h4 id="333-current-velocity-tests">3.3.3 Current Velocity Tests</h4>
+<p>These tests check the validity of the current velocity (speed and direction) measurements.</p>
+<p><strong>Current Speed (Test 10) - Required</strong></p>
+<p>Ensure that the current speed is reasonable.</p>
+<p>Current speed is typically provided as a positive value.
+This test checks for unrealistically high current speed values and is applied to each depth bin (<code>i</code>).
+The maximum current speed should be set based on the environment in which the instrument will be deployed,
+as well as for all reasonable high-speed anomalies.</p>
+<table>
+<thead>
+<tr>
+<th>Flags</th>
+<th>Condition</th>
+<th>Codable Instructions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Fail = 4</td>
+<td>N/A</td>
+<td>N/A</td>
+</tr>
+<tr>
+<td>Suspect = 3</td>
+<td>If the current speed <code>[CSPD(i)]</code> exceeds a reasonable maximum value (<code>SPDMAX</code>), the measurement is suspect.</td>
+<td><code>IF CSPD(i) &gt; SPDMAX</code>, flag = 3</td>
+</tr>
+<tr>
+<td>Pass = 1</td>
+<td>If the current speed <code>[CSPD(i)]</code> is less than or equal to a reasonable maximum value (<code>SPDMAX</code>), the measurement passes.</td>
+<td><code>IF CSPD(i) ≤ SPDMAX</code>, flag = 1</td>
+</tr>
+</tbody>
+</table>
+<p>Test Exception: None.
+Applies to: All current measurements.
+Test specifications to be established locally by operator.
+Example: <code>SPDMAX = 250 cm/s</code></p>
+<p><strong>Current Direction (Test 11) - Required</strong></p>
+<p>Ensure that the current direction is reasonable.</p>
+<p>This test ensures that the current direction values fall between 0 and 360 degrees,
+inclusive.
+In most systems,
+0 is reported as the absence of any current and 360 degrees indicates a current to the north.
+This test is applied to each depth bin (<code>i</code>).</p>
+<table>
+<thead>
+<tr>
+<th>Flags</th>
+<th>Condition</th>
+<th>Codable Instructions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Fail = 4</td>
+<td>If current direction <code>[CDIR(i)]</code> is less than 0.00 degrees or greater than 360 degrees, the measurement is invalid.</td>
+<td><code>IF CDIR(i) &lt; 0.00 OR CDIR(i) &gt; 360.00</code>, flag = 4</td>
+</tr>
+<tr>
+<td>Suspect = 3</td>
+<td>N/A</td>
+<td></td>
+</tr>
+<tr>
+<td>Pass = 1</td>
+<td>If current direction <code>[CDIR(i)]</code> is greater than 0.00 degrees and less than or equal to 360 degrees, the measurement is valid.</td>
+<td><code>IF CDIR(i) ≥ 0.00 AND CDIR(i) ≤ 360.00</code>, flag = 1</td>
+</tr>
+</tbody>
+</table>
+<p>Test Exception: None. Applies to all current measurements.
+Test specifications may be adjusted locally depending on their application of 0.00 and 360.00 values.
+Examples: None needed.</p>
+<p><strong>Horizontal Velocity (Test 12) - Required</strong></p>
+<p>Ensure that horizontal velocities are valid measurements.</p>
+<p>Horizontal velocities u(<code>i</code>) and v(<code>i</code>) may be represented as components
+(East-West and North-South, Alongshore and Cross-Shore, Along-shelf and Cross-Shelf, Along-Isobath and Cross-Isobath, etc.)
+of the current speed and direction.
+This test ensures that speeds in the respective horizontal directions (<code>HVELMAXX</code> and <code>HVELMAXY</code>) are valid.
+Maximum allowed values may differ in the orthogonal directions.
+This test is applied to each depth bin (<code>i</code>).</p>
+<table>
+<thead>
+<tr>
+<th>Flags</th>
+<th>Condition</th>
+<th>Codable Instructions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Fail = 4</td>
+<td>Horizontal velocities exceed expected maximum values in the two horizontal directions.</td>
+<td><code>IF ABS[u(i)] &gt; HVELMAXX OR IF ABS[v(i)] &gt; HVELMAXY</code>, flag = 4</td>
+</tr>
+<tr>
+<td>Suspect = 3</td>
+<td>N/A</td>
+<td></td>
+</tr>
+<tr>
+<td>Pass = 1</td>
+<td>Horizontal velocities fall within the expected range of values.</td>
+<td><code>IF ABS[u(j)] ≤ HVELMAXX AND ABS[v(j)] ≤ HVELMAXY</code>, flag = 1</td>
+</tr>
+</tbody>
+</table>
+<p>Test Exception: None.
+Test specifications to be established locally by operator.
+Example: Operators to provide examples as procedures are implemented.</p>
+<p><strong>Vertical Velocity (Test 13) – Strongly Recommended</strong></p>
+<p>Ensure that vertical velocities are valid measurements.
+Vertical velocities are reported by many ADCPs.
+They are calculated just like the horizontal velocities but along the vertical axis.
+This test is applied to each depth bin (<code>i</code>).</p>
+<table>
+<thead>
+<tr>
+<th>Flags</th>
+<th>Condition</th>
+<th>Codable Instructions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Fail = 4</td>
+<td>N/A</td>
+<td>None</td>
+</tr>
+<tr>
+<td>Suspect = 3</td>
+<td>If vertical velocity <code>[w(i)]</code> in a depth bin is greater than 1% of the current speed [CSPD(<code>i</code>)] in the depth bin, the measurement fails.</td>
+<td><code>IF ABS[w(i)] &gt; (0.01*CSPD(i))</code>, flag = 3</td>
+</tr>
+<tr>
+<td>Pass = 1</td>
+<td>If vertical velocity <code>[w(i)]</code> in a depth bin is less than or equal to 1% of the current speed <code>[CSPD(i)]</code> in the depth bin, the measurement passes.</td>
+<td><code>IF ABS[w(i)] ≤ (0.01*CSPD(i))</code>, flag = 1</td>
+</tr>
+</tbody>
+</table>
+<p>Test Exception: Alternately,
+a maximum vertical velocity,
+<code>VELMAX</code>,
+may be set and inserted for the <code>(0.01*CSPD(j))</code> value.</p>
+<p>Test specifications may be established locally by operator.
+Example: <code>VELMAX = 0.15 m/s</code></p>
+<p><strong>Error Velocity (Test 14) – Strongly Recommended</strong></p>
+<p>Test that the error velocity is below an acceptable threshold.</p>
+<p>Error velocity is a key QC parameter that derives from the four-beam geometry of an ADCP.
+Each pair of opposing beams provides one measurement of the vertical velocity and one component of the horizontal velocity,
+so there are two independent measurements of velocity that can be compared.
+If the flow field is homogeneous
+(<a href="http://www.teledynemarine.com/rdi">http://www.teledynemarine.com/rdi</a>),
+the difference between these velocities will average to zero.
+The error velocity can be treated as an indication of errors in the horizontal velocity measurements.</p>
+<p>This test is applied to each depth bin (<code>i</code>).</p>
+<table>
+<thead>
+<tr>
+<th>Flags</th>
+<th>Condition</th>
+<th>Codable Instructions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Fail = 4</td>
+<td>If the error velocity <code>[EV(i)]</code> within a depth bin exceeds a manufacturer-provided maximum value (<code>EVMAX</code>), the velocity measurements at that depth fail.</td>
+<td><code>IF EV( i ) &gt; EVMAX</code>, flag = 4</td>
+</tr>
+<tr>
+<td>Suspect = 3</td>
+<td>If the error velocity <code>[EV(i)]</code> within a depth bin exceeds a manufacturer-provided minimum value (<code>EVMIN</code>) but is less than a manufacturer-provided maximum value (<code>EVMAX</code>), the velocity measurements at that depth pass but are flagged as suspect.</td>
+<td><code>IF EV(i) ≤ EVMAX AND EV(i) ≥ EVMIN</code>, flag = 3</td>
+</tr>
+<tr>
+<td>Pass = 1</td>
+<td>If the error velocity <code>[EV(i)]</code> within a depth bin is less than a manufacturer-provided minimum value <code>(EVMIN)</code>, the velocity measurements at that depth pass.</td>
+<td><code>IF EV(i) &lt; EVMIN</code>, flag = 1</td>
+</tr>
+</tbody>
+</table>
+<p>Test Exception: Can be used only for ADCPs with four or more beams.
+Test specifications to be established by the manufacturer.
+Example: <code>EVMAX = 20</code>, <code>EVMIN = 15</code></p>
+<p><strong>u, v Rate of Change (Test 15) – Strongly Recommended</strong></p>
+<p>Test that velocity/direction change is below an acceptable threshold.</p>
+<p>The difference between the most recent u, v velocity components (<code>n</code>) are compared to the previous u, v observations (<code>n-1</code>).
+If the change exceeds the specified thresholds,
+data are flagged fail or suspect.
+This test is applied to each depth bin (<code>i</code>).
+Some operators may wish to implement the rate of change test on pitch/roll/heading outputs of fixed mounted ADCPs to test for unexpected platform motion caused,
+for example,
+by a ship anchor strike.</p>
+<table>
+<thead>
+<tr>
+<th>Flags</th>
+<th>Condition</th>
+<th>Codable Instructions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Fail = 4</td>
+<td>If the absolute value of the difference <code>u(i, n) - u(i, n-1)</code> or <code>v(i, n) - v(i, n-1)</code> exceeds the fail threshold <code>RC_VEL_FAIL</code>, the velocity/direction measurements at that depth fails.</td>
+<td><code>IF ABS[u(i, n) - u(i, n-1)] OR ABS[v(i, n) - v(i, n-1)] ≥ RC_VEL_FAIL</code>, flag = 4</td>
+</tr>
+<tr>
+<td>Suspect = 3</td>
+<td>If the absolute value of the difference <code>u(i, n) - u(i, n-1)</code> or <code>v(i, n) - v(i, n-1)</code> exceeds the suspect threshold (<code>RC_VEL_SUSPECT</code>), the velocity/direction measurements at that depth are flagged as suspect.</td>
+<td><code>IF ABS[u(i, n) - u(i, n-1)] OR ABS[v(i, n) - v(i, n-1 )] ≥ RC_VEL_SUSPECT AND &lt; RC_VEL_FAIL</code>, flag = 3</td>
+</tr>
+<tr>
+<td>Pass = 1</td>
+<td>If the absolute value of the difference <code>u(i, n) - u(i, n-1)</code> and <code>v(i, n) - v(i, n-1)</code> are less than the suspect threshold <code>RC_VEL_SUSPECT</code>, the velocity/direction measurements at that depth pass.</td>
+<td><code>IF ABS[u(i, n) - u(i, n-1)] AND ABS[v(i, n) - v(i, n-1)] &lt; RC_VEL_SUSPECT</code>, flag = 1</td>
+</tr>
+</tbody>
+</table>
+<p>Test Exception: None.
+Example: <code>RC_VEL_FAIL = 100 cm/s</code>, <code>RC_VEL_SUSPECT = 50 cm/s</code></p>
+<p><strong>u, v Spike (Test 16) – Strongly Recommended</strong></p>
+<p>Test if u, v (n-1) values exceed selected thresholds relative to adjacent time series data points.</p>
+<p>This check is for single-value spikes,
+specifically the u, v values at point n-1.
+Spikes consisting of more than one data point are difficult to capture,
+but their onset may be flagged by the rate of change test.
+This test is applied to each depth bin (<code>i</code>).
+The spike test consists of two operator-selected thresholds,
+<code>uv_SPIKE_FAIL</code> and <code>uv_SPIKE_SUSPECT</code>.
+Adjacent data points u(_n<sub>-2</sub> and n<sub>0</sub>) are averaged to form a spike reference (<code>u_SPK_REF</code>),
+and adjacent data points v(n-2 and n) are averaged to form a spike reference (<code>v_SPK_REF</code>).
+Only adjacent data points that have been flagged pass should be used to form the spike reference.
+When absent,
+earlier observations may need to be employed.
+The absolute value of the spike is tested to capture positive and negative spikes.
+Large spikes are easier to identify as outliers and flag as failures.
+Smaller spikes may be real and are only flagged suspect.
+The thresholds may be fixed values or dynamically established
+(for example, a multiple of the standard deviation over an operator-selected period).
+They may also be expressed as a function of time (e.g., d(u)/dt) to accommodate varying time increments.
+An alternative spike test may use a third difference test,
+for example defined as Diff<sub>n</sub> = u(n-3) - 3 _ u(n-2) + 3 _ u(n-1) - u(n).</p>
+<table>
+<thead>
+<tr>
+<th>Flags</th>
+<th>Condition</th>
+<th>Codable Instructions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Fail = 4</td>
+<td>If the absolute value of the difference <code>u(i, n-1) - u_SPK_REF</code> or <code>v(i, n-1) - v_SPK_REF</code> exceeds the fail threshold <code>uv_SPIKE_FAIL</code>, the velocity/direction measurements at that depth fails.</td>
+<td><code>IF ABS[u(i, n-1) - u_SPK_REF] OR ABS[v(i, n-1) - v_SPK_REF] ≥ uv_SPIKE_FAIL</code>, flag = 4</td>
+</tr>
+<tr>
+<td>Suspect = 3</td>
+<td>If the absolute value of the difference <code>u(i, n-1) - u_SPK_REF</code> or <code>v(i, n-1) - v_SPK_REF</code> exceeds the Suspect threshold <code>uv_SPIKE_SUSPECT</code>, the velocity/direction measurements at that depth are flagged as suspect.</td>
+<td><code>IF ABS[u(i, n-1) - u_SPK_REF] OR ABS[v(i, n-1) - v_SPK_REF] ≥ uv_SPIKE_SUSPECT AND &lt; uv_SPIKE_FAIL</code>, flag = 3</td>
+</tr>
+<tr>
+<td>Pass = 1</td>
+<td>If the absolute value of the difference <code>u(i, n-1) - u_SPK_REF</code> and <code>v(i, n-1) - v_SPK_REF</code> are less than the Suspect threshold <code>uv_SPIKE_SUSPECT</code>, the velocity/direction measurements at that depth pass.</td>
+<td><code>IF ABS[u(i, n-1) - u_SPK_REF] AND ABS[v(i, n-1) - v_SPK_REF] &lt; uv_SPIKE_SUSPECT</code>, flag = 1</td>
+</tr>
+</tbody>
+</table>
+<p>Test Exception: None.
+Example: <code>uv_SPIKE_FAIL = 100 cm/s</code>, <code>uv_SPIKE_SUSPECT = 50 cm/s</code></p>
+<p><strong>Flat Line (Test 17) - Required</strong></p>
+<p>This test checks for observations that do not change with time,
+and the test can be applied to many variables,
+such as velocities,
+directions,
+or pressure.</p>
+<p>When some sensors and/or data collection platforms (DCPs) fail,
+the result can be a continuously repeated observation of the same value.
+This test compares the present observation (PO<sub>n</sub>) to a number (<code>REP_CNT_FAIL</code> or <code>REP_CNT_SUSPECT</code>) of previous observations.
+PO<sub>n</sub> is flagged if it has the same value as previous observations within a tolerance value <code>EPS</code> to allow for numerical round-off error.
+This test may apply to sensor outputs as well as derived values.
+Note that historical flags are not changed.</p>
+<table>
+<thead>
+<tr>
+<th>Flags</th>
+<th>Condition</th>
+<th>Codable Instructions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Fail = 4</td>
+<td>An identical value has been reported at least <code>REP_CNT_FAIL</code> times successively.</td>
+<td><code>If all(abs(PO-[PO:PO-REP_CNT_FAIL]) &lt; EPS)</code>, flag = 4</td>
+</tr>
+<tr>
+<td>Suspect = 3</td>
+<td>An identical value has been reported less than <code>REP_CEN_FAIL</code>, but at least <code>REP_CNT_SUSPECT</code> times successively.</td>
+<td>If <code>all(abs(PO-[PO:PO-REP_CNT_SUSPECT])&lt;EPS) &amp; not(all(abs(PO-[PO:PO-REP_CNT_FAIL])&lt;EPS))</code>, flag = 3</td>
+</tr>
+<tr>
+<td>Pass = 1</td>
+<td>1 Applies for test pass condition.</td>
+<td>N/A</td>
+</tr>
+</tbody>
+</table>
+<p>Test Exception: None.
+Test specifications to be established locally by operator.
+Examples: <code>REP_CNT_FAIL = 5</code>, <code>REP_CNT_SUSPECT = 3</code></p>
+<h4 id="334-overall-profile-tests">3.3.4 Overall Profile Tests</h4>
+<p>These tests use the entire beam length or current profile to check a variety of conditions.
+They do not apply to a single-point acoustic Doppler current meter.</p>
+<p><strong>Echo Intensity (Test 18) – Required</strong></p>
+<p>Check for echo intensities that may indicate interactions with the surface,
+bottom,
+or in-water structures.</p>
+<p>If a beam reflects off a boundary,
+then the echo intensity increases from the previous bin.
+This test is a comparison of the echo intensity <code>[EINT(i, j)]</code> in bin <code>i</code>,
+beam <code>j</code> to the echo intensity in the previous bin,
+<code>EINT(i-1, j)</code>.
+If other beams differ from the tested beam (when comparing adjacent bins) by a pre-described amount,
+the bin may be flagged.
+Instruments have a variety of number of beams (<code>NUMBEAM</code>),
+and a limit of the number of allowable beam failures (<code>BADBEAM</code>).
+If the number of valid beams (<code>NUMBEAM-BADBEAM</code>) is less than the number of dimensions (2D or 3D) in the flow being measured,
+D,
+then the measurement fails this check.</p>
+<table>
+<thead>
+<tr>
+<th>Flags</th>
+<th>Condition</th>
+<th>Codable Instructions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Fail = 4</td>
+<td>If a beam has adjacent bins that differ by more than an operator prescribed-number of counts, <code>MAXEICNT</code>, the data at this bin and farther from the transducer are invalid. If an insufficient number of valid beams exist, the measurement fails.</td>
+<td><code>For i ≥ 2 and j = 1 to NUMBEAMS If EINT(i, j) - EINT(i-1, j) &gt; MAXEICNT BADBEAM++ If NUMBEAM - BADBEAM &lt; D</code>, flag(i:end,:) = 4</td>
+</tr>
+<tr>
+<td>Suspect = 3</td>
+<td>If one or more beams have an adjacent bin that differs by more than an operator-prescribed number of counts, <code>MAXEICNT</code>, but a sufficient number of valid beams exist, the measurement is suspect.</td>
+<td><code>For i ≥ 2 and j=1 to NUMBEAMS If EINT(i, j) - EINT(i-1,j) &gt; MAXEICNT BADBEAM++ If NUMBEAM - BADBEAM ≥ D and BADBEAM ≥1</code>, flag = 3</td>
+</tr>
+<tr>
+<td>Pass = 1</td>
+<td>No other beams have an adjacent bin that differs by more than an operator-provided amount, <code>MAXEICNT</code>.</td>
+<td><code>For i ≥ 2 and j=1 to NUMBEAMS If EINT(i, j) - EINT(i-1, j) &gt; MAXEICNT BADBEAM++ If BADBEAM=0</code>, flag = 1</td>
+</tr>
+</tbody>
+</table>
+<p>Test Exception: None.
+Test specifications to be established locally by the operator.
+Example: <code>MAXEICNT = 30 counts</code>, <code>NUMBEAM = 4</code>, <code>BADBEAM = 1</code>, <code>D = 3</code></p>
+<p><strong>Echo Intensity Drop-off (Test 19) – Strongly Recommended</strong></p>
+<p>Test of echo intensity with distance from the transmitter.</p>
+<p>The echo intensity decreases with distance from the transmitter.
+Eventually,
+at some distant bin (and beyond),
+there may not be enough acoustic energy to provide a valid measure of current speed and direction.
+Instruments have a variety of number of beams (<code>NUMBEAM</code>),
+and a limit of the number of allowable beam failures (<code>BADBEAM</code>).
+If the number of valid beams (<code>NUMBEAM-BADBEAM</code>) is less than the number of dimensions (2D or 3D) in the flow being measured,
+D,
+then the measurement fails this check.</p>
+<table>
+<thead>
+<tr>
+<th>Flags</th>
+<th>Condition</th>
+<th>Codable Instructions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Fail = 4</td>
+<td>If echo intensity at bin <code>i</code> <code>[EINT(i, j)]</code> falls below an accepted minimum value (<code>MINEICNT</code>), the data at this bin and farther from the transducer are invalid.</td>
+<td><code>For j = 1 to NUMBEAM If EINT( i , j ) &lt; MINEICNT BADBEAM++ If NUMBEAM - BADBEAM &lt; D</code>, flag(i:end,:) = 4</td>
+</tr>
+<tr>
+<td>Suspect = 3</td>
+<td>If one or more beams have bins with echo intensity less than <code>MINEICNT</code>, but a sufficient number of valid beams exist, the measurement is suspect.</td>
+<td><code>For j = 1 to NUMBEAM If EINT(i, j ) &lt; MINEICNT BADBEAM++ If NUMBEAM - BADBEAM ≥ D and BADBEAM ≥ 1</code>, flag = 3</td>
+</tr>
+<tr>
+<td>Pass = 1</td>
+<td>If echo intensity <code>[EI(i, j)]</code> exceeds an accepted minimum value (<code>MINEICNT</code>) for all beams in three or more bins, the data at this bin are valid.</td>
+<td><code>For j = 1 to NUMBEAM If EINT(i, j) &lt; MINEICNT BADBEAM++ If BADBEAM = 0</code>, flag = 1</td>
+</tr>
+</tbody>
+</table>
+<p>Test Exception: None.
+Test specifications to be established locally by the operator.
+Examples: <code>MINEICNT = 20</code> counts, <code>NUMBEAM = 4</code>, <code>BADBEAM = 1</code>, <code>D = 3</code></p>
+<p><strong>Current Gradient (Test 20) – Strongly Recommended</strong></p>
+<p>Test for excessive current speed/direction changes in the vertical profile.</p>
+<p>Current speed is expected to change at a gradual rate with depth.
+A current difference with depth (<code>CSPDDIF</code>),
+to be determined locally,
+should be established and the rate of current speed difference with depth between two bins determined.
+It is presumed the value in bin-1 is valid.
+The same test can be run with current direction.</p>
+<table>
+<thead>
+<tr>
+<th>Flags</th>
+<th>Condition</th>
+<th>Codable Instructions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Fail = 4</td>
+<td>If current speed at bin <code>i</code>, <code>CSPD(i)</code> exceeds current speed at bin <code>i-1</code>, <code>CSPD(i-1)</code> by a prescribed amount, <code>CSPDDIF</code>, the data are not valid.</td>
+<td><code>IF ABS[CSPD(i)-CSPD(i-1)] &gt; CSPDDIF</code>, flag = 4</td>
+</tr>
+<tr>
+<td>Suspect = 3</td>
+<td>N/A</td>
+<td>None</td>
+</tr>
+<tr>
+<td>Pass = 1</td>
+<td>If current speed at bin <code>i</code>, <code>CSPD(i)</code> change from the current speed at <code>bin(i-1)</code>, <code>CSPD(i-1)</code>, is less than or equal to a prescribed amount, <code>CURDIF</code>, the data are valid.</td>
+<td><code>IF ABS[CSPD(i)-CSPD(i-1)] ≤ CSPDDIF</code>, flag = 1</td>
+</tr>
+</tbody>
+</table>
+<p>Test Exception: Applicable only to current profiles, and not to single-point measurement systems.
+Test cannot be conducted on the first bin.
+Test specifications to be established locally by the operator.
+Examples: Operators to provide examples as procedures are implemented.</p>
+<h2 id="40-summary">4.0 Summary</h2>
+<p>The QC tests in this currents document have been compiled from QARTOD workshops (QARTOD 2003-2009).
+Test suggestions came from several existing operators with extensive experience,
+and wherever possible,
+redundant tests have been merged.
+The considerations of operators who ensure the quality of real-time data may be different from those whose data are not published in real time,
+and these and other differences must be balanced according to the specific circumstances of each operator.
+Although these real-time tests are required,
+recommended,
+or suggested,
+it is the operator who is responsible for deciding which tests are appropriate.
+Each operator selects thresholds based on the specific program requirements that must be met.
+The scope of requirements can vary widely,
+from complex data streams that support myriad QC checks to ensure precise and accurate measurements - to basic data streams that do not need such details.
+Operators must publish their QC processes via metadata so that data users can readily see and understand the source and quality of those data.</p>
+<p>The 20 QC tests identified apply to current observations from ADCPs and may apply to other types of current sensors.
+All tests are either required or strongly recommended,
+and they fall into four groups: sensor health,
+signal quality,
+current velocity,
+and overall profile.
+Further,
+some tests operate on the raw data used to generate current observations,
+while others apply to the derived current products.
+The individual tests are described and include codable instructions,
+output conditions,
+example thresholds,
+and exceptions (if any).</p>
+<p>Selection of the proper thresholds is critical to a successful QC effort.
+Thresholds can be based on historical knowledge or statistics derived from more recently acquired data,
+but they should not be determined arbitrarily. This manual provides some guidance for selecting thresholds based on input from various operators,
+but also notes that operators need the subject matter expertise as well as a sincere interest in selecting the proper thresholds to maximize the value of their QC effort.</p>
+<p>Sensors continue to become "smarter" and interoperable.
+For example,
+some QC procedures may be embedded within the sensor instrumentation package.
+Significant components of metadata will reside in the instrument and be transmitted either on demand or automatically along with the data stream.
+Users may also reference metadata through Uniform Resource Locators (URLs) to simplify the identification of which QC steps have been applied to data.
+However,
+QARTOD QC test procedures in this manual address only real-time,
+in-situ observations made by sensors on fixed or mobile platforms.
+The tests do not include post-processing,
+which is not conducted in real time but may be useful for ecosystem-based management,
+or delayed-mode,
+which is required for climate studies.</p>
+<p>Future QARTOD reports will address standard QC procedures and best practices for all types of common as well as uncommon platforms and sensors for all the U.S. IOOS core variables.
+Each QC manual is envisioned as a dynamic document and will be posted on the QARTOD website at <a href="https://ioos.noaa.gov/project/qartod/">https://ioos.noaa.gov/project/qartod</a>.
+This process allows for QC manual updates as technology development occurs for both upgrades of existing sensors and new sensors.</p>
+
+  <hr>
+<div class="md-source-file">
+  <small>
+    
+      Last update:
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 14, 2023</span>
+      
+        <br>
+        Created:
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 14, 2023</span>
+      
+    
+  </small>
+</div>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+            Back to top
+          </button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/ocefpaf" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M186.1 328.7c0 20.9-10.9 55.1-36.7 55.1s-36.7-34.2-36.7-55.1 10.9-55.1 36.7-55.1 36.7 34.2 36.7 55.1zM480 278.2c0 31.9-3.2 65.7-17.5 95-37.9 76.6-142.1 74.8-216.7 74.8-75.8 0-186.2 2.7-225.6-74.8-14.6-29-20.2-63.1-20.2-95 0-41.9 13.9-81.5 41.5-113.6-5.2-15.8-7.7-32.4-7.7-48.8 0-21.5 4.9-32.3 14.6-51.8 45.3 0 74.3 9 108.8 36 29-6.9 58.8-10 88.7-10 27 0 54.2 2.9 80.4 9.2 34-26.7 63-35.2 107.8-35.2 9.8 19.5 14.6 30.3 14.6 51.8 0 16.4-2.6 32.7-7.7 48.2 27.5 32.4 39 72.3 39 114.2zm-64.3 50.5c0-43.9-26.7-82.6-73.5-82.6-18.9 0-37 3.4-56 6-14.9 2.3-29.8 3.2-45.1 3.2-15.2 0-30.1-.9-45.1-3.2-18.7-2.6-37-6-56-6-46.8 0-73.5 38.7-73.5 82.6 0 87.8 80.4 101.3 150.4 101.3h48.2c70.3 0 150.6-13.4 150.6-101.3zm-82.6-55.1c-25.8 0-36.7 34.2-36.7 55.1s10.9 55.1 36.7 55.1 36.7-34.2 36.7-55.1-10.9-55.1-36.7-55.1z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.top", "navigation.tabs", "navigation.indexes", "toc.integrate", "search.suggest", "search.highlight", "content.tabs.link", "content.code.annotation", "content.code.copy", "content.action.edit", "content.action.view", "content.code.annotate"], "search": "../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.a51614de.min.js"></script>
+      
+    
+  </body>
+</html>

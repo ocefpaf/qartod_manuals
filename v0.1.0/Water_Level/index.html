@@ -1,0 +1,1379 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="..">
+      
+      
+        <link rel="next" href="../ADCP/">
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.16">
+    
+    
+      
+        <title>Water Level - QARTOD</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.26e3688c.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ecc896b0.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="purple">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#manual-for-real-time-quality-control-of-water-level-data" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <div data-md-color-scheme="default" data-md-component="outdated" hidden>
+        
+      </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="QARTOD" class="md-header__button md-logo" aria-label="QARTOD" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            QARTOD
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Water Level
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+          
+            
+            
+            
+            <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="purple"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+            
+              <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6zm0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4zM7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+              </label>
+            
+          
+            
+            
+            
+            <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="lime"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+            
+              <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3Z"/></svg>
+              </label>
+            
+          
+        </form>
+      
+    
+    
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/ocefpaf/qartod_manuals" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    ocefpaf/qartod_manuals
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href=".." class="md-tabs__link">
+      Home
+    </a>
+  </li>
+
+      
+        
+  
+  
+    
+  
+
+
+  <li class="md-tabs__item">
+    <a href="./" class="md-tabs__link md-tabs__link--active">
+      Water Level
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../ADCP/" class="md-tabs__link">
+      ADCP
+    </a>
+  </li>
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="QARTOD" class="md-nav__button md-logo" aria-label="QARTOD" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    QARTOD
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/ocefpaf/qartod_manuals" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    ocefpaf/qartod_manuals
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Water Level
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Water Level
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#document-validation" class="md-nav__link">
+    Document Validation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#revision-history" class="md-nav__link">
+    Revision History
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#endorsement-disclaimer" class="md-nav__link">
+    Endorsement Disclaimer
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#request-to-manual-users" class="md-nav__link">
+    Request to Manual Users
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#acknowledgements" class="md-nav__link">
+    Acknowledgements
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#acronyms-and-abbreviations" class="md-nav__link">
+    Acronyms and Abbreviations
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#definitions-of-selected-terms" class="md-nav__link">
+    Definitions of Selected Terms
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-background-and-introduction" class="md-nav__link">
+    1.0 Background and Introduction
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#20-purposeconstraintsapplications" class="md-nav__link">
+    2.0 Purpose/Constraints/Applications
+  </a>
+  
+    <nav class="md-nav" aria-label="2.0 Purpose/Constraints/Applications">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-purpose" class="md-nav__link">
+    2.1 Purpose
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-constraints" class="md-nav__link">
+    2.2 Constraints
+  </a>
+  
+    <nav class="md-nav" aria-label="2.2 Constraints">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#221-datums-and-leveling-considerations" class="md-nav__link">
+    2.2.1 Datums and Leveling Considerations
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#222-data-processing-methodology" class="md-nav__link">
+    2.2.2 Data Processing Methodology
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#223-traceability-to-accepted-standards" class="md-nav__link">
+    2.2.3 Traceability to Accepted Standards
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#224-sensor-deployment-considerations-and-hardware-limitations" class="md-nav__link">
+    2.2.4 Sensor Deployment Considerations and Hardware Limitations
+  </a>
+  
+    <nav class="md-nav" aria-label="2.2.4 Sensor Deployment Considerations and Hardware Limitations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#microwave-radar" class="md-nav__link">
+    Microwave Radar
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#acoustic" class="md-nav__link">
+    Acoustic
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#floatstilling-wells" class="md-nav__link">
+    Float/Stilling Wells
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pressure-sensors" class="md-nav__link">
+    Pressure Sensors
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lasers" class="md-nav__link">
+    Lasers
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gps-buoys" class="md-nav__link">
+    GPS Buoys
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-applications-of-wl-data" class="md-nav__link">
+    2.3 Applications of WL Data
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#24-other-important-considerations" class="md-nav__link">
+    2.4 Other Important Considerations
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#30-quality-control" class="md-nav__link">
+    3.0 Quality Control
+  </a>
+  
+    <nav class="md-nav" aria-label="3.0 Quality Control">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-qc-flags" class="md-nav__link">
+    3.1 QC Flags
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-test-hierarchy" class="md-nav__link">
+    3.2 Test Hierarchy
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-qc-test-descriptions" class="md-nav__link">
+    3.3 QC Test Descriptions
+  </a>
+  
+    <nav class="md-nav" aria-label="3.3 QC Test Descriptions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#331-applications-of-qc-tests-to-wl-sensors" class="md-nav__link">
+    3.3.1 Applications of QC Tests to WL Sensors
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test-1-timinggap-test-required" class="md-nav__link">
+    Test 1 - Timing/Gap Test (Required)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ADCP/" class="md-nav__link">
+        ADCP
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+    <a href="https://github.com/ocefpaf/qartod_manuals/edit/main/docs/Water_Level.md" title="Edit this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-2m10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1 2.1 2.1Z"/></svg>
+    </a>
+  
+  
+    
+      
+    
+    <a href="https://github.com/ocefpaf/qartod_manuals/raw/main/docs/Water_Level.md" title="View source of this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.15 8.15 0 0 1-1.23-2Z"/></svg>
+    </a>
+  
+
+
+<p><img alt="Logos for the Integrated Ocean Observing System and the Quality Assurance/Quality Control of Real-Time Oceanographic Data." src="../images_Water_Level/image01.png" /></p>
+<h1 id="manual-for-real-time-quality-control-of-water-level-data">Manual for Real-Time Quality Control of Water Level Data</h1>
+<p>A Guide to Quality Control and Quality Assurance for Water Level Observations</p>
+<p><strong>Version 2.1</strong>
+<strong>March 2021</strong></p>
+<h2 id="document-validation">Document Validation</h2>
+<p><img alt="U.S. Integrated Ocean Observing System (IOOS) Logo" src="../images_Water_Level/image02.jpg" /></p>
+<p><img alt="U.S. IOOS Program Office Validation Signature Page Dated 04/05/2021 Carl C. Gouldman, U.S. IOOS Program Director Kathleen Bailey, U.S. IOOS Project Manager Julianna O. Thomas, QARTOD Board of Advisors Chair" src="../images_Water_Level/image03.png" /></p>
+<h2 id="revision-history">Revision History</h2>
+<table>
+<thead>
+<tr>
+<th><strong>Date</strong></th>
+<th><strong>Revision Description</strong></th>
+<th><strong>Notes</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>May 2014</td>
+<td>Original Document Published</td>
+<td></td>
+</tr>
+<tr>
+<td>April 2016</td>
+<td>Revise cover page to include new IOOS logo.</td>
+<td>Manual updated with revisions listed sequentially</td>
+</tr>
+<tr>
+<td></td>
+<td>Revise dates on <em>Document Validation</em> page and substitute new logo (page ii).</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>Add statement requesting feedback from <em>Manual Users</em> (page vi).</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>Update <em>Acknowledgements</em> to include Version 2.0 team members (page vii).</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>Update definition of real time in <em>Definitions of Selected Terms</em> (page ix).</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>Revise <em>Background and Introduction</em> to reflect updated and additional manuals that have been developed (page 1).</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>Revise section 2.0 content in various places to reflect updated content from previous manuals and feedback from reviewers (pages 3-6; 10-11).</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>Update content in section 3.1 (page 12) and add section 3.3.2 (page 22).</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>Update language in section 4.0, <em>Summary</em> (page 23).</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>Update <em>References</em> and <em>Supporting Documents</em> (page 24-26).</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>Revise good process description in table A-1 (page A-4).</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>Update Version 2.0 Water Level Manual Team members (page B-1).</td>
+<td></td>
+</tr>
+<tr>
+<td>March 2021</td>
+<td>Revise cover to match updated QARTOD manuals</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>Revise <em>Document Validation</em> page to reflect new signatories and dates (page ii)</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>Revise <em>Request to Manual Users</em> statement to reflect new QARTOD email address (page vi)</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>Update <em>Acknowledgements</em> to include Version 2.1 team members (page vii)</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>Revise <em>Acronyms and Abbreviations</em> to include DQAP (page viii)</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>Revise <em>Definitions of Selected Terms</em> to include physical properties in variable definition (page ix)</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>Revise <em>Background and Introduction</em> to reflect updated and additional manuals that have been developed (pages 1-2)</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>Update <em>Section 2.0</em>, specifically 2.1, 2.2.1, 2.2.4, and 2.4 (pages 3--12)</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>Update <em>Section 3.0,</em> specifically 3.1, 3.2, 3.3.2 (Test 8 and Test 11), and add 3.3.3</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>Update <em>Section 4.0</em> -- minor edits (page 25)</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>Update links in <em>References and Supporting Documents</em> (pages 27--30)</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>Update <em>Appendix A</em> manual reviewers (page A-1)</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>Delete <em>Appendix B</em> (page B-1)</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="endorsement-disclaimer">Endorsement Disclaimer</h2>
+<blockquote>
+<p><strong>Mention of a commercial company or product does not constitute an endorsement by NOAA.
+Use of information from this publication for publicity or advertising purposes concerning proprietary products or the tests of such products is not authorized.</strong></p>
+</blockquote>
+<h2 id="request-to-manual-users">Request to Manual Users</h2>
+<blockquote>
+<p><strong>To gauge the success of the QARTOD project,
+it helps to be aware of groups working to utilize these QC tests.
+Please notify us of your efforts or intentions to implement QARTOD processes by sending a brief email to <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#113;&#97;&#114;&#116;&#111;&#100;&#46;&#98;&#111;&#97;&#114;&#100;&#64;&#110;&#111;&#97;&#97;&#46;&#103;&#111;&#118;">&#113;&#97;&#114;&#116;&#111;&#100;&#46;&#98;&#111;&#97;&#114;&#100;&#64;&#110;&#111;&#97;&#97;&#46;&#103;&#111;&#118;</a> or posting a notice at <a href="http://www.linkedin.com/groups?gid=2521409">http://www.linkedin.com/groups?gid=2521409</a>.</strong></p>
+</blockquote>
+<h2 id="acknowledgements">Acknowledgements</h2>
+<p>We are grateful to our entire Water Level Data Quality Control Manual team, which is listed in appendix A. Special thanks go to those who served on the initial Water Level Data Quality Control Manual Committee and provided content and suggestions for the initial draft, as well as all who reviewed each draft and provided valuable feedback.</p>
+<p>Special thanks go to Dr. Cristina Forbes (NOAA/National Ocean Service/National Hurricane Center), Bob Heitsenrether (NOAA//NOS/Center for Operational Oceanographic Products and Services),\
+Rob Loesch (NOAA/NOS/Center for Operational Oceanographic Products and Services), Peter Stone (NOAA/NOS/Center for Operational Oceanographic Products and Services), Manoj Samant (NOAA/NOS/Center for Operational Oceanographic Products and Services), and Richard Bouchard (NOAA/National Weather Service/National Data Buoy Center) for their extensive reviews and valuable input to Version 2.0.</p>
+<p>We are grateful to those who provided reviews and input to Version 2.1, including Lindsay Abrams (NOAA/NOS/Center for Operational Oceanographic Products and Services), Gregory Dusek (NOAA/Center for Operational Oceanographic Products and Services), Robert Heitsenrether (NOAA/Center for Operational Oceanographic Products and Services), Peter Stone (NOAA/ Center for Operational Oceanographic Products and Services), Jacquelyn Overbeck (Alaska Department of Natural Resources), Julia Powell (NOAA/Office of Coast Survey), Greg Seroka (NOAA/Office of Coast Survey), and Shep Smith (NOAA/Office of Coast Survey). We are especially grateful to Matthew Widlansky (University of Hawaii Sea Level Center) for his enthusiastic and detailed review. We also thank George Mungrov and Aaron Sweeney (both at the NOAA / National Centers for Environmental Information) for their thoughts and suggestions.</p>
+<h2 id="acronyms-and-abbreviations">Acronyms and Abbreviations</h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ACT</td>
+<td>Alliance for Coastal Technologies</td>
+</tr>
+<tr>
+<td>AOOS</td>
+<td>Alaska Ocean Observing System</td>
+</tr>
+<tr>
+<td>CARICOOS</td>
+<td>Caribbean Coastal Ocean Observing System</td>
+</tr>
+<tr>
+<td>CeNCOOS</td>
+<td>Central and Northern California Ocean Observing System</td>
+</tr>
+<tr>
+<td>CO-OPS</td>
+<td>Center for Operational Oceanographic Products and Services</td>
+</tr>
+<tr>
+<td>DQAP</td>
+<td>Data Quality and Assurance Procedure</td>
+</tr>
+<tr>
+<td>GCOOS</td>
+<td>Gulf of Mexico Coastal Ocean Observing System</td>
+</tr>
+<tr>
+<td>GLOS</td>
+<td>Great Lakes Observing System</td>
+</tr>
+<tr>
+<td>GLOSS</td>
+<td>Global Sea Level Observing System</td>
+</tr>
+<tr>
+<td>GMT</td>
+<td>Greenwich Mean Time</td>
+</tr>
+<tr>
+<td>GNSS</td>
+<td>Global Navigation Satellite System</td>
+</tr>
+<tr>
+<td>GPS</td>
+<td>Global Positioning System</td>
+</tr>
+<tr>
+<td>IOC</td>
+<td>Intergovernmental Oceanographic Commission</td>
+</tr>
+<tr>
+<td>IOOS</td>
+<td>Integrated Ocean Observing System</td>
+</tr>
+<tr>
+<td>MARACOOS</td>
+<td>Mid-Atlantic Regional Association Coastal Ocean Observing System</td>
+</tr>
+<tr>
+<td>NANOOS</td>
+<td>Northwest Association of Networked Ocean Observing Systems</td>
+</tr>
+<tr>
+<td>NERACOOS</td>
+<td>Northeastern Regional Association of Coastal Ocean Observing Systems</td>
+</tr>
+<tr>
+<td>NIST</td>
+<td>National Institute of Standards and Technology</td>
+</tr>
+<tr>
+<td>NOAA</td>
+<td>National Oceanic and Atmospheric Administration</td>
+</tr>
+<tr>
+<td>NOS</td>
+<td>National Ocean Service</td>
+</tr>
+<tr>
+<td>NWLON</td>
+<td>National Water Level Observation Network</td>
+</tr>
+<tr>
+<td>OSTEP</td>
+<td>Ocean Systems Test and Evaluation Program</td>
+</tr>
+<tr>
+<td>PacIOOS</td>
+<td>Pacific Islands Ocean Observing System</td>
+</tr>
+<tr>
+<td>PVC</td>
+<td>Polyvinyl Chloride</td>
+</tr>
+<tr>
+<td>QARTOD</td>
+<td>Quality-Assurance/Quality Control of Real-Time Oceanographic Data</td>
+</tr>
+<tr>
+<td>QA</td>
+<td>Quality Assurance</td>
+</tr>
+<tr>
+<td>QC</td>
+<td>Quality Control</td>
+</tr>
+<tr>
+<td>SCCOOS</td>
+<td>Southern California Coastal Ocean Observing System</td>
+</tr>
+<tr>
+<td>SD</td>
+<td>Standard Deviation</td>
+</tr>
+<tr>
+<td>SECOORA</td>
+<td>Southeast Coastal Ocean Observing Regional Association</td>
+</tr>
+<tr>
+<td>UK</td>
+<td>United Kingdom</td>
+</tr>
+<tr>
+<td>UNESCO</td>
+<td>United Nations Organization for Education, Science, and Culture</td>
+</tr>
+<tr>
+<td>UTC</td>
+<td>Coordinated Universal Time</td>
+</tr>
+<tr>
+<td>USGS</td>
+<td>United States Geological Survey</td>
+</tr>
+<tr>
+<td>WL</td>
+<td>Water Level</td>
+</tr>
+</tbody>
+</table>
+<h2 id="definitions-of-selected-terms">Definitions of Selected Terms</h2>
+<p>This manual contains several terms whose meanings are critical to those using the manual. These terms are included in the following table to ensure that the meanings are clearly defined.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Codable Instructions</td>
+<td>Codable instructions are specific guidance that can be used by a software programmer to design, construct, and implement a test. These instructions also include examples with sample thresholds.</td>
+</tr>
+<tr>
+<td>Data Record</td>
+<td>A data record is one or more messages that form a coherent, logical, and complete observation.</td>
+</tr>
+<tr>
+<td>Datum</td>
+<td>For marine applications, datum is a base elevation used as a reference from which to reckon heights or depths. It is called a tidal datum when defined in terms of a certain phase of the tide (Gill and Schultz 2001).</td>
+</tr>
+<tr>
+<td>Leveling</td>
+<td>Leveling is the determination of the elevation differences between bench marks, to extend vertical control and monitor the stability of the water level measurement gauge. The quality of leveling is a function of the procedures used, the sensitivity of the leveling instruments, the precision and accuracy of the rod, the attention given by surveyors, and the refinement of the computations\</td>
+</tr>
+<tr>
+<td></td>
+<td>(Gill and Schultz 2001).</td>
+</tr>
+<tr>
+<td>Message</td>
+<td>A message is a standalone data transmission. A data record can be composed of multiple messages.</td>
+</tr>
+<tr>
+<td>Operator</td>
+<td>Operators are individuals or entities who are responsible for collecting and providing data.</td>
+</tr>
+<tr>
+<td>Quality Assurance (QA)</td>
+<td>QA involves processes that are employed with hardware to support the generation of high quality data (section 2.0 and appendix A).</td>
+</tr>
+<tr>
+<td>Quality Control (QC)</td>
+<td>QC involves follow-on steps that support the delivery of high quality data and requires both automation and human intervention (section 3.0).</td>
+</tr>
+<tr>
+<td>Real-Time</td>
+<td>Real-time means that: data are delivered without delay for immediate use; time series extends only backwards in time, where the next data point is not available; and sample intervals may range from a few seconds to a few hours or even days, depending upon the sensor configuration (section 1.0).</td>
+</tr>
+<tr>
+<td>Threshold</td>
+<td>Thresholds are limits that are defined by the operator.</td>
+</tr>
+<tr>
+<td>Variable</td>
+<td>An observation (or measurement) of physical or biogeochemical properties within oceanographic and/or meteorological environments.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="10-background-and-introduction">1.0 Background and Introduction</h2>
+<p>The U.S. Integrated Ocean Observing System (IOOS<sup>®</sup>) has a vested interest in collecting high-quality data for the 34 core variables (https://ioos.noaa.gov/about/ioos-by-the-numbers) measured on a national scale. In response to this interest, U.S. IOOS continues to establish written, authoritative procedures for the quality control (QC) of real-time data through the Quality Assurance/Quality Control of Real-Time Oceanographic Data (QARTOD) program, addressing each variable as funding and requirements permits. This water level (WL) manual was first published in May 2014 as the fifth in a series of guidance documents that address QC of real-time data of each core variable. It was the fifth manual to be updated (2016) and is now the fifth manual to receive a second update.</p>
+<p>Please refer to <a href="https://ioos.noaa.gov/project/qartod/">https://ioos.noaa.gov/project/qartod/</a> for the following documents.</p>
+<ol>
+<li>U.S. Integrated Ocean Observing System, 2017. U.S IOOS QARTOD Project Plan - Accomplishments for 2012--2016 and Update for 2017--2021. 48 pp. <a href="https://doi.org/10.7289/V5JQ0Z71">https://doi.org/10.7289/V5JQ0Z71</a>.</li>
+<li>U.S. Integrated Ocean Observing System, 2018. Manual for Real-Time Quality Control of Dissolved Oxygen Observations Version 2.1: A Guide to Quality Control and Quality Assurance for Dissolved Oxygen Observations in Coastal Oceans. 53 pp. <a href="https://doi.org/10.25923/q0m1-d488">https://doi.org/10.25923/q0m1-d488</a></li>
+<li>U.S. Integrated Ocean Observing System, 2019. Manual for Real-Time Quality Control of In-Situ Surface Wave Data Version 2.1: A Guide to Quality Control and Quality Assurance of In- Situ Surface Wave Observations. 69 pp. <a href="https://doi.org/10.25923/7yc5-vs69">https://doi.org/10.25923/7yc5-vs69</a></li>
+<li>U.S. Integrated Ocean Observing System, 2019. Manual for Real-Time Quality Control of In-Situ Current Observations Version 2.1 A Guide to Quality Control and Quality Assurance of Acoustic Doppler Current Profiler Observations. 54 pp. <a href="https://doi.org/10.25923/sqe9-e310">https://doi.org/10.25923/sqe9-e310</a></li>
+<li>U.S. Integrated Ocean Observing System, 2020. Manual for Real-Time Quality Control of In-situ Temperature and Salinity Data Version 2.1: A Guide to Quality Control and Quality Assurance of In-situ Temperature and Salinity Observations. 50 pp. <a href="https://doi.org/10.25923/x02m-m555">https://doi.org/10.25923/x02m-m555</a></li>
+<li>U.S. Integrated Ocean Observing System, 2017. Manual for Real-Time Quality Control of Wind Data Version 1.1: A Guide to Quality Control and Quality Assurance of Coastal and Oceanic Wind Observations. 47 pp. [[https://doi.org/10.7289/V5FX77NH].</li>
+<li>U.S. Integrated Ocean Observing System, 2017. Manual for Real-Time Quality Control of Ocean Optics Data Version 1.1: A Guide to Quality Control and Quality Assurance of Coastal and Oceanic Optics Observations. 49 pp. <a href="https://doi.org/10.25923/v9p8-ft24">https://doi.org/10.25923/v9p8-ft24</a>.</li>
+<li>U.S. Integrated Ocean Observing System, 2018. Manual for Real-Time Quality Control of Dissolved Nutrients Data Version 1.1: A Guide to Quality Control and Quality Assurance of Coastal and Dissolved Nutrients Observations. 56 pp. <a href="https://doi.org/10.7289/V5TT4P7R">https://doi.org/10.7289/V5TT4P7R</a></li>
+<li>U.S. Integrated Ocean Observing System, 2016. Manual for Real-Time Quality Control of High Frequency Radar Surface Currents Data Version 1.0: A Guide to Quality Control and Quality Assurance of High Frequency Radar Surface Currents Data Observations. 60 pp. <a href="https://doi.org/10.7289/V5T43R96">https://doi.org/10.7289/V5T43R96</a></li>
+<li>U.S. Integrated Ocean Observing System, 2017. Manual for Real-Time Quality Control of Phytoplankton Data Version 1.0: A Guide to Quality Control and Quality Assurance of Phytoplankton Data Observations. 67 pp. <a href="https://doi.org/10.7289/V56D5R6S">https://doi.org/10.7289/V56D5R6S</a></li>
+<li>U.S. Integrated Ocean Observing System, 2017. Manual for Real-Time Quality Control of Passive Acoustics Data Version 1.0: A Guide to Quality Control and Quality Assurance of Passive Acoustics Observations. 43 pp. <a href="https://doi.org/10.7289/V5PC30M9">https://doi.org/10.7289/V5PC30M9</a></li>
+<li>U.S. Integrated Ocean Observing System, 2018. Manual for Real-Time Quality Control of Stream Flow Data Version 1.0: A Guide to Quality Control and Quality Assurance of Stream Flow Observations in Rivers and Streams. 46 pp. <a href="https://doi.org/10.25923/gszc-ha43">https://doi.org/10.25923/gszc-ha43</a></li>
+<li>U.S. Integrated Ocean Observing System, 2019. Manual for Real-Time Quality Control of pH Data Version 1.0: A Guide to Quality Control and Quality Assurance of pH Data Observations. 56 pp. <a href="https://doi.org/10.25923/111k-br08">https://doi.org/10.25923/111k-br08</a></li>
+</ol>
+<p>Please reference this document as:</p>
+<blockquote>
+<p>U.S. Integrated Ocean Observing System, 2021. Manual for Real-Time Quality Control of Water Level Data Version 2.1: A Guide to Quality Control and Quality Assurance of Water Level Observations. 47 pp. <a href="https://doi.org/10.25923/vpsx-dc82">https://doi.org/10.25923/vpsx-dc82</a></p>
+</blockquote>
+<p>This manual is a living document that reflects the state-of-the-art QC testing procedures for water level observations.
+It is written for the experienced operator but also provides examples for those who are just entering the field.</p>
+<h2 id="20-purposeconstraintsapplications">2.0 Purpose/Constraints/Applications</h2>
+<p>The following sections describe the purpose of this manual, as well as the constraints that operators may encounter when performing QC of WL data and specific applications of those data.</p>
+<h3 id="21-purpose">2.1 Purpose</h3>
+<p>The purpose of this manual is to provide guidance to the U.S. IOOS and the WL community at large for the real-time QC of WL measurements using an agreed-upon, documented, and implemented standard process. This manual is also a deliverable to the U.S. IOOS Regional Associations and the ocean observing community and represents a contribution to a collection of core variable QC documents.</p>
+<p>WL observations covered by these test procedures are collected in oceans and lakes in real time or near-real time. These tests are based on guidance from QARTOD workshops (QARTOD 2003-2009) and draw from existing expertise in programs such as the National Oceanic and Atmospheric Administration National Ocean Service (NOAA/NOS) National Water Level Observation Network (NWLON) (Nault 2004), the University of Hawaii Sea Level Center, and the Global Sea Level Observing System (GLOSS). The Global Climate Observing System recognizes GLOSS as one of the international operational activities that provides essential sea level climate data. The GLOSS Global Core Network is comprised of 290 globally distributed sea level stations (23 in the U.S.) (GLOSS 2012).</p>
+<p>This manual differs from existing QC procedures for WL in that its focus is on real-time data. It presents a series of eleven tests that operators can incorporate into practices and procedures for QC of WL measurements. These tests apply only to the in-situ, real-time measurement of WL as observed by sensors deployed on fixed platforms and not to remotely sensed WL measurements (e.g., satellite observations).</p>
+<p>Table 2-1 shows technologies that are included and excluded in this manual.</p>
+<table>
+<thead>
+<tr>
+<th><strong>Technologies Included</strong></th>
+<th><strong>Technologies Excluded</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Microwave radar</td>
+<td>Satellite altimetry</td>
+</tr>
+<tr>
+<td>Acoustic</td>
+<td>Lidar</td>
+</tr>
+<tr>
+<td>Float/stilling well</td>
+<td></td>
+</tr>
+<tr>
+<td>Pressure</td>
+<td></td>
+</tr>
+<tr>
+<td>Laser</td>
+<td></td>
+</tr>
+<tr>
+<td>Global Positioning System (GPS) buoy</td>
+<td></td>
+</tr>
+<tr>
+<td>GNSS reflectometry</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>: Table 2-1. Technologies included and excluded in this manual</p>
+<p>These test procedures are written as a high-level narrative from which a computer programmer can develop code to execute specific tests and set data flags (data quality indicators) within an automated software program. IOOS QARTOD documentation and other QC tests, implemented in Python with notebook examples, have been developed by the community and are shared at <a href="https://github.com/ioos/ioos_qc">https://github.com/ioos/ioos_qc</a> and <a href="https://ioos.github.io/ioos_qc/">https://ioos.github.io/ioos_qc/</a>. Although certain tests are recommended, thresholds can vary among operators. The tests described here are designed to support a range of WL sensors and operator capabilities. Some well-established programs with the highest standards have implemented very rigorous QC processes. Others, with different requirements, may utilize sensors with data streams that cannot support as many QC checks---all have value when used prudently. Users must understand and appropriately utilize data of varying quality, and operators must provide support by documenting and publishing their QC processes. A balance must be struck between the time-sensitive needs of real-time observing systems and the degree of rigor that has been applied to non-real-time systems by operators with decades of QC experience.</p>
+<p>High quality marine observations require sustained quality assurance (QA) and QC practices to ensure credibility and value to operators and data users. QC and QA are interrelated, and both are important to the process. QA practices involve processes that are employed with hardware to support the generation of high quality data, such as a sufficiently accurate, precise, and reliable sensor with adequate resolution. Other QA practices include: sensor calibration; calibration checks and/or in-situ verification, including post-deployment calibration; proper deployment considerations, such as measures for corrosion control and anti-fouling; solid data communications, including accurate time stamps with time zone identification; adequate maintenance intervals; and creation of a robust quality control process. Bushnell et al. (2019) provide more information about QA, which includes issues that are not part of the scope of this manual such as post-deployment calibration (instrument verification after recovery).</p>
+<p>QC involves follow-on steps that support the delivery of high quality data and requires both automation and human intervention. QC practices include such things as data integrity checks (format, checksum, timely arrival of data), data value checks (threshold checks, minimum/maximum rate of change), neighbor checks, climatology checks, model comparisons, signal/noise ratios, the generation of QC metadata, the verification of user satisfaction, and generation of data flags (Bushnell 2005).</p>
+<p>The process of ensuring data quality is not always straightforward. QA/QC procedures may be specific to a sensor technology or even to a particular manufacturer's model, so the establishment of a methodology that is applicable to every sensor is challenging.</p>
+<h3 id="22-constraints">2.2 Constraints</h3>
+<h4 id="221-datums-and-leveling-considerations">2.2.1 Datums and Leveling Considerations</h4>
+<p>Observed water levels are reported relative to another vertical elevation that serves as a reference point or datum (Gill and Schultz 2001). Vertical datums can be a local station datum (relative only to some fixed hardware point or arbitrary value), a tidal datum (such as mean lower low water), a gravimetric datum (such as the North American Vertical Datum of 1988, based on an equipotential gravity surface commonly called the geoid), or a geodetic datum (the fundamental datum for GPS satellites and based on a mathematical model of the earth called an ellipsoid).</p>
+<p>To monitor station stability and provide continuity when replacing a WL station, several nearby bench marks are typically installed to support level (or vertical) surveying, and the local station datum and tidal datum elevations are determined relative to them (Hailegeberel et al. 2018)[^1]. The number of bench marks deployed depends upon the application of the operator, and as many as ten can be called for when the WL station is used for the most demanding applications, such as long-term sea level changes. Three stable bench marks are required to demonstrate stability, and more bench marks are typically required as the duration of station operation increases. Some operators consider the bench marks the most important part of a WL station, as they preserve the tidal datums established by the station long after it is gone[^2].</p>
+<p>While datums and vertical leveling surveys are beyond the scope of this manual, their importance must be noted, as they are critical to the successful use of the WL data. Gradual station subsidence or rise, datum determinations, and leveling precision are not issues that can be addressed through real-time QC, but they are vitally important to the QA of the observing system and its corresponding data. It is especially critical for operators to correctly convey the datum in use to users and to include this important metadata with every water level observation.</p>
+<h4 id="222-data-processing-methodology">2.2.2 Data Processing Methodology</h4>
+<p>The type of sensor used to collect WL data and the system used to process and transmit the WL measurements determine which QC algorithms are used. In-situ systems with sufficient onboard processing power within the sensor may process the original (raw) data and produce derived products. Many sensors may sample at high-rate or burst mode (e.g., 1 Hz or greater). These samples are used to produce the actual real-time value transmitted (e.g., 6-minute value). Statistical information about the high rate sample distributions can also be used and transmitted as real-time QC parameters (e.g., sample standard deviations and outliers). If ample transmission capability is available, the entire original data stream may be transmitted and subsequently quality controlled from there. Therefore, because operators have different data processing methodologies, three levels of QC are proposed: required, strongly recommended, and suggested.</p>
+<h4 id="223-traceability-to-accepted-standards">2.2.3 Traceability to Accepted Standards</h4>
+<p>To ensure that WL sensors produce accurate data, rigorous calibrations and calibration checks must be performed in addition to QC checks. Most operators rely upon manufacturer calibrations and conduct calibration checks only before deployment. These calibration checks are critical to ensuring that the manufacturer calibration is still valid. Manufacturers describe how to conduct these calibration checks in their user manuals.</p>
+<p>Calibrations and calibration checks must be traceable to accepted standards. The National Institute of Standards and Technology (NIST) ([http://www.nist.gov/index.html),] a provider of internationally accepted standards, is often the source for accepted standards. Calibration activities must be tailored to match data use and resources. Calibration cost and effort increase dramatically as accuracy requirements increase. Fundamental NIST standards such as length, temperature, and pressure will suffice when conducting calibration checks on most WL sensors.</p>
+<h4 id="224-sensor-deployment-considerations-and-hardware-limitations">2.2.4 Sensor Deployment Considerations and Hardware Limitations</h4>
+<p>WL sensors can be deployed in several ways. Most sensors are fixed to platforms that are designed to ensure minimal vertical or horizontal movement, and they observe the water level from below, at, or above the surface. Pressure sensors may be directly submerged or configured within a bubbler system to observe the back pressure. GPS buoys, which measure water elevation derived from a GPS antenna position, have recently been used operationally; this technology should improve as GPS accuracy and real-time processing capability improve. Acoustic and microwave sensors are examples of WL sensors measuring from above the surface.</p>
+<p>While outside the scope of the real-time tests described in this manual, QA is critical to data quality. Sensors require attention to proper QA measures both before and after the deployment. Operators must follow the manufacturer's recommendations for factory calibration schedules and proper sensor maintenance.</p>
+<p>The following sections describe the sensor technologies that are most often used, with a brief note about their attributes and shortcomings.</p>
+<h5 id="microwave-radar"><strong>Microwave Radar</strong></h5>
+<p>Microwave radar altimeters have become popular within the past decade as this technology has evolved (Park et al. 2014). While free of many of the drawbacks of other WL sensors, microwave radar technology brings new modes of failure, such as the inability to measure water levels in the presence of ice and surprise occasional problems such as a bee's nest in the sensor horn. Figure 2-1 shows an example of a Xylem/Design Analysis H3611 microwave water level sensor installation by the NOS Center for Operational Oceanographic Products and Services (CO-OPS).</p>
+<p><img alt="Microwave water level sensor mounted on a metal platform over the water. Arrow pointing to sensor horn is shown undeter the platform." src="../images_Water_Level/image04.jpg" /></p>
+<figcaption>Figure 2-1. Xylem/Design Analysis H3611 microwave water level sensor as installed by NOS/CO-OPS. Photo courtesy of NOS/CO-OPS.</figcaption>
+
+<h5 id="acoustic"><strong>Acoustic</strong></h5>
+<p>Acoustic altimeters typically use a sounding tube but can also operate in open air. They are sensitive to variations in the speed of sound caused by temperature changes and temperature gradients along the acoustic transmission path. Sounding tubes may become obstructed with biota or ice, causing errors in the measurements. Effects of waves and currents have been partially mitigated using protective wells and orifice configurations (which may be expensive to install and maintain, depending on the project). Figure 2-2 shows a single-pile NOS/CO-OPS installation using an acoustic sensor. The inset depicts an Aquatrak sensor mounted atop a sounding tube in a protective well.</p>
+<p><img alt="Photo of an elevated NWLON station with an inset photo showing a water level sensor similar to one housed inside the elevated station." src="../images_Water_Level/image05.jpg" /></p>
+<figcaption>Figure 2-2. An elevated NOS/CO-OPS NWLON station using an Aquatrak acoustic WL sensor (inset) with a sounding tube housed inside a protective 6-inch PVC well. Photo courtesy of NOS/CO-OPS.</figcaption>
+
+<h5 id="floatstilling-wells"><strong>Float/Stilling Wells</strong></h5>
+<p>Floats deployed in stilling wells are an old and proven technology. These systems can be fortified to operate in the presence of ice, but they are expensive to install. Intakes can become clogged with sediment, and the mechanisms used to transfer the float elevation to sensors (e.g., shaft-angle encoders) can have unique failure modes. Stilling wells in tidal areas are known to cause significant error in WL observations in the presence of high waves and currents. Figure 2-3 shows a typical NOS/CO-OPS Great Lakes installation of dual shaft-angle encoders and their respective floats deployed in the stilling well, also referred to as the sump. Sumps are large stilling wells that have an intake valve used to dampen wave action that might be transferred through the intake pipe to the sump.</p>
+<p><img alt="Photo of shaft angle encoders sitting on a shelf." src="../images_Water_Level/image06.jpg" /><img alt="Photo of several floats down in a stilling well." src="../images_Water_Level/image07.jpg" /></p>
+<figcaption>Figure 2-3. Redundant shaft-angle encoders (left) digitize the elevation of floats in a stilling well (right).</figcaption>
+
+<h5 id="pressure-sensors"><strong>Pressure Sensors</strong></h5>
+<p>Pressure sensors can be immune to ice, but pressure readings must be adjusted for variations in barometric pressure <em>and</em> water density in real time as part of the conversion to derived real-time water level measurements. Pressure sensors can be vented to the atmosphere to automatically account for variations in atmospheric pressure; however, water density variations still must be accounted for. Sensor drift can be an issue for low-quality sensors, and moisture damage in the air tube is a common failure mode. Allowance for gravity variations must also be made at each installation site. Figure 2-4 provides a generalized schematic of a typical pressure sensor installation as used by the U.S. Geological Survey (USGS) and many others. The back pressure observed by a sensor that is not submerged yields a much more robust system. Figure 2-5 shows a typical NOS/CO-OPS backup pressure sensor orifice installation, which includes the use of parallel plates to reduce draw-down in the presence of currents.</p>
+<p><img alt="Schematic shows the pressure sensor installed close to the water line with an orifice line from the sensor box (above ground) going below the ground and to the orifice located below the water surface." src="../images_Water_Level/image08.png" /></p>
+<figcaption>Figure 2-3. Schematic of a typical pressure sensor installation (courtesy of Michael Lee/USGS).</figcaption>
+
+<p><img alt="Photo of a pressure sensor installed under water." src="../images_Water_Level/image09.jpg" /></p>
+<figcaption>Figure 2-4. A pressure sensor orifice with parallel plates to reduce draw-down in the presence of currents (courtesy of Rich Bourgerie/NOS/CO-OPS).</figcaption>
+
+<h5 id="lasers"><strong>Lasers</strong></h5>
+<p>Infrared laser altimeters reflect well from the sea surface, and sensor performance has improved while costs have decreased. However, performance in fog and heavy rain may not be optimum. The sensors are also affected by high waves and ice or other obstructions in the laser path. Figure 2-6 shows an infrared laser used by NOS/CO-OPS as a redundant bridge air gap sensor.</p>
+<p><img alt="Photo of two side-by-side infrared laser sensors." src="../images_Water_Level/image10.jpg" /></p>
+<figcaption>Figure 2-6. Laser Technology infrared Universal Laser Sensors have been used as redundant air gap sensors by NOS/CO-OPS (courtesy of Mark Bushnell, CoastalObsTechServices).</figcaption>
+
+<h5 id="gps-buoys"><strong>GPS Buoys</strong></h5>
+<p>The accuracy of elevations derived by GPS continues to improve as enhancements are made to national and international global navigation satellite systems (GNSS). The location of the GPS sensor reference point must be calibrated to reflect the water level on the buoy. The onboard processing system must use a tilt-motion sensor to account for wave action. Mooring configurations must be designed to mitigate effects of high currents. Water density variations and bio-fouling can also create biases by varying the float plane of the buoy. GPS data processing is complicated for real-time application and may require shore-based systems for real-time kinematic deployments. Technology-specific QC checks based upon GNSS parameters, such as Positional Dilution of Precision, number of satellites in view, and ephemeris update rates, will be added as this capability evolves. Figure 2-7 shows a GPS buoy on the deck of a small vessel getting ready for deployment. This particular buoy does not provide real-time water level data and requires post-processing of the GPS data. However, real-time information is obtained on buoy performance and operational status. Although a GPS buoy system has been recently approved by NOAA/NOS for some operational applications, real-time processing of water level data using GNSS parameters is still under development; associated QC guidelines will be addressed in the future.</p>
+<p><img alt="Photo of a yellow water level buoy with a NOAA label attached sitting in a boat ready to be launched." src="../images_Water_Level/image11.jpg" /></p>
+<figcaption>Figure 2-7. This AXYS GPS water level buoy is ready to be deployed by NOAA/NOS for evaluation in the southern Chesapeake Bay (courtesy of Mark Bushnell, CoastalObsTechServices).</figcaption>
+
+<p><strong><em>GNSS reflectometry</em></strong></p>
+<p>Ground-based Global Navigation Satellite System Reflectometry (GNSS-R) has the potential to become a viable source of operational coastal WL observations. Comparisons between the direct GPS signal and the signal reflected from the sea surface are used to derive a WL measurement (Figure 2-8). Studies comparing GNSS-R WL measurements with co-located traditional WL gauges yield correlation coefficients greater than 0.9 and root mean square errors smaller than 5 cm (Geremia-Nievinski et al. 2020).</p>
+<p><img alt="Diagram shows GNSS signals traveling to the surface and being reflected from the sea surface." src="../images_Water_Level/image12.png" /></p>
+<figcaption>Figure 2-8. Direct and reflected GNSS signals can be used to extract a WL measurement (image from Chen 2019).</figcaption>
+
+<h3 id="23-applications-of-wl-data">2.3 Applications of WL Data</h3>
+<p>Real-time water levels are important for a wide variety of applications, including:</p>
+<ul>
+<li>Hydrographic and shoreline mapping surveys</li>
+<li>Safe vessel transit (draft/air gap, e.g., IHO S-104 [IHO 2017, in development])</li>
+<li>Safe vessel docking and close-in maneuvering</li>
+<li>Commercial fishing</li>
+<li>Recreational activities</li>
+<li>Storm surge/inundation/evacuation</li>
+<li>Tsunami and meteotsunami detection</li>
+<li>Coastal construction</li>
+<li>Coastal zone management</li>
+<li>Harbor, channel, and inlet maintenance</li>
+<li>Operation of coastal engineering structures</li>
+<li>Input into operational nowcast/forecast system (models) runs</li>
+<li>Validation and verification of numerical ocean models</li>
+<li>Understanding the impacts of long-term sea level variability and inundation on coastal habitats</li>
+<li>Monitoring agreements, memorandums of understanding, and treaties (e.g., the International Great Lakes Datum)</li>
+</ul>
+<p>Other applications, such as monthly and annual mean water levels and Federal Emergency Management Agency Flood Insurance Rate Maps, do not require real-time QC but benefit from it through early detection of WL station issues.</p>
+<h3 id="24-other-important-considerations">2.4 Other Important Considerations</h3>
+<p>While outside the scope of the real-time tests described in this manual, quality assurance (QA) is critical to data quality. Sensors require attention to proper QA measures both before and after the deployment. Bushnell et al. (2019) provide a more comprehensive review of QA processes, including several example checklists in the Supplementary Material. Operators must follow the manufacturer's recommendations for factory calibration schedules and proper sensor preparation and maintenance.</p>
+<p>Also important, but beyond the scope of this document at present, is the determination and reporting of data uncertainty. Knowledge of the accuracy of each observation is required to ensure that data are used appropriately and aids in the computation of error bounds for subsequent products derived by users. All sensors and measurements contain errors that are determined by hardware quality, calibration accuracy, methods of operation, and data processing techniques. Operators should routinely provide a quantitative measure of data uncertainty in the associated metadata. Such calculations can be challenging, so operators should also document the methods used to compute the uncertainty (e.g., Seitz et al. 2021). The limits and thresholds implemented by operators for the data QC tests described here are a key component in establishing the observational error bounds. Operators are strongly encouraged to consider the impact of the QC tests on data uncertainty, as these two efforts greatly enhance the utility of their data.</p>
+<p>Sensor redundancy is key to obtaining reliable measurements and ensuring that uncertainties can be assigned to those measurements. Comparing two adjacent instruments can assist in evaluation of data quality, as well as provide two (or more) independent estimates of a parameter of interest.</p>
+<h2 id="30-quality-control">3.0 Quality Control</h2>
+<p>The real-time QC of WL observations can be extremely challenging. Events such as storm surge, tsunamis, and strong winds can affect water levels and must be considered when determining acceptable data thresholds. Human involvement is therefore important to ensure that solid scientific principles are applied to data evaluation to ensure that good data are not discarded, and bad data are not distributed (e.g., selection of appropriate thresholds and examination of data flagged as questionable).</p>
+<p>To conduct real-time QC on WL observations, the first pre-requisite is to understand the science and context within which the measurements are being conducted. For example and as was discussed in section 2.2.4, sensors can be deployed in a number of ways. Each deployment method imposes the need for specific QC methods, with different interpretations of 'real time.' Real-time WL data should have two main attributes: accurate time and accurate elevation relative to a known reference.</p>
+<p>This manual focuses specifically on real-time data. For example, for real-time QC, gradual calibration changes or system responses (sensor drift) cannot be detected or corrected. Drift correction for WL measurements during post-processing is difficult even if a valid post-recovery calibration could be obtained. Drift is often caused by bio-fouling, silting/sediment clogging, etc. and affects different systems in different ways (e.g., a sensor's response will be affected by the added mass of bio-fouling). Another example is the ability of some data providers to backfill data gaps. In both of these examples, the observations are not considered to be real time for purposes of QC checks. (However, in some sophisticated 24/7 QC operations, real-time dissemination may be switched from one sensor to another based on real-time QC flags.)</p>
+<h3 id="31-qc-flags">3.1 QC Flags</h3>
+<p>Data are evaluated using QC tests, and the results of those tests are recorded by inserting flags in the data files. Table 3-1 provides a simple set of flags and associated descriptions. Additional flags may be incorporated to provide more detailed information to assist with troubleshooting. For example, an observation may fail the water level min/max test and be flagged as having failed. If the data failed the water level min/max by exceeding the upper limit, a "failed high" flag may indicate that the values were higher than the expected range. Such detailed flags primarily support maintenance efforts and are presently beyond U.S. IOOS requirements for QC of real-time data. For additional information regarding flags, see the <em>Manual for the Use of Real-Time Oceanographic Data Quality Control Flags</em> (U.S. IOOS 2020) posted on the U.S. IOOS QARTOD website. However, all flags must be identified and defined in the metadata.</p>
+<p>Further post processing of the data may yield different conclusions from those reached during initial assessments. Flags set in real-time should not be changed, ensuring that historical documentation is preserved. Results from post processing should generate another set of flags corresponding to a revised version of the data.</p>
+<p>In the test codable instructions provided, the time series of observations is time ordered, and the most recent observation is <em>n<sub>0</sub></em>, preceded by a value at <em>n<sub>-1</sub></em>, and so on moving back in time. The focus of the real-time QC is primarily on observations <em>n<sub>0</sub></em>, <em>n<sub>-1</sub></em>, and <em>n<sub>-2</sub></em>.</p>
+<table>
+<thead>
+<tr>
+<th><strong>Flag</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Pass=1</td>
+<td>Data have passed critical real-time QC tests and are deemed adequate for use as preliminary data.</td>
+</tr>
+<tr>
+<td>Not Evaluated=2</td>
+<td>Data have not been QC-tested, or the information on quality is not available.</td>
+</tr>
+<tr>
+<td>Suspect or of High Interest=3</td>
+<td>Data are considered to be either suspect or of high interest to data providers and users. They are flagged suspect to draw further attention to them by operators.</td>
+</tr>
+<tr>
+<td>Fail=4</td>
+<td>Data are considered to have failed one or more critical real-time QC checks. If they are disseminated at all, it should be readily apparent that they are not of acceptable quality.</td>
+</tr>
+<tr>
+<td>Missing Data=9</td>
+<td>Data are missing; used as a placeholder.</td>
+</tr>
+</tbody>
+</table>
+<p>: Table 3-1. Flags for real-time data (UNESCO 2013)</p>
+<p>Water level data that have been subjected to real-time QC might be referred to as Level 1 data (UNESCO/IOC 2020). Operators are encouraged to carefully define any data management level annotation they assign to data products.</p>
+<h3 id="32-test-hierarchy">3.2 Test Hierarchy</h3>
+<p>This section outlines eleven real-time QC tests for WL measurements. Operators should also consider that some of these tests can be carried out within the instrument, where thresholds can be defined in configuration files. Although more tests may imply a more robust QC effort, there are many reasons operators could use to justify not conducting some tests. In those cases, operators need only to document reasons these tests do not apply to their observations. Tests are listed in table 3-2 and are divided into three groups: those that are required, strongly recommended, or suggested. However, for some critical real-time applications with high risk operations, it may be advisable to invoke all groups.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Group 1:</strong> <em>Required</em></td>
+<td>Test 1</td>
+<td>Timing/Gap Test</td>
+</tr>
+<tr>
+<td></td>
+<td>Test 2</td>
+<td>Syntax Test</td>
+</tr>
+<tr>
+<td></td>
+<td>Test 3</td>
+<td>Location Test</td>
+</tr>
+<tr>
+<td></td>
+<td>Test 4</td>
+<td>Gross Range Test</td>
+</tr>
+<tr>
+<td></td>
+<td>Test 5</td>
+<td>Climatology Test</td>
+</tr>
+<tr>
+<td><strong>Group 2:</strong> <em>Strongly Recommended</em></td>
+<td>Test 6</td>
+<td>Spike Test</td>
+</tr>
+<tr>
+<td></td>
+<td>Test 7</td>
+<td>Rate of Change Test</td>
+</tr>
+<tr>
+<td></td>
+<td>Test 8</td>
+<td>Flat Line Test</td>
+</tr>
+<tr>
+<td><strong>Group 3:</strong> <em>Suggested</em></td>
+<td>Test 9</td>
+<td>Multi-Variate Test</td>
+</tr>
+<tr>
+<td></td>
+<td>Test 10</td>
+<td>Attenuated Signal Test</td>
+</tr>
+<tr>
+<td></td>
+<td>Test 11</td>
+<td>Neighbor or Forecast Test</td>
+</tr>
+</tbody>
+</table>
+<p>: Table 3-2. QC Tests in order of implementation and hierarchy</p>
+<h3 id="33-qc-test-descriptions">3.3 QC Test Descriptions</h3>
+<p>A variety of tests can be performed on the sensor measurements to evaluate data quality. Testing the timely arrival and integrity of the data transmission itself is a first step. If the data are corrupted during transmission, further testing may be irrelevant. The checks defined in these eleven tests evaluate data through various comparisons to other data and to the expected conditions in the given environment. The tests listed in this section presume a time-ordered series of observations and denote the most recent observation as previously described.</p>
+<p>Some effort will be needed to select the best thresholds, which are determined at the operator level and may require multiple iterations of trial and error before final selections are made. A successful QC effort is highly dependent upon selection of the proper thresholds, which should not be determined arbitrarily but can be based on historical knowledge or statistics derived from recently acquired data. Although this manual provides some guidance for selecting thresholds based on input from various operators, it is assumed that operators have the expertise and motivation to select the proper thresholds to maximize the value of their QC effort. Operators should openly provide thresholds as metadata for user support. Elevation thresholds chosen may be dependent upon the real-time application, (e.g., chart datum or inundation threshold level). This shared information will help U.S. IOOS to document standardized thresholds that will be included in future releases of this manual.</p>
+<h4 id="331-applications-of-qc-tests-to-wl-sensors">3.3.1 Applications of QC Tests to WL Sensors</h4>
+<p>These eleven tests require operators to select a variety of thresholds. Examples are provided in the following test tables; however, operators are in the best position to determine the appropriate thresholds for their operations. Some tests rely on multiple data points most recently received to determine the quality of the latest data point. When this series of data points reveals that the entire group fails, the most recent data point is flagged, but the previous flags are not changed. This action supports the view that historical flags are generally not altered. The first example is in Test 8, the Flat Line Test, where this scenario will become clearer. The exception to the rule occurs for Test 6 Spike Check, where the most recent point must be flagged as "2 Not Evaluated" until the next point arrives, and the spike check can be performed.</p>
+<h4 id="test-1-timinggap-test-required">Test 1 - Timing/Gap Test (Required)</h4>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Check for arrival of data.</strong> <td colspan=2></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Test determines that the most recent data point has been measured and received within the expected time window (TIM_INC) and has the correct time stamp (TIM_STMP).<br><strong>Note:</strong> For those systems that do not update at regular intervals, a large value for TIM_STMP can be assigned. The gap check is not a solution for all timing errors. Data could be measured or received earlier than expected. This test does not address all clock drift/jump issues. <td colspan=2></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Flags</strong></td>
+<td><strong>Condition</strong></td>
+<td><strong>Codable Instructions</strong></td>
+</tr>
+<tr>
+<td>Missing Data=9</td>
+<td>Data have not arrived as expected.</td>
+<td><code>If NOW - TIM_STMP &gt; TIM_INC, flag = 9</code></td>
+</tr>
+<tr>
+<td>Suspect=3</td>
+<td>N/A</td>
+<td>N/A</td>
+</tr>
+<tr>
+<td>Pass=1</td>
+<td>Applies for test pass condition.</td>
+<td>N/A</td>
+</tr>
+<tr>
+<td><strong>Test Exception</strong>: None. <td colspan=2></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Test specifications to be established locally by the operator.</strong> <td colspan=2></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Example:</strong> TIM_INC = 1 hour <td colspan=2></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+  <hr>
+<div class="md-source-file">
+  <small>
+    
+      Last update:
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 14, 2023</span>
+      
+        <br>
+        Created:
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 8, 2023</span>
+      
+    
+  </small>
+</div>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+            Back to top
+          </button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/ocefpaf" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M186.1 328.7c0 20.9-10.9 55.1-36.7 55.1s-36.7-34.2-36.7-55.1 10.9-55.1 36.7-55.1 36.7 34.2 36.7 55.1zM480 278.2c0 31.9-3.2 65.7-17.5 95-37.9 76.6-142.1 74.8-216.7 74.8-75.8 0-186.2 2.7-225.6-74.8-14.6-29-20.2-63.1-20.2-95 0-41.9 13.9-81.5 41.5-113.6-5.2-15.8-7.7-32.4-7.7-48.8 0-21.5 4.9-32.3 14.6-51.8 45.3 0 74.3 9 108.8 36 29-6.9 58.8-10 88.7-10 27 0 54.2 2.9 80.4 9.2 34-26.7 63-35.2 107.8-35.2 9.8 19.5 14.6 30.3 14.6 51.8 0 16.4-2.6 32.7-7.7 48.2 27.5 32.4 39 72.3 39 114.2zm-64.3 50.5c0-43.9-26.7-82.6-73.5-82.6-18.9 0-37 3.4-56 6-14.9 2.3-29.8 3.2-45.1 3.2-15.2 0-30.1-.9-45.1-3.2-18.7-2.6-37-6-56-6-46.8 0-73.5 38.7-73.5 82.6 0 87.8 80.4 101.3 150.4 101.3h48.2c70.3 0 150.6-13.4 150.6-101.3zm-82.6-55.1c-25.8 0-36.7 34.2-36.7 55.1s10.9 55.1 36.7 55.1 36.7-34.2 36.7-55.1-10.9-55.1-36.7-55.1z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.top", "navigation.tabs", "navigation.indexes", "toc.integrate", "search.suggest", "search.highlight", "content.tabs.link", "content.code.annotation", "content.code.copy", "content.action.edit", "content.action.view", "content.code.annotate"], "search": "../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.a51614de.min.js"></script>
+      
+    
+  </body>
+</html>

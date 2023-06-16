@@ -693,11 +693,11 @@ A syntax check is performed only at the message level and not within the message
 In cases where a data record requires multiple messages,
 this check can be performed at the message level but is not used to check message content.
 
-| Flags       | Condition                                                      | Codable Instructions            |
-| ----------- | -------------------------------------------------------------- | ------------------------------- |
-| Fail = 4    | Data sentence cannot be parsed to provide a valid observation. | `If REC_CHAR ≠ NCHAR`, flag = 4 |
-| Suspect = 3 | N/A                                                            | N/A                             |
-| Pass = 1    | Expected data sentence received; absence of parity errors.     | N/A                             |
+| Flags       | Condition                                                      | Codable Instructions               |
+| ----------- | -------------------------------------------------------------- | ---------------------------------- |
+| Fail = 4    | Data sentence cannot be parsed to provide a valid observation. | $If REC_CHAR \neq NCHAR$, flag = 4 |
+| Suspect = 3 | N/A                                                            | N/A                                |
+| Pass = 1    | Expected data sentence received; absence of parity errors.     | N/A                                |
 
 Test Exception: None.
 
@@ -800,7 +800,7 @@ The thresholds may be fixed values or dynamically established
 (for example, a multiple of the standard deviation over an operator-selected period).
 
 An alternative is a third difference test defined as
-$Diff_n = WL_{n-3} -3 * WL_{n-2} + 3 * WL_{n-1} - W_L_n$.
+$Diff_n = WL_{n-3} -3 * WL_{n-2} + 3 * WL_{n-1} - WL_n$.
 
 | Flags       | Condition                        | Codable Instructions                                                                            |
 | ----------- | -------------------------------- | ----------------------------------------------------------------------------------------------- |

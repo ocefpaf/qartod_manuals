@@ -649,8 +649,12 @@ Test determines that there is sufficient battery voltage (`BATTVOLT`) to provide
 | Pass = 1    | Battery voltage is sufficient.                                | `If BATTVOLT ≥ MIN, flag = 1` |
 
 Test Exception: Test cannot be applied when no battery measurement is provided.
+
 Test specifications to be established by operator.
-Example 1 : MIN = 11.6 Vdc Example 2: Teledyne RDI, MIN = 150 battery counts
+
+Example 1: `MIN = 11.6` Vdc
+
+Example 2: Teledyne RDI, `MIN = 150` battery counts
 
 **Check Sum (Test 2) - Required**
 
@@ -666,7 +670,8 @@ a checksum is calculated from the message and that value is compared to the tran
 | Suspect = 3 | N/A                                                                                                                                                      | None                               |
 | Pass = 1    | The data message is valid if the calculated checksum (`CKSUMCAL`) is identical to the transmitted checksum (`CKSUMXMT`).                                 | `IF CKSUMCAL = CKSUMXMT, flag = 1` |
 
-Test Exception : Test cannot be applied when no checksum or other message integrity verification is provided.
+Test Exception: Test cannot be applied when no checksum or other message integrity verification is provided.
+
 Example: `CKSUMXMT = FF4A`, `CKSUMCAL = FF4A`, flag = 1
 
 **Sensor Tilt (Test 3) - Required**
@@ -684,6 +689,7 @@ Manufacturers' specifications indicate the maximum allowable tilt.
 
 Test Exception: Test cannot be applied when no tilt value is provided in real-time data stream.
 `TILTMAX` values provided by manufacturer.
+
 Example: `TILTMAX = 15°`, `TILTX = 3`, `TILY = 1`, flag = 1
 
 **Speed of Sound (Test 4) - Required**
@@ -698,7 +704,9 @@ The speed of sound value is used in the calculation of acoustic pulse travel tim
 | Pass = 1    | If the speed of sound value (`SSVAL`) is within the acceptable sound speed range (`SSMIN` to `SSMAX`) it is valid.     | `IF SSVAL ≥ SSMIN AND SSVAL ≤ SSMAX, flag = 1` |
 
 Test Exception: Test cannot be applied if no sound speed is being reported.
+
 Test specifications to be established locally by operator: `SSMIN` and `SSMAX`
+
 Example: `SSMIN = 1,475 m/s`, `SSMAX = 1,560 m/s`, `SSVAL = 1,528 m/s`, flag = 1
 
 #### 3.3.2 Signal Quality Tests
@@ -725,6 +733,7 @@ At least three beams must pass this test for vertical profiling,
 and at least two beams are required for horizontal profiling.
 
 Test does not apply unless the particular property is actually included in the data stream.
+
 Test specifications to be established locally by operator.
 
 Example: `COUNTMIN = 25` counts; `COUNTMAX = 30` counts (Nortek Aquadopp)
@@ -743,7 +752,9 @@ and at least two beams are required for horizontal profiling.
 | Pass = 1    | Signal strength values exceed the minimum value for good data.                             | `IF SCMDB( j ) ≥ SCMDBMIN, flag = 1` |
 
 Test Exception: Test does not apply unless the particular property is actually included in the data stream.
+
 Test specifications to be established by the manufacturer.
+
 Example: `SCMDBMIN = 25` counts (Nortek Aquadopp)
 
 **Signal-to-Noise (Test 7) – Strongly Recommended**
@@ -758,7 +769,9 @@ The signal-to-noise ratio value should exceed an operator-prescribed value for e
 | Pass = 1    | Applies for test pass condition.                                                                                                      | `If SNRVAL ≥ SNRMIN`, flag = 1 |
 
 Test Exception: Test does not apply unless the particular property is actually included in the data stream.
+
 Test specifications to be established locally by operator.
+
 Example: Operators to provide examples as procedures are implemented.
 
 **Correlation Magnitude (Test 8) – Strongly Recommended**
@@ -779,7 +792,9 @@ Correlation magnitude is provided for each bin (`i`) and each beam (`j`).
 | Pass = 1    | If the correlation magnitude `[CMAG(i, j)]` is above a maximum count level (`CMAGMAX`), the measurement for that bin and beam passes.                                                         | `IF CMAG( i , j ) > CMAGMAX`, flag = 1                       |
 
 Test Exception: This test is primarily for the Teledyne RDI ADCP sensors.
+
 Test specifications to be established by the manufacturer.
+
 Example: Correlation Magnitude (in counts) ≥3 beams need to pass test `CMAGMIN = 65`, `CMAGMAX = 140`.
 
 **Percent Good (Test 9) – Strongly Recommended**
@@ -801,9 +816,11 @@ This test is applied to each depth bin, `i`.
 | Pass = 1    | If `PG1(i)` and `PG4(i)` combined exceed a minimum value (`PGMINHI`), the measurement at that depth bin (`i`) passes.                                 | `IF PG1(i) + PG4(i  > PGMINHI`, flag = 1                               |
 
 Test Exception: This applies only to Teledyne RDI sensors, excluding beam coordinate configuration.
+
 Test specifications to be established by the manufacturer.
 In this case,
 the `PGMINLO` and `PGMINHI` values differ depending on the frequency of Teledyne RDI system used and the sampling strategy (pings per second and sampling interval).
+
 Example: Percent good for Teledyne RDI ADCPs, `fail = PG1 + PG4 < 25` and `suspect = PG1 + PG4 < 75`
 
 #### 3.3.3 Current Velocity Tests
@@ -826,8 +843,11 @@ as well as for all reasonable high-speed anomalies.
 | Pass = 1    | If the current speed `[CSPD(i)]` is less than or equal to a reasonable maximum value (`SPDMAX`), the measurement passes. | `IF CSPD(i) ≤ SPDMAX`, flag = 1 |
 
 Test Exception: None.
+
 Applies to: All current measurements.
+
 Test specifications to be established locally by operator.
+
 Example: `SPDMAX = 250 cm/s`
 
 **Current Direction (Test 11) - Required**
@@ -847,7 +867,9 @@ This test is applied to each depth bin (`i`).
 | Pass = 1    | If current direction `[CDIR(i)]` is greater than 0.00 degrees and less than or equal to 360 degrees, the measurement is valid. | `IF CDIR(i) ≥ 0.00 AND CDIR(i) ≤ 360.00`, flag = 1 |
 
 Test Exception: None. Applies to all current measurements.
+
 Test specifications may be adjusted locally depending on their application of 0.00 and 360.00 values.
+
 Examples: None needed.
 
 **Horizontal Velocity (Test 12) - Required**
@@ -868,7 +890,9 @@ This test is applied to each depth bin (`i`).
 | Pass = 1    | Horizontal velocities fall within the expected range of values.                        | `IF ABS[u(j)] ≤ HVELMAXX AND ABS[v(j)] ≤ HVELMAXY`, flag = 1   |
 
 Test Exception: None.
+
 Test specifications to be established locally by operator.
+
 Example: Operators to provide examples as procedures are implemented.
 
 **Vertical Velocity (Test 13) – Strongly Recommended**
@@ -890,6 +914,7 @@ a maximum vertical velocity,
 may be set and inserted for the `(0.01*CSPD(j))` value.
 
 Test specifications may be established locally by operator.
+
 Example: `VELMAX = 0.15 m/s`
 
 **Error Velocity (Test 14) – Strongly Recommended**
@@ -913,7 +938,9 @@ This test is applied to each depth bin (`i`).
 | Pass = 1    | If the error velocity `[EV(i)]` within a depth bin is less than a manufacturer-provided minimum value `(EVMIN)`, the velocity measurements at that depth pass.                                                                                        | `IF EV(i) < EVMIN`, flag = 1                   |
 
 Test Exception: Can be used only for ADCPs with four or more beams.
+
 Test specifications to be established by the manufacturer.
+
 Example: `EVMAX = 20`, `EVMIN = 15`
 
 **u, v Rate of Change (Test 15) – Strongly Recommended**
@@ -935,6 +962,7 @@ by a ship anchor strike.
 | Pass = 1    | If the absolute value of the difference `u(i, n) - u(i, n-1)` and `v(i, n) - v(i, n-1)` are less than the suspect threshold `RC_VEL_SUSPECT`, the velocity/direction measurements at that depth pass.              | `IF ABS[u(i, n) - u(i, n-1)] AND ABS[v(i, n) - v(i, n-1)] < RC_VEL_SUSPECT`, flag = 1                   |
 
 Test Exception: None.
+
 Example: `RC_VEL_FAIL = 100 cm/s`, `RC_VEL_SUSPECT = 50 cm/s`
 
 **u, v Spike (Test 16) – Strongly Recommended**
@@ -969,6 +997,7 @@ for example defined as Diff<sub>n</sub> = u(n-3) - 3 _ u(n-2) + 3 _ u(n-1) - u(n
 | Pass = 1    | If the absolute value of the difference `u(i, n-1) - u_SPK_REF` and `v(i, n-1) - v_SPK_REF` are less than the Suspect threshold `uv_SPIKE_SUSPECT`, the velocity/direction measurements at that depth pass.            | `IF ABS[u(i, n-1) - u_SPK_REF] AND ABS[v(i, n-1) - v_SPK_REF] < uv_SPIKE_SUSPECT`, flag = 1                    |
 
 Test Exception: None.
+
 Example: `uv_SPIKE_FAIL = 100 cm/s`, `uv_SPIKE_SUSPECT = 50 cm/s`
 
 **Flat Line (Test 17) - Required**
@@ -993,7 +1022,9 @@ Note that historical flags are not changed.
 | Pass = 1    | 1 Applies for test pass condition.                                                                                | N/A                                                                                                  |
 
 Test Exception: None.
+
 Test specifications to be established locally by operator.
+
 Examples: `REP_CNT_FAIL = 5`, `REP_CNT_SUSPECT = 3`
 
 #### 3.3.4 Overall Profile Tests
@@ -1027,7 +1058,9 @@ then the measurement fails this check.
 | Pass = 1    | No other beams have an adjacent bin that differs by more than an operator-provided amount, `MAXEICNT`.                                                                                                                                             | `For i ≥ 2 and j=1 to NUMBEAMS If EINT(i, j) - EINT(i-1, j) > MAXEICNT BADBEAM++ If BADBEAM=0`, flag = 1                           |
 
 Test Exception: None.
+
 Test specifications to be established locally by the operator.
+
 Example: `MAXEICNT = 30 counts`, `NUMBEAM = 4`, `BADBEAM = 1`, `D = 3`
 
 **Echo Intensity Drop-off (Test 19) – Strongly Recommended**
@@ -1051,7 +1084,9 @@ then the measurement fails this check.
 | Pass = 1    | If echo intensity `[EI(i, j)]` exceeds an accepted minimum value (`MINEICNT`) for all beams in three or more bins, the data at this bin are valid.                | `For j = 1 to NUMBEAM If EINT(i, j) < MINEICNT BADBEAM++ If BADBEAM = 0`, flag = 1                            |
 
 Test Exception: None.
+
 Test specifications to be established locally by the operator.
+
 Examples: `MINEICNT = 20` counts, `NUMBEAM = 4`, `BADBEAM = 1`, `D = 3`
 
 **Current Gradient (Test 20) – Strongly Recommended**
@@ -1072,8 +1107,11 @@ The same test can be run with current direction.
 | Pass = 1    | If current speed at bin `i`, `CSPD(i)` change from the current speed at `bin(i-1)`, `CSPD(i-1)`, is less than or equal to a prescribed amount, `CURDIF`, the data are valid. | `IF ABS[CSPD(i)-CSPD(i-1)] ≤ CSPDDIF`, flag = 1 |
 
 Test Exception: Applicable only to current profiles, and not to single-point measurement systems.
+
 Test cannot be conducted on the first bin.
+
 Test specifications to be established locally by the operator.
+
 Examples: Operators to provide examples as procedures are implemented.
 
 ## 4.0 Summary

@@ -2,7 +2,7 @@
 
 A Guide to Quality Control and Quality Assurance of Acoustic Doppler Current Profiler Observations
 
-Version 2
+Version 2.1
 July 2019
 
 [https://doi.org/10.25923/sqe9-e310](https://doi.org/10.25923/sqe9-e310)

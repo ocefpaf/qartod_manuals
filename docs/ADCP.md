@@ -2,8 +2,9 @@
 
 A Guide to Quality Control and Quality Assurance of Acoustic Doppler Current Profiler Observations
 
-Version 2.
+Version 2
 July 2019
+
 [https://doi.org/10.25923/sqe9-e310](https://doi.org/10.25923/sqe9-e310)
 
 ## Revision History
@@ -53,7 +54,7 @@ Use of information from this publication for publicity or advertising purposes c
 To gauge the success of the QARTOD project,
 it helps to be aware of groups working to utilize these QC tests.
 Please notify us of your efforts or intentions to implement QARTOD processes by sending a brief email to
-qartod.board@noaa.gov or posting a notice at
+<qartod.board@noaa.gov> or posting a notice at
 [http://www.linkedin.com/groups?gid=2521409](http://www.linkedin.com/groups?gid=2521409).
 
 ## Acknowledgements
@@ -194,10 +195,7 @@ Please refer to [https://ioos.noaa.gov/project/qartod](https://ioos.noaa.gov/pro
 
 Please refer to this document as:
 
-    U.S. Integrated Ocean Observing System, 2019. Manual for Real-Time Quality
-    Control of In-Situ Current Observations Version 2.1 A Guide to Quality Control
-    and Quality Assurance of Acoustic Doppler Current Profiler Observations. 52 pp.
-    https://doi.org/10.25923/sqe9-e
+    U.S. Integrated Ocean Observing System, 2019. Manual for Real-Time Quality Control of In-Situ Current Observations Version 2.1 A Guide to Quality Control and Quality Assurance of Acoustic Doppler Current Profiler Observations. 52 pp. https://doi.org/10.25923/sqe9-e
 
 This document follows and expands on the National Surface Currents Plan (U.S. IOOS 2015 ).
 The U.S. Army Corps of Engineers (USACE) and the National Oceanic and Atmospheric Administration's (NOAA) National Data Buoy Center (NDBC) and Center for Operational Oceanographic Products and Services (CO-OPS),

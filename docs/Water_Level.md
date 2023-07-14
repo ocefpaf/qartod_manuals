@@ -1085,59 +1085,55 @@ This process allows for QC manual updates as technology development occurs for b
     Information for this NWLON station is available at
     [https://tidesandcurrents.noaa.gov/stationhome.html?id=8631044](https://tidesandcurrents.noaa.gov/stationhome.html?id=8631044) - info.
 
-
 ## 5.0 References
->Bushnell, M., Presentation at QARTOD III: (2005). Scripps Institution of Oceanography, La Jolla, California.
 
->Bushnell, M. H., (2017). Integration of QARTOD Tests Within a Sensor: Considerations for Sensor Manufacturers. MTS/IEEE OCEANS ’17 conference proceedings, 5 pp.
+> Bushnell, M., Presentation at QARTOD III: (2005). Scripps Institution of Oceanography, La Jolla, California.
 
->Bushnell, M., Waldmann, C., Seitz, S., Buckley, E., Tamburri, M., Hermes, J., Heslop, E., and Lara-Lopez, A, (2019). Quality Assurance of Oceanographic Observations: Standards and Guidance Adopted by an International Partnership. Front. Mar. Sci., Vol. 6. https://doi.org/10.3389/fmars.2019.00706 Supplementary Material https://www.frontiersin.org/articles/10.3389/fmars.2019.00706/full - supplementary-material
+> Bushnell, M. H., (2017). Integration of QARTOD Tests Within a Sensor: Considerations for Sensor Manufacturers. MTS/IEEE OCEANS ’17 conference proceedings, 5 pp.
 
->Chen, F., Liu, L. & Guo, F. Sea Surface Height Estimation with Multi-GNSS and Wavelet De-noising (2019). Sci Rep 9, 15181. https://doi.org/10.1038/s41598-019-51802-9
+> Bushnell, M., Waldmann, C., Seitz, S., Buckley, E., Tamburri, M., Hermes, J., Heslop, E., and Lara-Lopez, A, (2019). Quality Assurance of Oceanographic Observations: Standards and Guidance Adopted by an International Partnership. Front. Mar. Sci., Vol. 6. https://doi.org/10.3389/fmars.2019.00706 Supplementary Material https://www.frontiersin.org/articles/10.3389/fmars.2019.00706/full - supplementary-material
 
->Geremia-Nievinski, F., Hobiger, T., Haas, R., Liu, W., Strandberg, J., Tabibi, S….Williams, S., (2020). SNR-based GNSS reflectometry for coastal sea-level altimetry: results from the first IAG inter-comparison campaign. J Geod 94, 70 (2020). https://doi.org/10.1007/s00190-020-01387-3
+> Chen, F., Liu, L. & Guo, F. Sea Surface Height Estimation with Multi-GNSS and Wavelet De-noising (2019). Sci Rep 9, 15181. https://doi.org/10.1038/s41598-019-51802-9
 
->Gill, S. and Schultz, J., eds. (2001). Tidal Datums and Their Applications. NOAA Special Publication NOS CO-OPS 1, 132 pp. Silver Spring, Maryland. http://tidesandcurrents.noaa.gov/publications/tidal_datums_and_their_applications.pdf
+> Geremia-Nievinski, F., Hobiger, T., Haas, R., Liu, W., Strandberg, J., Tabibi, S….Williams, S., (2020). SNR-based GNSS reflectometry for coastal sea-level altimetry: results from the first IAG inter-comparison campaign. J Geod 94, 70 (2020). https://doi.org/10.1007/s00190-020-01387-3
 
->Global Sea-Level Observing System (GLOSS) Implementation Plan (2012). UNESCO/IOC, 41 pp. 2012. (IOC Technical Series No.100) (English) https://unesdoc.unesco.org/ark:/48223/pf0000217832
+> Gill, S. and Schultz, J., eds. (2001). Tidal Datums and Their Applications. NOAA Special Publication NOS CO-OPS 1, 132 pp. Silver Spring, Maryland. http://tidesandcurrents.noaa.gov/publications/tidal_datums_and_their_applications.pdf
 
->Hailegeberel, M., Glassmire, K., Johnson, A., Samant, M., and Dusek, G., (2018). User’s Guide to Vertical Control and Geodetic Leveling for CO-OPS Observing Systems, 64 pp. Center for Operational Oceanographic Products and Services, Silver Spring, Maryland. https://tidesandcurrents.noaa.gov/publications/Users_Guide_to_Vertical_Control_and_Geodetic_Leveling_for_CO-OPS_Observing_Systems-May_2018.pdf
+> Global Sea-Level Observing System (GLOSS) Implementation Plan (2012). UNESCO/IOC, 41 pp. 2012. (IOC Technical Series No.100) (English) https://unesdoc.unesco.org/ark:/48223/pf0000217832
 
->IHO S-104, Water Level Information For Surface Navigation, (2017). https://iho.int/uploads/user/ServicesandStandards/TWCWG/MISC/S-104/S-104_Tidal_Information_for_Surface_Navigation_Product_Specification_Documents/S-104_Product_Specification-v0.0.5_Clean.pdf
+> Hailegeberel, M., Glassmire, K., Johnson, A., Samant, M., and Dusek, G., (2018). User’s Guide to Vertical Control and Geodetic Leveling for CO-OPS Observing Systems, 64 pp. Center for Operational Oceanographic Products and Services, Silver Spring, Maryland. https://tidesandcurrents.noaa.gov/publications/Users_Guide_to_Vertical_Control_and_Geodetic_Leveling_for_CO-OPS_Observing_Systems-May_2018.pdf
 
->NOAA (2013). NOAA, Environmental Measurement Systems Sensor Specifications and Measurement Algorithm. https://tidesandcurrents.noaa.gov/publications/CO-OPS_Measurement_Spec.pdf
+> IHO S-104, Water Level Information For Surface Navigation, (2017). https://iho.int/uploads/user/ServicesandStandards/TWCWG/MISC/S-104/S-104_Tidal_Information_for_Surface_Navigation_Product_Specification_Documents/S-104_Product_Specification-v0.0.5_Clean.pdf
 
->Paris. Intergovernmental Oceanographic Commission of UNESCO (2013). Ocean Data Standards, Vol.3: Recommendation for a Quality Flag Scheme for the Exchange of Oceanographic and Marine Meteorological Data. (IOC Manuals and Guides, 54, Vol. 3.) 12 pp. (English) (IOC/2013/MG/54-3) http://www.nodc.noaa.gov/oceanacidification/support/MG54_3.pdf
+> NOAA (2013). NOAA, Environmental Measurement Systems Sensor Specifications and Measurement Algorithm. https://tidesandcurrents.noaa.gov/publications/CO-OPS_Measurement_Spec.pdf
 
->Park, J., Heitsenrether, R., Sweet, W., (2014). Water Level and Wave Height Estimates at NOAA Tide Stations from Acoustic and Microwave Sensors. NOAA Technical Report NOS CO-OPS 075, 41 pp. Silver Spring, Maryland.
-QARTOD I-VI Reports (2003-2012): https://ioos.noaa.gov/ioos-in-action/qartod-meetings/.
+> Paris. Intergovernmental Oceanographic Commission of UNESCO (2013). Ocean Data Standards, Vol.3: Recommendation for a Quality Flag Scheme for the Exchange of Oceanographic and Marine Meteorological Data. (IOC Manuals and Guides, 54, Vol. 3.) 12 pp. (English) (IOC/2013/MG/54-3) http://www.nodc.noaa.gov/oceanacidification/support/MG54_3.pdf
 
->Seitz, S., Waldmann, C., Buckley, E., Bushnell, M., (2021). Uncertainty Quantification Use Case: Moored Temperature Sensor Measurement Uncertainty, 18 pp, https://doi.org/10.3389/fmars.2019.00706
+> Park, J., Heitsenrether, R., Sweet, W., (2014). Water Level and Wave Height Estimates at NOAA Tide Stations from Acoustic and Microwave Sensors. NOAA Technical Report NOS CO-OPS 075, 41 pp. Silver Spring, Maryland. QARTOD I-VI Reports (2003-2012): https://ioos.noaa.gov/ioos-in-action/qartod-meetings/.
 
->UNESCO/IOC, (2020). Quality Control of in situ Sea Level Observations: A Review and Progress towards Automated Quality Control, Vol. 1. Paris, UNESCO. IOC Manuals and Guides No.83. (IOC/2020/MG/83Vol.1) https://repository.oceanbestpractices.org/bitstream/handle/11329/1348/IOC-MG-83_eo.pdf?sequence=1&isAllowed=y
+> Seitz, S., Waldmann, C., Buckley, E., Bushnell, M., (2021). Uncertainty Quantification Use Case: Moored Temperature Sensor Measurement Uncertainty, 18 pp, https://doi.org/10.3389/fmars.2019.00706
 
->U.S. Integrated Ocean Observing System, (2020). Manual for Real-Time Oceanographic Data Quality Control Flags. Version 1.2. Silver Spring, Maryland, U.S. Department of Commerce, National Oceanic and Atmospheric Administration, National Ocean Service, Integrated Ocean Observing System, 24 pp. https://repository.library.noaa.gov/view/noaa/24982
+> UNESCO/IOC, (2020). Quality Control of in situ Sea Level Observations: A Review and Progress towards Automated Quality Control, Vol. 1. Paris, UNESCO. IOC Manuals and Guides No.83. (IOC/2020/MG/83Vol.1) https://repository.oceanbestpractices.org/bitstream/handle/11329/1348/IOC-MG-83_eo.pdf?sequence=1&isAllowed=y
+
+> U.S. Integrated Ocean Observing System, (2020). Manual for Real-Time Oceanographic Data Quality Control Flags. Version 1.2. Silver Spring, Maryland, U.S. Department of Commerce, National Oceanic and Atmospheric Administration, National Ocean Service, Integrated Ocean Observing System, 24 pp. https://repository.library.noaa.gov/view/noaa/24982
 
 Additional References to Related Documents:
 
->Alliance for Coastal Technologies (ACT) (2012). Accessed March 24, 2021 at http://www.act-us.info/evaluations.php
+> Alliance for Coastal Technologies (ACT) (2012). Accessed March 24, 2021 at http://www.act-us.info/evaluations.php
 
->Intergovernmental Oceanographic Commission Workshop Report No. 81 (1992). Joint IAPSO-IOC Workshop on Sea Level Measurements and Quality Control Paris, 12-1 3 October 1992 http://www.jodc.go.jp/info/ioc_doc/Workshop/094204eo.pdf
+> Intergovernmental Oceanographic Commission Workshop Report No. 81 (1992). Joint IAPSO-IOC Workshop on Sea Level Measurements and Quality Control Paris, 12-1 3 October 1992 http://www.jodc.go.jp/info/ioc_doc/Workshop/094204eo.pdf
 
->National Oceanographic Partnership Program (NOPP) (January 2006). The First U.S. Integrated Ocean Observing System (IOOS) Development Plan – A report of the national Ocean Research Leadership Council and the Interagency Committee on Ocean Science and Resource Management Integration. The National Office for Integrated and Sustained Ocean Observations. Ocean US Publication No. 9.
-National Data Buoy Center (NDBC) Technical Document 09-02, Handbook of Automated Data Quality Control Checks and Procedures, August 2009. National Data Buoy Center, Stennis Space Center, Mississippi 39529-6000.
+> National Oceanographic Partnership Program (NOPP) (January 2006). The First U.S. Integrated Ocean Observing System (IOOS) Development Plan – A report of the national Ocean Research Leadership Council and the Interagency Committee on Ocean Science and Resource Management Integration. The National Office for Integrated and Sustained Ocean Observations. Ocean US Publication No. 9. National Data Buoy Center (NDBC) Technical Document 09-02, Handbook of Automated Data Quality Control Checks and Procedures, August 2009. National Data Buoy Center, Stennis Space Center, Mississippi 39529-6000.
 
->Nault, J., (2004). NWLON/DMS Quality Control Software (QC): Functional Requirements Document, NOAA Technical Report NOS CO-OPS 030, Silver Spring, Maryland. https://tidesandcurrents.noaa.gov/publications/NOAA_Technical_Report_NOS_CO-OPS_030_QC_requirements_doc(revised)-11102004.pdf
+> Nault, J., (2004). NWLON/DMS Quality Control Software (QC): Functional Requirements Document, NOAA Technical Report NOS CO-OPS 030, Silver Spring, Maryland. https://tidesandcurrents.noaa.gov/publications/NOAA_Technical_Report_NOS_CO-OPS_030_QC_requirements_doc(revised)-11102004.pdf
 
->NOAA, (2005). Second Workshop Report on the QA of Real-Time Ocean Data, July 2005. 48 pp. Norfolk, Virginia. CCPO Technical Report Series No. 05-01
-NOAA, (2009). Fifth Workshop on the QA/QC of Real-Time Oceanographic Data. November 16-19, 2009. 136 pp. Omni Hotel, Atlanta, Georgia.
-Ocean.US, (2006). National Office for Integrated and Sustained Ocean Observations. (2006). The First U.S. Integrated Ocean Observing System (IOOS) Development Plan, Publication 9, January 2006.
+> NOAA, (2005). Second Workshop Report on the QA of Real-Time Ocean Data, July 2005. 48 pp. Norfolk, Virginia. CCPO Technical Report Series No. 05-01 NOAA, (2009). Fifth Workshop on the QA/QC of Real-Time Oceanographic Data. November 16-19, 2009. 136 pp. Omni Hotel, Atlanta, Georgia. Ocean.US, (2006). National Office for Integrated and Sustained Ocean Observations. (2006). The First U.S. Integrated Ocean Observing System (IOOS) Development Plan, Publication 9, January 2006.
 
->Perez, B., de Alfonso, M., Huess, V. Rickards, L., (May 2010). Near Real Time Quality Control and Validation of Sea Level In-situ Data within MyOcean. https://archimer.ifremer.fr/doc/00631/74307/73931.pdf
+> Perez, B., de Alfonso, M., Huess, V. Rickards, L., (May 2010). Near Real Time Quality Control and Validation of Sea Level In-situ Data within MyOcean. https://archimer.ifremer.fr/doc/00631/74307/73931.pdf
 
->Rickards, L. and Kilonsky, (1997). Developments in Sea Level Data Management and Exchange. http://www.bodc.ac.uk/projects/international/woce/documents/odspaper.pdf
+> Rickards, L. and Kilonsky, (1997). Developments in Sea Level Data Management and Exchange. http://www.bodc.ac.uk/projects/international/woce/documents/odspaper.pdf
 
-Supporting Documents Found on the [QARTOD Website](https://ioos.noaa.gov/ioos-in-action/manual-real-time-quality-control-water-level-data/): 
+Supporting Documents Found on the [QARTOD Website](https://ioos.noaa.gov/ioos-in-action/manual-real-time-quality-control-water-level-data/):
 
 The following documents were particularly useful to the committee and reviewers when developing this manual. They do not contain copyright restrictions and are posted on the U.S. IOOS QARTOD website for easy reference:
 
@@ -1160,302 +1156,271 @@ Supporting Web Links
 - National Geodetic Survey Leveling Manual: http://www.ngs.noaa.gov/PUBS_LIB/Geodeticleveling_nos_3.pdf
 - National Geodetic Survey Bench Mark Manual: http://www.ngs.noaa.gov/PUBS_LIB/GeodeticBMs.pdf
 
-
 ## Appendix A. QARTOD Water Level Manual Team
 
-
 **Version 2.1 Water Level Manual Contributors/Reviewers**
-| Name | Organization |
-| :---         |     :---      |
-|Mark Bushnell|U.S. IOOS|
-|Lindsay Abrams|NOAA/Center for Operational Oceanographic Products and Services|
-|Elizabeth Bradshaw|British Oceanographic Data Centre|
-|Gregory Dusek|NOAA/Center for Operational Oceanographic Products and Services|
-|Robert Heitsenrether|NOAA/Center for Operational Oceanographic Products and Services|
-|Gary Mitchum|University of South Florida|
-|George Mungrov|NOAA/National Centers for Environmental Information|
-|Jacquelyn Overbeck|Alaska Department of Natural Resources|
-|Julia Powell|NOAA/Office of Coast Survey|
-|Greg Seroka|NOAA/Office of Coast Survey|
-|Shep Smith|NOAA/Office of Coast Survey|
-|Peter Stone|NOAA/Center for Operational Oceanographic Products and Services|
-|Aaron Sweeney|NOAA/National Centers for Environmental Information|
-|Matthew Widlanksy|University of Hawaii Seal Level Center|
 
-
+| Name                 | Organization                                                    |
+| :------------------- | :-------------------------------------------------------------- |
+| Mark Bushnell        | U.S. IOOS                                                       |
+| Lindsay Abrams       | NOAA/Center for Operational Oceanographic Products and Services |
+| Elizabeth Bradshaw   | British Oceanographic Data Centre                               |
+| Gregory Dusek        | NOAA/Center for Operational Oceanographic Products and Services |
+| Robert Heitsenrether | NOAA/Center for Operational Oceanographic Products and Services |
+| Gary Mitchum         | University of South Florida                                     |
+| George Mungrov       | NOAA/National Centers for Environmental Information             |
+| Jacquelyn Overbeck   | Alaska Department of Natural Resources                          |
+| Julia Powell         | NOAA/Office of Coast Survey                                     |
+| Greg Seroka          | NOAA/Office of Coast Survey                                     |
+| Shep Smith           | NOAA/Office of Coast Survey                                     |
+| Peter Stone          | NOAA/Center for Operational Oceanographic Products and Services |
+| Aaron Sweeney        | NOAA/National Centers for Environmental Information             |
+| Matthew Widlanksy    | University of Hawaii Seal Level Center                          |
 
 **Version 2.1 QARTOD Board of Advisors**
-| Name | Organization |
-| :---         |     :---      |
-|Kathleen Bailey, Project Manager|U.S. IOOS|
-|Julie Bosch|NOAA/National Centers for Environmental Information|
-|Eugene Burger|NOAA/Pacific Marine Environmental Laboratory|
-|Jennifer Dorton|SECOORA|
-|Regina Easley|National Institute of Standards and Technology|
-|Robert Heitsenrether|NOS/Center for Operational Oceanographic Products and Services|
-|Jeff King|U.S. Army Corps of Engineers|
-|Karen Grissom|NOAA/National Data Buoy Center|
-|Mario Tamburri|University of Maryland Center for Environmental Science / Chesapeake Biological Laboratory|
-|Julianna Thomas, BOA Chair|SCCOOS/Scripps Institution of Oceanography/Coastal Data Information Program (retired)|
-|Christoph Waldmann|University of Bremen/MARUM|
 
-
-
+| Name                             | Organization                                                                               |
+| :------------------------------- | :----------------------------------------------------------------------------------------- |
+| Kathleen Bailey, Project Manager | U.S. IOOS                                                                                  |
+| Julie Bosch                      | NOAA/National Centers for Environmental Information                                        |
+| Eugene Burger                    | NOAA/Pacific Marine Environmental Laboratory                                               |
+| Jennifer Dorton                  | SECOORA                                                                                    |
+| Regina Easley                    | National Institute of Standards and Technology                                             |
+| Robert Heitsenrether             | NOS/Center for Operational Oceanographic Products and Services                             |
+| Jeff King                        | U.S. Army Corps of Engineers                                                               |
+| Karen Grissom                    | NOAA/National Data Buoy Center                                                             |
+| Mario Tamburri                   | University of Maryland Center for Environmental Science / Chesapeake Biological Laboratory |
+| Julianna Thomas, BOA Chair       | SCCOOS/Scripps Institution of Oceanography/Coastal Data Information Program (retired)      |
+| Christoph Waldmann               | University of Bremen/MARUM                                                                 |
 
 **Version 2.1 U.S. IOOS Regional Associations**
-| Name | Organization |
-| :---         |     :---      |
-|Josie Quintrell|IOOS Association|
-|Clarissa Anderson|SCCOOS|
-|Debra Hernandez|SECOORA|
-|Melissa Iwamoto|PacIOOS|
-|Barbara Kirkpatrick|GCOOS|
-|Gerhard Kuska|MARACOOS|
-|Sheyna Wisdom|AOOS|
-|Julio Morell|CARICOOS|
-|Jake Kritzer|NERACOOS|
-|Jan Newton|NANOOS|
-|Kelli Paige|GLOS|
-|Henry Ruhl|CeNCOOS|
 
-
+| Name                | Organization     |
+| :------------------ | :--------------- |
+| Josie Quintrell     | IOOS Association |
+| Clarissa Anderson   | SCCOOS           |
+| Debra Hernandez     | SECOORA          |
+| Melissa Iwamoto     | PacIOOS          |
+| Barbara Kirkpatrick | GCOOS            |
+| Gerhard Kuska       | MARACOOS         |
+| Sheyna Wisdom       | AOOS             |
+| Julio Morell        | CARICOOS         |
+| Jake Kritzer        | NERACOOS         |
+| Jan Newton          | NANOOS           |
+| Kelli Paige         | GLOS             |
+| Henry Ruhl          | CeNCOOS          |
 
 **Version 2.1 DMAC Community**
 
 **Regional Associations**
-| Name | Organization |
-| :---         |     :---      |
-|Carol Janzen|AOOS|
-|Maxime Lévesque|Global Observatory of the St. Lawrence|
-|Miguel Canals|CARICOOS|
-|Roy Watlington|CARICOOS|
-|Sneha Bhadbhade|GLOS|
-|Tim Kearns|GLOS|
-|Patrick Daniel|CeNCOOS|
-|Jeremy Cothran|SECOORA|
-|Jennifer Dorton|SECOORA|
-|Filipe Pires Alvarenga Fernandes|SECOORA|
-|Abbey Wakely|SECOORA|
-|Tom Shyka|NERACOOS|
 
-
+| Name                             | Organization                           |
+| :------------------------------- | :------------------------------------- |
+| Carol Janzen                     | AOOS                                   |
+| Maxime Lévesque                  | Global Observatory of the St. Lawrence |
+| Miguel Canals                    | CARICOOS                               |
+| Roy Watlington                   | CARICOOS                               |
+| Sneha Bhadbhade                  | GLOS                                   |
+| Tim Kearns                       | GLOS                                   |
+| Patrick Daniel                   | CeNCOOS                                |
+| Jeremy Cothran                   | SECOORA                                |
+| Jennifer Dorton                  | SECOORA                                |
+| Filipe Pires Alvarenga Fernandes | SECOORA                                |
+| Abbey Wakely                     | SECOORA                                |
+| Tom Shyka                        | NERACOOS                               |
 
 **Research Associations**
-| Name | Organization |
-| :---         |     :---      |
-|Eric Bridger | Gulf of Maine Research Institute|
-|Bob Fleming | Gulf of Maine Research Institute|
-|Stephen Diggs |Scripps Institution of Oceanography|
-|Vicky Rowley |Scripps Institution of Oceanography|
-|Fred Bahr |Monterey Bay Aquarium Research Institute|
-|Matthew Ogburn |Smithsonian Environmental Research Center|
+
+| Name           | Organization                              |
+| :------------- | :---------------------------------------- |
+| Eric Bridger   | Gulf of Maine Research Institute          |
+| Bob Fleming    | Gulf of Maine Research Institute          |
+| Stephen Diggs  | Scripps Institution of Oceanography       |
+| Vicky Rowley   | Scripps Institution of Oceanography       |
+| Fred Bahr      | Monterey Bay Aquarium Research Institute  |
+| Matthew Ogburn | Smithsonian Environmental Research Center |
 
 **Federal and State Agencies**
-| Name | Organization |
-| :---         |     :---      |
-|Brian Zelenke|Bureau of Ocean Energy Management|
-|Jonathan Blythe|Bureau of Ocean Energy Management|
-|Dwane Young|Environmental Protection Agency|
-|Guan Wang|Great Lakes Commission|
-|Abigail Benson|U.S. Geological Survey|
-|James Kreft|U.S. Geological Survey|
-|Rich Signell|U.S. Geological Survey|
-|Sky Bristol|U.S. Geological Survey|
-|Rita Adak|National Oceanic and Atmospheric Administration|
-|Robert Aspinall|National Oceanic and Atmospheric Administration|
-|Kathleen Bailey|National Oceanic and Atmospheric Administration|
-|Alexander Birger|National Oceanic and Atmospheric Administration|
-|Julie Bosch|National Oceanic and Atmospheric Administration|
-|Tim Boyer|National Oceanic and Atmospheric Administration|
-|Brad Burden|National Oceanic and Atmospheric Administration|
-|Mark Bushnell|National Oceanic and Atmospheric Administration|
-|Gabrielle Canonico|National Oceanic and Atmospheric Administration|
-|Kenneth Casey|National Oceanic and Atmospheric Administration|
-|Tyler Christensen|National Oceanic and Atmospheric Administration|
-|Lynn Dewitt|National Oceanic and Atmospheric Administration|
-|Dave Easter|National Oceanic and Atmospheric Administration|
-|Jason Gedamke|National Oceanic and Atmospheric Administration|
-|Kevin Kern|National Oceanic and Atmospheric Administration|
-|Byron Kilbourne|National Oceanic and Atmospheric Administration|
-|Tony Lavoi|National Oceanic and Atmospheric Administration|
-|Frank Lodato|National Oceanic and Atmospheric Administration|
-|Saeed Moghimi|National Oceanic and Atmospheric Administration|
-|Jessica Morgan|National Oceanic and Atmospheric Administration|
-|Hassan Moustahfid|National Oceanic and Atmospheric Administration|
-|Kevin O'Brien|National Oceanic and Atmospheric Administration|
-|Dawn Petraitis|National Oceanic and Atmospheric Administration|
-|Thomas Ryan|National Oceanic and Atmospheric Administration|
-|Bob Simons|National Oceanic and Atmospheric Administration|
-|Derrick Snowden|National Oceanic and Atmospheric Administration|
-|Valerii Soika|National Oceanic and Atmospheric Administration|
-|Bill Smith|National Oceanic and Atmospheric Administration|
-|Tiffany Vance|National Oceanic and Atmospheric Administration|
-|Mark VanWaes|National Oceanic and Atmospheric Administration|
-|Micah Wengren|National Oceanic and Atmospheric Administration|
-|Bill Woodward|National Oceanic and Atmospheric Administration|
-|Lianyuan Zheng|National Oceanic and Atmospheric Administration|
 
+| Name               | Organization                                    |
+| :----------------- | :---------------------------------------------- |
+| Brian Zelenke      | Bureau of Ocean Energy Management               |
+| Jonathan Blythe    | Bureau of Ocean Energy Management               |
+| Dwane Young        | Environmental Protection Agency                 |
+| Guan Wang          | Great Lakes Commission                          |
+| Abigail Benson     | U.S. Geological Survey                          |
+| James Kreft        | U.S. Geological Survey                          |
+| Rich Signell       | U.S. Geological Survey                          |
+| Sky Bristol        | U.S. Geological Survey                          |
+| Rita Adak          | National Oceanic and Atmospheric Administration |
+| Robert Aspinall    | National Oceanic and Atmospheric Administration |
+| Kathleen Bailey    | National Oceanic and Atmospheric Administration |
+| Alexander Birger   | National Oceanic and Atmospheric Administration |
+| Julie Bosch        | National Oceanic and Atmospheric Administration |
+| Tim Boyer          | National Oceanic and Atmospheric Administration |
+| Brad Burden        | National Oceanic and Atmospheric Administration |
+| Mark Bushnell      | National Oceanic and Atmospheric Administration |
+| Gabrielle Canonico | National Oceanic and Atmospheric Administration |
+| Kenneth Casey      | National Oceanic and Atmospheric Administration |
+| Tyler Christensen  | National Oceanic and Atmospheric Administration |
+| Lynn Dewitt        | National Oceanic and Atmospheric Administration |
+| Dave Easter        | National Oceanic and Atmospheric Administration |
+| Jason Gedamke      | National Oceanic and Atmospheric Administration |
+| Kevin Kern         | National Oceanic and Atmospheric Administration |
+| Byron Kilbourne    | National Oceanic and Atmospheric Administration |
+| Tony Lavoi         | National Oceanic and Atmospheric Administration |
+| Frank Lodato       | National Oceanic and Atmospheric Administration |
+| Saeed Moghimi      | National Oceanic and Atmospheric Administration |
+| Jessica Morgan     | National Oceanic and Atmospheric Administration |
+| Hassan Moustahfid  | National Oceanic and Atmospheric Administration |
+| Kevin O'Brien      | National Oceanic and Atmospheric Administration |
+| Dawn Petraitis     | National Oceanic and Atmospheric Administration |
+| Thomas Ryan        | National Oceanic and Atmospheric Administration |
+| Bob Simons         | National Oceanic and Atmospheric Administration |
+| Derrick Snowden    | National Oceanic and Atmospheric Administration |
+| Valerii Soika      | National Oceanic and Atmospheric Administration |
+| Bill Smith         | National Oceanic and Atmospheric Administration |
+| Tiffany Vance      | National Oceanic and Atmospheric Administration |
+| Mark VanWaes       | National Oceanic and Atmospheric Administration |
+| Micah Wengren      | National Oceanic and Atmospheric Administration |
+| Bill Woodward      | National Oceanic and Atmospheric Administration |
+| Lianyuan Zheng     | National Oceanic and Atmospheric Administration |
 
 **Version 2.0 Water Level Manual Contributors**
-| Name | Organization |
-| :---         |     :---      |
-|Mark Bushnell, Lead Editor|CoastalObsTechServices LLC- NOS/CO-OPS|
-|Richard Bouchard|National Weather Service/National Data Buoy Center|
-|Todd Ehret|NOS/CO-OPS|
-|Cristina Forbes|NOS/National Hurricane Center|
-|Bob Heitsenrether|NOS/CO-OPS|
-|Mark Huber|U.S. Army Corps of Engineers|
-|Rob Loesch|NOS/CO-OPS|
-|Manoj Samant|NOS/CO-OPS|
-|Peter Stone|NOS/CO-OPS|
-|Helen Worthington, Editor|REMSA-NOS/CO-OPS|
 
-
+| Name                       | Organization                                       |
+| :------------------------- | :------------------------------------------------- |
+| Mark Bushnell, Lead Editor | CoastalObsTechServices LLC- NOS/CO-OPS             |
+| Richard Bouchard           | National Weather Service/National Data Buoy Center |
+| Todd Ehret                 | NOS/CO-OPS                                         |
+| Cristina Forbes            | NOS/National Hurricane Center                      |
+| Bob Heitsenrether          | NOS/CO-OPS                                         |
+| Mark Huber                 | U.S. Army Corps of Engineers                       |
+| Rob Loesch                 | NOS/CO-OPS                                         |
+| Manoj Samant               | NOS/CO-OPS                                         |
+| Peter Stone                | NOS/CO-OPS                                         |
+| Helen Worthington, Editor  | REMSA-NOS/CO-OPS                                   |
 
 **Version 1.0 Water Level Manual Contributors**
-| Name | Organization |
-| :---         |     :---      |
-|Mark Bushnell, Lead Editor|CoastalObsTechServices LLC - NOS/CO-OPS
-|Ray Toll, Editor|Old Dominion University
-|Helen Worthington, Editor|REMSA - NOS/CO-OPS
-|Elliott Arroyo-Suarez|Naval Oceanographic Office
-|Larry Atkinson|Old Dominion University
-|John Boon|Virginia Institute of Marine Science
-|Julie Bosch*|NOAA/National Centers for Environmental Information
-|Rich Bouchard|NOAA/National Data Buoy Center
-|Richard Bourgerie*|NOS/CO-OPS
-|Ray Chapman|U.S. Army Corps of Engineers (USACE)
-|Dan Farrell*|Sutron Corporation
-|Steve Gill*|NOS/CO-OPS Chief Scientist (retired)
-|Drew Gronewald|NOAA/Great Lakes Environmental Research Laboratory
-|Bob Heitsenrether*|NOS/CO-OPS
-|Mark Huber|USACE
-|Melissa Ide|Baruch Institute
-|Carol Janzen|AOOS (formerly with Sea-Bird Electronics, Inc.)
-|Sung-Chan Kim*|USACE
-|Tom Landon*|NOS/CO-OPS (retired)
-|Michael Lee*|USGS
-|Mike Lizotte|YSI, Incorporated (retired)
-|Brian McCallum|USGS
-|Sue McLean|NOAA/National Geophysical Data Center
-|Mike Mensinger|Delaware National Estuarine Research Reserve System
-|Mark Merrifield|PacIOOS/University of Hawaii
-|Michael Michalski|NOS/CO-OPS
-|George Mungov|Cooperative Institute for Research in Environmental Science under contract to National Geophysical Data Center
-|Jeff Oyler|NOS/CO-OPS
-|Hans-Peter Plag*|Old Dominion University
-|James Rizzo*|Texas A&M University, Conrad Blucher Institute
-|Manoj Samant*|NOS/CO-OPS
-|Galen Scott|NOAA/National Geodetic Survey
-|Rich Signell|USGS
-|Vembu Subramanian|SECOORA
-|Stu Weinstein|Pacific Tsunami Warning Center
-|Paul Whitmore|U.S. National Tsunami Warning Center
-|Doug Wilson|Chesapeake Bay Interpretive Buoy System and chair of Intergovernmental Oceanographic Commission Sub-Commission for the Caribbean and Adjacent Regions-Global Ocean Observing System
 
-*Water Level Manual Committee Members
+| Name                       | Organization                                                                                                                                                                        |
+| :------------------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Mark Bushnell, Lead Editor | CoastalObsTechServices LLC - NOS/CO-OPS                                                                                                                                             |
+| Ray Toll, Editor           | Old Dominion University                                                                                                                                                             |
+| Helen Worthington, Editor  | REMSA - NOS/CO-OPS                                                                                                                                                                  |
+| Elliott Arroyo-Suarez      | Naval Oceanographic Office                                                                                                                                                          |
+| Larry Atkinson             | Old Dominion University                                                                                                                                                             |
+| John Boon                  | Virginia Institute of Marine Science                                                                                                                                                |
+| Julie Bosch\*              | NOAA/National Centers for Environmental Information                                                                                                                                 |
+| Rich Bouchard              | NOAA/National Data Buoy Center                                                                                                                                                      |
+| Richard Bourgerie\*        | NOS/CO-OPS                                                                                                                                                                          |
+| Ray Chapman                | U.S. Army Corps of Engineers (USACE)                                                                                                                                                |
+| Dan Farrell\*              | Sutron Corporation                                                                                                                                                                  |
+| Steve Gill\*               | NOS/CO-OPS Chief Scientist (retired)                                                                                                                                                |
+| Drew Gronewald             | NOAA/Great Lakes Environmental Research Laboratory                                                                                                                                  |
+| Bob Heitsenrether\*        | NOS/CO-OPS                                                                                                                                                                          |
+| Mark Huber                 | USACE                                                                                                                                                                               |
+| Melissa Ide                | Baruch Institute                                                                                                                                                                    |
+| Carol Janzen               | AOOS (formerly with Sea-Bird Electronics, Inc.)                                                                                                                                     |
+| Sung-Chan Kim\*            | USACE                                                                                                                                                                               |
+| Tom Landon\*               | NOS/CO-OPS (retired)                                                                                                                                                                |
+| Michael Lee\*              | USGS                                                                                                                                                                                |
+| Mike Lizotte               | YSI, Incorporated (retired)                                                                                                                                                         |
+| Brian McCallum             | USGS                                                                                                                                                                                |
+| Sue McLean                 | NOAA/National Geophysical Data Center                                                                                                                                               |
+| Mike Mensinger             | Delaware National Estuarine Research Reserve System                                                                                                                                 |
+| Mark Merrifield            | PacIOOS/University of Hawaii                                                                                                                                                        |
+| Michael Michalski          | NOS/CO-OPS                                                                                                                                                                          |
+| George Mungov              | Cooperative Institute for Research in Environmental Science under contract to National Geophysical Data Center                                                                      |
+| Jeff Oyler                 | NOS/CO-OPS                                                                                                                                                                          |
+| Hans-Peter Plag\*          | Old Dominion University                                                                                                                                                             |
+| James Rizzo\*              | Texas A&M University, Conrad Blucher Institute                                                                                                                                      |
+| Manoj Samant\*             | NOS/CO-OPS                                                                                                                                                                          |
+| Galen Scott                | NOAA/National Geodetic Survey                                                                                                                                                       |
+| Rich Signell               | USGS                                                                                                                                                                                |
+| Vembu Subramanian          | SECOORA                                                                                                                                                                             |
+| Stu Weinstein              | Pacific Tsunami Warning Center                                                                                                                                                      |
+| Paul Whitmore              | U.S. National Tsunami Warning Center                                                                                                                                                |
+| Doug Wilson                | Chesapeake Bay Interpretive Buoy System and chair of Intergovernmental Oceanographic Commission Sub-Commission for the Caribbean and Adjacent Regions-Global Ocean Observing System |
 
-
-
-
+\*Water Level Manual Committee Members
 
 **Version 1.0 Water Level Manual Reviewers**
-| Name | Organization |
-| :---         |     :---      |
-|Elliot Arroyo-Suarez|Naval Oceanographic Office|
-|Rob Bassett|NOS/CO-OPS|
-|Fred Bingham|University of North Carolina at Wilmington|
-|John Boon|Virginia Institute of Marine Science|
-|Julie Bosch|NOAA/National Centers for Environmental Information|
-|Richard Bourgerie|NOS/CO-OPS|
-|Richard Bouchard|NOAA/National Weather Service/National Data Buoy Center|
-|Marie Bundy|NOS/National Estuarine Research Reserve System|
-|Pat Caldwell|NOAA|
-|Ray Chapman|USACE/Engineer Research and Development Center (ERDC)/Defense |Research and Engineering Network (DREN)|
-|Sean Corson|NOAA/Office of Habitat Conservation|
-|Richard Edwing|NOS/CO-OPS|
-|Steve Gill|NOS/CO-OPS (retired)|
-|Drew Gronewold|NOAA|
-|Mark Huber|USACE|
-|Sung-Chan Kim|USACE/ERDC/DREN|
-|Tom Landon|NOS/CO-OPS (retired)|
-|Michael Lee|USGS|
-|Michael Michalski|NOS/CO-OPS|
-|Jennifer Patterson|CeNCOOS|
-|Begoña Perez|National Oceanography Centre (UK)|
-|Vembu Subramanian|SECOORA|
-|Philip Woodworth|National Oceanography Centre (UK)|
 
+| Name                 | Organization                                                  |
+| :------------------- | :------------------------------------------------------------ | --------------------------------------- |
+| Elliot Arroyo-Suarez | Naval Oceanographic Office                                    |
+| Rob Bassett          | NOS/CO-OPS                                                    |
+| Fred Bingham         | University of North Carolina at Wilmington                    |
+| John Boon            | Virginia Institute of Marine Science                          |
+| Julie Bosch          | NOAA/National Centers for Environmental Information           |
+| Richard Bourgerie    | NOS/CO-OPS                                                    |
+| Richard Bouchard     | NOAA/National Weather Service/National Data Buoy Center       |
+| Marie Bundy          | NOS/National Estuarine Research Reserve System                |
+| Pat Caldwell         | NOAA                                                          |
+| Ray Chapman          | USACE/Engineer Research and Development Center (ERDC)/Defense | Research and Engineering Network (DREN) |
+| Sean Corson          | NOAA/Office of Habitat Conservation                           |
+| Richard Edwing       | NOS/CO-OPS                                                    |
+| Steve Gill           | NOS/CO-OPS (retired)                                          |
+| Drew Gronewold       | NOAA                                                          |
+| Mark Huber           | USACE                                                         |
+| Sung-Chan Kim        | USACE/ERDC/DREN                                               |
+| Tom Landon           | NOS/CO-OPS (retired)                                          |
+| Michael Lee          | USGS                                                          |
+| Michael Michalski    | NOS/CO-OPS                                                    |
+| Jennifer Patterson   | CeNCOOS                                                       |
+| Begoña Perez         | National Oceanography Centre (UK)                             |
+| Vembu Subramanian    | SECOORA                                                       |
+| Philip Woodworth     | National Oceanography Centre (UK)                             |
 
 **Version 1.0 QARTOD Board of Advisors**
-| Name | Organization |
-| :---         |     :---      |
-|Joe Swaykos – Chair|NOAA/National Data Buoy Center
-|Kathy Bailey|U.S. IOOS
-|Julie Bosch|NOAA/National Centers for Environmental Information
-|Eugene Burger|NOAA/Pacific Marine Environmental Laboratory
-|Janet Fredericks|Woods Hole Oceanographic Institution
-|Matt Howard|GCOOS/Texas A&M University
-|Bob Jensen|U.S. Army Corps of Engineers
-|Chris Paternostro|NOS/CO-OPS
-|Mario Tamburri|University of Maryland Center for Environmental Science / Chesapeake Biological Laboratory
-|Julie Thomas|SCCOOS/Scripps Institution
 
+| Name                | Organization                                                                               |
+| :------------------ | :----------------------------------------------------------------------------------------- |
+| Joe Swaykos – Chair | NOAA/National Data Buoy Center                                                             |
+| Kathy Bailey        | U.S. IOOS                                                                                  |
+| Julie Bosch         | NOAA/National Centers for Environmental Information                                        |
+| Eugene Burger       | NOAA/Pacific Marine Environmental Laboratory                                               |
+| Janet Fredericks    | Woods Hole Oceanographic Institution                                                       |
+| Matt Howard         | GCOOS/Texas A&M University                                                                 |
+| Bob Jensen          | U.S. Army Corps of Engineers                                                               |
+| Chris Paternostro   | NOS/CO-OPS                                                                                 |
+| Mario Tamburri      | University of Maryland Center for Environmental Science / Chesapeake Biological Laboratory |
+| Julie Thomas        | SCCOOS/Scripps Institution                                                                 |
 
 **Version 1.0 DMAC Committee**
-| Name | Organization |
-| :---         |     :---      |
-|Rob Bochenek|AOOS/Axiom Consulting & Design
-|Eric Bridger|NERACOOS/Gulf of Marine Research Institute
-|Jorge Capella|CARICOOS/University of Puerto Rico
-|Jeremy Cothran|SECOORA/University of South Carolina
-|Matt Howard|GCOOS/Texas A&M University
-|Kelly Knee|MARACOOS/RPS ASA
-|Emilio Mayorga|NANOOS/University of Washington
-|Jennifer Patterson|CeNCOOS/Monterey Bay Aquarium Research Institute
-|Jim Potemra|PacIOOS/University of Hawaii
-|Rob Ragsdale|U.S. IOOS
-|Tad Slawecki|GLOS/LimnoTech
-|Derrick Snowden|U.S. IOOS
-|Shane StClair|AOOS/Axiom Consulting & Design
-|Vembu Subramanian|SECOORA
-|Darren Wright|SCCOOS/SIO
+
+| Name               | Organization                                     |
+| :----------------- | :----------------------------------------------- |
+| Rob Bochenek       | AOOS/Axiom Consulting & Design                   |
+| Eric Bridger       | NERACOOS/Gulf of Marine Research Institute       |
+| Jorge Capella      | CARICOOS/University of Puerto Rico               |
+| Jeremy Cothran     | SECOORA/University of South Carolina             |
+| Matt Howard        | GCOOS/Texas A&M University                       |
+| Kelly Knee         | MARACOOS/RPS ASA                                 |
+| Emilio Mayorga     | NANOOS/University of Washington                  |
+| Jennifer Patterson | CeNCOOS/Monterey Bay Aquarium Research Institute |
+| Jim Potemra        | PacIOOS/University of Hawaii                     |
+| Rob Ragsdale       | U.S. IOOS                                        |
+| Tad Slawecki       | GLOS/LimnoTech                                   |
+| Derrick Snowden    | U.S. IOOS                                        |
+| Shane StClair      | AOOS/Axiom Consulting & Design                   |
+| Vembu Subramanian  | SECOORA                                          |
+| Darren Wright      | SCCOOS/SIO                                       |
 
 **Version 1.0 U.S. IOOS Regional Associations**
-| Name | Organization |
-| :---         |     :---      |
-|Josie Quintrell|IOOS Association
-|David Anderson|CeNCOOS
-|Debra Hernandez|SECOORA
-|Barbara Kirkpatrick|GCOOS
-|Gerhard Kuska|MARACOOS
-|Molly McCammon|AOOS
-|Julio Morell|CariCOOS
-|Ru Morrison|NERACOOS
-|Jan Newton|NANOOS
-|Melissa Iwamoto|PacIOOS
-|Kelli Paige|GLOS
-|Julie Thomas|SCCOOS
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+| Name                | Organization     |
+| :------------------ | :--------------- |
+| Josie Quintrell     | IOOS Association |
+| David Anderson      | CeNCOOS          |
+| Debra Hernandez     | SECOORA          |
+| Barbara Kirkpatrick | GCOOS            |
+| Gerhard Kuska       | MARACOOS         |
+| Molly McCammon      | AOOS             |
+| Julio Morell        | CariCOOS         |
+| Ru Morrison         | NERACOOS         |
+| Jan Newton          | NANOOS           |
+| Melissa Iwamoto     | PacIOOS          |
+| Kelli Paige         | GLOS             |
+| Julie Thomas        | SCCOOS           |

@@ -1166,3 +1166,449 @@ which is required for climate studies.
 Future QARTOD reports will address standard QC procedures and best practices for all types of common as well as uncommon platforms and sensors for all the U.S. IOOS core variables.
 Each QC manual is envisioned as a dynamic document and will be posted on the QARTOD website at [https://ioos.noaa.gov/project/qartod](https://ioos.noaa.gov/project/qartod/).
 This process allows for QC manual updates as technology development occurs for both upgrades of existing sensors and new sensors.
+
+## 5.0 References
+
+> Bouchard, R.H. (Editor) and the participants in the QARTOD Workshops and Waves Technical Conference: 2007. Real-Time Quality Control Tests for In Situ Ocean Surface Waves, 25pp. http://nautilus.baruch.sc.edu/twiki/pub/Main/WaveQC/QARTOD_WAVE_QC_for_IOOS_DMAC_submission.pdf
+
+> Bushnell, M., Presentation at QARTOD III: November 2005. Scripps Institution of Oceanography, La Jolla, California. http://dx.doi.org/10.25607/OBP-390
+
+> Interagency Ocean Observation Committee (IOOC), 2012. Integrated Ocean Observing System (IOOS) Certification Criteria. 11 pp. https://cdn.ioos.noaa.gov/media/2017/12/IOOS-Certification-Criteria_4-25-12.pdf
+
+> National Data Buoy Center (NDBC) Technical Document 09-02, Handbook of Automated Data Quality Control Checks and Procedures, National Data Buoy Center, Stennis Space Center, Mississippi 39529-6000. August 2009.
+
+> Paris. Intergovernmental Oceanographic Commission of UNESCO. 2013. Ocean Data Standards, Vol.3: Recommendation for a Quality Flag Scheme for the Exchange of Oceanographic and Marine Meteorological Data. (IOC Manuals and Guides, 54, Vol. 3.) 12 pp. (English.)(IOC/2013/MG/54-3). http://www.iode.org/index.php?option=com_oe&task=viewDocumentRecord&docID=10762
+
+> QARTOD I-V Reports 2003-2009. Web address to be updated. UNESCO, 1993. Manual and Guides 26, Manual of Quality Control Procedures for Validation of Oceanographic Data, Section 2.2, Appendix A1: Wave Data. Prepared by CEC: DG-XII, MAST and IOC: IODE. 436pp. http://unesdoc.unesco.org/images/0013/001388/138825eo.pdf
+
+> U.S. IOOS QARTOD Project Plan – Final. February 18, 2012. Available online at: http://www.ioos.noaa.gov/qartod/qa_qc_projectplan_dec2012.pdf [Suggest deleting b/c listed in section 1.]
+
+> U.S. IOOS, Updated May 2015. A Plan to Meet the Nation’s Need for Surface Current Mapping. https://cdn.ioos.noaa.gov/media/2017/12/national_surface_current_planMay2015.pdf
+
+> U.S. IOOS Office, November 2010. A Blueprint for Full Capability, Version 1.0, 254 pp. https://cdn.ioos.noaa.gov/media/2017/12/us_ioos_blueprint_ver1.pdf
+
+> U.S. Integrated Ocean Observing System, Updated May 2017. Manual for the Use of Real-Time Oceanographic Data Quality Control Flags. 19 pp. https://repository.library.noaa.gov/view/noaa/15488/Share
+
+## 6.0 Additional References to Related Documents:
+
+> Alliance for Coastal Technologies (ACT) 2012. Accessed May 13, 2019 at http://www.act-us.info/evaluations.php
+
+> Argo Quality Control Manual: http://www.argodatamgt.org/content/download/341/2650/file/argo-quality-control-manual-V2.7.pdf
+
+> National Oceanographic Partnership Program (NOPP) January 2006. The First U.S. Integrated Ocean Observing System (IOOS) Development Plan – A report of the National Ocean Research Leadership Council and the Interagency Committee on Ocean Science and Resource Management Integration. The National Office for Integrated and Sustained Ocean Observations. Ocean US Publication No. 9. http://www.usnfra.org/documents/IOOSDevPlan_low-res.pdf
+
+> Crout, R., D. Conlee, D. Gilhousen, R. Bouchard, M. Garcia, F. Demarco, M. Livingston, C. Cooper, and R. Raye, 2006: Real-time oil platform ocean current data in the Gulf of Mexico: an IOOS industry partnership success story. Proc. AMS, 22nd International Conference on Interactive Information Processing Systems for Meteorology, Oceanography, and Hydrology.
+
+> Bender, L.C. and S.F. DiMarco. 2009. Quality control and analysis of acoustic Doppler current profiler data collected on offshore platforms of the Gulf of Mexico. U.S. Dept. of the Interior, Minerals Mgmt. Service, Gulf of Mexico OCS Region, New Orleans, LA. OCS Study MMS 2009-010. 63 pp. http://www.data.boem.gov/PI/PDFImages/ESPIS/4/4888.pdf
+
+> GTSPP Real-Time Quality Control Manual, First Revised Edition. UNESCO-IOC 2010. (IOC Manuals and Guides No. 22, Revised Edition.) (IOC/2010/MG/22Rev.) English only http://www.nodc.noaa.gov/GTSPP/document/qcmans/MG22rev1.pdf
+
+> Haines, S., R. Crout, J. Bosch, W. Burnett, J. Fredericks, D. Symonds and J. Thomas, 2011. A summary of quality control tests for waves and in situ currents and their effectiveness, in IEEE/OES 10th Current, Waves and Turbulence Measurements (CWTM), 100 - 106 DOI: 10.1109/CWTM.2011.5759534. http://ieeexplore.ieee.org/xpls/abs_all.jsp?arnumber=5759534
+
+> Hankin, S. and DMAC Steering Committee, 2005. Data management and communications plans for research and operational integrated ocean observing systems: I interoperable data discovery, access, and archive, Ocean.US, Arlington, VA, 304 pp. http://sccoos.ucsd.edu/docs/dmac_plan2005.pdf
+
+> Integrated Marine Observing System http://imos.org.au (see also https://github.com/aodn/imos-toolbox)
+
+> Moore, A.N, D.L. Stewart, March 2003. “The effects of mobile scatterers on the quality of ADCP data in differing marine environments.” Proceedings of the IEEE/OES Seventh Working Conference on Current Measurement Technology. p. 202-206. Recommendations for in-situ data Real Time Quality Control, Authors: Sylvie Pouliquen and the DATA-MEQ working group, 2015. http://eurogoos.eu/download/Pouliquen_DATAMEQ%20WG.pdf
+
+> Reverdin, G., V. Thierry, J. Utiz, F. d’Ortenzio, E. Bradshaw, B. Pfeil (2017). Recommendations for an automatic RT or NRT QC for selected EOVs (T&S, Current, Oxygen, CHla, Nitrate, Carbon, Sea level). AtlantOS 633211, Work Package 7, Deliverable D7.2 https://www.atlantos-h2020.eu/download/7.2-QC-Report.pdf
+
+## Appendix A. Quality Assurance
+
+A major pre-requisite for establishing quality control standards for current measurements is a strong quality assurance program. Remember the mantra that good QC requires good QA, and good QA requires good scientists, engineers, and technicians.
+
+The following sections suggest ways to ensure QA by using specific procedures and techniques.
+
+### A.1 Sensor Calibration Considerations
+
+Observations must be traceable to one or more accepted standards through a calibration performed by the manufacturer or the operator. If the calibration is conducted by the manufacturer, the operator must also conduct some form of an acceptable calibration check. For instance, the instrument could be damaged in shipment from the manufacturer or have been exposed to a temperature outside its prescribed operating range.
+
+An often-overlooked calibration or calibration check can be performed by consensus standard. For example, deriving the same answer (within an acceptable level of accuracy) from four different sensors of four different manufacturers, preferably utilizing several different technologies, constitutes a perfectly acceptable reference. Because of the trend toward corporate conglomeration, those wishing to employ a consensus standard should ensure that the different manufacturers are truly independent.
+
+### A.2 Sensor Comparison
+
+An effective QA effort continually strives to ensure that end data products are of high value and to prove they are free of error. Operators should seek out partnering opportunities to inter-compare systems by co-locating differing sensors. Agreement of multiple systems would provide a robust observation, while disagreement may offer a measure of data uncertainty. If possible, operators should retain an alternate sensor or technology from a second manufacturer for similar in-house checks. For resource-constrained operators, however, it may not be possible to spend the time and funds needed to procure and maintain two systems. For those who do so and get two different results, the use of alternate sensors or technologies provide several important messages: a) a measure of the accuracy and precision achieved by an operator; b) a reason to investigate, understand the different results, and take corrective action; and c) increased understanding that when variables are measured with different technologies, different answers can be correct, and they must be understood in order to properly report results. For those who succeed, the additional sensors provide a highly robust demonstration of operator capability. Such efforts form the basis of a strong QA/QC effort. Further, it provides the operator with an expanded supply source, permitting less reliance upon a single manufacturer and providing competition that is often required by procurement offices.
+
+### A.3 Magnetic Compass Considerations
+
+Magnetic declination, also called magnetic variation, refers to the angle between magnetic north and true north at a given location on the earth. Since current meters usually derive current direction from a magnetic compass, the resulting data must be corrected in order to obtain the direction or velocities in true earth coordinates. There is a high risk that this correction could be applied incorrectly (e.g., with the wrong sign, forgotten entirely, or applied twice in separate data processing steps), resulting in wrong data. A proper QA procedure will unambiguously determine at what step the declination correction is made and annotate what the correction has been with unambiguous metadata in the final data. One method used to ensure the correction is properly applied is to record the variation, the magnetic heading, and the true heading.
+
+Magnetic deviation refers to errors in compass readings that are incurred by magnetic materials (metal such as steel, mooring wire, batteries) near the sensors. Vendors of current meters usually provide ‘calibration’ procedures that the operator should follow (e.g., by spinning the instrument a certain way in a setup mode). In addition, it is paramount that magnetic materials be kept away from the sensors while deployed. If this is not possible, the calibration procedure could be done with the surrounding metal structures attached, so that corrections may be made for some of the deviations caused by the structure and not just the instrument itself.
+
+At high latitudes, the earths magnetic field exhibits increasing dip which reduces the signal strength available to a compass. Operators must be aware of the potentially reduced compass accuracy. Vendors are solving the problem by using more sensitive compasses, but these will be more sensitive to magnetic deviation as well.
+
+## A.4 Bio-fouling and Corrosion Prevention Strategies
+
+Bio-fouling is the most frequent cause of sensor failure, so the following strategies may be useful for ameliorating the problem:
+
+- Use anti-fouling paint with the highest copper content available (up to 75%) when possible (not on aluminum).
+- Wrap body of sensor with clear packing tape for a small probe or plastic wrap for a large instrument. This keeps the PVC tape from leaving residue on the sensor. Heavy PVC underground cable tape is the best for bad bio-fouling.
+- Wrap with copper tape (again, beware of aluminum).
+- Coat with zinc oxide (Desitin ointment – manufactured by Johnson and Johnson Inc.; 1 Johnson and Johnson Plaza, New Brunswick, NJ 08933 (732) 524-0400).
+- Remember that growth is sensor-, depth-, location-, and season-dependent; plan instrument recovery frequency accordingly.
+- Plan for routine changing or cleaning of sensor as necessary.
+- Check with calibration facility on which anti-foulants will be handled (allowed) by the calibrators.
+- Avoid or isolate dissimilar metals.
+- Maintain sacrificial anodes and ensure they are properly installed (good electrical contact).
+- Maximize use of non-metallic components.
+- Use UV-stabilized components that are not subject to sunlight degradation.
+
+### A.5 Common QA Considerations
+
+The following lists suggest ways to ensure QA by using specific procedures and techniques:
+
+- Perform pre-deployment calibrations on every sensor
+- Perform post-deployment calibrations on every sensor, plus in-situ comparison before recovery
+- Perform periodic calibration of ready-to-use spares
+- Monitor with redundant sensors whenever possible
+- Take photos of sensor fouling for records
+- Record all actions related to sensors – calibration, cleaning, deployment, etc.
+- Monitor battery voltage and watch for unexpected fluctuations
+
+When evaluating which instrument to use, consider these factors:
+
+- Selection of a reliable and supportive manufacturer and appropriate model
+- Operating range (i.e., some instruments won’t operate at certain temperatures, pressures, or depths)
+- Resolution/precision required
+- Sampling frequency – how fast sensor can take measurements
+- Reporting frequency – how often the sensor reports the data
+- Response time of the sensor – sensor lag – time response
+- Instrument check – visual inspection for defects, bio-fouling, etc.
+- Power check – master clock, battery, etc. – variability among these sensors
+- Standardize sensor clock to a reference such as GPS timing
+- Capability to reveal a problem with data
+
+When evaluating which specifications must be met:
+
+- State the expected accuracy
+- Determine how the sensor compares to the design specifications
+- Determine if the sensor meets those specifications
+- Determine whether result is good enough (fit for purpose: data are adequate for nominal use as preliminary data)
+
+General comments regarding QA procedures:
+
+- A diagram (http://www.ldeo.columbia.edu/~dale/dataflow/), contributed by Dale Chayes (LDEO) provides a visual representation of proper QA procedures.
+- Require serial numbers and model ID from the supplier.
+- Do not make the checklist so detailed that it will not be used.
+- Do not assume the calibration is perfect (could be a calibration problem rather than a sensor problem).
+- Keep good records of all related sensor calibrations and checks (e.g., temperature).
+- Use NIST-traceable instrumentation when conducting calibrations or calibration checks.
+- A sensor that maintains an internal file of past calibration constants is very useful since it can be downloaded instead of transcribed manually, introducing human error.
+- The calibration constants or deviations from a standard should be plotted over time to determine if the sensor has a drift in one direction or another. A sudden change can indicate a problem with the sensor or the last calibration.
+
+### A.6 QA Levels for Best Practices
+
+A wide variety of techniques are used by operators to assure that sensors are properly calibrated and operating within specifications. While all operators must conduct some form of validation, there is no need to force operators to adhere to one single method. Nevertheless, operators should always strive to achieve the best possible level of QA. If they are unable to do so, then they should provide valid justification. Operators must show due-diligence in maintenance of their systems. A balance exists between available resources, level of proficiency of the operator, and target data-reproducibility requirements. The various techniques span a range of validation levels and form a natural hierarchy that can be used to establish levels of certification for operators (table A-1). The lists in the following sections suggest ways to ensure QA by using specific procedures and techniques.
+
+| **QA Best Practices Indicator** | **Description**                                                                                                                                                                                                   |
+| ------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Good Process                    | Sensors are swapped and/or serviced at sufficiently regular intervals so as to avoid data steps (unexpected offsets) upon swap/service. Pre- and post-deployment calibration checks are conducted on each sensor. |
+| Better Process                  | The good processes are employed, plus pre- and post-deployment calibration checks are conducted using alternative sensors to confirm performance.                                                                 |
+| Best Process                    | The better processes are employed, following a well-documented protocol, or alternative sensors are used to validate in-situ deployments. Or, pre- and post-calibrations are conducted by the manufacturer.       |
+
+: Table A-1. Best practices indicator for QA
+
+### A.7 Additional Sources of QA Information
+
+Current sensor operators also have access to other sources of QA practices and information about a variety of instruments. For example, the Alliance for Coastal Technologies (ACT) serves as an unbiased, third-party testbed for evaluating sensors and platforms for use in coastal and ocean environments. ACT conducts instrument performance demonstrations and verifications so that effective existing technologies can be recognized, and promising new technologies can become available to support coastal science, resource management, and ocean observing systems (ACT 2012). The NOAA Ocean Systems Test and Evaluation Program (OSTEP) also conducts independent tests and evaluations on emerging technology as well as new sensor models. Both ACT and OSTEP publish findings that can provide information about QA, calibration, and other aspects of sensor functionality. The following list provides links to additional resources on QA practices.
+Manufacturer specifications and supporting Web pages/documents
+
+- QARTOD https://ioos.noaa.gov/project/qartod/
+- ACT http://www.act-us.info/
+- CO-OPS http://tidesandcurrents.noaa.gov/pub.html under the heading Manuals and Standards
+- WOCE https://www.nodc.noaa.gov/woce/
+- NDBC http://www.ndbc.noaa.gov/
+
+The following samples provide hints for development of deployment checklists taken from QARTOD IV:
+
+**Pre-deployment QA Checklist**
+
+- [ ] Read the manual.
+- [ ] Establish, use, and submit (with a reference and version #) a documented sensor preparation procedure (protocol). Should include cleaning sensor according to the manufacturer’s procedures.
+- [ ] Calibrate sensor against an accepted standard and document (with a reference and version #).
+- [ ] Compare the sensor with an identical, calibrated sensor measuring the same thing in the same area (in a calibration lab).
+- [ ] View calibration specifications with a critical eye (don’t presume the calibration is infallible). Execute detailed review of calibrated data.
+- [ ] Check the sensor history for past calibrations, including a plot over time of deviations from the standard for each (this will help identify trends such a progressively poorer performance). Maintain control of the plotted calibrations.
+- [ ] Check the sensor history for past repairs, maintenance, and calibration.
+- [ ] Consider storing and shipping information before deploying (Heat, cold, vibration, etc.)
+- [ ] Provide detailed documentation when necessary.
+- [ ] Record operator/user experiences with this sensor after reading the manual.
+- [ ] Search the literature for information on your particular sensor(s) to see what experiences other researchers may have had with the sensor(s).
+- [ ] Establish and use a formal pre-deployment checklist.
+- [ ] Ensure that technicians are well-trained. Use a visual tracking system for training to identify those technicians who are highly trained and then pair them with inexperienced technicians. Have data quality review chain.
+
+**Deployment Checklist**
+
+- [ ] Scrape bio-fouling off platform.
+- [ ] Verify sensor serial numbers.
+- [ ] Deploy and co-locate multiple sensors (attention to interference if too close).
+- [ ] Perform visual inspection; take photos if possible (verify position of sensors, connectors, fouling, cable problems, etc.).
+- [ ] Conduct magnetic calibration within 5 km of the development location to reduce the influence of batteries and local magnetism.
+- [ ] Verify instrument function at deployment site prior to site departure. Allot sufficient time for temperature equilibration.
+- [ ] Monitor sensors for issues (freezing, fouling).
+- [ ] Automate processing so you can monitor the initial deployment and confirm the sensor is working while still onsite.
+- [ ] Specify date/time for all recorded events and check to ensure proper time is set. Use GMT or UTC.
+- [ ] Check software to ensure that the sensor configuration and calibration coefficients are correct. Also, check sampling rates and other timed events, like wiping and time averaging.
+- [ ] Visually inspect data stream to ensure reasonable values.
+- [ ] Compare up and down casts and/or dual sensors (if available).
+- [ ] Note weather conditions and members of field crew.
+
+**Post-deployment Checklist**
+
+- [ ] Take pictures of recovered sensor as is for metadata
+- [ ] Check to make sure all clocks agree or, if they do not agree, record all times and compare with NIST.
+- [ ] Post-calibrate sensor and document before and after cleaning readings.
+- [ ] Perform in-situ, side-by-side check using another sensor.
+- [ ] Provide a mechanism for feedback on possible data problems and/or sensor diagnostics.
+- [ ] Clean and store the sensor properly or redeploy.
+- [ ] Visually inspect physical state of instrument.
+- [ ] Verify sensor performance by checking nearby stations.
+- [ ] Verify sensor performance by making historical data comparisons (e.g., long-term time-series plots, which are particularly useful for identifying long-term bio-fouling or calibration drift.)
+
+## Appendix B. In-Situ Currents Manual Team and Reviewers
+
+**In-Situ Currents Manual Team and Reviewers, Version 2.1**
+
+| Name              | Organization                                                    |
+| :---------------- | :-------------------------------------------------------------- |
+| Mark Bushnell     | U.S. IOOS                                                       |
+| Mathias Lankhorst | Scripps Institution of Oceanography                             |
+| Chris Paternostro | NOAA/Center for Operational Oceanographic Products and Services |
+| Jan van Smirren   | Ocean Sierra                                                    |
+
+**QARTOD Board of Advisors, Version 2.1**
+
+| Name                             | Organization                                                                               |
+| :------------------------------- | :----------------------------------------------------------------------------------------- |
+| Kathleen Bailey, Project Manager | U.S. IOOS                                                                                  |
+| Julie Bosch                      | NOAA/National Centers for Environmental Information                                        |
+| Eugene Burger                    | NOAA/Pacific Marine Environmental Laboratory                                               |
+| Jennifer Dorton                  | SECOORA                                                                                    |
+| Robert Heitsenrether             | NOS/Center for Operational Oceanographic Products and Services                             |
+| Jeff King                        | U.S. Army Corps of Engineers                                                               |
+| Shannon McArthur                 | NOAA/National Data Buoy Center                                                             |
+| Mario Tamburri                   | University of Maryland Center for Environmental Science / Chesapeake Biological Laboratory |
+| Julie Thomas, BOA Chair          | SCCOOS/Scripps Institution of Oceanography/Coastal Data Information Program (retired)      |
+| Christoph Waldmann               | University of Bremen/MARUM U.                                                              |
+
+**U.S. IOOS Regional Associations, Version 2.1**
+
+| Name                | Organization     |
+| :------------------ | :--------------- |
+| Josie Quintrell     | IOOS Association |
+| Clarissa Anderson   | SCCOOS           |
+| Debra Hernandez     | SECOORA          |
+| Melissa Iwamoto     | PacIOOS          |
+| Barbara Kirkpatrick | GCOOS            |
+| Gerhard Kuska       | MARACOOS         |
+| Molly McCammon      | AOOS             |
+| Julio Morell        | CariCOOS         |
+| Ru Morrison         | NERACOOS         |
+| Jan Newton          | NANOOS           |
+| Kelli Paige         | GLOS             |
+| Henry Ruhl          | CeNCOOS          |
+
+**Version 2.1 DMAC Community**
+
+**Regional Associations**
+
+| Name                             | Organization |
+| :------------------------------- | :----------- |
+| Carol Janzen                     | AOOS         |
+| Bob Currier                      | GCOOS        |
+| Miguel Canals                    | CARICOOS     |
+| Roy Watlington                   | CARICOOS     |
+| Jennifer Dorton                  | SECOORA      |
+| Abbey Wakely                     | SECOORA      |
+| Filipe Pires Alvarenga Fernandes | SECOORA      |
+
+**Research Associations**
+
+| Name           | Organization                              |
+| :------------- | :---------------------------------------- |
+| Eric Bridger   | Gulf of Maine Research Institute          |
+| Vicky Rowley   | Scripps Institution of Oceanography       |
+| Fred Bahr      | Monterey Bay Aquarium Research Institute  |
+| Matthew Ogburn | Smithsonian Environmental Research Center |
+
+**Federal and State Agencies**
+
+| Name               | Organization                                    |
+| :----------------- | :---------------------------------------------- |
+| Brian Zelenke      | Bureau of Ocean Energy Management               |
+| Jonathan Blythe    | Bureau of Ocean Energy Management               |
+| Dwane Young        | Environmental Protection Agency                 |
+| Guan Wang          | Great Lakes Commission                          |
+| Bill Woodward      | National Oceanic and Atmospheric Administration |
+| Kenneth Casey      | National Oceanic and Atmospheric Administration |
+| Mark VanWaes       | National Oceanic and Atmospheric Administration |
+| Alexander Birger   | National Oceanic and Atmospheric Administration |
+| Bob Simons         | National Oceanic and Atmospheric Administration |
+| Byron Kilbourne    | National Oceanic and Atmospheric Administration |
+| Dave Easter        | National Oceanic and Atmospheric Administration |
+| Derrick Snowden    | National Oceanic and Atmospheric Administration |
+| Frank Lodato       | National Oceanic and Atmospheric Administration |
+| Gabrielle Canonico | National Oceanic and Atmospheric Administration |
+| Jason Gedamke      | National Oceanic and Atmospheric Administration |
+| Jessica Morgan     | National Oceanic and Atmospheric Administration |
+| Kevin O'Brien      | National Oceanic and Atmospheric Administration |
+| Lynn Dewitt        | National Oceanic and Atmospheric Administration |
+| Mark Bushnell      | National Oceanic and Atmospheric Administration |
+| Micah Wengren      | National Oceanic and Atmospheric Administration |
+| Rita Adak          | National Oceanic and Atmospheric Administration |
+| Thomas Ryan        | National Oceanic and Atmospheric Administration |
+| Tiffany Vance      | National Oceanic and Atmospheric Administration |
+| Tim Boyer          | National Oceanic and Atmospheric Administration |
+| Tony Lavoi         | National Oceanic and Atmospheric Administration |
+| Jeff Lillycrop     | U.S. Army Corps of Engineers                    |
+| Abigail Benson     | U.S. Geological Survey                          |
+| James Kreft        | U.S. Geological Survey                          |
+| Rich Signell       | U.S. Geological Survey                          |
+| Sky Bristol        | U.S. Geological Survey                          |
+
+**Academic Institutions**
+
+| Name                        | Organization              |
+| :-------------------------- | :------------------------ |
+| Bob Fleming                 | University of Maine       |
+| Mario Tamburri              | University of Maryland    |
+| Brad Covey                  | Dalhousie University      |
+| Lenore Bajona               | Dalhousie University      |
+| Richard Davis               | Dalhousie University      |
+| Jorge Capella               | University of Puerto Rico |
+| Juan Orlando Gonzalez Lopez | University of Puerto Rico |
+| James T. Potemra            | University of Hawaii      |
+| Emilio Mayorga              | University of Washington  |
+| Felimon Gayanilo            | Texas A & M University    |
+| John Kerfoot                | Rutgers University        |
+| Michael Vardaro             | Rutgers University        |
+| Peter Walsh                 | University of Tasmania    |
+
+**Private Industry**
+
+| Name           | Organization           |
+| :------------- | :--------------------- |
+| Kathy Koch     | LimnoTech              |
+| Tad Slawecki   | LimnoTech              |
+| Kelly Knee     | RPS Group              |
+| Melanie Gearon | RPS Group              |
+| Kyle Wilcox    | Axiom                  |
+| Rob Bochenek   | Axiom                  |
+| Shane StClair  | Axiom                  |
+| Jonathan Pye   | Ocean Tracking Network |
+
+**In-Situ Currents Manual Update (Version 2.0) Committee and Reviewers**
+
+| Name                           | Organization                                        |
+| :----------------------------- | :-------------------------------------------------- |
+| Mark Bushnell – Chair          | CoastalObsTechServices LLC/CO-OPS                   |
+| Chris Paternostro, co-editor   | NOAA/CO-OPS                                         |
+| Jennifer Patterson – co-editor | CeNCOOS                                             |
+| Helen Worthington – co-editor  | REMSA/CO-OPS                                        |
+| Julie Bosch                    | NOAA/National Centers for Environmental Information |
+| Bob Heitsenrether              | NOAA/CO-OPS                                         |
+| Christina Iarossi              | SonTek                                              |
+| Chris Kontoes                  | Nortek, Inc.                                        |
+| Dawn Petraitis                 | NOAA/NDBC                                           |
+| Darryl Symonds                 | Teledyne RDI                                        |
+| Doug Wilson                    | Caribbean Wind LLC/MARACOOS                         |
+
+**Currents Manual Version 1.0 Reviewers**
+
+| Name                                 | Organization                                   |
+| :----------------------------------- | :--------------------------------------------- |
+| Mark Bushnell – Chair                | CoastalObsTechServices LLC/CO-OPS              |
+| Ray Toll – editor                    | Old Dominion University/NDBC                   |
+| Helen Worthington – editor           | REMSA/CO-OPS                                   |
+| Dick Crout – significant contributor | Naval Research Laboratory/ Stennis             |
+| Charly Alexander                     | U.S. IOOS                                      |
+| Rob Bassett                          | NOAA/CO-OPS                                    |
+| Rich Bouchard                        | NOAA/NDBC                                      |
+| Rebecca Cowley                       | Integrated Marine Observing System             |
+| Jeff Donnovan                        | SECOORA                                        |
+| Shavawn Donoghue                     | Integrated Marine Observing System             |
+| Chris Flanary                        | SECOORA                                        |
+| Guilliaume Galibert                  | Integrated Marine Observing System             |
+| Janet Fredericks                     | Woods Hole Oceanographic Institution           |
+| Bob Heitsenrether                    | NOAA/CO-OPS                                    |
+| Kris Holdereid                       | NOAA                                           |
+| Eoin Howlett                         | MARACOOS/Applied Science Associates            |
+| Leonid Ivanov                        | Woods Hole Working Group                       |
+| Bruce Magnell                        | Woods Hole Working Group                       |
+| Alessandra Mantovanelli              | Integrated Marine Observing System             |
+| Kelli Paige                          | GLOS                                           |
+| Chris Paternostro                    | NOAA/CO-OPS                                    |
+| Jennifer Patterson                   | CeNCOOS                                        |
+| Torstein Pederson                    | Nortek                                         |
+| Xiaoyan Qi                           | SECOORA                                        |
+| Samantha Simmons                     | Interagency Ocean Observing Committee          |
+| Rosemary Smith                       | Fugro GEOS                                     |
+| Derrick Snowden                      | U.S. IOOS                                      |
+| Craig Steinberg                      | Integrated Marine Observing System             |
+| Vembu Subramanian                    | SECOORA                                        |
+| Charles Sun                          | National Centers for Environmental Information |
+| Darryl Symonds                       | Teledyne RDI                                   |
+| Ed Verhamme                          | GLOS                                           |
+| Doug Wilson                          | MARACOOS                                       |
+
+**QARTOD Board of Advisors**
+
+| Name | Organization |
+| :--- | :----------- |
+|      |              |
+
+Joe Swaykos – Chair
+Kathy Bailey
+Julie Bosch
+Eugene Burger
+Janet Fredericks
+Matt Howard
+Bob Jensen
+Chris Paternostro
+Julie Thomas
+NOAA/National Data Buoy Center
+U.S. IOOS
+NOAA/National Centers for Environmental Information
+NOAA/Pacific Marine Environmental Laboratory
+Woods Hole Oceanographic Institution
+GCOOS
+USACE
+NOAA/CO-OPS
+Scripps Institution of Oceanography/Coastal Data Information Program
+
+**DMAC Committee**
+
+| Name               | Organization                                     |
+| :----------------- | :----------------------------------------------- |
+| Rob Bochenek       | AOOS/CeNCOOS/Axiom Consulting & Design           |
+| Eric Bridger       | NERACOOS/Gulf of Maine Research Institute        |
+| Jorge Capella      | CariCOOS/University of Puerto Rico               |
+| Jeremy Cothran     | SECOORA/University of South Carolina             |
+| Lisa Hazard        | SCCOOS/Scripps Institution of Oceanography       |
+| Matt Howard        | GCOOS/Texas A&M University                       |
+| Emilio Mayorga     | NANOOS/University of Washington                  |
+| Jennifer Patterson | CeNCOOS/Monterey Bay Aquarium Research Institute |
+| Jim Potemra        | PacIOOS/University of Hawaii                     |
+| Rob Ragsdale       | U.S. IOOS Program Office                         |
+| Tad Slawecki       | GLOS/LimnoTech                                   |
+| Derrick Snowden    | U.S. IOOS Program Office                         |
+| Shane StClair      | AOOS/CeNCOOS/Axiom Consulting & Design           |
+| Vembu Subramanian  | SECOORA/University of South Florida              |
+| Kyle Wilcox        | MARACOOS/Applied Science Associates, Inc.        |
+
+**U.S. IOOS REGIONAL ASSOCIATIONS**
+
+| Name                | Organization          |
+| :------------------ | :-------------------- |
+| Josie Quintrell     | U.S. IOOS Association |
+| David Anderson      | CeNCOOS               |
+| Debra Hernandez     | SECOORA               |
+| Barbara Kirkpatrick | GCOOS                 |
+| Gerhard Kuska       | MARACOOS              |
+| Molly McCammon      | AOOS                  |
+| Julio Morell        | CariCOOS              |
+| Ru Morrison         | NERACOOS              |
+| Jan Newton          | NANOOS                |
+| Chris Ostrander     | PacIOOS               |
+| Kelli Paige         | GLOS                  |
+| Julie Thomas        | SCCOOS                |

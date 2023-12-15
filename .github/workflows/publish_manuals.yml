@@ -35,7 +35,7 @@ jobs:
           && popd
 
       - name: Upload artifacts to Github
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           path: docs/compiled_manuals/
 

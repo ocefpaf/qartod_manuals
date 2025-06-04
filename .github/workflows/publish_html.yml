@@ -17,18 +17,9 @@ jobs:
         with:
           fetch-depth: 0 # fetch all commits/branches
 
-      - name: Setup Micromamba
-        uses: mamba-org/setup-micromamba@0dea6379afdaffa5d528b3d1dabc45da37f443fc # v2.0.4
-        with:
-          environment-name: QARTOD
-          environment-file: environment.yml
-          init-shell: bash
-
-      - name: Build
-        shell: bash -l {0}
-        run: >
-          set -e
-          && mkdocs build --clean --verbose
+      - uses: prefix-dev/setup-pixi@19eac09b398e3d0c747adc7921926a6d802df4da # v0.8.8
+      - run: >
+          pixi run mkdocs
 
       - name: Setup Git
         shell: bash -l {0}
@@ -40,11 +31,11 @@ jobs:
 
       - name: Deploy released docs
         if: success() && github.event_name == 'release'
-        shell: bash -l {0}
         run: >
           mike deploy --push --update-aliases ${{  github.ref_name }} latest
           && mike set-default --push latest
+        shell: pixi run bash -e {0}
 
       - name: List
-        shell: bash -l {0}
         run: mike list
+        shell: pixi run bash -e {0}

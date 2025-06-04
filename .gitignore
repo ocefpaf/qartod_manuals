@@ -2,3 +2,6 @@ site/
 manuals/
 *.pdf
 *.docx
+# pixi environments
+.pixi
+*.egg-info

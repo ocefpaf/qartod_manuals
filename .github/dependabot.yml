@@ -2,7 +2,6 @@
 
 version: 2
 updates:
-
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
@@ -12,4 +11,4 @@ updates:
     groups:
       github-actions:
         patterns:
-          - '*'
+          - "*"

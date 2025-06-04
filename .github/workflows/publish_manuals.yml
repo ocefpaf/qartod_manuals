@@ -23,14 +23,14 @@ jobs:
       - name: Upload artifacts to Github
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
         with:
-          path: docs/compiled_manuals/
+          path: compiled_manuals/
 
       - name: Upload artifacts to Github release
         if: success() && github.event_name == 'release'
         uses: svenstaro/upload-release-action@04733e069f2d7f7f0b4aebc4fbdbce8613b03ccd # v2.9.0
         with:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
-          file: docs/compiled_manuals/*
+          file: compiled_manuals/*
           tag: ${{ github.ref }}
           overwrite: true
           file_glob: true

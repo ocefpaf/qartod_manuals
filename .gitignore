@@ -1,7 +1,7 @@
-site/
-manuals/
-*.pdf
 *.docx
-# pixi environments
-.pixi
 *.egg-info
+*.pdf
+.pixi
+manuals/
+node_modules/
+site/

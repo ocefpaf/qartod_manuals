@@ -2,53 +2,7 @@
 
 A Guide to Quality Control and Quality Assurance for Water Level Observations
 
-Version 2.1
-March 2021
-[https://doi.org/10.25923/vpsx-dc82](https://doi.org/10.25923/vpsx-dc82)
-
-## Revision History
-
-| Date       | Revision Description                                                                                                                          | Notes                                             |
-| ---------- | --------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------- |
-| May 2014   | Original Document Published                                                                                                                   |                                                   |
-| April 2016 | Revise cover page to include new IOOS logo.                                                                                                   | Manual updated with revisions listed sequentially |
-|            | Revise dates on _Document Validation_ page and substitute new logo (page ii).                                                                 |                                                   |
-|            | Add statement requesting feedback from _Manual Users_ (page vi).                                                                              |                                                   |
-|            | Update _Acknowledgements_ to include Version 2.0 team members (page vii).                                                                     |                                                   |
-|            | Update definition of real time in _Definitions of Selected Terms_ (page ix).                                                                  |                                                   |
-|            | Revise _Background and Introduction_ to reflect updated and additional manuals that have been developed (page 1).                             |                                                   |
-|            | Revise section 2.0 content in various places to reflect updated content from previous manuals and feedback from reviewers (pages 3-6; 10-11). |                                                   |
-|            | Update content in section 3.1 (page 12) and add section 3.3.2 (page 22).                                                                      |                                                   |
-|            | Update language in section 4.0, _Summary_ (page 23).                                                                                          |                                                   |
-|            | Update _References_ and _Supporting Documents_ (page 24-26).                                                                                  |                                                   |
-|            | Revise good process description in table A-1 (page A-4).                                                                                      |                                                   |
-|            | Update Version 2.0 Water Level Manual Team members (page B-1).                                                                                |                                                   |
-| March 2021 | Revise cover to match updated QARTOD manuals                                                                                                  |                                                   |
-|            | Revise _Document Validation_ page to reflect new signatories and dates (page ii)                                                              |                                                   |
-|            | Revise _Request to Manual Users_ statement to reflect new QARTOD email address (page vi)                                                      |                                                   |
-|            | Update _Acknowledgements_ to include Version 2.1 team members (page vii)                                                                      |                                                   |
-|            | Revise _Acronyms and Abbreviations_ to include DQAP (page viii)                                                                               |                                                   |
-|            | Revise _Definitions of Selected Terms_ to include physical properties in variable definition (page ix)                                        |                                                   |
-|            | Revise _Background and Introduction_ to reflect updated and additional manuals that have been developed (pages 1-2)                           |                                                   |
-|            | Update _Section 2.0_, specifically 2.1, 2.2.1, 2.2.4, and 2.4 (pages 3--12)                                                                   |                                                   |
-|            | Update _Section 3.0,_ specifically 3.1, 3.2, 3.3.2 (Test 8 and Test 11), and add 3.3.3                                                        |                                                   |
-|            | Update _Section 4.0_ -- minor edits (page 25)                                                                                                 |                                                   |
-|            | Update links in _References and Supporting Documents_ (pages 27--30)                                                                          |                                                   |
-|            | Update _Appendix A_ manual reviewers (page A-1)                                                                                               |                                                   |
-|            | Delete _Appendix B_ (page B-1)                                                                                                                |                                                   |
-
-## Endorsement Disclaimer
-
-Mention of a commercial company or product does not constitute an endorsement by NOAA.
-Use of information from this publication for publicity or advertising purposes concerning proprietary products or the tests of such products is not authorized.
-
-## Request to Manual Users
-
-To gauge the success of the QARTOD project,
-it helps to be aware of groups working to utilize these QC tests.
-Please notify us of your efforts or intentions to implement QARTOD processes by sending a brief email to
-<qartod.board@noaa.gov> or posting a notice at
-[http://www.linkedin.com/groups?gid=2521409](http://www.linkedin.com/groups?gid=2521409)
+<https://doi.org/10.25923/vpsx-dc82>
 
 ## Acknowledgements
 
@@ -137,7 +91,7 @@ This manual contains several terms whose meanings are critical to those using th
 
 ## 1.0 Background and Introduction
 
-The U.S. Integrated Ocean Observing System (IOOS<sup>®</sup>) has a vested interest in collecting high-quality data for the 34 core variables (https://ioos.noaa.gov/about/ioos-by-the-numbers) measured on a national scale. In response to this interest, U.S. IOOS continues to establish written, authoritative procedures for the quality control (QC) of real-time data through the Quality Assurance/Quality Control of Real-Time Oceanographic Data (QARTOD) program, addressing each variable as funding and requirements permits. This water level (WL) manual was first published in May 2014 as the fifth in a series of guidance documents that address QC of real-time data of each core variable. It was the fifth manual to be updated (2016) and is now the fifth manual to receive a second update.
+The U.S. Integrated Ocean Observing System (IOOS<sup>®</sup>) has a vested interest in collecting high-quality data for the 34 core variables (<https://ioos.noaa.gov/about/ioos-by-the-numbers>) measured on a national scale. In response to this interest, U.S. IOOS continues to establish written, authoritative procedures for the quality control (QC) of real-time data through the Quality Assurance/Quality Control of Real-Time Oceanographic Data (QARTOD) program, addressing each variable as funding and requirements permits. This water level (WL) manual was first published in May 2014 as the fifth in a series of guidance documents that address QC of real-time data of each core variable. It was the fifth manual to be updated (2016) and is now the fifth manual to receive a second update.
 
 Please refer to <https://ioos.noaa.gov/project/qartod/> for the following documents.
 
@@ -146,7 +100,7 @@ Please refer to <https://ioos.noaa.gov/project/qartod/> for the following docume
 1. U.S. Integrated Ocean Observing System, 2019. Manual for Real-Time Quality Control of In-Situ Surface Wave Data Version 2.1: A Guide to Quality Control and Quality Assurance of In- Situ Surface Wave Observations. 69 pp. <https://doi.org/10.25923/7yc5-vs69>
 1. U.S. Integrated Ocean Observing System, 2019. Manual for Real-Time Quality Control of In-Situ Current Observations Version 2.1 A Guide to Quality Control and Quality Assurance of Acoustic Doppler Current Profiler Observations. 54 pp. <https://doi.org/10.25923/sqe9-e310>
 1. U.S. Integrated Ocean Observing System, 2020. Manual for Real-Time Quality Control of In-situ Temperature and Salinity Data Version 2.1: A Guide to Quality Control and Quality Assurance of In-situ Temperature and Salinity Observations. 50 pp. <https://doi.org/10.25923/x02m-m555>
-1. U.S. Integrated Ocean Observing System, 2017. Manual for Real-Time Quality Control of Wind Data Version 1.1: A Guide to Quality Control and Quality Assurance of Coastal and Oceanic Wind Observations. 47 pp. [[https://doi.org/10.7289/V5FX77NH].
+1. U.S. Integrated Ocean Observing System, 2017. Manual for Real-Time Quality Control of Wind Data Version 1.1: A Guide to Quality Control and Quality Assurance of Coastal and Oceanic Wind Observations. 47 pp. <https://doi.org/10.7289/V5FX77NH>.
 1. U.S. Integrated Ocean Observing System, 2017. Manual for Real-Time Quality Control of Ocean Optics Data Version 1.1: A Guide to Quality Control and Quality Assurance of Coastal and Oceanic Optics Observations. 49 pp. <https://doi.org/10.25923/v9p8-ft24>.
 1. U.S. Integrated Ocean Observing System, 2018. Manual for Real-Time Quality Control of Dissolved Nutrients Data Version 1.1: A Guide to Quality Control and Quality Assurance of Coastal and Dissolved Nutrients Observations. 56 pp. <https://doi.org/10.7289/V5TT4P7R>
 1. U.S. Integrated Ocean Observing System, 2016. Manual for Real-Time Quality Control of High Frequency Radar Surface Currents Data Version 1.0: A Guide to Quality Control and Quality Assurance of High Frequency Radar Surface Currents Data Observations. 60 pp. <https://doi.org/10.7289/V5T43R96>
@@ -204,8 +158,8 @@ These test procedures are written as a high-level narrative from which a compute
 IOOS QARTOD documentation and other QC tests,
 implemented in Python with notebook examples,
 have been developed by the community and are shared at
-[https://github.com/ioos/ioos_qc](https://github.com/ioos/ioos_qc) and
-[https://ioos.github.io/ioos_qc/](https://ioos.github.io/ioos_qc/).
+<https://github.com/ioos/ioos_qc> and
+<https://ioos.github.io/ioos_qc/>.
 Although certain tests are recommended,
 thresholds can vary among operators.
 The tests described here are designed to support a range of WL sensors and operator capabilities.
@@ -310,7 +264,7 @@ Manufacturers describe how to conduct these calibration checks in their user man
 
 Calibrations and calibration checks must be traceable to accepted standards.
 The National Institute of Standards and Technology (NIST)
-([http://www.nist.gov/index.html](http://www.nist.gov/index.html)),
+(<http://www.nist.gov/index.html>),
 a provider of internationally accepted standards,
 is often the source for accepted standards.
 Calibration activities must be tailored to match data use and resources.
@@ -1011,7 +965,7 @@ Further, shortly after this negative-going spike:
 
 - Test 1 - Timing/Gap Test, where the small gap shortly after this second high tide (perhaps difficult to see) would be readily flagged as missing from these 6-minute observations.
 
-![](images_Water_Level/image13.jpg)
+![](images_Water_Level/image13.png)
 
 <figcaption>Figure 3-1. This water level plot from Wachapreague, Va. highlights examples of when real-time data QC tests could identify bad data.</figcaption>
 
@@ -1070,68 +1024,68 @@ The tests do not include post processing,
 which is not conducted in real-time.
 
 Each QC manual is envisioned as a dynamic document and will be posted on the QARTOD website at
-[https://ioos.noaa.gov/project/qartod](https://ioos.noaa.gov/project/qartod/).
+<https://ioos.noaa.gov/project/qartod>.
 This process allows for QC manual updates as technology development occurs for both upgrades of existing sensors and new sensors.
 
 [^1]:
     More information on vertical control and geodetic leveling of CO-OPS observing systems available at
-    [https://tidesandcurrents.noaa.gov/publications/Users_Guide_to_Vertical_Control_and_Geodetic_Leveling_for_CO-OPS_Observing_Systems-May_2018.pdf](https://tidesandcurrents.noaa.gov/publications/Users_Guide_to_Vertical_Control_and_Geodetic_Leveling_for_CO-OPS_Observing_Systems-May_2018.pdf).
+    <https://tidesandcurrents.noaa.gov/publications/Users_Guide_to_Vertical_Control_and_Geodetic_Leveling_for_CO-OPS_Observing_Systems-May_2018.pdf>.
 
 [^2]:
     More detailed information about datums, bench marks, and geodetic leveling,
-    is available at [http://www.ngs.noaa.gov/PUBS_LIB/Geodeticleveling_nos_3.pdf](http://www.ngs.noaa.gov/PUBS_LIB/Geodeticleveling_nos_3.pdf).
+    is available at <http://www.ngs.noaa.gov/PUBS_LIB/Geodeticleveling_nos_3.pdf>.
 
 [^3]:
     Information for this NWLON station is available at
-    [https://tidesandcurrents.noaa.gov/stationhome.html?id=8631044](https://tidesandcurrents.noaa.gov/stationhome.html?id=8631044) - info.
+    <https://tidesandcurrents.noaa.gov/stationhome.html?id=8631044#info>.
 
 ## 5.0 References
 
 > Bushnell, M., Presentation at QARTOD III: (2005). Scripps Institution of Oceanography, La Jolla, California.
 
-> Bushnell, M. H., (2017). Integration of QARTOD Tests Within a Sensor: Considerations for Sensor Manufacturers. MTS/IEEE OCEANS ’17 conference proceedings, 5 pp.
+> Bushnell, M. H., (2017). Integration of QARTOD Tests Within a Sensor: Considerations for Sensor Manufacturers. MTS/IEEE OCEANS'17 conference proceedings, 5 pp.
 
-> Bushnell, M., Waldmann, C., Seitz, S., Buckley, E., Tamburri, M., Hermes, J., Heslop, E., and Lara-Lopez, A, (2019). Quality Assurance of Oceanographic Observations: Standards and Guidance Adopted by an International Partnership. Front. Mar. Sci., Vol. 6. https://doi.org/10.3389/fmars.2019.00706 Supplementary Material https://www.frontiersin.org/articles/10.3389/fmars.2019.00706/full - supplementary-material
+> Bushnell, M., Waldmann, C., Seitz, S., Buckley, E., Tamburri, M., Hermes, J., Heslop, E., and Lara-Lopez, A, (2019). Quality Assurance of Oceanographic Observations: Standards and Guidance Adopted by an International Partnership. Front. Mar. Sci., Vol. 6. <https://doi.org/10.3389/fmars.2019.00706> Supplementary Material <https://www.frontiersin.org/articles/10.3389/fmars.2019.00706/full#supplementary-material>
 
-> Chen, F., Liu, L. & Guo, F. Sea Surface Height Estimation with Multi-GNSS and Wavelet De-noising (2019). Sci Rep 9, 15181. https://doi.org/10.1038/s41598-019-51802-9
+> Chen, F., Liu, L. & Guo, F. Sea Surface Height Estimation with Multi-GNSS and Wavelet De-noising (2019). Sci Rep 9, 15181. <https://doi.org/10.1038/s41598-019-51802-9>
 
-> Geremia-Nievinski, F., Hobiger, T., Haas, R., Liu, W., Strandberg, J., Tabibi, S….Williams, S., (2020). SNR-based GNSS reflectometry for coastal sea-level altimetry: results from the first IAG inter-comparison campaign. J Geod 94, 70 (2020). https://doi.org/10.1007/s00190-020-01387-3
+> Geremia-Nievinski, F., Hobiger, T., Haas, R., Liu, W., Strandberg, J., Tabibi, S….Williams, S., (2020). SNR-based GNSS reflectometry for coastal sea-level altimetry: results from the first IAG inter-comparison campaign. J Geod 94, 70 (2020). <https://doi.org/10.1007/s00190-020-01387-3>
 
-> Gill, S. and Schultz, J., eds. (2001). Tidal Datums and Their Applications. NOAA Special Publication NOS CO-OPS 1, 132 pp. Silver Spring, Maryland. http://tidesandcurrents.noaa.gov/publications/tidal_datums_and_their_applications.pdf
+> Gill, S. and Schultz, J., eds. (2001). Tidal Datums and Their Applications. NOAA Special Publication NOS CO-OPS 1, 132 pp. Silver Spring, Maryland. <http://tidesandcurrents.noaa.gov/publications/tidal_datums_and_their_applications.pdf>
 
-> Global Sea-Level Observing System (GLOSS) Implementation Plan (2012). UNESCO/IOC, 41 pp. 2012. (IOC Technical Series No.100) (English) https://unesdoc.unesco.org/ark:/48223/pf0000217832
+> Global Sea-Level Observing System (GLOSS) Implementation Plan (2012). UNESCO/IOC, 41 pp. 2012. (IOC Technical Series No.100) (English) <https://unesdoc.unesco.org/ark:/48223/pf0000217832>
 
-> Hailegeberel, M., Glassmire, K., Johnson, A., Samant, M., and Dusek, G., (2018). User’s Guide to Vertical Control and Geodetic Leveling for CO-OPS Observing Systems, 64 pp. Center for Operational Oceanographic Products and Services, Silver Spring, Maryland. https://tidesandcurrents.noaa.gov/publications/Users_Guide_to_Vertical_Control_and_Geodetic_Leveling_for_CO-OPS_Observing_Systems-May_2018.pdf
+> Hailegeberel, M., Glassmire, K., Johnson, A., Samant, M., and Dusek, G., (2018). User's Guide to Vertical Control and Geodetic Leveling for CO-OPS Observing Systems, 64 pp. Center for Operational Oceanographic Products and Services, Silver Spring, Maryland. <https://tidesandcurrents.noaa.gov/publications/Users_Guide_to_Vertical_Control_and_Geodetic_Leveling_for_CO-OPS_Observing_Systems-May_2018.pdf>
 
-> IHO S-104, Water Level Information For Surface Navigation, (2017). https://iho.int/uploads/user/ServicesandStandards/TWCWG/MISC/S-104/S-104_Tidal_Information_for_Surface_Navigation_Product_Specification_Documents/S-104_Product_Specification-v0.0.5_Clean.pdf
+> IHO S-104, Water Level Information For Surface Navigation, (2017). <https://iho.int/uploads/user/ServicesandStandards/TWCWG/MISC/S-104/S-104_Tidal_Information_for_Surface_Navigation_Product_Specification_Documents/S-104_Product_Specification-v0.0.5_Clean.pdf>
 
-> NOAA (2013). NOAA, Environmental Measurement Systems Sensor Specifications and Measurement Algorithm. https://tidesandcurrents.noaa.gov/publications/CO-OPS_Measurement_Spec.pdf
+> NOAA (2013). NOAA, Environmental Measurement Systems Sensor Specifications and Measurement Algorithm. <https://tidesandcurrents.noaa.gov/publications/CO-OPS_Measurement_Spec.pdf>
 
-> Paris. Intergovernmental Oceanographic Commission of UNESCO (2013). Ocean Data Standards, Vol.3: Recommendation for a Quality Flag Scheme for the Exchange of Oceanographic and Marine Meteorological Data. (IOC Manuals and Guides, 54, Vol. 3.) 12 pp. (English) (IOC/2013/MG/54-3) http://www.nodc.noaa.gov/oceanacidification/support/MG54_3.pdf
+> Paris. Intergovernmental Oceanographic Commission of UNESCO (2013). Ocean Data Standards, Vol.3: Recommendation for a Quality Flag Scheme for the Exchange of Oceanographic and Marine Meteorological Data. (IOC Manuals and Guides, 54, Vol. 3.) 12 pp. (English) (IOC/2013/MG/54-3) <http://www.nodc.noaa.gov/oceanacidification/support/MG54_3.pdf>
 
-> Park, J., Heitsenrether, R., Sweet, W., (2014). Water Level and Wave Height Estimates at NOAA Tide Stations from Acoustic and Microwave Sensors. NOAA Technical Report NOS CO-OPS 075, 41 pp. Silver Spring, Maryland. QARTOD I-VI Reports (2003-2012): https://ioos.noaa.gov/ioos-in-action/qartod-meetings/.
+> Park, J., Heitsenrether, R., Sweet, W., (2014). Water Level and Wave Height Estimates at NOAA Tide Stations from Acoustic and Microwave Sensors. NOAA Technical Report NOS CO-OPS 075, 41 pp. Silver Spring, Maryland. QARTOD I-VI Reports (2003-2012): <https://ioos.noaa.gov/ioos-in-action/qartod-meetings/>
 
-> Seitz, S., Waldmann, C., Buckley, E., Bushnell, M., (2021). Uncertainty Quantification Use Case: Moored Temperature Sensor Measurement Uncertainty, 18 pp, https://doi.org/10.3389/fmars.2019.00706
+> Seitz, S., Waldmann, C., Buckley, E., Bushnell, M., (2021). Uncertainty Quantification Use Case: Moored Temperature Sensor Measurement Uncertainty, 18 pp, <https://doi.org/10.3389/fmars.2019.00706>
 
-> UNESCO/IOC, (2020). Quality Control of in situ Sea Level Observations: A Review and Progress towards Automated Quality Control, Vol. 1. Paris, UNESCO. IOC Manuals and Guides No.83. (IOC/2020/MG/83Vol.1) https://repository.oceanbestpractices.org/bitstream/handle/11329/1348/IOC-MG-83_eo.pdf?sequence=1&isAllowed=y
+> UNESCO/IOC, (2020). Quality Control of in situ Sea Level Observations: A Review and Progress towards Automated Quality Control, Vol. 1. Paris, UNESCO. IOC Manuals and Guides No.83. (IOC/2020/MG/83Vol.1) <https://repository.oceanbestpractices.org/bitstream/handle/11329/1348/IOC-MG-83_eo.pdf?sequence=1&isAllowed=y>
 
-> U.S. Integrated Ocean Observing System, (2020). Manual for Real-Time Oceanographic Data Quality Control Flags. Version 1.2. Silver Spring, Maryland, U.S. Department of Commerce, National Oceanic and Atmospheric Administration, National Ocean Service, Integrated Ocean Observing System, 24 pp. https://repository.library.noaa.gov/view/noaa/24982
+> U.S. Integrated Ocean Observing System, (2020). Manual for Real-Time Oceanographic Data Quality Control Flags. Version 1.2. Silver Spring, Maryland, U.S. Department of Commerce, National Oceanic and Atmospheric Administration, National Ocean Service, Integrated Ocean Observing System, 24 pp. <https://repository.library.noaa.gov/view/noaa/24982>
 
 Additional References to Related Documents:
 
-> Alliance for Coastal Technologies (ACT) (2012). Accessed March 24, 2021 at http://www.act-us.info/evaluations.php
+> Alliance for Coastal Technologies (ACT) (2012). Accessed March 24, 2021 at <http://www.act-us.info/evaluations.php>
 
-> Intergovernmental Oceanographic Commission Workshop Report No. 81 (1992). Joint IAPSO-IOC Workshop on Sea Level Measurements and Quality Control Paris, 12-1 3 October 1992 http://www.jodc.go.jp/info/ioc_doc/Workshop/094204eo.pdf
+> Intergovernmental Oceanographic Commission Workshop Report No. 81 (1992). Joint IAPSO-IOC Workshop on Sea Level Measurements and Quality Control Paris, 12-1 3 October 1992 <http://www.jodc.go.jp/info/ioc_doc/Workshop/094204eo.pdf>
 
-> National Oceanographic Partnership Program (NOPP) (January 2006). The First U.S. Integrated Ocean Observing System (IOOS) Development Plan – A report of the national Ocean Research Leadership Council and the Interagency Committee on Ocean Science and Resource Management Integration. The National Office for Integrated and Sustained Ocean Observations. Ocean US Publication No. 9. National Data Buoy Center (NDBC) Technical Document 09-02, Handbook of Automated Data Quality Control Checks and Procedures, August 2009. National Data Buoy Center, Stennis Space Center, Mississippi 39529-6000.
+> National Oceanographic Partnership Program (NOPP) (January 2006). The First U.S. Integrated Ocean Observing System (IOOS) Development Plan - A report of the national Ocean Research Leadership Council and the Interagency Committee on Ocean Science and Resource Management Integration. The National Office for Integrated and Sustained Ocean Observations. Ocean US Publication No. 9. National Data Buoy Center (NDBC) Technical Document 09-02, Handbook of Automated Data Quality Control Checks and Procedures, August 2009. National Data Buoy Center, Stennis Space Center, Mississippi 39529-6000.
 
-> Nault, J., (2004). NWLON/DMS Quality Control Software (QC): Functional Requirements Document, NOAA Technical Report NOS CO-OPS 030, Silver Spring, Maryland. https://tidesandcurrents.noaa.gov/publications/NOAA_Technical_Report_NOS_CO-OPS_030_QC_requirements_doc(revised)-11102004.pdf
+> Nault, J., (2004). NWLON/DMS Quality Control Software (QC): Functional Requirements Document, NOAA Technical Report NOS CO-OPS 030, Silver Spring, Maryland. <https://tidesandcurrents.noaa.gov/publications/NOAA_Technical_Report_NOS_CO-OPS_030_QC_requirements_doc(revised)-11102004.pdf>
 
 > NOAA, (2005). Second Workshop Report on the QA of Real-Time Ocean Data, July 2005. 48 pp. Norfolk, Virginia. CCPO Technical Report Series No. 05-01 NOAA, (2009). Fifth Workshop on the QA/QC of Real-Time Oceanographic Data. November 16-19, 2009. 136 pp. Omni Hotel, Atlanta, Georgia. Ocean.US, (2006). National Office for Integrated and Sustained Ocean Observations. (2006). The First U.S. Integrated Ocean Observing System (IOOS) Development Plan, Publication 9, January 2006.
 
-> Perez, B., de Alfonso, M., Huess, V. Rickards, L., (May 2010). Near Real Time Quality Control and Validation of Sea Level In-situ Data within MyOcean. https://archimer.ifremer.fr/doc/00631/74307/73931.pdf
+> Perez, B., de Alfonso, M., Huess, V. Rickards, L., (May 2010). Near Real Time Quality Control and Validation of Sea Level In-situ Data within MyOcean. <https://archimer.ifremer.fr/doc/00631/74307/73931.pdf>
 
-> Rickards, L. and Kilonsky, (1997). Developments in Sea Level Data Management and Exchange. http://www.bodc.ac.uk/projects/international/woce/documents/odspaper.pdf
+> Rickards, L. and Kilonsky, (1997). Developments in Sea Level Data Management and Exchange. <http://www.bodc.ac.uk/projects/international/woce/documents/odspaper.pdf>
 
 Supporting Documents Found on the [QARTOD Website](https://ioos.noaa.gov/ioos-in-action/manual-real-time-quality-control-water-level-data/):
 
@@ -1149,12 +1103,12 @@ The following documents were particularly useful to the committee and reviewers 
 
 Supporting Web Links
 
-- Tidal Datums Link: http://tidesandcurrents.noaa.gov/datum_options.html
-- Post-processing Link: http://ilikai.soest.hawaii.edu/UHSLC/jasl.html Sea Level Data Processing on IBM-PC Compatible Computers Version 3.0 (Year 2000 Compliant) Patrick Caldwell Joint Archive for Sea Level of the National Oceanographic Data Center and University of Hawaii Sea Level Center
-- Stage Measurements at Gaging Stations Link: http://pubs.usgs.gov/tm/tm3-a7/
-- Introduction to Ocean Tides: https://www.meted.ucar.edu/training_module.php?id=223 - .Vul0SbwUWM8 and https://tidesandcurrents.noaa.gov/restles1.html
-- National Geodetic Survey Leveling Manual: http://www.ngs.noaa.gov/PUBS_LIB/Geodeticleveling_nos_3.pdf
-- National Geodetic Survey Bench Mark Manual: http://www.ngs.noaa.gov/PUBS_LIB/GeodeticBMs.pdf
+- Tidal Datums Link: <http://tidesandcurrents.noaa.gov/datum_options.html>
+- Post-processing Link: <http://ilikai.soest.hawaii.edu/UHSLC/jasl.html> Sea Level Data Processing on IBM-PC Compatible Computers Version 3.0 (Year 2000 Compliant) Patrick Caldwell Joint Archive for Sea Level of the National Oceanographic Data Center and University of Hawaii Sea Level Center
+- Stage Measurements at Gaging Stations Link: <http://pubs.usgs.gov/tm/tm3-a7/>
+- Introduction to Ocean Tides: <https://www.meted.ucar.edu/training_module.php?id=223#.Vul0SbwUWM8> and <https://tidesandcurrents.noaa.gov/restles1.html>
+- National Geodetic Survey Leveling Manual: <http://www.ngs.noaa.gov/PUBS_LIB/Geodeticleveling_nos_3.pdf>
+- National Geodetic Survey Bench Mark Manual: <http://www.ngs.noaa.gov/PUBS_LIB/GeodeticBMs.pdf>
 
 ## Appendix A. QARTOD Water Level Manual Team
 
@@ -1377,7 +1331,7 @@ Supporting Web Links
 
 | Name                | Organization                                                                               |
 | :------------------ | :----------------------------------------------------------------------------------------- |
-| Joe Swaykos – Chair | NOAA/National Data Buoy Center                                                             |
+| Joe Swaykos - Chair | NOAA/National Data Buoy Center                                                             |
 | Kathy Bailey        | U.S. IOOS                                                                                  |
 | Julie Bosch         | NOAA/National Centers for Environmental Information                                        |
 | Eugene Burger       | NOAA/Pacific Marine Environmental Laboratory                                               |

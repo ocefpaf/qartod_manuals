@@ -2,65 +2,12 @@
 
 A Guide to Quality Control and Quality Assurance of Acoustic Doppler Current Profiler Observations
 
-Version 2.1
-July 2019
-
-[https://doi.org/10.25923/sqe9-e310](https://doi.org/10.25923/sqe9-e310)
-
-## Revision History
-
-| Date    | Revision Description                                                                                                          | Notes                                                   |
-| ------- | ----------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------- |
-| 06/2013 | Original Document Published                                                                                                   | Manual updated with revisions listed sequentially       |
-| 10/2015 | Revise dates on Document Validation page (page ii)                                                                            |                                                         |
-|         | Add statement requesting feedback from Manual Users (page vii)                                                                |                                                         |
-|         | Update Acknowledgements to include manual update team members (page viii)                                                     |                                                         |
-|         | Update Acronyms and Abbreviations (pages ix-x)                                                                                |                                                         |
-|         | Add Definitions of Selected Terms (after Acronyms and Abbreviations)                                                          |                                                         |
-|         | Revise Background and Introduction to reflect updated currents manual, as                                                     |                                                         |
-|         | well as additional manuals that have been developed (page 1)                                                                  |                                                         |
-|         | Revise section 2.0 content in various places to reflect feedback from reviewers.                                              |                                                         |
-|         | Move Sensor Deployment Considerations from section 3.2 to section 2.4.                                                        |                                                         |
-|         | Add content addressing data uncertainty (page 8)                                                                              |                                                         |
-|         | Update content in sections 3.1 and 3.2 (pages 10 - 13)                                                                        |                                                         |
-|         | Correct the spelling of "codable" in test tables (various)                                                                    |                                                         |
-|         | Add Rate of Change Test (page 22) and Spike Test (page 23)                                                                    |                                                         |
-|         | Update language in section 4.0, summary, to reflect feedback from reviewers. (page 27)                                        |                                                         |
-|         | Update References and Supporting Documents (pages 28- 31)                                                                     |                                                         |
-|         | Add bullet to deployment checklist (page A-5)                                                                                 |                                                         |
-|         | Update In-Situ Surface Currents Manual Team members (page B-1)                                                                |                                                         |
-| 07/2019 | Revise cover page to reflect updated logos.                                                                                   | Second manual update with revisions listed sequentially |
-|         | Revise Document Validation page to reflect new logo, signatures, and dates.                                                   |                                                         |
-|         | Update email address to Request to Manual Users                                                                               |                                                         |
-|         | Update acknowledgements to include version 2.1 reviewers and link to                                                          |                                                         |
-|         | QARTOD workshop reports.                                                                                                      |                                                         |
-|         | Add three terms with definitions (interoperable, sensor, and variable) to Definitions of Selected Terms.                      |                                                         |
-|         | Update section 1 (manuals published to date, addition of DOIs, etc.).                                                         |                                                         |
-|         | Update section 2 (minor editorial revisions, figure numbers, etc.).                                                           |                                                         |
-|         | Update section 3 (minor revisions to tests 4, 5, 6, 7, 14, 17, and 20 and substantial revisions to tests 18 and 19).          |                                                         |
-|         | Update appendix A - add names of manual team for version 2.1 and update names of QARTOD Board of Advisors, U.S. IOOS Regional |                                                         |
-|         | Associations/Executive Directors, and DMAC Community.                                                                         |                                                         |
-|         | Update appendix B – added B-3 and other minor edits.                                                                          |                                                         |
-|         | Update links throughout the manual.                                                                                           |                                                         |
-|         | Update formatting to comply with 508 accessibility requirements.                                                              |                                                         |
-
-## Endorsement Disclaimer
-
-Mention of a commercial company or product does not constitute an endorsement by NOAA.
-Use of information from this publication for publicity or advertising purposes concerning proprietary products or the tests of such products is not authorized.
-
-## Request to Manual Users
-
-To gauge the success of the QARTOD project,
-it helps to be aware of groups working to utilize these QC tests.
-Please notify us of your efforts or intentions to implement QARTOD processes by sending a brief email to
-<qartod.board@noaa.gov> or posting a notice at
-[http://www.linkedin.com/groups?gid=2521409](http://www.linkedin.com/groups?gid=2521409).
+<https://doi.org/10.25923/sqe9-e310>
 
 ## Acknowledgements
 
 We wish to acknowledge those who have contributed to this Version 2.1 update.
-We greatly appreciate the thorough review,
+1We greatly appreciate the thorough review,
 thoughtful comments,
 and contributions of Matthias Lankhorst / University of California San Diego.
 Once again,
@@ -93,24 +40,11 @@ who led the development of the tests in section 3 of this document.
 Through the process of five workshops of the Quality Assurance/Quality Control of Real-Time Oceanographic Data (QARTOD),
 these quality control steps were adapted from existing guidelines of NOAA's National Data Buoy Center (NDBC) and CO-OPS,
 the U.S. Army Corps of Engineers Field Research Facility (USACE FRF),
-and participating manufacturers of current measuring systems—Nortek,
+and participating manufacturers of current measuring systems-Nortek,
 SonTek,
 and Teledyne RDI.
 Additionally,
 the individual tests have been mapped to existing tests of UNESCO (1993).
-
-**QARTOD Meetings** (QARTOD 2003-2009)
-
-- **QARTOD I**: National Data Buoy Center, Stennis Space Center, Mississippi. 3-5 December 2003
-- **QARTOD II**: Norfolk, Virginia. 28 Feb-2 Mar 2005
-- **QARTOD III**: Scripps Institution of Oceanography, La Jolla, California, 2-4 November 2005
-- **QARTOD IV**: Woods Hole Oceanographic Institution, Woods Hole, Massachusetts. 21-23 June 2006
-- **QARTOD V**: Omni Hotel, Atlanta, Georgia, 17-19 November 2009.
-
-Agendas,
-attendees,
-and reports from QARTOD meetings are located at
-[https://ioos.noaa.gov/ioos-in-action/qartod-meetings](https://ioos.noaa.gov/ioos-in-action/qartod-meetings).
 
 ## Acronyms and Abbreviations
 
@@ -169,7 +103,7 @@ These terms are included in the following table to ensure that the meanings are 
 ## 1.0 Background and Introduction
 
 The U.S. Integrated Ocean Observing System (IOOS) has a vested interest in collecting high quality data for the 34 core variables
-([https://ioos.noaa.gov/about/ioos-by-the-numbers(https://ioos.noaa.gov/about/ioos-by-the-numbers)]) measured on a national scale.
+(<https://ioos.noaa.gov/about/ioos-by-the-numbers>) measured on a national scale.
 In response to this interest,
 U.S. IOOS continues to establish written,
 authoritative procedures for the quality control (QC) of real-time data through the Quality Assurance/Quality Control of Real-Time Oceanographic Data (QARTOD) Project,
@@ -178,24 +112,24 @@ This manual on the real-time QC of in-situ current observations was first publis
 was updated in October 2015,
 and is now the third core variable to receive a second update.
 
-Please refer to [https://ioos.noaa.gov/project/qartod](https://ioos.noaa.gov/project/qartod/) for the following documents:
+Please refer to <https://ioos.noaa.gov/project/qartod> for the following documents:
 
-1. U.S. Integrated Ocean Observing System, 2017. U.S IOOS QARTOD Project Plan - Accomplishments for 2012–2016 and Update for 2017–2021. 47 pp. [https://doi.org/10.7289/V5JQ0Z](https://doi.org/10.7289/V5JQ0Z)
-1. U.S. Integrated Ocean Observing System, 2018. Manual for Real-Time Quality Control of Dissolved Oxygen Observations Version 2.1: A Guide to Quality Control and Quality Assurance for Dissolved Oxygen Observations in Coastal Oceans. 48 pp. [https://doi.org/10.25923/q0m1-d](https://doi.org/10.25923/q0m1-d)
-1. U.S. Integrated Ocean Observing System, 2019. Manual for Real-Time Quality Control of In-Situ Surface Wave Data Version 2.1: A Guide to Quality Control and Quality Assurance of In- Situ Surface Wave Observations. 70 pp. [https://doi.org/10.25923/7yc5-vs](https://doi.org/10.25923/7yc5-vs)
-1. U.S. Integrated Ocean Observing System, 2016. Manual for Real-Time Quality Control of In-Situ Temperature and Salinity Data Version 2.0: A Guide to Quality Control and Quality Assurance of In- Situ Temperature and Salinity Observations. 56 pp. [https://doi.org/10.7289/V5V40SD](https://doi.org/10.7289/V5V40SD)
-1. U.S. Integrated Ocean Observing System, 2016. Manual for Real-Time Quality Control of Water Level Data Version 2.0: A Guide to Quality Control and Quality Assurance of Water Level Observations. 4 6 pp. [https://doi.org/10.7289/V5QC01Q](https://doi.org/10.7289/V5QC01Q)
-1. U.S. Integrated Ocean Observing System, 2017. Manual for Real-Time Quality Control of Wind Data Version 1.1: A Guide to Quality Control and Quality Assurance of Coastal and Oceanic Wind Observations. 47 pp. [https://doi.org/10.7289/V5FX77NH](https://doi.org/10.7289/V5FX77NH)
-1. U.S. Integrated Ocean Observing System, 2017. Manual for Real-Time Quality Control of Ocean Optics Data Version 1.1: A Guide to Quality Control and Quality Assurance of Coastal and Oceanic Optics Observations. 49 pp. [https://doi.org/10.25923/v9p8-ft](https://doi.org/10.25923/v9p8-ft)
-1. U.S. Integrated Ocean Observing System, 2018. Manual for Real-Time Quality Control of Dissolved Nutrients Data Version 1.1: A Guide to Quality Control and Quality Assurance of Coastal and Dissolved Nutrients Observations. 56 pp. [https://doi.org/10.7289/V5TT4P7R](https://doi.org/10.7289/V5TT4P7R)
-1. U.S. Integrated Ocean Observing System, 2016. Manual for Real-Time Quality Control of High Frequency Radar Surface Currents Data Version 1.0: A Guide to Quality Control and Quality Assurance of High Frequency Radar Surface Currents Data Observations. 58 pp. [https://doi.org/10.7289/V5T43R](https://doi.org/10.7289/V5T43R)
-1. U.S. Integrated Ocean Observing System, 2017. Manual for Real-Time Quality Control of Phytoplankton Data Version 1.0: A Guide to Quality Control and Quality Assurance of Phytoplankton Data Observations. 67 pp. [https://doi.org/10.7289/V56D5R6S](https://doi.org/10.7289/V56D5R6S)
-1. U.S. Integrated Ocean Observing System, 2017. Manual for Real-Time Quality Control of Passive Acoustics Data Version 1.0: A Guide to Quality Control and Quality Assurance of Passive Acoustics Observations. 45 pp. [https://doi.org/10.7289/V5PC30M](https://doi.org/10.7289/V5PC30M)
-1. U.S. Integrated Ocean Observing System, 2018. Manual for Real-Time Quality Control of Stream Flow Data Version 1.0: A Guide to Quality Control and Quality Assurance of Stream Flow Observations in Rivers and Streams. 45 pp. [https://doi.org/10.25923/gszc-ha](https://doi.org/10.25923/gszc-ha)
+1. U.S. Integrated Ocean Observing System, 2017. U.S IOOS QARTOD Project Plan - Accomplishments for 2012-2016 and Update for 2017-2021. 47 pp. <https://doi.org/10.7289/V5JQ0Z>
+1. U.S. Integrated Ocean Observing System, 2018. Manual for Real-Time Quality Control of Dissolved Oxygen Observations Version 2.1: A Guide to Quality Control and Quality Assurance for Dissolved Oxygen Observations in Coastal Oceans. 48 pp. <https://doi.org/10.25923/q0m1-d>
+1. U.S. Integrated Ocean Observing System, 2019. Manual for Real-Time Quality Control of In-Situ Surface Wave Data Version 2.1: A Guide to Quality Control and Quality Assurance of In- Situ Surface Wave Observations. 70 pp. <https://doi.org/10.25923/7yc5-vs>
+1. U.S. Integrated Ocean Observing System, 2016. Manual for Real-Time Quality Control of In-Situ Temperature and Salinity Data Version 2.0: A Guide to Quality Control and Quality Assurance of In- Situ Temperature and Salinity Observations. 56 pp. <https://doi.org/10.7289/V5V40SD>
+1. U.S. Integrated Ocean Observing System, 2016. Manual for Real-Time Quality Control of Water Level Data Version 2.0: A Guide to Quality Control and Quality Assurance of Water Level Observations. 4 6 pp. <https://doi.org/10.7289/V5QC01Q>
+1. U.S. Integrated Ocean Observing System, 2017. Manual for Real-Time Quality Control of Wind Data Version 1.1: A Guide to Quality Control and Quality Assurance of Coastal and Oceanic Wind Observations. 47 pp. <https://doi.org/10.7289/V5FX77NH>
+1. U.S. Integrated Ocean Observing System, 2017. Manual for Real-Time Quality Control of Ocean Optics Data Version 1.1: A Guide to Quality Control and Quality Assurance of Coastal and Oceanic Optics Observations. 49 pp. <https://doi.org/10.25923/v9p8-ft>
+1. U.S. Integrated Ocean Observing System, 2018. Manual for Real-Time Quality Control of Dissolved Nutrients Data Version 1.1: A Guide to Quality Control and Quality Assurance of Coastal and Dissolved Nutrients Observations. 56 pp. <https://doi.org/10.7289/V5TT4P7R>
+1. U.S. Integrated Ocean Observing System, 2016. Manual for Real-Time Quality Control of High Frequency Radar Surface Currents Data Version 1.0: A Guide to Quality Control and Quality Assurance of High Frequency Radar Surface Currents Data Observations. 58 pp. <https://doi.org/10.7289/V5T43R>
+1. U.S. Integrated Ocean Observing System, 2017. Manual for Real-Time Quality Control of Phytoplankton Data Version 1.0: A Guide to Quality Control and Quality Assurance of Phytoplankton Data Observations. 67 pp. <https://doi.org/10.7289/V56D5R6S>
+1. U.S. Integrated Ocean Observing System, 2017. Manual for Real-Time Quality Control of Passive Acoustics Data Version 1.0: A Guide to Quality Control and Quality Assurance of Passive Acoustics Observations. 45 pp. <https://doi.org/10.7289/V5PC30M>
+1. U.S. Integrated Ocean Observing System, 2018. Manual for Real-Time Quality Control of Stream Flow Data Version 1.0: A Guide to Quality Control and Quality Assurance of Stream Flow Observations in Rivers and Streams. 45 pp. <https://doi.org/10.25923/gszc-ha>
 
 Please refer to this document as:
 
-    U.S. Integrated Ocean Observing System, 2019. Manual for Real-Time Quality Control of In-Situ Current Observations Version 2.1 A Guide to Quality Control and Quality Assurance of Acoustic Doppler Current Profiler Observations. 52 pp. https://doi.org/10.25923/sqe9-e
+    U.S. Integrated Ocean Observing System, 2019. Manual for Real-Time Quality Control of In-Situ Current Observations Version 2.1 A Guide to Quality Control and Quality Assurance of Acoustic Doppler Current Profiler Observations. 52 pp. <https://doi.org/10.25923/sqe9-e>
 
 This document follows and expands on the National Surface Currents Plan (U.S. IOOS 2015 ).
 The U.S. Army Corps of Engineers (USACE) and the National Oceanic and Atmospheric Administration's (NOAA) National Data Buoy Center (NDBC) and Center for Operational Oceanographic Products and Services (CO-OPS),
@@ -274,7 +208,7 @@ the verification of user satisfaction,
 and generation of data flags (Bushnell 2005).
 
 These procedures are written as a high-level narrative from which computer code can be developed to generate specific data flags (data quality indicators) within an automated software program.
-A code repository exists at [https://github.com/ioos/qartod](https://github.com/ioos/qartod),
+A code repository exists at <https://github.com/ioos/qartod>,
 where operators may find or post examples of code in use.
 Although certain tests are recommended,
 thresholds can vary among operators.
@@ -282,7 +216,7 @@ The tests described here are designed to support a range of current sensors and 
 Some well-established programs with the highest standards have implemented very rigorous QC processes.
 Others,
 with different requirements,
-may utilize sensors with data streams that cannot support as many QC checks—all have value when used prudently.
+may utilize sensors with data streams that cannot support as many QC checks-all have value when used prudently.
 Users must understand and appropriately utilize data of varying quality,
 and operators must provide support by documenting and publishing their QC processes.
 A balance must be struck between the time-sensitive needs of real-time observing systems and the degree of rigor that has been applied to non-real-time systems by operators with decades of QC experience.
@@ -293,7 +227,7 @@ real-time measurement of current points and current profiles as observed by sens
 Through the process of the first four QARTOD workshops,
 a set of guidelines were collected and submitted to the Ocean.US Data Management and Communications (DMAC) Steering Committee (Bouchard et al. 2007).
 Those guidelines were adapted from existing guidelines developed and implemented by established providers of currents data,
-as well as participating manufacturers of current-measuring systems—Nortek,
+as well as participating manufacturers of current-measuring systems-Nortek,
 SonTek,
 and Teledyne RDI.
 Additionally,
@@ -332,7 +266,7 @@ which are also usually described in their user manuals.
 These activities are considered QA and are further addressed in appendix B.
 
 Calibrations and calibration checks must be traceable to accepted standards.
-The National Institute of Standards and Technology (NIST) ([http://www.nist.gov/index.html](http://www.nist.gov/index.html)),
+The National Institute of Standards and Technology (NIST) (<http://www.nist.gov/index.html>),
 a provider of internationally accepted standards,
 is often the source for accepted standards,
 but there is no standard for measurement of currents.
@@ -535,7 +469,7 @@ Tests are listed in table 3-2 and are divided into four groups according to test
 The tests in group 1 (table 3-3) are required (where possible) for all current measurements collected for U.S. IOOS.
 However,
 the output of some instruments is not sufficient for some tests.
-Operators must consider each test in group 2 to determine if it can be applied in their particular instance—not all tests can be implemented in all situations.
+Operators must consider each test in group 2 to determine if it can be applied in their particular instance-not all tests can be implemented in all situations.
 Operators should also consider that some of these tests can be carried out within the instrument,
 where thresholds can be defined in configuration files.
 Although more tests imply a more robust QC effort,
@@ -637,9 +571,9 @@ Operators are strongly encouraged to share improved versions of all tests as the
 
 Each test checks to ensure that the sensor is working properly.
 
-**Battery Voltage (Test 1) – Strongly Recommended**
+**Battery Voltage (Test 1) - Strongly Recommended**
 
-Check for sufficient battery voltage
+Check for sufficient battery voltage.
 Test determines that there is sufficient battery voltage (`BATTVOLT`) to provide a "good" measurement.
 
 | Flags       | Condition                                                     | Codable Instructions          |
@@ -713,7 +647,7 @@ Example: `SSMIN = 1,475 m/s`, `SSMAX = 1,560 m/s`, `SSVAL = 1,528 m/s`, flag = 1
 
 Signal quality tests are applied to each beam of the sensor and to each depth level that is transmitted by the sensor.
 
-**Noise Floor (Test 5) – Strongly Recommended**
+**Noise Floor (Test 5) - Strongly Recommended**
 
 Ensure that measured values of signal are above the noise value.
 System noise within each of the beams should be within a specified range of values.
@@ -757,7 +691,7 @@ Test specifications to be established by the manufacturer.
 
 Example: `SCMDBMIN = 25` counts (Nortek Aquadopp)
 
-**Signal-to-Noise (Test 7) – Strongly Recommended**
+**Signal-to-Noise (Test 7) - Strongly Recommended**
 
 Test that the signal-to-noise ratio is sufficient.
 The signal-to-noise ratio value should exceed an operator-prescribed value for each bin for the measurements to be valid.
@@ -774,7 +708,7 @@ Test specifications to be established locally by operator.
 
 Example: Operators to provide examples as procedures are implemented.
 
-**Correlation Magnitude (Test 8) – Strongly Recommended**
+**Correlation Magnitude (Test 8) - Strongly Recommended**
 
 Test that correlation magnitude is above an acceptable threshold.
 
@@ -797,7 +731,7 @@ Test specifications to be established by the manufacturer.
 
 Example: Correlation Magnitude (in counts) ≥3 beams need to pass test `CMAGMIN = 65`, `CMAGMAX = 140`.
 
-**Percent Good (Test 9) – Strongly Recommended**
+**Percent Good (Test 9) - Strongly Recommended**
 
 Percentage of high data quality measurements to produce good velocities.
 A key quality control parameter,
@@ -895,7 +829,7 @@ Test specifications to be established locally by operator.
 
 Example: Operators to provide examples as procedures are implemented.
 
-**Vertical Velocity (Test 13) – Strongly Recommended**
+**Vertical Velocity (Test 13) - Strongly Recommended**
 
 Ensure that vertical velocities are valid measurements.
 Vertical velocities are reported by many ADCPs.
@@ -917,7 +851,7 @@ Test specifications may be established locally by operator.
 
 Example: `VELMAX = 0.15 m/s`
 
-**Error Velocity (Test 14) – Strongly Recommended**
+**Error Velocity (Test 14) - Strongly Recommended**
 
 Test that the error velocity is below an acceptable threshold.
 
@@ -925,7 +859,7 @@ Error velocity is a key QC parameter that derives from the four-beam geometry of
 Each pair of opposing beams provides one measurement of the vertical velocity and one component of the horizontal velocity,
 so there are two independent measurements of velocity that can be compared.
 If the flow field is homogeneous
-([http://www.teledynemarine.com/rdi](http://www.teledynemarine.com/rdi)),
+(<http://www.teledynemarine.com/rdi>),
 the difference between these velocities will average to zero.
 The error velocity can be treated as an indication of errors in the horizontal velocity measurements.
 
@@ -943,7 +877,7 @@ Test specifications to be established by the manufacturer.
 
 Example: `EVMAX = 20`, `EVMIN = 15`
 
-**u, v Rate of Change (Test 15) – Strongly Recommended**
+**u, v Rate of Change (Test 15) - Strongly Recommended**
 
 Test that velocity/direction change is below an acceptable threshold.
 
@@ -965,7 +899,7 @@ Test Exception: None.
 
 Example: `RC_VEL_FAIL = 100 cm/s`, `RC_VEL_SUSPECT = 50 cm/s`
 
-**u, v Spike (Test 16) – Strongly Recommended**
+**u, v Spike (Test 16) - Strongly Recommended**
 
 Test if u, v (n-1) values exceed selected thresholds relative to adjacent time series data points.
 
@@ -1032,7 +966,7 @@ Examples: `REP_CNT_FAIL = 5`, `REP_CNT_SUSPECT = 3`
 These tests use the entire beam length or current profile to check a variety of conditions.
 They do not apply to a single-point acoustic Doppler current meter.
 
-**Echo Intensity (Test 18) – Required**
+**Echo Intensity (Test 18) - Required**
 
 Check for echo intensities that may indicate interactions with the surface,
 bottom,
@@ -1063,7 +997,7 @@ Test specifications to be established locally by the operator.
 
 Example: `MAXEICNT = 30 counts`, `NUMBEAM = 4`, `BADBEAM = 1`, `D = 3`
 
-**Echo Intensity Drop-off (Test 19) – Strongly Recommended**
+**Echo Intensity Drop-off (Test 19) - Strongly Recommended**
 
 Test of echo intensity with distance from the transmitter.
 
@@ -1089,7 +1023,7 @@ Test specifications to be established locally by the operator.
 
 Examples: `MINEICNT = 20` counts, `NUMBEAM = 4`, `BADBEAM = 1`, `D = 3`
 
-**Current Gradient (Test 20) – Strongly Recommended**
+**Current Gradient (Test 20) - Strongly Recommended**
 
 Test for excessive current speed/direction changes in the vertical profile.
 
@@ -1164,54 +1098,54 @@ or delayed-mode,
 which is required for climate studies.
 
 Future QARTOD reports will address standard QC procedures and best practices for all types of common as well as uncommon platforms and sensors for all the U.S. IOOS core variables.
-Each QC manual is envisioned as a dynamic document and will be posted on the QARTOD website at [https://ioos.noaa.gov/project/qartod](https://ioos.noaa.gov/project/qartod/).
+Each QC manual is envisioned as a dynamic document and will be posted on the QARTOD website at <https://ioos.noaa.gov/project/qartod>.
 This process allows for QC manual updates as technology development occurs for both upgrades of existing sensors and new sensors.
 
 ## 5.0 References
 
-> Bouchard, R.H. (Editor) and the participants in the QARTOD Workshops and Waves Technical Conference: 2007. Real-Time Quality Control Tests for In Situ Ocean Surface Waves, 25pp. http://nautilus.baruch.sc.edu/twiki/pub/Main/WaveQC/QARTOD_WAVE_QC_for_IOOS_DMAC_submission.pdf
+> Bouchard, R.H. (Editor) and the participants in the QARTOD Workshops and Waves Technical Conference: 2007. Real-Time Quality Control Tests for In Situ Ocean Surface Waves, 25pp. <http://nautilus.baruch.sc.edu/twiki/pub/Main/WaveQC/QARTOD_WAVE_QC_for_IOOS_DMAC_submission.pdf>
 
-> Bushnell, M., Presentation at QARTOD III: November 2005. Scripps Institution of Oceanography, La Jolla, California. http://dx.doi.org/10.25607/OBP-390
+> Bushnell, M., Presentation at QARTOD III: November 2005. Scripps Institution of Oceanography, La Jolla, California. <http://dx.doi.org/10.25607/OBP-390>
 
-> Interagency Ocean Observation Committee (IOOC), 2012. Integrated Ocean Observing System (IOOS) Certification Criteria. 11 pp. https://cdn.ioos.noaa.gov/media/2017/12/IOOS-Certification-Criteria_4-25-12.pdf
+> Interagency Ocean Observation Committee (IOOC), 2012. Integrated Ocean Observing System (IOOS) Certification Criteria. 11 pp. <https://cdn.ioos.noaa.gov/media/2017/12/IOOS-Certification-Criteria_4-25-12.pdf>
 
 > National Data Buoy Center (NDBC) Technical Document 09-02, Handbook of Automated Data Quality Control Checks and Procedures, National Data Buoy Center, Stennis Space Center, Mississippi 39529-6000. August 2009.
 
-> Paris. Intergovernmental Oceanographic Commission of UNESCO. 2013. Ocean Data Standards, Vol.3: Recommendation for a Quality Flag Scheme for the Exchange of Oceanographic and Marine Meteorological Data. (IOC Manuals and Guides, 54, Vol. 3.) 12 pp. (English.)(IOC/2013/MG/54-3). http://www.iode.org/index.php?option=com_oe&task=viewDocumentRecord&docID=10762
+> Paris. Intergovernmental Oceanographic Commission of UNESCO. 2013. Ocean Data Standards, Vol.3: Recommendation for a Quality Flag Scheme for the Exchange of Oceanographic and Marine Meteorological Data. (IOC Manuals and Guides, 54, Vol. 3.) 12 pp. (English.)(IOC/2013/MG/54-3). <http://www.iode.org/index.php?option=com_oe&task=viewDocumentRecord&docID=10762>
 
-> QARTOD I-V Reports 2003-2009. Web address to be updated. UNESCO, 1993. Manual and Guides 26, Manual of Quality Control Procedures for Validation of Oceanographic Data, Section 2.2, Appendix A1: Wave Data. Prepared by CEC: DG-XII, MAST and IOC: IODE. 436pp. http://unesdoc.unesco.org/images/0013/001388/138825eo.pdf
+> QARTOD I-V Reports 2003-2009. Web address to be updated. UNESCO, 1993. Manual and Guides 26, Manual of Quality Control Procedures for Validation of Oceanographic Data, Section 2.2, Appendix A1: Wave Data. Prepared by CEC: DG-XII, MAST and IOC: IODE. 436pp. <http://unesdoc.unesco.org/images/0013/001388/138825eo.pdf>
 
-> U.S. IOOS QARTOD Project Plan – Final. February 18, 2012. Available online at: http://www.ioos.noaa.gov/qartod/qa_qc_projectplan_dec2012.pdf [Suggest deleting b/c listed in section 1.]
+> U.S. IOOS QARTOD Project Plan - Final. February 18, 2012. Available online at: <http://www.ioos.noaa.gov/qartod/qa_qc_projectplan_dec2012.pdf> [Suggest deleting b/c listed in section 1.]
 
-> U.S. IOOS, Updated May 2015. A Plan to Meet the Nation’s Need for Surface Current Mapping. https://cdn.ioos.noaa.gov/media/2017/12/national_surface_current_planMay2015.pdf
+> U.S. IOOS, Updated May 2015. A Plan to Meet the Nation's Need for Surface Current Mapping. <https://cdn.ioos.noaa.gov/media/2017/12/national_surface_current_planMay2015.pdf>
 
-> U.S. IOOS Office, November 2010. A Blueprint for Full Capability, Version 1.0, 254 pp. https://cdn.ioos.noaa.gov/media/2017/12/us_ioos_blueprint_ver1.pdf
+> U.S. IOOS Office, November 2010. A Blueprint for Full Capability, Version 1.0, 254 pp. <https://cdn.ioos.noaa.gov/media/2017/12/us_ioos_blueprint_ver1.pdf>
 
-> U.S. Integrated Ocean Observing System, Updated May 2017. Manual for the Use of Real-Time Oceanographic Data Quality Control Flags. 19 pp. https://repository.library.noaa.gov/view/noaa/15488/Share
+> U.S. Integrated Ocean Observing System, Updated May 2017. Manual for the Use of Real-Time Oceanographic Data Quality Control Flags. 19 pp. <https://repository.library.noaa.gov/view/noaa/15488/Share>
 
 ## 6.0 Additional References to Related Documents:
 
-> Alliance for Coastal Technologies (ACT) 2012. Accessed May 13, 2019 at http://www.act-us.info/evaluations.php
+> Alliance for Coastal Technologies (ACT) 2012. Accessed May 13, 2019 at <http://www.act-us.info/evaluations.php>
 
-> Argo Quality Control Manual: http://www.argodatamgt.org/content/download/341/2650/file/argo-quality-control-manual-V2.7.pdf
+> Argo Quality Control Manual: <http://www.argodatamgt.org/content/download/341/2650/file/argo-quality-control-manual-V2.7.pdf>
 
-> National Oceanographic Partnership Program (NOPP) January 2006. The First U.S. Integrated Ocean Observing System (IOOS) Development Plan – A report of the National Ocean Research Leadership Council and the Interagency Committee on Ocean Science and Resource Management Integration. The National Office for Integrated and Sustained Ocean Observations. Ocean US Publication No. 9. http://www.usnfra.org/documents/IOOSDevPlan_low-res.pdf
+> National Oceanographic Partnership Program (NOPP) January 2006. The First U.S. Integrated Ocean Observing System (IOOS) Development Plan - A report of the National Ocean Research Leadership Council and the Interagency Committee on Ocean Science and Resource Management Integration. The National Office for Integrated and Sustained Ocean Observations. Ocean US Publication No. 9. <http://www.usnfra.org/documents/IOOSDevPlan_low-res.pdf>
 
 > Crout, R., D. Conlee, D. Gilhousen, R. Bouchard, M. Garcia, F. Demarco, M. Livingston, C. Cooper, and R. Raye, 2006: Real-time oil platform ocean current data in the Gulf of Mexico: an IOOS industry partnership success story. Proc. AMS, 22nd International Conference on Interactive Information Processing Systems for Meteorology, Oceanography, and Hydrology.
 
-> Bender, L.C. and S.F. DiMarco. 2009. Quality control and analysis of acoustic Doppler current profiler data collected on offshore platforms of the Gulf of Mexico. U.S. Dept. of the Interior, Minerals Mgmt. Service, Gulf of Mexico OCS Region, New Orleans, LA. OCS Study MMS 2009-010. 63 pp. http://www.data.boem.gov/PI/PDFImages/ESPIS/4/4888.pdf
+> Bender, L.C. and S.F. DiMarco. 2009. Quality control and analysis of acoustic Doppler current profiler data collected on offshore platforms of the Gulf of Mexico. U.S. Dept. of the Interior, Minerals Mgmt. Service, Gulf of Mexico OCS Region, New Orleans, LA. OCS Study MMS 2009-010. 63 pp. <http://www.data.boem.gov/PI/PDFImages/ESPIS/4/4888.pdf>
 
-> GTSPP Real-Time Quality Control Manual, First Revised Edition. UNESCO-IOC 2010. (IOC Manuals and Guides No. 22, Revised Edition.) (IOC/2010/MG/22Rev.) English only http://www.nodc.noaa.gov/GTSPP/document/qcmans/MG22rev1.pdf
+> GTSPP Real-Time Quality Control Manual, First Revised Edition. UNESCO-IOC 2010. (IOC Manuals and Guides No. 22, Revised Edition.) (IOC/2010/MG/22Rev.) English only <http://www.nodc.noaa.gov/GTSPP/document/qcmans/MG22rev1.pdf>
 
-> Haines, S., R. Crout, J. Bosch, W. Burnett, J. Fredericks, D. Symonds and J. Thomas, 2011. A summary of quality control tests for waves and in situ currents and their effectiveness, in IEEE/OES 10th Current, Waves and Turbulence Measurements (CWTM), 100 - 106 DOI: 10.1109/CWTM.2011.5759534. http://ieeexplore.ieee.org/xpls/abs_all.jsp?arnumber=5759534
+> Haines, S., R. Crout, J. Bosch, W. Burnett, J. Fredericks, D. Symonds and J. Thomas, 2011. A summary of quality control tests for waves and in situ currents and their effectiveness, in IEEE/OES 10th Current, Waves and Turbulence Measurements (CWTM), 100 - 106 DOI: 10.1109/CWTM.2011.5759534. <http://ieeexplore.ieee.org/xpls/abs_all.jsp?arnumber=5759534>
 
-> Hankin, S. and DMAC Steering Committee, 2005. Data management and communications plans for research and operational integrated ocean observing systems: I interoperable data discovery, access, and archive, Ocean.US, Arlington, VA, 304 pp. http://sccoos.ucsd.edu/docs/dmac_plan2005.pdf
+> Hankin, S. and DMAC Steering Committee, 2005. Data management and communications plans for research and operational integrated ocean observing systems: I interoperable data discovery, access, and archive, Ocean.US, Arlington, VA, 304 pp. <http://sccoos.ucsd.edu/docs/dmac_plan2005.pdf>
 
-> Integrated Marine Observing System http://imos.org.au (see also https://github.com/aodn/imos-toolbox)
+> Integrated Marine Observing System <http://imos.org.au> (see also <https://github.com/aodn/imos-toolbox>)
 
-> Moore, A.N, D.L. Stewart, March 2003. “The effects of mobile scatterers on the quality of ADCP data in differing marine environments.” Proceedings of the IEEE/OES Seventh Working Conference on Current Measurement Technology. p. 202-206. Recommendations for in-situ data Real Time Quality Control, Authors: Sylvie Pouliquen and the DATA-MEQ working group, 2015. http://eurogoos.eu/download/Pouliquen_DATAMEQ%20WG.pdf
+> Moore, A.N, D.L. Stewart, March 2003. "The effects of mobile scatterers on the quality of ADCP data in differing marine environments." Proceedings of the IEEE/OES Seventh Working Conference on Current Measurement Technology. p. 202-206. Recommendations for in-situ data Real Time Quality Control, Authors: Sylvie Pouliquen and the DATA-MEQ working group, 2015. <http://eurogoos.eu/download/Pouliquen_DATAMEQ%20WG.pdf>
 
-> Reverdin, G., V. Thierry, J. Utiz, F. d’Ortenzio, E. Bradshaw, B. Pfeil (2017). Recommendations for an automatic RT or NRT QC for selected EOVs (T&S, Current, Oxygen, CHla, Nitrate, Carbon, Sea level). AtlantOS 633211, Work Package 7, Deliverable D7.2 https://www.atlantos-h2020.eu/download/7.2-QC-Report.pdf
+> Reverdin, G., V. Thierry, J. Utiz, F. d'Ortenzio, E. Bradshaw, B. Pfeil (2017). Recommendations for an automatic RT or NRT QC for selected EOVs (T&S, Current, Oxygen, CHla, Nitrate, Carbon, Sea level). AtlantOS 633211, Work Package 7, Deliverable D7.2 <https://www.atlantos-h2020.eu/download/7.2-QC-Report.pdf>
 
 ## Appendix A. Quality Assurance
 
@@ -1233,7 +1167,7 @@ An effective QA effort continually strives to ensure that end data products are 
 
 Magnetic declination, also called magnetic variation, refers to the angle between magnetic north and true north at a given location on the earth. Since current meters usually derive current direction from a magnetic compass, the resulting data must be corrected in order to obtain the direction or velocities in true earth coordinates. There is a high risk that this correction could be applied incorrectly (e.g., with the wrong sign, forgotten entirely, or applied twice in separate data processing steps), resulting in wrong data. A proper QA procedure will unambiguously determine at what step the declination correction is made and annotate what the correction has been with unambiguous metadata in the final data. One method used to ensure the correction is properly applied is to record the variation, the magnetic heading, and the true heading.
 
-Magnetic deviation refers to errors in compass readings that are incurred by magnetic materials (metal such as steel, mooring wire, batteries) near the sensors. Vendors of current meters usually provide ‘calibration’ procedures that the operator should follow (e.g., by spinning the instrument a certain way in a setup mode). In addition, it is paramount that magnetic materials be kept away from the sensors while deployed. If this is not possible, the calibration procedure could be done with the surrounding metal structures attached, so that corrections may be made for some of the deviations caused by the structure and not just the instrument itself.
+Magnetic deviation refers to errors in compass readings that are incurred by magnetic materials (metal such as steel, mooring wire, batteries) near the sensors. Vendors of current meters usually provide 'calibration' procedures that the operator should follow (e.g., by spinning the instrument a certain way in a setup mode). In addition, it is paramount that magnetic materials be kept away from the sensors while deployed. If this is not possible, the calibration procedure could be done with the surrounding metal structures attached, so that corrections may be made for some of the deviations caused by the structure and not just the instrument itself.
 
 At high latitudes, the earths magnetic field exhibits increasing dip which reduces the signal strength available to a compass. Operators must be aware of the potentially reduced compass accuracy. Vendors are solving the problem by using more sensitive compasses, but these will be more sensitive to magnetic deviation as well.
 
@@ -1244,7 +1178,7 @@ Bio-fouling is the most frequent cause of sensor failure, so the following strat
 - Use anti-fouling paint with the highest copper content available (up to 75%) when possible (not on aluminum).
 - Wrap body of sensor with clear packing tape for a small probe or plastic wrap for a large instrument. This keeps the PVC tape from leaving residue on the sensor. Heavy PVC underground cable tape is the best for bad bio-fouling.
 - Wrap with copper tape (again, beware of aluminum).
-- Coat with zinc oxide (Desitin ointment – manufactured by Johnson and Johnson Inc.; 1 Johnson and Johnson Plaza, New Brunswick, NJ 08933 (732) 524-0400).
+- Coat with zinc oxide (Desitin ointment - manufactured by Johnson and Johnson Inc.; 1 Johnson and Johnson Plaza, New Brunswick, NJ 08933 (732) 524-0400).
 - Remember that growth is sensor-, depth-, location-, and season-dependent; plan instrument recovery frequency accordingly.
 - Plan for routine changing or cleaning of sensor as necessary.
 - Check with calibration facility on which anti-foulants will be handled (allowed) by the calibrators.
@@ -1262,19 +1196,19 @@ The following lists suggest ways to ensure QA by using specific procedures and t
 - Perform periodic calibration of ready-to-use spares
 - Monitor with redundant sensors whenever possible
 - Take photos of sensor fouling for records
-- Record all actions related to sensors – calibration, cleaning, deployment, etc.
+- Record all actions related to sensors - calibration, cleaning, deployment, etc.
 - Monitor battery voltage and watch for unexpected fluctuations
 
 When evaluating which instrument to use, consider these factors:
 
 - Selection of a reliable and supportive manufacturer and appropriate model
-- Operating range (i.e., some instruments won’t operate at certain temperatures, pressures, or depths)
+- Operating range (i.e., some instruments won't operate at certain temperatures, pressures, or depths)
 - Resolution/precision required
-- Sampling frequency – how fast sensor can take measurements
-- Reporting frequency – how often the sensor reports the data
-- Response time of the sensor – sensor lag – time response
-- Instrument check – visual inspection for defects, bio-fouling, etc.
-- Power check – master clock, battery, etc. – variability among these sensors
+- Sampling frequency - how fast sensor can take measurements
+- Reporting frequency - how often the sensor reports the data
+- Response time of the sensor - sensor lag - time response
+- Instrument check - visual inspection for defects, bio-fouling, etc.
+- Power check - master clock, battery, etc. - variability among these sensors
 - Standardize sensor clock to a reference such as GPS timing
 - Capability to reveal a problem with data
 
@@ -1287,7 +1221,7 @@ When evaluating which specifications must be met:
 
 General comments regarding QA procedures:
 
-- A diagram (http://www.ldeo.columbia.edu/~dale/dataflow/), contributed by Dale Chayes (LDEO) provides a visual representation of proper QA procedures.
+- A diagram (<http://www.ldeo.columbia.edu/~dale/dataflow/>), contributed by Dale Chayes (LDEO) provides a visual representation of proper QA procedures.
 - Require serial numbers and model ID from the supplier.
 - Do not make the checklist so detailed that it will not be used.
 - Do not assume the calibration is perfect (could be a calibration problem rather than a sensor problem).
@@ -1313,21 +1247,21 @@ A wide variety of techniques are used by operators to assure that sensors are pr
 Current sensor operators also have access to other sources of QA practices and information about a variety of instruments. For example, the Alliance for Coastal Technologies (ACT) serves as an unbiased, third-party testbed for evaluating sensors and platforms for use in coastal and ocean environments. ACT conducts instrument performance demonstrations and verifications so that effective existing technologies can be recognized, and promising new technologies can become available to support coastal science, resource management, and ocean observing systems (ACT 2012). The NOAA Ocean Systems Test and Evaluation Program (OSTEP) also conducts independent tests and evaluations on emerging technology as well as new sensor models. Both ACT and OSTEP publish findings that can provide information about QA, calibration, and other aspects of sensor functionality. The following list provides links to additional resources on QA practices.
 Manufacturer specifications and supporting Web pages/documents
 
-- QARTOD https://ioos.noaa.gov/project/qartod/
-- ACT http://www.act-us.info/
-- CO-OPS http://tidesandcurrents.noaa.gov/pub.html under the heading Manuals and Standards
-- WOCE https://www.nodc.noaa.gov/woce/
-- NDBC http://www.ndbc.noaa.gov/
+- QARTOD <https://ioos.noaa.gov/project/qartod/>
+- ACT <http://www.act-us.info/>
+- CO-OPS <http://tidesandcurrents.noaa.gov/pub.html> under the heading Manuals and Standards
+- WOCE <https://www.nodc.noaa.gov/woce/>
+- NDBC <http://www.ndbc.noaa.gov/>
 
 The following samples provide hints for development of deployment checklists taken from QARTOD IV:
 
 **Pre-deployment QA Checklist**
 
 - [ ] Read the manual.
-- [ ] Establish, use, and submit (with a reference and version #) a documented sensor preparation procedure (protocol). Should include cleaning sensor according to the manufacturer’s procedures.
+- [ ] Establish, use, and submit (with a reference and version #) a documented sensor preparation procedure (protocol). Should include cleaning sensor according to the manufacturer's procedures.
 - [ ] Calibrate sensor against an accepted standard and document (with a reference and version #).
 - [ ] Compare the sensor with an identical, calibrated sensor measuring the same thing in the same area (in a calibration lab).
-- [ ] View calibration specifications with a critical eye (don’t presume the calibration is infallible). Execute detailed review of calibrated data.
+- [ ] View calibration specifications with a critical eye (don't presume the calibration is infallible). Execute detailed review of calibrated data.
 - [ ] Check the sensor history for past calibrations, including a plot over time of deviations from the standard for each (this will help identify trends such a progressively poorer performance). Maintain control of the plotted calibrations.
 - [ ] Check the sensor history for past repairs, maintenance, and calibration.
 - [ ] Consider storing and shipping information before deploying (Heat, cold, vibration, etc.)
@@ -1501,10 +1435,10 @@ The following samples provide hints for development of deployment checklists tak
 
 | Name                           | Organization                                        |
 | :----------------------------- | :-------------------------------------------------- |
-| Mark Bushnell – Chair          | CoastalObsTechServices LLC/CO-OPS                   |
+| Mark Bushnell - Chair          | CoastalObsTechServices LLC/CO-OPS                   |
 | Chris Paternostro, co-editor   | NOAA/CO-OPS                                         |
-| Jennifer Patterson – co-editor | CeNCOOS                                             |
-| Helen Worthington – co-editor  | REMSA/CO-OPS                                        |
+| Jennifer Patterson - co-editor | CeNCOOS                                             |
+| Helen Worthington - co-editor  | REMSA/CO-OPS                                        |
 | Julie Bosch                    | NOAA/National Centers for Environmental Information |
 | Bob Heitsenrether              | NOAA/CO-OPS                                         |
 | Christina Iarossi              | SonTek                                              |
@@ -1517,10 +1451,10 @@ The following samples provide hints for development of deployment checklists tak
 
 | Name                                 | Organization                                   |
 | :----------------------------------- | :--------------------------------------------- |
-| Mark Bushnell – Chair                | CoastalObsTechServices LLC/CO-OPS              |
-| Ray Toll – editor                    | Old Dominion University/NDBC                   |
-| Helen Worthington – editor           | REMSA/CO-OPS                                   |
-| Dick Crout – significant contributor | Naval Research Laboratory/ Stennis             |
+| Mark Bushnell - Chair                | CoastalObsTechServices LLC/CO-OPS              |
+| Ray Toll - editor                    | Old Dominion University/NDBC                   |
+| Helen Worthington - editor           | REMSA/CO-OPS                                   |
+| Dick Crout - significant contributor | Naval Research Laboratory/ Stennis             |
 | Charly Alexander                     | U.S. IOOS                                      |
 | Rob Bassett                          | NOAA/CO-OPS                                    |
 | Rich Bouchard                        | NOAA/NDBC                                      |
@@ -1557,7 +1491,7 @@ The following samples provide hints for development of deployment checklists tak
 | :--- | :----------- |
 |      |              |
 
-Joe Swaykos – Chair
+Joe Swaykos - Chair
 Kathy Bailey
 Julie Bosch
 Eugene Burger

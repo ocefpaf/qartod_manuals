@@ -17,6 +17,9 @@ cmd = "pandoc docs/{{ manual }}.md --from=markdown --output=compiled_manuals/{{ 
 [tasks.mkdocs]
 cmd = "mkdocs build --clean --verbose"
 
+[tasks.serve]
+cmd = "mkdocs serve"
+
 [dependencies]
 python = "3.13.*"
 mike = ">=2.1.3,<3"

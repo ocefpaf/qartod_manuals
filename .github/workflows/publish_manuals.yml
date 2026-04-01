@@ -15,19 +15,19 @@ jobs:
     steps:
       - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
 
-      - uses: prefix-dev/setup-pixi@a0af7a228712d6121d37aba47adf55c1332c9c2e # v0.9.4
+      - uses: prefix-dev/setup-pixi@1b2de7f3351f171c8b4dfeb558c639cb58ed4ec0 # v0.9.5
       - run: >
           for manual in  Water_Level ADCP; do pixi run pdf "${manual}"; done
           && for manual in  Water_Level ADCP; do pixi run docx "${manual}"; done
 
       - name: Upload artifacts to Github
-        uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6.0.0
+        uses: actions/upload-artifact@bbbca2ddaa5d8feaa63e36b76fdaad77386f024f # v7.0.0
         with:
           path: compiled_manuals/
 
       - name: Upload artifacts to Github release
         if: success() && github.event_name == 'release'
-        uses: svenstaro/upload-release-action@6b7fa9f267e90b50a19fef07b3596790bb941741 # v2.11.3
+        uses: svenstaro/upload-release-action@29e53e917877a24fad85510ded594ab3c9ca12de # v2.11.5
         with:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
           file: compiled_manuals/*

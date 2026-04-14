@@ -1,4 +1,8 @@
-# A Guide to Quality Control and Quality Assurance for pH Observations
+# Manual for Real-Time Quality Control of pH Data Observations
+
+A Guide to Quality Control and Quality Assurance for pH Observations
+
+<https://doi.org/10.25923/111k-br08>
 
 ## Acknowledgements
 
@@ -77,11 +81,11 @@ and excellent contributions.
 This manual contains several terms whose meanings are critical to those using the manual. These terms are included in the following table to ensure that the meanings are clearly defined.
 
 |                        |                                                                                                                                                                                                                                                                                                         |
-| ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --- |
+| ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Codable Instructions   | Codable instructions are specific guidance that can be used by a software programmer to design, construct, and implement a test. These instructions also include examples with sample thresholds.                                                                                                       |
 | Data Record            | Data record is one or more messages that form a coherent, logical, and complete observation.                                                                                                                                                                                                            |
 | Interoperable          | Interoperable means the ability of two or more systems to exchange and mutually use data, metadata, information, or system parameters using established protocols or standards.                                                                                                                         |
-| Message                | Message means a standalone data transmission. A data record can be composed of multiple messages.                                                                                                                                                                                                       |     |
+| Message                | Message means a standalone data transmission. A data record can be composed of multiple messages.                                                                                                                                                                                                       |
 | Operator               | Operators are individuals or entities responsible for collecting and providing data.                                                                                                                                                                                                                    |
 | Quality Assurance (QA) | QA means processes that are employed with hardware to support the generation of high-quality data. (section 2.0 and appendix B)                                                                                                                                                                         |
 | Quality Control (QC)   | QC means follow-on steps that support the delivery of high-quality data, requiring both automation and human intervention. (section 3.0)                                                                                                                                                                |
@@ -113,7 +117,8 @@ Please refer to <https://ioos.noaa.gov/project/qartod/> for the following docume
 1. U.S. Integrated Ocean Observing System, 2018. Manual for Real-Time Quality Control of Stream Flow Data Version 1.0: A Guide to Quality Control and Quality Assurance of Stream Flow Observations in Rivers and Streams. 45 pp. <https://doi.org/10.25923/gszc-ha>
 
 Please reference this document as:
-U.S. Integrated Ocean Observing System, 2019. Manual for Real-Time Quality Control of pH Data Version 1.0: A Guide to Quality Control and Quality Assurance of pH Data Observations. 56 pp <https://doi.org/10.25923/111k-br>
+
+    U.S. Integrated Ocean Observing System, 2019. Manual for Real-Time Quality Control of pH Data Version 1.0: A Guide to Quality Control and Quality Assurance of pH Data Observations. 56 pp <https://doi.org/10.25923/111k-br>
 
 This manual is a living document that reflects the state-of-the-art QC testing procedures for pH observations.
 It is written for the experienced operator but also provides examples for those who are just entering the field.
@@ -135,11 +140,9 @@ alerting users that post-processing is required to validate their data.
 However,
 even these provisional data should be quality controlled.
 Data released in real-time should be subjected to automated QC processes,
-which:
-
-1. provide a quality-control indicator,
-2. alert the operator when questionable or interesting data are presented,
-   and 3) reduce the dissemination of bad data.
+which: 1) provide a quality-control indicator,
+2) alert the operator when questionable or interesting data are presented,
+and 3) reduce the dissemination of bad data.
 
 These practices for QC of pH data were developed by operators with experience using a variety of sensors and technologies.
 In-situ,
@@ -870,11 +873,11 @@ Operators may also check for erroneous locations based upon other criteria,
 such as reported positions over land,
 as appropriate.
 
-| Flags     | Condition                        | Codable Instructions           |
-| --------- | -------------------------------- | ------------------------------ | --- | ------- | ---- | ---------------- |
-| Fail=4    | Invalid location.                | `If                            | LAT | > 90 or | LONG | > 180, flag = 4` |
-| Suspect=3 | Unlikely platform displacement.  | `If DISP > RANGEMAX, flag = 3` |
-| Pass=1    | Applies for test pass condition. | N/A                            |
+| Flags     | Condition                        | Codable Instructions                      |
+| --------- | -------------------------------- | ----------------------------------------- |
+| Fail=4    | Invalid location.                | `If |LAT| > 90 or |LONG| > 180, flag = 4` |
+| Suspect=3 | Unlikely platform displacement.  | `If DISP > RANGEMAX, flag = 3`            |
+| Pass=1    | Applies for test pass condition. | N/A                                       |
 
 Test Exception: Test does not apply to fixed deployments when no location is transmitted.
 
@@ -895,13 +898,11 @@ Additionally,
 the operator can select a smaller span (`pH_USER_MIN`,
 `pH_USER_MAX`) based upon local knowledge or a desire to draw attention to extreme values.
 
-| Flags     | Condition                                        | Codable Instructions       |
-| --------- | ------------------------------------------------ | -------------------------- |
-| Fail=4    | Reported value is outside of sensor span.        | `pH_n < pH_SENSOR_MIN`, or |
-|           |                                                  | `pH_n > pH_SENSOR_MAX`     |
-| Suspect=3 | Reported value is outside of user-selected span. | `pHn < pH_USER_MIN`, or    |
-|           |                                                  | `pHn > pH_USER_MAX`        |
-| Pass=1    | Applies for test pass condition.                 | N/A                        |
+| Flags     | Condition                                        | Codable Instructions                                  |
+| --------- | ------------------------------------------------ | ----------------------------------------------------- |
+| Fail=4    | Reported value is outside of sensor span.        | `pH_{n} < pH_SENSOR_MIN`, or `pH_{n} > pH_SENSOR_MAX` |
+| Suspect=3 | Reported value is outside of user-selected span. | `pH_{n} < pH_USER_MIN`, or `pH_{n} > pH_USER_MAX`     |
+| Pass=1    | Applies for test pass condition.                 | N/A                                                   |
 
 Test Exception: None.
 
@@ -925,13 +926,11 @@ or at some other operator-selected time period (`TIM_TST`).
 Expertise of the local user is required to determine reasonable seasonal averages.
 Longer time series permit more refined identification of appropriate thresholds.
 
-| Flags     | Condition                                 | Codable Instructions     |
-| --------- | ----------------------------------------- | ------------------------ |
-| Fail=4    | Because of the dynamic nature of pH,      | N/A                      |
-|           | no fail flag is identified for this test. |                          |
-| Suspect=3 | Reported value is outside of user-        | `pHn < pH_Season_MIN` or |
-|           | identified climatology window.            | `pHn > pH_Season_MAX`    |
-| Pass=1    | Applies for test pass condition.          | N/A                      |
+| Flags     | Condition                                                                      | Codable Instructions                                 |
+| --------- | ------------------------------------------------------------------------------ | ---------------------------------------------------- |
+| Fail=4    | Because of the dynamic nature of pH, no fail flag is identified for this test. | N/A                                                  |
+| Suspect=3 | Reported value is outside of user-identified climatology window.               | `pH_{n} < pH_Season_MIN` or `pH_{n} > pH_Season_MAX` |
+| Pass=1    | Applies for test pass condition.                                               | N/A                                                  |
 
 Test Exception: None.
 
@@ -955,12 +954,11 @@ The absolute value of the spike is tested to capture positive and negative going
 Large spikes are easier to identify as outliers and flag as failures.
 Smaller spikes may be real and are only flagged suspect.
 
-| Flags     | Condition                        | Codable Instructions |
-| --------- | -------------------------------- | -------------------- | ---------------- | --------------- |
-| Fail=4    | High spike threshold exceeded.   | `                    | pH_n-1 - SPK_REF | > THRSHLD_HIGH` |
-| Suspect=3 | Low spike threshold exceeded.    | `                    | pH_n-1 - SPK_REF | > THRSHLD_LOW`  |
-|           |                                  | `                    | pH_n-1 - SPK_REF | < THRSHLD_HIGH` |
-| Pass=1    | Applies for test pass condition. | N/A                  |
+| Flags     | Condition                        | Codable Instructions                                                         |
+| --------- | -------------------------------- | ---------------------------------------------------------------------------- |
+| Fail=4    | High spike threshold exceeded.   | `|pH_{n-1} - SPK_REF| > THRSHLD_HIGH`                                        |
+| Suspect=3 | Low spike threshold exceeded.    | `|pH_{n-1} - SPK_REF| > THRSHLD_LOW` & `|pH_{n-1} - SPK_REF| < THRSHLD_HIGH` |
+| Pass=1    | Applies for test pass condition. | N/A                                                                          |
 
 Test Exception: None.
 
@@ -993,13 +991,11 @@ it remains to be determined how the next iteration can be handled.
   Both the number of SDs (`N_DEV`) and the period over which the SDs are calculated (`TIM_DEV`) are determined by the local operator.
 - **Example 2:** The rate of change between pH$_{n-1}$ and pH$_{n}$ must be less than 0.1 + 2SD.
 
-| Flags     | Condition                                 | Codable Instructions |
-| --------- | ----------------------------------------- | -------------------- | ------------- | ------------ |
-| Fail=4    | Because of the dynamic nature of pH,      | N/A                  |
-|           | no fail flag is identified for this test. |                      |
-| Suspect=3 | The rate of change exceeds the            | `                    | pH_n - pH_n-1 | > N_DEV\*SD` |
-|           | selected threshold.                       |                      |
-| Pass=1    | Applies for test pass condition.          | N/A                  |
+| Flags     | Condition                                                                      | Codable Instructions               |
+| --------- | ------------------------------------------------------------------------------ | ---------------------------------- |
+| Fail=4    | Because of the dynamic nature of pH, no fail flag is identified for this test. | N/A                                |
+| Suspect=3 | The rate of change exceeds the selected threshold.                             | `|pH_{n} - pH_{n-1}| > N_DEV *S D` |
+| Pass=1    | Applies for test pass condition.                                               | N/A                                |
 
 Test Exception: None
 
@@ -1017,16 +1013,11 @@ This test compares the present observation (pH$_n$) to a number (`REP_CNT_FAIL` 
 pH$_n$ is flagged if it has the same value as previous observations within a tolerance value `EPS` to allow for numerical round-off error.
 Note that historical flags are not changed.
 
-| Flags     | Condition                                          | Codable Instructions                             |
-| --------- | -------------------------------------------------- | ------------------------------------------------ |
-| Fail=4    | When the five most recent observations             | `pH n ≠ 0` AND                                   |
-|           | are equal, pH n is flagged fail.                   | `For i=1, REP_CNT_FAIL pH_n - pH_{n-I} < EPS`    |
-| Suspect=3 | It is possible but unlikely that the               | `For i=1, REP_CNT_SUSPECT pH_n - pH_{n-I} < EPS` |
-|           | present observation and the two                    |                                                  |
-|           | previous observations would be                     |                                                  |
-|           | equal. When the three most recent                  |                                                  |
-|           | observations are equal, pH$_n$ is flagged suspect. |                                                  |
-| Pass=1    | Applies for test pass condition.                   | N/A                                              |
+| Flags     | Condition                                                                                                                                                                                | Codable Instructions                                             |
+| --------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------- |
+| Fail=4    | When the five most recent observations are equal, pH_{n} is flagged fail.                                                                                                                | `pH_{n} ≠ 0` AND `For i=1, REP_CNT_FAIL pH_{n} - pH_{n-I} < EPS` |
+| Suspect=3 | It is possible but unlikely that the present observation and the two previous observations would be equal. When the three most recent observations are equal, pH$_n$ is flagged suspect. | `For i=1, REP_CNT_SUSPECT pH_{n} - pH_{n-I} < EPS`               |
+| Pass=1    | Applies for test pass condition.                                                                                                                                                         | N/A                                                              |
 
 Test Exception: None
 
@@ -1037,129 +1028,111 @@ Examples: `REP_CNT_FAIL = 5`, `REP_CNT_SUSPECT = 3`
 **Test 9) Multi-Variate Test (Suggested)**
 
 Comparison to other variables.
-This is an advanced family of tests, starting with the simpler test described here and anticipating growth
-toward full co-variance testing in the future. To our knowledge, no one is conducting tests such as these in
-real-time. As these tests are developed and implemented, they should indeed be documented and
-standardized in later versions of this living pH manual.
-In this simple example, it is a pair of rate of change tests as described in test 7. The pH rate of change test is
-conducted with a more restrictive threshold (N_pH_DEV). If this test fails, a second rate of change test
-operating on a second variable (dissolved oxygen would be the most probable, N_DO_DEV) is conducted.
-The absolute value of the rate of change may need to be tested, since the relationship between pH and
-variable two is indeterminate. If the rate of change test on the second variable fails to exceed a threshold
-(e.g., an anomalous step is found in pH and is lacking in salinity), then the pH n value is flagged.
-Flags Condition Codable Instructions
-Fail=4 Because of the dynamic nature of pH,
-no fail flag is identified for this test.
+This is an advanced family of tests,
+starting with the simpler test described here and anticipating growth toward full co-variance testing in the future.
+To our knowledge,
+no one is conducting tests such as these in real-time.
+As these tests are developed and implemented,
+they should indeed be documented and standardized in later versions of this living pH manual.
+In this simple example,
+it is a pair of rate of change tests as described in test 7.
+The pH rate of change test is conducted with a more restrictive threshold (`N_pH_DEV`).
+If this test fails,
+a second rate of change test operating on a second variable
+(dissolved oxygen would be the most probable, `N_DO_DEV`) is conducted.
+The absolute value of the rate of change may need to be tested,
+since the relationship between pH and variable two is indeterminate.
+If the rate of change test on the second variable fails to exceed a threshold
+(e.g., an anomalous step is found in pH and is lacking in salinity),
+then the pH_{n} value is flagged.
 
-N/A
+| Flags     | Condition                                                                                        | Codable Instructions                                                                   |
+| --------- | ------------------------------------------------------------------------------------------------ | -------------------------------------------------------------------------------------- |
+| Fail=4    | Because of the dynamic nature of pH, no fail flag is identified for this test.                   | N/A                                                                                    |
+| Suspect=3 | `pH_{n}` fails the pH rate of change and the second variable does not exceed the rate of change. | `|pH_{n} - pH_{n-1}| > N_pH_DEV * SD_pH ` AND `|DO_{n} - DO_{n-1}| < N_DO_DEV * SD_DO` |
+| Pass=1    | N/A                                                                                              | N/A                                                                                    |
 
-Suspect=3 pH n fails the pH rate of change and
-the second variable does not exceed
-the rate of change.
-
-|pH n - pH n- 1 |>N_pH_DEV*SD_pH
-AND
-|DO n - DO n- 1 |<N_DO_DEV*SD_DO
-Pass=1 N/A N/A
 Test Exception: None.
+
 Test specifications to be established locally by operator.
-Examples: N_pH_DEV = 2, N_DO_DEV = 2, TIM_DEV = 25 hours
 
-**NOTE:** In a more complex case, more than one secondary rate of change test can be conducted.
-Temperature, salinity, turbidity, chlorophyll, total dissolved inorganic carbon and pCO2 are all possible
-secondary candidates, and any number of them could be checked for anomalous rate of change values. In this
-case, a knowledgeable operator may elect to pass a high rate of change pH observation when any one of the
-secondary variables also exhibits a high rate of change. Such tests border on modeling, should be carefully
-considered, and may be beyond the scope of this effort.
+Examples: `N_pH_DEV = 2`, `N_DO_DEV = 2`, `TIM_DEV = 25 hours`
 
-Those reviewing this pH manual recognized the high value in full co-variance testing but also noted the
-challenges. Such testing is still a research project not yet ready for operational implementation.
+**NOTE:** In a more complex case,
+more than one secondary rate of change test can be conducted.
+Temperature,
+salinity,
+turbidity,
+chlorophyll,
+total dissolved inorganic carbon and pCO2 are all possible secondary candidates,
+and any number of them could be checked for anomalous rate of change values.
+In this case,
+a knowledgeable operator may elect to pass a high rate of change pH observation when any one of the secondary variables also exhibits a high rate of change.
+Such tests border on modeling, should be carefully considered,
+and may be beyond the scope of this effort.
+
+Those reviewing this pH manual recognized the high value in full co-variance testing but also noted the challenges.
+Such testing is still a research project not yet ready for operational implementation.
 
 **Test 10) Attenuated Signal Test (Suggested)**
 
 A test for inadequate variation of the time series.
 
-```
+A pH sensor failure can provide a data series that is nearly but not exactly a flat line
+(for example, if the sensor head was to become wrapped in debris).
+This test inspects for a standard deviation (`SD`) value or a range variation
+(`MAX` - `MIN`) value that fails to exceed threshold values (`MIN_VAR_WARN`, `MIN_VAR_FAIL`)
+over a selected time period (`TST_TIM`).
 
-A pH sensor failure can provide a data series that is nearly but not exactly a flat line (for example, if the
-sensor head was to become wrapped in debris). This test inspects for a standard deviation (SD) value or a
-range variation (MAX-MIN) value that fails to exceed threshold values (MIN_VAR_WARN, MIN_VAR_FAIL)
-over a selected time period (TST_TIM).
-**Flags Condition Codable Instructions**
-Fail=4 Variation fails to meet the minimum
-threshold MIN_VAR_FAIL.
-
-```
-
-During TST_TIM, SD <MIN_VAR_FAIL, or
-During TST_TIM, MAX-MIN <MIN_VAR_FAIL
-Suspect=3 Variation fails to meet the minimum
-threshold MIN_VAR_WARN.
-
-```
-
-```
-
-During TST_TIM, SD <MIN_VAR_WARN, or
-During TST_TIM, MAX-MIN <MIN_VAR_WARN
-Pass=1 Applies for test pass condition. N/A
-
-```
+| Flags     | Condition                                                     | Codable Instructions                                                                   |
+| --------- | ------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
+| Fail=4    | Variation fails to meet the minimum threshold `MIN_VAR_FAIL`. | During `TST_TIM`, `SD < MIN_VAR_FAIL`, or During `TST_TIM`, `MAX-MIN < MIN_VAR_FAIL`   |
+| Suspect=3 | Variation fails to meet the minimum threshold `MIN_VAR_WARN`. | During `TST_TIM`, `SD < MIN_VAR_WARN`, or During `TST_TIM`, `MAX - MIN < MIN_VAR_WARN` |
+| Pass=1    | Applies for test pass condition.                              | N/A                                                                                    |
 
 **Test Exception:** None.
 
-**Test specifications to be established locally by operator.
-Examples:** TST_TIM = 12 hours
-MIN_VAR_WARN = 0.1, MIN_VAR_FAIL = 0.2
+**Test specifications to be established locally by operator.**
 
-```
+**Examples:** `TST_TIM = 12 hours`, `MIN_VAR_WARN = 0.1`, `MIN_VAR_FAIL = 0.2`
 
-Test 1 1 ) Neighbor Test (Suggested)
+
+**Test 11) Neighbor Test (Suggested)**
+
 Comparison to nearby pH sensors.
-The check has the potential to be the most useful test when a nearby second sensor is determined to have a
-similar response.
-In a perfect world, redundant pH sensors utilizing different technology would be co-located and alternately
-serviced at different intervals. This close neighbor would provide the ultimate QC check, but cost prohibits
-such a deployment in most cases.
-In the real world, there are very few instances where a second pH sensor is sufficiently proximate to provide
-a useful QC check. Just a few hundred meters in the horizontal and less than 10 meters vertical separation
-can yield greatly different results. Nevertheless, the test should not be overlooked where it may have
-application.
-This test is the same as 9) multi-variate test - comparison to other variables where the second variable is
-the second pH sensor. The selected thresholds depend entirely upon the relationship between the two
-sensors as determined by the local knowledge of the operator.
-In the instructions and examples below, data from one site (pH1) are compared to a second site (pH2). The
-standard deviation for each site (SD1, SD2) is calculated over the period (TIM_DEV) and multiplied as
-appropriate (N_pH1_DEV for site pH1) to calculate the rate of change threshold. Note that an operator
-could also choose to use the same threshold for each site since they are presumed to be similar.
-Flags Condition Codable Instructions
-Fail=4 Because of the dynamic nature of
-pH, no fail flag is identified for this
-test.
+The check has the potential to be the most useful test when a nearby second sensor is determined to have a similar response.
 
-```
+In a perfect world,
+redundant pH sensors utilizing different technology would be co-located and alternately serviced at different intervals.
+This close neighbor would provide the ultimate QC check,
+but cost prohibits such a deployment in most cases.
 
-```
+In the real world,
+there are very few instances where a second pH sensor is sufficiently proximate to provide a useful QC check.
+Just a few hundred meters in the horizontal and less than 10 meters vertical separation can yield greatly different results.
+Nevertheless,
+the test should not be overlooked where it may have application.
 
-N/A
+This test is the same as *9) multi-variate test - comparison to other variables* where the second variable is the second pH sensor.
+The selected thresholds depend entirely upon the relationship between the two sensors as determined by the local knowledge of the operator.
 
-```
+In the instructions and examples below,
+data from one site (`pH1`) are compared to a second site (`pH2`).
+The standard deviation for each site (`SD1`, `SD2`) is calculated over the period (`TIM_DEV`) and multiplied as appropriate (`N_pH1_DEV` for site `pH1`) to calculate the rate of change threshold.
+Note that an operator could also choose to use the same threshold for each site since they are presumed to be similar.
 
-```
 
-Suspect=3 pH n fails the pH rate of change and
-the second pH sensor does not
-exceed the rate of change.
+| Flags     | Condition                                                                                       | Codable Instructions                                                                    |
+| --------- | ----------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- |
+| Fail=4    | Because of the dynamic nature of pH, no fail flag is identified for this test.                  | N/A                                                                                     |
+| Suspect=3 | pH_{n} fails the pH rate of change and the second pH sensor does not exceed the rate of change. | `|pH1_{n} - pH1_{n-1}| > N_pH1_DEV * SD1` AND `|pH2_{n} - pH2_{n-1}| < N_pH2_DEV * SD2` |
+| Pass=1    | N/A                                                                                             | N/A                                                                                     |
 
-```
-
-|pH (^1) _n_ - pH (^1) _n- 1_ |>N*pH1_DEV\*SD1
-AND
-|pH (^2) \_n* - pH (^2) _n- 1_ |<N_pH2_DEV\*SD2
-Pass=1 N/A N/A
 **Test Exception:** None.
-**Test specifications to be established locally by operator.
-Examples:** N_pH1_DEV = 2, N_pH2_DEV = 2, TIM_DEV = 25 hours
+
+**Test specifications to be established locally by operator.**
+
+**Examples:** `N_pH1_DEV = 2`, `N_pH2_DEV = 2`, `TIM_DEV = 25 hours`
 
 #### 3.3.2 Applications of QC Tests to pH Sensor Deployments
 
@@ -1168,198 +1141,47 @@ provides a summary of each QC test described earlier in section 3. 3 and indicat
 the test to be applied to different deployment scenarios. Note that the "s" axis indicates "along path" for
 mobile platforms.
 
-**Table 3-3** Application of Required QC Tests for Sensor Deployments. **Note:** The 's' axis means "along path."
 
-###### Test Condition Platform Codable
+| Test                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         | Condition                                                | Platform                                | Codable Instructions |
+| -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------- | --------------------------------------- | -------------------- |
+| **1. Gap Test (Required)** Test determines that the most recent data point has been received within the expected time window (`TIM_INC`) and has the correct time stamp (`TIM_STMP`). Note: For those systems that don't update at regular intervals, a large value for `TIM_STMP` can be assigned. The gap check is not a panacea for all timing errors. Data could arrive earlier than expected. This test does not address all clock drift/jump issues.                                   | Check for arrival of data.                               | Stationary, Fixed Vertical, Mobile, 3-D | No change            |
+| **2. Syntax Test (Required)** Received data record contains the proper structure without any indicators of flawed transmission such as parity errors. Possible tests are a) the expected number of characters (`NCHAR`) for fixed length messages equals the number of characters received (`REC_CHAR`), or b) passes a standard parity bit check, CRC check, etc. Many such syntax tests exist, and the user should select the best criteria for one or more syntax tests.                  | Expected data record received, absence of parity errors. | Stationary, Fixed Vertical, Mobile, 3-D | No change            |
+| **3. Location Test (Required)** Test checks that the reported present physical location (latitude/longitude) is within operator-determined limits. The location test(s) can vary from a simple invalid location to a more complex check for displacement (DISP) exceeding a distance limit (`RANGEMAX`) based upon a previous location and platform speed. Operators may also check for erroneous locations based upon other criteria, such as reported positions over land, as appropriate. | Check for reasonable geographic location.                | Stationary, Fixed Vertical, Mobile, 3-D | No change            | 
+| **4. Gross Range Test (Required)** All sensors have a limited output range, and this can form the most rudimentary gross range check. No values less than a minimum value or greater than the maximum value the sensor can output (`pH_SENSOR_MIN`, `pH_SENSOR_MAX`) are acceptable. Additionally, the operator can select a smaller span (`pH_USER_MIN`, `pH_USER_MAX`) based upon local knowledge or a desire to draw attention to extreme values.                                         | Data point exceeds sensor or operator selected min/max.  | Stationary, Fixed Vertical, Mobile, 3-D | No change            | 
 
-###### Instructions
+: Table 3-3. Application of Required QC Tests for Sensor Deployments.
 
-```
+**Note:** The 's' axis means "along path."
 
-1. Gap Test (Required)
-   Test determines that the most recent data point has been
-   received within the expected time window (TIM_INC) and
-   has the correct time stamp (TIM_STMP).
-   Note: For those systems that don't update at regular
-   intervals, a large value for TIM_STMP can be assigned. The
-   gap check is not a panacea for all timing errors. Data could
-   arrive earlier than expected. This test does not address all
-   clock drift/jump issues.
+: Table 3-4. Application of Strongly Recommended QC Tests for Sensor Deployments.
 
-```
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------+----------------+--------------------------------------+
+| Test                                                                                                                                                                                                                                                                                                                                                                                                                            | Condition                                                | Platform       | Codable Instructions                 |
++=================================================================================================================================================================================================================================================================================================================================================================================================================================+==========================================================+================+======================================+
+| **5. Climatology Test (Strongly Recommended)** This test is a variation on the gross range check, where the gross range (`pH_Season_MAX` and `pH_Season_MIN`) are adjusted monthly, seasonally, or at some other operator-selected time period (`TIM_TST`). Expertise of the local user is required to determine reasonable seasonal averages. Longer time series permit more refined identification of appropriate thresholds. | Test that data point falls within seasonal expectations. | Stationary     | No change                            |
+|                                                                                                                                                                                                                                                                                                                                                                                                                                 |                                                          | Fixed Vertical | Test conducted along z axis          |
+|                                                                                                                                                                                                                                                                                                                                                                                                                                 |                                                          | Mobile         | Test conducted along s, x, or y axis |
+|                                                                                                                                                                                                                                                                                                                                                                                                                                 |                                                          | 3-D            | Test conducted along s, x, y, or z   |
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------+----------------+--------------------------------------+
 
-```
 
-Check for
-arrival of data.
-
-```
-
-```
-
-Stationary No change
-Fixed Vertical
-Mobile
-3 - D
-
-```
-
-```
-
-2. Syntax Test (Required)
-   Received data record contains the proper structure
-   without any indicators of flawed transmission such as
-   parity errors. Possible tests are a) the expected number
-   of characters (NCHAR) for fixed length messages equals
-   the number of characters received (REC_CHAR), or b)
-   passes a standard parity bit check, CRC check, etc. Many
-   such syntax tests exist, and the user should select the
-   best criteria for one or more syntax tests.
-
-```
-
-```
-
-Expected data
-record
-received,
-absence of
-parity errors.
-
-```
-
-```
-
-Stationary No change
-Fixed Vertical
-Mobile
-3 - D
-
-```
-
-```
-
-3. Location Test (Required)
-   Test checks that the reported present physical location
-   (latitude/longitude) is within operator-determined limits.
-   The location test(s) can vary from a simple invalid location
-   to a more complex check for displacement (DISP)
-   exceeding a distance limit (RANGEMAX) based upon a
-   previous location and platform speed. Operators may also
-   check for erroneous locations based upon other criteria,
-   such as reported positions over land, as appropriate.
-
-```
-
-```
-
-Check for
-reasonable
-geographic
-location.
-
-```
-
-```
-
-Stationary No change
-Fixed Vertical
-Mobile
-3 - D
-
-```
-
-```
-
-4. Gross Range Test (Required)
-   All sensors have a limited output range, and this can form
-   the most rudimentary gross range check. No values less
-   than a minimum value or greater than the maximum value
-   the sensor can output (pH_SENSOR_MIN,
-   pH_SENSOR_MAX) are acceptable. Additionally, the
-   operator can select a smaller span (pH_USER_MIN,
-   pH_USER_MAX) based upon local knowledge or a desire to
-   draw attention to extreme values.
-
-```
-
-```
-
-Data point
-exceeds
-sensor or
-operator
-selected
-min/max.
-
-```
-
-```
-
-Stationary No change
-Fixed Vertical
-Mobile
-3 - D
-
-```
-
-**Table 3- 4.** Application of Strongly Recommended QC Tests for Sensor Deployments
-
-##### Test Condition Platform Codable
-
-##### Instructions
-
-```
-
-5 ) Climatology Test (Strongly Recommended)
-This test is a variation on the gross range check,
-where the gross range (pH_Season_MAX and
-pH_Season_MIN) are adjusted monthly,
-seasonally, or at some other operator-selected
-time period (TIM_TST). Expertise of the local user
-is required to determine reasonable seasonal
-averages. Longer time series permit more refined
-identification of appropriate thresholds.
-
-```
-
-```
-
-Test that data
-point falls
-within seasonal
-expectations.
-
-```
-
-```
-
-Stationary No change^
-Fixed Vertical Test conducted
-along z axis
-Mobile Test conducted
-along s, x, or y axis
-3 - D Test conducted
-along s, x, y, or z
 axis 6) Spike Test (Strongly Recommended)
 This check is for single value spikes, specifically the
-pH value at point n-1 (pHn-1)). Spikes consisting of
+pH value at point n-1 (pH_{n}-1)). Spikes consisting of
 more than one data point are notoriously difficult
 to capture, but their onset may be flagged by the
 rate of change test. The spike test consists of two
 operator-selected thresholds above or below
 adjacent data points, THRSHLD_LOW and
-THRSHLD_HIGH. Adjacent data points (pHn- 2 and
-pHn) are averaged to form a spike reference
+THRSHLD_HIGH. Adjacent data points (pH_{n}- 2 and
+pH_{n}) are averaged to form a spike reference
 (SPK_REF). The absolute value of the spike is
 tested to capture positive and negative going
 spikes. Large spikes are easier to identify as
 outliers and flag as failures. Smaller spikes may be
 real and are only flagged suspect.
 
-```
 
-```
 
 Data point n- 1
 exceeds a
@@ -1369,9 +1191,7 @@ relative to
 adjacent data
 points.
 
-```
 
-```
 
 Stationary No change
 Fixed Vertical
@@ -1427,9 +1247,7 @@ how the next iteration can be handled.
 Excessive
 rise/fall test.
 
-```
 
-```
 
 Stationary No change
 Fixed Vertical Test is conducted
@@ -1448,8 +1266,8 @@ When some sensors and/or data collection
 platforms fail, the result can be a continuously
 repeated observation of exactly the same value.
 This test compares the present observation
-(pHn) to a number (REP_CNT_FAIL or
-REP_CNT_SUSPECT) of previous observations. pHn
+(pH_{n}) to a number (REP_CNT_FAIL or
+REP_CNT_SUSPECT) of previous observations. pH_{n}
 is flagged if it has the same value as previous
 observations within a tolerance value EPS to allow
 for numerical round-off error. Note that historical
@@ -1460,9 +1278,7 @@ flags are not changed.
 Invariant pH
 value.
 
-```
 
-```
 
 Stationary No change
 Vertical Test is conducted
@@ -1503,16 +1319,12 @@ x, y, or z axis
    found in pH and is lacking in salinity), then the pH
    value n 0 is flagged.
 
-```
 
-```
 
 Comparison to
 other variables.
 
-```
 
-```
 
 Stationary No change
 Fixed Vertical Test is conducted
@@ -1522,9 +1334,7 @@ along s, x, or y axis
 3 - D Test is conducted
 along s, x, y, or z axis
 
-```
 
-```
 
 10. Attenuated Signal Test (Suggested)
     A pH sensor failure can provide a data series that
@@ -1535,16 +1345,12 @@ along s, x, y, or z axis
     that fails to exceed a threshold value (MIN_VAR)
     over a selected time period (TST_TIM).
 
-```
 
-```
 
 Inadequate
 variation test.
 
-```
 
-```
 
 Stationary No change
 Fixed Vertical Test is conducted
@@ -1574,9 +1380,7 @@ Comparison to
 nearby pH
 sensors.
 
-```
 
-```
 
 Stationary No change
 Fixed Vertical Test is conducted
@@ -1585,6 +1389,7 @@ Mobile No change
 3 - D No change
 
 ```
+
 
 #### 4.0 Summary
 
@@ -1829,9 +1634,7 @@ Adrienne Sutton
 Dwight Trueblood
 Rik Wanninkhof
 
-```
 
-```
 
 Atlantic Oceanographic and Meteorological Laboratory
 U.S. IOOS
@@ -1866,21 +1669,15 @@ Jeff King
 Shannon McArthur
 Mario Tamburri
 
-```
 
-```
 
 Julie Thomas, BOA Chair
 
-```
 
-```
 
 Christoph Waldmann
 
-```
 
-```
 
 U.S. IOOS
 NOAA/National Centers for Environmental Information
@@ -1916,9 +1713,7 @@ Jan Newton
 Kelli Paige
 Henry Ruhl
 
-```
 
-```
 
 IOOS Association
 SCCOOS
@@ -1933,9 +1728,7 @@ NANOOS
 GLOS
 CeNCOOS
 
-```
 
-```
 
 A - 2
 
@@ -1950,9 +1743,7 @@ A - 2
 AOOS
 Carol Janzen
 
-```
 
-```
 
 GCOOS
 Bob Currier
@@ -1960,9 +1751,7 @@ CARICOOS
 Miguel Canals
 Roy Watlington
 
-```
 
-```
 
 SECOORA
 Jennifer Dorton
@@ -1972,18 +1761,14 @@ Research Organizations
 Gulf of Maine Research Institute
 Eric Bridger
 
-```
 
-```
 
 Scripps Institution of Oceanography
 Vicky Rowley
 Monterey Bay Aquarium Research Institute
 Fred Bahr
 
-```
 
-```
 
 Smithsonian Environmental Research Center
 Matthew Ogburn
@@ -1992,16 +1777,12 @@ Bureau of Ocean Energy Management
 Brian Zelenke
 Jonathan Blythe
 
-```
 
-```
 
 Environmental Protection Agency
 Dwane Young
 
-```
 
-```
 
 Great Lakes Commission
 Guan Wang
@@ -2017,9 +1798,7 @@ Derrick Snowden
 Frank Lodato
 Gabrielle Canonico
 
-```
 
-```
 
 Jason Gedamke
 Jessica Morgan
@@ -2035,9 +1814,7 @@ Tony Lavoi
 U.S. Army Corps of Engineers
 Jeff Lillycrop
 
-```
 
-```
 
 U.S. Geological Survey
 Abigail Benson
@@ -2229,13 +2006,6 @@ The following lists suggest ways to ensure QA by using specific procedures and t
   problem).
 - Keep good records of all related sensor calibrations and checks (e.g., conductivity and temperature).
 - Use NIST-traceable standards when conducting calibrations or calibration checks.
-
-```
-
-B- 4
-
-```
-
 - Keep good maintenance records. Favor sensors that maintain an internal file of past calibration
   constants, which is very useful since it can be downloaded instead of transcribed manually, thus
   introducing human error.
@@ -2271,21 +2041,15 @@ Table A-1. Best practices indicator for QA
 
 ##### Description
 
-```
-
 Good Process Sensors are swapped and/or serviced at sufficiently regular intervals so as to
 avoid data steps (unexpected offsets) upon swap/service. Pre- and post-
 deployment calibration checks are conducted on each sensor.
 Better Process The good processes are employed, plus pre- and post-deployment calibration
 checks are conducted using alternative sensors to confirm performance.
 
-```
-
 **Best Process** (^) The better processes are employed, following a well-documented protocol,
 or alternative sensors are used to validate in-situ deployments. Or, pre-
 and post-calibrations are conducted by the manufacturer.
-
-B- 5
 
 ##### B.6 Additional Sources of QA Information
 
@@ -2313,82 +2077,41 @@ practices.
 
 The following samples provide hints for development of deployment checklists taken from QARTOD IV:
 
-```
-
 General QA Checklist:
- Read the manual.
- Establish, use, and submit (with a reference and version #) a documented sensor preparation
-
-```
-
-###### procedure (protocol). Should include cleaning sensor according to the manufacturer's procedures.
-
-######  Calibrate sensor against an accepted standard and document (with a reference and version #).
-
-```
-
- Compare the sensor with an identical, calibrated sensor measuring the same thing in the same area (in
-a calibration lab).
- View calibration specifications with a critical eye (don't presume the calibration is infallible). Execute
-detailed review of calibrated data.
- Check the sensor history for past calibrations, including a plot over time of deviations from the
-standard for each (this will help identify trends such a progressively poorer performance). Check the
-sensor history for past repairs, maintenance, and calibration.
- Consider storing and shipping information before deploying.
-o Heat, cold, vibration, etc.
- Record operator/user experiences with this sensor.
- Search the literature for information on your particular sensor(s) to see what experiences other
-researchers may have had with the sensor(s).
- Establish and use a formal pre-deployment checklist.
- Ensure that technicians are well-trained. Use a tracking system to identify those technicians who are
-highly trained and then pair them with inexperienced technicians for training purposes.
-
-```
-
-```
-
-B- 6
-
-```
+- [ ] Read the manual.
+- [ ] Establish, use, and submit (with a reference and version #) a documented sensor preparation procedure (protocol). Should include cleaning sensor according to the manufacturer's procedures.
+- [ ] Calibrate sensor against an accepted standard and document (with a reference and version #).
+- [ ] Compare the sensor with an identical, calibrated sensor measuring the same thing in the same area (in a calibration lab).
+- [ ] View calibration specifications with a critical eye (don't presume the calibration is infallible). Execute detailed review of calibrated data.
+- [ ] Check the sensor history for past calibrations, including a plot over time of deviations from the standard for each (this will help identify trends such a progressively poorer performance). Check the sensor history for past repairs, maintenance, and calibration.
+- [ ] Consider storing and shipping information before deploying.
+  - Heat, cold, vibration, etc.
+- [ ] Record operator/user experiences with this sensor.
+- [ ] Search the literature for information on your particular sensor(s) to see what experiences other researchers may have had with the sensor(s).
+- [ ] Establish and use a formal pre-deployment checklist.
+- [ ] Ensure that technicians are well-trained. Use a tracking system to identify those technicians who are highly trained and then pair them with inexperienced technicians for training purposes.
 
 **Deployment Checklist**
 
-```
-
- Scrape bio-fouling off platform.
- Verify sensor serial numbers.
- Perform visual inspection; take photos if possible (verify position of sensors, connectors, fouling,
-and cable problems).
- Verify instrument function at deployment site just prior to site departure. Monitor sensors for issues
-(freezing, fouling, bubbles).
- Use established processes to confirm that the sensor is properly functioning, before departing the
-deployment site.
- Specify date/time for all recorded events. Use GMT or UTC.
- Check software to ensure that the sensor configuration and calibration coefficients are correct. Also
-check sampling rates and other timed events, like wiping and time averaging.
- Visually inspect data stream to ensure reasonable values.
- Compare up and down casts and/or dual sensors (if available).
- Note weather conditions and members of field crew.
-
-```
+- [ ] Scrape bio-fouling off platform.
+- [ ] Verify sensor serial numbers.
+- [ ] Perform visual inspection; take photos if possible (verify position of sensors, connectors, fouling, and cable problems).
+- [ ] Verify instrument function at deployment site just prior to site departure. Monitor sensors for issues (freezing, fouling, bubbles).
+- [ ] Use established processes to confirm that the sensor is properly functioning, before departing the deployment site.
+- [ ] Specify date/time for all recorded events. Use GMT or UTC.
+- [ ] Check software to ensure that the sensor configuration and calibration coefficients are correct. Also check sampling rates and other timed events, like wiping and time averaging.
+- [ ] Visually inspect data stream to ensure reasonable values.
+- [ ] Compare up and down casts and/or dual sensors (if available).
+- [ ] Note weather conditions and members of field crew.
 
 **Post-deployment Checklist**
 
-```
-
- Take pictures of recovered sensor prior to cleaning.
- Check to make sure all clocks agree or, if they do not agree, record all times and compare with NIST.
- Post-calibrate sensor before and after cleaning, if possible. Perform in-situ side by side check using
-another sensor, if possible
- Use standard procedures to provide feedback about possible data problems and/or sensor
-diagnostics.
- Clean and store the sensor properly or redeploy.
- Visually inspect physical state of instrument.
- Verify sensor performance by:
-o Checking nearby stations;
-o Making historical data comparisons (e.g., long-term time-series plots, which are particularly
-useful for identifying long-term bio-fouling or calibration drift.)
-
-```
-
-```
+- [ ] Take pictures of recovered sensor prior to cleaning.
+- [ ] Check to make sure all clocks agree or, if they do not agree, record all times and compare with NIST.
+- [ ] Post-calibrate sensor before and after cleaning, if possible. Perform in-situ side by side check using another sensor, if possible
+- [ ] Use standard procedures to provide feedback about possible data problems and/or sensor diagnostics.
+- [ ] Clean and store the sensor properly or redeploy.
+- [ ] Visually inspect physical state of instrument.
+- [ ] Verify sensor performance by:
+  - Checking nearby stations;
+  - Making historical data comparisons (e.g., long-term time-series plots, which are particularly useful for identifying long-term bio-fouling or calibration drift.)

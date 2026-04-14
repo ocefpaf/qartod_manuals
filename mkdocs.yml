@@ -50,6 +50,7 @@ extra:
     provider: mike
 
 markdown_extensions:
+  - markdown_grid_tables
   - abbr
   - toc
   - pymdownx.highlight:

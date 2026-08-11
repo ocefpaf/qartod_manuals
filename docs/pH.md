@@ -1154,272 +1154,142 @@ mobile platforms.
 **Note:** The 's' axis means "along path."
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------+----------------------------+-----------------------------------------------------------+
-| Test                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             | Condition                                                                     | Platform                   | Codable Instructions                                      |
-+==================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================+===============================================================================+============================+===========================================================+
-| **5. Climatology Test (Strongly Recommended)** This test is a variation on the gross range check, where the gross range (`pH_Season_MAX` and `pH_Season_MIN`) are adjusted monthly, seasonally, or at some other operator-selected time period (`TIM_TST`). Expertise of the local user is required to determine reasonable seasonal averages. Longer time series permit more refined identification of appropriate thresholds.                                                                                                                                                                                                                                                                                                                  | Test that data point falls within seasonal expectations.                      | Stationary<br>             | No change<br>                                             |
-|                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |                                                                               | Fixed Vertical<br>         | Test conducted along z axis<br>                           |
-|                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |                                                                               | Mobile<br><br><br>         | Test conducted along s, x, or y axis<br>                  |
-|                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |                                                                               | 3-D                        | Test conducted along s, x, y, or z                        |
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------+----------------------------+-----------------------------------------------------------+
-| **6. Spike Test (Strongly Recommended)** This check is for single value spikes, specifically the pH value at point n-1 (`pH_{n-1}`). Spikes consisting of more than one data point are notoriously difficult to capture, but their onset may be flagged by the rate of change test. The spike test consists of two operator-selected thresholds above or below adjacent data points, `THRSHLD_LOW` and `THRSHLD_HIGH`. Adjacent data points (`pH_{n-2}` and `pH_{n}`) are averaged to form a spike reference (SPK_REF). The absolute value of the spike is tested to capture positive and negative going spikes. Large spikes are easier to identify as outliers and flag as failures. Smaller spikes may be real and are only flagged suspect.  | Data point n-1 exceeds a selected threshold relative to adjacent data points. | Stationary<br>             | No change<br>                                             |
-|                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |                                                                               | Fixed Vertical<br>         | Test conducted along z axis<br>                           |
-|                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |                                                                               | Mobile<br><br><br><br><br> | No change, or test is conducted along s, x, or y axis<br> |
-|                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |                                                                               | 3-D                        | No change, or test is conducted along s, x, or y axis<br> |
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------+----------------------------+-----------------------------------------------------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------+----------------------------+--------------------------------------------------------------+
+| Test                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       | Condition                                                                         | Platform                   | Codable Instructions                                         |
++============================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================+===================================================================================+============================+==============================================================+
+| **5. Climatology Test (Strongly Recommended)** This test is a variation on the gross range check, where the gross range (`pH_Season_MAX` and `pH_Season_MIN`) are adjusted monthly, seasonally, or at some other operator-selected time period (`TIM_TST`). Expertise of the local user is required to determine reasonable seasonal averages. Longer time series permit more refined identification of appropriate thresholds.                                                                                                                                                                                                                                                                                                                                                                                            | Test that data point falls within seasonal expectations.                          | Stationary<br>             | No change<br>                                                |
+|                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |                                                                                   | Fixed Vertical<br>         | Test conducted along z axis<br>                              |
+|                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |                                                                                   | Mobile<br><br><br>         | Test conducted along s, x, or y axis<br>                     |
+|                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |                                                                                   | 3-D                        | Test conducted along s, x, y, or z                           |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------+----------------------------+--------------------------------------------------------------+
+| **6. Spike Test (Strongly Recommended)** This check is for single value spikes, specifically the pH value at point n-1 (`pH_{n-1}`). Spikes consisting of more than one data point are notoriously difficult to capture, but their onset may be flagged by the rate of change test. The spike test consists of two operator-selected thresholds above or below adjacent data points, `THRSHLD_LOW` and `THRSHLD_HIGH`. Adjacent data points (`pH_{n-2}` and `pH_{n}`) are averaged to form a spike reference (SPK_REF). The absolute value of the spike is tested to capture positive and negative going spikes. Large spikes are easier to identify as outliers and flag as failures. Smaller spikes may be real and are only flagged suspect.                                                                            | Data point n-1 exceeds a selected threshold relative to adjacent data points.     | Stationary<br>             | No change<br>                                                |
+|                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |                                                                                   | Fixed Vertical<br>         | Test conducted along z axis<br>                              |
+|                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |                                                                                   | Mobile<br><br><br><br><br> | No change, or test is conducted along s, x, or y axis<br>    |
+|                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |                                                                                   | 3-D                        | No change, or test is conducted along s, x, y, z axis<br>    |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------+----------------------------+--------------------------------------------------------------+
+| **7. Rate of Change Test (Strongly Recommended)** This test inspects the time series for a time rate of change that exceeds a threshold value identified by the operator. pH values can change dramatically over short periods, hindering the value of this test. A balance must be found between a threshold set too low, which triggers too many false alarms, and one set too high, making the test ineffective. Determining the excessive rate of change is left to the local operator. The following are two different examples provided by QARTOD VI participants used to select the thresholds. Implementation of this test can be challenging. Upon failure, it is unknown which of the points is bad. Further, upon failing a data point, it remains to be determined how the next iteration can be handled.<br>  | Excessive rise/fall test.                                                         | Stationary<br>             | No change<br>                                                |
+| - **Example 1:** The rate of change between `pH_{n-1}` and `pH_{n}` must be less than three standard deviations (3 * SD). The SD of the pH time series is computed over the previous 25-hour period (user-selected value) to accommodate cyclical diurnal and tidal fluctuations. Both the number of SDs (`N_DEV`) and the period over which the SDs (TIM_DEV) are calculated are determined by the local operator.                                                                                                                                                                                                                                                                                                                                                                                                        |                                                                                   | Fixed Vertical<br>         | Test conducted along z axis<br>                              |
+| - **Example 2:** The rate of change between `pH_{n-1}` and `pH_{n}` must be less than 0.2 + 2 * SD.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |                                                                                   | Mobile<br><br><br><br><br> | No change, or test is conducted along s, x, or y axis<br>    |
+|                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |                                                                                   | 3-D                        | No change, or test is conducted along s, x, y, or z axis<br> |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------+----------------------------+--------------------------------------------------------------+
+| **8. Flat Line Test (Strongly Recommended)** When some sensors and/or data collection platforms fail, the result can be a continuously repeated observation of exactly the same value. This test compares the present observation (`pH_{n}`) to a number (`REP_CNT_FAIL` or `REP_CNT_SUSPECT`) of previous observations. `pH_{n}` is flagged if it has the same value as previous observations within a tolerance value `EPS` to allow for numerical round-off error. Note that historical flags are not changed.                                                                                                                                                                                                                                                                                                          | Invariant pH value.                                                               | Stationary<br>             | No change<br>                                                |
+|                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |                                                                                   | Fixed Vertical<br>         | Test conducted along z axis<br>                              |
+|                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |                                                                                   | Mobile<br><br><br><br><br> | No change, or test is conducted along s, x, or y axis<br>    |
+|                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |                                                                                   | 3-D                        | No change, or test is conducted along s, x, y, or z axis<br> |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------+----------------------------+--------------------------------------------------------------+
 
 : Table 3-4. Application of Strongly Recommended QC Tests for Sensor Deployments.
 
-**7) Rate of Change Test (Strongly Recommended)**
-This test inspects the time series for a time rate of
-change that exceeds a threshold value identified
-by the operator. pH values can change
-dramatically over short periods, hindering the
-value of this test. A balance must be found
-between a threshold set too low, which triggers
-too many false alarms, and one set too high,
-making the test ineffective. Determining the
-excessive rate of change is left to the local
-operator. The following are two different
-examples provided by QARTOD VI participants
-used to select the thresholds. Implementation of
-this test can be challenging. Upon failure, it is
-unknown which of the points is bad. Further, upon
-failing a data point, it remains to be determined
-how the next iteration can be handled.
 
-- **Example 1:** The rate of change between
-  pH _n- 1_ and pH _n_ must be less than three
-  standard deviations (3\*SD). The SD of the
-  pH time series is computed over the
-  previous 25-hour period (user-selected
-  value) to accommodate cyclical diurnal
-  and tidal fluctuations. Both the number of
-  SDs (N_DEV) and the period over which
-  the SDs (TIM_DEV) are calculated are
-  determined by the local operator.
-- **Example 2:** The rate of change between
-  pH _n- 1_ and pH _n_ must be less than 0.2 +2SD.
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------+----------------------------+-----------------------------------------------------------+
+| Test                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    | Condition                                                                         | Platform                   | Codable Instructions                                      |
++=========================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================+===================================================================================+============================+===========================================================+
+| **9. Multi-Variate Test (Suggested)** This is an advanced family of tests, starting with the simpler test described here and anticipating growth towards full co-variance testing in the future. In the simplest case, it is a pair of rate of change tests as described in test 7. The pH rate of change test is conducted with a more restrictive threshold (`N_pH_DEV`). If this test fails, a second rate of change test operating on a second variable (dissolved oxygen would be the most probable) is conducted. The absolute valued rate of change should be tested since the relationship between pH and variable two is indeterminate. If the rate of change test on the second variable fails to exceed a threshold (e.g., an anomalous step is found in pH and is lacking in salinity), then the pH value `n_0` is flagged. | Comparison to other variables.                                                    | Stationary<br>             | No change<br>                                             |
+|                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |                                                                                   | Fixed Vertical<br>         | Test conducted along z axis<br>                           |
+|                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |                                                                                   | Mobile<br><br><br>         | Test conducted along s, x, or y axis<br>                  |
+|                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |                                                                                   | 3-D                        | Test conducted along s, x, y, or z                        |
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------+----------------------------+-----------------------------------------------------------+
+| **10. Attenuated Signal Test (Suggested)** A pH sensor failure can provide a data series that is nearly but not exactly a flat line (for example, if the sensor head was to become wrapped in debris). This test inspects for a standard deviation (`SD`) value or a range variation (`MAX-MIN`) value that fails to exceed a threshold value (`MIN_VAR`) over a selected time period (`TST_TIM`).                                                                                                                                                                                                                                                                                                                                                                                                                                      | Inadequate variation test.                                                        | Stationary<br>             | No change<br>                                             |
+|                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |                                                                                   | Fixed Vertical<br>         | Test conducted along z axis<br>                           |
+|                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |                                                                                   | Mobile<br><br><br><br>     | No change, or test conducted along s, x, or y axis<br>    |
+|                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |                                                                                   | 3-D                        | No change, or test Test conducted along s, x, y, or z     |
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------+----------------------------+-----------------------------------------------------------+
+| **11. Neighbor Test (Suggested)** The check has the potential to be the most useful test when a nearby second sensor is determined to have a similar response. This test is the same as test *9) multi-variate check - comparison to other variables* where the second variable is the second pH sensor. The selected thresholds depend entirely upon the relationship between the two sensors as determined by the local knowledge of the operator.                                                                                                                                                                                                                                                                                                                                                                                    | Comparison to nearby pH sensors.                                                  | Stationary<br>             | No change<br>                                             |
+|                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |                                                                                   | Fixed Vertical<br>         | Test conducted along z axis<br>                           |
+|                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |                                                                                   | Mobile<br>                 | No change<br>                                             |
+|                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |                                                                                   | 3-D                        | No change                                                 |
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------+----------------------------+-----------------------------------------------------------+
 
-```
-
-Excessive
-rise/fall test.
-
-
-
-Stationary No change
-Fixed Vertical Test is conducted
-along z axis
-Mobile No change, or test is
-conducted along s,
-x, or y axis
-3 - D No change, or test is
-conducted along s,
-x, y, or z axis
-
-```
-
-**8) Flat Line Test (Strongly Recommended)**
-When some sensors and/or data collection
-platforms fail, the result can be a continuously
-repeated observation of exactly the same value.
-This test compares the present observation
-(pH_{n}) to a number (REP_CNT_FAIL or
-REP_CNT_SUSPECT) of previous observations. pH_{n}
-is flagged if it has the same value as previous
-observations within a tolerance value EPS to allow
-for numerical round-off error. Note that historical
-flags are not changed.
-
-```
-
-Invariant pH
-value.
-
-
-
-Stationary No change
-Vertical Test is conducted
-along z axis
-Mobile No change, or test is
-conducted along s,
-x, or y axis
-3 - D No change, or test is
-conducted along s,
-x, y, or z axis
-
-```
-
-**Table 3- 5.** Application Suggested QC Tests for Sensor Deployments
-
-##### Test Condition Platform Codable
-
-##### Instructions
-
-```
-
-9. Multi-Variate Test (Suggested)
-   This is an advanced family of tests, starting with
-   the simpler test described here and anticipating
-   growth towards full co-variance testing in the
-   future.
-   In the simplest case, it is a pair of rate of change
-   tests as described in test 7. The pH rate of change
-   test is conducted with a more restrictive threshold
-   (N_pH_DEV). If this test fails, a second rate of
-   change test operating on a second variable
-   (dissolved oxygen would be the most probable) is
-   conducted. The absolute valued rate of change
-   should be tested since the relationship between
-   pH and variable two is indeterminate. If the rate
-   of change test on the second variable fails to
-   exceed a threshold (e.g., an anomalous step is
-   found in pH and is lacking in salinity), then the pH
-   value n 0 is flagged.
-
-
-
-Comparison to
-other variables.
-
-
-
-Stationary No change
-Fixed Vertical Test is conducted
-along z axis
-Mobile Test is conducted
-along s, x, or y axis
-3 - D Test is conducted
-along s, x, y, or z axis
-
-
-
-10. Attenuated Signal Test (Suggested)
-    A pH sensor failure can provide a data series that
-    is nearly but not exactly a flat line (for example, if
-    the sensor head was to become wrapped in
-    debris). This test inspects for a standard deviation
-    (SD) value or a range variation (MAX-MIN) value
-    that fails to exceed a threshold value (MIN_VAR)
-    over a selected time period (TST_TIM).
-
-
-
-Inadequate
-variation test.
-
-
-
-Stationary No change
-Fixed Vertical Test is conducted
-along z axis
-Mobile No change, or test is
-conducted along s, x,
-or y axis
-3 - D No change, or test is
-conducted along s, x,
-y, or z axis 11) Neighbor Test (Suggested)
-The check has the potential to be the most
-useful test when a nearby second sensor is
-determined to have a similar response.
-This test is the same as test 9) multi-variate check
-
-```
-
-_- comparison to other variables_ where the second
-variable is the second pH sensor. The selected
-thresholds depend entirely upon the relationship
-between the two sensors as determined by the
-local knowledge of the operator.
-
-```
-
-Comparison to
-nearby pH
-sensors.
-
-
-
-Stationary No change
-Fixed Vertical Test is conducted
-along z axis
-Mobile No change
-3 - D No change
-
-```
-
+: Table 3-5. Application Suggested QC Tests for Sensor Deployments.
 
 #### 4.0 Summary
 
-The QC tests in this pH manual have been compiled using the guidance provided by QARTOD workshops
-(QARTOD 2003-2009) and from operators with extensive experience. Wherever possible, redundant tests
-have been merged. These tests are designed to support a range of pH sensors and operator capabilities. Some
-well-established programs with the highest standards have implemented very rigorous QC processes. Others,
-with different requirements, may utilize sensors with data streams that cannot support as many QC checks-
-all have value when used prudently. It is the responsibility of the users to understand and appropriately utilize
-data of varying quality, and operators must provide support by documenting and publishing their QC
-processes. A balance must be struck between the time-sensitive needs of real-time observing systems and the
-degree of rigor that has been applied to non-real-time systems by operators with decades of QC experience.
+The QC tests in this pH manual have been compiled using the guidance provided by QARTOD workshops (QARTOD 2003-2009) and from operators with extensive experience.
+Wherever possible,
+redundant tests have been merged.
+These tests are designed to support a range of pH sensors and operator capabilities.
+Some well-established programs with the highest standards have implemented very rigorous QC processes.
+Others,
+with different requirements,
+may utilize sensors with data streams that cannot support as many QC checks-all have value when used prudently.
+It is the responsibility of the users to understand and appropriately utilize data of varying quality,
+and operators must provide support by documenting and publishing their QC processes.
+A balance must be struck between the time-sensitive needs of real-time observing systems and the degree of rigor that has been applied to non-real-time systems by operators with decades of QC experience.
 
-The eleven data QC tests described in this manual apply to pH observations from a variety of sensor types
-and platforms that may be used. Several existing programs, such as the Global Ocean Acidification
-Observation Network, may have already developed QC tests that are similar to the U.S. IOOS QARTOD
-tests in this manual. The QARTOD pH committee's objective is to ensure these QARTOD QC test
-requirements and recommendations align with those of existing programs to the maximum extent possible
-(without being overly prescriptive) by providing meaningful guidance and thresholds that everyone can
-accomplish within a national framework. The individual tests are described and include codable instructions,
-output conditions, example thresholds, and exceptions (if any).
+The eleven data QC tests described in this manual apply to pH observations from a variety of sensor types and platforms that may be used.
+Several existing programs,
+such as the Global Ocean Acidification Observation Network,
+may have already developed QC tests that are similar to the U.S. IOOS QARTOD tests in this manual.
+The QARTOD pH committee's objective is to ensure these QARTOD QC test requirements and recommendations align with those of existing programs to the maximum extent possible
+(without being overly prescriptive)
+by providing meaningful guidance and thresholds that everyone can accomplish within a national framework.
+The individual tests are described and include codable instructions,
+output conditions,
+example thresholds,
+and exceptions (if any).
 
-Selection of the proper thresholds is critical to a successful QC effort. Thresholds can be based on historical
-knowledge or statistics derived from more recently acquired data and should not be determined arbitrarily.
-This manual provides some guidance for selecting thresholds based on input from various operators, but also
-notes that operators need the subject-matter expertise in selecting the proper thresholds to maximize the
-value of their QC effort. Because long-term data for pH are relatively scarce, it is expected that refinement of
-thresholds and exceptions will occur over time globally as well as becoming more specific to regional
-databases.
+Selection of the proper thresholds is critical to a successful QC effort.
+Thresholds can be based on historical knowledge or statistics derived from more recently acquired data and should not be determined arbitrarily.
+This manual provides some guidance for selecting thresholds based on input from various operators,
+but also notes that operators need the subject-matter expertise in selecting the proper thresholds to maximize the value of their QC effort.
+Because long-term data for pH are relatively scarce,
+it is expected that refinement of thresholds and exceptions will occur over time globally as well as becoming more specific to regional databases.
 
-Future QARTOD manuals will address standard QC test procedures and best practices for all types of
-common as well as uncommon platforms and sensors for U.S. IOOS core variables as appropriate. Some test
-procedures may even take place within the sensor package. Significant components of metadata will reside in
-the sensor and be transmitted either on demand or automatically along with the data stream. Users may also
-reference metadata through Uniform Resource Locators to simplify the identification of which QC steps have
-been applied to data. However, QARTOD QC test procedures in this manual address only real-time, in-situ
-observations made by sensors on fixed or mobile platforms. The tests do not include post-processing, which
-is not conducted in real-time but may be useful for ecosystem-based management, or delayed-mode, which is
-required for climate studies.
+Future QARTOD manuals will address standard QC test procedures and best practices for all types of common as well as uncommon platforms and sensors for U.S. IOOS core variables as appropriate.
+Some test procedures may even take place within the sensor package.
+Significant components of metadata will reside in the sensor and be transmitted either on demand or automatically along with the data stream.
+Users may also reference metadata through Uniform Resource Locators to simplify the identification of which QC steps have been applied to data.
+However,
+QARTOD QC test procedures in this manual address only real-time,
+in-situ observations made by sensors on fixed or mobile platforms.
+The tests do not include post-processing,
+which is not conducted in real-time but may be useful for ecosystem-based management,
+or delayed-mode,
+which is required for climate studies.
 
 Training and education are of paramount importance to ensure that both QA and QC practices are in place.
-The sensor manufacturers can play a huge role in this area. The manufacturers have spent enormous efforts
-helping customers use these sensors successfully. Most manufacturers provide instructions for best practices,
+The sensor manufacturers can play a huge role in this area.
+The manufacturers have spent enormous efforts helping customers use these sensors successfully.
+Most manufacturers provide instructions for best practices,
 
-##### Knowledgeable human involvement is required to properly understand the physical, chemical,
+    Knowledgeable human involvement is required to properly understand the physical, chemical,
+    and biological conditions within which the pH observations are being taken.
 
-##### and biological conditions within which the pH observations are being taken.
-
-and those practices should be used as a first-order QA for all measurements. The manufacturer-supplied
-user's manual includes these instructions, and carefully following them is critical to knowing how to use the
-instruments, understanding their limitations and accuracy, knowing how to interpret output, and then having
-a meaningful way to validate performance. Validation of sensor performance can be done by taking periodic
-water samples, using a known calibrated and maintained reference instrument, or performing laboratory tests
-to a given accuracy.
+and those practices should be used as a first-order QA for all measurements.
+The manufacturer-supplied user's manual includes these instructions,
+and carefully following them is critical to knowing how to use the instruments,
+understanding their limitations and accuracy,
+knowing how to interpret output,
+and then having a meaningful way to validate performance.
+Validation of sensor performance can be done by taking periodic water samples,
+using a known calibrated and maintained reference instrument,
+or performing laboratory tests to a given accuracy.
 
 Each QC manual is a dynamic document and is posted on the QARTOD website
-(<https://ioos.noaa.gov/project/qartod/>) upon completion. This practice allows for updating each U.S. IOOS
-core variable QC manual as technology development occurs, accommodating not only new sensors but also
-the upgrades envisioned for the existing sensors.
+(<https://ioos.noaa.gov/project/qartod/>)
+upon completion.
+This practice allows for updating each U.S. IOOS core variable QC manual as technology development occurs,
+accommodating not only new sensors but also the upgrades envisioned for the existing sensors.
 
-This website permits easy access to all QARTOD material and updates as they are identified. It identifies
-code libraries, procedures for testing data, and links to social media-enabling the growing ocean observing
-community to stay engaged across the enterprise regionally, nationally, and internationally.
+This website permits easy access to all QARTOD material and updates as they are identified.
+It identifies code libraries,
+procedures for testing data,
+and links to social media-enabling the growing ocean observing community to stay engaged across the enterprise regionally,
+nationally,
+and internationally.
 
-This QARTOD project may be one of the best working examples of private-public partnerships, which is a
-fundamental tenet of U.S. IOOS. As this pH manual has exemplified, the sensor manufacturers must be fully
-involved in the creation of most, if not all, QC manuals.
+This QARTOD project may be one of the best working examples of private-public partnerships,
+which is a fundamental tenet of U.S. IOOS.
+As this pH manual has exemplified,
+the sensor manufacturers must be fully involved in the creation of most,
+if not all,
+QC manuals.
 
 It is through this kind of uniform QC process that integration can occur across the national ocean enterprise,
-capitalizing the _I_ in U.S. IOOS. Implementing these procedures will accelerate the research-to-operations
-process to support a real-time, operational, integrated ocean observing system of defined data quality.
+capitalizing the *I* in U.S. IOOS.
+Implementing these procedures will accelerate the research-to-operations process to support a real-time,
+operational,
+integrated ocean observing system of defined data quality.
 
 #### 5.0 References
 

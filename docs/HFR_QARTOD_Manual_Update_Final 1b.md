@@ -239,45 +239,45 @@ Typical values for a system operated in the 12-MHz frequency band are 130 ranges
 
 <figcaption>Figure 2-1. WERA system</figcaption>
 
-To reduce the impact of radio frequency interference (RFI), 
-the WERA receives simultaneously signal containing the backscattered echoes superimposed by RFI, 
+To reduce the impact of radio frequency interference (RFI),
+the WERA receives simultaneously signal containing the backscattered echoes superimposed by RFI,
 along with a second signal containing RFI only.
 
-The RFI-only signal is used to mitigate the RFI component within the echo signal, 
+The RFI-only signal is used to mitigate the RFI component within the echo signal,
 which results in much clearer access to the echoes from the ocean surface and from ships.
 
-Data acquisition can be programmed for different integration times, 
-e.g., about 10 minutes for ocean currents and wind direction and 20 minutes for ocean wave spectra (Gurgel et al. 2007). 
-These short intervals help to track highly variable oceanographic processes, 
-e.g., the impact of a fast-moving meteorological front to the ocean surface. 
+Data acquisition can be programmed for different integration times,
+e.g., about 10 minutes for ocean currents and wind direction and 20 minutes for ocean wave spectra (Gurgel et al. 2007).
+These short intervals help to track highly variable oceanographic processes,
+e.g., the impact of a fast-moving meteorological front to the ocean surface.
 For detection and tracking of tsunamis and ships, data sets with 2 minutes integration time can be processed in real time every 30 seconds.
 
-In 2000, a technology transfer to HZM (http://www.helzel.com/) began. 
-WERA systems are now manufactured and further developed by HZM, 
-which is located in Kaltenkirchen, Germany. 
-More than 100 systems have been installed worldwide; 
-about ten are deployed within the U.S. 
+In 2000, a technology transfer to HZM (http://www.helzel.com/) began.
+WERA systems are now manufactured and further developed by HZM,
+which is located in Kaltenkirchen, Germany.
+More than 100 systems have been installed worldwide;
+about ten are deployed within the U.S.
 Additional information on WERA is available at http://ifmaxp1.ifm.uni-hamburg.de/WERA.shtml and https://helzel.com/product-detail-wera/.
 
-HZM offers a software module with their own implementation of QC flags and QC tests which work on WERA data formats. 
-Although access to the description of the data format and to the description of the WERA QC procedure (Gomez et al. 2014) is not restricted, 
-the binary programs that implement it are typically provided with an additional software license cost. 
-WERA reports that the same tests applied by the WERA QC proprietary software are also considered in the recommendations provided in this document, 
-either in Table 3-2, 
+HZM offers a software module with their own implementation of QC flags and QC tests which work on WERA data formats.
+Although access to the description of the data format and to the description of the WERA QC procedure (Gomez et al. 2014) is not restricted,
+the binary programs that implement it are typically provided with an additional software license cost.
+WERA reports that the same tests applied by the WERA QC proprietary software are also considered in the recommendations provided in this document,
+either in Table 3-2,
 or as an additional potential QC test in appendix B (such as broadness of peak or trend limits).
 
 #### 2.2.3 UH-HFDR
 
-The University of Hawai‘i High Frequency Doppler Radars (UH-HFDR; known colloquially as LERA) was developed at the University of Hawaii Radio Oceanography Laboratory starting in 1998. 
-The HFDR systems are produced with an open source model to minimize hardware costs. In the subsequent years, 
+The University of Hawai‘i High Frequency Doppler Radars (UH-HFDR; known colloquially as LERA) was developed at the University of Hawaii Radio Oceanography Laboratory starting in 1998.
+The HFDR systems are produced with an open source model to minimize hardware costs. In the subsequent years,
 the laboratory has developed projects and collaborations around the world: Hawaii (2002–present), Italy (2002–2004), Philippines (2008–present), Taiwan (2018–present), and Mexico (2005–present), to name a few.
 
 ### 2.3 Applications
 
-The QC tests described here can be applied to the Doppler spectra, 
-to the radial components, or to the total vectors. 
-In HF radar surface current mapping, 
-much of the QC is already embedded in the acquisition system, especially for QC of the Doppler spectra. 
+The QC tests described here can be applied to the Doppler spectra,
+to the radial components, or to the total vectors.
+In HF radar surface current mapping,
+much of the QC is already embedded in the acquisition system, especially for QC of the Doppler spectra.
 Examples include:
 
 - Noise floor detection and computation
@@ -288,32 +288,32 @@ Examples include:
 - Detection and removal of ship echoes
 - Detection and removal of other types of RFI
 
-Doppler spectra may be rejected, 
-and radial components may not be produced from them depending on the outcome of these tests. 
-Because these processes influence the production of radial components, 
+Doppler spectra may be rejected,
+and radial components may not be produced from them depending on the outcome of these tests.
+Because these processes influence the production of radial components,
 they are inherently part of the quality control process for surface currents described in U.S. IOOS (2015).
 
 ## 3.0 Quality Control
 
-To conduct real-time quality control (QC) on HF radar surface current observations, 
-the first prerequisite is to understand the science and context within which the measurements are being conducted. 
-Each HF radar radial site may have unique QC challenges. 
-HF radar measurements can be used to resolve many surface-current features, 
-such as oceanic fronts, 
-current shear, 
-divergent and convergence zones; 
-some of these features can be extreme events. 
+To conduct real-time quality control (QC) on HF radar surface current observations,
+the first prerequisite is to understand the science and context within which the measurements are being conducted.
+Each HF radar radial site may have unique QC challenges.
+HF radar measurements can be used to resolve many surface-current features,
+such as oceanic fronts,
+current shear,
+divergent and convergence zones;
+some of these features can be extreme events.
 Human involvement is therefore important so that solid scientific principles are applied to data evaluation to ensure that good data are not discarded and bad data are not distributed.
 
-The real-time QC of HF radar observations can be extremely challenging. 
-For example, 
-for real-time QC, 
-gradual calibration changes (e.g., changes in antenna patterns) and long-term system responses (component drift) most likely cannot be detected or corrected with real-time, 
-automated QC—at least, 
+The real-time QC of HF radar observations can be extremely challenging.
+For example,
+for real-time QC,
+gradual calibration changes (e.g., changes in antenna patterns) and long-term system responses (component drift) most likely cannot be detected or corrected with real-time,
+automated QC—at least,
 not at the present time.
 
-The QC described here may be conducted: 1) within the HF radar data collection system itself, 
-2) by the local system operator, 
+The QC described here may be conducted: 1) within the HF radar data collection system itself,
+2) by the local system operator,
 and 3) national and regional servers. Example of national and regional servers are:
 
 - The University of California San Diego - http://cordc.ucsd.edu/projects/mapping

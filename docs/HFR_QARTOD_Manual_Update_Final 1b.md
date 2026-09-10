@@ -322,20 +322,20 @@ and 3) national and regional servers. Example of national and regional servers a
 
 ### 3.1 QC Flags
 
-Data are evaluated using QC tests, 
-and the results of those tests are recorded by inserting flags in the data record. 
-Table 3-1 provides a simple set of flags and associated descriptions. 
-HF radar manufacturers already include additional flags for metadata records to further assist with troubleshooting. 
-For example, 
-CODAR Ocean Sensors (2009) identifies a variety of flags that are unique to SeaSonde systems. 
-For additional information regarding flags, 
-see the *Manual for the Use of Real-Time Oceanographic Data Quality Control Flags* (U.S. IOOS 2020) posted on the U.S. IOOS QARTOD website. 
-Extensive data flagging is already in place for HF radar and serves the observational needs quite well. 
-These flags can be a successful example for other systems; 
-however, 
+Data are evaluated using QC tests,
+and the results of those tests are recorded by inserting flags in the data record.
+Table 3-1 provides a simple set of flags and associated descriptions.
+HF radar manufacturers already include additional flags for metadata records to further assist with troubleshooting.
+For example,
+CODAR Ocean Sensors (2009) identifies a variety of flags that are unique to SeaSonde systems.
+For additional information regarding flags,
+see the *Manual for the Use of Real-Time Oceanographic Data Quality Control Flags* (U.S. IOOS 2020) posted on the U.S. IOOS QARTOD website.
+Extensive data flagging is already in place for HF radar and serves the observational needs quite well.
+These flags can be a successful example for other systems;
+however,
 herein we focus on the use of the flagging scheme accepted by UNESCO/IOC in 2013 and adopted by U.S. IOOS/QARTOD in 2014.
 
-Further post-processing of the data may yield different conclusions from those reached during initial assessments. 
+Further post-processing of the data may yield different conclusions from those reached during initial assessments.
 Flags set in real-time should not be changed to ensure that historical documentation is preserved. Results from post-processing should generate another set of flags.
 
 | **Flag**                      | **Description**                                                                                                                                                                      |
@@ -350,7 +350,7 @@ Flags set in real-time should not be changed to ensure that historical documenta
 
 ### 3.2 Sensor Deployment Considerations
 
-HF radars can be deployed in a variety of environments. Cook et al. (2008) and Mantovani et al. (2020) discuss the steps to follow when finding a suitable location for an HF radar installation. 
+HF radars can be deployed in a variety of environments. Cook et al. (2008) and Mantovani et al. (2020) discuss the steps to follow when finding a suitable location for an HF radar installation.
 Figure 3-1 shows an example of a SeaSonde antenna location with desirable features—close to the sea with low elevation and no nearby structures.
 
 ![Photo of an example of a SeaSonde antenna location with desirable features—close to the sea with low elevation and no nearby structures.](images_HF_Radar/image2.png)
@@ -359,31 +359,31 @@ Figure 3-1 shows an example of a SeaSonde antenna location with desirable featur
 
 ### 3.3 QC Test Descriptions
 
-A variety of tests can be performed to evaluate data quality in real time. 
-Some tests may already be embedded in the processing software; 
-some may be applied using optional manufacturer-supplied software modules, and others are conducted by the local operator or the national servers. 
+A variety of tests can be performed to evaluate data quality in real time.
+Some tests may already be embedded in the processing software;
+some may be applied using optional manufacturer-supplied software modules, and others are conducted by the local operator or the national servers.
 The tests listed in this section (Table 3-2) presume a time-ordered series of observations and denote these observations as follows:
 
 Radial velocity: R${t-2}$, R${t-1}$, R${t}$ - Total vector: T${t-2}$, T${t-1}$, T${t}$
 
-Sensor operators need to select the best thresholds for each test, which are determined at the operator level and may require trial and error before final selections are made. 
-A successful QC effort is highly dependent upon selection of the proper thresholds, 
-which should not be determined arbitrarily but can be based on historical knowledge or statistics derived from more recently acquired data. 
-Although this manual provides some guidance for selecting thresholds based on input from various operators, 
-it is assumed that operators have the expertise and motivation to select the proper thresholds to maximize the value of their QC effort. 
-Operators must openly provide thresholds as metadata for user support. 
+Sensor operators need to select the best thresholds for each test, which are determined at the operator level and may require trial and error before final selections are made.
+A successful QC effort is highly dependent upon selection of the proper thresholds,
+which should not be determined arbitrarily but can be based on historical knowledge or statistics derived from more recently acquired data.
+Although this manual provides some guidance for selecting thresholds based on input from various operators,
+it is assumed that operators have the expertise and motivation to select the proper thresholds to maximize the value of their QC effort.
+Operators must openly provide thresholds as metadata for user support.
 This shared information will help U.S. IOOS to document standardized thresholds that will be included in future releases of this manual.
 
-In Table 3-2, tests that apply only to DF systems are marked with an asterisk (`*`). 
-This condition is further highlighted as needed within each test description in the test exceptions block. 
-A double asterisk (`**`) indicates that the use of both the U component and V component uncertainty tests is an acceptable alternative to the required GDOP threshold test. 
+In Table 3-2, tests that apply only to DF systems are marked with an asterisk (`*`).
+This condition is further highlighted as needed within each test description in the test exceptions block.
+A double asterisk (`**`) indicates that the use of both the U component and V component uncertainty tests is an acceptable alternative to the required GDOP threshold test.
 
-Several additional tests were suggested by experienced operators who reviewed the manual, 
-but details of the tests were not available. 
-In order to ensure these tests remain available for consideration, 
-they have been listed in appendix B, 
-*Additional Potential Quality Control Tests*. 
-As this manual is updated and content for these tests becomes available, 
+Several additional tests were suggested by experienced operators who reviewed the manual,
+but details of the tests were not available.
+In order to ensure these tests remain available for consideration,
+they have been listed in appendix B,
+*Additional Potential Quality Control Tests*.
+As this manual is updated and content for these tests becomes available,
 they will be incorporated.
 
 | Test Type | Test Name | Status | Test Control |
@@ -415,18 +415,18 @@ they will be incorporated.
 
 #### 3.4 Test Hierarchy
 
-This section outlines the real-time QC tests that are required or suggested for HF radar measurements. 
-Operators should also consider that some of these tests can be carried out within the instrument, 
-where thresholds can be defined in configuration files. 
-These procedures are written as a high-level narrative from which a computer programmer can develop code to execute specific data flags (data quality indicators) within an automated software program. 
-A code repository where operators may find or post examples of code in use exists at https://github.com/rowg. 
-However, 
-HF radar surface current observations are well established, 
-and in most cases the QC applied will be quite uniform. 
-Tests are listed in table 3-3 and are divided into four groups: 
-those that are required, 
-strongly recommended, 
-suggested, 
+This section outlines the real-time QC tests that are required or suggested for HF radar measurements.
+Operators should also consider that some of these tests can be carried out within the instrument,
+where thresholds can be defined in configuration files.
+These procedures are written as a high-level narrative from which a computer programmer can develop code to execute specific data flags (data quality indicators) within an automated software program.
+A code repository where operators may find or post examples of code in use exists at https://github.com/rowg.
+However,
+HF radar surface current observations are well established,
+and in most cases the QC applied will be quite uniform.
+Tests are listed in table 3-3 and are divided into four groups:
+those that are required,
+strongly recommended,
+suggested,
 or in development.
 
 **Table 3-3.** QC Test hierarchy
@@ -459,7 +459,7 @@ or in development.
 
 #### 3.4.1 Signal Processing (or Spectral Processing)
 
-These tests are presently, or likely would be, 
+These tests are presently, or likely would be,
 conducted using algorithms embedded in the data acquisition software.
 
 **Test 101 – Signal-to-Noise Ratio (SNR) for Each Antenna (Required)**
@@ -484,7 +484,7 @@ Example: `SNRMIN=6.0` (dB) (default) (6.0 to 9.0 dB CODAR-recommended).
 
 Test is part of the direction-of-arrival (DOA) decision process about whether to select single or dual angle for radial velocity value.
 
-A single eigenvalue that is much larger than the others favors a single-angle decision. 
+A single eigenvalue that is much larger than the others favors a single-angle decision.
 Two larger eigenvalues favor dual-angle.
 
 |Flags|Condition|Codable Instructions|
@@ -501,7 +501,7 @@ Test specifications to be established by operator. For SeaSonde systems, these t
 
 Evaluates whether the DOA response peak power is strong enough to produce good data for the specific DOA solution. (Kirincich et al. 2012).
 
-DOA peak power for each solution should be above a specified threshold minimum (PPMIN). 
+DOA peak power for each solution should be above a specified threshold minimum (PPMIN).
 For CODAR, MSEL is the multiple signal classification (MUSIC) bearing selected (1 = single, 2 = dual angle1, and 3 = dual angle2) has corresponding output columns in RadialMetric files for MUSIC DOA peak power response, MSR1, MDR1, and MDR2, respectively.
 
 |Flags|Condition|Codable Instructions|
@@ -510,7 +510,7 @@ For CODAR, MSEL is the multiple signal classification (MUSIC) bearing selected (
 |Suspect = 3|N/A|None|
 |Pass = 1|DOA peak power exceeds minimum for specific DOA solution. Applies for test pass condition.|If (MSEL==1 AND MSR1 ≥ PPMIN) AND (MSEL==2 AND MDR1 ≥ PPMIN) AND (MSEL==3 AND MDR2 ≥ PPMIN), flag = 1.|
 
-Test Exception: Does not apply to systems using BF. 
+Test Exception: Does not apply to systems using BF.
 
 Test specifications to be established by operator.
 
@@ -518,15 +518,15 @@ Example: PPMIN = 5.0 (dB)
 
 **Test 104 – DOA Function Widths (3 dB)* (Suggested)**
 
-Evaluates whether DOA function is too wide, 
-indicating a poor fit to the antenna pattern for a specific DOA solution. 
-(Kirincich et al. 2012). 
+Evaluates whether DOA function is too wide,
+indicating a poor fit to the antenna pattern for a specific DOA solution.
+(Kirincich et al. 2012).
 
-DOA function width at 3 dB down from the response peak bearing for each solution should be below a specified threshold maximum width in degrees (PWMAX). 
-For CODAR, MSEL is the MUSIC bearing selected (1 = single, 2 = dual angle1, and 3 = dual angle2) and has corresponding output columns in RadialMetric files for MUSIC DOA function width—MSW1, 
-MDW1, and 
-MDW2, 
-respectively. 
+DOA function width at 3 dB down from the response peak bearing for each solution should be below a specified threshold maximum width in degrees (PWMAX).
+For CODAR, MSEL is the MUSIC bearing selected (1 = single, 2 = dual angle1, and 3 = dual angle2) and has corresponding output columns in RadialMetric files for MUSIC DOA function width—MSW1,
+MDW1, and
+MDW2,
+respectively.
 
 |Flags|Condition|Codable Instructions|
 |---|---|---|
@@ -534,7 +534,7 @@ respectively.
 |Suspect = 3|N/A|N/A|
 |Pass = 1|DOA function width is narrower than maximum value for a specific DOA solution. Applies for test pass condition.|If (MSEL==1 AND MSW1 < PWMAX) AND (MSEL==2 AND MDW1 < PWMAX) AND (MSEL==3 AND MDW2 < PWMAX), flag = 1|
 
-Test Exception: Does not apply to systems using BF. 
+Test Exception: Does not apply to systems using BF.
 
 Test specifications to be established by operator.
 
@@ -544,12 +544,12 @@ Example: PWMAX = 50 degrees
 
 Test is part of DOA decision process to specifically check whether dual-angle decision fits the data.
 
-A dual-angle situation implies two signals present from two directions. 
-From these a 2x2 signal matrix can be computed, 
-whose diagonal elements are the powers from each of the two directions. 
-The off-diagonal elements are complex noise numbers that would be zero under perfect dual-angle, 
-infinite-ensemble average conditions. 
-If these differ significantly from zero and are close to the diagonal elements (resulting in a matrix that is not positive definite), 
+A dual-angle situation implies two signals present from two directions.
+From these a 2x2 signal matrix can be computed,
+whose diagonal elements are the powers from each of the two directions.
+The off-diagonal elements are complex noise numbers that would be zero under perfect dual-angle,
+infinite-ensemble average conditions.
+If these differ significantly from zero and are close to the diagonal elements (resulting in a matrix that is not positive definite),
 the dual-angle hypothesis should not apply.
 
 |Flags|Condition|Codable Instructions|
@@ -560,9 +560,9 @@ the dual-angle hypothesis should not apply.
 
 Test Exception: Does not apply to systems using BF.
 
-Test specifications to be established by operator. 
-This test may be used in conjunction with or in place of other DOA decision criteria. 
-Optimal values in the codable instructions should be tested because they may be site-specific, 
+Test specifications to be established by operator.
+This test may be used in conjunction with or in place of other DOA decision criteria.
+Optimal values in the codable instructions should be tested because they may be site-specific,
 depending on conditions.
 
 #### 3.4.2 Radial Tests
@@ -573,14 +573,14 @@ This set of tests is conducted during the development of the radial velocities, 
 
 A collection of tests ensuring proper formatting and existence of fields within a radial file.
 
-The radial file may be tested for proper parsing and content, 
-for file format (hfrweralluv1.0, for example), 
-site code, 
-appropriate time stamp, 
-site coordinates, 
-antenna pattern type (measured or ideal, 
-for DF systems), 
-and internally consistent row/column specifications. 
+The radial file may be tested for proper parsing and content,
+for file format (hfrweralluv1.0, for example),
+site code,
+appropriate time stamp,
+site coordinates,
+antenna pattern type (measured or ideal,
+for DF systems),
+and internally consistent row/column specifications.
 
 |Flags|Condition|Codable Instructions|
 |---|---|---|
@@ -590,8 +590,8 @@ and internally consistent row/column specifications.
 
 Test Exception: None.
 
-Test specifications to be established by operator. 
-Acceptable files types, site codes, coordinates, APM names, etc., must be presented. 
+Test specifications to be established by operator.
+Acceptable files types, site codes, coordinates, APM names, etc., must be presented.
 For example, the national network performs the following suite of tests:
 
 - All radial files acquired by HFRNet portals report the data timestamp in the filename. The filename timestamp must not be any more than 72 hours in the future relative to the portals’ system time.
@@ -599,7 +599,7 @@ For example, the national network performs the following suite of tests:
 - Radial data tables (Lon, Lat, U, V, ...) must not be empty.
 - Radial data table columns stated must match the number of columns reported for each row (a useful test for catching partial or corrupted files).
 - The site location must be within range: − 180 ≤ Longitude ≤ 180 − 90 ≤ Latitude ≤ 90.
-- As a minimum, the following metadata must be defined: 
+- As a minimum, the following metadata must be defined:
     - File type (LLUV)
     - Site code
     - Timestamp
@@ -619,12 +619,12 @@ The maximum radial speed threshold (RSPDMAX) represents the maximum reasonable s
 |Suspect = 3|N/A|N/A|
 |Pass = 1|Radial current speed is less than or equal to the maximum radial speed threshold.|If RSPD ≤ RSPDMAX, flag = 1|
 
-Test Exception: None. 
+Test Exception: None.
 
-Test specifications to be established by operator. 
-The maximum total speed threshold is 1 m/s for the West Coast of the United States and 3 m/s for the East/Gulf Coast domain. 
-The threshold must vary by region. 
-For example, the presence of the Gulf Stream dictates the higher threshold on the East Coast. 
+Test specifications to be established by operator.
+The maximum total speed threshold is 1 m/s for the West Coast of the United States and 3 m/s for the East/Gulf Coast domain.
+The threshold must vary by region.
+For example, the presence of the Gulf Stream dictates the higher threshold on the East Coast.
 
 **Test 203 – Valid Location (Required)**
 
@@ -646,10 +646,10 @@ Test specifications to be established by operator. For CODAR systems, the refere
 
 Rejects radials in files with low radial counts (poor radial map coverage).
 
-The number of radials (RCNT) in a radial file must be above a threshold value RCNT_MIN to pass the test and above a value RC_LOW to not be considered suspect. 
-If the number of radials is below the minimum level, 
-it indicates a problem with data collection. In this case, 
-the file should be rejected and none of the radials used for total vector processing. 
+The number of radials (RCNT) in a radial file must be above a threshold value RCNT_MIN to pass the test and above a value RC_LOW to not be considered suspect.
+If the number of radials is below the minimum level,
+it indicates a problem with data collection. In this case,
+the file should be rejected and none of the radials used for total vector processing.
 
 |Flags|Condition|Codable Instructions|
 |---|---|---|
@@ -659,14 +659,14 @@ the file should be rejected and none of the radials used for total vector proces
 
 Test Exception: Does not apply to BF systems.
 
-Test specifications to be established by operator. 
-The RC_LOW threshold may be based on the national network performance metric threshold value of 300. 
-The choice of 300 radial solutions came from grouping radial files over a certain time period from all stations, 
-looking at the cumulative density function for counts, 
-and selecting a value around 10%. 
-However, 
-this threshold does not work for all stations. 
-A custom value for a site might be found by following the same procedure for the individual station. 
+Test specifications to be established by operator.
+The RC_LOW threshold may be based on the national network performance metric threshold value of 300.
+The choice of 300 radial solutions came from grouping radial files over a certain time period from all stations,
+looking at the cumulative density function for counts,
+and selecting a value around 10%.
+However,
+this threshold does not work for all stations.
+A custom value for a site might be found by following the same procedure for the individual station.
 
 **Test 205 – Spatial Median Filter (Suggested)**
 
@@ -674,7 +674,7 @@ Reduces outlier velocities in radials.
 
 For each radial source vector, compute the median of all velocities within <RCLim> Range Step (km) and also within <AngLim> degrees in bearing. If the difference between the vector's velocity and the median velocity is greater than <CurLim> cm/s, then the vector is discarded; otherwise the median velocity is used.
 
-In the codable instructions below, the radial velocity is designated as RV and the set of neighboring velocities is designated as RVNB. 
+In the codable instructions below, the radial velocity is designated as RV and the set of neighboring velocities is designated as RVNB.
 
 A filtered and filled option for radials was introduced in CODAR Radial Suite software release 7. SeaSondeRadialSiteSetup can turn this feature on or off. Another way to do this is to change the value of line 22 in the AnalysisOptions.txt file in the RadialConfigs folder. It can be set to 0, 1, or 2 according to this guidance: 0 = Off, 1 = Area Filter + Interpolation, 2 = Area Filter Only.
 
@@ -712,7 +712,7 @@ Test specifications to be established by operator. Example: GRADIENT_TEMP_FAIL =
 
 Check that the average radial bearing remains relatively constant (Roarty et al. 2012).
 
-It is expected that the average of all radial velocity bearings AVG_RAD_BEAR obtained during a sample interval (e.g., 1 hour) should be close to a reference bearing REF_RAD_BEAR and not vary beyond warning or failure thresholds. 
+It is expected that the average of all radial velocity bearings AVG_RAD_BEAR obtained during a sample interval (e.g., 1 hour) should be close to a reference bearing REF_RAD_BEAR and not vary beyond warning or failure thresholds.
 
 |Flags|Condition|Codable Instructions|
 |---|---|---|
@@ -720,7 +720,7 @@ It is expected that the average of all radial velocity bearings AVG_RAD_BEAR obt
 |Suspect = 3|The absolute difference between the average radial bearing and a reference bearing is less than the failure threshold but exceeds the warning threshold.|If abs(AVG_RAD_BEAR - REF_RAD_BEAR) ≥ RAD_BEAR_DIF_WARN AND abs(AVG_RAD_BEAR - REF_RAD_BEAR) < RAD_BEAR_DIF_FAIL, flag = 3|
 |Pass = 1|The absolute difference between the average radial bearing and a reference bearing is less than the warning threshold.|If abs(AVG_RAD_BEAR - REF_RAD_BEAR) < 1RAD_BEAR_DIF_WARN, flag = 1|
 
-Test Exception: Test becomes less useful as the observation azimuth increases, cannot be used for omnidirectional sites, and does not apply to BF systems.  
+Test Exception: Test becomes less useful as the observation azimuth increases, cannot be used for omnidirectional sites, and does not apply to BF systems.
 
 Test specifications to be established by operator. Examples: RAD_BEAR_DIF_FAIL =30°, RAD_BEAR DIF_WARN = 15°.
 
@@ -728,9 +728,9 @@ Test specifications to be established by operator. Examples: RAD_BEAR_DIF_FAIL =
 
 Tests for the difference between actual radial and independent synthetic radial.
 
-Total maps are computed from a subset of available radar station radial maps. 
-Synthetic radials for the excluded radial maps are back-computed from those totals and compared with observed radials. 
-A synthetic radial velocity (RS) is created for an independent site by using a total vector generated from two or more sites and comparing RS to the actual radial velocity (RA) from the independent site. 
+Total maps are computed from a subset of available radar station radial maps.
+Synthetic radials for the excluded radial maps are back-computed from those totals and compared with observed radials.
+A synthetic radial velocity (RS) is created for an independent site by using a total vector generated from two or more sites and comparing RS to the actual radial velocity (RA) from the independent site.
 
 |Flags|Condition|Codable Instructions|
 |---|---|---|
@@ -746,7 +746,7 @@ Test specifications to be established by operator. Example: ΔRFail = 25 cm/s, �
 
 Tests for repeating values in radial time series at a location.
 
-If the temporal change between successive radial velocities has not exceeded the resolution of the measurement for N successive time steps, 
+If the temporal change between successive radial velocities has not exceeded the resolution of the measurement for N successive time steps,
 those velocities (excluding first occurrence of the repeating velocity in the evaluation period) are considered stuck values.
 
 |Flags|Condition|Codable Instructions|
@@ -763,13 +763,13 @@ Test specifications to be established by operator. Example: N = 3, R = 0.01
 
 Tests ensuring proper setting of expected antenna phases for ideal pattern.
 
-The radial file may be tested for absolute difference between phases used (P13_setting, P23_setting) to calculate radials versus measured (P13_actual, P23_actual). 
-How this test should be structured and implemented is not yet clear. 
-It should consider that differences of 180 degrees (or within the tolerance threshold of 180 degrees) are also acceptable if this is occurring in one of the two loops. 
-Operators should routinely check on the sea echo phases as a best practice. 
-Depending on the station, 
-operators might want to use this test for monitoring and not flagging, 
-since system phases could be stable while the sea echo phase estimates from spectra may not be as stable. 
+The radial file may be tested for absolute difference between phases used (P13_setting, P23_setting) to calculate radials versus measured (P13_actual, P23_actual).
+How this test should be structured and implemented is not yet clear.
+It should consider that differences of 180 degrees (or within the tolerance threshold of 180 degrees) are also acceptable if this is occurring in one of the two loops.
+Operators should routinely check on the sea echo phases as a best practice.
+Depending on the station,
+operators might want to use this test for monitoring and not flagging,
+since system phases could be stable while the sea echo phase estimates from spectra may not be as stable.
 
 |Flags|Condition|Codable Instructions|
 |---|---|---|
@@ -783,13 +783,13 @@ Test specifications to be established by operator. Example:
 
 #### 3.4.3 Total Vectors
 
-This set of tests is conducted during the development of the total velocities. 
-These tests may be carried out at the local, 
+This set of tests is conducted during the development of the total velocities.
+These tests may be carried out at the local,
 regional and/or national network levels.
 
 **Test 301 - Data Density Threshold* (Required)**
 
-Tests that a sufficient number of radial velocities exist to compute a total velocity vector. 
+Tests that a sufficient number of radial velocities exist to compute a total velocity vector.
 
 A minimum number of radial velocities (RV_MIN) are required to construct a total velocity vector. RV_CNT is the number of radial velocities available to be used in the calculation.
 

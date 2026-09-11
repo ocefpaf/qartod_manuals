@@ -672,7 +672,7 @@ A custom value for a site might be found by following the same procedure for the
 
 Reduces outlier velocities in radials.
 
-For each radial source vector, compute the median of all velocities within $<RCLim>$ Range Step (km) and also within $<AngLim>$ degrees in bearing. If the difference between the vector's velocity and the median velocity is greater than $<CurLim>$ cm/s, then the vector is discarded; otherwise the median velocity is used.
+For each radial source vector, compute the median of all velocities within `<RCLim>` Range Step (km) and also within `<AngLim>` degrees in bearing. If the difference between the vector's velocity and the median velocity is greater than `<CurLim>` cm/s, then the vector is discarded; otherwise the median velocity is used.
 
 In the codable instructions below, the radial velocity is designated as RV and the set of neighboring velocities is designated as RVNB.
 
@@ -952,6 +952,10 @@ In 2014,
 the European Global Ocean Observing System (EuroGOOS) launched the High Frequency Radar Task Team (http://eurogoos.eu/high-frequency-radar-task-team/) to promote the coordinated development of HFR technology in Europe.
 The team followed up on many initiatives in Europe (e.g., EU H2020 Jerico-Next, EU H2020 SeaDataCloud, EU H2020 EuroSea,
 EU H2020 Jerico-S3, and Copernicus Marine Environment Monitoring Service [CMEMS]$^2$) aimed at building an operational HFR European network based on coordinated data management for the development of operational ocean monitoring via HFR systems,
+In 2014, 
+the European Global Ocean Observing System (EuroGOOS) launched the High Frequency Radar Task Team (http://eurogoos.eu/high-frequency-radar-task-team/) to promote the coordinated development of HFR technology in Europe. 
+The team followed up on many initiatives in Europe (e.g., EU H2020 Jerico-Next, EU H2020 SeaDataCloud, EU H2020 EuroSea, 
+EU H2020 Jerico-S3, and Copernicus Marine Environment Monitoring Service [CMEMS]²) aimed at building an operational HFR European network based on coordinated data management for the development of operational ocean monitoring via HFR systems, 
 and integration of HFR products into the major platforms for marine data distribution.
 
 These efforts achieved the harmonization of system requirements and design, data quality,
@@ -961,6 +965,13 @@ compliant with Climate and Forecast Metadata Convention version 1.6 (CF-1.6),
 OceanSITES convention,
 CMEMS-In Situ TAC$^3$ and SDC requirements and INSPIRE directive.
 Furthermore, a battery of the QC tests to be mandatorily applied to HFR data has been defined according to the EuroGOOS Data Management,
+These efforts achieved the harmonization of system requirements and design, data quality, 
+and standardization of HFR data access and tools (Mantovani et al. 2020). 
+The European standard format for HFR data and metadata model has been defined and implemented (Corgnati et al. 2018), 
+compliant with Climate and Forecast Metadata Convention version 1.6 (CF-1.6), 
+OceanSITES convention, 
+CMEMS-In Situ TAC³ and SDC requirements and INSPIRE directive. 
+Furthermore, a battery of the QC tests to be mandatorily applied to HFR data has been defined according to the EuroGOOS Data Management, 
 Exchange and Quality Work Group (DATAMEQ) working recommendations on real-time QC and building on the initial U.S. IOOS QARTOD HF radar manual (U.S. IOOS 2016).
 
 Thanks to these achievements,
@@ -975,48 +986,46 @@ CNR-ISMAR and SOCIB,$^4$ under the coordination of the EuroGOOS HFR Task Team,
 as the focal point and operational asset in Europe for HFR data management and dissemination,
 also promoting networking between EU infrastructures and the Global HFR network.
 The EU HFR Node is fully operational since December 2018 in distributing tools and support for standardization to the HFR providers as well as standardized near-real-time (NRT) and delayed-mode HFR radial and total current data to CMEMS-INSTAC,
+The EU HFR Node was established in 2018 by AZTI, 
+CNR-ISMAR and SOCIB,⁴ under the coordination of the EuroGOOS HFR Task Team, 
+as the focal point and operational asset in Europe for HFR data management and dissemination, 
+also promoting networking between EU infrastructures and the Global HFR network. 
+The EU HFR Node is fully operational since December 2018 in distributing tools and support for standardization to the HFR providers as well as standardized near-real-time (NRT) and delayed-mode HFR radial and total current data to CMEMS-INSTAC, 
 EMODnet Physics and SDC Data Access.
 
-The European common data and metadata model for real-time HFR data requires real-time data to be mandatorily processed by the QC tests listed in <u>Table 4-1</u> (for radial velocity data) and in <u>Table 4-2</u> (for total velocity data). These tests were selected by the dedicated working group (composed by the HFR operators
+The European common data and metadata model for real-time HFR data requires real-time data to be mandatorily processed by the QC tests listed in Table 4-1 (for radial velocity data) and in Table 4-2 (for total velocity data). These tests were selected by the dedicated working group (composed by the HFR operators and by the EuroGOOS HFR Task Team members) and the tests are among the ones defined in this QARTOD manual, according to the defined hierarchy.
 
-<small>$^2$ See https://ec.europa.eu/info/research-and-innovation/funding/funding-opportunities/funding-programmes-and-open-calls/horizon-2020_en</small>
+The mandatory QC tests were selected to be manufacturer-independent, i.e. not to rely on particular variables or information provided only by a specific device. These standard sets of tests have been defined both for radial and total velocity data and they are the required ones for labelling the data as Level 2B (for radial velocity) and Level 3B (for total velocity) data, as defined in Table 4-3.
 
-See <u>[http://www.marineinsitu.eu/](http://www.marineinsitu.eu/)</u>. 4AZTI is a scientific and technological center that develops high-impact transformation projects with organizations aligned with the United Nations 2030 SDGs. CNR-ISMAR is a marine institute in Italy, and SOCIB is the Balearic Islands Coastal Ocean Observing and Forecasting System.
+<small>² See https://ec.europa.eu/info/research-and-innovation/funding/funding-opportunities/funding-programmes-and-open-calls/horizon-2020_en.
 
-|Table 4- 1.||and by the EuroGOOS HFR Task Team members) and the tests are among the ones defined in this QARTOD manual, according to the defined hierarchy. The mandatory QC tests were selected to be manufacturer-independent, i.e. not to rely on particular variables or information provided only by a specific device. These standard sets of tests have been defined both for radial and total velocity data and they are the required ones for labelling the data as Level 2B (for radial velocity) and Level 3B (for total velocity) data, as defined in Mandatory QC tests for radial velocity data.|Table 4-3.|
+³ See http://www.marineinsitu.eu/.
+ 
+⁴ AZTI is a scientific and technological center that develops high-impact transformation projects with organizations aligned with the United Nations 2030 SDGs. CNR-ISMAR is a marine institute in Italy, and SOCIB is the Balearic Islands Coastal Ocean Observing and Forecasting System.</small>
+
+| QC test | Code | Meaning | QC variable type |
 |---|---|---|---|
-|QC test|Code|Meaning|QC variable type|
-|Syntax|QC201|This test will ensure the proper formatting and the existence of all the necessary fields within the radial netCDF file. This test is performed on the netCDF files, and it assesses the presence and correctness of all data and attribute fields and the correct syntax throughout the file.|N/A—it is a test on the netCDF file structure, not on data content.|
-|Over-water|QC203|This test labels radial vectors that lie on land with a “bad data” flag and radial vectors that lie on water with a “good data” flag.|gridded|
-|Velocity Threshold|QC202|This test labels radial velocity vectors whose module is bigger than a maximum velocity threshold with a “bad data” flag and radial vectors whose module is smaller than the threshold with a “good data” flag.|gridded|
-|Variance Threshold||This test labels radial vectors whose temporal variance is bigger than a maximum threshold with a “bad data” flag and radial vectors whose temporal variance is smaller than the threshold with a “good data” flag. The CODAR manufacturer suggests not to use variance data for real-time QC, as documented in the fall 2013 CODAR Currents Newsletter. The indication is due to the fact that the CODAR parameter defining the variance is computed at each time step, and therefore considered not statistically solid. Thus, this test is applicable only to Beam Forming (BF) systems. Data files from Direction Finding (DF) systems will apply instead the “Temporal Derivative” test reporting the explanation “Test not applicable to Direction Finding systems. The Temporal Derivative test is applied.” in the comment attribute.|gridded|
-|Temporal Derivative|QC206|For each radial bin, the current hour velocity vector is compared with the previous and next hour ones. If the differences are bigger than a threshold (specific for each radial bin and evaluated on the basis of the analysis of a one-year-long time series), the present vector is flagged as bad data; otherwise, it is labeled with a “good data” flag. Since this method implies a one-hour delay in the data provision, the current hour file should have the related QC flag set to 0 (no QC performed) until it is updated to the proper values when the next hour file is generated.|gridded|
-|||28||
+| Syntax | QC201 | This test will ensure the proper formatting and the existence of all the necessary fields within the radial netCDF file. This test is performed on the netCDF files, and it assesses the presence and correctness of all data and attribute fields and the correct syntax throughout the file. | N/A—it is a test on the netCDF file structure, not on data content. |
+| Over-water | QC203 | This test labels radial vectors that lie on land with a “bad data” flag and radial vectors that lie on water with a “good data” flag. | gridded |
+| Velocity Threshold | QC202 | This test labels radial velocity vectors whose module is bigger than a maximum velocity threshold with a “bad data” flag and radial vectors whose module is smaller than the threshold with a “good data” flag. | gridded |
+| Variance Threshold |  | This test labels radial vectors whose temporal variance is bigger than a maximum threshold with a “bad data” flag and radial vectors whose temporal variance is smaller than the threshold with a “good data” flag. The CODAR manufacturer suggests not to use variance data for real-time QC, as documented in the fall 2013 CODAR Currents Newsletter. The indication is due to the fact that the CODAR parameter defining the variance is computed at each time step, and therefore considered not statistically solid. Thus, this test is applicable only to Beam Forming (BF) systems. Data files from Direction Finding (DF) systems will apply instead the “Temporal Derivative” test reporting the explanation “Test not applicable to Direction Finding systems. The Temporal Derivative test is applied.” in the comment attribute. | gridded |
+| Temporal Derivative | QC206 | For each radial bin, the current hour velocity vector is compared with the previous and next hour ones. If the differences are bigger than a threshold (specific for each radial bin and evaluated on the basis of the analysis of a one-year-long time series), the present vector is flagged as bad data; otherwise, it is labeled with a “good data” flag. Since this method implies a one-hour delay in the data provision, the current hour file should have the related QC flag set to 0 (no QC performed) until it is updated to the proper values when the next hour file is generated. | gridded |
+| Median Filter | QC205 | For each source vector, the median of all velocities within a radius of `<RCLim>` and whose vector bearing (angle of arrival at site) is also within an angular distance of `<AngLim>` degrees from the source vector's bearing is evaluated. If the difference between the vector’s velocity and the median velocity is greater than the specified threshold, then the vector is labeled with a “bad data” flag, otherwise it is labeled with a “good data” flag. | gridded |
+| Average Radial Bearing | QC207 | This test labels the entire data file with a “good data” flag if the average radial bearing of all the vectors contained in the data file lies within a specified margin around the expected value of normal operation. Otherwise, the data file is labeled with a “bad data” flag. The value of normal operation must be defined within a time interval when the proper functioning of the device is assessed. The margin must be set according to site-specific properties. This test applies only to DF systems. Data files from BF systems will have this variable filled with “good data” flags (1) and the explanation “Test not applicable to Beam Forming systems” in the comment attribute. | scalar |
+| Radial Count | QC204 | Test labeling radial data having a number of velocity vectors bigger than the threshold with a “good data” flag and radial data having a number of velocity vectors smaller than the threshold with a “bad data” flag. | scalar |
 
-||||High Frequency Radar|
+: Table 4-1. Mandatory QC tests for radial velocity data.
+
+| QC test | Code | Meaning | QC variable type |
 |---|---|---|---|
-|QC test|Code|Meaning|QC variable type|
-|Median Filter|QC205|For each source vector, the median of all velocities within a radius of <RCLim> and whose vector bearing (angle of arrival at site) is also within an angular distance of <AngLim> degrees from the source vector's bearing is evaluated. If the difference between the vector’s velocity and the median velocity is greater than the specified threshold, then the vector is labeled with a “bad data” flag, otherwise it is labeled with a “good data” flag.|gridded|
-|Average|QC207|This test labels the entire data file with a “good data” flag if the average|scalar|
-|Radial||radial bearing of all the vectors contained in the data file lies within a||
-|Bearing||specified margin around the expected value of normal operation. Otherwise, the data file is labeled with a “bad data” flag. The value of normal operation must be defined within a time interval when the proper functioning of the device is assessed. The margin must be set according to site-specific properties. This test applies only to DF systems. Data files from BF systems will have this variable filled with “good data” flags (1) and the explanation “Test not applicable to Beam Forming systems” in the comment attribute.||
-|Radial Count|QC204|Test labeling radial data having a number of velocity vectors bigger than the threshold with a “good data” flag and radial data having a number of velocity vectors smaller than the threshold with a “bad data” flag. 29|scalar|
+| Syntax | Similar to QC201 | This test will ensure the proper formatting and the existence of all the necessary fields within the total netCDF file. This test is performed on the netCDF files, and it assesses the presence and correctness of all data and attribute fields and the correct syntax throughout the file. | N/A, it is a test on the netCDF file structure, not on data content. |
+| Data Density Threshold | QC301 | This test labels total velocity vectors with a number of contributing radials bigger than the threshold with a “good data” flag and total velocity vectors with a number of contributing radials smaller than the threshold with a “bad data” flag. | gridded |
+| Velocity Threshold | QC303 | This test labels total velocity vectors whose module is bigger than a maximum velocity threshold with a “bad data” flag and total vectors whose module is smaller than the threshold with a “good data” flag. | gridded |
+| Variance Threshold | Similar to QC306 and QC307 | This test labels total vectors whose temporal variance is bigger than a maximum threshold with a “bad data” flag and total vectors whose temporal variance is smaller than the threshold with a “good data” flag. The CODAR manufacturer suggests not to use variance data for real-time QC, as documented in the fall 2013 CODAR Currents Newsletter. The indication is due to the fact that the CODAR parameter defining the variance is computed at each time step, and therefore considered not statistically solid. Thus, this test applies only to Beam Forming (BF) systems. Data files from Direction Finding (DF) systems will apply instead the “Temporal Derivative” test reporting the explanation “Test not applicable to Direction Finding systems. The Temporal Derivative test is applied.” in the comment attribute. | gridded |
+| Temporal Derivative | QC206 | For each grid cell, the current hour velocity vector is compared with the previous and next ones. If the differences are bigger than a threshold (specific for each grid cell and evaluated on the basis of the analysis of one-year-long time series), the present vector is flagged as “bad data,” otherwise it is labelled with a “good data” flag. Since this method implies a one-hour delay in the data provision, the current hour file should have the related QC flag set to 0 (no QC performed) until it is updated to the proper values when the next hour file is generated. | gridded |
+| GDOP Threshold | QC302 | This test labels total velocity vectors whose GDOP is bigger than a maximum threshold with a “bad data” flag and the vectors whose GDOP is smaller than the threshold with a “good data” flag. | gridded |
 
-|Table 4-2.|Mandatory QC tests for total velocity data.||||
-|---|---|---|---|---|
-|QC test|Code|Meaning||QC variable type|
-|Syntax|Similar to QC201||This test will ensure the proper formatting and the existence of all the N/A, it is a necessary fields within the total netCDF file. This test is performed on the netCDF files, and it assesses the presence and correctness of all data and attribute fields and the correct syntax throughout the file.|test on the netCDF file structure, not on data content.|
-|Data Density|QC301||This test labels total velocity vectors with a number of contributing|gridded|
-|Threshold|||radials bigger than the threshold with a “good data” flag and total velocity vectors with a number of contributing radials smaller than the threshold with a “bad data” flag.||
-|Velocity Threshold|QC303||This test labels total velocity vectors whose module is bigger than a maximum velocity threshold with a “bad data” flag and total vectors whose module is smaller than the threshold with a “good data” flag.|gridded|
-|Variance Threshold|Similar to QC307|flag.|This test labels total vectors whose temporal variance is bigger than a QC306 and maximum threshold with a “bad data” flag and total vectors whose temporal variance is smaller than the threshold with a “good data” The CODAR manufacturer suggests not to use variance data for real- time QC, as documented in the fall 2013 CODAR Currents Newsletter. The indication is due to the fact that the CODAR parameter defining the variance is computed at each time step, and therefore considered not statistically solid. Thus, this test applies only to Beam Forming (BF) systems. Data files from Direction Finding (DF) systems will apply instead the “Temporal Derivative” test reporting the explanation “Test not applicable to Direction Finding systems. The Temporal Derivative test is applied.” in the comment attribute.|gridded|
-|Temporal|QC206||For each grid cell, the current hour velocity vector is compared with|gridded|
-|Derivative||hour file is generated.|the previous and next ones. If the differences are bigger than a threshold (specific for each grid cell and evaluated on the basis of the analysis of one-year-long time series), the present vector is flagged as “bad data,” otherwise it is labelled with a “good data” flag. Since this method implies a one-hour delay in the data provision, the current hour file should have the related QC flag set to 0 (no QC performed) until it is updated to the proper values when the next||
-|GDOP Threshold|QC302||This test labels total velocity vectors whose GDOP is bigger than a maximum threshold with a “bad data” flag and the vectors whose GDOP is smaller than the threshold with a “good data” flag. 30|gridded|
-
-## <u>High Frequency Radar</u>
-
-**Table 4-3.** Processing levels for HFR data
+: Table 4-2. Mandatory QC tests for total velocity data.
 
 |Processing Level|Definition|Products|
 |---|---|---|
@@ -1031,63 +1040,102 @@ See <u>[http://www.marineinsitu.eu/](http://www.marineinsitu.eu/)</u>. 4AZTI is 
 |LEVEL 3C|Level 3A data that have been reprocessed for advanced QC.|Reprocessed HFR total velocity data|
 |LEVEL 4|Model output or results from analyses of lower-level data, e.g., variables derived from multiple measurements|Energy density maps, residence times, etc.|
 
-Each QC test results in a flag related to each data vector, which is inserted in a specific test variable. These variables can be: 1) matrices with the same dimensions of the data variable, containing (for each cell), the flag related to the vector lying in that cell, when the QC test evaluates each cell of the gridded data, or 2) a scalar, in case the QC test assesses an overall property of the data.
+: Table 4-3. Processing levels for HFR data.
 
-An overall QC variable also reports the quality flags related to the results of all the QC tests: it is a “good data” flag if and only if all QC tests are passed.
+Each QC test results in a flag related to each data vector, 
+which is inserted in a specific test variable. 
+These variables can be: 1) matrices with the same dimensions of the data variable, 
+containing (for each cell), the flag related to the vector lying in that cell, 
+when the QC test evaluates each cell of the gridded data, 
+or 2) a scalar, in case the QC test assesses an overall property of the data.
 
-|||extends the UNESCO scale reported in Table 4-4. Argo quality control flag scale.|The flagging policy is not to modify the data, but only to label them with flags. Thus, each geophysical variable in the standard output files contains exactly the measured data and QC variables containing flags can be used as masks to the geophysical variables for having information about data quality. The adopted QC flagging scheme is the ARGO QC flag scale (Wong et al. 2022), shown in Table 4-4, which Table 3-1.|
-|---|---|---|---|
-||Code|Meaning|Comment|
-|0||unknown|No QC was performed.|
-|1||good data|All QC tests passed.|
-|2||probably good data|These data should be used with caution.|
-|3||potentially correctable bad data|These data are not to be used without scientific correction or re-calibration.|
-|4||bad data|Data have failed one or more QC tests.|
-|5||value changed|Data may be recovered after transmission error.|
-|6||N/A|This number was not used.|
-|7||nominal value|The provided value is not measured but comes from a priori knowledge (instrument design or deployment), e.g. instrument target depth.|
-|8||interpolated value|Missing data may be interpolated from neighboring data in space or time.|
-|9||missing value|Value was missing.|
-|• • • •||HFR_Node__Centralized_Processing: HFR_Node__Historical_Data_Processing: HFR_Node__REP_Temporal_Aggregation: HFR_Node_tools:|For some of these tests, HFR operators will need to select the best thresholds. Since a successful QC effort is highly dependent upon selection of the proper thresholds, this choice is not straightforward, and may require trial and error before final selections are made. These thresholds should not be determined arbitrarily but based on historical knowledge or statistics derived from historical data. The threshold values are reported in the ‘comment’ variable attribute of each QC variable. The flagging scheme is reported as well in the ‘flag values’ and ‘flag meanings’ variable attributes of each QC variable. The standard netCDF radial and total files including the aforementioned QC procedures are generated by the following software tools, that were developed and are continuously improved by the EU HFR NODE: DOI 10.5281/zenodo.2639558 DOI 10.5281/zenodo.3569518 DOI 10.5281/zenodo.3707649 DOI 10.5281/zenodo.2639555 32|
+An overall QC variable also reports the quality flags related to the results of all the QC tests: 
+it is a “good data” flag if and only if all QC tests are passed.
 
-### <u>High Frequency Radar</u>
+The flagging policy is not to modify the data, but only to label them with flags. 
+Thus, 
+each geophysical variable in the standard output files contains exactly the measured data and QC variables containing flags can be used as masks to the geophysical variables for having information about data quality. 
 
-# 4.2 MARACOOS HFR Network
+The adopted QC flagging scheme is the ARGO QC flag scale (Wong et al. 2022), shown in Table 4-4, which extends the UNESCO scale reported in Table 3-1. 
 
-The Mid-Atlantic Regional Association Coastal Ocean Observing System (MARACOOS) provides hourly surface current velocity maps to the U.S. Coast Guard for the Mid-Atlantic waters stretching from Cape Hatteras to Cape Cod (Table 4-5). Those maps are produced by combining radial data from seventeen CODAR SeaSonde long range high frequency radar (HFR) systems onto a 6-kilometer grid using an optimal interpolation method. This case study describes the efforts to expand real-time quality control in this regional surface current product and implement QC more formally through assignment of quality flags as recommended by IOOS QARTOD manuals.
+|Code|Meaning|Comment|
+|---|---|---|
+|0|unknown|No QC was performed.|
+|1|good data|All QC tests passed.|
+|2|probably good data|These data should be used with caution.|
+|3|potentially correctable bad data|These data are not to be used without scientific correction or re-calibration.|
+|4|bad data|Data have failed one or more QC tests.|
+|5|value changed|Data may be recovered after transmission error.|
+|6|N/A|This number was not used.|
+|7|nominal value|The provided value is not measured but comes from a priori knowledge (instrument design or deployment), e.g. instrument target depth.|
+|8|interpolated value|Missing data may be interpolated from neighboring data in space or time.|
+|9|missing value|Value was missing.|
 
-**Table 4-5. MARACOOS HFR Processing Steps**
+: Table 4-4. Argo quality control flag scale. 
 
-### Processing Step Description Software
+For some of these tests, HFR operators will need to select the best thresholds. 
+Since a successful QC effort is highly dependent upon selection of the proper thresholds, 
+this choice is not straightforward, 
+and may require trial and error before final selections are made. 
+These thresholds should not be determined arbitrarily but based on historical knowledge or statistics derived from historical data. 
 
-1: Signal QC, Radial SeaSonde radials (and QCD radials from North SeaSonde software Generation & Transfer Carolina radars) are produced at the radar stations and qccodar Python toolbox transferred to Rutgers University.
+The threshold values are reported in the ‘comment’ variable attribute of each QC variable. 
+The flagging scheme is reported as well in the ‘flag values’ and ‘flag meanings’ variable attributes of each QC variable. 
 
-2: Radial QC Load the radial data, run the radial QC tests and HFRadarPy Python toolbox output a radial QC file (Table 4-6).
+The standard netCDF radial and total files including the aforementioned QC procedures are generated by the following software tools, 
+that were developed and are continuously improved by the EU HFR NODE:
 
-3: Compute Totals Load radial QC files and create total vector files in MATLAB scripts & HFR-MAT format. Radials with fail codes in the primary Progs toolbox flag are NOT included in totals.
+- HFR_Node__Centralized_Processing: [DOI 10.5281/zenodo.2639558](https://doi.org/10.5281/zenodo.2639558)
+- HFR_Node__Historical_Data_Processing: [DOI 10.5281/zenodo.3569518](https://doi.org/10.5281/zenodo.3569518) 
+- HFR_Node__REP_Temporal_Aggregation: [DOI 10.5281/zenodo.3707649](https://doi.org/10.5281/zenodo.3707649)
+- HFR_Node_tools: [DOI 10.5281/zenodo.2639555](https://doi.org/10.5281/zenodo.2639555)
 
-4: Total QC Run the total QC tests and save secondary and MATLAB scripts & HFR-primary flags for totals vectors as additional fields in Progs toolbox the HFR-Progs TUV MATLAB structure.
+### 4.2 MARACOOS HFR Network
 
-5: NetCDF Output Convert MATLAB totals data to NetCDF and HFRadarPy Python toolbox include total vector flag information following CF metadata conventions.
+The Mid-Atlantic Regional Association Coastal Ocean Observing System (MARACOOS) provides hourly surface current velocity maps to the U.S. Coast Guard for the Mid-Atlantic waters stretching from Cape Hatteras to Cape Cod (Table 4-5). 
+Those maps are produced by combining radial data from seventeen CODAR SeaSonde long range high frequency radar (HFR) systems onto a 6-kilometer grid using an optimal interpolation method. 
+This case study describes the efforts to expand real-time quality control in this regional surface current product and implement QC more formally through assignment of quality flags as recommended by IOOS QARTOD manuals.
 
-## 4.2.1 Signal and Radial Metric QC
+| Processing Step | Description | Software |
+|---|---|---|
+| 1: Signal QC, Radial Generation & Transfer | SeaSonde radials (and QCD radials from North Carolina radars) are produced at the radar stations and transferred to Rutgers University. | SeaSonde software; qccodar Python toolbox |
+| 2: Radial QC | Load the radial data, run the radial QC tests and output a radial QC file (Table 4-6). | HFRadarPy Python toolbox |
+| 3: Compute Totals | Load radial QC files and create total vector files in MAT format. Radials with fail codes in the primary flag are NOT included in totals. | MATLAB scripts & HFR-Progs toolbox |
+| 4: Total QC | Run the total QC tests and save secondary and primary flags for totals vectors as additional fields in the HFR-Progs TUV MATLAB structure. | MATLAB scripts & HFR-Progs toolbox |
+| 5: NetCDF Output | Convert MATLAB totals data to NetCDF and include total vector flag information following CF metadata conventions. | HFRadarPy Python toolbox |
 
-QARTOD tests 101 and 105 are part of SeaSonde software and used on every station. The three North Carolina stations implement radial metric QC (QARTOD tests 102, 103, 104) on the site computer with a toolbox called qccodar developed by Sara Haines. Radial output from these qccodar scripts are called QCD radials. Haines et al. (2017) provide more information on radial metric QC.
+: Table 4-5. MARACOOS HFR Processing Steps.
 
-|4.2.2 Table 4-6.|Radial QC MARACOOS Radial Data QC Tests||MARACOOS writes radial QC files for CODAR Oceans Sensors SeaSonde data that include secondary flags for individual QC tests as well as a primary flag (Table 4-6). Both levels of flags follow the IOC 54:V3 Primary Level flagging standard (UNESCO 2013), which has been adopted by QARTOD. The new QC radial file retains the same name as the original radial file and keeps all information from the original file.|||
-|---|---|---|---|---|---|
-|Test Name|Code|Description||Suspect Flag|Fail Flag|
-|Syntax|QC201||A collection of tests ensuring proper formatting and existence of fields within a radial file.|N/A|Tests reveal invalid formatting or fields.|
-|Max Threshold|QC202||Ensures that a radial current speed is not unrealistically high.|N/A|velocity > RSPDMAX RSPDMAX = 300 cm/s|
-|Valid Location|QC203|over land or in other unmeasurable areas.|Removes radial vectors placed Operator defines the invalid areas in SeaSonde software.|N/A|VFLG = 128|
-|Radial Count|QC204|radial counts.|Rejects radials in files with low|RCMIN >= count <= RCLOW|count < RCMIN|
-|Spatial Median|QC205|cm/s to pass the test.|The difference between the vector's velocity and the median velocity of its neighbors (within radius of <RCLim> * Range Step (km) whose vector bearing is also within <AngLim> degrees) must be less or equal to <CurLim>|N/A|velocity > CURLIM RCLIM=2.1 cells, ANGLIM = 10 degrees, CURLIM = 30 cm/s (or 50 cm/s for stations near Gulf Stream)|
-|Primary Flag|PRIM|evaluated”)|Highest flag value of QC201, QC202, QC203, QC204, QC205 (will be set to “not evaluated” only if ALL tests were “not|N/A|N/A|
-||||34|||
+#### 4.2.1 Signal and Radial Metric QC
 
-|4.2.3 variables (Table 4-7). Table 4-7.|Totals QC MARACOOS Totals Data QC Tests|Total vector flags are recorded with total velocities in MATLAB MAT files. They are saved in the HFR-Progs TUV structure as additional fields. When the MATLAB file is converted to NetCDF, the flags are represented as additional variables and those variables include attributes that describe the flags. Following CF conventions, the “ancillary variable” attributes of the velocity variables provide a reference to the flag||High Frequency Radar|
+QARTOD tests 101 and 105 are part of SeaSonde software and used on every station. 
+The three North Carolina stations implement radial metric QC (QARTOD tests 102, 103, 104) on the site computer with a toolbox called qccodar developed by Sara Haines. 
+Radial output from these qccodar scripts are called QCD radials. 
+Haines et al. (2017) provide more information on radial metric QC.
+
+#### 4.2.2 Radial QC
+
+MARACOOS writes radial QC files for CODAR Oceans Sensors SeaSonde data that include secondary flags for individual QC tests as well as a primary flag (Table 4-6). 
+Both levels of flags follow the IOC 54:V3 Primary Level flagging standard (UNESCO 2013), which has been adopted by QARTOD. 
+The new QC radial file retains the same name as the original radial file and keeps all information from the original file.
+
+| Test Name | Code | Description | Suspect Flag | Fail Flag |
 |---|---|---|---|---|
+| Syntax | QC201 | A collection of tests ensuring proper formatting and existence of fields within a radial file. | N/A | Tests reveal invalid formatting or fields. |
+| Max Threshold | QC202 | Ensures that a radial current speed is not unrealistically high. | N/A | velocity > RSPDMAX; RSPDMAX = 300 cm/s |
+| Valid Location | QC203 | Removes radial vectors placed over land or in other unmeasurable areas. Operator defines the invalid areas in SeaSonde software. | N/A | VFLG = 128 |
+| Radial Count | QC204 | Rejects radials in files with low radial counts. | RCMIN >= count <= RCLOW | count < RCMIN |
+| Spatial Median | QC205 | The difference between the vector's velocity and the median velocity of its neighbors (within radius of `<RCLim>` * Range Step (km) whose vector bearing is also within `<AngLim>` degrees) must be less or equal to `<CurLim>` cm/s to pass the test. | N/A | velocity > CURLIM; RCLIM = 2.1 cells, ANGLIM = 10 degrees, CURLIM = 30 cm/s (or 50 cm/s for stations near Gulf Stream) |
+| Primary Flag | PRIM | Highest flag value of QC201, QC202, QC203, QC204, QC205 (will be set to “not evaluated” only if ALL tests were “not evaluated”). | N/A | N/A |
+
+: Table 4-6. MARACOOS Radial Data QC Tests
+
+#### 4.2.3 Totals QC
+
+Total vector flags are recorded with total velocities in MATLAB MAT files. They are saved in the HFR-Progs TUV structure as additional fields. When the MATLAB file is converted to NetCDF, the flags are represented as additional variables and those variables include attributes that describe the flags. Following CF conventions, the “ancillary variable” attributes of the velocity variables provide a reference to the flag variables (Table 4-7).
+
 |Test Name|Code|Description|Suspect Flag|Fail Flag|
+|---|---|---|---|---|
 |Data Density|QC301|Tests that a sufficient number of radial velocities exist to compute a total velocity vector.|N/A|N/A, 3 radial velocities sourced from at least 2 radar stations are required to compute a total velocity vector.|
 |Max Threshold|QC303|Ensures that a total current speed is not unrealistically high.|N/A|velocity > RSPDMAX RSPDMAX = 300 cm/s|
 |Valid Location|QC305|The radial must not be located over land or in any other location where valid measurements are not possible.|N/A|Fail locations are identified by a regional land mask file.|
@@ -1095,17 +1143,26 @@ QARTOD tests 101 and 105 are part of SeaSonde software and used on every station
 |V Component Uncertainty|QC307|Tests that the uncertainty in V component of velocity due to the geometric relationship between radials is low enough for the vector to be considered valid.|N/A|Verr uncertainty > 0.6|
 |Primary Flag|PRIM|Highest flag value of QC301, QC303,QC305,QC306,QC307 (will be set to “not evaluated” only if ALL tests were “not evaluated”). 35|N/A|N/A|
 
-# 4.2.4 Primary Flag Definition
+: Table 4-7. MARACOOS Totals Data QC Tests.
 
-The primary flag is explicitly defined in metadata as the highest flag value of test1, test2, etc. with a note that it will be set to “not evaluated” only if ALL tests were “not evaluated”. The flag is NOT the highest value of all individual test flags. This allows the inclusion of a secondary flag in the file that does not affect the primary (e.g., for testing purposes). It also avoids assigning the primary as “not evaluated” in a case where it may not be a useful designation (e.g., all tests pass except the radial was at the edge of coverage, and there were not enough neighbors for the spatial median test to be evaluated).
+#### 4.2.4 Primary Flag Definition
 
-# 4.2.5 Thresholds
+The primary flag is explicitly defined in metadata as the highest flag value of test1, 
+test2, etc. with a note that it will be set to “not evaluated” only if ALL tests were “not evaluated”. 
+The flag is NOT the highest value of all individual test flags. 
+This allows the inclusion of a secondary flag in the file that does not affect the primary (e.g., for testing purposes). 
+It also avoids assigning the primary as “not evaluated” in a case where it may not be a useful designation (e.g., all tests pass except the radial was at the edge of coverage, and there were not enough neighbors for the spatial median test to be evaluated).
 
-Thresholds for a low radial count test (QC204) are site specific. The failure threshold is 10% of the number of valid radial locations and the suspect threshold is 30% of the number of valid radial locations. The number of valid locations is based on a radial grid with a maximum of 40 range cells and 5-degree bins. Every cell that falls over land or is otherwise blocked from obtaining a good signal (e.g., behind land) is not counted as a valid location. The SeaSonde AngSeg_XXXX.txt file is helpful in obtaining the valid location count. A MATLAB script was written to count the good locations from the AngSeg file and the resulting number is “rounded” to the nearest 25.
+#### 4.2.5 Thresholds
 
-## <u>High Frequency Radar</u>
+Thresholds for a low radial count test (QC204) are site specific. 
+The failure threshold is 10% of the number of valid radial locations and the suspect threshold is 30% of the number of valid radial locations. 
+The number of valid locations is based on a radial grid with a maximum of 40 range cells and 5-degree bins. 
+Every cell that falls over land or is otherwise blocked from obtaining a good signal (e.g., behind land) is not counted as a valid location. 
+The SeaSonde AngSeg_XXXX.txt file is helpful in obtaining the valid location count. 
+A MATLAB script was written to count the good locations from the AngSeg file and the resulting number is “rounded” to the nearest 25.
 
-# 5.0 Summary
+## 5.0 Summary
 
 The QC tests in this HF radar document have been compiled using the guidance provided by the HF radar committee and valuable reviewers (appendix A), earlier U.S. IOOS/QARTOD manuals, and all QARTOD workshops (<u>[https://ioos.noaa.gov/ioos-in-action/qartod-meetings/](https://ioos.noaa.gov/ioos-in-action/qartod-meetings/)</u>). Test suggestions came from both operators and HF radar data users with extensive experience. The considerations of operators who ensure the quality of real-time data may be different from those whose data are not published in real time, and these and other differences must be balanced according to the specific circumstances of each operator. Although these real-time tests are required, recommended, suggested, or in development, it is the operator who is responsible for deciding which tests are appropriate.
 

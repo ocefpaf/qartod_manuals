@@ -364,7 +364,7 @@ Some tests may already be embedded in the processing software;
 some may be applied using optional manufacturer-supplied software modules, and others are conducted by the local operator or the national servers.
 The tests listed in this section (Table 3-2) presume a time-ordered series of observations and denote these observations as follows:
 
-Radial velocity: R${t-2}$, R${t-1}$, R${t}$ - Total vector: T${t-2}$, T${t-1}$, T${t}$
+Radial velocity: $R_{t-2}$, $R_{t-1}$, $R_{t}$ - Total vector: $T_{t-2}$, $T_{t-1}$, $T_{t}$
 
 Sensor operators need to select the best thresholds for each test, which are determined at the operator level and may require trial and error before final selections are made.
 A successful QC effort is highly dependent upon selection of the proper thresholds,
@@ -490,14 +490,14 @@ Two larger eigenvalues favor dual-angle.
 |Flags|Condition|Codable Instructions|
 |---|---|---|
 |Fail = 4|All eigenvalues are close to each other.|If Eig1, Eig2, Eig3 within 20% of each other, flag = 4|
-|Suspect = 3|Two eigenvalues are moderately large.|If Eig1/Eig3 < 2*Eig2/Eig3, flag = 3|
-|Pass = 1|One eigenvalue is much larger than other two.|If Eig1 > 100*Eig2 and Eig1 > 100*Eig3, then accept single-angle decision, flag = 1|
+|Suspect = 3|Two eigenvalues are moderately large.|If Eig1/Eig3 < 2 * Eig2/Eig3, flag = 3|
+|Pass = 1|One eigenvalue is much larger than other two.|If Eig1 > 100 * Eig2 and Eig1 > 100 * Eig3, then accept single-angle decision, flag = 1|
 
 Test Exception: Does not apply to systems using BF.
 
 Test specifications to be established by operator. For SeaSonde systems, these thresholds are part of preference settings in the Header.txt file under MUSIC parameters.
 
-**Test 103 - Direction of Arrival (DOA) Metrics (magnitude)* (Suggested)**
+**Test 103 - Direction of Arrival (DOA) Metrics (magnitude)`*` (Suggested)**
 
 Evaluates whether the DOA response peak power is strong enough to produce good data for the specific DOA solution. (Kirincich et al. 2012).
 
@@ -516,7 +516,7 @@ Test specifications to be established by operator.
 
 Example: PPMIN = 5.0 (dB)
 
-**Test 104 – DOA Function Widths (3 dB)* (Suggested)**
+**Test 104 – DOA Function Widths (3 dB)`*` (Suggested)**
 
 Evaluates whether DOA function is too wide,
 indicating a poor fit to the antenna pattern for a specific DOA solution.
@@ -540,7 +540,7 @@ Test specifications to be established by operator.
 
 Example: PWMAX = 50 degrees
 
-**Test 105 - Positive Definiteness of 2x2 Signal Matrix* (Suggested)**
+**Test 105 - Positive Definiteness of 2x2 Signal Matrix`*` (Suggested)**
 
 Test is part of DOA decision process to specifically check whether dual-angle decision fits the data.
 
@@ -584,9 +584,9 @@ and internally consistent row/column specifications.
 
 |Flags|Condition|Codable Instructions|
 |---|---|---|
-|Fail = 4|||invalid data.|One or more fields are corrupt or contain|If “File Format” ≠ “hfrweralluv1.0”, flag = 4|
-|Suspect = 3|||N/A||N/A|
-|Pass = 1||||Applies for test pass condition.|N/A|
+|Fail = 4|One or more fields are corrupt or contain invalid data.|If “File Format” ≠ “hfrweralluv1.0”, flag = 4|
+|Suspect = 3|N/A|N/A|
+|Pass = 1|Applies for test pass condition.|N/A|
 
 Test Exception: None.
 
@@ -642,7 +642,7 @@ Test Exception: None.
 
 Test specifications to be established by operator. For CODAR systems, the reference file is called AngSeg_XXXX.txt, where XXXX is the four-letter site code of the station and is located in the “RadialConfigs” folder. These vectors receive a code of +128 in the flag column of the radial text file. BF systems use pre-set grid locations for radials. For WERA systems, this information can be found in the params.cfg file in parameter WATT_NAME.
 
-**Test 204 – Radial Count* (Suggested)**
+**Test 204 – Radial Count`*` (Suggested)**
 
 Rejects radials in files with low radial counts (poor radial map coverage).
 
@@ -672,7 +672,7 @@ A custom value for a site might be found by following the same procedure for the
 
 Reduces outlier velocities in radials.
 
-For each radial source vector, compute the median of all velocities within <RCLim> Range Step (km) and also within <AngLim> degrees in bearing. If the difference between the vector's velocity and the median velocity is greater than <CurLim> cm/s, then the vector is discarded; otherwise the median velocity is used.
+For each radial source vector, compute the median of all velocities within $<RCLim>$ Range Step (km) and also within $<AngLim>$ degrees in bearing. If the difference between the vector's velocity and the median velocity is greater than $<CurLim>$ cm/s, then the vector is discarded; otherwise the median velocity is used.
 
 In the codable instructions below, the radial velocity is designated as RV and the set of neighboring velocities is designated as RVNB.
 
@@ -708,7 +708,7 @@ Test Exception: None.
 
 Test specifications to be established by operator. Example: GRADIENT_TEMP_FAIL = 54 cm/s * hr, GRADIENT_TEMP_WARN = 36 cm/s * hr
 
-**Test 207 – Average Radial Bearing* (Suggested)**
+**Test 207 – Average Radial Bearing`*` (Suggested)**
 
 Check that the average radial bearing remains relatively constant (Roarty et al. 2012).
 
@@ -751,7 +751,7 @@ those velocities (excluding first occurrence of the repeating velocity in the ev
 
 |Flags|Condition|Codable Instructions|
 |---|---|---|
-|Fail = 4|The temporal change between successive radial velocities has not exceeded the resolution (R) of the measurement for N successive time steps.|V = [$V_{t=-(N-1)}$ … $V_{t=-1}$, $V_{t=0}$] IF MAX(ABS(DIFF(V))) < R, flag = 4|
+|Fail = 4|The temporal change between successive radial velocities has not exceeded the resolution (R) of the measurement for N successive time steps.|V = [ $V_{t=-(N-1)}$ … $V_{t=-1}$, $V_{t=0}$ ] IF MAX(ABS(DIFF(V))) < R, flag = 4|
 |Suspect = 3|N/A|N/A|
 |Pass = 1|The temporal change between successive radial velocities has exceeded the resolution of the measurement.|IF MAX(ABS(DIFF(V))) ≥ R, flag = 1|
 
@@ -787,7 +787,7 @@ This set of tests is conducted during the development of the total velocities.
 These tests may be carried out at the local,
 regional and/or national network levels.
 
-**Test 301 - Data Density Threshold* (Required)**
+**Test 301 - Data Density Threshold`*` (Required)**
 
 Tests that a sufficient number of radial velocities exist to compute a total velocity vector.
 
@@ -798,84 +798,190 @@ A minimum number of radial velocities (RV_MIN) are required to construct a total
 |Fail = 4|Insufficient number of radial velocities exist.|If RV_CNT < RV_MIN, flag = 4|
 |Suspect = 3|N/A|N/A|
 |Pass = 1|A sufficient number of radial velocities exist.|If RV_CNT ≥ RV_MIN, flag = 1|
-|Test Exception|: Does not apply to BF systems. Test specifications to be established by operator.|Recommend RV_MIN = 3 In CODAR software, this is set in line 1 of the AnalysisOptions.txt configuration file; the default value is 2.|
 
-||Test 302 - GDOP Threshold (Required)||
-|---|---|---|
-||low enough for the vector to be considered valid.|Tests that the uncertainty in velocity due to the geometric relationship between radials is|
-|(|be considered suspect (Kim et al. 2008). radial uncertainties and the covariance between radial uncertainties. For more information, see README_error_estimates.m in HFR Progs Kaplan et al. (2005).|GDOP (Geometric Dilution of Precision) is a scalar representing the contribution of the radial (bearing) geometry to uncertainty in velocity at a given grid point. Higher GDOP values indicate larger co-variances associated with the least square’s fit used in obtaining the solution. GDOP must be less than a maximum allowed value of GDOP_MAX to pass and less than a GDOP_HIGH value to not Note that there are different versions of the GDOP calculation, which make different assumptions about the [https://github.com/rowg/hfrprogs/blob/master/matlab/totals/README_error_estimates.m](https://github.com/rowg/hfrprogs/blob/master/matlab/totals/README_error_estimates.m)) and|
+Test Exception: Does not apply to BF systems.
+
+Test specifications to be established by operator. Recommend RV_MIN = 3
+
+In CODAR software, this is set in line 1 of the AnalysisOptions.txt configuration file; the default value is 2.
+
+**Test 302 - GDOP Threshold (Required)**
+
+Tests that the uncertainty in velocity due to the geometric relationship between radials is low enough for the vector to be considered valid.
+
+GDOP (Geometric Dilution of Precision) is a scalar representing the contribution of the radial (bearing) geometry to uncertainty in velocity at a given grid point. 
+Higher GDOP values indicate larger co-variances associated with the least square’s fit used in obtaining the solution. 
+GDOP must be less than a maximum allowed value of GDOP_MAX to pass and less than a GDOP_HIGH value to not be considered suspect (Kim et al. 2008). 
+
+<small>Note that there are different versions of the GDOP calculation, which make different assumptions about the radial uncertainties and the covariance between radial uncertainties.  
+
+For more information, see README_error_estimates.m in HFR Progs (https://github.com/rowg/hfrprogs/blob/master/matlab/totals/README_error_estimates.m) and Kaplan et al. (2005). </small>
+
 |Flags|Condition|Codable Instructions|
+|---|---|---|
 |Fail = 4|Poor geometric relationship between radials yields a total vector with too much uncertainty to be valid.|If GDOP ≥ GDOP_MAX, flag = 4|
 |Suspect = 3|The GDOP value associated with a total vector solution may be acceptable.|If GDOP < GDOP_MAX and GDOP ≥ GDOP_HIGH, flag = 3|
 |Pass = 1|The GDOP associated with the total vector solution is sufficient.|If GDOP < GDOP_HIGH, flag = 1|
-|Test Exception|: None. Test specifications to be established by operator. others, but generally the differences are minimal.|The national network uses a GDOP_MAX of 10 and a more conservative value of 1.25 for near-real time applications such as Web display. The maximum and minimum values of GDOP may depend on the number of radials, so we suggest examining statistics of regional GDOP and to determine appropriate thresholds. The HFRprogs Toolbox includes several implementations of GDOP, some of which are more conservative than 22|
 
-## <u>High Frequency Radar</u>
+Test Exception: None.
 
-# Test 303 - Max Speed Threshold (Required)
+Test specifications to be established by operator.
+
+The national network uses a GDOP_MAX of 10 and a more conservative value of 1.25 for near-real time applications such as Web display. 
+The maximum and minimum values of GDOP may depend on the number of radials, 
+so we suggest examining statistics of regional GDOP and to determine appropriate thresholds. 
+The HFRprogs Toolbox includes several implementations of GDOP, some of which are more conservative than others, 
+but generally the differences are minimal.  
+
+**Test 303 - Max Speed Threshold (Required)**
 
 ||Ensures that a total current speed is not unrealistically high.||
-|---|---|---|
 ||represents the maximum reasonable surface velocity for the given|Like the maximum radial velocity threshold, the maximum total speed threshold TSPDMAX domain.|
+
 |Flags|Condition|Codable Instructions|
+|---|---|---|
 |Fail = 4|Total current speed exceeds the maximum total speed threshold.|If TSPD > TSPDMAX, flag = 4|
 |Suspect = 3|N/A|None.|
 |Pass = 1|Total current speed is below or equal to the maximum total speed threshold.|If TSPD ≤ TSPDMAX, flag = 1|
-|Test Exception|: None. Test specifications to be established by operator.|The maximum total speed threshold is 1 m/s for the West Coast of the United States and 3 m/s for the East/Gulf Coast domain. The threshold must vary by region and is in general related to the inverse function of the radials. For example, the presence of the Gulf Stream dictates the higher threshold on the East Coast.|
 
-||Test 304 – Spatial Median Comparison (Suggested)||
-|---|---|---|
-||Reduces outlier velocities in totals. <TCurLim> cm/s then the vector is discarded.|Modeled after CODAR’s median filter for radials, this test computes the difference between a total velocity (TV) and the median of a set of total velocities in an area surrounding that vector (TVNB). For each total source vector, compute the median of all velocities within <TCLim> Grid Steps in u and v directions. If the difference between the vector's velocity and the median velocity is greater than In the instructions below, the total velocity is designated as TV and the set of neighboring velocities is designated as TVNB. The test rejects the vector when the difference is greater than TCurLim.|
+Test Exception: None.
+
+Test specifications to be established by operator.
+
+The maximum total speed threshold is 1 m/s for the West Coast of the United States and 3 m/s for the East/Gulf Coast domain. 
+The threshold must vary by region and is in general related to the inverse function of the radials. 
+For example, the presence of the Gulf Stream dictates the higher threshold on the East Coast.
+
+**Test 304 – Spatial Median Comparison (Suggested)**
+
+Reduces outlier velocities in totals.
+
+Modeled after CODAR’s median filter for radials, 
+this test computes the difference between a total velocity (TV) and the median of a set of total velocities in an area surrounding that vector (TVNB).
+
+For each total source vector, compute the median of all velocities within `<TCLim>` Grid Steps in u and v directions. 
+If the difference between the vector's velocity and the median velocity is greater than `<TCurLim>` cm/s then the vector is discarded.
+
+In the instructions below, 
+the total velocity is designated as TV and the set of neighboring velocities is designated as TVNB. 
+The test rejects the vector when the difference is greater than TCurLim.
+
 |Flags|Condition|Codable Instructions|
+|---|---|---|
 |Fail = 4|Difference between the vector velocity and the median velocity is greater than the threshold.|If TV-median(TVNB) > TCurLim, vector is rejected; flag = 4|
 |Suspect = 3|N/A|None|
-|Pass = 1|If the difference between the vector velocity and the median velocity is less or equal to the threshold, the vector passes the test.|If R=TV-median(TVNB) ≤ TCurLim, flag = 1|
-|Test Exception|: None. Test specifications to be established by operator. depend on environmental conditions.|TCLim and TCurLim will be set by the operator and will|
-||Test 305 – Valid Location (Suggested)|Removes total vectors placed over land or in other unmeasurable areas.|
-|land).|which locations are over land or|Total vector coordinates are checked against a reference (land mask) file containing information about in an unmeasurable area (for example, behind an island or point of|
+|Pass = 1|If the difference between the vector velocity and the median velocity is less or equal to the threshold, the vector passes the test.|If R = TV - median(TVNB) ≤ TCurLim, flag = 1|
+
+Test Exception: None.
+
+Test specifications to be established by operator. TCLim and TCurLim will be set by the operator and will depend on environmental conditions.
+
+**Test 305 – Valid Location (Suggested)**
+
+Removes total vectors placed over land or in other unmeasurable areas.
+
+Total vector coordinates are checked against a reference (land mask) file containing information about which locations are over land or in an unmeasurable area (for example, behind an island or point of land).
+
 |Flags|Condition|Codable Instructions|
+|---|---|---|
 |Fail = 4|Total is located on a grid point designated as land by the land mask reference file.|If LANDMASK exists, flag = 4|
 |Suspect = 3|N/A|None|
 |Pass = 1|Total is located on a grid point not designated as land by the land mask reference file.|If LANDMASK does not exist, flag = 1|
-|Test Exception|Test specifications to be established by operator.|: If the totals grid file only contains valid locations, this test is not necessary. 24|
 
-||Test 306 - U Component Uncertainty (Required)|High Frequency Radar Tests that the uncertainty in U velocity due to the geometric relationship between radials. The uncertainty must be low enough for the vector to be considered valid.|
-|---|---|---|
-||Soh et al. 2018, pp. 770–771 a UERR_HIGH value to not be considered suspect.|UERR (U Component Uncertainty) is an uncertainty normalized by the a priori model covariance. normalized uncertainty of u = <(u_hat-u)^2>/<u^2> (good :0, poor: 1) Higher UERR values indicate larger co-variances associated with the least square’s fit used in obtaining the solution. UERR must be less than a maximum allowed value of UERR_MAX to pass and less than|
+Test Exception: If the totals grid file only contains valid locations, this test is not necessary.
+
+Test specifications to be established by operator.
+
+**Test 306 - U Component Uncertainty (Required)**
+
+Tests that the uncertainty in U velocity due to the geometric relationship between radials. 
+
+The uncertainty must be low enough for the vector to be considered valid. 
+
+UERR (U Component Uncertainty) is an uncertainty normalized by the a priori model covariance. normalized uncertainty of `u = <(u_hat - u)^2>/<u^2>` (good: 0, poor: 1) 
+
+Soh et al. 2018, pp. 770–771
+
+Higher UERR values indicate larger co-variances associated with the least square’s fit used in obtaining the solution. 
+UERR must be less than a maximum allowed value of UERR_MAX to pass and less than a UERR_HIGH value to not be considered suspect.
+
 |Flags|Condition|Codable Instructions|
+|---|---|---|
 |Fail = 4|Poor geometric relationship between radials yields a total vector with too much uncertainty in U component to be valid.|If UERR ≥ UERR_MAX, flag = 4|
 |Suspect = 3|The U component uncertainty value associated with a total vector solution may be acceptable.|If UERR < UERR_MAX and UERR ≥ UERR_HIGH, flag = 3|
 |Pass = 1|The U component uncertainty associated with the total vector solution is sufficient.|If UERR < UERR_HIGH, flag = 1|
-|Test Exception|Test specifications to be established by operator.|: Not needed if using Test 302 GDOP threshold. 25|
 
-||Test 307 - V Component Uncertainty (Required)|Tests that the uncertainty in V velocity due to the geometric relationship between radials. The uncertainty must be low enough for the vector to be considered valid.|
-|---|---|---|
-||Soh et al., 2018 (pp 770–771) a VERR_HIGH value to not be considered suspect.|VERR (V Component Uncertainty) is an uncertainty normalized by the a priori model covariance. normalized uncertainty of v = <(v_hat-v)^2>/<v^2> (good :0, poor: 1) Higher VERR values indicate larger co-variances associated with the least square’s fit used in obtaining the solution. VERR must be less than a maximum allowed value of VERR_MAX to pass and less than|
+Test Exception: Not needed if using Test 302 GDOP threshold.
+
+Test specifications to be established by operator.
+
+**Test 307 - V Component Uncertainty (Required)**
+
+Tests that the uncertainty in V velocity due to the geometric relationship between radials.
+
+The uncertainty must be low enough for the vector to be considered valid.
+
+VERR (V Component Uncertainty) is an uncertainty normalized by the a priori model covariance.
+
+normalized uncertainty of `v = <(v_hat - v)^2>/<v^2>` (good :0, poor: 1)
+
+Soh et al., 2018 (pp 770–771)
+
+Higher VERR values indicate larger co-variances associated with the least square’s fit used in obtaining the solution. 
+VERR must be less than a maximum allowed value of VERR_MAX to pass and less than a VERR_HIGH value to not be considered suspect. 
+
 |Flags|Condition|Codable Instructions|
+|---|---|---|
 |Fail = 4|Poor geometric relationship between radials yields a total vector with too much uncertainty in V component to be valid.|If VERR ≥ VERR_MAX, flag = 4|
 |Suspect = 3|The V component uncertainty value associated with a total vector solution may be acceptable.|If VERR < VERR_MAX and VERR ≥ VERR_HIGH, flag = 3|
 |Pass = 1|The V component uncertainty associated with the total vector solution is sufficient.|If VERR < VERR_HIGH, flag = 1|
-|Test Exception|Test specifications to be established by operator.|: Not needed if using Test 302 GDOP threshold. 26|
 
-### <u>High Frequency Radar</u>
+Test Exception: Not needed if using Test 302 GDOP threshold.
 
-# 4.0 Case Studies
+Test specifications to be established by operator.
 
-While global consistency within the high frequency radar (HFR) community is desirable, different efforts inevitably will result in differing evolutions of the operational systems. Two case studies are offered to provide background and further resources for users of this QC manual.
+## 4.0 Case Studies
 
-## 4.1 The European HFR Network
+While global consistency within the high frequency radar (HFR) community is desirable, 
+different efforts inevitably will result in differing evolutions of the operational systems. 
+Two case studies are offered to provide background and further resources for users of this QC manual.
 
-In 2014, the European Global Ocean Observing System (EuroGOOS) launched the High Frequency Radar Task Team (<u>[http://eurogoos.eu/high-frequency-radar-task-team/](http://eurogoos.eu/high-frequency-radar-task-team/))</u> to promote the coordinated development of HFR technology in Europe. The team followed up on many initiatives in Europe (e.g., EU H2020 Jerico-Next, EU H2020 SeaDataCloud, EU H2020 EuroSea, EU H2020 Jerico-S3, and Copernicus Marine Environment Monitoring Service [CMEMS]2) aimed at building an operational HFR European network based on coordinated data management for the development of operational ocean monitoring via HFR systems, and integration of HFR products into the major platforms for marine data distribution.
+### 4.1 The European HFR Network
 
-These efforts achieved the harmonization of system requirements and design, data quality, and standardization of HFR data access and tools (Mantovani et al. 2020). The European standard format for HFR data and metadata model has been defined and implemented (Corgnati et al. 2018), compliant with Climate and Forecast Metadata Convention version 1.6 (CF-1.6), OceanSITES convention, CMEMS-In Situ TAC³ and SDC requirements and INSPIRE directive. Furthermore, a battery of the QC tests to be mandatorily applied to HFR data has been defined according to the EuroGOOS Data Management, Exchange and Quality Work Group (DATAMEQ) working recommendations on real-time QC and building on the initial U.S. IOOS QARTOD HF radar manual (U.S. IOOS 2016).
+In 2014, 
+the European Global Ocean Observing System (EuroGOOS) launched the High Frequency Radar Task Team (http://eurogoos.eu/high-frequency-radar-task-team/) to promote the coordinated development of HFR technology in Europe. 
+The team followed up on many initiatives in Europe (e.g., EU H2020 Jerico-Next, EU H2020 SeaDataCloud, EU H2020 EuroSea, 
+EU H2020 Jerico-S3, and Copernicus Marine Environment Monitoring Service [CMEMS]$^2$) aimed at building an operational HFR European network based on coordinated data management for the development of operational ocean monitoring via HFR systems, 
+and integration of HFR products into the major platforms for marine data distribution.
 
-Thanks to these achievements, the inclusion of HFR data into CMEMS-INSTAC (Copernicus Marine in situ TAC, 2021; Copernicus Marine in situ TAC, 2020a; Copernicus Marine in situ TAC, 2020b), the European Marine Observation and Data Network (EMODnet) Physics and SDC Data Access (Corgnati et al. 2019) was completed, ensuring the improved management of several related key issues as marine safety, marine resources, coastal and marine environment, weather, climate and seasonal forecast.
+These efforts achieved the harmonization of system requirements and design, data quality, 
+and standardization of HFR data access and tools (Mantovani et al. 2020). 
+The European standard format for HFR data and metadata model has been defined and implemented (Corgnati et al. 2018), 
+compliant with Climate and Forecast Metadata Convention version 1.6 (CF-1.6), 
+OceanSITES convention, 
+CMEMS-In Situ TAC$^3$ and SDC requirements and INSPIRE directive. 
+Furthermore, a battery of the QC tests to be mandatorily applied to HFR data has been defined according to the EuroGOOS Data Management, 
+Exchange and Quality Work Group (DATAMEQ) working recommendations on real-time QC and building on the initial U.S. IOOS QARTOD HF radar manual (U.S. IOOS 2016).
 
-The EU HFR Node was established in 2018 by AZTI, CNR-ISMAR and SOCIB,4under the coordination of the EuroGOOS HFR Task Team, as the focal point and operational asset in Europe for HFR data management and dissemination, also promoting networking between EU infrastructures and the Global HFR network. The EU HFR Node is fully operational since December 2018 in distributing tools and support for standardization to the HFR providers as well as standardized near-real-time (NRT) and delayed-mode HFR radial and total current data to CMEMS-INSTAC, EMODnet Physics and SDC Data Access.
+Thanks to these achievements, 
+the inclusion of HFR data into CMEMS-INSTAC (Copernicus Marine in situ TAC, 2021; Copernicus Marine in situ TAC, 2020a; 
+Copernicus Marine in situ TAC, 2020b), 
+the European Marine Observation and Data Network (EMODnet) Physics and SDC Data Access (Corgnati et al. 2019) was completed, 
+ensuring the improved management of several related key issues as marine safety, marine resources, 
+coastal and marine environment, weather, climate and seasonal forecast.
+
+The EU HFR Node was established in 2018 by AZTI, 
+CNR-ISMAR and SOCIB,$^4$ under the coordination of the EuroGOOS HFR Task Team, 
+as the focal point and operational asset in Europe for HFR data management and dissemination, 
+also promoting networking between EU infrastructures and the Global HFR network. 
+The EU HFR Node is fully operational since December 2018 in distributing tools and support for standardization to the HFR providers as well as standardized near-real-time (NRT) and delayed-mode HFR radial and total current data to CMEMS-INSTAC, 
+EMODnet Physics and SDC Data Access.
 
 The European common data and metadata model for real-time HFR data requires real-time data to be mandatorily processed by the QC tests listed in <u>Table 4-1</u> (for radial velocity data) and in <u>Table 4-2</u> (for total velocity data). These tests were selected by the dedicated working group (composed by the HFR operators
 
-2See <u>[https://ec.europa.eu/info/research-and-innovation/funding/funding-opportunities/funding-programmes-and-open-](https://ec.europa.eu/info/research-and-innovation/funding/funding-opportunities/funding-programmes-and-open-)</u> <u>calls/horizon-2020_en</u>. 3See <u>[http://www.marineinsitu.eu/](http://www.marineinsitu.eu/)</u>. 4AZTI is a scientific and technological center that develops high-impact transformation projects with organizations aligned with the United Nations 2030 SDGs. CNR-ISMAR is a marine institute in Italy, and SOCIB is the Balearic Islands Coastal Ocean Observing and Forecasting System.
+<small>$^2$ See https://ec.europa.eu/info/research-and-innovation/funding/funding-opportunities/funding-programmes-and-open-calls/horizon-2020_en</small>
+
+See <u>[http://www.marineinsitu.eu/](http://www.marineinsitu.eu/)</u>. 4AZTI is a scientific and technological center that develops high-impact transformation projects with organizations aligned with the United Nations 2030 SDGs. CNR-ISMAR is a marine institute in Italy, and SOCIB is the Balearic Islands Coastal Ocean Observing and Forecasting System.
 
 |Table 4- 1.||and by the EuroGOOS HFR Task Team members) and the tests are among the ones defined in this QARTOD manual, according to the defined hierarchy. The mandatory QC tests were selected to be manufacturer-independent, i.e. not to rely on particular variables or information provided only by a specific device. These standard sets of tests have been defined both for radial and total velocity data and they are the required ones for labelling the data as Level 2B (for radial velocity) and Level 3B (for total velocity) data, as defined in Mandatory QC tests for radial velocity data.|Table 4-3.|
 |---|---|---|---|

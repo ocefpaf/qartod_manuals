@@ -809,11 +809,11 @@ In CODAR software, this is set in line 1 of the AnalysisOptions.txt configuratio
 
 Tests that the uncertainty in velocity due to the geometric relationship between radials is low enough for the vector to be considered valid.
 
-GDOP (Geometric Dilution of Precision) is a scalar representing the contribution of the radial (bearing) geometry to uncertainty in velocity at a given grid point. 
-Higher GDOP values indicate larger co-variances associated with the least square’s fit used in obtaining the solution. 
-GDOP must be less than a maximum allowed value of GDOP_MAX to pass and less than a GDOP_HIGH value to not be considered suspect (Kim et al. 2008). 
+GDOP (Geometric Dilution of Precision) is a scalar representing the contribution of the radial (bearing) geometry to uncertainty in velocity at a given grid point.
+Higher GDOP values indicate larger co-variances associated with the least square’s fit used in obtaining the solution.
+GDOP must be less than a maximum allowed value of GDOP_MAX to pass and less than a GDOP_HIGH value to not be considered suspect (Kim et al. 2008).
 
-<small>Note that there are different versions of the GDOP calculation, which make different assumptions about the radial uncertainties and the covariance between radial uncertainties.  
+<small>Note that there are different versions of the GDOP calculation, which make different assumptions about the radial uncertainties and the covariance between radial uncertainties.
 
 For more information, see README_error_estimates.m in HFR Progs (https://github.com/rowg/hfrprogs/blob/master/matlab/totals/README_error_estimates.m) and Kaplan et al. (2005). </small>
 
@@ -827,11 +827,11 @@ Test Exception: None.
 
 Test specifications to be established by operator.
 
-The national network uses a GDOP_MAX of 10 and a more conservative value of 1.25 for near-real time applications such as Web display. 
-The maximum and minimum values of GDOP may depend on the number of radials, 
-so we suggest examining statistics of regional GDOP and to determine appropriate thresholds. 
-The HFRprogs Toolbox includes several implementations of GDOP, some of which are more conservative than others, 
-but generally the differences are minimal.  
+The national network uses a GDOP_MAX of 10 and a more conservative value of 1.25 for near-real time applications such as Web display.
+The maximum and minimum values of GDOP may depend on the number of radials,
+so we suggest examining statistics of regional GDOP and to determine appropriate thresholds.
+The HFRprogs Toolbox includes several implementations of GDOP, some of which are more conservative than others,
+but generally the differences are minimal.
 
 **Test 303 - Max Speed Threshold (Required)**
 
@@ -848,22 +848,22 @@ Test Exception: None.
 
 Test specifications to be established by operator.
 
-The maximum total speed threshold is 1 m/s for the West Coast of the United States and 3 m/s for the East/Gulf Coast domain. 
-The threshold must vary by region and is in general related to the inverse function of the radials. 
+The maximum total speed threshold is 1 m/s for the West Coast of the United States and 3 m/s for the East/Gulf Coast domain.
+The threshold must vary by region and is in general related to the inverse function of the radials.
 For example, the presence of the Gulf Stream dictates the higher threshold on the East Coast.
 
 **Test 304 – Spatial Median Comparison (Suggested)**
 
 Reduces outlier velocities in totals.
 
-Modeled after CODAR’s median filter for radials, 
+Modeled after CODAR’s median filter for radials,
 this test computes the difference between a total velocity (TV) and the median of a set of total velocities in an area surrounding that vector (TVNB).
 
-For each total source vector, compute the median of all velocities within `<TCLim>` Grid Steps in u and v directions. 
+For each total source vector, compute the median of all velocities within `<TCLim>` Grid Steps in u and v directions.
 If the difference between the vector's velocity and the median velocity is greater than `<TCurLim>` cm/s then the vector is discarded.
 
-In the instructions below, 
-the total velocity is designated as TV and the set of neighboring velocities is designated as TVNB. 
+In the instructions below,
+the total velocity is designated as TV and the set of neighboring velocities is designated as TVNB.
 The test rejects the vector when the difference is greater than TCurLim.
 
 |Flags|Condition|Codable Instructions|
@@ -894,15 +894,15 @@ Test specifications to be established by operator.
 
 **Test 306 - U Component Uncertainty (Required)**
 
-Tests that the uncertainty in U velocity due to the geometric relationship between radials. 
+Tests that the uncertainty in U velocity due to the geometric relationship between radials.
 
-The uncertainty must be low enough for the vector to be considered valid. 
+The uncertainty must be low enough for the vector to be considered valid.
 
-UERR (U Component Uncertainty) is an uncertainty normalized by the a priori model covariance. normalized uncertainty of `u = <(u_hat - u)^2>/<u^2>` (good: 0, poor: 1) 
+UERR (U Component Uncertainty) is an uncertainty normalized by the a priori model covariance. normalized uncertainty of `u = <(u_hat - u)^2>/<u^2>` (good: 0, poor: 1)
 
 Soh et al. 2018, pp. 770–771
 
-Higher UERR values indicate larger co-variances associated with the least square’s fit used in obtaining the solution. 
+Higher UERR values indicate larger co-variances associated with the least square’s fit used in obtaining the solution.
 UERR must be less than a maximum allowed value of UERR_MAX to pass and less than a UERR_HIGH value to not be considered suspect.
 
 |Flags|Condition|Codable Instructions|
@@ -927,8 +927,8 @@ normalized uncertainty of `v = <(v_hat - v)^2>/<v^2>` (good :0, poor: 1)
 
 Soh et al., 2018 (pp 770–771)
 
-Higher VERR values indicate larger co-variances associated with the least square’s fit used in obtaining the solution. 
-VERR must be less than a maximum allowed value of VERR_MAX to pass and less than a VERR_HIGH value to not be considered suspect. 
+Higher VERR values indicate larger co-variances associated with the least square’s fit used in obtaining the solution.
+VERR must be less than a maximum allowed value of VERR_MAX to pass and less than a VERR_HIGH value to not be considered suspect.
 
 |Flags|Condition|Codable Instructions|
 |---|---|---|
@@ -942,39 +942,39 @@ Test specifications to be established by operator.
 
 ## 4.0 Case Studies
 
-While global consistency within the high frequency radar (HFR) community is desirable, 
-different efforts inevitably will result in differing evolutions of the operational systems. 
+While global consistency within the high frequency radar (HFR) community is desirable,
+different efforts inevitably will result in differing evolutions of the operational systems.
 Two case studies are offered to provide background and further resources for users of this QC manual.
 
 ### 4.1 The European HFR Network
 
-In 2014, 
-the European Global Ocean Observing System (EuroGOOS) launched the High Frequency Radar Task Team (http://eurogoos.eu/high-frequency-radar-task-team/) to promote the coordinated development of HFR technology in Europe. 
-The team followed up on many initiatives in Europe (e.g., EU H2020 Jerico-Next, EU H2020 SeaDataCloud, EU H2020 EuroSea, 
-EU H2020 Jerico-S3, and Copernicus Marine Environment Monitoring Service [CMEMS]$^2$) aimed at building an operational HFR European network based on coordinated data management for the development of operational ocean monitoring via HFR systems, 
+In 2014,
+the European Global Ocean Observing System (EuroGOOS) launched the High Frequency Radar Task Team (http://eurogoos.eu/high-frequency-radar-task-team/) to promote the coordinated development of HFR technology in Europe.
+The team followed up on many initiatives in Europe (e.g., EU H2020 Jerico-Next, EU H2020 SeaDataCloud, EU H2020 EuroSea,
+EU H2020 Jerico-S3, and Copernicus Marine Environment Monitoring Service [CMEMS]$^2$) aimed at building an operational HFR European network based on coordinated data management for the development of operational ocean monitoring via HFR systems,
 and integration of HFR products into the major platforms for marine data distribution.
 
-These efforts achieved the harmonization of system requirements and design, data quality, 
-and standardization of HFR data access and tools (Mantovani et al. 2020). 
-The European standard format for HFR data and metadata model has been defined and implemented (Corgnati et al. 2018), 
-compliant with Climate and Forecast Metadata Convention version 1.6 (CF-1.6), 
-OceanSITES convention, 
-CMEMS-In Situ TAC$^3$ and SDC requirements and INSPIRE directive. 
-Furthermore, a battery of the QC tests to be mandatorily applied to HFR data has been defined according to the EuroGOOS Data Management, 
+These efforts achieved the harmonization of system requirements and design, data quality,
+and standardization of HFR data access and tools (Mantovani et al. 2020).
+The European standard format for HFR data and metadata model has been defined and implemented (Corgnati et al. 2018),
+compliant with Climate and Forecast Metadata Convention version 1.6 (CF-1.6),
+OceanSITES convention,
+CMEMS-In Situ TAC$^3$ and SDC requirements and INSPIRE directive.
+Furthermore, a battery of the QC tests to be mandatorily applied to HFR data has been defined according to the EuroGOOS Data Management,
 Exchange and Quality Work Group (DATAMEQ) working recommendations on real-time QC and building on the initial U.S. IOOS QARTOD HF radar manual (U.S. IOOS 2016).
 
-Thanks to these achievements, 
-the inclusion of HFR data into CMEMS-INSTAC (Copernicus Marine in situ TAC, 2021; Copernicus Marine in situ TAC, 2020a; 
-Copernicus Marine in situ TAC, 2020b), 
-the European Marine Observation and Data Network (EMODnet) Physics and SDC Data Access (Corgnati et al. 2019) was completed, 
-ensuring the improved management of several related key issues as marine safety, marine resources, 
+Thanks to these achievements,
+the inclusion of HFR data into CMEMS-INSTAC (Copernicus Marine in situ TAC, 2021; Copernicus Marine in situ TAC, 2020a;
+Copernicus Marine in situ TAC, 2020b),
+the European Marine Observation and Data Network (EMODnet) Physics and SDC Data Access (Corgnati et al. 2019) was completed,
+ensuring the improved management of several related key issues as marine safety, marine resources,
 coastal and marine environment, weather, climate and seasonal forecast.
 
-The EU HFR Node was established in 2018 by AZTI, 
-CNR-ISMAR and SOCIB,$^4$ under the coordination of the EuroGOOS HFR Task Team, 
-as the focal point and operational asset in Europe for HFR data management and dissemination, 
-also promoting networking between EU infrastructures and the Global HFR network. 
-The EU HFR Node is fully operational since December 2018 in distributing tools and support for standardization to the HFR providers as well as standardized near-real-time (NRT) and delayed-mode HFR radial and total current data to CMEMS-INSTAC, 
+The EU HFR Node was established in 2018 by AZTI,
+CNR-ISMAR and SOCIB,$^4$ under the coordination of the EuroGOOS HFR Task Team,
+as the focal point and operational asset in Europe for HFR data management and dissemination,
+also promoting networking between EU infrastructures and the Global HFR network.
+The EU HFR Node is fully operational since December 2018 in distributing tools and support for standardization to the HFR providers as well as standardized near-real-time (NRT) and delayed-mode HFR radial and total current data to CMEMS-INSTAC,
 EMODnet Physics and SDC Data Access.
 
 The European common data and metadata model for real-time HFR data requires real-time data to be mandatorily processed by the QC tests listed in <u>Table 4-1</u> (for radial velocity data) and in <u>Table 4-2</u> (for total velocity data). These tests were selected by the dedicated working group (composed by the HFR operators

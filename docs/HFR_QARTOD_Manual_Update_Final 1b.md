@@ -952,10 +952,10 @@ In 2014,
 the European Global Ocean Observing System (EuroGOOS) launched the High Frequency Radar Task Team (http://eurogoos.eu/high-frequency-radar-task-team/) to promote the coordinated development of HFR technology in Europe.
 The team followed up on many initiatives in Europe (e.g., EU H2020 Jerico-Next, EU H2020 SeaDataCloud, EU H2020 EuroSea,
 EU H2020 Jerico-S3, and Copernicus Marine Environment Monitoring Service [CMEMS]$^2$) aimed at building an operational HFR European network based on coordinated data management for the development of operational ocean monitoring via HFR systems,
-In 2014, 
-the European Global Ocean Observing System (EuroGOOS) launched the High Frequency Radar Task Team (http://eurogoos.eu/high-frequency-radar-task-team/) to promote the coordinated development of HFR technology in Europe. 
-The team followed up on many initiatives in Europe (e.g., EU H2020 Jerico-Next, EU H2020 SeaDataCloud, EU H2020 EuroSea, 
-EU H2020 Jerico-S3, and Copernicus Marine Environment Monitoring Service [CMEMS]²) aimed at building an operational HFR European network based on coordinated data management for the development of operational ocean monitoring via HFR systems, 
+In 2014,
+the European Global Ocean Observing System (EuroGOOS) launched the High Frequency Radar Task Team (http://eurogoos.eu/high-frequency-radar-task-team/) to promote the coordinated development of HFR technology in Europe.
+The team followed up on many initiatives in Europe (e.g., EU H2020 Jerico-Next, EU H2020 SeaDataCloud, EU H2020 EuroSea,
+EU H2020 Jerico-S3, and Copernicus Marine Environment Monitoring Service [CMEMS]²) aimed at building an operational HFR European network based on coordinated data management for the development of operational ocean monitoring via HFR systems,
 and integration of HFR products into the major platforms for marine data distribution.
 
 These efforts achieved the harmonization of system requirements and design, data quality,
@@ -965,13 +965,13 @@ compliant with Climate and Forecast Metadata Convention version 1.6 (CF-1.6),
 OceanSITES convention,
 CMEMS-In Situ TAC$^3$ and SDC requirements and INSPIRE directive.
 Furthermore, a battery of the QC tests to be mandatorily applied to HFR data has been defined according to the EuroGOOS Data Management,
-These efforts achieved the harmonization of system requirements and design, data quality, 
-and standardization of HFR data access and tools (Mantovani et al. 2020). 
-The European standard format for HFR data and metadata model has been defined and implemented (Corgnati et al. 2018), 
-compliant with Climate and Forecast Metadata Convention version 1.6 (CF-1.6), 
-OceanSITES convention, 
-CMEMS-In Situ TAC³ and SDC requirements and INSPIRE directive. 
-Furthermore, a battery of the QC tests to be mandatorily applied to HFR data has been defined according to the EuroGOOS Data Management, 
+These efforts achieved the harmonization of system requirements and design, data quality,
+and standardization of HFR data access and tools (Mantovani et al. 2020).
+The European standard format for HFR data and metadata model has been defined and implemented (Corgnati et al. 2018),
+compliant with Climate and Forecast Metadata Convention version 1.6 (CF-1.6),
+OceanSITES convention,
+CMEMS-In Situ TAC³ and SDC requirements and INSPIRE directive.
+Furthermore, a battery of the QC tests to be mandatorily applied to HFR data has been defined according to the EuroGOOS Data Management,
 Exchange and Quality Work Group (DATAMEQ) working recommendations on real-time QC and building on the initial U.S. IOOS QARTOD HF radar manual (U.S. IOOS 2016).
 
 Thanks to these achievements,
@@ -986,11 +986,11 @@ CNR-ISMAR and SOCIB,$^4$ under the coordination of the EuroGOOS HFR Task Team,
 as the focal point and operational asset in Europe for HFR data management and dissemination,
 also promoting networking between EU infrastructures and the Global HFR network.
 The EU HFR Node is fully operational since December 2018 in distributing tools and support for standardization to the HFR providers as well as standardized near-real-time (NRT) and delayed-mode HFR radial and total current data to CMEMS-INSTAC,
-The EU HFR Node was established in 2018 by AZTI, 
-CNR-ISMAR and SOCIB,⁴ under the coordination of the EuroGOOS HFR Task Team, 
-as the focal point and operational asset in Europe for HFR data management and dissemination, 
-also promoting networking between EU infrastructures and the Global HFR network. 
-The EU HFR Node is fully operational since December 2018 in distributing tools and support for standardization to the HFR providers as well as standardized near-real-time (NRT) and delayed-mode HFR radial and total current data to CMEMS-INSTAC, 
+The EU HFR Node was established in 2018 by AZTI,
+CNR-ISMAR and SOCIB,⁴ under the coordination of the EuroGOOS HFR Task Team,
+as the focal point and operational asset in Europe for HFR data management and dissemination,
+also promoting networking between EU infrastructures and the Global HFR network.
+The EU HFR Node is fully operational since December 2018 in distributing tools and support for standardization to the HFR providers as well as standardized near-real-time (NRT) and delayed-mode HFR radial and total current data to CMEMS-INSTAC,
 EMODnet Physics and SDC Data Access.
 
 The European common data and metadata model for real-time HFR data requires real-time data to be mandatorily processed by the QC tests listed in Table 4-1 (for radial velocity data) and in Table 4-2 (for total velocity data). These tests were selected by the dedicated working group (composed by the HFR operators and by the EuroGOOS HFR Task Team members) and the tests are among the ones defined in this QARTOD manual, according to the defined hierarchy.
@@ -1000,7 +1000,7 @@ The mandatory QC tests were selected to be manufacturer-independent, i.e. not to
 <small>² See https://ec.europa.eu/info/research-and-innovation/funding/funding-opportunities/funding-programmes-and-open-calls/horizon-2020_en.
 
 ³ See http://www.marineinsitu.eu/.
- 
+
 ⁴ AZTI is a scientific and technological center that develops high-impact transformation projects with organizations aligned with the United Nations 2030 SDGs. CNR-ISMAR is a marine institute in Italy, and SOCIB is the Balearic Islands Coastal Ocean Observing and Forecasting System.</small>
 
 | QC test | Code | Meaning | QC variable type |
@@ -1042,21 +1042,21 @@ The mandatory QC tests were selected to be manufacturer-independent, i.e. not to
 
 : Table 4-3. Processing levels for HFR data.
 
-Each QC test results in a flag related to each data vector, 
-which is inserted in a specific test variable. 
-These variables can be: 1) matrices with the same dimensions of the data variable, 
-containing (for each cell), the flag related to the vector lying in that cell, 
-when the QC test evaluates each cell of the gridded data, 
+Each QC test results in a flag related to each data vector,
+which is inserted in a specific test variable.
+These variables can be: 1) matrices with the same dimensions of the data variable,
+containing (for each cell), the flag related to the vector lying in that cell,
+when the QC test evaluates each cell of the gridded data,
 or 2) a scalar, in case the QC test assesses an overall property of the data.
 
-An overall QC variable also reports the quality flags related to the results of all the QC tests: 
+An overall QC variable also reports the quality flags related to the results of all the QC tests:
 it is a “good data” flag if and only if all QC tests are passed.
 
-The flagging policy is not to modify the data, but only to label them with flags. 
-Thus, 
-each geophysical variable in the standard output files contains exactly the measured data and QC variables containing flags can be used as masks to the geophysical variables for having information about data quality. 
+The flagging policy is not to modify the data, but only to label them with flags.
+Thus,
+each geophysical variable in the standard output files contains exactly the measured data and QC variables containing flags can be used as masks to the geophysical variables for having information about data quality.
 
-The adopted QC flagging scheme is the ARGO QC flag scale (Wong et al. 2022), shown in Table 4-4, which extends the UNESCO scale reported in Table 3-1. 
+The adopted QC flagging scheme is the ARGO QC flag scale (Wong et al. 2022), shown in Table 4-4, which extends the UNESCO scale reported in Table 3-1.
 
 |Code|Meaning|Comment|
 |---|---|---|
@@ -1071,29 +1071,29 @@ The adopted QC flagging scheme is the ARGO QC flag scale (Wong et al. 2022), sho
 |8|interpolated value|Missing data may be interpolated from neighboring data in space or time.|
 |9|missing value|Value was missing.|
 
-: Table 4-4. Argo quality control flag scale. 
+: Table 4-4. Argo quality control flag scale.
 
-For some of these tests, HFR operators will need to select the best thresholds. 
-Since a successful QC effort is highly dependent upon selection of the proper thresholds, 
-this choice is not straightforward, 
-and may require trial and error before final selections are made. 
-These thresholds should not be determined arbitrarily but based on historical knowledge or statistics derived from historical data. 
+For some of these tests, HFR operators will need to select the best thresholds.
+Since a successful QC effort is highly dependent upon selection of the proper thresholds,
+this choice is not straightforward,
+and may require trial and error before final selections are made.
+These thresholds should not be determined arbitrarily but based on historical knowledge or statistics derived from historical data.
 
-The threshold values are reported in the ‘comment’ variable attribute of each QC variable. 
-The flagging scheme is reported as well in the ‘flag values’ and ‘flag meanings’ variable attributes of each QC variable. 
+The threshold values are reported in the ‘comment’ variable attribute of each QC variable.
+The flagging scheme is reported as well in the ‘flag values’ and ‘flag meanings’ variable attributes of each QC variable.
 
-The standard netCDF radial and total files including the aforementioned QC procedures are generated by the following software tools, 
+The standard netCDF radial and total files including the aforementioned QC procedures are generated by the following software tools,
 that were developed and are continuously improved by the EU HFR NODE:
 
 - HFR_Node__Centralized_Processing: [DOI 10.5281/zenodo.2639558](https://doi.org/10.5281/zenodo.2639558)
-- HFR_Node__Historical_Data_Processing: [DOI 10.5281/zenodo.3569518](https://doi.org/10.5281/zenodo.3569518) 
+- HFR_Node__Historical_Data_Processing: [DOI 10.5281/zenodo.3569518](https://doi.org/10.5281/zenodo.3569518)
 - HFR_Node__REP_Temporal_Aggregation: [DOI 10.5281/zenodo.3707649](https://doi.org/10.5281/zenodo.3707649)
 - HFR_Node_tools: [DOI 10.5281/zenodo.2639555](https://doi.org/10.5281/zenodo.2639555)
 
 ### 4.2 MARACOOS HFR Network
 
-The Mid-Atlantic Regional Association Coastal Ocean Observing System (MARACOOS) provides hourly surface current velocity maps to the U.S. Coast Guard for the Mid-Atlantic waters stretching from Cape Hatteras to Cape Cod (Table 4-5). 
-Those maps are produced by combining radial data from seventeen CODAR SeaSonde long range high frequency radar (HFR) systems onto a 6-kilometer grid using an optimal interpolation method. 
+The Mid-Atlantic Regional Association Coastal Ocean Observing System (MARACOOS) provides hourly surface current velocity maps to the U.S. Coast Guard for the Mid-Atlantic waters stretching from Cape Hatteras to Cape Cod (Table 4-5).
+Those maps are produced by combining radial data from seventeen CODAR SeaSonde long range high frequency radar (HFR) systems onto a 6-kilometer grid using an optimal interpolation method.
 This case study describes the efforts to expand real-time quality control in this regional surface current product and implement QC more formally through assignment of quality flags as recommended by IOOS QARTOD manuals.
 
 | Processing Step | Description | Software |
@@ -1108,15 +1108,15 @@ This case study describes the efforts to expand real-time quality control in thi
 
 #### 4.2.1 Signal and Radial Metric QC
 
-QARTOD tests 101 and 105 are part of SeaSonde software and used on every station. 
-The three North Carolina stations implement radial metric QC (QARTOD tests 102, 103, 104) on the site computer with a toolbox called qccodar developed by Sara Haines. 
-Radial output from these qccodar scripts are called QCD radials. 
+QARTOD tests 101 and 105 are part of SeaSonde software and used on every station.
+The three North Carolina stations implement radial metric QC (QARTOD tests 102, 103, 104) on the site computer with a toolbox called qccodar developed by Sara Haines.
+Radial output from these qccodar scripts are called QCD radials.
 Haines et al. (2017) provide more information on radial metric QC.
 
 #### 4.2.2 Radial QC
 
-MARACOOS writes radial QC files for CODAR Oceans Sensors SeaSonde data that include secondary flags for individual QC tests as well as a primary flag (Table 4-6). 
-Both levels of flags follow the IOC 54:V3 Primary Level flagging standard (UNESCO 2013), which has been adopted by QARTOD. 
+MARACOOS writes radial QC files for CODAR Oceans Sensors SeaSonde data that include secondary flags for individual QC tests as well as a primary flag (Table 4-6).
+Both levels of flags follow the IOC 54:V3 Primary Level flagging standard (UNESCO 2013), which has been adopted by QARTOD.
 The new QC radial file retains the same name as the original radial file and keeps all information from the original file.
 
 | Test Name | Code | Description | Suspect Flag | Fail Flag |
@@ -1147,19 +1147,19 @@ Total vector flags are recorded with total velocities in MATLAB MAT files. They 
 
 #### 4.2.4 Primary Flag Definition
 
-The primary flag is explicitly defined in metadata as the highest flag value of test1, 
-test2, etc. with a note that it will be set to “not evaluated” only if ALL tests were “not evaluated”. 
-The flag is NOT the highest value of all individual test flags. 
-This allows the inclusion of a secondary flag in the file that does not affect the primary (e.g., for testing purposes). 
+The primary flag is explicitly defined in metadata as the highest flag value of test1,
+test2, etc. with a note that it will be set to “not evaluated” only if ALL tests were “not evaluated”.
+The flag is NOT the highest value of all individual test flags.
+This allows the inclusion of a secondary flag in the file that does not affect the primary (e.g., for testing purposes).
 It also avoids assigning the primary as “not evaluated” in a case where it may not be a useful designation (e.g., all tests pass except the radial was at the edge of coverage, and there were not enough neighbors for the spatial median test to be evaluated).
 
 #### 4.2.5 Thresholds
 
-Thresholds for a low radial count test (QC204) are site specific. 
-The failure threshold is 10% of the number of valid radial locations and the suspect threshold is 30% of the number of valid radial locations. 
-The number of valid locations is based on a radial grid with a maximum of 40 range cells and 5-degree bins. 
-Every cell that falls over land or is otherwise blocked from obtaining a good signal (e.g., behind land) is not counted as a valid location. 
-The SeaSonde AngSeg_XXXX.txt file is helpful in obtaining the valid location count. 
+Thresholds for a low radial count test (QC204) are site specific.
+The failure threshold is 10% of the number of valid radial locations and the suspect threshold is 30% of the number of valid radial locations.
+The number of valid locations is based on a radial grid with a maximum of 40 range cells and 5-degree bins.
+Every cell that falls over land or is otherwise blocked from obtaining a good signal (e.g., behind land) is not counted as a valid location.
+The SeaSonde AngSeg_XXXX.txt file is helpful in obtaining the valid location count.
 A MATLAB script was written to count the good locations from the AngSeg file and the resulting number is “rounded” to the nearest 25.
 
 ## 5.0 Summary

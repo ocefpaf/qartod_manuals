@@ -1166,43 +1166,43 @@ A MATLAB script was written to count the good locations from the AngSeg file and
 
 ## 5.0 Summary
 
-The QC tests in this HF radar document have been compiled using the guidance provided by the HF radar committee and valuable reviewers (appendix A), 
-earlier U.S. IOOS/QARTOD manuals, 
-and all QARTOD workshops (https://ioos.noaa.gov/ioos-in-action/qartod-meetings/). 
-Test suggestions came from both operators and HF radar data users with extensive experience. 
-The considerations of operators who ensure the quality of real-time data may be different from those whose data are not published in real time, 
-and these and other differences must be balanced according to the specific circumstances of each operator. 
-Although these real-time tests are required, 
-recommended, 
-suggested, or in development, 
+The QC tests in this HF radar document have been compiled using the guidance provided by the HF radar committee and valuable reviewers (appendix A),
+earlier U.S. IOOS/QARTOD manuals,
+and all QARTOD workshops (https://ioos.noaa.gov/ioos-in-action/qartod-meetings/).
+Test suggestions came from both operators and HF radar data users with extensive experience.
+The considerations of operators who ensure the quality of real-time data may be different from those whose data are not published in real time,
+and these and other differences must be balanced according to the specific circumstances of each operator.
+Although these real-time tests are required,
+recommended,
+suggested, or in development,
 it is the operator who is responsible for deciding which tests are appropriate.
 
-The QC tests identified in this manual apply to HF radar observations from three HF radar types that are used in U.S. IOOS. 
-The existing program has developed QC tests that are documented in this U.S. IOOS QARTOD manual. 
-The QARTOD HF radar committee intends for the QC tests of these programs to be compliant with U.S. IOOS QARTOD requirements and recommendations. 
-The individual tests are described and include codable instructions, 
-output conditions, 
-example thresholds, 
+The QC tests identified in this manual apply to HF radar observations from three HF radar types that are used in U.S. IOOS.
+The existing program has developed QC tests that are documented in this U.S. IOOS QARTOD manual.
+The QARTOD HF radar committee intends for the QC tests of these programs to be compliant with U.S. IOOS QARTOD requirements and recommendations.
+The individual tests are described and include codable instructions,
+output conditions,
+example thresholds,
 and exceptions (when applicable).
 
-Selection of the proper thresholds is critical to a successful QC effort. 
-Thresholds can be based on historical knowledge or statistics derived from more recently acquired data, 
-but they should not be determined arbitrarily. 
-This manual provides guidance for selecting thresholds based on input from various operators, 
+Selection of the proper thresholds is critical to a successful QC effort.
+Thresholds can be based on historical knowledge or statistics derived from more recently acquired data,
+but they should not be determined arbitrarily.
+This manual provides guidance for selecting thresholds based on input from various operators,
 but also notes that operators need the subject matter expertise and motivation to select the proper thresholds to maximize the value of their QC effort.
 
-Future QARTOD reports will address standard QC test procedures and best practices for all types of common and uncommon platforms and sensors for all the U.S. IOOS core variables. 
-We anticipate growth in the test procedures that will take place within the sensor package. 
-Significant components of metadata will reside in the sensor and be transmitted either on demand or automatically along with the data stream. 
-Users may also reference metadata through Uniform Resource Locators to simplify the identification of which QC steps have been applied to data. 
-However, 
-QARTOD QC test procedures in this manual address only real-time in-situ observations. 
-The tests do not include post-processing, 
-which is not in real time but may be useful for ecosystem-based management, 
-or delayed-mode, 
+Future QARTOD reports will address standard QC test procedures and best practices for all types of common and uncommon platforms and sensors for all the U.S. IOOS core variables.
+We anticipate growth in the test procedures that will take place within the sensor package.
+Significant components of metadata will reside in the sensor and be transmitted either on demand or automatically along with the data stream.
+Users may also reference metadata through Uniform Resource Locators to simplify the identification of which QC steps have been applied to data.
+However,
+QARTOD QC test procedures in this manual address only real-time in-situ observations.
+The tests do not include post-processing,
+which is not in real time but may be useful for ecosystem-based management,
+or delayed-mode,
 which might be suitable for climate studies
 
-Each QARTOD manual is envisioned as a dynamic document and will be posted on the QARTOD website at https://ioos.noaa.gov/project/qartod/. 
+Each QARTOD manual is envisioned as a dynamic document and will be posted on the QARTOD website at https://ioos.noaa.gov/project/qartod/.
 This process allows for QC manual updates as technology development occurs for both upgrades of existing sensors and new sensors.
 
 ## 6.0 References
@@ -1267,7 +1267,7 @@ Additional References to Related Documents:
 
 > U.S. IOOS Office, (2010). A Blueprint for Full Capability, Version 1.0, 254 pp. <http://www.iooc.us/wp-content/uploads/2010/11/US-IOOS-Blueprint-for-Full-Capability-Version-1.0.pdf>
 
-> National Oceanographic Partnership Program (NOPP) January 2006. The First U.S. Integrated Ocean Observing System (IOOS)Development Plan – A report of the national Ocean Research Leadership Council and the Interagency Committee on Ocean Science and Resource Management Integration. The National Office for Integrated and Sustained Ocean Observations. Ocean US Publication No. 9. <http://www.iooc.us/wp-content/uploads/2010/12/9.pdf> 
+> National Oceanographic Partnership Program (NOPP) January 2006. The First U.S. Integrated Ocean Observing System (IOOS)Development Plan – A report of the national Ocean Research Leadership Council and the Interagency Committee on Ocean Science and Resource Management Integration. The National Office for Integrated and Sustained Ocean Observations. Ocean US Publication No. 9. <http://www.iooc.us/wp-content/uploads/2010/12/9.pdf>
 
 > National Data Buoy Center (NDBC) Technical Document 09-02, Handbook of Automated Data Quality Control Checks and Procedures, August 2009. National Data Buoy Center, Stennis Space Center, Mississippi 39529-6000.
 
@@ -1281,14 +1281,14 @@ Additional References to Related Documents:
 
 > Data QC Flags from CSIRO Cookbook <https://repository.oceanbestpractices.org/handle/11329/127>
 
-> Integrated Marine Observing System Toolbox <https://github.com/aodn/imos-toolbox> 
+> Integrated Marine Observing System Toolbox <https://github.com/aodn/imos-toolbox>
 
 > IMOS ACORN Quality Control Procedures for IMOS Ocean Radar Manual <http://dx.doi.org/10.26198/5c89b59a931cb>
 
 > Lipa, B., Barrick, D., and Whelan, C. (2019) “A quality control method for broad-beam HF radar current velocity measurements.” *Journal of Marine Science and Engineering* 7, no. 4: 112.
 
 Supporting Documents Available from the QARTOD Website:
-(https://ioos.noaa.gov/ioos-in-action/manual-real-time-quality-control-high-frequency-radar-surface-current-data/) 
+(https://ioos.noaa.gov/ioos-in-action/manual-real-time-quality-control-high-frequency-radar-surface-current-data/)
 
     *These documents were particularly useful to the committee and reviewers when developing this manual. They do not contain copyright restrictions and are posted on the U.S. IOOS QARTOD website for easy reference*.
 

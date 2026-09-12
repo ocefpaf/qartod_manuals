@@ -219,7 +219,7 @@ The company headquarters are in Mountain View, California.
 
 #### 2.2.2 WERA
 
-The Wellen Radar (WERA; Wellen Radar is German for wave radar) system was initially developed at the University of Hamburg in 1996.
+The Wellen Radar¹ (WERA) system was initially developed at the University of Hamburg in 1996.
 One of the aims was to allow measurements of the ocean wave spectrum,
 which requires access to the full backscatter Doppler spectrum for all ranges and directions.
 This access is achieved by applying a beam-forming technique.
@@ -265,6 +265,8 @@ the binary programs that implement it are typically provided with an additional 
 WERA reports that the same tests applied by the WERA QC proprietary software are also considered in the recommendations provided in this document,
 either in Table 3-2,
 or as an additional potential QC test in appendix B (such as broadness of peak or trend limits).
+
+<small>¹ Wellen Radar is German for wave radar.</small>
 
 #### 2.2.3 UH-HFDR
 
@@ -1164,95 +1166,154 @@ A MATLAB script was written to count the good locations from the AngSeg file and
 
 ## 5.0 Summary
 
-The QC tests in this HF radar document have been compiled using the guidance provided by the HF radar committee and valuable reviewers (appendix A), earlier U.S. IOOS/QARTOD manuals, and all QARTOD workshops (<u>[https://ioos.noaa.gov/ioos-in-action/qartod-meetings/](https://ioos.noaa.gov/ioos-in-action/qartod-meetings/)</u>). Test suggestions came from both operators and HF radar data users with extensive experience. The considerations of operators who ensure the quality of real-time data may be different from those whose data are not published in real time, and these and other differences must be balanced according to the specific circumstances of each operator. Although these real-time tests are required, recommended, suggested, or in development, it is the operator who is responsible for deciding which tests are appropriate.
+The QC tests in this HF radar document have been compiled using the guidance provided by the HF radar committee and valuable reviewers (appendix A), 
+earlier U.S. IOOS/QARTOD manuals, 
+and all QARTOD workshops (https://ioos.noaa.gov/ioos-in-action/qartod-meetings/). 
+Test suggestions came from both operators and HF radar data users with extensive experience. 
+The considerations of operators who ensure the quality of real-time data may be different from those whose data are not published in real time, 
+and these and other differences must be balanced according to the specific circumstances of each operator. 
+Although these real-time tests are required, 
+recommended, 
+suggested, or in development, 
+it is the operator who is responsible for deciding which tests are appropriate.
 
-The QC tests identified in this manual apply to HF radar observations from three HF radar types that are used in U.S. IOOS. The existing program has developed QC tests that are documented in this U.S. IOOS QARTOD manual. The QARTOD HF radar committee intends for the QC tests of these programs to be compliant with U.S. IOOS QARTOD requirements and recommendations. The individual tests are described and include codable instructions, output conditions, example thresholds, and exceptions (when applicable).
+The QC tests identified in this manual apply to HF radar observations from three HF radar types that are used in U.S. IOOS. 
+The existing program has developed QC tests that are documented in this U.S. IOOS QARTOD manual. 
+The QARTOD HF radar committee intends for the QC tests of these programs to be compliant with U.S. IOOS QARTOD requirements and recommendations. 
+The individual tests are described and include codable instructions, 
+output conditions, 
+example thresholds, 
+and exceptions (when applicable).
 
-Selection of the proper thresholds is critical to a successful QC effort. Thresholds can be based on historical knowledge or statistics derived from more recently acquired data, but they should not be determined arbitrarily. This manual provides guidance for selecting thresholds based on input from various operators, but also notes that operators need the subject matter expertise and motivation to select the proper thresholds to maximize the value of their QC effort.
+Selection of the proper thresholds is critical to a successful QC effort. 
+Thresholds can be based on historical knowledge or statistics derived from more recently acquired data, 
+but they should not be determined arbitrarily. 
+This manual provides guidance for selecting thresholds based on input from various operators, 
+but also notes that operators need the subject matter expertise and motivation to select the proper thresholds to maximize the value of their QC effort.
 
-Future QARTOD reports will address standard QC test procedures and best practices for all types of common and uncommon platforms and sensors for all the U.S. IOOS core variables. We anticipate growth in the test procedures that will take place within the sensor package. Significant components of metadata will reside in the sensor and be transmitted either on demand or automatically along with the data stream. Users may also reference metadata through Uniform Resource Locators to simplify the identification of which QC steps have been applied to data. However, QARTOD QC test procedures in this manual address only real-time in-situ observations. The tests do not include post-processing, which is not in real time but may be useful for ecosystem-based management, or delayed-mode, which might be suitable for climate studies
+Future QARTOD reports will address standard QC test procedures and best practices for all types of common and uncommon platforms and sensors for all the U.S. IOOS core variables. 
+We anticipate growth in the test procedures that will take place within the sensor package. 
+Significant components of metadata will reside in the sensor and be transmitted either on demand or automatically along with the data stream. 
+Users may also reference metadata through Uniform Resource Locators to simplify the identification of which QC steps have been applied to data. 
+However, 
+QARTOD QC test procedures in this manual address only real-time in-situ observations. 
+The tests do not include post-processing, 
+which is not in real time but may be useful for ecosystem-based management, 
+or delayed-mode, 
+which might be suitable for climate studies
 
-Each QARTOD manual is envisioned as a dynamic document and will be posted on the QARTOD website at <u>[https://ioos.noaa.gov/project/qartod/](https://ioos.noaa.gov/project/qartod/).</u> This process allows for QC manual updates as technology development occurs for both upgrades of existing sensors and new sensors.
+Each QARTOD manual is envisioned as a dynamic document and will be posted on the QARTOD website at https://ioos.noaa.gov/project/qartod/. 
+This process allows for QC manual updates as technology development occurs for both upgrades of existing sensors and new sensors.
 
-# 6.0 References
+## 6.0 References
 
-Bushnell, M., Presentation at QARTOD III: (2005). Scripps Institution of Oceanography, La Jolla, California.
+> Bushnell, M., Presentation at QARTOD III: (2005). Scripps Institution of Oceanography, La Jolla, California.
 
-CODAR Ocean Sensors (2009). SeaSonde Radial Site Release 6, Radial Vector and Grid Flag. (Copyright CODAR Ocean Sensors)
+> CODAR Ocean Sensors (2009). SeaSonde Radial Site Release 6, Radial Vector and Grid Flag. (Copyright CODAR Ocean Sensors)
 
-Cook, Thomas, Lisa Hazard, Mark Otero, and Brian Zelenke. (2008) “Deployment and Maintenance of a High-frequency Radar (HFR) for Ocean Surface Current Mapping: Best Practices.”
+> Cook, Thomas, Lisa Hazard, Mark Otero, and Brian Zelenke. (2008) “Deployment and Maintenance of a High-frequency Radar (HFR) for Ocean Surface Current Mapping: Best Practices.”
 
-Copernicus Marine In Situ Tac Data Management Team (2021). Copernicus Marine In Situ NetCDF format manual. <u>[https://doi.org/10.13155/59938](https://doi.org/10.13155/59938)</u>
+> Copernicus Marine In Situ Tac Data Management Team (2021). Copernicus Marine In Situ NetCDF format manual. <https://doi.org/10.13155/59938>
 
-Copernicus Marine in situ TAC (2020a). Copernicus in situ NRT current product user manual (PUM). CMEMS-INS-PUM-013-048. <u>[https://doi.org/10.13155/73192](https://doi.org/10.13155/73192)</u>
+> Copernicus Marine in situ TAC (2020a). Copernicus in situ NRT current product user manual (PUM). CMEMS-INS-PUM-013-048. <https://doi.org/10.13155/73192>
 
-Copernicus Marine In Situ Tac (2020b). For Global Ocean-Delayed Mode in-situ Observations of surface (drifters and HFR) and sub-surface (vessel-mounted ADCPs) water velocity. Quality Information Document (QUID). CMEMS-INS-QUID-013-044. [https://doi.org/10.13155/41256](https://doi.org/10.13155/41256)
+> Copernicus Marine In Situ Tac (2020b). For Global Ocean-Delayed Mode in-situ Observations of surface (drifters and HFR) and sub-surface (vessel-mounted ADCPs) water velocity. Quality Information Document (QUID). CMEMS-INS-QUID-013-044. <https://doi.org/10.13155/41256>
 
-Corgnati, L., Mantovani, C., Novellino, A., Jousset, S., Cramer, R. N., and Thijsse, P. (2019) SeaDataNet data management protocols for HF Radar data, <u>[https://repository.oceanbestpractices.org/handle/11329/1511](https://repository.oceanbestpractices.org/handle/11329/1511)</u>.
+> Corgnati, L., Mantovani, C., Novellino, A., Jousset, S., Cramer, R. N., and Thijsse, P. (2019) SeaDataNet data management protocols for HF Radar data, <https://repository.oceanbestpractices.org/handle/11329/1511>.
 
-Corgnati, L., Mantovani, C., Novellino, A., Rubio, A., Mader, J., Reyes, E., Griffa, A., Asensio, J. L.., Gorringe, P., Quentin, C., Breitbach, G., and Widera, J. (2018) Recommendation Report 2 on improved common procedures for HFR QC analysis. <u>[https://repository.oceanbestpractices.org/handle/11329/1441](https://repository.oceanbestpractices.org/handle/11329/1441)</u>.
+> Corgnati, L., Mantovani, C., Novellino, A., Rubio, A., Mader, J., Reyes, E., Griffa, A., Asensio, J. L.., Gorringe, P., Quentin, C., Breitbach, G., and Widera, J. (2018) Recommendation Report 2 on improved common procedures for HFR QC analysis. <https://repository.oceanbestpractices.org/handle/11329/1441>.
 
-Gomez, R. et al. (2014) “Real-time quality control of current velocity data on individual grid cells in WERA HF radar,” OCEANS 2014 - TAIPEI, 2014, pp. 1–7, doi: 10.1109/OCEANS-TAIPEI.2014.6964502.)
+> Gomez, R. et al. (2014) “Real-time quality control of current velocity data on individual grid cells in WERA HF radar,” OCEANS 2014 - TAIPEI, 2014, pp. 1–7, doi: 10.1109/OCEANS-TAIPEI.2014.6964502.
 
-Gurgel, K.W., Barbin, Y., Schlick, T. (2007) “Radio Frequency Interference Suppression Techniques in FMCW Modulated HF Radars”, Proc. of IEEE/OES Oceans ’07 Europe, Aberdeen, Scotland, UK, June 2007.
+> Gurgel, K.W., Barbin, Y., Schlick, T. (2007) “Radio Frequency Interference Suppression Techniques in FMCW Modulated HF Radars”, Proc. of IEEE/OES Oceans ’07 Europe, Aberdeen, Scotland, UK, June 2007.
 
-Haines, S., Seim, H., & Muglia, M. (2017). Implementing Quality Control of High-Frequency Radar Estimates and Application to Gulf Stream Surface Currents, *Journal of Atmospheric and Oceanic Technology*, *34*(6), 1207-
+> Haines, S., Seim, H., & Muglia, M. (2017). Implementing Quality Control of High-Frequency Radar Estimates and Application to Gulf Stream Surface Currents, *Journal of Atmospheric and Oceanic Technology*, *34*(6), 1207-1224. <https://journals.ametsoc.org/view/journals/atot/34/6/jtech-d-16-0203.1.xml>
 
-1224. <u>[https://journals.ametsoc.org/view/journals/atot/34/6/jtech-d-16-0203.1.xml](https://journals.ametsoc.org/view/journals/atot/34/6/jtech-d-16-0203.1.xml)</u>
-Kaplan, D., Largier, J., and Botsford, L. (2005) “HF radar observations of surface circulation off Bodega Bay (northern California, USA).” *Journal of Geophysical Research: Oceans* 110, no. C10.
+> Kaplan, D., Largier, J., and Botsford, L. (2005) “HF radar observations of surface circulation off Bodega Bay (northern California, USA).” *Journal of Geophysical Research: Oceans* 110, no. C10.
 
-Kim, S. Y., Terrill, E.J., and Cornuelle, B.D. (2008) “Mapping surface currents from HF radar radial velocity measurements using optimal interpolation.” *Journal of Geophysical Research*: *Oceans* 113.C10.
+> Kim, S. Y., Terrill, E.J., and Cornuelle, B.D. (2008) “Mapping surface currents from HF radar radial velocity measurements using optimal interpolation.” *Journal of Geophysical Research*: *Oceans* 113.C10.
 
-Kirincich, A.R., De Paolo, T., and Terrill, E. (2012) “Improving HF radar estimates of surface currents using signal quality metrics, with application to the MVCO high-resolution radar system.” *Journal of Atmospheric* *and Oceanic Technology* 29, no. 9: 1377-1390.
+> Kirincich, A.R., De Paolo, T., and Terrill, E. (2012) “Improving HF radar estimates of surface currents using signal quality metrics, with application to the MVCO high-resolution radar system.” *Journal of Atmospheric* *and Oceanic Technology* 29, no. 9: 1377-1390.
 
-## High Frequency Radar
+> Mantovani, C., Corgnati, L., Horstmann, J., Rubio, A., Reyes, E., Quentin, C., Cosoli, S., Asensio, J.L., Mader, J. and Griffa, A. (2020). Best Practices on High Frequency Radar Deployment and Operation for Ocean Current Measurement. Front. Mar. Sci. 7:210. doi: 10.3389/fmars.2020.00210 <https://www.frontiersin.org/articles/10.3389/fmars.2020.00210/full>
 
-Mantovani, C., Corgnati, L., Horstmann, J., Rubio, A., Reyes, E., Quentin, C., Cosoli, S., Asensio, J.L., Mader,
+> Paris. Intergovernmental Oceanographic Commission of UNESCO (2013). Ocean Data Standards, Vol. 3: Recommendation for a Quality Flag Scheme for the Exchange of Oceanographic and Marine Meteorological Data. (IOC Manuals and Guides, 54, Vol. 3.) 12 pp. (English.) (IOC/2013/MG/54-3). <http://www.ioccp.org/images/D4standards/IOC-OceanDataStandards54-3-2013.pdf>
 
-J. and Griffa, A. (2020). Best Practices on High Frequency Radar Deployment and Operation for Ocean Current Measurement. Front. Mar. Sci. 7:210. doi: 10.3389/fmars.2020.00210 <u>[https://www.frontiersin.org/articles/10.3389/fmars.2020.00210/full](https://www.frontiersin.org/articles/10.3389/fmars.2020.00210/full)</u>
-Paris. Intergovernmental Oceanographic Commission of UNESCO (2013). Ocean Data Standards, Vol. 3: Recommendation for a Quality Flag Scheme for the Exchange of Oceanographic and Marine Meteorological Data. (IOC Manuals and Guides, 54, Vol. 3.) 12 pp. (English.) (IOC/2013/MG/54-3). <u>[http://www.ioccp.org/images/D4standards/IOC-OceanDataStandards54-3-2013.pdf](http://www.ioccp.org/images/D4standards/IOC-OceanDataStandards54-3-2013.pdf)</u>
+> Roarty, H., M. Smith, J. Kerfoot, J. Kohut and S. Glenn (2012). Automated quality control of High Frequency radar data. Oceans, 2012 Virginia Beach, Va.
 
-Roarty, H., M. Smith, J. Kerfoot, J. Kohut and S. Glenn (2012). Automated quality control of High Frequency radar data. Oceans, 2012 Virginia Beach, Va.
+> Roarty, H., J. Klein, S. Dante, A. Cope, S. Johnson and M. Daugharty (2019). “Evaluation of Wave Data from HF Radar by the National Weather Service,” 2019 IEEE/OES Twelfth Current, Waves and Turbulence Measurement (CWTM), pp. 1-4, doi: 10.1109/CWTM43797.2019.8955189.
 
-Roarty, H., J. Klein, S. Dante, A. Cope, S. Johnson and M. Daugharty (2019). “Evaluation of Wave Data from HF Radar by the National Weather Service,” 2019 IEEE/OES Twelfth Current, Waves and Turbulence Measurement (CWTM), pp. 1-4, doi: 10.1109/CWTM43797.2019.8955189.
+> Soh, Hyun Sup, et al. (2018)“Do Nonorthogonally and Irregularly Sampled Scalar Velocities Contain Sufficient Information to Reconstruct an Orthogonal Vector Current Field?” *Journal of Atmospheric and* *Oceanic Technology* 35.4: 763-795.
 
-Soh, Hyun Sup, et al. (2018)“Do Nonorthogonally and Irregularly Sampled Scalar Velocities Contain Sufficient Information to Reconstruct an Orthogonal Vector Current Field?” *Journal of Atmospheric and* *Oceanic Technology* 35.4: 763-795.
+> UNESCO (1993). Manual and Guides 26, Manual of Quality Control Procedures for Validation of Oceanographic Data, Section 2.2, Appendix A1: Wave Data. Prepared by CEC: DG-XII, MAST and IOC: IODE. 436 pp. <http://unesdoc.unesco.org/images/0013/001388/138825eo.pdf>
 
-UNESCO (1993). Manual and Guides 26, Manual of Quality Control Procedures for Validation of Oceanographic Data, Section 2.2, Appendix A1: Wave Data. Prepared by CEC: DG-XII, MAST and IOC: IODE. 436 pp. <u>[http://unesdoc.unesco.org/images/0013/001388/138825eo.pdf](http://unesdoc.unesco.org/images/0013/001388/138825eo.pdf)</u>
+> U.S. IOOS Interagency Working Group on Ocean Observations (2015). A Plan to Meet the Nation’s Needs for Surface Current Mapping. 62 pp. <https://cdn.ioos.noaa.gov/media/2017/12/national_surface_current_plan.pdf>
 
-U.S. IOOS Interagency Working Group on Ocean Observations (2015). A Plan to Meet the Nation’s Needs for Surface Current Mapping. 62 pp. <u>[https://cdn.ioos.noaa.gov/media/2017/12/national_surface_current_plan.pdf](https://cdn.ioos.noaa.gov/media/2017/12/national_surface_current_plan.pdf)</u>
-U.S. Integrated Ocean Observing System (2016). Manual for Real-Time Quality Control of High Frequency Radar Surface Currents Data: A Guide to Quality Control and Quality Assurance of High Frequency Radar Surface Currents Data Observations. 58 pp. <u>[https://repository.library.noaa.gov/view/noaa/15482](https://repository.library.noaa.gov/view/noaa/15482)</u>
-U.S. Integrated Ocean Observing System (2020). Manual for Real-Time Oceanographic Data Quality Control Flags Version 1.2. 24 pp. <u>[https://repository.library.noaa.gov/view/noaa/24982](https://repository.library.noaa.gov/view/noaa/24982)</u> Voulgaris, G. (2011). Guidelines for assessing HF radar capabilities and performance. Technical Report CPSD #11-01. University of South Carolina. Columbia, S.C. Wong Annie, Keeley Robert, Carval Thierry, Argo Data Management Team (2022). Argo Quality Control Manual for CTD and Trajectory Data. <u>[https://doi.org/10.13155/33951](https://doi.org/10.13155/33951)</u>
+> U.S. Integrated Ocean Observing System (2016). Manual for Real-Time Quality Control of High Frequency Radar Surface Currents Data: A Guide to Quality Control and Quality Assurance of High Frequency Radar Surface Currents Data Observations. 58 pp. <https://repository.library.noaa.gov/view/noaa/15482>
 
-# Additional References to Related Documents:
+> U.S. Integrated Ocean Observing System (2020). Manual for Real-Time Oceanographic Data Quality Control Flags Version 1.2. 24 pp. <https://repository.library.noaa.gov/view/noaa/24982>
 
-The U.S. IOOS website page on HF Radar can be found at <u>[https://ioos.noaa.gov/project/hf-radar/](https://ioos.noaa.gov/project/hf-radar/) -</u> <u>documents</u>
+> Voulgaris, G. (2011). Guidelines for assessing HF radar capabilities and performance. Technical Report CPSD #11-01. University of South Carolina. Columbia, S.C.
 
-The Ocean Data Standards resource pool can be found at: <u>[http://www.oceandatastandards.org/](http://www.oceandatastandards.org/)</u>
+> Wong Annie, Keeley Robert, Carval Thierry, Argo Data Management Team (2022). Argo Quality Control Manual for CTD and Trajectory Data. <https://doi.org/10.13155/33951>
 
-Scheme on QC flags, which is a general document that discusses how to write the results of tests but does not discuss the actual tests. <u>[http://www.iode.org/index.php?option=com_oe&task=viewDocumentRecord&docID=10762](http://www.iode.org/index.php?option=com_oe&task=viewDocumentRecord&docID=10762)</u>
+Additional References to Related Documents:
 
-U.S. IOOS Office, (2010). A Blueprint for Full Capability, Version 1.0, 254 pp. <u>[http://www.iooc.us/wp-](http://www.iooc.us/wp-)</u> <u>content/uploads/2010/11/US-IOOS-Blueprint-for-Full-Capability-Version-1.0.pdf</u> National Oceanographic Partnership Program (NOPP) January 2006. The First U.S. Integrated Ocean Observing System (IOOS)Development Plan – A report of the national Ocean Research Leadership Council and the Interagency Committee on Ocean Science and Resource Management Integration. The National Office for Integrated and Sustained Ocean Observations. Ocean US Publication No. 9. <u>[http://www.iooc.us/wp-content/uploads/2010/12/9.pdf](http://www.iooc.us/wp-content/uploads/2010/12/9.pdf)</u> National Data Buoy Center (NDBC) Technical Document 09-02, Handbook of Automated Data Quality Control Checks and Procedures, August 2009. National Data Buoy Center, Stennis Space Center, Mississippi 39529-6000. NOAA, 2005. Second Workshop Report on the QA of Real-Time Ocean Data, July 2005. 48 pp. Norfolk, Virginia. CCPO Technical Report Series No. 05-01 NOAA, 2009. Fifth Workshop on the QA/QC of Real-Time Oceanographic Data. November 16-19, 2009. 136 pp. Omni Hotel, Atlanta, Georgia. Ocean.US, 2006. National Office for Integrated and Sustained Ocean Observations. The First U.S. Integrated Ocean Observing System (IOOS) Development Plan, Publication 9, January 2006.
-U.S. IOOS QARTOD Project Plan, February 18, 2012. <u>[http://dx.doi.org/10.25607/OBP-533](http://dx.doi.org/10.25607/OBP-533)</u> Data QC Flags from CSIRO Cookbook <u>[https://repository.oceanbestpractices.org/handle/11329/127](https://repository.oceanbestpractices.org/handle/11329/127)</u> Integrated Marine Observing System Toolbox <u>[https://github.com/aodn/imos-toolbox](https://github.com/aodn/imos-toolbox)</u> IMOS ACORN Quality Control Procedures for IMOS Ocean Radar Manual <u>[http://dx.doi.org/10.26198/5c89b59a931cb](http://dx.doi.org/10.26198/5c89b59a931cb)</u> Lipa, B., Barrick, D., and Whelan, C. (2019) “A quality control method for broad-beam HF radar current velocity measurements.” *Journal of Marine Science and Engineering* 7, no. 4: 112.
+> The U.S. IOOS website page on HF Radar can be found at <https://ioos.noaa.gov/project/hf-radar/ - documents>
 
-## High Frequency Radar
+> The Ocean Data Standards resource pool can be found at: <http://www.oceandatastandards.org/>
 
-# Supporting Documents Available from the QARTOD Website:
+> Scheme on QC flags, which is a general document that discusses how to write the results of tests but does not discuss the actual tests. <http://www.iode.org/index.php?option=com_oe&task=viewDocumentRecord&docID=10762>
 
-(<u>[https://ioos.noaa.gov/ioos-in-action/manual-real-time-quality-control-high-frequency-radar-surface-](https://ioos.noaa.gov/ioos-in-action/manual-real-time-quality-control-high-frequency-radar-surface-)</u> <u>current-data/</u>) *These documents were particularly useful to the committee and reviewers when developing this manual. They* *do not contain copyright restrictions and are posted on the U.S. IOOS QARTOD website for easy reference*.
+> U.S. IOOS Office, (2010). A Blueprint for Full Capability, Version 1.0, 254 pp. <http://www.iooc.us/wp-content/uploads/2010/11/US-IOOS-Blueprint-for-Full-Capability-Version-1.0.pdf>
 
-Guidelines for Assessing HF Radar Capabilities and Performance Encoding NetCDF Radial Data in the HF-Radar Network QA/QC and Related Practices at CODAR HF-Radar Network Near-Real Time Ocean Surface Current Mapping Real-Time Quality Control of Current Velocity Data on Individual Grid Cells in WERA HF Radar Remote Monitoring Checklist QC_procedures_for_IMOS_Ocean_Radar_manual_v2.1
+> National Oceanographic Partnership Program (NOPP) January 2006. The First U.S. Integrated Ocean Observing System (IOOS)Development Plan – A report of the national Ocean Research Leadership Council and the Interagency Committee on Ocean Science and Resource Management Integration. The National Office for Integrated and Sustained Ocean Observations. Ocean US Publication No. 9. <http://www.iooc.us/wp-content/uploads/2010/12/9.pdf> 
 
-#### High Frequency Radar
+> National Data Buoy Center (NDBC) Technical Document 09-02, Handbook of Automated Data Quality Control Checks and Procedures, August 2009. National Data Buoy Center, Stennis Space Center, Mississippi 39529-6000.
+
+> NOAA, 2005. Second Workshop Report on the QA of Real-Time Ocean Data, July 2005. 48 pp. Norfolk, Virginia. CCPO Technical Report Series No. 05-01
+
+> NOAA, 2009. Fifth Workshop on the QA/QC of Real-Time Oceanographic Data. November 16-19, 2009. 136 pp. Omni Hotel, Atlanta, Georgia.
+
+> Ocean.US, 2006. National Office for Integrated and Sustained Ocean Observations. The First U.S. Integrated Ocean Observing System (IOOS) Development Plan, Publication 9, January 2006.
+
+> U.S. IOOS QARTOD Project Plan, February 18, 2012. <http://dx.doi.org/10.25607/OBP-533>
+
+> Data QC Flags from CSIRO Cookbook <https://repository.oceanbestpractices.org/handle/11329/127>
+
+> Integrated Marine Observing System Toolbox <https://github.com/aodn/imos-toolbox> 
+
+> IMOS ACORN Quality Control Procedures for IMOS Ocean Radar Manual <http://dx.doi.org/10.26198/5c89b59a931cb>
+
+> Lipa, B., Barrick, D., and Whelan, C. (2019) “A quality control method for broad-beam HF radar current velocity measurements.” *Journal of Marine Science and Engineering* 7, no. 4: 112.
+
+Supporting Documents Available from the QARTOD Website:
+(https://ioos.noaa.gov/ioos-in-action/manual-real-time-quality-control-high-frequency-radar-surface-current-data/) 
+
+    *These documents were particularly useful to the committee and reviewers when developing this manual. They do not contain copyright restrictions and are posted on the U.S. IOOS QARTOD website for easy reference*.
+
+Guidelines for Assessing HF Radar Capabilities and Performance
+
+Encoding NetCDF Radial Data in the HF-Radar Network
+
+QA/QC and Related Practices at CODAR
+
+HF-Radar Network Near-Real Time Ocean Surface Current Mapping
+
+Real-Time Quality Control of Current Velocity Data on Individual Grid Cells in WERA HF Radar
+
+Remote Monitoring Checklist
+
+QC_procedures_for_IMOS_Ocean_Radar_manual_v2.1
 
 ## Appendix A. QARTOD HF Radar Manual Version 2.0 Team
 
-# HF Radar Manual Committee, Contributors and Reviewers
 
-### Name Organization
+**HF Radar Manual Committee, Contributors and Reviewers**
 
-|Mark Bushnell|U.S. IOOS|
+|Name|Organization|
 |---|---|
+|Mark Bushnell|U.S. IOOS|
 |Lorenzo Corgnati|Institute of Marine Science of the National Research Council of Italy|
 |Brian Emery|University of California Santa Barbara|
 |Roberto Gomez|HELZEL|
@@ -1264,12 +1325,11 @@ Guidelines for Assessing HF Radar Capabilities and Performance Encoding NetCDF R
 |Teresa Updyke|Old Dominion University|
 |Manman Wang|Ocean Networks Canada|
 
-# QARTOD Board of Advisors
+**QARTOD Board of Advisors**
 
-### Name Organization
-
-|Eugene Burger, Chair|NOAA/Pacific Marine Environmental Laboratory|
+|Name|Organization|
 |---|---|
+|Eugene Burger, Chair|NOAA/Pacific Marine Environmental Laboratory|
 |Kathleen Bailey|U.S. IOOS|
 |Jim Behrens|SCCOOS/Scripps Institution of Oceanography/Coastal Data Information Program|
 |Matthew Biddle|U.S. IOOS|
@@ -1283,12 +1343,11 @@ Guidelines for Assessing HF Radar Capabilities and Performance Encoding NetCDF R
 |Mario Tamburri|University of Maryland/Alliance for Coastal Technologies|
 |Christoph Waldmann|University of Bremen (MARUM)|
 
-# U.S. IOOS Regional Associations
+**U.S. IOOS Regional Associations**
 
-### Name Organization
-
-|Josie Quintrell|U.S. IOOS Association|
+|Name|Organization|
 |---|---|
+|Josie Quintrell|U.S. IOOS Association|
 |Clarissa Anderson|SCCOOS|
 |Jorge Brenner|GCOOS|
 |Debra Hernandez|SECOORA|
@@ -1301,43 +1360,57 @@ Guidelines for Assessing HF Radar Capabilities and Performance Encoding NetCDF R
 |Henry Ruhl|CeNCOOS|
 |Sheyna Wisdom|AOOS|
 
-A-1
+**HF Radar Manual Version 1.0 Committee and Reviewers**
 
-## HF Radar Manual Version 1.0 Committee and Reviewers
+**HF Radar Manual Committee and Reviewers**
 
-# HF Radar Manual Committee and Reviewers
-
-### <u>Name</u>
-
-Mark Bushnell, Lead Editor Jack Harlan, Co-Editor Teresa Updyke, Co-Editor Helen Worthington, Editor Kathy Bailey Don Barrick Simone Cosoli Maeve Daugharty Greg Dusek Brian Emery Pierre Flament Klaus-Werner Gurgel Sara Haines Birgit Hansen Mal Heron Anthony Kirincich Mike Kosro Jeff Paduan Hugh Roarty Julie Thomas George Voulgaris Libe Washburn Brian Whitehouse Brian Zelenke
-
-### Organization
-
-CoastalObsTechServices LLC/CO-OPS NOAA Old Dominion University REMSA/CO-OPS
-
-U.S. IOOS CODAR Ocean Sensors Ltd. University of Western Australia CODAR Ocean Sensors Ltd. CO-OPS University of California Santa Barbara University of Hawaii University of Hamburg/Institute of Oceanography University of North Carolina HELZEL Messtechnik GmbH IEEE/James Cook University, Townsville, Australia Woods Hole Oceanographic Institution Oregon State University Naval Postgraduate School Rutgers University University of California San Diego/Scripps Institution of Oceanography University of South Carolina University of California Santa Barbara OEA Technologies Bureau of Ocean Energy Management
-# QARTOD Board of Advisors
-
-### Organization
-
-NOAA/National Data Buoy Center
-
-U.S. IOOS NOAA/National Centers for Environmental Information NOAA/Pacific Marine Environmental Laboratory Woods Hole Oceanographic Institution GCOOS/Texas A&M University
-U.S. Army Corps of Engineers NOAA/CO-OPS University of Maryland/Alliance for Coastal Technologies SCCOOS/Scripps Institution of Oceanography/Coastal Data Information Program
-### <u>Name</u>
-
-Joe Swaykos-Chair Kathy Bailey Julie Bosch Eugene Burger Janet Fredericks Matt Howard Bob Jensen Chris Paternostro Mario Tamburri Julie Thomas
-
-A-2
-
-### <u>High Frequency Radar</u>
-
-# U.S. IOOS Regional Associations
-
-## <u>Name Organization</u>
-
-|Josie Quintrell|U.S. IOOS Association|
+| Name | Organization |
 |---|---|
+| Mark Bushnell, Lead Editor | CoastalObsTechServices LLC/CO-OPS |
+| Jack Harlan, Co-Editor | NOAA |
+| Teresa Updyke, Co-Editor | Old Dominion University |
+| Helen Worthington, Editor | REMSA/CO-OPS |
+| Kathy Bailey | U.S. IOOS |
+| Don Barrick | CODAR Ocean Sensors Ltd. |
+| Simone Cosoli | University of Western Australia |
+| Maeve Daugharty | CODAR Ocean Sensors Ltd. |
+| Greg Dusek | CO-OPS |
+| Brian Emery | University of California Santa Barbara |
+| Pierre Flament | University of Hawaii |
+| Klaus-Werner Gurgel | University of Hamburg/Institute of Oceanography |
+| Sara Haines | University of North Carolina |
+| Birgit Hansen | HELZEL Messtechnik GmbH |
+| Mal Heron | IEEE/James Cook University, Townsville, Australia |
+| Anthony Kirincich | Woods Hole Oceanographic Institution |
+| Mike Kosro | Oregon State University |
+| Jeff Paduan | Naval Postgraduate School |
+| Hugh Roarty | Rutgers University |
+| Julie Thomas | University of California San Diego/Scripps Institution of Oceanography |
+| George Voulgaris | University of South Carolina |
+| Libe Washburn | University of California Santa Barbara |
+| Brian Whitehouse | OEA Technologies |
+| Brian Zelenke | Bureau of Ocean Energy Management |
+
+**QARTOD Board of Advisors**
+
+| Name | Organization |
+|---|---|
+| Joe Swaykos - Chair | NOAA/National Data Buoy Center |
+| Kathy Bailey | U.S. IOOS |
+| Julie Bosch | NOAA/National Centers for Environmental Information |
+| Eugene Burger | NOAA/Pacific Marine Environmental Laboratory |
+| Janet Fredericks | Woods Hole Oceanographic Institution |
+| Matt Howard | GCOOS/Texas A&M University |
+| Bob Jensen | U.S. Army Corps of Engineers |
+| Chris Paternostro | NOAA/CO-OPS |
+| Mario Tamburri | University of Maryland/Alliance for Coastal Technologies |
+| Julie Thomas | SCCOOS/Scripps Institution of Oceanography/Coastal Data Information Program |
+
+**U.S. IOOS Regional Associations**
+
+|Name|Organization|
+|---|---|
+|Josie Quintrell|U.S. IOOS Association|
 |David Anderson|CeNCOOS|
 |Debra Hernandez|SECOORA|
 |Barbara Kirkpatrick|GCOOS|
@@ -1350,19 +1423,16 @@ A-2
 |Kelli Paige|GLOS|
 |Julie Thomas|SCCOOS|
 
-A-3
-
-# Appendix B. Additional Potential Quality Control Tests
+## Appendix B. Additional Potential Quality Control Tests
 
 During the review process for the HF Radar QC Manual, several suggestions for potential tests were made by various contributors during manual preparation. The manual was distributed for review several times, but no one offered content for these tests. However, the tests can be reconsidered when the manual is updated. Tests marked with a # have been implemented in WERA software.
 
-- Methods suggested by Lipa et al. (2019)5
-- Separation of 1stOrder Bragg Lines (Phased array systems)
+- Methods suggested by Lipa et al. (2019)⁵
+- Separation of 1ˢᵗ Order Bragg Lines (Phased array systems)
 - Broadening of Bragg Lines (3 dB, Phased array systems) # o This can be comparable to the parameter VARX on the WERA SW, or with the accuracy tests applied by the WERA RT QC.
 - Trend Limits # o Trend limits are applied in the WERA RT QC software module.
 - Spatial Gradient # o Can be configured in parameter MAX_UR_CHANGE in params.cfg on the WERA.
 - Trend Limits for u,v components
 - Measured Minus Model
-5Lipa, B., Barrick, D., and Whelan, C. (2019) “A quality control method for broad-beam HF radar current velocity measurements.” *Journal of Marine Science and Engineering* 7, no. 4: 112.
 
-B-1
+<small>⁵ Lipa, B., Barrick, D., and Whelan, C. (2019) “A quality control method for broad-beam HF radar current velocity measurements.” *Journal of Marine Science and Engineering* 7, no. 4: 112.</small>

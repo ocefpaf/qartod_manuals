@@ -7,7 +7,7 @@
 - [x] QARTOD_WaterLevelManual_Update_V2.1_Final.pdf
   - [x] qartod_water_level_manual.pdf
   - [x] QARTOD_WaterLevelManual_Update_V2.1_Final.docx
-- [ ] HFR_QARTOD_Manual_Update_Final 1b.pdf
+- [X] HFR_QARTOD_Manual_Update_Final 1b.pdf
 - [ ] Manual-for-QC-of-Glider-Data_05_09_16-1.pdf
 - [ ] PhytoplanktonManual_v1.0.pdf
 - [ ] Prospects for RT QC manual_5.2.pdf

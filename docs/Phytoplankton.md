@@ -1,165 +1,34 @@
+# Manual for Real-Time Quality Control of Phytoplankton Data
 
+A Guide to Quality Control and Quality Assurance for Phytoplankton Observations
 
+<http://doi.org/10.7289/V56D5R6S>
 
+## Acknowledgements
 
-<!-- Start of picture text -->
-Integrated Ocean<br>Observing System<br><!-- End of picture text -->
+Creation of each U.S. IOOS QARTOD quality control manual relies upon the voluntary participation of many individuals with expertise in the specific variable being addressed. 
+We are grateful to our team of contributors and reviewers, 
+who either participated in a series of initial teleconferences, 
+provided content for the manual, and/or contributed thoughtful and thorough reviews. 
+We are also very grateful for the ongoing support provided by the Data Management and Communications community. 
+Many of these individuals provide input to a manual and then become responsible for implementing the resulting tests, 
+which makes for a more effective arrangement. 
+We also greatly appreciate the continued support provided by the QARTOD Board of Advisors; 
+their guidance and wisdom ensures the Project remains focused on the proper issues and variables. 
+All these individuals are listed in appendix A. 
 
-**Manual for Real-Time Quality Control of Phytoplankton Data** 
+Finally, 
+we wish to express our gratitude in memoriam to our good friend and colleague Vembu Subramanian. 
+Vembu was an early and consistent supporter of the QARTOD Project, 
+and we will greatly miss his knowledge, 
+enthusiasm, 
+and humor. 
 
-A Guide to Quality Control and Quality Assurance for Phytoplankton Observations 
+## Acronyms and Abbreviations
 
-# **Version 1.0 May 2017** 
-
-## **Document Validation** 
-
-
-
-<!-- Start of picture text -->
-exe<br><!-- End of picture text -->
-
-## **U.S. IOOS Program Office Validation** 
-
-<u>May 8, 2017</u> Carl Gouldman, U.S. IOOS Program Director Date 
-
-**QARTOD Project Manager Validation** <u>May 8, 2017</u> Kathleen Bailey, U.S. IOOS Project Manager ~~U.N lars~~ Date 
-
-|**QARTOD Board of Advisors Validation**||
+|   |   |
 |---|---|
-||May 8, 2017|
-|Julianna O. Thomas, Southern California Coastal Ocean Observing System|Date|
-
-
-
-## **Table of Contents** 
-
-|**Table**|**of Contents .................................................................................................................................. iii**|
-|---|---|
-|**List of**|**Figures ....................................................................................................................................... iv**|
-|**List of**|**Tables ......................................................................................................................................... v**|
-|**Revisio**|**n History ................................................................................................................................... vi**|
-|**Endor**|**sement Disclaimer ..................................................................................................................... vii**|
-|**Reque**|**st to Manual Users ..................................................................................................................... vii**|
-|**Ackno**|**wledgements ............................................................................................................................. viii**|
-|**Acrony**|**ms and Abbreviations ................................................................................................................ ix**|
-|**Definit**|**ions of Selected Terms .............................................................................................................. xi**|
-|**1.0**|**Background and Introduction ................................................................................................... 1**|
-|**2.0**|**Purpose, Constraints, Applications, and Technologies ............................................................ 3**|
-||Purpose and Scope ......................................................................................................................................... 3|
-||Sensor Technology ......................................................................................................................................... 5|
-||2.2.1. Manual sampling/microscopy ......................................................................................................... 6|
-||2.2.2. Fluorometry ....................................................................................................................................... 6|
-||2.2.3. Spectrophotometry/Optical Phytoplankton Discriminator ....................................................... 7|
-||2.2.4. Imaging Flow Cytometry ................................................................................................................. 7|
-||2.2.5. Molecular/Environmental Sample Processor ............................................................................ 12|
-||Constraints ..................................................................................................................................................... 13|
-||2.3.1. Data Processing Methodology ...................................................................................................... 13|
-||2.3.2. Traceability to Accepted Standards .............................................................................................. 13|
-||2.3.3. The Effect of Dynamic Environments on Phytoplankton Measurements ........................... 14|
-||2.3.4. Sensor Deployment Considerations and Hardware Limitations ............................................. 14|
-||Applications ................................................................................................................................................... 18|
-|**3.0**|**Quality Control ......................................................................................................................... 19**|
-||QC Flags ......................................................................................................................................................... 20|
-||Test Hierarchy ............................................................................................................................................... 21|
-||QC Tests......................................................................................................................................................... 21|
-||3.3.1. Applications of QC Tests to Stationary Phytoplankton Sensors ............................................ 22|
-||Test 1) Gap Test (Required) ....................................................................................................................... 23|
-||Test 2) Syntax Test (Required) ................................................................................................................... 23|
-||Test 3) Location Test (Required) ............................................................................................................... 24|
-||Test 4) Gross Range Test (Required) ........................................................................................................ 24|
-||Test 5) Climatology Test (Strongly Recommended) .............................................................................. 25|
-||Test 6) Spike Test (Strongly Recommended) .......................................................................................... 26|
-||<br>Test 7) Rate of Change Test (Strongly Recommended) ........................................................................ 27|
-||<br>Test 8) Flat Line Test (Strongly Recommended) .................................................................................... 28|
-||Test 9) Multi-Variate Test (Suggested) ..................................................................................................... 29|
-||<br>Test 10) Attenuated Signal Test (Suggested) ........................................................................................... 30|
-||<br>Test 11) Neighbor Test (Suggested) .......................................................................................................... 31|
-||3.3.2. Applications of QC Tests to Mobile Phytoplankton Sensor Deployments .......................... 31|
-||Implementation Scenarios ........................................................................................................................... 36|
-|**4.0**|**Summary .................................................................................................................................. 39**|
-|**5.0**|**References ................................................................................................................................ 41**|
-
-
-
-iii 
-
-|**Appendix**|**A. QARTOD Phytoplankton Manual Team ...................................................................... A-1**|
-|---|---|
-|**Appendix**|**B. Quality Assurance ......................................................................................................... B-1**|
-|B.1|Sensor Calibration Considerations .......................................................................................................... B-1|
-|B.2|Sensor Comparison .................................................................................................................................... B-1|
-|B.3|Bio-fouling and Corrosion Prevention Strategies ................................................................................. B-3|
-|B.4|Common QA Considerations .................................................................................................................. B-4|
-|B.5|QA Levels for Best Practices.................................................................................................................... B-5|
-|B.6|Additional Sources of QA Information .................................................................................................. B-6|
-|B.7|<br>Sample Checklists ....................................................................................................................................... B-6|
-||General QA Checklist: .............................................................................................................................. B-6|
-||Deployment Checklist ............................................................................................................................... B-7|
-||Post-deployment Checklist ....................................................................................................................... B-7|
-||**List of Figures**|
-|Figure 2-1.|Relative observations of fluorescence can be quantified through a correlation with cell<br>concentrations. (Image courtesy of Turner Designs) ............................................................................... 7|
-|Figure 2-2.|Daily near real-time phytoplankton images from TOAST. (Image courtesy of Dr. Lisa Campbell,<br>http://toast.tamu.edu/IFCB7) .................................................................................................................... 8|
-|Figure 2-3.|Example of time series plot provided by TOAST for HAB early warning. ......................................... 9|
-|Figure 2-4.|A collection of FlowCam images from Adam Boyette, Adam.Boyette@usm.edu. ........................... 10|
-|Figure 2-5.|Dr. Nicole Poulton from Bigelow Laboratory for Ocean Sciences aboard AE1319 cruise aboard<br>the R/V Atlantic Explorer uses one of the older FlowCam models for data collected in August<br>2013. (Photo by Wayne H. Slade and courtesy of FIT) ......................................................................... 11|
-|Figure 2-6.|Seasonal variation in total biovolume found in Puget Sound Central Basin. (Graphic courtesy of<br>Dr. Gabriela Hannach/King County, Washington) ............................................................................... 12|
-|Figure 2-7.|Upper left shows a fixed structure on the Mississippi River at Baton Rouge, where the instrument<br>cage is lowered and raised. Upper right shows a NexSens buoy supporting a variety of water<br>quality instruments. Bottom figure shows a Seabird electronics 9-11 CTD equipped with a variety<br>of auxiliary sensors, a rosette, and Niskin bottles being retrieved from the R/V Oscar Dyson<br>during a NOAA (BASIS) cruise in 2012. (Upper photos courtesy of Dr. Brian Pellerin/USGS.<br>Lower photo courtesy of Jeanette Gann/NOAA.) ................................................................................ 15|
-|Figure 2-8.|WebbGlider Profiler 3-D (L) (photo courtesy of Dr. Grace Saba) and Liquid Robotics Wave<br>Glider Mobile Surface (R) (photo courtesy of Liquid Robotics). ........................................................ 16|
-
-
-
-iv 
-
-## **List of Tables** 
-
-|Table 2-1. Existing programs with subject matter experts who have extensive expertise in phytoplankton. ..... 4|
-|---|
-|Table 2-2. Types of platforms included in and excluded from this manual. ............................................................. 5|
-|Table 2-3. Examples of phytoplankton observing technologies that are included in or excluded from this<br>manual. ............................................................................................................................................................. 5|
-|Table 2-4. Commonly used sensors for phytoplankton observations. ....................................................................... 6|
-|Table 2-5. Overview of ESP specifications. ................................................................................................................. 12|
-|Table 3- 1. Flags for real-time data (UNESCO 2013) ................................................................................................ 20|
-|Table 3-2. QC Tests in order of implementation ........................................................................................................ 21|
-|Table 3-3. Application of Required QC Tests for Sensor Deployments. Note: The ‘s’ axis means “along<br>path.” .............................................................................................................................................................. 32|
-|Table 3-4. Application of Strongly Recommended QC Tests for Sensor Deployments ...................................... 33|
-|Table 3-5. Application Suggested QC Tests for Sensor Deployments .................................................................... 35|
-
-
-
-v 
-
-## **Revision History** 
-
-|**Date**|**Revision Description**|**Notes**|
-|---|---|---|
-|May 2017|Original Document Published||
-
-
-
-vi 
-
-## **Endorsement Disclaimer** 
-
-**Mention of a commercial company or product does not constitute an endorsement by NOAA. Use of information from this publication for publicity or advertising purposes concerning proprietary products or the tests of such products is not authorized.** 
-
-## **Request to Manual Users** 
-
-**To gauge the success of the QARTOD project, it helps to be aware of groups working to utilize these QC tests. Please notify us of your efforts or intentions to implement QARTOD processes by sending a brief email to** **<u>data.ioos@noaa.gov</u> or posting a notice at** **<u>http://www.linkedin.com/groups?gid=2521409</u>** <u>.</u> 
-
-vii 
-
-## **Acknowledgements** 
-
-Creation of each U.S. IOOS QARTOD quality control manual relies upon the voluntary participation of many individuals with expertise in the specific variable being addressed. We are grateful to our team of contributors and reviewers, who either participated in a series of initial teleconferences, provided content for the manual, and/or contributed thoughtful and thorough reviews. We are also very grateful for the ongoing support provided by the Data Management and Communications community. Many of these individuals provide input to a manual and then become responsible for implementing the resulting tests, which makes for a more effective arrangement. We also greatly appreciate the continued support provided by the QARTOD Board of Advisors; their guidance and wisdom ensures the Project remains focused on the proper issues and variables. All these individuals are listed in appendix A. 
-
-Finally, we wish to express our gratitude in memoriam to our good friend and colleague Vembu Subramanian. Vembu was an early and consistent supporter of the QARTOD Project, and we will greatly miss his knowledge, enthusiasm, and humor. 
-
-viii 
-
-## **Acronyms and Abbreviations** 
-
 |ACT|Alliance for Coastal Technologies|
-|---|---|
 |AOOS|Alaska Ocean Observing System|
 |AUV|Autonomous Underwater Vehicle|
 |CariCOOS|Caribbean Coastal Ocean Observing System|
@@ -191,13 +60,7 @@ viii
 |NERACOOS|North Eastern Regional Association of Coastal Ocean Observing Systems|
 |NIST|National Institute of Standards and Technology|
 |NOAA|National Oceanic and Atmospheric Administration|
-
-
-
-ix 
-
 |NOS|National Ocean Service|
-|---|---|
 |OPD|Optical Phytoplankton Discriminator|
 |PacIOOS|Pacific Islands Ocean Observing System|
 |QARTOD|Quality Assurance / Quality Control of Real-Time Oceanographic Data|
@@ -214,456 +77,595 @@ ix
 |UTC|Coordinated Universal Time|
 |Vdc|Volts Direct Current|
 
+## Definitions of Selected Terms 
 
+This manual contains several terms whose meanings are critical to those using the manual. 
+These terms are included in the following table to ensure that the meanings are clearly defined. 
 
-x 
-
-## **Definitions of Selected Terms** 
-
-This manual contains several terms whose meanings are critical to those using the manual. These terms are included in the following table to ensure that the meanings are clearly defined. 
-
-|Codable<br>Instructions|Codable instructions are specific guidance that can be used by a software<br>programmer to design, construct, and implement a test. These instructions also<br>include examples with sample thresholds.|
+|   |   |
 |---|---|
-|Data Record|A data record is one or more messages that form a coherent, logical, and complete<br>observation.|
-|Message|A message is a standalone data transmission. A data record can be composed of<br>multiple messages.|
-|Flow Cytometry|Flow cytometry is a laser- or impedance-based, biophysical technology employed<br>in cell counting, cell sorting, biomarker detection, and protein engineering by<br>suspending cells in a stream of fluid and passing them by an electronic detection<br>apparatus.|
-|Interoperable|Interoperable means the ability of two or more systems to exchange and mutually<br>use data, metadata, information, or system parameters using established protocols<br>or standards.|
-|Operational|Operational means routine, guaranteed, and sustained provision of data streams<br>and data products of known quality, in perpetuity or until no longer needed, at<br>rates and in forms specified by user groups regardless of the intended use<br>(operational support or research and development).|
-|Operator|Operators are individuals or entities who are responsible for collecting and<br>providing data.|
-|Quality Assurance<br>(QA)|QA involves processes that are employed with hardware to support the generation<br>of high quality data (section 2.0 and appendix B).|
-|Quality Control<br>(QC)|QC involves follow-on steps that support the delivery of high quality data and<br>requires both automation and human intervention (section 3.0).|
-|Real Time|Real time means that: data are delivered without delay for immediate use; time<br>series extends only backwards in time, where the next data point is not available;<br>and sample intervals may range from a few seconds to a few hours or even days,<br>depending upon the sensor configuration (section 1.0).|
-|Sensor|A sensor is a device that detects or measures a physical or biological property and<br>provides the result without delay.|
+|Codable Instructions|Codable instructions are specific guidance that can be used by a software programmer to design, construct, and implement a test. These instructions also include examples with sample thresholds.|
+|Data Record|A data record is one or more messages that form a coherent, logical, and complete observation.|
+|Message|A message is a standalone data transmission. A data record can be composed of multiple messages.|
+|Flow Cytometry|Flow cytometry is a laser- or impedance-based, biophysical technology employed in cell counting, cell sorting, biomarker detection, and protein engineering by suspending cells in a stream of fluid and passing them by an electronic detection apparatus.|
+|Interoperable|Interoperable means the ability of two or more systems to exchange and mutually use data, metadata, information, or system parameters using established protocols or standards.|
+|Operational|Operational means routine, guaranteed, and sustained provision of data streams and data products of known quality, in perpetuity or until no longer needed, at rates and in forms specified by user groups regardless of the intended use (operational support or research and development).|
+|Operator|Operators are individuals or entities who are responsible for collecting and providing data.|
+|Quality Assurance (QA)|QA involves processes that are employed with hardware to support the generation of high quality data (section 2.0 and appendix B).|
+|Quality Control (QC)|QC involves follow-on steps that support the delivery of high quality data and requires both automation and human intervention (section 3.0).|
+|Real Time|Real time means that: data are delivered without delay for immediate use; time series extends only backwards in time, where the next data point is not available; and sample intervals may range from a few seconds to a few hours or even days, depending upon the sensor configuration (section 1.0).|
+|Sensor|A sensor is a device that detects or measures a physical or biological property and provides the result without delay.|
 |Threshold|Thresholds are limits that are defined by the operator.|
-|Variable|A variable is an observation (or measurement) of biogeochemical properties within<br>oceanographic and/or meteorological environments.|
+|Variable|A variable is an observation (or measurement) of biogeochemical properties within oceanographic and/or meteorological environments.|
 
+## 1.0 Background and Introduction
 
+The U.S. Integrated Ocean Observing System (IOOS®) has a vested interest in collecting high-quality data for the 26 core variables (U.S. IOOS 2010) measured on a national scale. 
+In response to this interest, U.S. IOOS continues to establish written, 
+authoritative procedures for the quality control (QC) of real-time data through the Quality Assurance/Quality Control of Real-Time Oceanographic Data (QARTOD) Project, 
+addressing each variable as funding permits. 
+This phytoplankton manual is the tenth in a series of guidance documents that address QC of real-time data of each core variable. 
 
-xi 
+Please refer to <https://ioos.noaa.gov/project/qartod/> for the following documents. 
 
-_Phytoplankton_ 
-
-## **1.0 Background and Introduction** 
-
-The U.S. Integrated Ocean Observing System (IOOS<sup>®</sup> ) has a vested interest in collecting high-quality data for the 26 core variables (U.S. IOOS 2010) measured on a national scale. In response to this interest, U.S. IOOS continues to establish written, authoritative procedures for the quality control (QC) of real-time data through the Quality Assurance/Quality Control of Real-Time Oceanographic Data (QARTOD) Project, addressing each variable as funding permits. This phytoplankton manual is the tenth in a series of guidance documents that address QC of real-time data of each core variable. 
-
-Please refer to <u>https://ioos.noaa.gov/project/qartod/for the following documents.</u> 
-
-- 1) U.S. Integrated Ocean Observing System, 2015. U.S IOOS QARTOD Project Plan - Accomplishments for 2012–2016 and Update for 2017–2021. 47 pp. 
-
-- 2) U.S. Integrated Ocean Observing System, 2015. Manual for Real-Time Quality Control of Dissolved Oxygen Observations Version 2.0: A Guide to Quality Control and Quality Assurance for Dissolved Oxygen Observations in Coastal Oceans. 48 pp. 
-
-- 3) U.S. Integrated Ocean Observing System, 2015. Manual for Real-Time Quality Control of In-Situ Current Observations Version 2.0: A Guide to Quality Control and Quality Assurance of Acoustic Doppler Current Profiler Observations. 51 pp. 
-
-- 4) U.S. Integrated Ocean Observing System, 2015. Manual for Real-Time Quality Control of In-Situ Surface Wave Data Version 2.0: A Guide to Quality Control and Quality Assurance of In-Situ Surface Wave Observations. 64 pp. 
-
-- 5) U.S. Integrated Ocean Observing System, 2015. Manual for Real-Time Quality Control of In-situ Temperature and Salinity Data Version 2.0: A Guide to Quality Control and Quality Assurance of In-situ Temperature and Salinity Observations. 56 pp. 
-
-- 6) U.S. Integrated Ocean Observing System, 2016. Manual for Real-Time Quality Control of Water Level Data Version 2.0: A Guide to Quality Control and Quality Assurance of Water Level Observations. 46 pp. 
-
-- 7) U.S. Integrated Ocean Observing System, 2014. Manual for Real-Time Quality Control of Wind Data: A Guide to Quality Control and Quality Assurance of Coastal and Oceanic Wind Observations. 45 pp. 
-
-- 8) U.S. Integrated Ocean Observing System, 2015. Manual for Real-Time Quality Control of Ocean Optics Data: A Guide to Quality Control and Quality Assurance of Coastal and Oceanic Optics Observations. 46 pp. 
-
-1 
-
-
-
-- 9) U.S. Integrated Ocean Observing System, 2015. Manual for Real-Time Quality Control of Dissolved Nutrients Data: A Guide to Quality Control and Quality Assurance of Coastal and Dissolved Nutrients Observations. 56 pp. 
-
-- 10) U.S. Integrated Ocean Observing System, 2016. Manual for Real-Time Quality Control of High Frequency Radar Surface Currents Data: A Guide to Quality Control and Quality Assurance of High Frequency Radar Surface Currents Data Observations. 58 pp. 
+1. U.S. Integrated Ocean Observing System, 2015. U.S IOOS QARTOD Project Plan - Accomplishments for 2012–2016 and Update for 2017–2021. 47 pp.
+2. U.S. Integrated Ocean Observing System, 2015. Manual for Real-Time Quality Control of Dissolved Oxygen Observations Version 2.0: A Guide to Quality Control and Quality Assurance for Dissolved Oxygen Observations in Coastal Oceans. 48 pp. 
+3. U.S. Integrated Ocean Observing System, 2015. Manual for Real-Time Quality Control of In-Situ Current Observations Version 2.0: A Guide to Quality Control and Quality Assurance of Acoustic Doppler Current Profiler Observations. 51 pp. 
+4. U.S. Integrated Ocean Observing System, 2015. Manual for Real-Time Quality Control of In-Situ Surface Wave Data Version 2.0: A Guide to Quality Control and Quality Assurance of In-Situ Surface Wave Observations. 64 pp. 
+5. U.S. Integrated Ocean Observing System, 2015. Manual for Real-Time Quality Control of In-situ Temperature and Salinity Data Version 2.0: A Guide to Quality Control and Quality Assurance of In-situ Temperature and Salinity Observations. 56 pp.
+6. U.S. Integrated Ocean Observing System, 2016. Manual for Real-Time Quality Control of Water Level Data Version 2.0: A Guide to Quality Control and Quality Assurance of Water Level Observations. 46 pp.
+7. U.S. Integrated Ocean Observing System, 2014. Manual for Real-Time Quality Control of Wind Data: A Guide to Quality Control and Quality Assurance of Coastal and Oceanic Wind Observations. 45 pp. 
+8. U.S. Integrated Ocean Observing System, 2015. Manual for Real-Time Quality Control of Ocean Optics Data: A Guide to Quality Control and Quality Assurance of Coastal and Oceanic Optics Observations. 46 pp.
+9. U.S. Integrated Ocean Observing System, 2015. Manual for Real-Time Quality Control of Dissolved Nutrients Data: A Guide to Quality Control and Quality Assurance of Coastal and Dissolved Nutrients Observations. 56 pp.
+10. U.S. Integrated Ocean Observing System, 2016. Manual for Real-Time Quality Control of High Frequency Radar Surface Currents Data: A Guide to Quality Control and Quality Assurance of High Frequency Radar Surface Currents Data Observations. 58 pp. 
 
 Please reference this document as: 
 
-U.S. Integrated Ocean Observing System, 2017. Manual for Real-Time Quality Control of Phytoplankton Data: A Guide to Quality Control and Quality Assurance of Phytoplankton Observations. 68 pp. 
+   U.S. Integrated Ocean Observing System, 2017. Manual for Real-Time Quality Control of Phytoplankton Data: A Guide to Quality Control and Quality Assurance of Phytoplankton Observations. 68 pp. 
 
-This manual is a living document that reflects the state-of-the-art QC testing procedures for phytoplankton observations. It is written for the experienced operator but also provides examples for those who are just entering the field. 
+This manual is a living document that reflects the state-of-the-art QC testing procedures for phytoplankton observations. 
+It is written for the experienced operator but also provides examples for those who are just entering the field. 
 
-2 
+## 2.0 Purpose, Constraints, Applications, and Technologies 
 
-_Phytoplankton_ 
+The following sections describe the purpose of this manual, 
+as well as the constraints that operators may encounter when performing real-time QC of phytoplankton data, 
+specific applications of those data, 
+and the technologies that enable collection of phytoplankton data. 
 
-## **2.0 Purpose, Constraints, Applications, and Technologies** 
+### 2.1 Purpose and Scope
 
-The following sections describe the purpose of this manual, as well as the constraints that operators may encounter when performing real-time QC of phytoplankton data, specific applications of those data, and the technologies that enable collection of phytoplankton data. 
+The purpose of this manual is to provide guidance to the U.S. IOOS and the ocean-observing community at large for the real-time QC of phytoplankton measurements using an agreed-upon, 
+documented, 
+and implemented standard process. 
+This manual is also a deliverable to the U.S. IOOS Regional Associations and the ocean-observing community and represents a contribution to a collection of core variable QC documents. 
 
-### **Purpose and Scope** 
+Most operators provide real-time data on a provisional basis, 
+alerting users that post-processing is required to validate their data. 
+However, 
+even these provisional data should be quality controlled. 
+Data released in real time should be subjected to automated QC processes, 
+which: 1) provide a quality-control indicator, 2) alert the operator when questionable or interesting data are presented, 
+and 3) prevent the dissemination of unreliable data. 
 
+These practices for sensor QC of phytoplankton data were developed by operators with experience using a variety of sensors and detection technologies. Traditional observations of phytoplankton are obtained through manual sampling and microscopic examination by specialists. 
+Phytoplankton relative abundance can be determined through fluorometric techniques that quantify pigment concentrations as a proxy for biomass. 
+Realtime detection of phytoplankton can be accomplished using automated image classification, molecular probes, 
+and spectral signature methods in situ or in the lab. 
+Such systems draw water samples into a chamber where the measurements occur. 
+The process utilizes micro-pumps, 
+valves, filters, 
+and a variety of detectors and can require considerable maintenance due to their complexity. 
+Systems may require frequent calibration of fluid delivery devices (pumps) and replenishment of process components/reagents. 
+Post-processing may also be required to improve data accuracy. 
 
+Phytoplankton observations covered by these procedures are collected as a measure of water quality along bays, 
+coasts¹, and open oceans in real time. 
+These tests draw from existing expertise in programs such as those listed in table 2-1. 
 
-The purpose of this manual is to provide guidance to the U.S. IOOS and the ocean-observing community at large for the real-time QC of phytoplankton measurements using an agreed-upon, documented, and implemented standard process. This manual is also a deliverable to the U.S. IOOS Regional Associations and the ocean-observing community and represents a contribution to a collection of core variable QC documents. 
+<small>¹ The coast means coasts of the U.S. Exclusive Economic Zone (EEZ) and territorial sea (http://oceanservice.noaa.gov/facts/eez.html) Great Lakes, and semi-enclosed bodies of water and tidal wetlands connected to the coastal ocean.</small>
 
-Most operators provide real-time data on a provisional basis, alerting users that post-processing is required to validate their data. However, even these provisional data should be quality controlled. Data released in real time should be subjected to automated QC processes, which: 1) provide a quality-control indicator, 2) alert the operator when questionable or interesting data are presented, and 3) prevent the dissemination of unreliable data. 
-
-These practices for sensor QC of phytoplankton data were developed by operators with experience using a variety of sensors and detection technologies. Traditional observations of phytoplankton are obtained through manual sampling and microscopic examination by specialists. Phytoplankton relative abundance can be determined through fluorometric techniques that quantify pigment concentrations as a proxy for biomass. Realtime detection of phytoplankton can be accomplished using automated image classification, molecular probes, and spectral signature methods in situ or in the lab. Such systems draw water samples into a chamber where the measurements occur. The process utilizes micro-pumps, valves, filters, and a variety of detectors and can require considerable maintenance due to their complexity. Systems may require frequent calibration of fluid delivery devices (pumps) and replenishment of process components/reagents. Post-processing may also be required to improve data accuracy. 
-
-Phytoplankton observations covered by these procedures are collected as a measure of water quality along bays, coasts<sup>1</sup> , and open oceans in real time. These tests draw from existing expertise in programs such as those listed in table 2-1. 
-
-> 1The coast means coasts of the U.S. Exclusive Economic Zone (EEZ) and territorial sea (http://oceanservice.noaa.gov/facts/eez.html) Great Lakes, and semi-enclosed bodies of water and tidal wetlands connected to the coastal ocean. 
-
-3 
-
-
-
-**Table 2-1.** Existing programs with subject matter experts who have extensive expertise in phytoplankton. 
-
-|**Martha's Vineyard Coastal**<br>**Observatory**|Heidi Sosik,hsosik@whoi.edu http://www.whoi.edu/mvco <br>http://www.whoi.edu/science/AOPE/dept/COSMOS/Sosik.pdf<br>MVCO is located a mile off the south shore of Martha's Vineyard, is<br>operated by Woods Hole Oceanographic Institution, and provides<br>real-time oceanographic and meteorological data.|
+|   |   |
 |---|---|
-|**Florida Atlantic University**<br>**Land/Ocean Biogeochemical**<br>**Observatory**|http://fau.loboviz.com/loboviz/ FAU – Harbor Branch<br>Oceanographic Institute operates the LOBO network within the<br>Indian River Lagoon and the St. Lucie Estuary.|
-|**Operational Ecological Forecasting**<br>**of Harmful Algal Blooms (HAB) in**<br>**the Pacific Northwest**|https://coastalscience.noaa.gov/news/habs/real-time-hab-toxin-<br>sensors-deployed-pacific-northwest<br>An environmental sample processor (ESP) is deployed off the coast<br>of La Push, Washington in the Olympic Coast National Marine<br>Sanctuary. The deployment is part of a collaborative IOOS-funded<br>Ocean Technology Transition project.|
-|**Southeast Phytoplankton**<br>**Monitoring Network**|http://marex.uga.edu/southeast_phytoplankton_monitoring_network|
-|**Texas Observatory for Algal**<br>**Succession Time-Series (TOAST)**|Lisa Campbell,lisacampbell@tamu.edu <br>http://toast.tamu.edu/IFCB7<br>http://gcoos.org/products/index.php/bio/hab/ <br>TOAST is located at the University of Texas Marine Science Institute<br>pier in Port Aransas, Texas and provides near real-time phytoplankton<br>abundance data.|
-|**Gulf of Maine North Atlantic Time**<br>**Series (GNATS) (Bigelow**<br>**Laboratory for Ocean Sciences)**|http://www.int-res.com/abstracts/meps/v450/p11-35|
-|**Bigelow Laboratory for Ocean**<br>**Sciences**|Nicole Poulton,npoulton@bigelow.org|
+|**Martha's Vineyard Coastal Observatory**|Heidi Sosik, hsosik@whoi.edu http://www.whoi.edu/mvco <br>http://www.whoi.edu/science/AOPE/dept/COSMOS/Sosik.pdf <br>MVCO is located a mile off the south shore of Martha's Vineyard, is operated by Woods Hole Oceanographic Institution, and provides real-time oceanographic and meteorological data.|
+|**Florida Atlantic University Land/Ocean Biogeochemical Observatory**|http://fau.loboviz.com/loboviz/ FAU – Harbor Branch Oceanographic Institute operates the LOBO network within the Indian River Lagoon and the St. Lucie Estuary.|
+|**Operational Ecological Forecasting of Harmful Algal Blooms (HAB) in the Pacific Northwest**|https://coastalscience.noaa.gov/news/habs/real-time-hab-toxin-sensors-deployed-pacific-northwest<br>An environmental sample processor (ESP) is deployed off the coast of La Push, Washington in the Olympic Coast National Marine Sanctuary. The deployment is part of a collaborative IOOS-funded Ocean Technology Transition project.|
+|**Southeast Phytoplankton Monitoring Network**|http://marex.uga.edu/southeast_phytoplankton_monitoring_network|
+|**Texas Observatory for Algal Succession Time-Series (TOAST)**|Lisa Campbell,lisacampbell@tamu.edu <br>http://toast.tamu.edu/IFCB7<br>http://gcoos.org/products/index.php/bio/hab/ <br>TOAST is located at the University of Texas Marine Science Institute pier in Port Aransas, Texas and provides near real-time phytoplankton abundance data.|
+|**Gulf of Maine North Atlantic Time Series (GNATS) (Bigelow Laboratory for Ocean Sciences)**|http://www.int-res.com/abstracts/meps/v450/p11-35|
+|**Bigelow Laboratory for Ocean Sciences**|Nicole Poulton,npoulton@bigelow.org|
 |**University of Rhode Island**|Francoise Morison,francoisemorison@gmail.com|
-|**Columbia University**|Joaquim Goes,jig@ldeo.columbia.edu|
-|**Puget Sound Phytoplankton**<br>**Monitoring Program**|Gabriela Hannach,gabriela.hannach@kingcounty.gov<br>http://green2.kingcounty.gov/marine/Monitoring/Phytoplankton <br>http://green2.kingcounty.gov/marine-buoy/ <br>http://www.fondriest.com/news/king-county-water-quality-<br>moorings-keep-a-close-eye-on-puget-sound.htm|
-|**Mississippi Department of Marine**<br>**Resources (MDMR) and University**<br>**of Southern Mississippi (USM)**|Adam Boyette, Adam.Boyette@usm.edu.http://www.dmr.ms.gov<br>Whenever there is a HAB event, USM provides near-real-time<br>FlowCam<sup>®</sup>cell counts and identification, which are compared to field<br>samples analyzed by MDMR using standard cell count techniques.|
-|**California Harmful Algal Bloom**<br>**Monitoring and Alert Program**<br>**(CalHABMAP)**|Weekly phytoplankton monitoring reports along the California coast.<br>Overview site for monitoring system, local monitoring contacts<br>accessible from there.http://www.sccoos.org/data/habs|
+|**Columbia University**|Joaquim Goes, jig@ldeo.columbia.edu|
+|**Puget Sound Phytoplankton Monitoring Program**|Gabriela Hannach,gabriela.hannach@kingcounty.gov<br>http://green2.kingcounty.gov/marine/Monitoring/Phytoplankton <br>http://green2.kingcounty.gov/marine-buoy/ <br>http://www.fondriest.com/news/king-county-water-quality-moorings-keep-a-close-eye-on-puget-sound.htm|
+|**Mississippi Department of Marine Resources (MDMR) and University of Southern Mississippi (USM)**|Adam Boyette, Adam.Boyette@usm.edu. http://www.dmr.ms.gov<br>Whenever there is a HAB event, USM provides near-real-time FlowCam® cell counts and identification, which are compared to field samples analyzed by MDMR using standard cell count techniques.|
+|**California Harmful Algal Bloom Monitoring and Alert Program (CalHABMAP)**|Weekly phytoplankton monitoring reports along the California coast. Overview site for monitoring system, local monitoring contacts accessible from there. http://www.sccoos.org/data/habs|
 
+: Table 2-1. Existing programs with subject matter experts who have extensive expertise in phytoplankton.
 
+This manual may differ from existing QC procedures for phytoplankton measurements in that its focus is on real-time data. 
+It presents a series of eleven tests that operators can incorporate into practices and procedures for QC of phytoplankton measurements. 
+These tests apply only to real-time interoperable measurements of phytoplankton as observed manually or by sensors deployed on fixed or mobile platforms and not to remotely sensed phytoplankton measurements (e.g., satellite observations). 
+Table 2-2 shows types of platforms and areas that are included and excluded in this manual. 
+Those excluded are deemed to require substantially different QC tests, 
+a different observational community, 
+substantially greater resources, 
+or they presently lack a realtime data delivery capability. 
+Whenever possible, these platforms will be included in later manual updates. 
 
-4 
-
-_Phytoplankton_ 
-
-This manual may differ from existing QC procedures for phytoplankton measurements in that its focus is on real-time data. It presents a series of eleven tests that operators can incorporate into practices and procedures for QC of phytoplankton measurements. These tests apply only to real-time interoperable measurements of phytoplankton as observed manually or by sensors deployed on fixed or mobile platforms and not to remotely sensed phytoplankton measurements (e.g., satellite observations). Table 2-2 shows types of platforms and areas that are included and excluded in this manual. Those excluded are deemed to require substantially different QC tests, a different observational community, substantially greater resources, or they presently lack a realtime data delivery capability. Whenever possible, these platforms will be included in later manual updates. 
-
-**Table 2-2.** Types of platforms included in and excluded from this manual. 
-
-|**Included Platforms and Areas**|**Excluded Platforms**|
+|Included Platforms and Areas|Excluded Platforms|
 |---|---|
-|• Buoys|• Satellite|
-|• Oil platforms|• Aircraft|
-|• Surface fixed, profiling, and mobile platforms||
-|• Autonomous surface vessels and ships||
-|• Autonomous underwater vehicles||
+|• Buoys<br>• Oil platforms<br>• Surface fixed, profiling, and mobile platforms<br>• Autonomous surface vessels and ships<br>• Autonomous underwater vehicles|• Satellite<br>• Aircraft|
 
+: Table 2-2. Types of platforms included in and excluded from this manual.
 
+### 2.2 Sensor Technology
 
-### **Sensor Technology** 
+Phytoplankton observation technologies vary broadly, 
+and, 
+where necessary, 
+they are addressed individually. 
+Table 2-3 shows the technologies that are addressed in this manual, 
+as well as those that are excluded. 
 
-
-
-Phytoplankton observation technologies vary broadly, and, where necessary, they are addressed individually. Table 2-3 shows the technologies that are addressed in this manual, as well as those that are excluded. 
-
-**Table 2-3.** Examples of phytoplankton observing technologies that are included in or excluded from this manual. 
-
-|**Technologies Included in this Manual**|**Technologies Excluded**|
+|Technologies Included in this Manual|Technologies Excluded|
 |---|---|
-|• Manual sampling/microscopy|• Remotely sensed spectroscopy|
-|• Fluorometry observations of chlorophyll-_a_,<br>phycoerythrin, and phycocyanin||
-|• Flow cytometry||
-|• Imaging flow cytometry||
-|• Environmental Sample Processor (ESP)||
-|• Optical Phytoplankton Discriminator (OPD)||
+|• Manual sampling/microscopy<br>• Fluorometry observations of chlorophyll-_a_,<br>phycoerythrin, and phycocyanin<br>• Flow cytometry<br>• Imaging flow cytometry<br>• Environmental Sample Processor (ESP)<br>• Optical Phytoplankton Discriminator (OPD)|• Remotely sensed spectroscopy|
 
+: Table 2-3. Examples of phytoplankton observing technologies that are included in or excluded from this manual.
 
+To make phytoplankton observations, 
+a variety of sensors and technologies are employed. 
+The measurement may observe a surrogate related to phytoplankton, such as the fluorescence of a pigment. 
+These relational observations are common within oceanography—for example, 
+the most routine method to determine salinity is by measuring conductivity and temperature and then calculating salinity—and an understanding of the inherent limitations of the techniques is required. 
 
-To make phytoplankton observations, a variety of sensors and technologies are employed. The measurement may observe a surrogate related to phytoplankton, such as the fluorescence of a pigment. These relational observations are common within oceanography—for example, the most routine method to determine salinity is by measuring conductivity and temperature and then calculating salinity—and an understanding of the inherent limitations of the techniques is required. 
+Table 2-4 lists several types of sensors and techniques typically used to observe phytoplankton and phytoplankton surrogates and generate data that could be subjected to the described tests. 
+The list is not comprehensive, 
+and operators must determine if these tests apply to their specific phytoplankton sensor. 
 
-Table 2-4 lists several types of sensors and techniques typically used to observe phytoplankton and phytoplankton surrogates and generate data that could be subjected to the described tests. The list is not comprehensive, and operators must determine if these tests apply to their specific phytoplankton sensor. 
-
-5 
-
-
-
-**Table 2-4.** Commonly used sensors for phytoplankton observations. 
-
-|**Manufacturer/Sensor**|**Variables Measured**|**Measuring Principle**|
+|Manufacturer/Sensor|Variables Measured|Measuring Principle|
 |---|---|---|
-|Chelsea|Chlorophyll, phycocyanin,<br>phycoerythrin|In-vivo fluorometry|
-|Fluid Imaging<br>Technologies/FlowCam<sup>®</sup>|Particle imaging and image<br>recognition|Timed or fluorescence-triggered<br>particle imaging|
-|McLane Research Laboratories,<br>Inc./IFCB|Particle imaging and<br>automated image recognition|Fluorescence-triggered particle<br>imaging|
-|McLane Research Laboratories,<br>Inc./ESP|Species identification|Molecular/DNA|
-|Mote Marine Laboratory and<br>Aquarium – Kirkpatrick/OPD|Species-specific relative index|Spectral signature|
-|Turner Designs/C6P|Chlorophyll, phycocyanin,<br>phycoerythrin|In-vivo fluorometry|
-|WET Labs WETStar, ECO FL,<br>FLBBCD|Chlorophyll, phycoerythrin,|In-vivo fluorometry|
-|Xylem-YSI/EXO|Chlorophyll, phycocyanin,<br>phycoerythrin|In-vivo fluorometry|
-
-
-
-#### **2.2.1. Manual sampling/microscopy** 
-
-Using a microscope, the phytoplankton cells are manually counted or estimated from a known volume of seawater. Examples of this technique include the Utermöhl method, the settlement bottle method, and the counting chamber method for quantitative phytoplankton analysis (IOC 2010). Quantitation by microscopy may be fraught with difficulties, unless the laboratory/analysts specifying exactly how samples were collected, what preservation methods were used, analytical conditions for pre-concentration and counting criteria for conducting (and terminating) a count etc. Additionally, knowledge of the level of training and expertise of the analyst and opportunities for regular cross-checking of results are necessary. 
-
-Manual sampling and microscopy are the standards used to validate all other methods; if conducted frequently enough, they could be considered real-time observations, so operators may be able to utilize the tests described herein. Frequent comparison of sensor data with microscopy data should allow microscopy methods to be adjusted (for example if the count methodology does not capture very small cells at the limit of detection). If this is done early, as well as throughout the monitoring program, that should help minimize any data mismatches due to incompatible or uncomparable techniques. 
-
-#### **2.2.2. Fluorometry** 
-
-In-vivo fluorometry (IVF) has been used for decades to estimate the concentration of phytoplankton (Lorenzen 1966). Prior to IVF, chlorophyll extraction techniques were the standard (Holm-Hansen et al. 1965). In both, excitation at one wavelength creates fluorescence at another with an intensity that is proportional to the quantity of a pigment of interest, such as chlorophyll- _a_ in green algae or the phycobilin pigments of cyanobacteria, phycocyanin, and phycoerythrin. Because of its simplicity and nearly instantaneous output, IVF 
-
-6 
-
-_Phytoplankton_ 
-
-is often employed for pumped shipboard or in-situ, real-time systems. The output provides a relative measure that can be correlated to quantitative cell concentration values (fig. 2-1), or the relative measure can be used to observe trends. 
-
-As with all measurements, the technique is not without drawbacks. Excitation source and detector drift have been greatly reduced recently but may still be an issue as instruments age; additionally, temperature, turbidity, dissolved components, and cell health can cause measurement errors. Another important issue can be the nonphotochemical quenching of surface fluorescence values by ambient sunlight — an effect that breaks the linear relationship between chlorophyll fluorescence and chlorophyll- _a_ concentration. Correction of this physiological effect is based on the observation that the varying depth of the daytime fluorescence maximum is a good proxy for the depth of the layer potentially affected by non-photochemical quenching. The maximum fluorescence value is extrapolated to the surface, which is one way to correct for this quenching effect. 
-
-
-
-<!-- Start of picture text -->
-1800<br>1600<br>1400<br>1200<br>1000<br>800<br>600<br>400<br>200<br>0<br>° 2 4 6 8 10 12 14 16<br><!-- End of picture text -->
-
-**Figure 2-1.** Relative observations of fluorescence can be quantified through a correlation with cell concentrations. (Image courtesy of Turner Designs) 
-
-#### **2.2.3. Spectrophotometry/Optical Phytoplankton Discriminator** 
-
-Optical phytoplankton discriminator (OPD) systems estimate quantities of a specific phytoplankton species or group (e.g., diatoms, dinoflagellates, etc.) using optical absorbance characteristics of particles in the water (Shapiro et al. 2015). Species-specific detection relies on the presence of a unique pigment whose spectral signature is distinct from those comprising the ambient phytoplankton assemblage. Sea water is pumped through a liquid waveguide capillary cell, illuminated, and the resultant light transmission spectrum provides a measure of cell abundance (Kirkpatrick et al. 2000). 
-
-#### **2.2.4. Imaging Flow Cytometry** 
-
-The Imaging FlowCytobot (IFCB) and the FlowCam<sup>®</sup> are flow cytometers that combine a camera and a traditional flow cytometer. They are imaging-in-flow instruments that combine high-resolution imaging and flow cytometer technology to capture phytoplankton images. The chlorophyll fluorescence emitted from 
-
-7 
-
-
-
-<!-- Start of picture text -->
-CART OD<br><!-- End of picture text -->
-
-phytoplankton cells is used to trigger the camera, capturing images of organisms from approximately 10 µm to over 100 µm. 
-
-#### **_Imaging FlowCytobot_** 
-
-The IFCB, available from McLane Research Laboratories, Inc. (East Falmouth, Mass.), is an in-situ automated submersible flow cytometer that is designed for continuous sampling and processing for measuring phytoplankton abundance (Olson and Sosik 2007). Laser-induced fluorescence and light scattering from individual particles are measured and used to trigger targeted image acquisition; the optical and image data are then transmitted to shore in real time (fig. 2-2 shows an example of the dashboard view). Continuous sampling at a rate of 15 mL of seawater per hour can generate approximately 30,000 images per hour, depending on the target population. The high-resolution images (~3.4 pixels/micron) are processed externally with automated image classification software (Sosik and Olson 2007; Harred and Campbell 2014). A supervised random forest algorithm is used to classify images (often to genus or species, with demonstrated accuracy comparable to that of human experts). Classification results are then used to provide near-real-time estimates of taxon-specific cell abundance and biomass. The resulting time series delivers data at a frequency sufficient for early warning of harmful algal blooms (fig. 2-3). 
-
-
-
-<!-- Start of picture text -->
-‘ f . ee pe ee<br>= — +<br>iS Ge<br><!-- End of picture text -->
-
-**Figure 2-2.** Daily near real-time phytoplankton images from TOAST. (Image courtesy of Dr. Lisa Campbell, **<u>http://toast.tamu.edu/IFCB7)</u>** 
-
-8 
-
-_Phytoplankton_ 
-
-
-
-<!-- Start of picture text -->
-45 Cell counts for Dinophysis as of: 20140308 hour: 4<br>- :<br>4.0<br>a3<br>7<br>o 3.5<br>2 wee eee a a<br>Cc<br>2<br>‘@ 3.0<br>5c<br>oO<br>FS6 2.5+ 4-----------------------------*---<br>Vv<br>5<br>o)<br>2.0}<br>14g 20 «21 22. 23 ) 1 2 3 4<br>Hour (GMT)<br><!-- End of picture text -->
-
-**Figure 2-3.** Example of time series plot provided by TOAST for HAB early warning. 
-
-#### **_FlowCam_** 
-
-Fluid Imaging Technologies (FIT), based in Scarborough, Maine, offers several types of imaging particle analyzers to quantify and classify phytoplankton, including the FlowCam, which combines a flow cytometer and microscope. Visualspreadsheet<sup>®</sup> , FIT’s proprietary software, quantifies over 40 different particle properties from the FlowCam images, and these properties can be sorted based on their attributes. In addition, Visualspreadsheet’s particle recognition capabilities, Classifier Advanced<sup>®</sup> , can be used for classifying organisms, cells, and particles of interest semi-automatically using two different machine learning algorithms, Support Vector Machine and Normal Bayes. The FlowCam VS series and 8000 series use a combination of imaging and laser light to detect and image particles within a fluid stream at different magnifications and can image particles from 2µm–5mm (Poulton 2016). Other FlowCam features can include: color or black and white high-speed cameras; autofocus assemblies to assist in accurate and repeatable depth-of-field focusing; cross-polarization lenses; and the option for varying the laser (blue or green) and fluorescence emission filters for capture of chlorophyll, phycoerythrin, or fluorescein isothiocyanate. 
-
-The FlowCam was developed at Bigelow Laboratory for Ocean Sciences. Since its introduction to the oceanographic community in 1999, over 300 instruments have been installed in over 50 countries for aquatic research and monitoring. The FlowCam has been employed as a field-based technology to assist in satellitebased phytoplankton population monitoring and mapping (Coley 2016), which is why this technology is included in this QARTOD manual. An example of imagery from a FlowCam is shown in fig. 2-4. 
-
-9 
-
-
-
-
-
-<!-- Start of picture text -->
-pe oe]: [>] |» [2<br>ON a 118) |] ee<br>SERRE y<br><!-- End of picture text -->
-
-**Figure 2-4.** A collection of FlowCam images from Adam Boyette, Adam.Boyette@usm.edu. 
-
-The traditional methods for collecting discrete and accurate concentrations of picophytoplankton and mixed populations of ultraphytoplankton include fluorescence microscopy and shipboard flow cytometry (Verity and Sieracki 1993; Olson et al. 1985); however, these methods have several disadvantages. As previously noted, microscopy can be time-intensive and image recognition may require a highly skilled technician. Flow cytometry is a rapid, high-throughput method but does not include images to assist in classifying populations. In contrast, FlowCam is a continuous imaging flow cytometer and particle analyzer designed for conducting research and monitoring microorganisms and particles in both marine and freshwater systems. Sampling time is a consideration for ground-validating, real-time phytoplankton populations in situ. The FlowCam’s Visualspreadsheet can remotely and continuously collect and analyze discrete samples without a technician operating the instrument. 
-
-Two direct underway systems (impeller pump system and diaphragm pump system) were compared to assess particle size distribution during the AE1319 cruise aboard R/V Atlantic Explorer (fig. 2-5) spanning Nova Scotia, Newfoundland, Canada to the Labrador Sea (Cetinic et al. 2016). These measurements are critical for algorithm development and validation of satellite data. The FlowCam was used to assess nano/microphytoplankton biomass calculated from biovolume measurements. 
-
-10 
-
-_Phytoplankton_ 
-
-
-
-<!-- Start of picture text -->
-satis i ae -<br>ey "<br><!-- End of picture text -->
-
-**Figure 2-5.** Dr. Nicole Poulton from Bigelow Laboratory for Ocean Sciences aboard AE1319 cruise aboard the R/V Atlantic Explorer uses one of the older FlowCam models for data collected in August 2013. (Photo by Wayne H. Slade and courtesy of FIT) 
-
-King County, Washington conducts extensive marine phytoplankton observations as part of a long-term Puget Sound ambient monitoring program. Both microscopy and FlowCam analysis are conducted every two weeks for eight stations in the central basin. Figure 2-6 shows processed FlowCam data, depicting the seasonal variation in biovolume for the Puget Sound Central Basin. The plot indicates that greater variability occurs in the summer months, and automated, real-time QC tests might adjust seasonal thresholds to accommodate these fluctuations. 
-
-11 
-
-
-
-
-
-<!-- Start of picture text -->
-A. ~ Total Biovolume:<br>= Cy -e-Diatoms<br>z --Dinoflagellates<br>—E 4 +Other Phyto<br>£oO<br>3 2<br>3<br>o<br>i)<br>J Fo M A M_ J J A S O N _ OD<br><!-- End of picture text -->
-
-**Figure 2-6.** Seasonal variation in total biovolume found in Puget Sound Central Basin. (Graphic courtesy of Dr. Gabriela Hannach/King County, Washington) 
-
-#### **2.2.5. Molecular/Environmental Sample Processor** 
-
-The Environmental Sample Processor (ESP) collects in-situ water samples and utilizes molecular probes to identify microorganisms and their gene products (Scholin et al. 2009). Data generated are then available for remote retrieval and analysis in near real-time. Table 2-5 provides an overview of the sensor specifications. 
-
-The system is a modular design consisting of a core sample processor (the ESP), analytical modules, and sampling modules. In addition to the core processor, an optional ‘PCR module’ is also available that allows for parallel processing of collected samples. The core ESP provides the primary interface between the environment and a set of ribosomal RNA (rRNA), DNA, and antibody-based sample processing technologies that are applied onboard the instrument in real time (Greenfield et al. 2008; Doucette et al. 2009). In addition, the ESP can be used to archive samples for a variety of analyses after the instrument is returned to a laboratory. Phytotoxin measurements can also be done on the ESP via enzyme-linked immunosorbent assay (ELISA). This has mostly been applied to measuring the neurotoxin domoic acid (DA.) 
-
-Nucleic acid probes for these organisms are available for use with the Sandwich Hybridization Assay or SHA chemistry on the ESP: _Pseudo-nitzschia australis_ , _Pseudo-nitzschia multiseries_ / _pseudodelicatissima_ , _Pseudo-nitzschia pungens_ , _Alexandrium catenella_ , _Heterosigma akashiwo_ , numerous _Karenia_ spp., and _Cochlodinium polykrikoides_ . 
-
-Present ESP operations are limited to a relatively small set of samples which do not impose a large QC challenge and observations are best tested manually. As this technology continues to emerge it is expected that the QC tests described here will begin to appeal to operators of the ESP. 
-
-**Table 2-5.** Overview of ESP specifications. 
-
-|**Assay methods**|**Sandwich hybridization (SHA), Polymerase Chain Reaction (PCR), and**<br>**immunosorbent assays (cELISA)**|
+|Chelsea|Chlorophyll, phycocyanin, phycoerythrin|In-vivo fluorometry|
+|Fluid Imaging Technologies/FlowCam®|Particle imaging and image recognition|Timed or fluorescence-triggered particle imaging|
+|McLane Research Laboratories, Inc./IFCB|Particle imaging and automated image recognition|Fluorescence-triggered particle imaging|
+|McLane Research Laboratories, Inc./ESP|Species identification|Molecular/DNA|
+|Mote Marine Laboratory and Aquarium – Kirkpatrick/OPD|Species-specific relative index|Spectral signature|
+|Turner Designs/C6P|Chlorophyll, phycocyanin, phycoerythrin|In-vivo fluorometry|
+|WET Labs WETStar, ECO FL, FLBBCD|Chlorophyll, phycoerythrin,|In-vivo fluorometry|
+|Xylem-YSI/EXO|Chlorophyll, phycocyanin, phycoerythrin|In-vivo fluorometry|
+
+: Table 2-4. Commonly used sensors for phytoplankton observations. 
+
+#### 2.2.1. Manual sampling/microscopy
+
+Using a microscope, 
+the phytoplankton cells are manually counted or estimated from a known volume of seawater. 
+Examples of this technique include the Utermöhl method, 
+the settlement bottle method, and the counting chamber method for quantitative phytoplankton analysis (IOC 2010). 
+Quantitation by microscopy may be fraught with difficulties, unless the laboratory/analysts specifying exactly how samples were collected, what preservation methods were used, 
+analytical conditions for pre-concentration and counting criteria for conducting (and terminating) a count etc. 
+Additionally, 
+knowledge of the level of training and expertise of the analyst and opportunities for regular cross-checking of results are necessary. 
+
+Manual sampling and microscopy are the standards used to validate all other methods; 
+if conducted frequently enough, they could be considered real-time observations, 
+so operators may be able to utilize the tests described herein. 
+Frequent comparison of sensor data with microscopy data should allow microscopy methods to be adjusted (for example if the count methodology does not capture very small cells at the limit of detection). 
+If this is done early, 
+as well as throughout the monitoring program, 
+that should help minimize any data mismatches due to incompatible or uncomparable techniques. 
+
+#### 2.2.2. Fluorometry
+
+In-vivo fluorometry (IVF) has been used for decades to estimate the concentration of phytoplankton (Lorenzen 1966). 
+Prior to IVF, 
+chlorophyll extraction techniques were the standard (Holm-Hansen et al. 1965). 
+In both, excitation at one wavelength creates fluorescence at another with an intensity that is proportional to the quantity of a pigment of interest, 
+such as chlorophyll-_a_ in green algae or the phycobilin pigments of cyanobacteria, 
+phycocyanin, 
+and phycoerythrin. 
+Because of its simplicity and nearly instantaneous output, 
+IVF is often employed for pumped shipboard or in-situ, 
+real-time systems. 
+The output provides a relative measure that can be correlated to quantitative cell concentration values (fig. 2-1), 
+or the relative measure can be used to observe trends. 
+
+As with all measurements, 
+the technique is not without drawbacks. 
+Excitation source and detector drift have been greatly reduced recently but may still be an issue as instruments age; 
+additionally, temperature, turbidity, 
+dissolved components, 
+and cell health can cause measurement errors. 
+Another important issue can be the nonphotochemical quenching of surface fluorescence values by ambient sunlight — an effect that breaks the linear relationship between chlorophyll fluorescence and chlorophyll-_a_ concentration. 
+Correction of this physiological effect is based on the observation that the varying depth of the daytime fluorescence maximum is a good proxy for the depth of the layer potentially affected by non-photochemical quenching. 
+The maximum fluorescence value is extrapolated to the surface, 
+which is one way to correct for this quenching effect. 
+
+![Relative measure of fluorescence that can be correlated to quantitative cell concentration values.](images_Phytoplankton/image1.png)
+
+<figcaption>Figure 2-1. Relative observations of fluorescence can be quantified through a correlation with cell concentrations. (Image courtesy of Turner Designs)</figcaption>
+
+#### 2.2.3. Spectrophotometry/Optical Phytoplankton Discriminator 
+
+Optical phytoplankton discriminator (OPD) systems estimate quantities of a specific phytoplankton species or group (e.g., diatoms, dinoflagellates, etc.) using optical absorbance characteristics of particles in the water (Shapiro et al. 2015). 
+Species-specific detection relies on the presence of a unique pigment whose spectral signature is distinct from those comprising the ambient phytoplankton assemblage. 
+Sea water is pumped through a liquid waveguide capillary cell, 
+illuminated, 
+and the resultant light transmission spectrum provides a measure of cell abundance (Kirkpatrick et al. 2000). 
+
+#### 2.2.4. Imaging Flow Cytometry
+
+The Imaging FlowCytobot (IFCB) and the FlowCam® are flow cytometers that combine a camera and a traditional flow cytometer. 
+They are imaging-in-flow instruments that combine high-resolution imaging and flow cytometer technology to capture phytoplankton images. 
+The chlorophyll fluorescence emitted from phytoplankton cells is used to trigger the camera, capturing images of organisms from approximately 10 µm to over 100 µm. 
+
+**_Imaging FlowCytobot_** 
+
+The IFCB, available from McLane Research Laboratories, Inc. (East Falmouth, Mass.), 
+is an in-situ automated submersible flow cytometer that is designed for continuous sampling and processing for measuring phytoplankton abundance (Olson and Sosik 2007). 
+Laser-induced fluorescence and light scattering from individual particles are measured and used to trigger targeted image acquisition; 
+the optical and image data are then transmitted to shore in real time (fig. 2-2 shows an example of the dashboard view). 
+Continuous sampling at a rate of 15 mL of seawater per hour can generate approximately 30,000 images per hour, 
+depending on the target population. 
+The high-resolution images (~3.4 pixels/micron) are processed externally with automated image classification software (Sosik and Olson 2007; Harred and Campbell 2014). 
+A supervised random forest algorithm is used to classify images (often to genus or species, 
+with demonstrated accuracy comparable to that of human experts). 
+Classification results are then used to provide near-real-time estimates of taxon-specific cell abundance and biomass. 
+The resulting time series delivers data at a frequency sufficient for early warning of harmful algal blooms (fig. 2-3). 
+
+![Daily near real-time phytoplankton images from TOAST.](images_Phytoplankton/image2.png)
+
+<figcaption>Figure 2-2. Daily near real-time phytoplankton images from TOAST. (Image courtesy of Dr. Lisa Campbell, <http://toast.tamu.edu/IFCB7>)</figcaption>
+
+![Example of time series plot provided by TOAST for HAB early warning.](images_Phytoplankton/image3.png)
+
+<figcaption>Figure 2-3. Example of time series plot provided by TOAST for HAB early warning.</figcaption>
+
+**_FlowCam_** 
+
+Fluid Imaging Technologies (FIT), 
+based in Scarborough, Maine, offers several types of imaging particle analyzers to quantify and classify phytoplankton, 
+including the FlowCam, 
+which combines a flow cytometer and microscope. Visualspreadsheet®, 
+FIT’s proprietary software, quantifies over 40 different particle properties from the FlowCam images, 
+and these properties can be sorted based on their attributes. 
+In addition, Visualspreadsheet’s particle recognition capabilities, Classifier Advanced®, 
+can be used for classifying organisms, cells, 
+and particles of interest semi-automatically using two different machine learning algorithms, 
+Support Vector Machine and Normal Bayes. 
+The FlowCam VS series and 8000 series use a combination of imaging and laser light to detect and image particles within a fluid stream at different magnifications and can image particles from 2µm–5mm (Poulton 2016). 
+Other FlowCam features can include: color or black and white high-speed cameras; 
+autofocus assemblies to assist in accurate and repeatable depth-of-field focusing; 
+cross-polarization lenses; 
+and the option for varying the laser (blue or green) and fluorescence emission filters for capture of chlorophyll, 
+phycoerythrin, 
+or fluorescein isothiocyanate. 
+
+The FlowCam was developed at Bigelow Laboratory for Ocean Sciences. 
+Since its introduction to the oceanographic community in 1999, 
+over 300 instruments have been installed in over 50 countries for aquatic research and monitoring. 
+The FlowCam has been employed as a field-based technology to assist in satellitebased phytoplankton population monitoring and mapping (Coley 2016), 
+which is why this technology is included in this QARTOD manual. 
+An example of imagery from a FlowCam is shown in fig. 2-4. 
+
+![FlowCam images.](images_Phytoplankton/image4.jpg)
+
+<figcaption>Figure 2-4. A collection of FlowCam images from Adam Boyette, Adam.Boyette@usm.edu.</figcaption>
+
+The traditional methods for collecting discrete and accurate concentrations of picophytoplankton and mixed populations of ultraphytoplankton include fluorescence microscopy and shipboard flow cytometry (Verity and Sieracki 1993; Olson et al. 1985); 
+however, 
+these methods have several disadvantages. 
+As previously noted, 
+microscopy can be time-intensive and image recognition may require a highly skilled technician. 
+Flow cytometry is a rapid, 
+high-throughput method but does not include images to assist in classifying populations. 
+In contrast, 
+FlowCam is a continuous imaging flow cytometer and particle analyzer designed for conducting research and monitoring microorganisms and particles in both marine and freshwater systems. 
+Sampling time is a consideration for ground-validating, 
+real-time phytoplankton populations in situ. 
+The FlowCam’s Visualspreadsheet can remotely and continuously collect and analyze discrete samples without a technician operating the instrument. 
+
+Two direct underway systems (impeller pump system and diaphragm pump system) were compared to assess particle size distribution during the AE1319 cruise aboard R/V Atlantic Explorer (fig. 2-5) spanning Nova Scotia, 
+Newfoundland, 
+Canada to the Labrador Sea (Cetinic et al. 2016). 
+These measurements are critical for algorithm development and validation of satellite data. 
+The FlowCam was used to assess nano/microphytoplankton biomass calculated from biovolume measurements. 
+
+![Image of Dr. Nicole Poulton from Bigelow Laboratory for Ocean Sciences aboard AE1319 cruise aboard the R/V Atlantic Explorer uses one of the older FlowCam models for data collected in August 2013.](images_Phytoplankton/image5.jpg)
+
+<figcaption>Figure 2-5. Dr. Nicole Poulton from Bigelow Laboratory for Ocean Sciences aboard AE1319 cruise aboard the R/V Atlantic Explorer uses one of the older FlowCam models for data collected in August 2013. (Photo by Wayne H. Slade and courtesy of FIT)</figcaption>
+
+King County, 
+Washington conducts extensive marine phytoplankton observations as part of a long-term Puget Sound ambient monitoring program. 
+Both microscopy and FlowCam analysis are conducted every two weeks for eight stations in the central basin. 
+Figure 2-6 shows processed FlowCam data, 
+depicting the seasonal variation in biovolume for the Puget Sound Central Basin. 
+The plot indicates that greater variability occurs in the summer months, 
+and automated, 
+real-time QC tests might adjust seasonal thresholds to accommodate these fluctuations. 
+
+![Image of Seasonal variation in total biovolume found in Puget Sound Central Basin.](images_Phytoplankton/image6.jpg)
+
+<figcaption>Figure 2-6. Seasonal variation in total biovolume found in Puget Sound Central Basin. (Graphic courtesy of Dr. Gabriela Hannach/King County, Washington)</figcaption>
+
+#### 2.2.5. Molecular/Environmental Sample Processor
+
+The Environmental Sample Processor (ESP) collects in-situ water samples and utilizes molecular probes to identify microorganisms and their gene products (Scholin et al. 2009). 
+
+Data generated are then available for remote retrieval and analysis in near real-time. 
+Table 2-5 provides an overview of the sensor specifications. 
+
+The system is a modular design consisting of a core sample processor (the ESP), 
+analytical modules, 
+and sampling modules. 
+In addition to the core processor, 
+an optional ‘PCR module’ is also available that allows for parallel processing of collected samples. 
+The core ESP provides the primary interface between the environment and a set of ribosomal RNA (rRNA), 
+DNA, 
+and antibody-based sample processing technologies that are applied onboard the instrument in real time (Greenfield et al. 2008; Doucette et al. 2009). 
+In addition, 
+the ESP can be used to archive samples for a variety of analyses after the instrument is returned to a laboratory. 
+Phytotoxin measurements can also be done on the ESP via enzyme-linked immunosorbent assay (ELISA). 
+This has mostly been applied to measuring the neurotoxin domoic acid (DA.) 
+
+Nucleic acid probes for these organisms are available for use with the Sandwich Hybridization Assay or SHA chemistry on the ESP: _Pseudo-nitzschia australis_, 
+_Pseudo-nitzschia multiseries_ / _pseudodelicatissima_, 
+_Pseudo-nitzschia pungens_, 
+_Alexandrium catenella_, 
+_Heterosigma akashiwo_, 
+numerous _Karenia_ spp., 
+and _Cochlodinium polykrikoides_. 
+
+Present ESP operations are limited to a relatively small set of samples which do not impose a large QC challenge and observations are best tested manually. 
+As this technology continues to emerge it is expected that the QC tests described here will begin to appeal to operators of the ESP. 
+
+|Assay methods|Sandwich hybridization (SHA), Polymerase Chain Reaction (PCR), and immunosorbent assays (cELISA)|
 |---|---|
-|**Puck capacity**|132 pucks (archive only; or 22 HAB/DA array phases)|
-|**Depth**|Maximum depth of 50 m with addition of surface ESPpressure housing|
-|**Temperature rating**|4 °C to 29 °C (depending on reagents deployed)|
-|**Max deployment time**|6 months(dependingonpower source)|
-|**Power**|10 – 16 Vdc|
+|Puck capacity|132 pucks (archive only; or 22 HAB/DA array phases)|
+|Depth|Maximum depth of 50 m with addition of surface ESPpressure housing|
+|Temperature rating|4 °C to 29 °C (depending on reagents deployed)|
+|Max deployment time|6 months(dependingonpower source)|
+|Power|10 – 16 Vdc|
+
+: Table 2-5. Overview of ESP specifications.
+
+### 2.3 Constraints
+
+Exciting emerging technologies such as the IFCB and the ESP have not yet achieved data interoperability as defined herein. 
+They are described and included in this manual in the hope that the QC concepts of the QARTOD Project will be considered, 
+to help to guide the future creation of interoperable data products that are quality controlled using community-developed standards that will be documented when this manual is updated. 
+
+#### 2.3.1. Data Processing Methodology
+
+The type of sensor system used to collect phytoplankton data and the system used to process and transmit the measurements determine which QC algorithms are used. 
+In-situ systems with sufficient onboard processing power within the sensor may substantially process the data to produce derived products, such as biovolume, 
+abundance of specific taxa, 
+and relative chlorophyll abundance observations. 
+Some sensors may sample at high-rate or burst mode (e.g., 1 Hz). 
+These samples are averaged to produce the actual, 
+real-time value transmitted (e.g., hourly value). 
+Statistical information about the high-rate sample distributions can also be used and transmitted as real-time QC parameters (e.g., sample standard deviations and outliers). 
+If sufficient transmission capability is available, 
+expanded data streams may be transmitted ashore and subsequently quality controlled from there. 
+
+When onboard processing is used to reduce high-frequency sampling, 
+apply associated corrections, 
+and generate the resultant observation to be transmitted, 
+operators should have a full understanding of the algorithms employed. 
+These processes are often proprietary, 
+and when not fully revealed by the manufacturer or vendor, 
+the operator should sufficiently test the system to gain the needed understanding. 
+
+#### 2.3.2. Traceability to Accepted Standards
+
+To ensure that phytoplankton sensors produce accurate data, 
+rigorous calibrations and calibration checks must be performed in addition to QC checks. 
+Most operators rely upon manufacturer calibrations and may conduct calibration checks before deployment. 
+These calibration checks are critical to ensuring that the manufacturer calibration is still valid. 
+Manufacturers describe how to conduct these calibration checks in their user manuals, 
+which are currently considered QA and further addressed in appendix B. 
+
+Calibrations and calibration checks must be traceable to accepted standards. 
+NIST, 
+a provider of internationally accepted standards, 
+is often the source for these standards (http://www.nist.gov/index.html). 
+Calibration activities must be tailored to match data use and resources. 
+Calibration cost and effort increase dramatically as accuracy requirements increase. 
+Fundamental NIST standards such as mass and volume may be required when conducting calibration checks on phytoplankton sensors. 
+
+Manufacturers and/or vendors often provide calibration standards. 
+For example, 
+Turner Designs (http://www.turnerdesigns.com/products/fluorometer-primary-calibration-standards) offers fluorometric and spectrophotometric chlorophyll-_a_ standards. 
+Algal strains are available from the Bigelow National Center for Marine Algae and Microbiota (https://ncma.bigelow.org/products/algae/marine), 
+enabling assessment of sensor response factors for a range of taxa when required.
+
+Where NIST or manufacturer standards are not available, 
+an active research effort generally exists among operators and manufacturers regarding the use of primary and secondary standards for instrument calibration and calibration checks. 
+
+#### 2.3.3. The Effect of Dynamic Environments on Phytoplankton Measurements 
+
+Phytoplankton measurements can be challenging for two reasons: Phytoplankton density is a nonconservative² variable, 
+and dynamic coastal regions create rapid horizontal and vertical water mass changes. 
+Tidal and meteorological events can create substantial steps in the phytoplankton time series. 
+Physiological variability adds additional complexity to fluorescence-based estimates of living phytoplankton biomass, 
+since fluorescence yield varies by taxa, 
+time of day, etc. 
+Other variations are induced by such things as seasonal stratification, 
+upwelling, 
+organic loading, increased biological activity (blooms), 
+air-sea exchange, 
+river inputs, 
+spawning aggregations, 
+fish kills (indeed, all biological activities), 
+sediment-water exchange, 
+groundwater seepage, 
+and springs. 
+
+As with many other real-time QC challenges, 
+the question is how to deal with extremes associated with a phenomenon (e.g., blooms, storm runoff, etc.) in a data time series, 
+yet identify questionable data values that may have similar characteristics. 
+One option is to allow a tighter QC requirement for the data, 
+highlighting the event with a suspect flag and requiring a human review. 
+This way, 
+the event is both: a) acknowledged as substantial if real, 
+and b) identified as potentially questionable in the absence of causal forces. 
+Also, 
+concurrent sensing of turbidity proxies provides additional context for interpretation of data spikes in realtime data streams. 
+
+The effects of bio-fouling also must be considered. 
+Bio-fouling varies seasonally and geographically and can often be the limiting factor in determining the deployment duration. 
+Bio-fouling can manifest itself as either a systematic increase or decrease in signal. 
+Phytoplankton sensing systems have components that must remain free of contamination, 
+or they will create errors as growth accumulates. 
+Phytoplankton sensors that draw in a water sample for analysis must properly filter the input sample to avoid clogging, 
+and the filter itself must remain free of growth. 
+
+<small>² Temperature and salinity are examples of conservative properties because there are no sources or sinks of heat and salt in the interior of the ocean. Other properties, such as oxygen are non-conservative. For example, oxygen content may change slowly due to oxidation of organic material and respiration by animals. See http://www.utdallas.edu/~pujana/oceans/sali.html.</small>
+
 
-
-
-12 
-
-_Phytoplankton_ 
-
-
-
-### **Constraints** 
-
-Exciting emerging technologies such as the IFCB and the ESP have not yet achieved data interoperability as defined herein. They are described and included in this manual in the hope that the QC concepts of the QARTOD Project will be considered, to help to guide the future creation of interoperable data products that are quality controlled using community-developed standards that will be documented when this manual is updated. 
-
-#### **2.3.1. Data Processing Methodology** 
-
-The type of sensor system used to collect phytoplankton data and the system used to process and transmit the measurements determine which QC algorithms are used. In-situ systems with sufficient onboard processing power within the sensor may substantially process the data to produce derived products, such as biovolume, abundance of specific taxa, and relative chlorophyll abundance observations. Some sensors may sample at high-rate or burst mode (e.g., 1 Hz). These samples are averaged to produce the actual, real-time value transmitted (e.g., hourly value). Statistical information about the high-rate sample distributions can also be used and transmitted as real-time QC parameters (e.g., sample standard deviations and outliers). If sufficient transmission capability is available, expanded data streams may be transmitted ashore and subsequently quality controlled from there. 
-
-When onboard processing is used to reduce high-frequency sampling, apply associated corrections, and generate the resultant observation to be transmitted, operators should have a full understanding of the algorithms employed. These processes are often proprietary, and when not fully revealed by the manufacturer or vendor, the operator should sufficiently test the system to gain the needed understanding. 
-
-#### **2.3.2. Traceability to Accepted Standards** 
-
-To ensure that phytoplankton sensors produce accurate data, rigorous calibrations and calibration checks must be performed in addition to QC checks. Most operators rely upon manufacturer calibrations and may conduct calibration checks before deployment. These calibration checks are critical to ensuring that the manufacturer calibration is still valid. Manufacturers describe how to conduct these calibration checks in their user manuals, which are currently considered QA and further addressed in appendix B. 
-
-Calibrations and calibration checks must be traceable to accepted standards. NIST, a provider of internationally accepted standards, is often the source for these standards (http://www.nist.gov/index.html). Calibration activities must be tailored to match data use and resources. Calibration cost and effort increase dramatically as accuracy requirements increase. Fundamental NIST standards such as mass and volume may be required when conducting calibration checks on phytoplankton sensors. 
-
-Manufacturers and/or vendors often provide calibration standards. For example, Turner Designs (http://www.turnerdesigns.com/products/fluorometer-primary-calibration-standards) offers fluorometric and spectrophotometric chlorophyll- _a_ standards. Algal strains are available from the Bigelow National Center for Marine Algae and Microbiota (https://ncma.bigelow.org/products/algae/marine), enabling assessment of sensor response factors for a range of taxa when required. 
-
-13 
-
-
-
-Where NIST or manufacturer standards are not available, an active research effort generally exists among operators and manufacturers regarding the use of primary and secondary standards for instrument calibration and calibration checks. 
-
-#### **2.3.3. The Effect of Dynamic Environments on Phytoplankton Measurements** 
-
-Phytoplankton measurements can be challenging for two reasons: Phytoplankton density is a nonconservative<sup>2</sup> variable, and dynamic coastal regions create rapid horizontal and vertical water mass changes. Tidal and meteorological events can create substantial steps in the phytoplankton time series. Physiological variability adds additional complexity to fluorescence-based estimates of living phytoplankton biomass, since fluorescence yield varies by taxa, time of day, etc. Other variations are induced by such things as seasonal stratification, upwelling, organic loading, increased biological activity (blooms), air-sea exchange, river inputs, spawning aggregations, fish kills (indeed, all biological activities), sediment-water exchange, groundwater seepage, and springs. 
-
-As with many other real-time QC challenges, the question is how to deal with extremes associated with a phenomenon (e.g., blooms, storm runoff, etc.) in a data time series, yet identify questionable data values that may have similar characteristics. One option is to allow a tighter QC requirement for the data, highlighting the event with a suspect flag and requiring a human review. This way, the event is both: a) acknowledged as substantial if real, and b) identified as potentially questionable in the absence of causal forces. Also, concurrent sensing of turbidity proxies provides additional context for interpretation of data spikes in realtime data streams. 
-
-The effects of bio-fouling also must be considered. Bio-fouling varies seasonally and geographically and can often be the limiting factor in determining the deployment duration. Bio-fouling can manifest itself as either a systematic increase or decrease in signal. Phytoplankton sensing systems have components that must remain free of contamination, or they will create errors as growth accumulates. Phytoplankton sensors that draw in a water sample for analysis must properly filter the input sample to avoid clogging, and the filter itself must remain free of growth. 
-
-#### **2.3.4. Sensor Deployment Considerations and Hardware Limitations** 
-
-Phytoplankton sensors can be deployed in several ways. Stationary sensor deployments are on fixed platforms or moorings where there is minimal movement either horizontally or vertically. Alternatively, sensors may be lowered from a ship, deployed aboard autonomous surface or underwater vehicles, or installed on moored or drifting buoys. The typical constraints of oceanographic data collection apply—including cost, power, data transmission, bio-fouling, vandalism, and electronics in a marine environment. Examples of these deployment options are shown in fig. 2-7. 
-
-> 2Temperature and salinity are examples of conservative properties because there are no sources or sinks of heat and salt in the interior of the ocean. Other properties, such as oxygen are non-conservative. For example, oxygen content may change slowly due to oxidation of organic material and respiration by animals. See http://www.utdallas.edu/~pujana/oceans/sali.html. 
-
-14 
-
-_Phytoplankton_ 
-
-
-
-<!-- Start of picture text -->
-=.<br><!-- End of picture text -->
-
-
-
-
-
-<!-- Start of picture text -->
-apan "s 4M,<br>*<br>es ta<br>- 1 oF. . »<br>we, (ex<br>a 4 re<br>“GAD.<br>: ta} ola NR ‘<br>veo Wate SY Ae i Coe —<br><!-- End of picture text -->
-
-**Figure 2-7.** Upper left shows a fixed structure on the Mississippi River at Baton Rouge, where the instrument cage is lowered and raised. Upper right shows a NexSens buoy supporting a variety of water quality instruments. Bottom figure shows a Seabird electronics 9-11 CTD equipped with a variety of auxiliary sensors, a rosette, and Niskin bottles being retrieved from the R/V Oscar Dyson during a NOAA (BASIS) cruise in 2012. (Upper photos courtesy of Dr. Brian Pellerin/USGS. Lower photo courtesy of Jeanette Gann/NOAA.) 
-
-15 
-
-
-
-<!-- Start of picture text -->
-QARTOD<br><!-- End of picture text -->
-
-Mobile platforms are available in a variety of configurations and require different real-time phytoplankton QC considerations. Mobile platforms are, in order of increasing data processing complexity: fixed vertical profilers, mobile surface vessels, and vessels freely operating in three dimensions (e.g., gliders, floats, powered autonomous underwater vehicles or AUVs). Figure 2-8 provides examples of mobile platforms. 
-
-
-
-<!-- Start of picture text -->
-— _<br>=<br>z= 2<br><!-- End of picture text -->
-
-
-
-<!-- Start of picture text -->
-el gs<br><!-- End of picture text -->
-
-**Figure 2-8.** WebbGlider Profiler 3-D (L) (photo courtesy of Dr. Grace Saba) and Liquid Robotics Wave Glider Mobile Surface (R) (photo courtesy of Liquid Robotics). 
-
-Data derived from sensors on moving platforms are constrained by the response time of the sensor, i.e., the time it takes for a technology to respond to a step change in the measured variable. These limitations occur in most sensor technology. 
-
-Spatial and temporal resolution require a clear understanding of sensor response time, sample rate of the instrument (and in some cases the average period per measurement, if one exists), and the vehicle speed. The response time will often limit the realized resolution of an instrument. For example, a sensor with a response time of 60 seconds, sampling at 1 Hz and moving through the water at 25 knots will not yield accurate map conditions. Generally, dynamic errors in moving platform data complicate QA/QC actions for real-time data. Operators must understand the magnitude of these errors before setting QA/QC limits on data. 
-
-#### **_Fixed, In-Situ Vertical Profilers_** 
-
-Fixed, vertical phytoplankton profiles can be obtained from a variety of systems, including rigid-mounted profiling systems, buoy/mooring climbers, surface or bottom tethered systems, or even routine repeated manual station occupations. In such cases, the tests described for a fixed sensor (see section 3.3.1) either remain unchanged or are conducted along the vertical ‘z’ axis, as well as along a time series of observations. 
-
-#### **_Mobile Surface Vessels_** 
-
-Examples of mobile surface vessels include human-operated vessels of opportunity and autonomously operated vehicles such as the Liquid Robotics Wave Glider fitted with phytoplankton sensors. Samples are obtained at a fixed depth along a defined track, and water may be sampled at fixed temporal or spatial intervals. Again, the tests described for a fixed sensor may remain unchanged, or they are conducted along the vessel track (s) or projections onto longitude (x) and latitude (y) coordinates, as well as along a time series of observations. 
-
-16 
-
-_Phytoplankton_ 
-
-#### **_3-D Profiler Vessels_** 
-
-Gliders, floats, and powered AUVs can provide phytoplankton observations in a wide variety of space/time configurations. They can be as simple as along track ‘s’ observations, periodic vertical ascent profiles recorded following at-depth drifts (Argo profilers), or real-time processed down/up profiles (gliders). When applying increasingly complex real-time QC tests to increasingly complex deployments, challenges will arise. However, most of the eleven tests described in section 3.3 can be applied with little modification. 
-
-#### **_Instrumentation/Techniques_** 
-
-Phytoplankton instrumentation can be constructed as a single-function device, but can also be housed and commingled with additional sensors to form a multi-variable sensing package. To make the most meaningful phytoplankton observations, operators often co-locate a wide variety of contextual sensors such as pressure, temperature, salinity/conductivity, and nutrients. 
-
-Steps in a time series during a calibration, sensor swap, or cleaning can be highly dependent on both the site and season and provide valuable information for future service intervals. Correcting such a data shift is extremely difficult, so servicing schedules and the technology used should be carefully considered. Constant improvements in anti-fouling measures and sensor technology stability are being made. Operators should investigate which technology best suits their application, the field service budget, and data quality goals. 
-
-While outside the scope of the real-time tests described in this manual, quality assurance is critical to data quality. Sensors require attention to proper QA measures both before and after the deployment. Operators must follow the manufacturer’s recommendations for factory calibration schedules and proper sensor maintenance. Often, operators take field samples during deployment, recovery, or service to validate the performance of an in-situ sensor. This can be a risky time for ensuring quality sensor data, often due to initial stabilization, sensor/environment disturbance, or high fouling near the end. If resources permit, it is recommended that samples be obtained mid-deployment without disturbing the sensor, in coordination with the instrument’s normal sampling period and sampling the same water mass as the instrument encounters. 
-
-Also important, but beyond the scope of this document at present, is the determination and reporting of data uncertainty. Knowledge of the accuracy of each observation is required to ensure that data are used appropriately and aids in the computation of error bounds for subsequent products derived by users. All sensors and measurements contain errors that are determined by hardware quality, methods of operation, and data processing techniques. Operators should routinely provide a quantitative measure of data uncertainty in the associated metadata. Such calculations can be challenging, so operators should also document the methods used to compute the uncertainty. The limits and thresholds implemented by operators for the data QC tests described here are a key component in establishing the observational error bounds. Operators are strongly encouraged to consider the impact of the QC tests on data uncertainty, as these two efforts greatly enhance the utility of their data. 
-
-Sensor redundancy is key to obtaining measurements and ensuring that uncertainties can be assigned to those measurements. Comparing two adjacent instruments can assist in evaluation of data quality, as well as provide two (or more) independent estimates of a variable of interest. Variation in the estimated values can be useful in uncertainty calculations. 
-
-17 
-
-
-
-### **Applications** 
-
-
-
-Real-time observations of phytoplankton are important for a wide variety of applications, including: 
-
-- Monitoring for fisheries closures 
-
-- Conducting satellite ground-truth 
-
+#### 2.3.4. Sensor Deployment Considerations and Hardware Limitations 
+
+Phytoplankton sensors can be deployed in several ways. Stationary sensor deployments are on fixed platforms or moorings where there is minimal movement either horizontally or vertically. Alternatively, sensors may be lowered from a ship, deployed aboard autonomous surface or underwater vehicles, or installed on moored or drifting buoys. The typical constraints of oceanographic data collection apply—including cost, power, data transmission, bio-fouling, vandalism, and electronics in a marine environment. Examples of these deployment options are shown in fig. 2-7.
+
+![Deployment options.](images_Phytoplankton/image7.png)
+![Deployment options.](images_Phytoplankton/image8.png)
+
+<figcaption>Figure 2-7. Upper left shows a fixed structure on the Mississippi River at Baton Rouge, where the instrument cage is lowered and raised. Upper right shows a NexSens buoy supporting a variety of water quality instruments. Bottom figure shows a Seabird electronics 9-11 CTD equipped with a variety of auxiliary sensors, a rosette, and Niskin bottles being retrieved from the R/V Oscar Dyson during a NOAA (BASIS) cruise in 2012. (Upper photos courtesy of Dr. Brian Pellerin/USGS. Lower photo courtesy of Jeanette Gann/NOAA.)</figcaption>
+
+Mobile platforms are available in a variety of configurations and require different real-time phytoplankton QC considerations. 
+Mobile platforms are, in order of increasing data processing complexity: fixed vertical profilers, 
+mobile surface vessels, 
+and vessels freely operating in three dimensions (e.g., gliders, floats, powered autonomous underwater vehicles or AUVs). 
+Figure 2-8 provides examples of mobile platforms.
+
+![Mobile platforms](images_Phytoplankton/image9.png)
+
+<figcaption>Figure 2-8. WebbGlider Profiler 3-D (L) (photo courtesy of Dr. Grace Saba) and Liquid Robotics Wave Glider Mobile Surface (R) (photo courtesy of Liquid Robotics).</figcaption>
+
+Data derived from sensors on moving platforms are constrained by the response time of the sensor, 
+i.e., 
+the time it takes for a technology to respond to a step change in the measured variable. 
+These limitations occur in most sensor technology. 
+
+Spatial and temporal resolution require a clear understanding of sensor response time, 
+sample rate of the instrument (and in some cases the average period per measurement, if one exists), 
+and the vehicle speed. 
+The response time will often limit the realized resolution of an instrument. 
+For example, 
+a sensor with a response time of 60 seconds, 
+sampling at 1 Hz and moving through the water at 25 knots will not yield accurate map conditions. 
+Generally, 
+dynamic errors in moving platform data complicate QA/QC actions for real-time data. 
+Operators must understand the magnitude of these errors before setting QA/QC limits on data. 
+
+**_Fixed, In-Situ Vertical Profilers_** 
+
+Fixed, 
+vertical phytoplankton profiles can be obtained from a variety of systems, 
+including rigid-mounted profiling systems, 
+buoy/mooring climbers, 
+surface or bottom tethered systems, 
+or even routine repeated manual station occupations. 
+In such cases, 
+the tests described for a fixed sensor (see section 3.3.1) either remain unchanged or are conducted along the vertical ‘z’ axis, 
+as well as along a time series of observations. 
+
+**_Mobile Surface Vessels_** 
+
+Examples of mobile surface vessels include human-operated vessels of opportunity and autonomously operated vehicles such as the Liquid Robotics Wave Glider fitted with phytoplankton sensors. 
+Samples are obtained at a fixed depth along a defined track, and water may be sampled at fixed temporal or spatial intervals. 
+Again, 
+the tests described for a fixed sensor may remain unchanged, 
+or they are conducted along the vessel track (s) or projections onto longitude (x) and latitude (y) coordinates, 
+as well as along a time series of observations.
+
+**_3-D Profiler Vessels_** 
+
+Gliders, 
+floats, 
+and powered AUVs can provide phytoplankton observations in a wide variety of space/time configurations. 
+They can be as simple as along track ‘s’ observations, 
+periodic vertical ascent profiles recorded following at-depth drifts (Argo profilers), 
+or real-time processed down/up profiles (gliders). 
+When applying increasingly complex real-time QC tests to increasingly complex deployments, challenges will arise. 
+However, 
+most of the eleven tests described in section 3.3 can be applied with little modification. 
+
+**_Instrumentation/Techniques_** 
+
+Phytoplankton instrumentation can be constructed as a single-function device, 
+but can also be housed and commingled with additional sensors to form a multi-variable sensing package. 
+To make the most meaningful phytoplankton observations, 
+operators often co-locate a wide variety of contextual sensors such as pressure, 
+temperature, 
+salinity/conductivity, 
+and nutrients. 
+
+Steps in a time series during a calibration, 
+sensor swap, 
+or cleaning can be highly dependent on both the site and season and provide valuable information for future service intervals. 
+Correcting such a data shift is extremely difficult, 
+so servicing schedules and the technology used should be carefully considered. 
+Constant improvements in anti-fouling measures and sensor technology stability are being made. 
+Operators should investigate which technology best suits their application, 
+the field service budget, and data quality goals. 
+
+While outside the scope of the real-time tests described in this manual, 
+quality assurance is critical to data quality. 
+Sensors require attention to proper QA measures both before and after the deployment. 
+Operators must follow the manufacturer’s recommendations for factory calibration schedules and proper sensor maintenance. 
+Often, operators take field samples during deployment, 
+recovery, 
+or service to validate the performance of an in-situ sensor. 
+This can be a risky time for ensuring quality sensor data, 
+often due to initial stabilization, 
+sensor/environment disturbance, 
+or high fouling near the end. 
+If resources permit, 
+it is recommended that samples be obtained mid-deployment without disturbing the sensor, 
+in coordination with the instrument’s normal sampling period and sampling the same water mass as the instrument encounters. 
+
+Also important, 
+but beyond the scope of this document at present, 
+is the determination and reporting of data uncertainty. 
+Knowledge of the accuracy of each observation is required to ensure that data are used appropriately and aids in the computation of error bounds for subsequent products derived by users. 
+All sensors and measurements contain errors that are determined by hardware quality, 
+methods of operation, 
+and data processing techniques. 
+Operators should routinely provide a quantitative measure of data uncertainty in the associated metadata. 
+Such calculations can be challenging, 
+so operators should also document the methods used to compute the uncertainty. 
+The limits and thresholds implemented by operators for the data QC tests described here are a key component in establishing the observational error bounds. 
+Operators are strongly encouraged to consider the impact of the QC tests on data uncertainty, 
+as these two efforts greatly enhance the utility of their data. 
+
+Sensor redundancy is key to obtaining measurements and ensuring that uncertainties can be assigned to those measurements. 
+Comparing two adjacent instruments can assist in evaluation of data quality, 
+as well as provide two (or more) independent estimates of a variable of interest. 
+Variation in the estimated values can be useful in uncertainty calculations. 
+
+### 2.4 Applications
+
+Real-time observations of phytoplankton are important for a wide variety of applications, 
+including: 
+
+- Monitoring for fisheries closures
+- Conducting satellite ground-truth
 - Implementing on-the-fly course corrections for predictive models 
+- Monitoring and early warning for harmful algal blooms
+- Determining aquaculture, recreational, and potable water source quality
+- Conducting phytoplankton research, including long-term time-series analysis, to monitor environmental impacts of climate variability
 
-- Monitoring and early warning for harmful algal blooms 
+Operational HAB modeling systems benefit from real-time information, 
+many of which can be found on the NOAA Harmful Algal Bloom Operational Forecast System website <https://www.tidesandcurrents.noaa.gov/hab.> 
 
-- Determining aquaculture, recreational, and potable water source quality 
+Other applications utilizing post-processed data do not require real-time QC but benefit from it through early detection of phytoplankton sensors’ issues. 
+Some examples of observatories that benefit from standardized real-time QC testing include: 
 
-- Conducting phytoplankton research, including long-term time-series analysis, to monitor environmental impacts of climate variability 
+- Florida Atlantic University Harbor Branch Indian River Lagoon Observatory, <http://fau.loboviz.com/>
+- Sanibel-Captiva Conservation Foundation River, Estuary and Coastal Observing Network (RECON), <http://recon.sccf.org/>
 
-Operational HAB modeling systems benefit from real-time information, many of which can be found on the NOAA Harmful Algal Bloom Operational Forecast System website <u>https://www.tidesandcurrents.noaa.gov/hab.</u> 
-
-Other applications utilizing post-processed data do not require real-time QC but benefit from it through early detection of phytoplankton sensors’ issues. Some examples of observatories that benefit from standardized real-time QC testing include: 
-
-- Florida Atlantic University Harbor Branch Indian River Lagoon Observatory, <u>http://fau.loboviz.com/</u> 
-
-- Sanibel-Captiva Conservation Foundation River, Estuary and Coastal Observing Network (RECON), <u>http://recon.sccf.org/</u> 
-
-18 
-
-_Phytoplankton_ 
-
-## **3.0 Quality Control** 
+## 3.0 Quality Control
 
 To conduct real-time QC on phytoplankton observations, the first pre-requisite is to understand the science and context within which the measurements are being conducted. Phytoplankton measurements are dependent upon many things such as season, location, time of day, and the physical, chemical, and biological conditions where the measurements are being taken. The real-time QC of these observations can be extremely challenging. Human involvement is important to ensure that solid scientific principles are applied to the process. Without credible science-based analysis, valid data might be discarded and bad data distributed. It is also important to note that advances in phytoplankton sensor technology have reduced many of the problems encountered in older devices. Unique species identification techniques, specifically image recognition and molecular methods, reduce or eliminate the need to quantify relative measurements of observed surrogates. 
 
@@ -1696,7 +1698,4 @@ _Phytoplankton_
 
    - Checking nearby stations; 
 
-   - Making historical data comparisons (e.g., long-term time-series plots, which are particularly useful for identifying long-term bio-fouling or calibration drift). 
-
-B-7 
-
+   - Making historical data comparisons (e.g., long-term time-series plots, which are particularly useful for identifying long-term bio-fouling or calibration drift).

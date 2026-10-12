@@ -667,141 +667,245 @@ Some examples of observatories that benefit from standardized real-time QC testi
 
 ## 3.0 Quality Control
 
-To conduct real-time QC on phytoplankton observations, the first pre-requisite is to understand the science and context within which the measurements are being conducted. Phytoplankton measurements are dependent upon many things such as season, location, time of day, and the physical, chemical, and biological conditions where the measurements are being taken. The real-time QC of these observations can be extremely challenging. Human involvement is important to ensure that solid scientific principles are applied to the process. Without credible science-based analysis, valid data might be discarded and bad data distributed. It is also important to note that advances in phytoplankton sensor technology have reduced many of the problems encountered in older devices. Unique species identification techniques, specifically image recognition and molecular methods, reduce or eliminate the need to quantify relative measurements of observed surrogates. 
+To conduct real-time QC on phytoplankton observations, 
+the first pre-requisite is to understand the science and context within which the measurements are being conducted. 
+Phytoplankton measurements are dependent upon many things such as season, 
+location, 
+time of day, 
+and the physical, 
+chemical, 
+and biological conditions where the measurements are being taken. 
+The real-time QC of these observations can be extremely challenging. 
+Human involvement is important to ensure that solid scientific principles are applied to the process. 
+Without credible science-based analysis, 
+valid data might be discarded and bad data distributed. 
+It is also important to note that advances in phytoplankton sensor technology have reduced many of the problems encountered in older devices. 
+Unique species identification techniques, 
+specifically image recognition and molecular methods, 
+reduce or eliminate the need to quantify relative measurements of observed surrogates. 
 
-This manual focuses specifically on real-time data, so the operator is likely to encounter aspects of data QC where the flags and tests described in the following sections do not apply because the data are not considered to be real time. For example, for real-time QC, drift cannot be detected or corrected. Drift correction for phytoplankton sensors during post-processing of data is difficult even with a post-calibration because drift in phytoplankton sensors is not always linear. Drift is often caused by bio-fouling, and, in the case of absorption meters and fluorometers, typically results in increased signals. Another example might be the ability of some data providers to backfill data gaps. In both examples, the observations are not considered to be real time for purposes of QC checks. 
+This manual focuses specifically on real-time data, 
+so the operator is likely to encounter aspects of data QC where the flags and tests described in the following sections do not apply because the data are not considered to be real time. 
+For example, for real-time QC, 
+drift cannot be detected or corrected. 
+Drift correction for phytoplankton sensors during post-processing of data is difficult even with a post-calibration because drift in phytoplankton sensors is not always linear. 
+Drift is often caused by bio-fouling, and, in the case of absorption meters and fluorometers, 
+typically results in increased signals. 
+Another example might be the ability of some data providers to backfill data gaps. 
+In both examples, 
+the observations are not considered to be real time for purposes of QC checks. 
 
-These QC test procedures are written as a high-level narrative from which operators can develop code to execute specific tests and set data quality indicators (QC flags) within a software program. Those implementing QARTOD tests have created a code repository (https://github.com/ioos/qartod) where operators may find or post examples of code in use. Although certain tests are recommended, thresholds can vary among data providers. The tests described here are designed to support a range of phytoplankton sensors and operator capabilities. Some well-established programs with the highest standards, such as Florida Atlantic University's land/ocean biogeochemical observatory network and Monterey Bay Aquarium Research Institute’s Monterey Accelerated Research System, have implemented very rigorous QC processes. Others, with different requirements, may utilize sensors with data streams that cannot support as many QC checks— all have value when used prudently. It is the responsibility of the users to understand and appropriately utilize data of varying quality, and operators must provide support by documenting and publishing their QC processes. A balance must be struck between the time-sensitive needs of real-time observing systems and the degree of rigor that has been applied to non-real-time systems by operators with substantial QC experience. To accommodate a range of different operator methodologies, three levels of QC are proposed: required, strongly recommended, and suggested. 
+These QC test procedures are written as a high-level narrative from which operators can develop code to execute specific tests and set data quality indicators (QC flags) within a software program. 
+Those implementing QARTOD tests have created a code repository (https://github.com/ioos/qartod) where operators may find or post examples of code in use. Although certain tests are recommended, 
+thresholds can vary among data providers. 
+The tests described here are designed to support a range of phytoplankton sensors and operator capabilities. 
+Some well-established programs with the highest standards, 
+such as Florida Atlantic University's land/ocean biogeochemical observatory network and Monterey Bay Aquarium Research Institute’s Monterey Accelerated Research System, 
+have implemented very rigorous QC processes. 
+Others, 
+with different requirements, 
+may utilize sensors with data streams that cannot support as many QC checks— all have value when used prudently. 
+It is the responsibility of the users to understand and appropriately utilize data of varying quality, 
+and operators must provide support by documenting and publishing their QC processes. 
+A balance must be struck between the time-sensitive needs of real-time observing systems and the degree of rigor that has been applied to non-real-time systems by operators with substantial QC experience. 
+To accommodate a range of different operator methodologies, 
+three levels of QC are proposed: 
+required, 
+strongly recommended, 
+and suggested. 
 
-High-quality marine and freshwater observations require sustained QA and QC practices to ensure credibility and value to operators and data users. QA practices involve processes that are employed with hardware to support the generation of high-quality data, such as a sufficiently accurate, precise, and reliable sensor with adequate resolution. Other QA practices include: sensor calibration; calibration checks and/or in-situ verification, including post-deployment calibration; proper deployment considerations, such as measures for corrosion control and anti-fouling; solid data communications; adequate maintenance intervals; and creation of a robust quality control process. QA issues, such as post-deployment calibration (instrument verification after 
+High-quality marine and freshwater observations require sustained QA and QC practices to ensure credibility and value to operators and data users. 
+QA practices involve processes that are employed with hardware to support the generation of high-quality data, 
+such as a sufficiently accurate, precise, 
+and reliable sensor with adequate resolution. Other QA practices include: sensor calibration; 
+calibration checks and/or in-situ verification, 
+including post-deployment calibration; proper deployment considerations, 
+such as measures for corrosion control and anti-fouling; 
+solid data communications; 
+adequate maintenance intervals; 
+and creation of a robust quality control process. 
+QA issues, 
+such as post-deployment calibration (instrument verification after recovery), 
+are not part of the scope of this manual. 
+However, 
+QC and QA are interrelated and both are important to the process; 
+therefore, 
+QA considerations are briefly addressed in appendix B. 
 
-19 
+QC involves steps that support the delivery of high-quality data and requires both automation and human intervention. 
+QC practices include such things as format, 
+checksum, 
+timely arrival of data, 
+threshold checks (minimum/maximum rate of change), 
+neighbor checks, 
+climatology checks, 
+model comparisons, 
+signal/noise ratios, 
+verification of user satisfaction, 
+and generation of data flags (Bushnell 2005). 
 
+The process of ensuring data quality is not always straightforward. 
+QA/QC procedures may be specific to a sensor technology or even to a specific manufacturer’s model, 
+so the establishment of a methodology that is applicable to every sensor is challenging. 
 
+### 3.1 QC Flags
 
-recovery), are not part of the scope of this manual. However, QC and QA are interrelated and both are important to the process; therefore, QA considerations are briefly addressed in appendix B. 
+Data are evaluated using QC tests, and the results of each test are indicated using flags in the data files. 
+Table 3-1 provides the set of flags and associated descriptions proposed by the International Oceanographic Data and Information Exchange (IODE) and adopted by the Intergovernmental Oceanographic Commission (IOC) in 2013. 
+Operators may incorporate additional flags for inclusion in metadata records. 
+For example, 
+a phytoplankton observation may fail the gross range test and be flagged as having failed the test. 
+Additional flags may be incorporated to provide more detailed information to assist with troubleshooting. 
+If the data failed the gross range check by exceeding the upper limit, 
+“failed high” may indicate that the values were higher than the expected range, 
+but such detailed flags primarily support maintenance efforts and are presently beyond U.S. IOOS requirements for QC of real-time data. 
 
-QC involves steps that support the delivery of high-quality data and requires both automation and human intervention. QC practices include such things as format, checksum, timely arrival of data, threshold checks (minimum/maximum rate of change), neighbor checks, climatology checks, model comparisons, signal/noise ratios, verification of user satisfaction, and generation of data flags (Bushnell 2005). 
-
-The process of ensuring data quality is not always straightforward. QA/QC procedures may be specific to a sensor technology or even to a specific manufacturer’s model, so the establishment of a methodology that is applicable to every sensor is challenging. 
-
-### **QC Flags** 
-
-
-
-Data are evaluated using QC tests, and the results of each test are indicated using flags in the data files. Table 3-1 provides the set of flags and associated descriptions proposed by the International Oceanographic Data and Information Exchange (IODE) and adopted by the Intergovernmental Oceanographic Commission (IOC) in 2013. Operators may incorporate additional flags for inclusion in metadata records. For example, a phytoplankton observation may fail the gross range test and be flagged as having failed the test. Additional flags may be incorporated to provide more detailed information to assist with troubleshooting. If the data failed the gross range check by exceeding the upper limit, “failed high” may indicate that the values were higher than the expected range, but such detailed flags primarily support maintenance efforts and are presently beyond U.S. IOOS requirements for QC of real-time data. 
-
-Flags set in real time should retain their original settings. Further post-processing of the data may yield different conclusions from those suggested in the initial real-time flags. However, by retaining the real-time flag settings, the historical documentation is preserved. The exception to the rule occurs for the test 6 spike check, where the most recent point must be flagged as “2 Not Evaluated” until the next point arrives and the spike check can be performed. 
+Flags set in real time should retain their original settings. 
+Further post-processing of the data may yield different conclusions from those suggested in the initial real-time flags. 
+However, 
+by retaining the real-time flag settings, 
+the historical documentation is preserved. 
+The exception to the rule occurs for the test 6 spike check, 
+where the most recent point must be flagged as “2 Not Evaluated” until the next point arrives and the spike check can be performed. 
 
 Additional information regarding the application of data QC flags can be found in U.S. IOOS 2014. 
 
-**Table 3- 1.** Flags for real-time data (UNESCO 2013) 
-
-|**Flag**|**Description**|
+|Flag|Description|
 |---|---|
-|Pass=1|Data have passed critical real-time quality control tests and are deemed adequate for<br>use as preliminary data.|
+|Pass=1|Data have passed critical real-time quality control tests and are deemed adequate for use as preliminary data.|
 |Not Evaluated=2|Data have not been QC-tested, or the information on quality is not available.|
-|Suspect or<br>Of High Interest=3|Data are considered to be either suspect or of high interest to data providers and users.<br>They are flagged suspect to draw further attention to them by operators.|
-|Fail=4|Data are considered to have failed one or more critical real-time QC checks. If they are<br>disseminated at all, it should be readily apparent that they are not of acceptable quality.|
+|Suspect or Of High Interest=3|Data are considered to be either suspect or of high interest to data providers and users. They are flagged suspect to draw further attention to them by operators.|
+|Fail=4|Data are considered to have failed one or more critical real-time QC checks. If they are disseminated at all, it should be readily apparent that they are not of acceptable quality.|
 |Missing Data=9|Data are missing; used as a placeholder.|
 
+: Table 3-1. Flags for real-time data (UNESCO 2013) 
 
+### 3.2 Test Hierarchy 
 
-20 
+This section outlines the eleven real-time QC tests that are required or recommended for selected phytoplankton sensors. 
+Tests are listed in order of increasing complexity, 
+and generally, 
+decreasing utility and are divided into three groups. 
+The tests in group 1 are required for all phytoplankton data measurements collected for U.S. IOOS. 
+Operators must consider each test in group 2 and group 3 to determine if it can be applied in their specific instance—not all tests can be implemented in all situations. 
+Table 3-2 shows the test hierarchy. 
 
-_Phytoplankton_ 
-
-### **Test Hierarchy** 
-
-
-
-This section outlines the eleven real-time QC tests that are required or recommended for selected phytoplankton sensors. Tests are listed in order of increasing complexity, and generally, decreasing utility and are divided into three groups. The tests in group 1 are required for all phytoplankton data measurements collected for U.S. IOOS. Operators must consider each test in group 2 and group 3 to determine if it can be applied in their specific instance—not all tests can be implemented in all situations. Table 3-2 shows the test hierarchy. 
-
-**Table 3-2.** QC Tests in order of implementation 
-
+|   |   |   |
+|---|---|---|
 |**Group 1**<br>_Required_|Test 1<br>Test 2<br>Test 3<br>Test 4|Gap Test<br>Syntax Test<br>Location Test<br>Gross Range Test|
+|**Group 2**<br>_Strongly Recommended_|Test 5<br>Test 6<br>Test 7<br>Test 8|Climatological Test<br>Spike Test<br>Rate of Change Test<br>Flat Line Test|
+|**Group 3**<br>_Suggested_|Test 9<br>Test 10<br>Test 11|Multi-Variate Test<br>Attenuated Signal Test<br>Neighbor Test|
+
+: Table 3-2. QC Tests in order of implementation
+
+Some effort will be needed to select the best thresholds, 
+which are determined at the local level and may require trial and error/iteration before final selections are made. 
+This manual does not provide overly generic guidance for selecting thresholds because doing so may not yield a good starting point at the local level. 
+Although more tests imply a more robust QC effort, 
+valid reasons may exist for not invoking a specific test in some instances. 
+Where a test from group 2 or group 3 cannot be implemented, 
+the operator should document the reason it does not apply. 
+The number of tests conducted, 
+together with the justification for not applying some tests, 
+can be used for the development of operator certification levels. 
+
+### 3.3 QC Tests
+
+A variety of tests can be performed on the data to indicate data quality. 
+Testing the integrity of the data transmission itself using a gap test and syntax test is a first step. 
+If the data transmission is not sound, 
+further testing is irrelevant. 
+Additional checks evaluate the phytoplankton core variable values themselves through various comparisons to the data stream and to the expected conditions in the given environment. 
+The tests listed in the following section presume a time-ordered series of observations and denote the most recent generic phytoplankton observation (for example, chlorophyll-_a_ or phycobilin pigments, total cell counts, or species-specific cell counts) as PPₙ, preceded by a value of PPₙ₋₁, 
+and so on backwards in time. 
+The focus is primarily on the real-time QC of observation PPₙ, PPₙ₋₁, and PPₙ₋₂. 
+There are several instances when tests are closely related, e.g., 
+the climatology test is similar to the gross range test, 
+the multi-variate test can be similar to the rate of change test, 
+etc. 
+As such, 
+there are opportunities for clever and efficient coding, 
+which are left to the programmers.
+
+#### 3.3.1. Applications of QC Tests to Stationary Phytoplankton Sensors
+
+These eleven tests require operators to select a variety of thresholds. 
+These thresholds should not be determined arbitrarily but can be based on historical knowledge or statistics derived from more recently acquired data. 
+Operators must document the reasons and methods used to determine the thresholds. 
+Examples are provided in the following test tables; 
+however, 
+operators are in the best position to determine the appropriate thresholds for their operations. 
+Some tests rely on multiple data points most recently received to determine the quality of the current data point. 
+When this series of data points reveals that the entire group fails, the current data point is flagged, 
+but the previous flags are not changed. 
+This action supports the view that historical flags are not altered. The first example is in test 8, 
+the flat line test, 
+where this scenario will become clearer. 
+For additional information regarding flags, see the _Manual for the Use of Real-Time Oceanographic Data Quality Control Flags_ (U.S. IOOS 2014) posted on the U.S. IOOS QARTOD website.
+
+<a id="test-1-gap-test"></a>
+
+**Test 1 - Gap Test (Required)**
+
+Check for arrival of data. 
+Test determines that the most recent data point has been received within the expected time window (`TIM_INC`) and has the correct time stamp (`TIM_STMP`). 
+**Note:** For those systems that do not update at regular intervals, a large value for `TIM_STMP` can be assigned. The gap check is not a panacea for all timing errors. Data could arrive earlier than expected. This test does not address all clock drift/jump issues. 
+
+|Flags|Condition|Codable Instructions|
 |---|---|---|
-|**Group 2**<br>_Strongly_|Test 5<br>Test 6|Climatological Test<br>Spike Test|
-|_Recommended_|Test 7<br>Test 8|Rate of Change Test<br>Flat Line Test|
-|**Group 3**|Test 9|Multi-Variate Test|
-|_Suggested_|Test 10|Attenuated Signal Test|
-||Test 11|Neighbor Test|
-
-
-
-Some effort will be needed to select the best thresholds, which are determined at the local level and may require trial and error/iteration before final selections are made. This manual does not provide overly generic guidance for selecting thresholds because doing so may not yield a good starting point at the local level. Although more tests imply a more robust QC effort, valid reasons may exist for not invoking a specific test in some instances. Where a test from group 2 or group 3 cannot be implemented, the operator should document the reason it does not apply. The number of tests conducted, together with the justification for not applying some tests, can be used for the development of operator certification levels. 
-
-
-
-### **QC Tests** 
-
-A variety of tests can be performed on the data to indicate data quality. Testing the integrity of the data transmission itself using a gap test and syntax test is a first step. If the data transmission is not sound, further testing is irrelevant. Additional checks evaluate the phytoplankton core variable values themselves through various comparisons to the data stream and to the expected conditions in the given environment. The tests listed in the following section presume a time-ordered series of observations and denote the most recent generic phytoplankton observation (for example, chlorophyll- _a_ or phycobilin pigments, total cell counts, or species-specific cell counts) as PPn, preceded by a value of PPn-1, and so on backwards in time. The focus is primarily on the real-time QC of observation PPn _,_ PPn-1, and PPn-2. There are several instances when tests are closely related, e.g., the climatology test is similar to the gross range test, the multi-variate test can be similar to the rate of change test, etc. As such, there are opportunities for clever and efficient coding, which are left to the programmers. 
-
-21 
-
-
-
-#### **3.3.1. Applications of QC Tests to Stationary Phytoplankton Sensors** 
-
-These eleven tests require operators to select a variety of thresholds. These thresholds should not be determined arbitrarily but can be based on historical knowledge or statistics derived from more recently acquired data. Operators must document the reasons and methods used to determine the thresholds. Examples are provided in the following test tables; however, operators are in the best position to determine the appropriate thresholds for their operations. Some tests rely on multiple data points most recently received to determine the quality of the current data point. When this series of data points reveals that the entire group fails, the current data point is flagged, but the previous flags are not changed. This action supports the view that historical flags are not altered. The first example is in test 8, the flat line test, where this scenario will become clearer. For additional information regarding flags, see the _Manual for the Use of Real-Time Oceanographic Data Quality Control Flags_ (U.S. IOOS 2014) posted on the U.S. IOOS QARTOD website. 
-
-22 
-
-_Phytoplankton_ 
-
-#### **Test 1) Gap Test (Required)** 
-
-**Check for arrival of data** 
-
-Test determines that the most recent data point has been received within the expected time window (TIM_INC) and has the correct time stamp (TIM_STMP). 
-
-**Note:** For those systems that do not update at regular intervals, a large value for TIM_STMP can be assigned. The gap check is not a panacea for all timing errors. Data could arrive earlier than expected. This test does not address all clock drift/jump issues. 
-
-|**Flags**|**Condition**|**Codable Instructions**|
-|---|---|---|
-|Fail=4|Data have not arrived as expected.|NOW – TIM_STMP > TIM_INC|
+|Fail=4|Data have not arrived as expected.|`NOW` – `TIM_STMP` > `TIM_INC`|
 |Suspect=3|N/A|N/A|
 |Pass=1|Applies for test pass condition.|N/A|
-|**Test Exceptio**|**n**: None.||
-|**Test specifica**<br>**Example:**|**tions to be established locally by operator.**<br>TIM_INC= 1 hour||
 
+Test Exception: None.
 
+Test specifications to be established locally by operator.
 
-#### **Test 2) Syntax Test (Required)** 
+Example: TIM_INC= 1 hour
 
-**Check to ensure that the message is structured properly** 
+<a id="test-2-syntax-test"></a>
 
-Received data record contains the proper structure without any indicators of flawed transmission such as parity errors. Possible tests are: a) the expected number of characters (NCHAR) for fixed length messages equals the number of characters received (REC_CHAR), or b) passes a standard parity bit check, CRC check, etc. Many such syntax tests exist, and the user should select the best criteria for one or more syntax tests. 
+**Test 2 - Syntax Test (Required)** 
+
+Check to ensure that the message is structured properly.
+Received data record contains the proper structure without any indicators of flawed transmission such as parity errors. 
+Possible tests are: a) the expected number of characters (`NCHAR`) for fixed length messages equals the number of characters received (`REC_CHAR`), 
+or b) passes a standard parity bit check, 
+CRC check, etc. 
+Many such syntax tests exist, 
+and the user should select the best criteria for one or more syntax tests. 
 
 **Note:** Capabilities for dealing with flawed messages vary among operators; some can parse messages to extract data within the flawed message sentence before the flaw. Syntax check is performed only at the message level and not at the sub-message level. 
 
-|**Flags**|**Condition**|**Codable Instructions**|
+|Flags|Condition|Codable Instructions|
 |---|---|---|
-|Fail=4|Data record cannot be parsed.|REC_CHAR ≠NCHAR|
-|Suspect =3|Data record can be partially parsed.|REC_CHAR ≠NCHAR, but portion of record<br>decodes successfully|
-|Pass=1|Expected data record received;<br>absence of parity errors.|N/A|
-|**Test Exceptio**|**n**: None.||
-|**Test specifica**<br>**Example:**|**tions to be established locally by operator.**<br>NCHAR = 128||
+|Fail=4|Data record cannot be parsed.|`REC_CHAR` ≠ `NCHAR`|
+|Suspect =3|Data record can be partially parsed.|`REC_CHAR` ≠ `NCHAR`, but portion of record decodes successfully|
+|Pass=1|Expected data record received; absence of parity errors.|N/A|
 
+Test Exception: None.
 
+Test specifications to be established locally by operator.
 
-23 
+Example: `NCHAR` = 128.
 
+<a id="test-3-location-test"></a>
 
+**Test 3 - Location Test (Required)** 
 
-#### **Test 3) Location Test (Required)** 
+Check for reasonable geographic location. 
+Test checks that the reported present physical location (latitude/longitude) is within operator-determined limits. 
+The location test(s) can vary from a simple invalid location to a more complex check for displacement (DISP) exceeding a distance limit (RANGEMAX) based upon a previous location and platform speed. 
+Operators may also check for erroneous locations based upon other criteria, 
+such as reported positions over land, as appropriate. 
 
-**Check for reasonable geographic location** Test checks that the reported present physical location (latitude/longitude) is within operator-determined limits. The location test(s) can vary from a simple invalid location to a more complex check for displacement (DISP) exceeding a distance limit (RANGEMAX) based upon a previous location and platform speed. Operators may also check for erroneous locations based upon other criteria, such as reported positions over land, as appropriate. 
-
-|**Flags**|**Condition**|**Codable Instructions**|
+|Flags|Condition|Codable Instructions|
 |---|---|---|
 |Fail=4|Invalid location.|If |LAT| > 90 or |LONG| > 180, flag = 4|
 |Suspect=3|Unlikely platform displacement.|If DISP > RANGEMAX, flag = 3|
 |Pass=1|Applies for test pass condition.|N/A|
 |**Test Exceptio**|**n**: Test does not apply to fixed deployme|nts when no location is transmitted.|
 |**Test specifica**<br>**Example:**|**tions to be established locally by the op**<br>Displacement DISP calculated between|**erator.**<br>sequential position reports, RANGEMAX = 20 km|
-
-
 
 #### **Test 4) Gross Range Test (Required)** 
 

@@ -901,201 +901,258 @@ such as reported positions over land, as appropriate.
 
 |Flags|Condition|Codable Instructions|
 |---|---|---|
-|Fail=4|Invalid location.|If |LAT| > 90 or |LONG| > 180, flag = 4|
-|Suspect=3|Unlikely platform displacement.|If DISP > RANGEMAX, flag = 3|
+|Fail=4|Invalid location.|If \|LAT\| > 90 or \|LONG\| > 180, flag = 4|
+|Suspect=3|Unlikely platform displacement.|If `DISP` > `RANGEMAX`, flag = 3|
 |Pass=1|Applies for test pass condition.|N/A|
-|**Test Exceptio**|**n**: Test does not apply to fixed deployme|nts when no location is transmitted.|
-|**Test specifica**<br>**Example:**|**tions to be established locally by the op**<br>Displacement DISP calculated between|**erator.**<br>sequential position reports, RANGEMAX = 20 km|
 
-#### **Test 4) Gross Range Test (Required)** 
+Test Exception: Test does not apply to fixed deployments when no location is transmitted.
 
-##### **Data point exceeds sensor or operator selected min/max** 
+Test specifications to be established locally by operator.
 
-All sensors have a limited output range, and this can form the most rudimentary gross range check. No values less than a minimum value or greater than the maximum value the sensor can output (PP_SENSOR_MIN, PP_SENSOR_MAX) are acceptable. Additionally, the operator can select a smaller span (PP_USER_MIN, PP_USER_MAX) based upon local knowledge or a desire to draw attention to extreme values. 
+Example: Displacement DISP calculated between sequential position reports, `RANGEMAX` = 20 km.
 
-|**Flags**|**Condition**|**Codable Instructions**|
+<a id="test-4-gross-range-test"></a>
+
+**Test 4 - Gross Range Test (Required)** 
+
+Data point exceeds sensor or operator selected min/max.
+
+All sensors have a limited output range, and this can form the most rudimentary gross range check. 
+No values less than a minimum value or greater than the maximum value the sensor can output (`PP_SENSOR_MIN`, `PP_SENSOR_MAX`) are acceptable. 
+Additionally, 
+the operator can select a smaller span (`PP_USER_MIN`, `PP_USER_MAX`) based upon local knowledge or a desire to draw attention to extreme values. 
+
+|Flags|Condition|Codable Instructions|
 |---|---|---|
-|Fail=4|Reported value is outside of sensor<br>span.|PPn< PP_SENSOR_MIN, or<br>PPn> PP_SENSOR_MAX|
-|Suspect=3|Reported value is outside of user-<br>selected span.|PPn< PP_USER_MIN, or<br>PPn> PP_USER_MAX|
+|Fail=4|Reported value is outside of sensor span.|`PPₙ` < `PP_SENSOR_MIN`, or<br>`PPₙ`> `PP_SENSOR_MAX`|
+|Suspect=3|Reported value is outside of user-selected span.|`PPₙ` < `PP_USER_MIN`, or<br>`PPₙ` > `PP_USER_MAX`|
 |Pass=1|Applies for test pass condition.|N/A|
-|**Test Exceptio**|**n:**None.||
-|**Test specifica**<br>**Examples:**|**tions to be established locally by operato**<br>PP_SENSOR_MAX = 400 µg/L (limited b<br>PP_SENSOR_MIN = 0 µg/L<br>PP_USER_MAX = 100 µg/L<br>PP_USER_MIN = 1µg/L|**r.**<br>y the character output field, for example)|
 
+Test Exception: None.
 
+Test specifications to be established locally by operator.
 
-24 
+Example:<br>
+`PP_SENSOR_MAX` = 400 µg/L (limited by the character output field, for example)<br>
+`PP_SENSOR_MIN` = 0 µg/L<br>
+`PP_USER_MAX` = 100 µg/L<br>
+`PP_USER_MIN` = 1µg/L
 
-_Phytoplankton_ 
+<a id="test-5-climatology-test"></a>
 
-#### **Test 5) Climatology Test (Strongly Recommended)** 
+**Test 5 - Climatology Test (Strongly Recommended)** 
 
-##### **Test that data point falls within seasonal expectations** 
+Test that data point falls within seasonal expectations.
+This test is a variation on the gross range check, 
+where the gross range `PP_Season_MAX` and `PP_Season_MIN` are adjusted monthly, 
+seasonally, 
+or at some other operator-selected time period (`TIM_TST`). 
+Expertise of the local user is required to determine reasonable seasonal averages. 
+Longer time series permit more refined identification of appropriate thresholds. 
 
-This test is a variation on the gross range check, where the gross range PP_Season_MAX and PP_Season_MIN are adjusted monthly, seasonally, or at some other operator-selected time period (TIM_TST). Expertise of the local user is required to determine reasonable seasonal averages. Longer time series permit more refined identification of appropriate thresholds. 
-
-|**Flags**|**Condition**|**Codable Instructions**|
+|Flags|Condition|Codable Instructions|
 |---|---|---|
-|Fail=4|Because of the dynamic nature of<br>PP, no fail flag is identified for this<br>test.|N/A|
-|Suspect=3|Reported value is outside of user-<br>identified climatology window.|PPn< PP_Season_MIN or<br>PPn> PP_Season_MAX|
+|Fail=4|Because of the dynamic nature of `PP`, no fail flag is identified for this test.|N/A|
+|Suspect=3|Reported value is outside of user-identified climatology window.|`PPₙ` < `PP_Season_MIN` or<br>`PPₙ` > `PP_Season_MAX`|
 |Pass=1|Applies for test pass condition.|N/A|
-|**Test Exceptio**|**n:**None.||
-|**Test specifica**<br>TIM_TST inte|**tions to be established locally by operator:**<br>rvals.|A seasonal matrix of PPmaxand PPminvalues at all|
-|**Examples:**|PP_WINTER_MIN = 1 µg/L PP_WINTER_M|AX = 50 µg/L|
 
+Test Exception: None.
 
+Test specifications to be established locally by operator: A seasonal matrix of `PPₘₐₓ` and `PPₘᵢₙ` values at all `TIM_TST` intervals.
 
-25 
+Examples: `PP_WINTER_MIN` = 1 µg/L `PP_WINTER_MAX` = 50 µg/L.
 
+<a id="test-6-spike-test"></a>
 
+**Test 6 - Spike Test (Strongly Recommended)** 
 
-#### **Test 6) Spike Test (Strongly Recommended)** 
+Data point n-1 exceeds a selected threshold relative to adjacent data points.
+This check is for single value spikes, 
+specifically the PP value at point n-1 (`PP₍ₙ₋₁₎`). 
+Spikes consisting of more than one data point are notoriously difficult to capture, 
+but their onset may be flagged by the rate of change test. 
+This spike test example consists of two operator-selected thresholds, `THRSHLD_LOW` and `THRSHLD_HIGH`. 
+Adjacent data points (`PPₙ₋₂` and `PPₙ`) are averaged to form a spike reference (`SPK_REF`). 
+The absolute value of the spike is tested to capture positive and negative going spikes. 
+Large spikes are easier to identify as outliers and flag as failures. 
+Smaller spikes may be real and are only flagged suspect. 
+Some operators may only wish to test for negative-going spikes, 
+since positive-going spikes may often be real. 
 
-**Data point n-1 exceeds a selected threshold relative to adjacent data points** 
-
-This check is for single value spikes, specifically the PP value at point n-1 (PPn-1)). Spikes consisting of more than one data point are notoriously difficult to capture, but their onset may be flagged by the rate of change test. This spike test example consists of two operator-selected thresholds, THRSHLD_LOW and THRSHLD_HIGH. Adjacent data points (PPn-2 and PPn) are averaged to form a spike reference (SPK_REF). The absolute value of the spike is tested to capture positive and negative going spikes. Large spikes are easier to identify as outliers and flag as failures. Smaller spikes may be real and are only flagged suspect. Some operators may only wish to test for negative-going spikes, since positive-going spikes may often be real. 
-
-|**Flags**|**Condition**|**Codable Instructions**|
+|Flags|Condition|Codable Instructions|
 |---|---|---|
-|Fail=4|The high spike threshold was exceeded.|| PPn-1- SPK_REF| > THRSHLD_HIGH|
-|Suspect=3|The low spike threshold was exceeded.|| PPn-1- SPK_REF| > THRSHLD_LOW<br>| PPn-1- SPK_REF| < THRSHLD_HIGH|
+|Fail=4|The high spike threshold was exceeded.|\| `PPₙ₋₁` - `SPK_REF`\| > `THRSHLD_HIGH`|
+|Suspect=3|The low spike threshold was exceeded.|\| PPₙ₋₁ - `SPK_REF`\| > `THRSHLD_LOW`<br>\|`PPₙ₋₁` - `SPK_REF`\| < `THRSHLD_HIGH`|
 |Pass=1|Applies for test pass condition.|N/A|
-|**Test Exceptio**|**n:**None.||
-|**Test specifica**<br>**Examples:**|**tions to be established locally by operator.**<br>THRSHLD_LOW =10 µg/L, THRSHLD_HIGH =|25 µg/L|
 
+Test Exception: None.
 
+Test specifications to be established locally by operator.
 
-26 
+Examples: `THRSHLD_LOW` =10 µg/L, `THRSHLD_HIGH` = 25 µg/L.
 
-_Phytoplankton_ 
+<a id="test-7-rate-of-change-test"></a>
 
-#### **Test 7) Rate of Change Test (Strongly Recommended)** 
+**Test 7 - Rate of Change Test (Strongly Recommended)** 
 
-##### **Excessive rise/fall test** 
+Excessive rise/fall test.
+This test inspects the time series for a time rate of change that exceeds a threshold value identified by the operator. 
+`PP` values can change dramatically over short periods, 
+hindering the value of this test. 
+A balance must be found between a threshold set too low, 
+which triggers too many false alarms, 
+and one set too high, 
+making the test ineffective. 
+Determining the excessive rate of change is left to the local operator. 
+The following are two different examples provided by QARTOD VI participants used to select the thresholds. 
+Implementation of this test can be challenging. 
+Upon failure, 
+it is unknown which of the points is bad. 
+Further, upon failing a data point, 
+it remains to be determined how the next iteration can be handled. 
 
-This test inspects the time series for a time rate of change that exceeds a threshold value identified by the operator. PP values can change dramatically over short periods, hindering the value of this test. A balance must be found between a threshold set too low, which triggers too many false alarms, and one set too high, making the test ineffective. Determining the excessive rate of change is left to the local operator. The following are two different examples provided by QARTOD VI participants used to select the thresholds. Implementation of this test can be challenging. Upon failure, it is unknown which of the points is bad. Further, upon failing a data point, it remains to be determined how the next iteration can be handled. 
+The rate of change between `PPₙ₋₁` and `PPₙ` must be less than three standard deviations (3*`SD`). 
+The SD of the `PP` time series is computed over the previous 25-hour period (user-selected value) to accommodate cyclical diurnal and tidal fluctuations. 
+Both the number of SDs (`N_DEV`) and the period over which the SDs (`TIM_DEV`) are calculated are determined by the local operator. 
 
-The rate of change between PPn-1 and PPn must be less than three standard deviations (3*SD). The SD of the PP time series is computed over the previous 25-hour period (user-selected value) to accommodate cyclical diurnal and tidal fluctuations. Both the number of SDs (N_DEV) and the period over which the SDs (TIM_DEV) are calculated are determined by the local operator. 
+The rate of change between `PPₙ₋₁` and `PPₙ` must be less than a fixed `PP` value +2SD. 
 
-The rate of change between PPn-1 and PPn must be less than a fixed PP value +2SD. 
-
-|**Flags**|**Condition**|**Codable Instructions**|
+|Flags|Condition|Codable Instructions|
 |---|---|---|
-|Fail=4|Because of the dynamic nature of PP,<br>no red flag is identified for this test.|N/A|
-|Suspect=3|The rate of change exceeds the<br>selected threshold.||PPn– PPn-1|>N_DEV*SD|
+|Fail=4|Because of the dynamic nature of `PP`, no red flag is identified for this test.|N/A|
+|Suspect=3|The rate of change exceeds the selected threshold.|\|`PPₙ` – `PPₙ₋₁`\|>`N_DEV`*`SD`|
 |Pass=1|Applies for test pass condition.|N/A|
 
+Test Exception: Some conditions introduce the possibility of valid repeated zero values, challenging the calculation of time-local thresholds. The rate of change check does not apply to zero-valued `PP` observations.
 
+Test specifications to be established locally by operator. 
 
-**Test Exception:** Some conditions introduce the possibility of valid repeated zero values, challenging the calculation of time-local thresholds. The rate of change check does not apply to zero-valued PP observations. **Test specifications to be established locally by operator. Example:** N_DEV = 3, TIM_DEV = 25 
+Example: `N_DEV` = 3, `TIM_DEV` = 25.
 
-27 
+<a id="test-8-flat-line-test"></a>
 
+**Test 8 - Flat Line Test (Strongly Recommended)** 
 
+Invariate `PP` value.
+When some sensors and/or data collection platforms fail, 
+the result can be a continuously repeated observation of the same value. 
+This test compares the present observation (`PPₙ`) to a number (`REP_CNT_FAIL` or `REP_CNT_SUSPECT`) of previous observations. 
+`PPₙ` is flagged if it has the same value as previous observations within a tolerance value EPS to allow for numerical round-off error. 
+Note that historical flags are not changed. 
 
-**Test 8) Flat Line Test (Strongly Recommended)** 
-
-##### **Invariate PP value** 
-
-When some sensors and/or data collection platforms fail, the result can be a continuously repeated observation of the same value. This test compares the present observation (PPn) to a number (REP_CNT_FAIL or REP_CNT_SUSPECT) of previous observations. PPn is flagged if it has the same value as previous observations within a tolerance value EPS to allow for numerical round-off error. Note that historical flags are not changed. 
-
-|**Flags**|**Condition**|**Codable Instructions**|
+|Flags|Condition|Codable Instructions|
 |---|---|---|
-|Fail=4|When the five most recent<br>observations are equal, PPnis flagged<br>fail.|PPn≠ 0<br>AND<br>For i=1,REP_CNT_FAIL PPn-PPn-i<EPS|
-|Suspect=3|It is possible but unlikely that the<br>present observation and the two<br>previous observations would be<br>equal. When the three most recent<br>observations are equal, PPnis flagged<br>suspect.|For i=1,REP_CNT_SUSPECT PPn-PPn-i<EPS|
+|Fail=4|When the five most recent observations are equal, `PPₙ` is flagged fail.|`PPₙ` ≠ 0<br>AND<br>For i=1, `REP_CNT_FAIL` `PPₙ` - `PPₙ₋ᵢ` < `EPS`|
+|Suspect=3|It is possible but unlikely that the present observation and the two previous observations would be equal. When the three most recent observations are equal, `PPₙ` is flagged suspect.|For i=1,`REP_CNT_SUSPECT` `PP`ₙ - `PPₙ₋ᵢ` < `EPS`|
 |Pass=1|Applies for test pass condition.|N/A|
 
+Test Exception: Sensor failure introduces the possibility of repeated zero values, but repeated zero values may be accurate. Operators must carefully choose how to flag data under these conditions.
 
+Test specifications to be established locally by operator.
 
-**Test Exception** : Sensor failure introduces the possibility of repeated zero values, but repeated zero values may be accurate. Operators must carefully choose how to flag data under these conditions. **Test specifications to be established locally by operator. Examples:** REP_CNT_FAIL = 5, REP_CNT_SUSPECT= 3 
+Examples: `REP_CNT_FAIL` = 5, `REP_CNT_SUSPECT` = 3.
 
-28 
+<a id="test-9-multi-variate-test"></a>
 
-_Phytoplankton_ 
+**Test 9 - Multi-Variate Test (Suggested)** 
 
-#### **Test 9) Multi-Variate Test (Suggested)** 
+Comparison to other variables.
 
-##### **Comparison to other variables** 
+This is an advanced family of tests, 
+starting with the simpler test described here and anticipating growth towards full co-variance testing in the future. 
+To our knowledge, 
+no one is conducting tests such as these in real time. 
+As these tests are developed and implemented, 
+they should indeed be documented and standardized in later versions of this living phytoplankton QC manual. 
 
-This is an advanced family of tests, starting with the simpler test described here and anticipating growth towards full co-variance testing in the future. To our knowledge, no one is conducting tests such as these in real time. As these tests are developed and implemented, they should indeed be documented and standardized in later versions of this living phytoplankton QC manual. 
+In this simple example, 
+it is a pair of rate of change tests as described in test 7. 
+The `PP` rate of change test is conducted with a more restrictive threshold (`N_PP_DEV`). 
+If this test fails, 
+a second rate of change test operating on a second variable (perhaps temperature or conductivity) is conducted. 
+The absolute valued rate of change should be tested since the relationship between `DPP` and variable two is indeterminate. 
+If the rate of change test on the second variable _fails_ to exceed a threshold (e.g., an anomalous step is found in `PP` and is lacking in temperature), 
+then the `PPₙ` value is flagged. 
 
-In this simple example, it is a pair of rate of change tests as described in test 7. The PP rate of change test is conducted with a more restrictive threshold (N_PP_DEV). If this test fails, a second rate of change test operating on a second variable (perhaps temperature or conductivity) is conducted. The absolute valued rate of change should be tested since the relationship between DPP and variable two is indeterminate. If the rate of change test on the second variable _fails_ to exceed a threshold (e.g., an anomalous step is found in PP and is lacking in temperature), then the PPn value is flagged. 
-
-|**Flags**|**Condition**|**Codable Instructions**|
+|Flags|Condition|Codable Instructions|
 |---|---|---|
-|Fail=4|Because of the dynamic nature of PP,<br>no fail flag is identified for this test.|N/A|
-|Suspect=3|PP_n_fails the PP rate of change and<br>the second variable does not exceed<br>the rate of change.||PPn– PPn-1|>N_PP_DEV*SD_PP<br>AND<br>|TEMPn– TEMPn-1|<N_TEMP_DEV*SD_T|
+|Fail=4|Because of the dynamic nature of `PP`, no fail flag is identified for this test.|N/A|
+|Suspect=3|`PP_n_fails` the `PP` rate of change and the second variable does not exceed the rate of change.|\|`PPₙ` – `PPₙ₋₁`\| > `N_PP_DEV` * `SD_PP`<br>AND<br>\|`TEMPₙ` – `TEMPₙ₋₁`\| < `N_TEMP_DEV` * `SD_T`|
 |Pass=1|Applies for test pass condition.|N/A|
-|**Test Exceptio**|**n:**None.||
-|**Test specifica**<br>**Examples:**|**tions to be established locally by operator.**<br>N_PP_DEV = 2, N_TEMP_DEV=2, TIM_DEV =|25 hours|
 
+Test Exception: None.
 
+Test specifications to be established locally by operator.
+
+Examples: `N_PP_DEV` = 2, `N_TEMP_DEV` = 2, `TIM_DEV` = 25 hours.
 
 **NOTE:** In a more complex case, more than one secondary rate of change test can be conducted. Temperature, salinity, turbidity, dissolved oxygen, and dissolved nutrients are all possible secondary candidates, and they all could be checked for anomalous rate of change values. In this case, a knowledgeable operator may elect to pass a high rate of change PP observation when any one of the secondary variables also exhibits a high rate of change. Such tests border on modeling, should be carefully considered, and may be beyond the scope of this effort. 
 
-The phytoplankton QC committee recognized the high value in full co-variance testing but also noted the challenges. Such testing remains to be a research project not yet ready for operational implementation. 
+The phytoplankton QC committee recognized the high value in full co-variance testing but also noted the challenges. 
+Such testing remains to be a research project not yet ready for operational implementation. 
 
-29 
+<a id="test-10-attenuated-signal-test"></a>
 
+**Test 10 - Attenuated Signal Test (Suggested)** 
 
+A test for inadequate variation of the time series. 
+A `PP` sensor failure can provide a data series that is nearly but not exactly a flat line (for example, if the sensor head was to become wrapped in debris). 
+This test inspects for a standard deviation (`SD`) value or a range variation (`MAX-MIN`) value that fails to exceed threshold values (`MIN_VAR_WARN`, `MIN_VAR_FAIL`) over a selected period (`TST_TIM`). 
 
-<!-- Start of picture text -->
-—<br><!-- End of picture text -->
-
-#### **Test 10) Attenuated Signal Test (Suggested)** 
-
-A test for inadequate variation of the time series 
-
-A PP sensor failure can provide a data series that is nearly but not exactly a flat line (for example, if the sensor head was to become wrapped in debris). This test inspects for a standard deviation (SD) value or a range variation (MAX-MIN) value that fails to exceed threshold values (MIN_VAR_WARN, MIN_VAR_FAIL) over a selected period (TST_TIM). 
-
-|**Flags**|**Condition**|**Codable Instructions**|
+|Flags|Condition|Codable Instructions|
 |---|---|---|
-|Fail=4|Variation fails to meet the minimum<br>threshold MIN_VAR_FAIL.|During TST_TIM, SD <MIN_VAR_FAIL, or<br>During TST_TIM, MAX-MIN <MIN_VAR_FAIL|
-|Suspect=3|Variation fails to meet the minimum<br>threshold MIN_VAR_WARN.|During TST_TIM, SD <MIN_VAR_WARN, or<br>During TST_TIM, MAX-MIN <MIN_VAR_WARN|
+|Fail=4|Variation fails to meet the minimum threshold `MIN_VAR_FAIL`.|During `TST_TIM`, `SD` < `MIN_VAR_FAIL`, or<br>During `TST_TIM`, `MAX` - `MIN` < `MIN_VAR_FAIL`|
+|Suspect=3|Variation fails to meet the minimum threshold `MIN_VAR_WARN`.|During `TST_TIM`, `SD` < `MIN_VAR_WARN`, or<br>During `TST_TIM`, `MAX` - `MIN` < `MIN_VAR_WARN`|
 |Pass=1|Applies for test pass condition.|N/A|
-|**Test Exceptio**|**n:**None.||
-|**Test specifica**<br>**Examples:**|**tions to be established locally by operator.**<br>TST_TIM = 12 hours<br>MIN_VAR_WARN = 5 µg/L, MIN_VAR_FAIL|= 1 µg/L|
 
+Test Exception: None.
 
+Test specifications to be established locally by operator.
 
-30 
+Examples: `TST_TIM` = 12 hours<br>`MIN_VAR_WARN` = 5 µg/L, `MIN_VAR_FAIL` = 1 µg/L`.
 
-_Phytoplankton_ 
+<a id="test-11-neighbor-test"></a>
 
-#### **Test 11) Neighbor Test (Suggested)** 
+**Test 11 - Neighbor Test (Suggested)** 
 
-##### **Comparison to nearby PP sensors** 
-
+Comparison to nearby PP sensors. 
 The check has the potential to be the most useful test when a nearby second sensor is determined to have a similar response. 
 
-In a perfect world, redundant PP sensors utilizing different technology would be co-located and alternately serviced at different intervals. This close neighbor would provide the ultimate QC check, but cost prohibits such a deployment in most cases. 
+In a perfect world, 
+redundant `PP` sensors utilizing different technology would be co-located and alternately serviced at different intervals. 
+This close neighbor would provide the ultimate QC check, 
+but cost prohibits such a deployment in most cases. 
 
-In the real world, there are very few instances where a second PP sensor is sufficiently proximate to provide a useful QC check. Just a few hundred meters in the horizontal and less than 10 meters of vertical separation yield greatly different results. Nevertheless, the test should not be overlooked where it may have application. 
+In the real world, 
+there are very few instances where a second PP sensor is sufficiently proximate to provide a useful QC check. 
+Just a few hundred meters in the horizontal and less than 10 meters of vertical separation yield greatly different results. 
+Nevertheless, 
+the test should not be overlooked where it may have application. 
 
-This test is the same as _9) multi-variate test – comparison to other variables_ where the second variable is the second PP sensor. The selected thresholds depend entirely upon the relationship between the two sensors as determined by the local knowledge of the operator. 
+This test is the same as _9) multi-variate test – comparison to other variables_ where the second variable is the second PP sensor. 
+The selected thresholds depend entirely upon the relationship between the two sensors as determined by the local knowledge of the operator. 
 
-In the instructions and examples below, data from one site (PP1) are compared to a second site (PP2). The standard deviation for each site (SD1, SD2) is calculated over the period (TIM_DEV) and multiplied as appropriate (N_PP1_DEV for site PP1) to calculate the rate of change threshold. Note that an operator could also choose to use the same threshold for each site since they are presumed to be similar. 
+In the instructions and examples below, data from one site (`PP1`) are compared to a second site (`PP2`). 
+The standard deviation for each site (`SD1`, `SD2`) is calculated over the period (TIM_DEV) and multiplied as appropriate (`N_PP1_DEV` for site `PP1`) to calculate the rate of change threshold. 
+Note that an operator could also choose to use the same threshold for each site since they are presumed to be similar. 
 
-|**Flags**|**Condition**|**Codable Instructions**|
+|Flags|Condition|Codable Instructions|
 |---|---|---|
-|Fail=4|Because of the dynamic nature of<br>PP, no fail flag is identified for this<br>test.|N/A|
-|Suspect=3|PP_n_fails the PP rate of change and<br>the second PP sensor does not<br>exceed the rate of change.||PP1n– PP1n-1|>N_PP1_DEV*SD1<br>AND<br>|PP2n– PP2n-1|<N_PP2_DEV*SD2|
+|Fail=4|Because of the dynamic nature of `PP`, no fail flag is identified for this test.|N/A|
+|Suspect=3|`PP_n_fails` the `PP` rate of change and the second `PP` sensor does not exceed the rate of change.|\|`PP1ₙ` – `PP1ₙ₋₁`\| > `N_PP1_DEV` * `SD1`<br>AND<br>\|`PP2ₙ`– `PP2ₙ₋₁`\| < `N_PP2_DEV` * `SD2`|
 |Pass=1|Applies for test pass condition.|N/A|
 
+Test Exception: None.
 
+Test specifications to be established locally by operator.
 
-**Test Exception:** None. 
+Examples: `N_PP1_DEV` = 2, `N_PP2_DEV` = 2, `TIM_DEV` = 25 hours.
 
-**Test specifications to be established locally by operator. Examples:** N_PP1_DEV = 2, N_PP2_DEV=2, TIM_DEV = 25 hours 
+#### 3.3.2. Applications of QC Tests to Mobile Phytoplankton Sensor Deployments
 
-#### **3.3.2. Applications of QC Tests to Mobile Phytoplankton Sensor Deployments** 
-
-The specific application of the QC tests can be dependent on the way the sensor is deployed. Table 3-3 provides a summary of each QC test described earlier in section 3.3.1 and indicates any changes necessary for the test to be applied to different deployment scenarios. Note that the “s” axis indicates “along path” for mobile platforms. 
-
-31 
-
-
-
-**Table 3-3.** Application of Required QC Tests for Sensor Deployments. Note: The ‘s’ axis means “along path.” 
+The specific application of the QC tests can be dependent on the way the sensor is deployed. 
+Table 3-3 provides a summary of each QC test described earlier in section 3.3.1 and indicates any changes necessary for the test to be applied to different deployment scenarios. 
+Note that the “s” axis indicates “along path” for mobile platforms.
 
 |**Test**|**Condition**|**Platform**|**Codable**<br>**Instructions**|
 |---|---|---|---|
@@ -1108,13 +1165,7 @@ The specific application of the QC tests can be dependent on the way the sensor 
 |**4) Gross Range Test (Required)**<br>All sensors have a limited output range, and this<br>can form the most rudimentary gross range<br>check. No values less than a minimum value or<br>greater than the maximum value the sensor can|Data point<br>exceeds<br>sensor or<br>operator<br>selected|Stationary<br>Fixed<br>Vertical<br>Mobile|No change|
 |<br>output (PP_SENSOR_MIN, PP_SENSOR_MAX) are<br>acceptable. Additionally, the operator can select<br>a smaller span (PP_USER_MIN, PP_USER_MAX)<br>based upon local knowledge or a desire to draw<br>attention to extreme values.|min/max.|3-D||
 
-
-
-32 
-
-_Phytoplankton_ 
-
-**Table 3-4.** Application of Strongly Recommended QC Tests for Sensor Deployments 
+: Table 3-3. Application of Required QC Tests for Sensor Deployments. Note: The ‘s’ axis means “along path.”
 
 |**Test**|**Condition**|**Platform**|**Codable**<br>**Instructions**|
 |---|---|---|---|
@@ -1131,28 +1182,14 @@ _Phytoplankton_
 |of change in that exceed a threshold value<br>identified by the operator. PP values can<br>change dramatically over short periods,<br>hindering the value of this test. A balance must<br>be found between a threshold set too low,||Mobile|No change, or<br>test is conducted<br>along s, x, or y<br>axis|
 |which triggers too many false alarms, and one<br>set too high, making the test ineffective.<br>Determining the excessive rate of change is left<br>to the local operator. The following are two||3-D|No change, or<br>test is conducted<br>along s, x, y, or z<br>axis|
 
-
-
 This test inspects the time series for time rate of change in that exceed a threshold value identified by the operator. PP values can change dramatically over short periods, hindering the value of this test. A balance must be found between a threshold set too low, which triggers too many false alarms, and one set too high, making the test ineffective. Determining the excessive rate of change is left to the local operator. The following are two different examples provided by QARTOD VI participants used to select the thresholds. Implementation of this test can be challenging. Upon failure, it is unknown which of the points is bad. Further, upon failing a data point, it remains to be determined how the next iteration can be handled. 
 
-33 
-
-
-
-|**Test**|**Condition**|**Platform**|**Codable**<br>**Instructions**|
-|---|---|---|---|
 |**8) Flat Line Test (Strongly Recommended)**|Invariate PP|Stationary|No change|
 |When some sensors and/or data collection<br>platforms fail, the result can be a continuously|value.|Vertical|Test is conducted<br>alongz axis|
 |repeated observation of exactly the same<br>value. This test compares the present<br>observation (PPn) to a number (REP_CNT_FAIL||Mobile|No change, or test is<br>conducted along s, x,<br>or y axis|
 |or<br>REP_CNT_SUSPECT)<br>of<br>previous<br>observations. PPnis flagged if it has the same<br>value as previous observations within a<br>tolerance value EPS to allow for numerical<br>round-off error. Note that historical flags are<br>not changed.||3-D|No change, or test is<br>conducted along s, x,<br>y, or z axis|
 
-
-
-34 
-
-_Phytoplankton_ 
-
-**Table 3-5.** Application Suggested QC Tests for Sensor Deployments 
+: Table 3-4. Application of Strongly Recommended QC Tests for Sensor Deployments.
 
 |**Test**|**Condition**|**Platform**|**Codable**<br>**Instructions**|
 |---|---|---|---|
@@ -1169,19 +1206,13 @@ _Phytoplankton_
 |to have a similar response.||Mobile|No change|
 |This test is the same as test_9) multi-variate_<br>_check – comparison to other variables_where the<br>second variable is the second PP sensor. The<br>selected thresholds depend entirely upon the<br>relationship between the two sensors as<br>determined by the local knowledge of the<br>operator.||3-D|No change|
 
+: Table 3-5. Application Suggested QC Tests for Sensor Deployments.
 
-
-35 
-
-
-
-### **Implementation Scenarios** 
-
-
+### 3.4 Implementation Scenarios
 
 Two implementation scenarios are presented to provide additional guidance. Hourly observations from a moored fluorometer, as a measure of chlorophyll- _a_ , are used in these examples. The first scenario presumes an operator with few resources and requirements, e.g., a small coastal city monitoring water quality and wishing to comply with U.S. IOOS standards. The second scenario describes implementation conducted by a research institute with substantial expertise in such measurements. The goal is to generate research-quality data. The researchers may wish to examine questionable data manually in real time, and they understand that data quality controlled in real time will result in a better data set after annual post-processing. 
 
-#### **_Scenario 1_** 
+**_Scenario 1_** 
 
 Only the first four required tests are conducted because the city does not have the resources to develop additional tests or staff to manually evaluate suspect data. QC flags for the eleven tests are initially set at 2-Not Evaluated. 
 
@@ -1195,7 +1226,7 @@ _(4) Gross Range Test_ – The fluorometer in use has a range of 0–50 µg/L. A
 
 _Data Flag Dissemination -_ Users of the data are interested only in data that have passed all implemented QC checks. A single roll-up flag is generated, which is set at the highest (worst) setting of the implemented test flags. The data are disseminated together with the roll-up flag. 
 
-#### **_Scenario 2_** 
+**_Scenario 2_** 
 
 The research institute is a major contributor to a Regional Association, has good data management support, and maintains an active program that uses the fluorometric data. They choose to implement many QARTOD tests and may actively work to develop additional tests. QC flags for the eleven tests are initially set at 2-Not Evaluated. 
 

@@ -1508,55 +1508,69 @@ The individuals listed below participated in the initial series of teleconferenc
 
 **QARTOD Board of Advisors**
 
-|Name|Organization|
+| Name | Organization |
 |---|---|
-|Kathleen Bailey – Project Manager<br>Julie Bosch<br>Eugene Burger<br>Janet Fredericks<br>Matt Howard<br>Bob Jensen<br>Chris Paternostro<br>Mario Tamburri<br>Julie Thomas – BOA Chair<br>**U.S**<br>**Name**|U.S. IOOS<br>NOAA/National Centers for Environmental Information<br>NOAA/Pacific Marine Environmental Laboratory<br>Woods Hole Oceanographic Institution<br>GCOOS/Texas A&M University<br>U.S. Army Corps of Engineers<br>NOS/Center for Operational Oceanographic Products and Services<br>University of Maryland Center for Environmental Science / Chesapeake<br>Biological Laboratory<br>SCCOOS/Scripps Institution of Oceanography/Coastal Data Information<br>Program<br>**. IOOS Regional Associations**<br>**Organization**|
-|Josie Quintrell<br>Clarissa Anderson<br>Francisco Chavez<br>Debra Hernandez<br>Barbara Kirkpatrick<br>Gerhard Kuska<br>Molly McCammon<br>Julio Morell<br>Ru Morrison<br>Jan Newton<br>Melissa Iwamoto<br>Kelli Paige|IOOS Association<br>SCCOOS<br>CeNCOOS<br>SECOORA<br>GCOOS<br>MARACOOS<br>AOOS<br>CariCOOS<br>NERACOOS<br>NANOOS<br>PacIOOS<br>GLOS|
+| Kathleen Bailey – Project Manager | U.S. IOOS |
+| Julie Bosch | NOAA/National Centers for Environmental Information |
+| Eugene Burger | NOAA/Pacific Marine Environmental Laboratory |
+| Janet Fredericks | Woods Hole Oceanographic Institution |
+| Matt Howard | GCOOS/Texas A&M University |
+| Bob Jensen | U.S. Army Corps of Engineers |
+| Chris Paternostro | NOS/Center for Operational Oceanographic Products and Services |
+| Mario Tamburri | University of Maryland Center for Environmental Science / Chesapeake Biological Laboratory |
+| Julie Thomas – BOA Chair | SCCOOS/Scripps Institution of Oceanography/Coastal Data Information Program |
 
-|**DMAC Community**|
-|---|
-|**Regional Associations**|
-|**AOOS**<br>**GCOOS**|
-|Carol Janzen<br>Bob Currier|
-|**CARICOOS**<br>**SECOORA**|
-|Miguel Canals<br>Abbey Wakely|
-|Roy Watlington<br>Debra Hernandez|
-|Filipe Pires Alvarenga Fernandes|
-|**Research Organizations**|
-|**Gulf of Maine Research Institute**<br>**Scripps Institution of Oceanography**|
-|Eric Bridger<br>Darren Wright|
-|**Monterey Bay Aquarium Research Institute**<br>**Smithsonian Environmental Research Center**|
-|Aric Bickel<br> <br>Matthew Ogburn|
-|Anderson David|
-|Fred Bahr|
-|**Federal and State Agencies**|
-|**Bureau of Ocean Energy Management**<br>**Environmental Protection Agency**|
-|Brian Zelenke<br>Dwane Young|
-|Jonathan Blythe|
-|**Great Lakes Commission**|
-|Guan Wang|
-|**National Oceanic and Atmospheric Administration**|
-|Becky Baltes<br>Jennifer Bosch|
-|Bill Woodward<br>Jennifer Patterson|
-|Kenneth Casey<br>Jessica Morgan|
-|Mark VanWaes<br>Kevin O'Brien|
-|Alexander Birger<br>Lynn Dewitt|
-|Bob Simons<br>Mark Bushnell|
-|Byron Kilbourne<br>Mathew Biddle|
-|Dave Easter<br>Micah Wengren|
-|Derrick Snowden<br>Rita Adak|
-|Eric Johnson<br>Robert Bassett|
-|Frank Lodato<br>Samantha Simmons|
-|Gabrielle Canonico<br>Thomas Ryan|
-|Jack Harlan<br>Tiffany Vance|
-|Jason Gedamke<br>Tim Boyer|
-|Jeff de La Beaujardiere<br>Tony Lavoi|
-|Jenifer Rhoades<br>Xiaoyan Li|
-|**U.S. Army Corps of Engineers**<br>**U.S. Geological Survey**|
-|Jeff Lillycrop<br>Abigail Benson<br>James Kreft|
-|Rich Signell<br>Sky Bristol|
+**U.S. IOOS Regional Associations**
 
-|**Academic Institutions**||
+| Name | Organization |
+|---|---|
+| Josie Quintrell | IOOS Association |
+| Clarissa Anderson | SCCOOS |
+| Francisco Chavez | CeNCOOS |
+| Debra Hernandez | SECOORA |
+| Barbara Kirkpatrick | GCOOS |
+| Gerhard Kuska | MARACOOS |
+| Molly McCammon | AOOS |
+| Julio Morell | CariCOOS |
+| Ru Morrison | NERACOOS |
+| Jan Newton | NANOOS |
+| Melissa Iwamoto | PacIOOS |
+| Kelli Paige | GLOS |
+
+**DMAC COMMUNITY**
+
+**Regional Associations**
+
+|   |   |
+|---|---|
+|**AOOS**|Carol Janzen|
+|**GCOOS**|Bob Currier|
+|**CARICOOS**|Miguel Canals<br>Roy Watlington|
+|**SECOORA**|Abbey Wakely<br>Debra Hernandez<br>Filipe Pires Alvarenga Fernandes|
+
+**Research Organizations**
+
+|   |   |
+|---|---|
+|**Gulf of Maine Research Institute**|Eric Bridger|
+|**Scripps Institution of Oceanography**|Darren Wright|
+|**Monterey Bay Aquarium Research Institute**|Aric Bickel<br>Anderson David<br>Fred Bahr|
+|**Smithsonian Environmental Research Center**|Matthew Ogburn|
+
+**Federal and State Agencies**
+
+|   |   |
+|---|---|
+|**Bureau of Ocean Energy Management**|Brian Zelenke<br>Jonathan Blythe|
+|**Environmental Protection Agency**|Dwane Young|
+|**Great Lakes Commission**|Guan Wang|
+|**National Oceanic and Atmospheric Administration**|Becky Baltes<br>Bill Woodward<br>Kenneth Casey<br>Mark VanWaes<br>Alexander Birger<br>Bob Simons<br>Byron Kilbourne<br>Dave Easter<br>Derrick Snowden<br>Eric Johnson<br>Frank Lodato<br>Gabrielle Canonico<br>Jack Harlan<br>Jason Gedamke<br>Jeff de La Beaujardiere<br>Jenifer Rhoades<br>Jennifer Bosch<br>Jennifer Patterson<br>Jessica Morgan<br>Kevin O'Brien<br>Lynn Dewitt<br>Mark Bushnell<br>Mathew Biddle<br>Micah Wengren<br>Rita Adak<br>Robert Bassett<br>Samantha Simmons<br>Thomas Ryan<br>Tiffany Vance<br>Tim Boyer<br>Tony Lavoi<br>Xiaoyan Li|
+|**U.S. Army Corps of Engineers**|Jeff Lillycrop|
+|**U.S. Geological Survey**|Abigail Benson<br>James Kreft<br>Rich Signell<br>Sky Bristol|
+
+**Academic Institutions**
+
+|   |   |
 |---|---|
 |**University of Maine**|Bob Fleming|
 |**University of Maryland**|Mario Tamburri|
@@ -1567,7 +1581,11 @@ The individuals listed below participated in the initial series of teleconferenc
 |**Texas A & M University**|Felimon Gayanilo|
 |**Rutgers University**|John Kerfoot<br>Michael Vardaro|
 |**University of Tasmania**|Peter Walsh|
-|**Private Industry**||
+
+**Private Industry**
+
+|   |   |
+|---|---|
 |**LimnoTech**|Kathy Koch<br>Tad Slawecki|
 |**RPS Group**|Kelly Knee<br>Luke Campbell<br>Melanie Gearon|
 |**Axiom**|Kyle Wilcox<br>Rob Bochenek<br>Shane StClair|
@@ -1575,11 +1593,29 @@ The individuals listed below participated in the initial series of teleconferenc
 
 ## Appendix B. Quality Assurance
 
-A major pre-requisite for establishing data quality for phytoplankton concentration is having strong QA practices that address all actions related to the sensor during pre-deployment, deployment, and postdeployment. The consensus that emerged from past QARTOD meetings was that good quality data requires good QA, and good QA requires good scientists, engineers, and technicians applying consistent practices. Generally, QA practices relate to observing systems’ sensors (the hardware) and include things like appropriate sensor selection, calibration, sensor handling and service, and evaluation of sensor performance. 
+A major pre-requisite for establishing data quality for phytoplankton concentration is having strong QA practices that address all actions related to the sensor during pre-deployment, deployment, and postdeployment. 
+The consensus that emerged from past QARTOD meetings was that good quality data requires good QA, and good QA requires good scientists, 
+engineers, 
+and technicians applying consistent practices. 
+Generally, 
+QA practices relate to observing systems’ sensors (the hardware) and include things like appropriate sensor selection, 
+calibration, 
+sensor handling and service, 
+and evaluation of sensor performance. 
 
 ### B.1 Sensor Calibration Considerations
 
-Observations must be traceable to one or more accepted standards such as NIST through a calibration performed by the manufacturer and/or the operator. If the calibration is conducted by the manufacturer, the operator must also conduct some form of an acceptable calibration check. For example, the WET Labs fluorometer manuals (http://wetlabs.com/sites/default/files/documents/WLECOMasterben.pdf) include information within their calibration section entitled _Field Characterization_ that guides the user through a protocol to check the accuracy of the data even after the manufacturer has completed calibration of the instrument. An often-overlooked calibration or calibration check can be performed by choosing a consensus standard. For example, deriving the same answer (within acceptable levels of data precision or data uncertainty) from four different sensors of four different manufacturers, preferably utilizing several different technologies, constitutes an acceptable check. Because of the trend toward corporate conglomeration, those wishing to employ a consensus standard should ensure that the different manufacturers are truly independent. 
+Observations must be traceable to one or more accepted standards such as NIST through a calibration performed by the manufacturer and/or the operator. 
+If the calibration is conducted by the manufacturer, 
+the operator must also conduct some form of an acceptable calibration check. 
+For example, 
+the WET Labs fluorometer manuals (http://wetlabs.com/sites/default/files/documents/WLECOMasterben.pdf) include information within their calibration section entitled _Field Characterization_ that guides the user through a protocol to check the accuracy of the data even after the manufacturer has completed calibration of the instrument. 
+An often-overlooked calibration or calibration check can be performed by choosing a consensus standard. 
+For example, deriving the same answer (within acceptable levels of data precision or data uncertainty) from four different sensors of four different manufacturers, 
+preferably utilizing several different technologies, 
+constitutes an acceptable check. 
+Because of the trend toward corporate conglomeration, 
+those wishing to employ a consensus standard should ensure that the different manufacturers are truly independent. 
 
 **Sizing and counting.** New FlowCams shipped from Fluid Imaging Technologies (FIT) must meet size and counting tolerances using the National Institute of Standards and Technology (NIST)-traceable bead formulations, which are specific to each objective and flow cell installed.  Each objective and camera combination has a specific sizing and counting calibration factor that adheres to a 5 percent tolerance for sizing and 20 percent tolerance for counting. FlowCam operators can perform their own internal QC testing periodically or when a new user starts with the instrument. FIT can also be contracted to verify that the instrument’s sizing and counting calibration factors meet the acceptable tolerances. 
 
@@ -1767,7 +1803,17 @@ The lists in the following sections suggest ways to ensure QA by using specific 
 
 ### B.6 Additional Sources of QA Information
 
-Operators using phytoplankton sensors also have access to other sources of QA practices and information about a variety of instruments. For example, the Alliance for Coastal Technologies (ACT) serves as an unbiased, third party testbed for evaluating sensors and platforms for use in coastal and ocean environments. ACT conducts instrument performance demonstrations and verifications so that effective existing technologies can be recognized and promising new technologies can become available to support coastal science, resource management, and ocean observing systems (ACT 2012). The NOAA Ocean Systems Test and Evaluation Program (OSTEP) also conducts independent tests and evaluations on emerging technology as well as new sensor models. Both ACT and OSTEP publish findings that can provide information about QA, calibration, and other aspects of sensor functionality. The following list provides links to additional resources on QA practices. 
+Operators using phytoplankton sensors also have access to other sources of QA practices and information about a variety of instruments. 
+For example, 
+the Alliance for Coastal Technologies (ACT) serves as an unbiased, 
+third party testbed for evaluating sensors and platforms for use in coastal and ocean environments. 
+ACT conducts instrument performance demonstrations and verifications so that effective existing technologies can be recognized and promising new technologies can become available to support coastal science, resource management, 
+and ocean observing systems (ACT 2012). 
+The NOAA Ocean Systems Test and Evaluation Program (OSTEP) also conducts independent tests and evaluations on emerging technology as well as new sensor models. 
+Both ACT and OSTEP publish findings that can provide information about QA, 
+calibration, 
+and other aspects of sensor functionality. 
+The following list provides links to additional resources on QA practices. 
 
 - Manufacturer specifications and supporting Web pages/documents 
 

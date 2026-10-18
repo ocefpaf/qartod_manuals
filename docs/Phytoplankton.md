@@ -1513,12 +1513,6 @@ The individuals listed below participated in the initial series of teleconferenc
 |Kathleen Bailey – Project Manager<br>Julie Bosch<br>Eugene Burger<br>Janet Fredericks<br>Matt Howard<br>Bob Jensen<br>Chris Paternostro<br>Mario Tamburri<br>Julie Thomas – BOA Chair<br>**U.S**<br>**Name**|U.S. IOOS<br>NOAA/National Centers for Environmental Information<br>NOAA/Pacific Marine Environmental Laboratory<br>Woods Hole Oceanographic Institution<br>GCOOS/Texas A&M University<br>U.S. Army Corps of Engineers<br>NOS/Center for Operational Oceanographic Products and Services<br>University of Maryland Center for Environmental Science / Chesapeake<br>Biological Laboratory<br>SCCOOS/Scripps Institution of Oceanography/Coastal Data Information<br>Program<br>**. IOOS Regional Associations**<br>**Organization**|
 |Josie Quintrell<br>Clarissa Anderson<br>Francisco Chavez<br>Debra Hernandez<br>Barbara Kirkpatrick<br>Gerhard Kuska<br>Molly McCammon<br>Julio Morell<br>Ru Morrison<br>Jan Newton<br>Melissa Iwamoto<br>Kelli Paige|IOOS Association<br>SCCOOS<br>CeNCOOS<br>SECOORA<br>GCOOS<br>MARACOOS<br>AOOS<br>CariCOOS<br>NERACOOS<br>NANOOS<br>PacIOOS<br>GLOS|
 
-
-
-A-2 
-
-_Phytoplankton_ 
-
 |**DMAC Community**|
 |---|
 |**Regional Associations**|
@@ -1562,12 +1556,6 @@ _Phytoplankton_
 |Jeff Lillycrop<br>Abigail Benson<br>James Kreft|
 |Rich Signell<br>Sky Bristol|
 
-
-
-A-3 
-
-
-
 |**Academic Institutions**||
 |---|---|
 |**University of Maine**|Bob Fleming|
@@ -1585,17 +1573,11 @@ A-3
 |**Axiom**|Kyle Wilcox<br>Rob Bochenek<br>Shane StClair|
 |**Animal Tracking Network**|Jonathan Pye|
 
-
-
-A-4 
-
-_Phytoplankton_ 
-
-## **Appendix B.  Quality Assurance** 
+## Appendix B. Quality Assurance
 
 A major pre-requisite for establishing data quality for phytoplankton concentration is having strong QA practices that address all actions related to the sensor during pre-deployment, deployment, and postdeployment. The consensus that emerged from past QARTOD meetings was that good quality data requires good QA, and good QA requires good scientists, engineers, and technicians applying consistent practices. Generally, QA practices relate to observing systems’ sensors (the hardware) and include things like appropriate sensor selection, calibration, sensor handling and service, and evaluation of sensor performance. 
 
-### **B.1 Sensor Calibration Considerations** 
+### B.1 Sensor Calibration Considerations
 
 Observations must be traceable to one or more accepted standards such as NIST through a calibration performed by the manufacturer and/or the operator. If the calibration is conducted by the manufacturer, the operator must also conduct some form of an acceptable calibration check. For example, the WET Labs fluorometer manuals (http://wetlabs.com/sites/default/files/documents/WLECOMasterben.pdf) include information within their calibration section entitled _Field Characterization_ that guides the user through a protocol to check the accuracy of the data even after the manufacturer has completed calibration of the instrument. An often-overlooked calibration or calibration check can be performed by choosing a consensus standard. For example, deriving the same answer (within acceptable levels of data precision or data uncertainty) from four different sensors of four different manufacturers, preferably utilizing several different technologies, constitutes an acceptable check. Because of the trend toward corporate conglomeration, those wishing to employ a consensus standard should ensure that the different manufacturers are truly independent. 
 
@@ -1603,25 +1585,36 @@ Observations must be traceable to one or more accepted standards such as NIST th
 
 **Image recognition.** The FlowCam requires a specialized technician to initially create training sets that contain good quality, in-focus, and accurate images. This image recognition QC is required so that classification, filters, or the Classifier Advanced add-on feature to Visualspreadsheet can autonomously organize and classify genera or species-level acquired data captured in AutoImage or Trigger modes. 
 
-### **B.2 Sensor Comparison** 
+### B.2 Sensor Comparison
 
-An effective QA effort continually strives to ensure that end data products are of high value and to prove they are free of error. Operators should seek out partnering opportunities to inter-compare systems by colocating differing sensors, thereby demonstrating high quality by both to the extent that there is agreement and providing a robust measure of observation data uncertainty by the level of disagreement. If possible, operators should retain an alternate sensor or technology from a second manufacturer for similar in-house checks. For resource-constrained operators, however, it may not be possible to spend the time and funds needed to procure and maintain two systems. For those who do so and get two different results, the use of alternate sensors or technologies provide several important messages: a) a measure of corporate capabilities; 
+An effective QA effort continually strives to ensure that end data products are of high value and to prove they are free of error. 
+Operators should seek out partnering opportunities to inter-compare systems by colocating differing sensors, 
+thereby demonstrating high quality by both to the extent that there is agreement and providing a robust measure of observation data uncertainty by the level of disagreement. 
+If possible, operators should retain an alternate sensor or technology from a second manufacturer for similar in-house checks. 
+For resource-constrained operators, 
+however, 
+it may not be possible to spend the time and funds needed to procure and maintain two systems. 
+For those who do so and get two different results, 
+the use of alternate sensors or technologies provide several important messages: 
+a) a measure of corporate capabilities; b) a reason to investigate, understand the different results, and take corrective action; and c) increased understanding that, when variables are measured with different technologies, different answers can be correct; 
+they must be understood in order to properly report results. 
+For those who succeed in obtaining similar results, 
+the additional sensors provide a highly robust demonstration of capability. 
+Such efforts form the basis of a strong QA/QC effort. Further, sensor comparison provides the operator with an expanded supply source, 
+permitting less reliance upon a single manufacturer and providing competition that is often required by procurement offices. 
 
-B-1 
+Users often take samples during deployment, 
+recovery, 
+or service. 
+These times are risky for ensuring quality sensor data—often due to initial stabilization, 
+sensor/environment disturbance, 
+or high fouling near the end of the deployment. 
+At least one sample should be obtained mid-deployment without disturbing the sensor.
 
+### B.3 Bio-fouling and Corrosion Prevention Strategies
 
-
-b) a reason to investigate, understand the different results, and take corrective action; and c) increased understanding that, when variables are measured with different technologies, different answers can be correct; they must be understood in order to properly report results. For those who succeed in obtaining similar results, the additional sensors provide a highly robust demonstration of capability. Such efforts form the basis of a strong QA/QC effort. Further, sensor comparison provides the operator with an expanded supply source, permitting less reliance upon a single manufacturer and providing competition that is often required by procurement offices. 
-
-Users often take samples during deployment, recovery, or service. These times are risky for ensuring quality sensor data—often due to initial stabilization, sensor/environment disturbance, or high fouling near the end of the deployment. At least one sample should be obtained mid-deployment without disturbing the sensor. 
-
-B-2 
-
-_Phytoplankton_ 
-
-### **B.3 Bio-fouling and Corrosion Prevention Strategies** 
-
-Bio-fouling is a frequent cause of phytoplankton sensor failure, so the following strategies may be useful for ameliorating the problem: 
+Bio-fouling is a frequent cause of phytoplankton sensor failure, 
+so the following strategies may be useful for ameliorating the problem: 
 
 - Use anti-fouling paint with the highest copper content available (up to 75%) when possible (but not on aluminum). 
 
@@ -1661,21 +1654,17 @@ Bio-fouling is a frequent cause of phytoplankton sensor failure, so the followin
 
 - Store the device above the surface between measurements. 
 
-- For vertical profilers store the sensor below the euphotic zone. 
+- For vertical profilers store the sensor below the euphotic zone.
 
-- Make use of a pumped system where the sensor is kept above water and the sample is pumped through a flow chamber just before a reading is required. 
+- Make use of a pumped system where the sensor is kept above water and the sample is pumped through a flow chamber just before a reading is required.
 
 - Use petroleum-based lubricants as biocides (using care near optics and other sensitive components). 
 
-- Carefully maintain and clean filters. 
+- Carefully maintain and clean filters.
 
-- Obtain mid-deployment validation field samples. 
+- Obtain mid-deployment validation field samples.
 
-B-3 
-
-
-
-### **B.4 Common QA Considerations** 
+### B.4 Common QA Considerations 
 
 The following lists suggest ways to ensure QA by using specific procedures and techniques: 
 
@@ -1697,7 +1686,7 @@ The following lists suggest ways to ensure QA by using specific procedures and t
 
 - Monitor battery voltage and watch for unexpected fluctuations. 
 
-#### **When evaluating which instrument to use, consider these factors:** 
+**When evaluating which instrument to use, consider these factors:** 
 
 - Selection of a reliable and supportive manufacturer and appropriate model 
 
@@ -1725,7 +1714,7 @@ The following lists suggest ways to ensure QA by using specific procedures and t
 
 - Form factor 
 
-#### **When evaluating which specifications must be met:** 
+**When evaluating which specifications must be met:** 
 
 - State the expected accuracy. 
 
@@ -1735,7 +1724,7 @@ The following lists suggest ways to ensure QA by using specific procedures and t
 
 - Determine whether the result is good enough (fit for purpose: data are adequate for nominal use as preliminary data ). 
 
-#### **General comments regarding QA procedures:** 
+**General comments regarding QA procedures:** 
 
 - A diagram (http://www.ldeo.columbia.edu/~dale/dataflow/), contributed by Dale Chayes (LDEO) provides a visual representation of proper QA procedures. 
 
@@ -1745,11 +1734,7 @@ The following lists suggest ways to ensure QA by using specific procedures and t
 
 - Do not assume the calibration is perfect (could be a calibration problem rather than a sensor problem). 
 
-- Keep good records of all related sensor calibrations and checks (e.g., conductivity and temperature). 
-
-B-4 
-
-_Phytoplankton_ 
+- Keep good records of all related sensor calibrations and checks (e.g., conductivity and temperature).
 
 - Use NIST-traceable standards when conducting calibrations or calibration checks. 
 
@@ -1761,49 +1746,50 @@ _Phytoplankton_
 
 - Follow the manufacturer’s recommendations and best practices established by knowledgeable users to ensure proper sampling techniques. For example, in a non-pumped sensor in a turbulent environment, bubbles can adhere to the surface of a sensor resulting in anomalous readings. Cycle the wipers or shutter before the reading to brush off the bubbles from the face of the instrument. For a pumped system in a turbulent environment, a degassing “Y” may limit bubbles adhering to the face of the sensor. 
 
-### **B.5 QA Levels for Best Practices** 
+### B.5 QA Levels for Best Practices
 
-A wide variety of techniques are used by operators to assure that phytoplankton sensors are properly calibrated and operating within specifications. While all operators must conduct some form of validation, there is no need to force operators to adhere to one single method. A balance exists between available resources, level of proficiency of the operator, and accuracy. The various techniques span a range of validation levels and form a natural hierarchy that can be used to establish levels of certification for operators (table A-1). The lists in the following sections suggest ways to ensure QA by using specific procedures and techniques. 
+A wide variety of techniques are used by operators to assure that phytoplankton sensors are properly calibrated and operating within specifications. 
+While all operators must conduct some form of validation, 
+there is no need to force operators to adhere to one single method. 
+A balance exists between available resources, 
+level of proficiency of the operator, 
+and accuracy. 
+The various techniques span a range of validation levels and form a natural hierarchy that can be used to establish levels of certification for operators (table A-1). 
+The lists in the following sections suggest ways to ensure QA by using specific procedures and techniques. 
 
-Table A-1. Best practices indicator for QA 
-
-|**QA Best**<br>**Practices**<br>**Indicator**|**Description**|
+|QA Best Practices Indicator|Description|
 |---|---|
-|**Good Process**|Phytoplankton sensors are swapped and/or serviced at sufficiently regular<br>intervals so as to avoid data steps (unexpected offsets) upon swap/service. Pre-<br>and post-deployment calibration checks are conducted on each sensor.|
-|**Better Process**|The good processes are employed, plus pre- and post-deployment calibration<br>checks are conducted using alternative sensors to confirm performance.|
-|**Best Process**|The better processes are employed, following a well-documented protocol, or<br>alternative sensors are used to validate in-situ deployments. Or, pre- and post-<br>calibrations are conducted by the manufacturer.|
+|**Good Process**|Phytoplankton sensors are swapped and/or serviced at sufficiently regular intervals so as to avoid data steps (unexpected offsets) upon swap/service. Pre- and post-deployment calibration checks are conducted on each sensor.|
+|**Better Process**|The good processes are employed, plus pre- and post-deployment calibration checks are conducted using alternative sensors to confirm performance.|
+|**Best Process**|The better processes are employed, following a well-documented protocol, or alternative sensors are used to validate in-situ deployments. Or, pre- and post- calibrations are conducted by the manufacturer.|
 
+: Table A-1. Best practices indicator for QA. 
 
-
-B-5 
-
-
-
-### **B.6 Additional Sources of QA Information** 
+### B.6 Additional Sources of QA Information
 
 Operators using phytoplankton sensors also have access to other sources of QA practices and information about a variety of instruments. For example, the Alliance for Coastal Technologies (ACT) serves as an unbiased, third party testbed for evaluating sensors and platforms for use in coastal and ocean environments. ACT conducts instrument performance demonstrations and verifications so that effective existing technologies can be recognized and promising new technologies can become available to support coastal science, resource management, and ocean observing systems (ACT 2012). The NOAA Ocean Systems Test and Evaluation Program (OSTEP) also conducts independent tests and evaluations on emerging technology as well as new sensor models. Both ACT and OSTEP publish findings that can provide information about QA, calibration, and other aspects of sensor functionality. The following list provides links to additional resources on QA practices. 
 
 - Manufacturer specifications and supporting Web pages/documents 
 
-- QARTOD - <u>https://ioos.noaa.gov/project/qartod/</u> 
+- QARTOD - <https://ioos.noaa.gov/project/qartod/> 
 
-- ACT - <u>http://www.act-us.info/</u> 
+- ACT - <http://www.act-us.info/> 
 
-- USGS - <u>http://water.usgs.gov/owq/quality.html</u> 
+- USGS - <http://water.usgs.gov/owq/quality.html> 
 
-- USGS - <u>http://pubs.usgs.gov/tm/2006/tm1D3/</u> 
+- USGS - <http://pubs.usgs.gov/tm/2006/tm1D3/> 
 
-- USGS - <u>http://or.water.usgs.gov/pubs/WRIR01-4273/wri014273.pdf</u> 
+- USGS - <http://or.water.usgs.gov/pubs/WRIR01-4273/wri014273.pdf> 
 
-- WOCE - <u>https://www.nodc.noaa.gov/woce/</u> 
+- WOCE - <https://www.nodc.noaa.gov/woce/> 
 
-- NWQMC - <u>http://acwi.gov/monitoring/</u> 
+- NWQMC - <http://acwi.gov/monitoring/> 
 
-### **B.7 Sample Checklists** 
+### B.7 Sample Checklists
 
 The following samples provide hints for development of deployment checklists taken from QARTOD IV: 
 
-#### **General QA Checklist:** 
+**General QA Checklist:** 
 
 - Read the manual. 
 
@@ -1825,13 +1811,9 @@ The following samples provide hints for development of deployment checklists tak
 
 - Establish and use a formal pre-deployment checklist. 
 
-- Ensure that technicians are well-trained. Use a tracking system to identify those technicians who are highly trained and then pair them with inexperienced technicians for training purposes. 
+- Ensure that technicians are well-trained. Use a tracking system to identify those technicians who are highly trained and then pair them with inexperienced technicians for training purposes.
 
-B-6 
-
-_Phytoplankton_ 
-
-#### **Deployment Checklist** 
+**Deployment Checklist** 
 
 - Clean bio-fouling off platform. 
 
@@ -1853,7 +1835,7 @@ _Phytoplankton_
 
 - Note weather conditions and members of field crew. 
 
-#### **Post-deployment Checklist** 
+**Post-deployment Checklist** 
 
 - Take pictures of recovered sensor prior to cleaning. 
 

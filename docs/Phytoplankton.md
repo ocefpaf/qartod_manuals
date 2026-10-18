@@ -424,7 +424,7 @@ As this technology continues to emerge it is expected that the QC tests describe
 |Puck capacity|132 pucks (archive only; or 22 HAB/DA array phases)|
 |Depth|Maximum depth of 50 m with addition of surface ESPpressure housing|
 |Temperature rating|4 °C to 29 °C (depending on reagents deployed)|
-|Max deployment time|6 months(dependingonpower source)|
+|Max deployment time|6 months(depending on power source)|
 |Power|10 – 16 Vdc|
 
 : Table 2-5. Overview of ESP specifications.
@@ -527,7 +527,7 @@ and the filter itself must remain free of growth.
 
 Phytoplankton sensors can be deployed in several ways. Stationary sensor deployments are on fixed platforms or moorings where there is minimal movement either horizontally or vertically. Alternatively, sensors may be lowered from a ship, deployed aboard autonomous surface or underwater vehicles, or installed on moored or drifting buoys. The typical constraints of oceanographic data collection apply—including cost, power, data transmission, bio-fouling, vandalism, and electronics in a marine environment. Examples of these deployment options are shown in fig. 2-7.
 
-![Deployment options.](images_Phytoplankton/image7.png)
+![Deployment options.](images_Phytoplankton/image7.PNG)
 ![Deployment options.](images_Phytoplankton/image8.png)
 
 <figcaption>Figure 2-7. Upper left shows a fixed structure on the Mississippi River at Baton Rouge, where the instrument cage is lowered and raised. Upper right shows a NexSens buoy supporting a variety of water quality instruments. Bottom figure shows a Seabird electronics 9-11 CTD equipped with a variety of auxiliary sensors, a rosette, and Niskin bottles being retrieved from the R/V Oscar Dyson during a NOAA (BASIS) cruise in 2012. (Upper photos courtesy of Dr. Brian Pellerin/USGS. Lower photo courtesy of Jeanette Gann/NOAA.)</figcaption>
@@ -871,7 +871,7 @@ Check to ensure that the message is structured properly.
 Received data record contains the proper structure without any indicators of flawed transmission such as parity errors. 
 Possible tests are: a) the expected number of characters (`NCHAR`) for fixed length messages equals the number of characters received (`REC_CHAR`), 
 or b) passes a standard parity bit check, 
-CRC check, etc. 
+`CRC` check, etc. 
 Many such syntax tests exist, 
 and the user should select the best criteria for one or more syntax tests. 
 
@@ -895,7 +895,7 @@ Example: `NCHAR` = 128.
 
 Check for reasonable geographic location. 
 Test checks that the reported present physical location (latitude/longitude) is within operator-determined limits. 
-The location test(s) can vary from a simple invalid location to a more complex check for displacement (DISP) exceeding a distance limit (RANGEMAX) based upon a previous location and platform speed. 
+The location test(s) can vary from a simple invalid location to a more complex check for displacement (`DISP`) exceeding a distance limit (`RANGEMAX`) based upon a previous location and platform speed. 
 Operators may also check for erroneous locations based upon other criteria, 
 such as reported positions over land, as appropriate. 
 
@@ -982,7 +982,7 @@ since positive-going spikes may often be real.
 |Flags|Condition|Codable Instructions|
 |---|---|---|
 |Fail=4|The high spike threshold was exceeded.|\| `PPₙ₋₁` - `SPK_REF`\| > `THRSHLD_HIGH`|
-|Suspect=3|The low spike threshold was exceeded.|\| PPₙ₋₁ - `SPK_REF`\| > `THRSHLD_LOW`<br>\|`PPₙ₋₁` - `SPK_REF`\| < `THRSHLD_HIGH`|
+|Suspect=3|The low spike threshold was exceeded.|\| `PPₙ₋₁` - `SPK_REF`\| > `THRSHLD_LOW`<br>\|`PPₙ₋₁` - `SPK_REF`\| < `THRSHLD_HIGH`|
 |Pass=1|Applies for test pass condition.|N/A|
 
 Test Exception: None.
@@ -1115,7 +1115,7 @@ Examples: `TST_TIM` = 12 hours<br>`MIN_VAR_WARN` = 5 µg/L, `MIN_VAR_FAIL` = 1 �
 
 **Test 11 - Neighbor Test (Suggested)** 
 
-Comparison to nearby PP sensors. 
+Comparison to nearby `PP` sensors. 
 The check has the potential to be the most useful test when a nearby second sensor is determined to have a similar response. 
 
 In a perfect world, 
@@ -1129,11 +1129,11 @@ Just a few hundred meters in the horizontal and less than 10 meters of vertical 
 Nevertheless, 
 the test should not be overlooked where it may have application. 
 
-This test is the same as _9) multi-variate test – comparison to other variables_ where the second variable is the second PP sensor. 
+This test is the same as _9) multi-variate test – comparison to other variables_ where the second variable is the second `PP` sensor. 
 The selected thresholds depend entirely upon the relationship between the two sensors as determined by the local knowledge of the operator. 
 
 In the instructions and examples below, data from one site (`PP1`) are compared to a second site (`PP2`). 
-The standard deviation for each site (`SD1`, `SD2`) is calculated over the period (TIM_DEV) and multiplied as appropriate (`N_PP1_DEV` for site `PP1`) to calculate the rate of change threshold. 
+The standard deviation for each site (`SD1`, `SD2`) is calculated over the period (`TIM_DEV`) and multiplied as appropriate (`N_PP1_DEV` for site `PP1`) to calculate the rate of change threshold. 
 Note that an operator could also choose to use the same threshold for each site since they are presumed to be similar. 
 
 |Flags|Condition|Codable Instructions|
@@ -1166,7 +1166,7 @@ Note that the “s” axis indicates “along path” for mobile platforms.
 | **Test** | **Condition** | **Platform** | **Codable Instructions** |
 |---|---|---|---|
 | **5) Climatology Test (Strongly Recommended)**<br>This test is a variation on the gross range check, where the gross range `PP_Season_MAX` and `PP_Season_MIN` are adjusted monthly, seasonally, or at some other operator-selected time period (`TIM_TST`). Expertise of the local user is required to determine reasonable seasonal averages. Longer time series permit more refined identification of appropriate thresholds. | Test that data point falls within seasonal expectations. | Stationary<br>Fixed<br>Vertical<br>Mobile<br>3-D | No change<br><br>Test conducted along z axis<br><br>Test conducted along s, x, or y axis<br><br>Test conducted along s, x, y, or z axis |
-| **6) Spike Test (Strongly Recommended)**<br>This check is for single value spikes, specifically the `PP` value at point n-1 (`PPₙ₋₁`). Spikes consisting of more than one data point are notoriously difficult to capture, but their onset may be flagged by the rate of change test. The spike test consists of two operator-selected thresholds above or below adjacent data points, THRSHLD_LOW and THRSHLD_HIGH. Adjacent data points (`PPₙ₋₂` and `PPₙ`) are averaged to form a spike reference (`SPK_REF`). The absolute value of the spike is tested to capture positive and negative going spikes. Large spikes are easier to identify as outliers and flag as failures. Smaller spikes may be real and are only flagged suspect. | Data point n-1 exceeds a selected threshold relative to adjacent data points. | Stationary<br>Fixed<br>Vertical<br>Mobile<br>3-D | No change<br><br>Test is conducted along z axis<br><br>No change, or test is conducted along s, x, or y axis<br><br>No change, or test is conducted along s, x, y, or z axis |
+| **6) Spike Test (Strongly Recommended)**<br>This check is for single value spikes, specifically the `PP` value at point n-1 (`PPₙ₋₁`). Spikes consisting of more than one data point are notoriously difficult to capture, but their onset may be flagged by the rate of change test. The spike test consists of two operator-selected thresholds above or below adjacent data points, `THRSHLD_LOW` and `THRSHLD_HIGH`. Adjacent data points (`PPₙ₋₂` and `PPₙ`) are averaged to form a spike reference (`SPK_REF`). The absolute value of the spike is tested to capture positive and negative going spikes. Large spikes are easier to identify as outliers and flag as failures. Smaller spikes may be real and are only flagged suspect. | Data point n-1 exceeds a selected threshold relative to adjacent data points. | Stationary<br>Fixed<br>Vertical<br>Mobile<br>3-D | No change<br><br>Test is conducted along z axis<br><br>No change, or test is conducted along s, x, or y axis<br><br>No change, or test is conducted along s, x, y, or z axis |
 | **7) Rate of Change Test (Strongly Recommended)**<br>This test inspects the time series for time rate of change that exceeds a threshold value identified by the operator. `PP` values can change dramatically over short periods, hindering the value of this test. A balance must be found between a threshold set too low, which triggers too many false alarms, and one set too high, making the test ineffective. Determining the excessive rate of change is left to the local operator. The following are two different examples provided by QARTOD VI participants used to select the thresholds. Implementation of this test can be challenging. Upon failure, it is unknown which of the points is bad. Further, upon failing a data point, it remains to be determined how the next iteration can be handled. | Excessive rise/fall test. | Stationary<br>Fixed<br>Vertical<br>Mobile<br>3-D | No change<br><br>Test is conducted along z axis<br><br>No change, or test is conducted along s, x, or y axis<br><br>No change, or test is conducted along s, x, y, or z axis |
 | **8) Flat Line Test (Strongly Recommended)**<br>When some sensors and/or data collection platforms fail, the result can be a continuously repeated observation of exactly the same value. This test compares the present observation (`PPₙ`) to a number (`REP_CNT_FAIL` or `REP_CNT_SUSPECT`) of previous observations. `PPₙ` is flagged if it has the same value as previous observations within a tolerance value `EPS` to allow for numerical round-off error. Note that historical flags are not changed. | Invariant PP value. | Stationary<br>Vertical<br>Mobile<br>3-D | No change<br><br>Test is conducted along z axis<br><br>No change, or test is conducted along s, x, or y axis<br><br>No change, or test is conducted along s, x, y, or z axis |
 
@@ -1229,7 +1229,7 @@ _(6) Spike Test -_ The operator scans years of data on hand to determine the hig
 
 _(7) Rate of Change Test_ - The operator has computed a time series of first differences for the hourly historical record and finds that 95% of all first differences are less than 5 µg/L. This is used as the justification for the selection of the Rate of Change threshold, and the test is coded as described in the QARTOD manual. When the absolute value of the difference between the present and the previous value exceeds 5 µg/L, the Rate of Change flag for the present value is set to 3-Suspect. No 4-Fail flag is implemented. When the difference is less than 5 µg/L, the flag is set to 1-Pass. 
 
-_(8) Flat Line Test -_ The operator again decides to implement the Flat Line Test as described in the QARTOD manual. The resolution of the fluorometer is 0.01 µg/L, so that is the value chosen for the tolerance value EPS. When the most current value is equal to the previous two values (all ± EPS), the Flat Line Test flag is set to 3-Suspect. If the most current value is equal to the previous four values (all ± EPS), the Flat Line Test flag is set to 4-Fail. Otherwise, the flag is set to 1-Pass.
+_(8) Flat Line Test -_ The operator again decides to implement the Flat Line Test as described in the QARTOD manual. The resolution of the fluorometer is 0.01 µg/L, so that is the value chosen for the tolerance value `EPS`. When the most current value is equal to the previous two values (all ± `EPS`), the Flat Line Test flag is set to 3-Suspect. If the most current value is equal to the previous four values (all ± `EPS`), the Flat Line Test flag is set to 4-Fail. Otherwise, the flag is set to 1-Pass.
 
 _(9) Multi-Variate Test -_ While the operator often has seen covariance between fluorometric values and other variables such as temperature, salinity, and currents, these relationships are deemed not sufficiently well established to base a real-time QC test on them. This test may be implemented in the future.
 
@@ -1268,7 +1268,7 @@ but also notes that operators need the subject matter expertise in selecting the
 Because long-term data for phytoplankton variables are relatively scarce, 
 it is expected that refinement of thresholds and exceptions will occur over time globally as well as becoming more specific to regional databases. 
 
-      **Knowledgeable human involvement** is required to properly understand the physical, chemical, and biological conditions within which the phytoplankton observations are being taken. 
+      Knowledgeable human involvement is required to properly understand the physical, chemical, and biological conditions within which the phytoplankton observations are being taken. 
 
 Future QARTOD manuals will address standard QC test procedures and best practices for all types of common as well as uncommon platforms and sensors for all the U.S. IOOS core variables. Some test procedures may even take place within the sensor package. 
 Significant components of metadata will reside in the sensor and be transmitted either on demand or automatically along with the data stream. 

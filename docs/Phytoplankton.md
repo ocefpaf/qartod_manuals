@@ -1210,15 +1210,24 @@ This test inspects the time series for time rate of change in that exceed a thre
 
 ### 3.4 Implementation Scenarios
 
-Two implementation scenarios are presented to provide additional guidance. Hourly observations from a moored fluorometer, as a measure of chlorophyll- _a_ , are used in these examples. The first scenario presumes an operator with few resources and requirements, e.g., a small coastal city monitoring water quality and wishing to comply with U.S. IOOS standards. The second scenario describes implementation conducted by a research institute with substantial expertise in such measurements. The goal is to generate research-quality data. The researchers may wish to examine questionable data manually in real time, and they understand that data quality controlled in real time will result in a better data set after annual post-processing. 
+Two implementation scenarios are presented to provide additional guidance. 
+Hourly observations from a moored fluorometer, 
+as a measure of chlorophyll-_a_ , 
+are used in these examples. The first scenario presumes an operator with few resources and requirements, e.g., 
+a small coastal city monitoring water quality and wishing to comply with U.S. IOOS standards. 
+The second scenario describes implementation conducted by a research institute with substantial expertise in such measurements. 
+The goal is to generate research-quality data. 
+The researchers may wish to examine questionable data manually in real time, 
+and they understand that data quality controlled in real time will result in a better data set after annual post-processing. 
 
 **_Scenario 1_** 
 
-Only the first four required tests are conducted because the city does not have the resources to develop additional tests or staff to manually evaluate suspect data. QC flags for the eleven tests are initially set at 2-Not Evaluated. 
+Only the first four required tests are conducted because the city does not have the resources to develop additional tests or staff to manually evaluate suspect data. 
+QC flags for the eleven tests are initially set at 2-Not Evaluated. 
 
 _(1) Gap Test_ - If no hourly record is received, one is created. The Gap Test flag is set to 4-Fail, and the record is transmitted so that downstream data users understand where the communications failure occurred. No further QC testing is conducted. If the record is received as expected, the flag is set to 1-Pass. 
 
-_(2) Syntax Test_ – The operator’s existing code already has decoding error management. A line of code is inserted that sets the Syntax Test flag to 4-Fail when an error is encountered. No provision for a flag 3- Suspect is made because the operator does not have resources to attempt partial parsing of the record.  A record is created and transmitted so that downstream data users understand where the communications failure occurred. No further QC testing is conducted. 
+_(2) Syntax Test_ – The operator’s existing code already has decoding error management. A line of code is inserted that sets the Syntax Test flag to 4-Fail when an error is encountered. No provision for a flag 3-Suspect is made because the operator does not have resources to attempt partial parsing of the record.  A record is created and transmitted so that downstream data users understand where the communications failure occurred. No further QC testing is conducted. 
 
 _(3) Location Test_ – No location test is conducted because the mooring is visible from the beach; additionally, not transmitting the GPS location saves on system integration costs. 
 
@@ -1228,13 +1237,13 @@ _Data Flag Dissemination -_ Users of the data are interested only in data that h
 
 **_Scenario 2_** 
 
-The research institute is a major contributor to a Regional Association, has good data management support, and maintains an active program that uses the fluorometric data. They choose to implement many QARTOD tests and may actively work to develop additional tests. QC flags for the eleven tests are initially set at 2-Not Evaluated. 
+The research institute is a major contributor to a Regional Association, 
+has good data management support, 
+and maintains an active program that uses the fluorometric data. 
+They choose to implement many QARTOD tests and may actively work to develop additional tests. 
+QC flags for the eleven tests are initially set at 2-Not Evaluated. 
 
-_(1) Gap Test_ - If no hourly record is received, one is created. The Gap Test flag is set to 4-Fail, and the record is transmitted so that downstream data users understand where the communications failure occurred. No further QC testing is conducted. If the record is received as expected, the flag is set to 1-Pass. 
-
-36 
-
-_Phytoplankton_ 
+_(1) Gap Test_ - If no hourly record is received, one is created. The Gap Test flag is set to 4-Fail, and the record is transmitted so that downstream data users understand where the communications failure occurred. No further QC testing is conducted. If the record is received as expected, the flag is set to 1-Pass.
 
 _(2) Syntax Test_ – The operator’s existing code already has decoding error management and the ability to partially parse a record to retrieve values when possible. When a data value from the fluorometer is obtained but other portions of the record are corrupt, the Syntax flag is set to 3-Suspect. When no fluorometer value can be decoded, the Syntax Flag is set to 4-Fail. In both cases, a record is created and transmitted so that downstream data users understand that a communications failure may, or did, occur. No further QC testing is conducted if the Syntax Flag was set to 4. Testing continues if the Syntax Flag was set to 3. If the record is decoded without error, the flag is set to 1-Pass. 
 
@@ -1242,147 +1251,164 @@ _(3) Location Test_ – The GPS position of the mooring is transmitted along wit
 
 _(4) Gross Range Test_ – The fluorometer in use has a range of 0–50 µg/L, but the operator has several years of data from this mooring and has never seen values exceeding 20 µg/L. The gross range fail thresholds are set at 0–25 µg/L. A value outside this range causes the Gross Range Test flag to be set to 4-Fail, and QC testing continues to the next test. The operator rarely sees values outside the range 1–10 µg/L and would find them of interest, so these values are initially used for the suspect range. A value outside this suspect range causes the Gross Range Test flag to be set to 3-Suspect. The operator understands that both the fail and suspect threshold ranges may need to be adjusted in the future. If the reported value does not exceed the suspect range, the Gross Range Test flag is set to 1-Pass. 
 
-_(5) Climatological Test -_ The operator has observed over the years that chlorophyll- _a_ values decrease in the winter and chooses to set suspect range thresholds for December through March to 1–8 µg/L. A value outside this suspect range causes the Climatological Test flag to be set to 3-Suspect. If the reported value does not exceed the suspect range, the Gross Range Test flag is set to 1-Pass. 
+_(5) Climatological Test -_ The operator has observed over the years that chlorophyll-_a_ values decrease in the winter and chooses to set suspect range thresholds for December through March to 1–8 µg/L. A value outside this suspect range causes the Climatological Test flag to be set to 3-Suspect. If the reported value does not exceed the suspect range, the Gross Range Test flag is set to 1-Pass. 
 
 _(6) Spike Test -_ The operator scans years of data on hand to determine the high and low spike thresholds and chooses 25 µg/L and 10 µg/L for these values. The operator believes the research institute has a better spike test than the Spike Test example described in this QARTOD manual and uses it instead. Their spike test is described on their QC website, and they have suggested this test be included when the QARTOD manual is next updated. 
 
 _(7) Rate of Change Test_ - The operator has computed a time series of first differences for the hourly historical record and finds that 95% of all first differences are less than 5 µg/L. This is used as the justification for the selection of the Rate of Change threshold, and the test is coded as described in the QARTOD manual. When the absolute value of the difference between the present and the previous value exceeds 5 µg/L, the Rate of Change flag for the present value is set to 3-Suspect. No 4-Fail flag is implemented. When the difference is less than 5 µg/L, the flag is set to 1-Pass. 
 
-_(8) Flat Line Test -_ The operator again decides to implement the Flat Line Test as described in the QARTOD manual. The resolution of the fluorometer is 0.01 µg/L, so that is the value chosen for the tolerance value EPS. When the most current value is equal to the previous two values (all ± EPS), the Flat Line Test flag is set to 3-Suspect. If the most current value is equal to the previous four values (all ± EPS), the Flat Line Test flag is set to 4-Fail. Otherwise, the flag is set to 1-Pass. 
+_(8) Flat Line Test -_ The operator again decides to implement the Flat Line Test as described in the QARTOD manual. The resolution of the fluorometer is 0.01 µg/L, so that is the value chosen for the tolerance value EPS. When the most current value is equal to the previous two values (all ± EPS), the Flat Line Test flag is set to 3-Suspect. If the most current value is equal to the previous four values (all ± EPS), the Flat Line Test flag is set to 4-Fail. Otherwise, the flag is set to 1-Pass.
+
+_(9) Multi-Variate Test -_ While the operator often has seen covariance between fluorometric values and other variables such as temperature, salinity, and currents, these relationships are deemed not sufficiently well established to base a real-time QC test on them. This test may be implemented in the future.
+
+_(10) Attenuated Signal Test -_ The operator decides that this suggested test is not appropriate for this mooring, where periods of relatively steady readings often occur.
+
+_(11) Neighbor Test -_ The fluorometer described in the first scenario is in the same body of water, a few kilometers away and closer to the coast. Data have been compared and the research institute operator has decided they are sufficiently similar to warrant implementation of a Neighbor Test. After comparing the two time-series, the operator decides that a simple difference threshold of 5 µg/L is all that is needed and chooses not to use the thresholds described in the QARTOD manual. Whenever readings from the two sites differ by more than 5 µg/L, the Neighbor Test flag is set to 3-Suspect for the most current value of the scenario-two fluorometer; otherwise, the flag is set to 1-Pass. The implemented Neighbor Test is described on the research institute’s QC website.
+
+_Data Flag Dissemination -_ The research institute chooses to disseminate the roll-up flag, as well as each implemented test flag, to assist with the evaluation of suspect data and support troubleshooting.
+
+## 4.0 Summary
+
+The QC test examples in this phytoplankton manual have been compiled using the guidance provided by QARTOD workshops (QARTOD 2003-2009) and from operators with extensive experience. 
+Wherever possible, 
+redundant tests have been merged. 
+These tests are designed to support a range of phytoplankton sensors and operator capabilities. 
+Some well-established programs with the highest standards have implemented very rigorous QC processes. 
+Others, 
+with different requirements, 
+may utilize sensors with data streams that cannot support as many QC checks—all have value when used prudently. 
+It is the responsibility of the users to understand and appropriately utilize data of varying quality, 
+and operators must provide support by documenting and publishing their QC processes. 
+A balance must be struck between the timesensitive needs of real-time observing systems and the degree of rigor that has been applied to non-real-time systems by operators with decades of QC experience. 
 
-37 
+The eleven data QC tests identified in this manual apply to phytoplankton observations from a variety of sensor types and platforms that may be used within U.S. IOOS and elsewhere. 
+The QARTOD phytoplankton committee’s objective is for the QC tests of these programs to comply with U.S. IOOS QARTOD requirements and recommendations without being overly prescriptive, 
+by providing meaningful guidance and thresholds that everyone can accomplish within a national framework. 
+The individual tests are described and include codable instructions, 
+output conditions, 
+example thresholds, 
+and exceptions (if any). 
 
+Selection of the proper thresholds is critical to a successful QC effort. 
+Thresholds can be based on historical knowledge or statistics derived from more recently acquired data and should not be determined arbitrarily. 
+This manual provides some guidance for selecting thresholds based on input from various operators, 
+but also notes that operators need the subject matter expertise in selecting the proper thresholds to maximize the value of their QC effort. 
+Because long-term data for phytoplankton variables are relatively scarce, 
+it is expected that refinement of thresholds and exceptions will occur over time globally as well as becoming more specific to regional databases. 
 
+      **Knowledgeable human involvement** is required to properly understand the physical, chemical, and biological conditions within which the phytoplankton observations are being taken. 
 
-_(9) Multi-Variate Test -_ While the operator often has seen covariance between fluorometric values and other variables such as temperature, salinity, and currents, these relationships are deemed not sufficiently well established to base a real-time QC test on them. This test may be implemented in the future. 
+Future QARTOD manuals will address standard QC test procedures and best practices for all types of common as well as uncommon platforms and sensors for all the U.S. IOOS core variables. Some test procedures may even take place within the sensor package. 
+Significant components of metadata will reside in the sensor and be transmitted either on demand or automatically along with the data stream. 
+Users may also reference metadata through Uniform Resource Locators to simplify the identification of which QC steps have been applied to data. 
+However, 
+QARTOD QC test procedures in this manual address only real-time, 
+in-situ observations made by sensors on fixed platforms or mobile platforms. 
+The tests do not include post-processing, which is not conducted in real time but may be useful for ecosystem-based management, 
+or delayed-mode, 
+which is required for climate studies. 
 
-_(10) Attenuated Signal Test -_ The operator decides that this suggested test is not appropriate for this mooring, where periods of relatively steady readings often occur. 
+Training and education are of paramount importance to ensuring that both QA and QC practices are in place. 
+The sensor manufacturers can play a huge role in this area. 
+The manufacturers have spent enormous efforts helping customers use these sensors successfully. 
+Most manufacturers provide instructions for best practices, 
+and those practices should be used as a first-order QA for all measurements. 
+The manufacturer-supplied user’s manual includes these instructions, 
+and following them carefully is critical to knowing how to use the instruments, 
+understanding their limitations and accuracy, 
+knowing how to interpret output, 
+and then having a meaningful way to validate performance. 
+Validation of sensor performance can be done by taking periodic water samples, 
+using a known calibrated and maintained reference instrument, 
+or performing laboratory tests to a given accuracy. 
 
-_(11) Neighbor Test -_ The fluorometer described in the first scenario is in the same body of water, a few kilometers away and closer to the coast. Data have been compared and the research institute operator has decided they are sufficiently similar to warrant implementation of a Neighbor Test. After comparing the two time-series, the operator decides that a simple difference threshold of 5 µg/L is all that is needed and chooses not to use the thresholds described in the QARTOD manual. Whenever readings from the two sites differ by more than 5 µg/L, the Neighbor Test flag is set to 3-Suspect for the most current value of the scenario-two fluorometer; otherwise, the flag is set to 1-Pass. The implemented Neighbor Test is described on the research institute’s QC website. 
+Each QC manual is a dynamic document and, 
+upon completion, 
+is posted on the QARTOD website (https://ioos.noaa.gov/project/qartod/). 
+This practice allows for updating each U.S. IOOS core variable QC manual as technology development occurs, 
+accommodating not only new sensors, 
+but also the upgrades envisioned for the existing sensors. 
 
-_Data Flag Dissemination -_ The research institute chooses to disseminate the roll-up flag, as well as each implemented test flag, to assist with the evaluation of suspect data and support troubleshooting. 
+This website permits easy access to all QARTOD material and updates as they are identified. 
+It includes procedures for testing data, 
+related documents, 
+and links to social media—enabling the growing ocean observing community to stay engaged across the enterprise regionally, 
+nationally, 
+and internationally. 
 
-38 
+This QARTOD project may be one of the best working examples of private-public partnerships, 
+which is a fundamental tenet of U.S. IOOS. 
+As this phytoplankton manual has exemplified, the sensor manufacturers must be fully involved in the creation of most, 
+if not all, 
+QC manuals for the selected U.S. IOOS core variables. 
 
-_Phytoplankton_ 
+It is through this kind of uniform QC process that integration can occur across the national ocean enterprise, 
+capitalizing the _I_ in U.S. IOOS. 
+Implementing these procedures will accelerate the research-to-operations process to support a real-time, 
+operational, 
+integrated ocean observing system of defined data quality.
 
-## **4.0 Summary** 
+## 5.0 References
 
-The QC test examples in this phytoplankton manual have been compiled using the guidance provided by QARTOD workshops (QARTOD 2003-2009) and from operators with extensive experience. Wherever possible, redundant tests have been merged. These tests are designed to support a range of phytoplankton sensors and operator capabilities. Some well-established programs with the highest standards have implemented very rigorous QC processes. Others, with different requirements, may utilize sensors with data streams that cannot support as many QC checks—all have value when used prudently. It is the responsibility of the users to understand and appropriately utilize data of varying quality, and operators must provide support by documenting and publishing their QC processes. A balance must be struck between the timesensitive needs of real-time observing systems and the degree of rigor that has been applied to non-real-time systems by operators with decades of QC experience. 
+> Bushnell, M., Presentation at QARTOD III: November 2005. Scripps Institution of Oceanography, La Jolla, California. 
 
-The eleven data QC tests identified in this manual apply to phytoplankton observations from a variety of sensor types and platforms that may be used within U.S. IOOS and elsewhere. The QARTOD phytoplankton committee’s objective is for the QC tests of these programs to comply with U.S. IOOS QARTOD requirements and recommendations without being overly prescriptive, by providing meaningful guidance and thresholds that everyone can accomplish within a national framework. The individual tests are described and include codable instructions, output conditions, example thresholds, and exceptions (if any). 
+> Cetinic, I., Poulton, N., and Slade, W. H. (2016). Characterizing the phytoplankton soup: pump and plumbing effects on the particle assemblage in underway optical seawater systems. _Optics Express_ , 20703-20715. 
 
-Selection of the proper thresholds is critical to a successful QC effort. Thresholds can be based on historical knowledge or statistics derived from more recently acquired data and should not be determined arbitrarily. This manual provides some guidance for selecting thresholds based on input from various operators, but also notes that operators need the subject matter expertise in selecting the proper thresholds to maximize the value of their QC effort. Because long-term data for phytoplankton variables are relatively scarce, it is expected that refinement of thresholds and exceptions will occur over time globally as well as becoming more 
+> Coley, K. (2016, Nov/Dec). A Colorful View from Space: Connecting Color to Phytoplankton with Novel Field Technology. _ECO Magazine_ , pp. 35-39. 
 
-specific to regional databases. 
+> Doucette, G.J., Mikulski, C.M., Jones, K.L., King, K.L., Greenfield, D.I., Marin III, R., Jensen, S., Roman, B., Elliott, C.T., Scholin, C.A. 2009. Remote, subsurface detection of the algal toxin domoic acid onboard the Environmental Sample Processor: assay development and field trials. Harmful Algae 8: 880-888. 
 
-Knowledgeable human involvement is required to properly understand the physical, chemical, and biological conditions within which the phytoplankton observations are being taken. 
+> Greenfield, D.I., Marin III, R., Doucette, G.J., Mikulski, C., Jones, K., Jensen, S., Roman, B., Alvarado, J., Feldman, J., Scholin, C. 2008. Field applications of the second-generation Environmental Sample Processor (ESP) for remote detection of harmful algae: 2006-2007. _Limnol. Oceanogr.: Meth_ . 6: 667-679. 
 
-Future QARTOD manuals will address standard QC test procedures and best practices for all types of common as well as uncommon platforms and sensors for all the U.S. IOOS core variables. Some test procedures may even take place within the sensor 
+> Harred, L. B. and Campbell, L. (2014). Predicting harmful algal blooms: a case study with Dinophysis ovum in the Gulf of Mexico. _J. Plankton Research,_ 36, 1434-1445. 
 
-package. Significant components of metadata will reside in the sensor and be transmitted either on demand or automatically along with the data stream. Users may also reference metadata through Uniform Resource Locators to simplify the identification of which QC steps have been applied to data. However, QARTOD QC test procedures in this manual address only real-time, in-situ observations made by sensors on fixed platforms or mobile platforms. The tests do not include post-processing, which is not conducted in real time but may be useful for ecosystem-based management, or delayed-mode, which is required for climate studies. 
+> Holm-Hansen, O.; Lorenzen, C. J; Holmes, R. W; Strickland, J. D. H. (1965). “Fluorometric determination of chlorophyll”. Journal Cons. Int. Explor. Mer, 30, 3–15. 
 
-Training and education are of paramount importance to ensuring that both QA and QC practices are in place. The sensor manufacturers can play a huge role in this area. The manufacturers have spent enormous efforts helping customers use these sensors successfully. Most manufacturers provide instructions for best practices, and those practices should be used as a first-order QA for all measurements. The manufacturer-supplied user’s manual includes these instructions, and following them carefully is critical to knowing how to use the instruments, understanding their limitations and accuracy, knowing how to interpret output, and then having 
+> Intergovernmental Oceanographic Commission of ©UNESCO (2010). Karlson, B., Cusack, C. and Bresnan, E. (editors). Microscopic and molecular methods for quantitative phytoplankton analysis. Paris, UNESCO. (IOC Manuals and Guides, no. 55.) (IOC/2010/MG/55)110 pages. 
 
-39 
+> Kirkpatrick, G.J., Millie, D.F., Moline, M.A., Schofield, O.M. (2000). Optical discrimination of a phytoplankton species in natural mixed populations. Limnol Oceanogr 45:467–471. 
 
+> Lorenzen, C. J. (1966). A Method for the Continuous Monitoring of In-Vivo Chlorophyll Concentration, Deep Sea Research, 13, 223-227. 
 
+> Olson, R. J. and Sosik, H. M. (2007). A submersible imaging-in-flow instrument to analyze nano-and microplankton: Imaging FlowCytobot. _Limnology and Oceanography-Methods_ , 5, 195-203. 
 
-a meaningful way to validate performance. Validation of sensor performance can be done by taking periodic water samples, using a known calibrated and maintained reference instrument, or performing laboratory tests to a given accuracy. 
+> Olson, R. J., Vaulot, D., and Chisholm, S. W. (1985). Flow cytometry and phytoplankton. _Deep Sea Research Part A. Oceanographic Research Papers_ , 1273-1280. 
 
-Each QC manual is a dynamic document and, upon completion, is posted on the QARTOD website (https://ioos.noaa.gov/project/qartod/). This practice allows for updating each U.S. IOOS core variable QC manual as technology development occurs, accommodating not only new sensors, but also the upgrades envisioned for the existing sensors. 
+> Paris. Intergovernmental Oceanographic Commission of UNESCO (2013). Ocean Data Standards, Vol.3: Recommendation for a Quality Flag Scheme for the Exchange of Oceanographic and Marine Meteorological Data. (IOC Manuals and Guides, 54, Vol. 3.) 12 pp. (English) (IOC/2013/MG/54-3) <http://www.nodc.noaa.gov/oceanacidification/support/MG54_3.pdf> 
 
-This website permits easy access to all QARTOD material and updates as they are identified. It includes procedures for testing data, related documents, and links to social media—enabling the growing ocean observing community to stay engaged across the enterprise regionally, nationally, and internationally. 
+> Poulton, N. J. (2016). FlowCam:Quantification and Classification of Phytoplankton by Imaging Flow Cytometry. In N. S. Vorobjev, _Imaging Flow Cytometry Methods and Protocols_ (pp. 237-247). New York: Springer Science+Business Media.
 
-This QARTOD project may be one of the best working examples of private-public partnerships, which is a fundamental tenet of U.S. IOOS. As this phytoplankton manual has exemplified, the sensor manufacturers must be fully involved in the creation of most, if not all, QC manuals for the selected U.S. IOOS core variables. 
+> QARTOD I-V Reports (2003-2009): http://nautilus.baruch.sc.edu/twiki/bin/view/ 
 
-It is through this kind of uniform QC process that integration can occur across the national ocean enterprise, capitalizing the _I_ in U.S. IOOS. Implementing these procedures will accelerate the research-to-operations process to support a real-time, operational, integrated ocean observing system of defined data quality. 
+> Shapiro, J., Dixon, L.K., Schofield, O.M., Kirkpatrick, B., Kirkpatrick, G.J. 2015. New sensors for ocean observing: the Optical Phytoplankton Discriminator. In: Liu, Y., Kerkering, H., Weisberg, R.H. (Eds.) Coastal Ocean Observing Systems. Elsevier, Inc. pp. 327-350. 
 
-40 
+> Scholin, C., Doucette, G., Jensen, S., Roman, B., Pargett, D., Marin III, R., Preston, C., Jones, W., Feldman, J., Everlove, C., Harris, A., Avarado, N., Massion, E., Birch, J., Greenfield, D., Wheeler, K., Vrijenhoek, R., Mikulski, C., Jones, K. 2009. Remote detection of marine microbes, small invertebrates, harmful algae and biotoxins using the Environmental Sample Processor (ESP). Oceanography 22: 158-167. 
 
-_Phytoplankton_ 
+> Sosik, H. M. and Olson, R. J. (2007). Automated taxonomic classification of phytoplankton sampled with imaging-in-flow cytometry. _Limnology and Oceanography-Methods_ , 5, 204-216. 
 
-## **5.0 References** 
+> U.S. IOOS Office, November 2010. A Blueprint for Full Capability, Version 1.0, 254 pp. <https://www.ioos.noaa.gov/wp-content/uploads/2015/09/us_ioos_blueprint_ver1.pdf> 
 
-- Bushnell, M., Presentation at QARTOD III: November 2005. Scripps Institution of Oceanography, La Jolla, California. 
+> U.S. Integrated Ocean Observing System, January 2014. Manual for the Use of Real-Time Oceanographic Data Quality Control Flags. 19 pp. <https://www.ioos.noaa.gov/wp-content/uploads/2015/10/qartod_oceanographic_data_quality_manual.pdf> 
 
-- Cetinic, I., Poulton, N., and Slade, W. H. (2016). Characterizing the phytoplankton soup: pump and plumbing effects on the particle assemblage in underway optical seawater systems. _Optics Express_ , 20703-20715. 
+> Verity, P. G., and Sieracki, M. E. (1993). Use of color image analysis and epifluorescence microscopy to measure plankton biomass. In P. F. Kemp, J. J. Cole, B. F. Sherr, & E. B. Sherr, _Handbook of Methods in Aquatic Microbial Ecology_ (pp. 327-338). New York: Lewis Publishers. 
 
-- Coley, K. (2016, Nov/Dec). A Colorful View from Space: Connecting Color to Phytoplankton with Novel Field Technology. _ECO Magazine_ , pp. 35-39. 
+**Additional References to Related Documents:**
 
-- Doucette, G.J., Mikulski, C.M., Jones, K.L., King, K.L., Greenfield, D.I., Marin III, R., Jensen, S., Roman, B., Elliott, C.T., Scholin, C.A. 2009. Remote, subsurface detection of the algal toxin domoic acid onboard the Environmental Sample Processor: assay development and field trials. Harmful Algae 8: 880-888. 
+> Sosik, H. M. and Olson, R. J. 2007. Automated taxonomic classification of phytoplankton sampled with imaging-in-flow cytometry. Limnology and Oceanography: Methods 5:204-216. 
 
-- Greenfield, D.I., Marin III, R., Doucette, G.J., Mikulski, C., Jones, K., Jensen, S., Roman, B., Alvarado, J., Feldman, J., Scholin, C. 2008. Field applications of the second-generation Environmental Sample Processor (ESP) for remote detection of harmful algae: 2006-2007. _Limnol. Oceanogr.: Meth_ . 6: 667-679. 
+> Twardowski, M., Sullivan, J., and Dalgleish, F., 2016. Studying Undisturbed Particle Fields in the Ocean: Sea Technology, Vol 57, No. 2. 
 
-- Harred, L. B. and Campbell, L. (2014). Predicting harmful algal blooms: a case study with Dinophysis ovum in the Gulf of Mexico. _J. Plankton Research,_ 36, 1434-1445. 
+> Scheme on QC flags, which is a general document that discusses how to write the results of tests, but does not discuss the actual tests. <http://www.oceandatastandards.org/> 
 
-- Holm-Hansen, O.; Lorenzen, C. J; Holmes, R. W; Strickland, J. D. H. (1965). “Fluorometric determination of chlorophyll”. Journal Cons. Int. Explor. Mer, 30, 3–15. 
+> The ocean data standards resource pool can be found at: <http://www.oceandatastandards.org/index.php?option=com_content&task=view&id=22&Itemid=28> 
 
-- Intergovernmental Oceanographic Commission of ©UNESCO (2010). Karlson, B., Cusack, C. and Bresnan, E. (editors). Microscopic and molecular methods for quantitative phytoplankton analysis. Paris, UNESCO. (IOC Manuals and Guides, no. 55.) (IOC/2010/MG/55)110 pages. 
+> National Oceanographic Partnership Program (NOPP) January 2006. The First U.S. Integrated Ocean Observing System (IOOS)Development Plan – A report of the national Ocean Research Leadership Council and the Interagency Committee on Ocean Science and Resource Management Integration. The National Office for Integrated and Sustained Ocean Observations. Ocean US Publication No. 9.
 
-- Kirkpatrick, G.J., Millie, D.F., Moline, M.A., Schofield, O.M. (2000). Optical discrimination of a phytoplankton species in natural mixed populations. Limnol Oceanogr 45:467–471. 
+**Supporting Documents Found on the QARTOD Website:** 
 
-- Lorenzen, C. J. (1966). A Method for the Continuous Monitoring of In-Vivo Chlorophyll Concentration, Deep Sea Research, 13, 223-227. 
+<https://ioos.noaa.gov/ioos-in-action/phytoplankton> 
 
-- Olson, R. J. and Sosik, H. M. (2007). A submersible imaging-in-flow instrument to analyze nano-and microplankton: Imaging FlowCytobot. _Limnology and Oceanography-Methods_ , 5, 195-203. 
-
-- Olson, R. J., Vaulot, D., and Chisholm, S. W. (1985). Flow cytometry and phytoplankton. _Deep Sea Research Part A. Oceanographic Research Papers_ , 1273-1280. 
-
-- Paris. Intergovernmental Oceanographic Commission of UNESCO (2013). Ocean Data Standards, Vol.3: Recommendation for a Quality Flag Scheme for the Exchange of Oceanographic and Marine Meteorological Data. (IOC Manuals and Guides, 54, Vol. 3.) 12 pp. (English) (IOC/2013/MG/54-3) <u>http://www.nodc.noaa.gov/oceanacidification/support/MG54_3.pdf</u> 
-
-- Poulton, N. J. (2016). FlowCam:Quantification and Classification of Phytoplankton by Imaging Flow Cytometry. In N. S. Vorobjev, _Imaging Flow Cytometry Methods and Protocols_ (pp. 237-247). New York: Springer Science+Business Media. 
-
-41 
-
-
-
-<!-- Start of picture text -->
-GQARTOD<br><!-- End of picture text -->
-
-- QARTOD I-V Reports (2003-2009): http://nautilus.baruch.sc.edu/twiki/bin/view/ 
-
-- Shapiro, J., Dixon, L.K., Schofield, O.M., Kirkpatrick, B., Kirkpatrick, G.J. 2015. New sensors for ocean observing: the Optical Phytoplankton Discriminator. In: Liu, Y., Kerkering, H., Weisberg, R.H. (Eds.) Coastal Ocean Observing Systems. Elsevier, Inc. pp. 327-350. 
-
-- Scholin, C., Doucette, G., Jensen, S., Roman, B., Pargett, D., Marin III, R., Preston, C., Jones, W., Feldman, J., Everlove, C., Harris, A., Avarado, N., Massion, E., Birch, J., Greenfield, D., Wheeler, K., Vrijenhoek, R., Mikulski, C., Jones, K. 2009. Remote detection of marine microbes, small invertebrates, harmful algae and biotoxins using the Environmental Sample Processor (ESP). Oceanography 22: 158-167. 
-
-- Sosik, H. M. and Olson, R. J. (2007). Automated taxonomic classification of phytoplankton sampled with imaging-in-flow cytometry. _Limnology and Oceanography-Methods_ , 5, 204-216. 
-
-- U.S. IOOS Office, November 2010. A Blueprint for Full Capability, Version 1.0, 254 pp. <u>https://www.ioos.noaa.gov/wp-content/uploads/2015/09/us_ioos_blueprint_ver1.pdf</u> 
-
-- U.S. Integrated Ocean Observing System, January 2014. Manual for the Use of Real-Time Oceanographic Data Quality Control Flags. 19 pp. https://www.ioos.noaa.gov/wp- <u>content/uploads/2015/10/qartod_oceanographic_data_quality_manual.pdf</u> 
-
-- Verity, P. G., and Sieracki, M. E. (1993). Use of color image analysis and epifluorescence microscopy to measure plankton biomass. In P. F. Kemp, J. J. Cole, B. F. Sherr, & E. B. Sherr, _Handbook of Methods in Aquatic Microbial Ecology_ (pp. 327-338). New York: Lewis Publishers. 
-
-42 
-
-_Phytoplankton_ 
-
-## **Additional References to Related Documents:** 
-
-- Sosik, H. M. and Olson, R. J. 2007. Automated taxonomic classification of phytoplankton sampled with imaging-in-flow cytometry. Limnology and Oceanography: Methods 5:204-216. 
-
-- Twardowski, M., Sullivan, J., and Dalgleish, F., 2016. Studying Undisturbed Particle Fields in the Ocean: Sea Technology, Vol 57, No. 2. 
-
-- Scheme on QC flags, which is a general document that discusses how to write the results of tests, but does not discuss the actual tests. <u>http://www.oceandatastandards.org/</u> 
-
-- The ocean data standards resource pool can be found at: 
-
-   - <u>http://www.oceandatastandards.org/index.php?option=com_content&task=view&id=22&Itemid=28</u> 
-
-- National Oceanographic Partnership Program (NOPP) January 2006. The First U.S. Integrated Ocean Observing System (IOOS)Development Plan – A report of the national Ocean Research Leadership Council and the Interagency Committee on Ocean Science and Resource Management Integration. The National Office for Integrated and Sustained Ocean Observations. Ocean US Publication No. 9. 
-
-43 
-
-
-
-<!-- Start of picture text -->
-Gao)<br><!-- End of picture text -->
-
-## **Supporting Documents Found on the QARTOD Website:** 
-
-<u>https://ioos.noaa.gov/ioos-in-action/phytoplankton</u> 
-
-_These documents were particularly useful to the committee and reviewers when developing this manual. They do not contain copyright restrictions and are posted on the U.S. IOOS QARTOD website for easy reference_ . 
+_These documents were particularly useful to the committee and reviewers when developing this manual. They do not contain copyright restrictions and are posted on the U.S. IOOS QARTOD website for easy reference._ 
 
 - The National Phytoplankton Monitoring Network:A White Paper to Employ the SEPMN Concept Nationally 
 
@@ -1390,45 +1416,62 @@ _These documents were particularly useful to the committee and reviewers when de
 
 Resource Guide for Harmful Algal Bloom Toxin Sampling and Analysis 
 
-## **Supporting Web Links** 
+**Supporting Web Links** 
 
-#### **Manufacturers/Vendors** 
+**Manufacturers/Vendors** 
 
-<u>https://www.chelsea.co.uk/products/marine-science http://mclanelabs.com/samplers/ http://www.fluidimaging.com/applications/algae-technology http://wetlabs.com/parameters/fluorescence https://www.ysi.com/parameters/chlorophyll http://www.xylemanalytics.co.uk/parametersdetail.php?Chlorophyll-14</u> 
+<https://www.chelsea.co.uk/products/marine-science>
 
-#### **Fluorometry** 
+<http://mclanelabs.com/samplers/>
 
-<u>http://www.turnerdesigns.com/products/fluorometer-primary-calibration-standards http://www.turnerdesigns.com/t2/doc/appnotes/S-0130.pdf</u> 
+<http://www.fluidimaging.com/applications/algae-technology>
 
-#### **Methods** 
+<http://wetlabs.com/parameters/fluorescence>
 
-<u>http://imars.usf.edu/sites/default/files/project/cariaco/publications/CARIACO_Methods_Manual.pdf http://gulfofmexicoalliance.org/documents/pits/wq/goma_hab_toxin_resource_guide.pdf http://www.act-us.info/Download/Evaluations/Fluorometer/Protocols/ https://github.com/hsosik/ifcb-analysis/wiki/Instructions-for-manual-annotation-of-images http://mclanelabs.com/imaging-flowcytobot/ifcb-papersmedia/</u> 
+<https://www.ysi.com/parameters/chlorophyll>
 
-#### **Conferences and Workshops** 
+<http://www.xylemanalytics.co.uk/parametersdetail.php?Chlorophyll-14> 
 
-Eighth Symposium on Harmful Algae in the U.S., Long Beach, California, November 15 – 19, 2015 <u>http://www.whoi.edu/fileserver.do?id=219024&pt=2&p=222929</u> 
+**Fluorometry** 
 
-International Phytoplankton Intercomparison - http://www.ioc- 
+<http://www.turnerdesigns.com/products/fluorometer-primary-calibration-standards>
 
-<u>unesco.org/index.php?option=com_oe&task=viewEventRecord&eventID=1947</u> 
+<http://www.turnerdesigns.com/t2/doc/appnotes/S-0130.pdf> 
 
-NOAA Emerging Technologies for Observations - https://nosc.noaa.gov/2016_NOAA_ETW/1_Oceans/ 
+**Methods** 
 
-#### **QA references** 
+<http://imars.usf.edu/sites/default/files/project/cariaco/publications/CARIACO_Methods_Manual.pdf>
 
-<u>http://nora.nerc.ac.uk/5654/1/Phytoplankton_Counting_Guidance_v1_2007_12_05.pdf https://seabass.gsfc.nasa.gov/wiki/User_Resources/CalReport_3X1M_Fluorometer.pdf</u> (calibration technique) 
+<http://gulfofmexicoalliance.org/documents/pits/wq/goma_hab_toxin_resource_guide.pdf>
 
-44 
+<http://www.act-us.info/Download/Evaluations/Fluorometer/Protocols/>
 
-_Phytoplankton_ 
+<https://github.com/hsosik/ifcb-analysis/wiki/Instructions-for-manual-annotation-of-images>
 
-## **Appendix A.  QARTOD Phytoplankton Manual Team** 
+<http://mclanelabs.com/imaging-flowcytobot/ifcb-papersmedia/> 
+
+**Conferences and Workshops** 
+
+Eighth Symposium on Harmful Algae in the U.S., Long Beach, California, November 15 – 19, 2015 <http://www.whoi.edu/fileserver.do?id=219024&pt=2&p=222929> 
+
+International Phytoplankton Intercomparison <http://www.ioc-unesco.org/index.php?option=com_oe&task=viewEventRecord&eventID=1947> 
+
+NOAA Emerging Technologies for Observations - <https://nosc.noaa.gov/2016_NOAA_ETW/1_Oceans/>
+
+**QA references** 
+
+<http://nora.nerc.ac.uk/5654/1/Phytoplankton_Counting_Guidance_v1_2007_12_05.pdf>
+
+<https://seabass.gsfc.nasa.gov/wiki/User_Resources/CalReport_3X1M_Fluorometer.pdf> (calibration technique)
+
+## Appendix A.  QARTOD Phytoplankton Manual Team 
 
 The individuals listed below participated in the initial series of teleconferences and contributed to the initial draft of the phytoplankton QC manual. 
 
-|**Phytoplankt**|**on Manual Committee and Reviewers**|
+**Phytoplankton Manual Committee and Reviewers**
+
+|Name|Organization|
 |---|---|
-|**Name**|**Organization**|
 |Clarissa Anderson|SCCOOS|
 |Aric Bickel|Monterey Bay Aquarium Research Institute/CeNCOOS|
 |Julie Bosch|NOAA/National Centers for Environmental Information|
@@ -1463,15 +1506,10 @@ The individuals listed below participated in the initial series of teleconferenc
 |Matt Weiss|Graduate student/Old Dominion University|
 |Heather Wright|Fluid ImagingTechnologies|
 
+**QARTOD Board of Advisors**
 
-
-A-1 
-
-
-
-|**Q**|**ARTOD Board of Advisors**|
+|Name|Organization|
 |---|---|
-|**Name**<br>~~a~~|**Organization**|
 |Kathleen Bailey – Project Manager<br>Julie Bosch<br>Eugene Burger<br>Janet Fredericks<br>Matt Howard<br>Bob Jensen<br>Chris Paternostro<br>Mario Tamburri<br>Julie Thomas – BOA Chair<br>**U.S**<br>**Name**|U.S. IOOS<br>NOAA/National Centers for Environmental Information<br>NOAA/Pacific Marine Environmental Laboratory<br>Woods Hole Oceanographic Institution<br>GCOOS/Texas A&M University<br>U.S. Army Corps of Engineers<br>NOS/Center for Operational Oceanographic Products and Services<br>University of Maryland Center for Environmental Science / Chesapeake<br>Biological Laboratory<br>SCCOOS/Scripps Institution of Oceanography/Coastal Data Information<br>Program<br>**. IOOS Regional Associations**<br>**Organization**|
 |Josie Quintrell<br>Clarissa Anderson<br>Francisco Chavez<br>Debra Hernandez<br>Barbara Kirkpatrick<br>Gerhard Kuska<br>Molly McCammon<br>Julio Morell<br>Ru Morrison<br>Jan Newton<br>Melissa Iwamoto<br>Kelli Paige|IOOS Association<br>SCCOOS<br>CeNCOOS<br>SECOORA<br>GCOOS<br>MARACOOS<br>AOOS<br>CariCOOS<br>NERACOOS<br>NANOOS<br>PacIOOS<br>GLOS|
 

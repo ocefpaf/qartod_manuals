@@ -1,4 +1,4 @@
-name: Full Tests
+name: Run pre-commits via prek
 
 # no permissions by default
 permissions: {}

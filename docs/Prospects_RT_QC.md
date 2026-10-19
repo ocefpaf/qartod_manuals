@@ -1,8 +1,8 @@
 # QARTOD  - Prospects for Real-Time Quality Control Manuals, How to Create Them, and a Vision for Advanced Implementation 
 
-**_Mark Bushnell_**<sup>**_1_**</sup> **_, Kathleen Bailey_**<sup>**_1_**</sup> **_, Julie Bosch_**<sup>**_2_**</sup> **_, Eugene Burger_**<sup>**_3_**</sup> **_, Jennifer Dorton_**<sup>**_4_**</sup> **_, Regina Easley_**<sup>**_5_**</sup> **_, Bob Heitsenrether_**<sup>**_6_**</sup> **_, Jeff King_**<sup>**_7_**</sup> **_, Karen Grissom_**<sup>**_8_**</sup> **_, Mario Tamburri_**<sup>**_9_**</sup> **_, Julianna Thomas_**<sup>**_10_**</sup> **_, Christoph Waldmann_**<sup>**_11_**</sup> 
+**_Mark Bushnell_**¹, **_Kathleen Bailey_**¹, **_Julie Bosch_**², **_Eugene Burger_**³, **_Jennifer Dorton_**⁴, **_Regina Easley_**⁵, **_Bob Heitsenrether_**⁶, **_Jeff King_**⁷, **_Karen Grissom_**⁸, **_Mario Tamburri_**⁹, **_Julianna Thomas_**¹⁰, **_Christoph Waldmann_**¹¹
 
-_1U.S. Integrated Ocean Observing System, 2National Centers for Environmental Information, 3Pacific Marine Environmental Laboratory,_<sup>_4_</sup> _Southeast Coastal Ocean Observing Regional Association,_<sup>_5_</sup> _National Institute of Standards and Technology,_<sup>_6_</sup> _Center for Operational Oceanographic Products and Services,_<sup>_7_</sup> _U.S. Army Corps of Engineers,_<sup>_8_</sup> _National Data Buoy Center,_<sup>_9_</sup> _Alliance for Coastal Technologies,_<sup>_10_</sup> _Scripps Institution of Oceanography [retired],_<sup>_11_</sup> _University of Bremen Center for Marine Environmental Sciences_ 
+<small>*¹U.S. Integrated Ocean Observing System, ²National Centers for Environmental Information, ³Pacific Marine Environmental Laboratory, ⁴Southeast Coastal Ocean Observing Regional Association, ⁵National Institute of Standards and Technology, ⁶Center for Operational Oceanographic Products and Services, ⁷U.S. Army Corps of Engineers, ⁸National Data Buoy Center, ⁹Alliance for Coastal Technologies, ¹⁰Scripps Institution of Oceanography [retired], ¹¹University of Bremen Center for Marine Environmental Sciences*</small>
 
 ### Abstract 
 

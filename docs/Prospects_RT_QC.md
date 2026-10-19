@@ -470,29 +470,24 @@ There is no need to highlight suspect data points.
 
 The following variables do not require real-time QC: 
 
-- **Ice distribution** – Discussions with personnel from the National Ice Center and the National Snow and Ice Data Center did not reveal interoperable data streams. Products are generated on weekly time scales, and manual evaluation is sufficient. However, there is some discussion regarding real-time QC<sup>15</sup> <u>.</u> 
+- **Ice distribution** – Discussions with personnel from the National Ice Center and the National Snow and Ice Data Center did not reveal interoperable data streams. Products are generated on weekly time scales, and manual evaluation is sufficient. However, there is some discussion regarding real-time QC¹⁵. 
 
-The University of Alaska Fairbanks (UAF) School of Fisheries and Ocean Sciences partnered with Pacific Gyre to receive a 3-year Ocean Technology Transition award in 2014<sup>16</sup> . Their work resulted in instrumentation on a buoy that provided real-time data on the vertical temperature and salinity structure to determine freeze-up conditions. The mooring provided data in real-time to scientists at UAF, forecasters at the National Weather Service, and others<sup>17</sup> . While this was useful as a demonstration, they encountered mooring difficulties; no real-time capability exists at present. 
+The University of Alaska Fairbanks (UAF) School of Fisheries and Ocean Sciences partnered with Pacific Gyre to receive a 3-year Ocean Technology Transition award in 2014¹⁶. 
+Their work resulted in instrumentation on a buoy that provided real-time data on the vertical temperature and salinity structure to determine freeze-up conditions. 
+The mooring provided data in real-time to scientists at UAF, 
+forecasters at the National Weather Service, and others¹⁷. 
+While this was useful as a demonstration, they encountered mooring difficulties; 
+no real-time capability exists at present. 
 
 - **Heat flux** – Heat flux is derived from multiple met/ocean variables, which are presently addressed by QARTOD manuals such as temperature, winds, and optical properties (Yu and Weller 2007). 
 
 For the following variables, real-time QC is not feasible at present: 
 
-- **Contaminants** – This core variable lacks definition and is too vague for a specific real-time QC manual. The U.S. Environmental Protection Agency (EPA) uses the Safe Drinking Water Act definition of _contaminant_ as “any physical, chemical, biological or radiological substance or matter in water.” QARTOD manuals discuss sensor technology to help users understand the challenges involved in data collection, and to explain how the QC tests can be used to identify good, suspect, and bad data. This cannot be done without knowing the nature of the contaminant and the instruments used to measure it. For example, do the contaminants float, sink, or are they dispersed throughout the water column? 
+- **Contaminants** – This core variable lacks definition and is too vague for a specific real-time QC manual. The U.S. Environmental Protection Agency (EPA) uses the Safe Drinking Water Act definition of _contaminant_ as “any physical, chemical, biological or radiological substance or matter in water”. QARTOD manuals discuss sensor technology to help users understand the challenges involved in data collection, and to explain how the QC tests can be used to identify good, suspect, and bad data. This cannot be done without knowing the nature of the contaminant and the instruments used to measure it. For example, do the contaminants float, sink, or are they dispersed throughout the water column? 
 
-- **Microplastics** - One interesting example of a contaminant is microplastics. There is a lack of standard collection methods, which prevents measurement comparisons or identification of trends in microplastics contamination<sup>18</sup> . Reference standards are poor (spheres, not representative) or non-existent. Samples collected by nets can allow long, thin fibers to go through nets and be under-sampled. Whole water samples show that microplastics are far more abundant. 
+- **Microplastics** - One interesting example of a contaminant is microplastics. There is a lack of standard collection methods, which prevents measurement comparisons or identification of trends in microplastics contamination¹⁸. Reference standards are poor (spheres, not representative) or non-existent. Samples collected by nets can allow long, thin fibers to go through nets and be under-sampled. Whole water samples show that microplastics are far more abundant.
 
-> 15 <u>http://nsidc.org/arcticseaicenews/faq/ - quality_control and https://www.navcen.uscg.gov/?pageName=NAIceService</u> 
-
-> 16 <u>https://ioos.noaa.gov/project/ott-real-time-sensor-system-detecting-freeze-arctic-shelves/</u> 
-
-> 17 <u>https://aoos.org/ice-detection-buoy</u> 
-
-> 18 <u>https://www.aimspress.com/fileOther/PDF/environmental/Environ-06-05-326.pdf</u> 
-
-15 
-
-- **Pathogens** – The real-time quality control of observations of pathogens (viruses, bacteria, fungi, protozoa, and worms) is certainly desired in real-time. In fact, it is required: “… _the BEACH Act requires all coastal and Great Lakes states to adopt EPA Ambient Water Quality Criteria for the pathogen indicator organisms E. coli or enterococci for beach and recreational water quality monitoring.” And, “Beach and recreational water quality monitoring may include a number of measurements in addition to those for bacteria indicator organisms—for example, parameters such as rainfall, water and air temperature, water turbidity, and wind speed and direction._ ” _(U.S. ERG, Inc. 2002)_ . As yet there are no commonly known pathogen sensors. Water samples are manually collected and transported to a lab for manual analysis. There are no automated processes and no interoperable data stream to which automated QC could be applied. 
+- **Pathogens** – The real-time quality control of observations of pathogens (viruses, bacteria, fungi, protozoa, and worms) is certainly desired in real-time. In fact, it is required: “… _the BEACH Act requires all coastal and Great Lakes states to adopt EPA Ambient Water Quality Criteria for the pathogen indicator organisms E. coli or enterococci for beach and recreational water quality monitoring.” And, “Beach and recreational water quality monitoring may include a number of measurements in addition to those for bacteria indicator organisms—for example, parameters such as rainfall, water and air temperature, water turbidity, and wind speed and direction._ ” _(U.S. ERG, Inc. 2002)_. As yet there are no commonly known pathogen sensors. Water samples are manually collected and transported to a lab for manual analysis. There are no automated processes and no interoperable data stream to which automated QC could be applied. 
 
 - **Bottom character** – This variable does not have an interoperable data stream. 
 
@@ -508,11 +503,17 @@ For the following variables, real-time QC is not feasible at present:
 
 - **Microbial species/abundance/activity** - Observations of microbial species, abundance, and activity are often conducted as part of a research project. They usually require measurements of other variables for which QARTOD manuals do exist, such as temperature and salinity, currents, pH, etc. However, the species, their abundance, and their activity are determined, described, and distributed through human effort (Figure 5). A manual providing guidance for the development and implementation of software for automated QC is not needed if there is no automation elsewhere in the data management process. 
 
-16 
+<small>¹⁵ http://nsidc.org/arcticseaicenews/faq/ - quality_control and https://www.navcen.uscg.gov/?pageName=NAIceService</small>
 
+<small>¹⁶ https://ioos.noaa.gov/project/ott-real-time-sensor-system-detecting-freeze-arctic-shelves/</small> 
 
+<small>¹⁷ https://aoos.org/ice-detection-buoy</small>
 
-_Figure 5. Miguel Semedo at the Virginia Institute of Marine Science conducts manual water quality evaluations. Photo courtesy of Lisa Sadler._ 
+<small>¹⁸ https://www.aimspress.com/fileOther/PDF/environmental/Environ-06-05-326.pdf</small>
+
+![Miguel Semedo at the Virginia Institute of Marine Science conducts manual water quality evaluations.](images_Prospects_RT_QC/image05.jpg)
+
+<figcaption>Figure 5. Miguel Semedo at the Virginia Institute of Marine Science conducts manual water quality evaluations. Photo courtesy of Lisa Sadler.</figcaption>
 
 - **Nekton diet** - These observations are conducted manually and are not disseminated in realtime. 
 
@@ -522,119 +523,177 @@ _Figure 5. Miguel Semedo at the Virginia Institute of Marine Science conducts ma
 
 - **Submerged aquatic vegetation species/abundance** - These observations are conducted manually and are not disseminated in real-time. 
 
-- **Zooplankton species/abundance** - Data are not disseminated in real-time, and there are no interoperable data streams. Automated imaging sensors such as McLane’s Imaging FlowCytobots (IFCB) observations were included in the QARTOD phytoplankton manual as an emerging technology. But that manual stood upon older fluorescent-based measurements. In the case of IFCB zooplankton observations, they are still considered a research activity<sup>19</sup> . 
+- **Zooplankton species/abundance** - Data are not disseminated in real-time, and there are no interoperable data streams. Automated imaging sensors such as McLane’s Imaging FlowCytobots (IFCB) observations were included in the QARTOD phytoplankton manual as an emerging technology. But that manual stood upon older fluorescent-based measurements. In the case of IFCB zooplankton observations, they are still considered a research activity¹⁹. 
 
-Another emerging technology (spanning many of these biological core variables) that will need realtime QC is the measurement of environmental DNA (Hansen et al. 2020). However, these observations are also considered a research activity, and QC is carried out manually at present. 
+Another emerging technology (spanning many of these biological core variables) that will need realtime QC is the measurement of environmental DNA (Hansen et al. 2020). 
+However, 
+these observations are also considered a research activity, 
+and QC is carried out manually at present. 
 
-> 19 (Also see _An assessment of the use of ocean gliders to undertake acoustic measurements of zooplankton: the distribution and density of Antarctic krill (Euphausia superba) in the Weddell Sea_ <u>https://www.oceanbestpractices.net/handle/11329/895.)</u> 
+<small>¹⁹ (Also see _An assessment of the use of ocean gliders to undertake acoustic measurements of zooplankton: the distribution and density of Antarctic krill (Euphausia superba) in the Weddell Sea_ https://www.oceanbestpractices.net/handle/11329/895.)</small>
 
-17 
+## Advanced Implementation 
 
-### Advanced Implementation 
+Many field systems employ QC processes embedded within the instrument firmware, 
+and many QARTOD QC tests involve the results of these tests. 
+This is especially true of the waves, 
+currents, 
+and HF radar manuals. 
+Manufacturers should consider expansion of their embedded real-time QC processes, 
+including data flagging within their sensors and field components as described in Bushnell (2017). 
+These QARTOD-enabled devices would provide emerging operators an equal footing with larger data integrators. 
+Cars have been alerting operators of system component failures for decades; 
+our oceanographic systems should be able to do the same. 
 
-Many field systems employ QC processes embedded within the instrument firmware, and many QARTOD QC tests involve the results of these tests. This is especially true of the waves, currents, and HF radar manuals. Manufacturers should consider expansion of their embedded real-time QC processes, including data flagging within their sensors and field components as described in Bushnell (2017). These QARTOD-enabled devices would provide emerging operators an equal footing with larger data integrators. Cars have been alerting operators of system component failures for decades; our oceanographic systems should be able to do the same. 
+An informal survey of manufacturers provided interesting insights. 
+Some saw the advantages of immediate QC for use by a diverse community, 
+while others favored software/firmware management ashore; 
+good arguments can be made for each viewpoint. 
+All agreed there would be no progress toward onboard QC without market demand. 
 
-An informal survey of manufacturers provided interesting insights. Some saw the advantages of immediate QC for use by a diverse community, while others favored software/firmware management ashore; good arguments can be made for each viewpoint. All agreed there would be no progress toward onboard QC without market demand. 
+As the Internet of Things (IOT) emerges, 
+fully networked systems that are remotely and autonomously configurable are likely to become available. 
+Increases in sensor-to-sensor communications will make neighbor and multivariate QC analysis more viable. 
+QARTOD can work with manufacturers and observing systems operators to facilitate this growth. 
+The establishment of accepted standards is the keystone for this development. 
 
-As the Internet of Things (IOT) emerges, fully networked systems that are remotely and autonomously configurable are likely to become available. Increases in sensor-to-sensor communications will make neighbor and multivariate QC analysis more viable. QARTOD can work with manufacturers and observing systems operators to facilitate this growth. The establishment of accepted standards is the keystone for this development. 
+In concert with the emergence of the IOT, 
+the Research Data Alliance efforts to develop the persistent identification of instruments²⁰ can be expected to further support interoperability of sensors and systems. 
+The creation of a universal way to identify instrument instances offers a wealth of benefits to individuals, 
+communities and initiatives. 
 
-In concert with the emergence of the IOT, the Research Data Alliance efforts to develop the persistent identification of instruments<sup>20</sup> can be expected to further support interoperability of sensors and systems. The creation of a universal way to identify instrument instances offers a wealth of benefits to individuals, communities and initiatives. 
+<small>²⁰ https://www.rd-alliance.org/group/persistent-identification-instruments/case-statement/persistent-identificationinstruments</small>
 
-### Interaction with New Programs 
+## Interaction with New Programs 
 
-U.S. CLIVAR Ocean Uncertainty Quantification Working Group<sup>21</sup> (OceanUQ) is a three-year project initiated in 2020. The objectives are to: a) develop a community-driven web platform for uncertainty quantification knowledge and strategies, b) produce peer-reviewed, open-access articles on uncertainty quantification for observational and model ocean data, and c) organize a summer school and/or workshop on uncertainty quantification. Since documentation of measurement uncertainty is a goal of the QARTOD Project (QARTOD Law 6), synergistic cooperation with OceanUQ is effort well spent. 
+U.S. CLIVAR Ocean Uncertainty Quantification Working Group²¹ (OceanUQ) is a three-year project initiated in 2020. 
+The objectives are to: a) develop a community-driven web platform for uncertainty quantification knowledge and strategies, 
+b) produce peer-reviewed, open-access articles on uncertainty quantification for observational and model ocean data, 
+and c) organize a summer school and/or workshop on uncertainty quantification. 
+Since documentation of measurement uncertainty is a goal of the QARTOD Project (QARTOD Law 6), 
+synergistic cooperation with OceanUQ is effort well spent. 
 
-QARTOD will support the United Nations Decade for Ocean Science for Sustainable Development (20212030)<sup>22</sup> by getting involved in programs/initiatives that address long-term monitoring of ocean waters both in coastal regimes and open oceans. The data quality standards that had been defined by QARTOD will be instrumental in ensuring the availability of trustworthy ocean data for future generations. 
+QARTOD will support the United Nations Decade for Ocean Science for Sustainable Development (20212030)²² by getting involved in programs/initiatives that address long-term monitoring of ocean waters both in coastal regimes and open oceans. 
+The data quality standards that had been defined by QARTOD will be instrumental in ensuring the availability of trustworthy ocean data for future generations.
 
-> 20 <u>https://www.rd-alliance.org/group/persistent-identification-instruments/case-statement/persistent-identificationinstruments</u> 
+The restructuring process of World Meteorological Organization that started in 2019 will lead to a radically new organizational structure by 2020. 
+The main purpose of this transition process is to foster a service-oriented approach toward disseminating quality-checked data and information in due time to their customers. 
+In line with that concept, 
+a strong focus will be to harmonize QA/QC procedures used in meteorology and ocean observations. 
+QARTOD will be able to provide a significant contribution to that process.
 
-> 21 <u>https://usclivar.org/working-groups/ocean-uncertainty-quantification-working-group</u> 
+<small>²¹ https://usclivar.org/working-groups/ocean-uncertainty-quantification-working-group</small>
 
-> 22 <u>https://en.unesco.org/ocean-decade</u> 
+<small>²² https://en.unesco.org/ocean-decade</small>
 
-18 
+## Summary 
 
-The restructuring process of World Meteorological Organization that started in 2019 will lead to a radically new organizational structure by 2020. The main purpose of this transition process is to foster a service-oriented approach toward disseminating quality-checked data and information in due time to their customers. In line with that concept, a strong focus will be to harmonize QA/QC procedures used in meteorology and ocean observations. QARTOD will be able to provide a significant contribution to that process. 
+QARTOD began as a grassroots effort in 2003 and became part of U.S. IOOS in 2012. 
+QARTOD data quality control procedures are now recognized as an essential part of ensuring data quality control. 
+From 2012 through 2019, 
+the QARTOD Project produced thirteen manuals describing U.S. IOOS core variables, as well as additional supporting documents and papers. 
+QARTOD also conducted extensive outreach to the oceanographic community and beyond. 
+The QARTOD Board of Advisors and the National Coordinator authored papers and gave presentations at numerous conferences throughout the world. 
+The QARTOD standard for data quality control is now a part of the standards for RICE certification of U.S. IOOS RAs. 
 
-### Summary 
+Many core variables requiring real-time QC now have a QARTOD manual. 
+As technology advances, 
+so will the capability and requirement for real-time QC. 
+Additional manuals for variables such as partial pressure of CO2 and total suspended matter could be on the horizon. 
+As new variables are identified as being ready for real-time QC, 
+communities representing those variables are urged to use the QARTOD process to develop additional manuals. 
+U.S. IOOS can help these communities with their efforts. 
 
-QARTOD began as a grassroots effort in 2003 and became part of U.S. IOOS in 2012. QARTOD data quality control procedures are now recognized as an essential part of ensuring data quality control. From 2012 through 2019, the QARTOD Project produced thirteen manuals describing U.S. IOOS core variables, as well as additional supporting documents and papers. QARTOD also conducted extensive outreach to the oceanographic community and beyond. The QARTOD Board of Advisors and the National Coordinator authored papers and gave presentations at numerous conferences throughout the world. The QARTOD standard for data quality control is now a part of the standards for RICE certification of U.S. IOOS RAs. 
+## Acknowledgements 
 
-Many core variables requiring real-time QC now have a QARTOD manual. As technology advances, so will the capability and requirement for real-time QC. Additional manuals for variables such as partial pressure of CO2 and total suspended matter could be on the horizon. As new variables are identified as being ready for real-time QC, communities representing those variables are urged to use the QARTOD process to develop additional manuals. U.S. IOOS can help these communities with their efforts. 
+QARTOD manuals are a product created by communities with an interest in the QC of a particular variable, 
+and we are indebted to the hundreds of individuals who have volunteered their time to contribute to the development of them, 
+review them, 
+or use them and provide feedback. 
 
-19 
-
-### Acknowledgements 
-
-QARTOD manuals are a product created by communities with an interest in the QC of a particular variable, and we are indebted to the hundreds of individuals who have volunteered their time to contribute to the development of them, review them, or use them and provide feedback. 
-
-First, we are grateful to Zdenka Willis (former U.S. IOOS Director) for accepting QARTOD as an IOOS project in 2012. Without her support, QARTOD would not have become a reality. We also acknowledge the efforts of Capt. Ray Toll (U.S. Navy, ret.), who developed the first QARTOD Project Plan and served as the initial QARTOD Project Technical Coordinator. 
+First, we are grateful to Zdenka Willis (former U.S. IOOS Director) for accepting QARTOD as an IOOS project in 2012. Without her support, 
+QARTOD would not have become a reality. 
+We also acknowledge the efforts of Capt. Ray Toll (U.S. Navy, ret.), 
+who developed the first QARTOD Project Plan and served as the initial QARTOD Project Technical Coordinator. 
 
 We thank Jillian Terhune (Water Quality Manager for the City of Norfolk) and Marcia Snyder (Environmental Health Supervisor for the Virginia Department of Health) for their discussions about the methods used to measure and report pathogen levels in real time. 
 
-We appreciate a discussion with Siri Jodha Khalsa (Colorado State University), a member of the National Snow and Ice Data Center who confirmed our understanding of ice observations and data products. 
+We appreciate a discussion with Siri Jodha Khalsa (Colorado State University), 
+a member of the National Snow and Ice Data Center who confirmed our understanding of ice observations and data products. 
 
-We acknowledge Jim Potemra (Pacific Islands Ocean Observing System), Robert Huber (University of Bremen, MARUM - Center for Marine Environmental Sciences), Pauline Simpson (UNESCO / IOC Project Office for IODE), and Clay Porch (NOAA Southeast Fisheries Science Center) for their time and effort to review and offer valuable comments on the draft paper. 
+We acknowledge Jim Potemra (Pacific Islands Ocean Observing System), 
+Robert Huber (University of Bremen, MARUM - Center for Marine Environmental Sciences), 
+Pauline Simpson (UNESCO / IOC Project Office for IODE), 
+and Clay Porch (NOAA Southeast Fisheries Science Center) for their time and effort to review and offer valuable comments on the draft paper. 
 
-### References 
+## References 
 
-Burnett, W.; Crout, R.; Bushnell, M.; Thomas, J.; Fredricks, J.; Bosch, J. and Waldmann, C. 2010. Quality Assurance of Real-Time Ocean Data: Evolving Infrastructure and Increasing Data Management to Monitor the World's Environment. In: Proceedings of OceanObs’09: Sustained Ocean Observations and Information for Society, Venice, Italy, 21-25 September 2009, (Vol. 2). (Hall, J., Harrison, D.E. & Stammer, D. (eds)). European Space Agency, 5pp. (ESA Publication WPP-306). DOI:10.5270/OceanObs09.cwp.12 
+> Burnett, W.; Crout, R.; Bushnell, M.; Thomas, J.; Fredricks, J.; Bosch, J. and Waldmann, C. 2010. Quality Assurance of Real-Time Ocean Data: Evolving Infrastructure and Increasing Data Management to Monitor the World's Environment. In: Proceedings of OceanObs’09: Sustained Ocean Observations and Information for Society, Venice, Italy, 21-25 September 2009, (Vol. 2). (Hall, J., Harrison, D.E. & Stammer, D. (eds)). European Space Agency, 5pp. (ESA Publication WPP-306). DOI:10.5270/OceanObs09.cwp.12 
 
-Bushnell, M., 2015. "Quality Assurance/Quality Control of Real-Time Oceanographic Data," OCEANS 2015 - MTS/IEEE Washington, Washington, DC, pp. 1-4. DOI: 10.23919/OCEANS.2015.7404613. 
+> Bushnell, M., 2015. "Quality Assurance/Quality Control of Real-Time Oceanographic Data," OCEANS 2015 - MTS/IEEE Washington, Washington, DC, pp. 1-4. DOI: 10.23919/OCEANS.2015.7404613. 
 
-Bushnell, M. H., 2017. Integration of QARTOD Tests Within a Sensor: Considerations for Sensor Manufacturers. MTS/IEEE OCEANS ’17 conference proceedings, 5 pp. 
+> Bushnell, M. H., 2017. Integration of QARTOD Tests Within a Sensor: Considerations for Sensor Manufacturers. MTS/IEEE OCEANS ’17 conference proceedings, 5 pp. 
 
-Bushnell, M., Glenn, S., Kohut, J., McDonnell, J., Miles, T., Saba, G. & Schofield, O., 2018, Workforce development supporting the blue economy: Using recent community-developed material in operational oceanography curricula: A tribute to Vembu Subramanian. Marine Technology Society Journal, 52(3), pp. 51-54(4) 
+> Bushnell, M., Glenn, S., Kohut, J., McDonnell, J., Miles, T., Saba, G. & Schofield, O., 2018, Workforce development supporting the blue economy: Using recent community-developed material in operational oceanography curricula: A tribute to Vembu Subramanian. Marine Technology Society Journal, 52(3), pp. 51-54(4) 
 
-Bushnell, M., Waldmann, C., Seitz, S., Buckley, E., Tamburri, M., Hermes, J., Heslop, E., and Lara-Lopez, A, 2019. Quality Assurance of Oceanographic Observations: Standards and Guidance Adopted by an International Partnership. Frontiers in Marine Science,  6:706, 12pp. DOI: https://doi.org/10.3389/fmars.2019.00706 
+> Bushnell, M., Waldmann, C., Seitz, S., Buckley, E., Tamburri, M., Hermes, J., Heslop, E., and Lara-Lopez, A, 2019. Quality Assurance of Oceanographic Observations: Standards and Guidance Adopted by an International Partnership. Frontiers in Marine Science,  6:706, 12pp. DOI: https://doi.org/10.3389/fmars.2019.00706 
 
-20 
+> ERG, Inc. 2002. Time-Relevant Beach and Recreational Water Quality and Monitoring and Reporting. Cincinnati, OH, United Sates Environmental Protection Agency, 59pp. (EPA/625/R-02/017)(NTIS PB2003104886) 
 
-ERG, Inc. 2002. Time-Relevant Beach and Recreational Water Quality and Monitoring and Reporting. Cincinnati, OH, United Sates Environmental Protection Agency, 59pp. (EPA/625/R-02/017)(NTIS PB2003104886) 
+> Hansen, B.K., Jacobsen, M.W., Middelboe, A.L. et al. Remote, autonomous real-time monitoring of environmental DNA from commercial fish. Sci Rep 10, 13272 (2020). https://doi.org/10.1038/s41598020-70206-8 
 
-Hansen, B.K., Jacobsen, M.W., Middelboe, A.L. et al. Remote, autonomous real-time monitoring of environmental DNA from commercial fish. Sci Rep 10, 13272 (2020). https://doi.org/10.1038/s41598020-70206-8 
+> Joint Committee for Guides in Metrology (JCGM) 2012. International Vocabulary of Metrology: Basic and General Concepts and Associated Terms. (3<sup>rd</sup> Edition). 108pp. Available: <u>https://www.bipm.org/utils/common/documents/jcgm/JCGM_200_2012.pdf. Accessed 21 August 2020.</u> 
 
-Joint Committee for Guides in Metrology (JCGM) 2012. International Vocabulary of Metrology: Basic and General Concepts and Associated Terms. (3<sup>rd</sup> Edition). 108pp. Available: <u>https://www.bipm.org/utils/common/documents/jcgm/JCGM_200_2012.pdf. Accessed 21 August 2020.</u> 
+> Ocean.US, 2006. National Office for Integrated and Sustained Ocean Observations. The First U.S. Integrated Ocean Observing System (IOOS) Development Plan, Publication 9, January 2006. 
 
-Ocean.US, 2006. National Office for Integrated and Sustained Ocean Observations. The First U.S. Integrated Ocean Observing System (IOOS) Development Plan, Publication 9, January 2006. 
+> Sastri, A., et al., 2019. Perspectives on In Situ Sensors for Ocean Acidification Research, Frontiers in Marine Science, 6:653, 6pp. DOI: 10.3389/fmars.2019.00653. 
 
-Sastri, A., et al., 2019. Perspectives on In Situ Sensors for Ocean Acidification Research, Frontiers in Marine Science, 6:653, 6pp. DOI: 10.3389/fmars.2019.00653. 
+> Smith, L.M., J.A. Barth, D.S. Kelley, A. Plueddemann, I. Rodero, G.A. Ulses, M.F. Vardaro, and R. Weller. 2018. The Ocean Observatories Initiative. _Oceanography_ 31(1), pp.16-35. DOI:  https://doi.org/10.5670/oceanog.2018.105. 
 
-Smith, L.M., J.A. Barth, D.S. Kelley, A. Plueddemann, I. Rodero, G.A. Ulses, M.F. Vardaro, and R. Weller. 2018. The Ocean Observatories Initiative. _Oceanography_ 31(1), pp.16-35. DOI:  https://doi.org/10.5670/oceanog.2018.105. 
+> Toll, R. (ed.) 2012. U.S. IOOS QARTOD Project Plan. Silver Spring, MD, IOOS, 8pp. DOI: http://dx.doi.org/10.25607/OBP-533 
 
-Toll, R. (ed.) 2012. U.S. IOOS QARTOD Project Plan. Silver Spring, MD, IOOS, 8pp. DOI: http://dx.doi.org/10.25607/OBP-533 
+> U.S. IOOS 2017. U.S. IOOS, QARTOD Project Plan Accomplishments for 2012-2016 and Update for 20172021. DOI: https://doi.org/10.7289/V5JQ0Z71 
 
-U.S. IOOS 2017. U.S. IOOS, QARTOD Project Plan Accomplishments for 2012-2016 and Update for 20172021. DOI: https://doi.org/10.7289/V5JQ0Z71 
+> U.S. Integrated Ocean Observing System, 2020. Manual for the Use of Real-Time Oceanographic Data Quality Control Flags, Version 1.2. 24 pp. DOI: https://doi.org/10.25923/w8y6-d298 
 
-U.S. Integrated Ocean Observing System, 2020. Manual for the Use of Real-Time Oceanographic Data Quality Control Flags, Version 1.2. 24 pp. DOI: https://doi.org/10.25923/w8y6-d298 
+> Xu, G.; Shi, Y.; Sun, X.; Shen, W. (2019). Internet of Things in Marine Environment Monitoring: A Review. _Sensors,_ 19(7), 1711, 21pp.  DOI: https://www.mdpi.com/1424-8220/19/7/1711 
 
-Xu, G.; Shi, Y.; Sun, X.; Shen, W. (2019). Internet of Things in Marine Environment Monitoring: A Review. _Sensors,_ 19(7), 1711, 21pp.  DOI: https://www.mdpi.com/1424-8220/19/7/1711 
+> Yu, L. and Weller, B. 2007. A Fifty-Year Analysis of Global Ocean Surface Heat Flux.  Available: https://www.whoi.edu/cicor/page.do?pid=13749&tid=282&cid=40746 Accessed: 21 Aug 2020 
 
-Yu, L. and Weller, B. 2007. A Fifty-Year Analysis of Global Ocean Surface Heat Flux.  Available: <u>https://www.whoi.edu/cicor/page.do?pid=13749&tid=282&cid=40746</u> Accessed: 21 Aug 2020 
+## Appendix A – QARTOD Elevator Speech
 
-21 
+**QUALITY ASSURANCE / QUALITY CONTROL OF REAL-TIME OCEANOGRAPHIC DATA Setting the Standards for Real-Time QC** 
 
-Appendix A – QARTOD Elevator Speech 
+The U.S. Integrated Ocean Observing System® (IOOS®) has a vested interest in collecting and sharing high-quality environmental data. 
+One component of this effort is the Quality Assurance/Quality Control of Real-Time Oceanographic Data (QARTOD) Project. 
 
+The unique initial focus of QARTOD is on the publication of real-time Quality Control (QC) manuals that provide QC requirements for interoperable data shared with national data centers. 
+From 2012 through 2019, 
+QARTOD provided the global oceanographic community with QC manuals for fourteen key variables: 
+dissolved oxygen, 
+currents, 
+waves, 
+temperature/salinity, 
+sea level, 
+wind, 
+HF radar surface currents, 
+optics, 
+dissolved nutrients, 
+phytoplankton, 
+passive acoustics, 
+stream flow, 
+and pH. 
+The manuals are broadly inclusive and span a wide variety of operators’ capabilities and their requirements for observational accuracies. 
+Manual updates are undertaken as needed to address evolving technology, 
+knowledge gained through QC implementation, and maturation of the QARTOD Project. 
 
+U.S. IOOS supports a small team that works with data providers, 
+consumers, 
+and vendors to create the manuals using a standardized process. 
+The QC manuals, 
+an updated project plan, 
+and supporting documents can be found at ioos.noaa.gov/project/qartod. 
+For further information, 
+contact the project national coordinator at Mark.Bushnell@noaa.gov. 
 
-<!-- Start of picture text -->
-TOOS<br>Integrated Ocean<br>Observing System<br><!-- End of picture text -->
-
-
-
-<!-- Start of picture text -->
-(=ksszionne<br><!-- End of picture text -->
-
-## **QUALITY ASSURANCE / QUALITY CONTROL OF REAL-TIME OCEANOGRAPHIC DATA Setting the Standards for Real-Time QC** 
-
-The U.S. Integrated Ocean Observing System<sup>®</sup> (IOOS<sup>®</sup> ) has a vested interest in collecting and sharing high-quality environmental data. One component of this effort is the Quality Assurance/Quality Control of Real-Time Oceanographic Data (QARTOD) Project. 
-
-The unique initial focus of QARTOD is on the publication of real-time Quality Control (QC) manuals that provide QC requirements for interoperable data shared with national data centers. From 2012 through 2019, QARTOD provided the global oceanographic community with QC manuals for fourteen key variables: dissolved oxygen, currents, waves, temperature/salinity, sea level, wind, HF radar surface currents, optics, dissolved nutrients, phytoplankton, passive acoustics, stream flow, and pH. The manuals are broadly inclusive and span a wide variety of operators’ capabilities and their requirements for observational accuracies. Manual updates are undertaken as needed to address evolving technology, knowledge gained through QC implementation, and maturation of the QARTOD Project. 
-
-U.S. IOOS supports a small team that works with data providers, consumers, and vendors to create the manuals using a standardized process. The QC manuals, an updated project plan, and supporting documents can be found at ioos.noaa.gov/project/qartod. For further information, contact the project national coordinator at Mark.Bushnell@noaa.gov. 
-
-**_Quality Control Standards for the Oceanographic Community, by the Oceanographic Community_** 
-
-22 
-
+**_Quality Control Standards for the Oceanographic Community, by the Oceanographic Community_**

@@ -9,3 +9,4 @@ See <https://repository.oceanbestpractices.org/handle/11329/336>
 - [Manual for Real-Time Quality Control of Wind Data](Wind_Data.md)
 - [Manual for Quality Control of Temperature and Salinity Data Observations from Gliders](Glider.md)
 - [Manual for Real-Time Quality Control of Phytoplankton Data](Phytoplankton.md)
+- [QARTOD - Prospects for Real-Time Quality Control Manuals, How to Create Them, and a Vision for Advanced Implementation](Prospects_RT_QC.md)

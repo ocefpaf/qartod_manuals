@@ -20,4 +20,4 @@ repos:
     hooks:
       - id: codespell
         args:
-          - --ignore-words-list=hach,discus
+          - --ignore-words-list=hach,discus,rouge

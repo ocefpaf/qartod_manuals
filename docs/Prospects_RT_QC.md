@@ -1,6 +1,6 @@
 # QARTOD  - Prospects for Real-Time Quality Control Manuals, How to Create Them, and a Vision for Advanced Implementation 
 
-**_Mark Bushnell_**¹, **_Kathleen Bailey_**¹, **_Julie Bosch_**², **_Eugene Burger_**³, **_Jennifer Dorton_**⁴, **_Regina Easley_**⁵, **_Bob Heitsenrether_**⁶, **_Jeff King_**⁷, **_Karen Grissom_**⁸, **_Mario Tamburri_**⁹, **_Julianna Thomas_**¹⁰, **_Christoph Waldmann_**¹¹
+_Mark Bushnell_¹, _Kathleen Bailey_¹, _Julie Bosch_², _Eugene Burger_³, _Jennifer Dorton_⁴, _Regina Easley_⁵, _Bob Heitsenrether_⁶, _Jeff King_**⁷, _Karen Grissom_⁸, _Mario Tamburri_⁹, _Julianna Thomas_¹⁰, _Christoph Waldmann_¹¹
 
 <small>*¹U.S. Integrated Ocean Observing System, ²National Centers for Environmental Information, ³Pacific Marine Environmental Laboratory, ⁴Southeast Coastal Ocean Observing Regional Association, ⁵National Institute of Standards and Technology, ⁶Center for Operational Oceanographic Products and Services, ⁷U.S. Army Corps of Engineers, ⁸National Data Buoy Center, ⁹Alliance for Coastal Technologies, ¹⁰Scripps Institution of Oceanography [retired], ¹¹University of Bremen Center for Marine Environmental Sciences*</small>
 
@@ -225,7 +225,7 @@ the ICOOS Act of 2009 directed the National Oceanic and Atmospheric Administrati
 RICE certification formally establishes the role of the entity within U.S. IOOS and ensures that the data disseminated by the RICE are managed using the best practices identified by NOAA. 
 
 To obtain RICE certification, 
-data providers must show they meet the requirements established in the _U.S. Integrated Ocean Observing System: Regulations to Certify and Integrate Regional Information Coordination Entities_³. 
+data providers must show they meet the requirements established in the U.S. Integrated Ocean Observing System: Regulations to Certify and Integrate Regional Information Coordination Entities³. 
 RICE certification requirements include meeting quality control standards for variables that have an associated QARTOD manual. 
 As of 2019, 
 all eleven U.S. IOOS RAs had achieved RICE certification⁴. 
@@ -371,7 +371,7 @@ Table 2 provides an overview of the kinds of implementation efforts about which 
 
 <small>¹¹ http://cfconventions.org/Data/cf-standard-names/72/build/cf-standard-name-table.html</small>
 
-<small>¹² https://ioos.github.io/ioos-metadata/ioos-metadata-profile-v1-2.html - quality-controlqartod</small>
+<small>¹² https://ioos.github.io/ioos-metadata/ioos-metadata-profile-v1-2.html-quality-controlqartod</small>
 
 <small>¹³ https://github.com/ioos/ioos_qc and https://ioos.github.io/ioos_qc/</small>
 
@@ -503,7 +503,7 @@ For the following variables, real-time QC is not feasible at present:
 
 - **Microbial species/abundance/activity** - Observations of microbial species, abundance, and activity are often conducted as part of a research project. They usually require measurements of other variables for which QARTOD manuals do exist, such as temperature and salinity, currents, pH, etc. However, the species, their abundance, and their activity are determined, described, and distributed through human effort (Figure 5). A manual providing guidance for the development and implementation of software for automated QC is not needed if there is no automation elsewhere in the data management process. 
 
-<small>¹⁵ http://nsidc.org/arcticseaicenews/faq/ - quality_control and https://www.navcen.uscg.gov/?pageName=NAIceService</small>
+<small>¹⁵ http://nsidc.org/arcticseaicenews/faq/-quality_control and https://www.navcen.uscg.gov/?pageName=NAIceService</small>
 
 <small>¹⁶ https://ioos.noaa.gov/project/ott-real-time-sensor-system-detecting-freeze-arctic-shelves/</small> 
 
